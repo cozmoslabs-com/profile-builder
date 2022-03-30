@@ -374,7 +374,7 @@ function wppb_plugin_init() {
             else if( PROFILE_BUILDER == 'Profile Builder Elite' )
                 $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBP', __FILE__, 'profile-builder-pro-update');
             else if( PROFILE_BUILDER == 'Profile Builder Unlimited' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBP', __FILE__, 'profile-builder-pro-update');
+                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBL', __FILE__, 'profile-builder-pro-update');
             
             function wppb_plugin_update_message( $plugin_data, $new_data ) {
 
