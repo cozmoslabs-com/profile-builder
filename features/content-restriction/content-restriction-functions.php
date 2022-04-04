@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function wppb_content_restriction_is_post_restricted( $post_id = null ) {
 
     //fixes some php warnings with Onfleek theme
-    if( is_array( $post_id ) && empty( $post_id ) )
+    if( is_array( $post_id ) || empty( $post_id ) )
         $post_id = null;
 
     global $post, $wppb_show_content, $wppb_is_post_restricted_arr;
@@ -49,8 +49,6 @@ function wppb_get_restriction_content_message( $message_type = '', $post_id = 0 
         $wppb_content_restriction_message = apply_filters( 'wppb_get_restriction_content_message_default', $wppb_content_restriction_message, $message_type, $wppb_content_restriction_settings );
     }
 
-    $wppb_content_restriction_message = '<span class="wppb-content-restriction-message">' . $wppb_content_restriction_message . '</span>';
-
     $custom_message_enabled = get_post_meta( $post_id, 'wppb-content-restrict-messages-enabled', true );
 
     if( ! empty( $post_id ) && ! empty( $custom_message_enabled ) ) {
@@ -72,7 +70,7 @@ function wppb_content_restriction_process_content_message( $type, $user_ID, $pos
     $user_info  = get_userdata( $user_ID );
     $message    = wppb_content_restriction_merge_tags( $message, $user_info, $post_id );
 
-    return '<span class="wppb-frontend-restriction-message">'. $message .'</span>';
+    return '<span class="wppb-frontend-restriction-message wppb-content-restriction-message">'. $message .'</span>';
 
 }
 
@@ -265,7 +263,7 @@ function wppb_content_restriction_shortcode( $atts, $content = null ) {
         $message = '<span class="wppb-shortcode-restriction-message">' . $args['message'] . '</span>';
     } else {
         $type = ( is_user_logged_in() ? 'logged_in' : 'logged_out' );
-        $message = wpautop( wppb_get_restriction_content_message( $type ) );
+        $message = '<span class="wppb-content-restriction-message">' . wpautop( wppb_get_restriction_content_message( $type ) ) . '</span>';
     }
 
     /*

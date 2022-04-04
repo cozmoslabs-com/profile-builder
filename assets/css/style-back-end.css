@@ -61,12 +61,12 @@
     text-rendering: optimizelegibility;
 }
 
-.wppb-badge.Pro{
-	background:url(../images/pb-logo-pro.png) center no-repeat;
+.wppb-badge.Pro, .wppb-badge.Elite, .wppb-badge.Unlimited{
+	background:url(../images/pb-logo-free.png) center no-repeat;
 }
 
-.wppb-badge.Hobbyist{
-	background:url(../images/pb-logo-hobbyist.png) center no-repeat;
+.wppb-badge.Hobbyist, .wppb-badge.Basic{
+	background:url(../images/pb-logo-freepng) center no-repeat;
 }
 
 .wppb-badge.Free{

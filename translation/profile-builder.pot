@@ -757,7 +757,7 @@ msgstr ""
 msgid "You will be redirected in 5 seconds. If not, click %%."
 msgstr ""
 
-#: ../pb-add-on-social-connect/index.php:422, features/functions.php:1355
+#: ../pb-add-on-social-connect/index.php:422, features/functions.php:1363
 msgid "here"
 msgstr ""
 
@@ -1065,7 +1065,7 @@ msgstr ""
 msgid "Edit this item"
 msgstr ""
 
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:171, features/functions.php:1044, features/roles-editor/roles-editor.php:181, assets/lib/wck-api/wordpress-creation-kit.php:406
+#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:171, features/functions.php:1052, features/roles-editor/roles-editor.php:181, assets/lib/wck-api/wordpress-creation-kit.php:406
 msgid "Cancel"
 msgstr ""
 
@@ -1549,7 +1549,7 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: admin/admin-bar.php:92, admin/general-settings.php:346, admin/private-website.php:162, admin/register-version.php:96, features/functions.php:1037, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
+#: admin/admin-bar.php:92, admin/general-settings.php:346, admin/private-website.php:162, admin/register-version.php:96, features/functions.php:1045, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
 msgid "Save Changes"
 msgstr ""
 
@@ -1573,15 +1573,15 @@ msgstr ""
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:333, features/functions.php:780, features/functions.php:804
+#: admin/admin-functions.php:138, admin/general-settings.php:333, features/functions.php:788, features/functions.php:812
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:334, features/functions.php:780, features/functions.php:804
+#: admin/admin-functions.php:138, admin/general-settings.php:334, features/functions.php:788, features/functions.php:812
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:335, features/functions.php:780, features/functions.php:804
+#: admin/admin-functions.php:138, admin/general-settings.php:335, features/functions.php:788, features/functions.php:812
 msgid "Strong"
 msgstr ""
 
@@ -4241,11 +4241,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1058, features/functions.php:1065, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons/multiple-forms/multiple-forms.php:411, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:872, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
+#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons/multiple-forms/multiple-forms.php:411, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:872, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1051, features/functions.php:1065, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:180, features/roles-editor/roles-editor.php:910, features/roles-editor/roles-editor.php:899, features/roles-editor/roles-editor.php:890, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:180, features/roles-editor/roles-editor.php:910, features/roles-editor/roles-editor.php:899, features/roles-editor/roles-editor.php:890, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -4545,75 +4545,75 @@ msgstr ""
 msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
 msgstr ""
 
-#: features/functions.php:340
+#: features/functions.php:348
 msgid "GDPR Checkbox"
 msgstr ""
 
-#: features/functions.php:340
+#: features/functions.php:348
 msgid "I allow the website to collect and store the data I submit through this form."
 msgstr ""
 
-#: features/functions.php:340
+#: features/functions.php:348
 msgid "Honeypot"
 msgstr ""
 
-#: features/functions.php:754
+#: features/functions.php:762
 msgid "Strength indicator"
 msgstr ""
 
-#: features/functions.php:780, features/functions.php:804
+#: features/functions.php:788, features/functions.php:812
 msgid "Very Weak"
 msgstr ""
 
-#: features/functions.php:794
+#: features/functions.php:802
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:805, front-end/recover.php:384, front-end/default-fields/password/password.php:59
+#: features/functions.php:813, front-end/recover.php:384, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:956
+#: features/functions.php:964
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:994, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1002, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1001
+#: features/functions.php:1009
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1065, assets/lib/wck-api/wordpress-creation-kit.php:447
+#: features/functions.php:1073, assets/lib/wck-api/wordpress-creation-kit.php:447
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1253
+#: features/functions.php:1261
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1266
+#: features/functions.php:1274
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1356
+#: features/functions.php:1364
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1532
+#: features/functions.php:1540
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1573
+#: features/functions.php:1581
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1610
+#: features/functions.php:1618
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1628, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1636, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -7095,11 +7095,11 @@ msgstr ""
 msgid "This username is already reserved to be used soon."
 msgstr ""
 
-#: front-end/extra-fields/avatar/avatar.php:20, front-end/extra-fields/upload/upload.php:16, front-end/extra-fields/upload/upload.php:128, assets/lib/wck-api/fields/upload.php:43
+#: front-end/extra-fields/avatar/avatar.php:22, front-end/extra-fields/upload/upload.php:18, front-end/extra-fields/upload/upload.php:130, assets/lib/wck-api/fields/upload.php:43
 msgid "Remove"
 msgstr ""
 
-#: front-end/extra-fields/avatar/avatar.php:85, front-end/extra-fields/checkbox/checkbox.php:45, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input/input.php:30, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/radio/radio.php:44, front-end/extra-fields/select/select.php:51, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/select2/select2.php:74, front-end/extra-fields/textarea/textarea.php:30, front-end/extra-fields/upload/upload.php:80, front-end/extra-fields/wysiwyg/wysiwyg.php:56
+#: front-end/extra-fields/avatar/avatar.php:86, front-end/extra-fields/checkbox/checkbox.php:45, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input/input.php:30, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/radio/radio.php:44, front-end/extra-fields/select/select.php:51, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/select2/select2.php:74, front-end/extra-fields/textarea/textarea.php:30, front-end/extra-fields/upload/upload.php:82, front-end/extra-fields/wysiwyg/wysiwyg.php:56
 msgid "required"
 msgstr ""
 
@@ -7143,19 +7143,19 @@ msgstr ""
 msgid "...Choose"
 msgstr ""
 
-#: front-end/extra-fields/upload/upload.php:193
+#: front-end/extra-fields/upload/upload.php:195
 msgid "Select File"
 msgstr ""
 
-#: front-end/extra-fields/upload/upload.php:199, assets/lib/wck-api/fields/upload.php:75
+#: front-end/extra-fields/upload/upload.php:201, assets/lib/wck-api/fields/upload.php:75
 msgid "Upload "
 msgstr ""
 
-#: front-end/extra-fields/upload/upload.php:178, front-end/extra-fields/upload/upload_helper_functions.php:61
+#: front-end/extra-fields/upload/upload.php:180, front-end/extra-fields/upload/upload_helper_functions.php:61
 msgid "Files must be smaller than "
 msgstr ""
 
-#: front-end/extra-fields/upload/upload.php:179, front-end/extra-fields/upload/upload_helper_functions.php:87, front-end/extra-fields/upload/upload_helper_functions.php:96
+#: front-end/extra-fields/upload/upload.php:181, front-end/extra-fields/upload/upload_helper_functions.php:87, front-end/extra-fields/upload/upload_helper_functions.php:96
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 

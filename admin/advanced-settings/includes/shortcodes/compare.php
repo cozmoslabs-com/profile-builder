@@ -46,5 +46,5 @@ function wppb_toolbox_compare_shortcode( $atts, $content ){
 	$bool = $operators[$out['operator']]($l, $r);
 
 	if( $bool )
-		return $content;
+		return do_shortcode( $content );
 }

@@ -142,10 +142,8 @@ jQuery( function() {
 jQuery( function() {
     if( jQuery( '.wppb-private-website' ).length != 0 ) {
 
-        jQuery.fn.select2 = wppbSelect2;
-
-        jQuery('#private-website-redirect-to-login').select2();
-        jQuery('#private-website-allowed-pages').select2();
+        wppbSelect2.call( jQuery('#private-website-redirect-to-login') );
+        wppbSelect2.call( jQuery('#private-website-allowed-pages') );
 
         wppbDisablePrivatePageOptions(jQuery('#private-website-enable').val());
 
@@ -196,11 +194,9 @@ jQuery( function() {
 jQuery( function() {
     if( jQuery('body.profile-builder_page_profile-builder-toolbox-settings').length != 0 ) {
 
-        jQuery.fn.select2 = wppbSelect2;
+        wppbSelect2.call( jQuery('#toolbox-bypass-ec') );
 
-        jQuery('#toolbox-bypass-ec').select2();
-
-        jQuery('#toolbox-restricted-emails').select2({
+        wppbSelect2.call( jQuery('#toolbox-restricted-emails'), {
             tags: true,
             width: '100%'
         });

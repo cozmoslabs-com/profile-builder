@@ -126,8 +126,9 @@ add_action( 'validate_password_reset', 'wppb_password_check_extra_conditions', 1
 function wppb_password_check_extra_conditions( $errors, $user ){
     $password = ( isset( $_POST[ 'pass1' ] ) && trim( $_POST[ 'pass1' ] ) ) ? $_POST[ 'pass1' ] : false; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 
-    if( $password ){
+    if( $password && ( !isset( $_POST['pw_weak'] ) || $_POST['pw_weak'] != 'on' ) ){
         $wppb_generalSettings = get_option( 'wppb_general_settings' );
+
         if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
             if( strlen( $password ) < $wppb_generalSettings['minimum_password_length'] )
                 $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have the minimum length of %s characters', 'profile-builder' ), $wppb_generalSettings['minimum_password_length'] ) );

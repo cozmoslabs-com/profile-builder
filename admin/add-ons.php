@@ -15,7 +15,7 @@ if( ! class_exists( 'CL_Addons_List_Table' ) ) {
 function wppb_register_add_ons_submenu_page() {
     add_submenu_page( 'profile-builder', __( 'Add-Ons', 'profile-builder' ), __( 'Add-Ons', 'profile-builder' ), 'manage_options', 'profile-builder-add-ons', 'wppb_add_ons_content' );
 }
-add_action( 'admin_menu', 'wppb_register_add_ons_submenu_page', 19 );
+add_action( 'admin_menu', 'wppb_register_add_ons_submenu_page', 28 );
 
 
 /**

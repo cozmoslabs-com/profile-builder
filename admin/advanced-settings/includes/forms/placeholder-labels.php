@@ -68,7 +68,7 @@ function wppb_pbpl_extra_attribute( $extra_attribute, $field, $form_location ) {
     );
 
     if( ! empty ( $field ) && in_array( $field['field'], $extra_attr_only_for ) ) {
-        $extra_attribute .= 'placeholder = "' . esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'] ) ) . ( ( $field['required'] == 'Yes' ) ? '*' : '' ) . '"';
+        $extra_attribute .= 'placeholder = "' . esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) ) . ( ( $field['required'] == 'Yes' ) ? '*' : '' ) . '"';
     }
 
     return $extra_attribute;
@@ -220,7 +220,7 @@ function wppb_pbpl_extra_select_option( $option, $field, $item_title ) {
  *
  */
 function wppb_pbpl_select2_multiple_placeholder( $arguments, $form_location, $field ) {
-    $arguments['placeholder'] = esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'] ) ) . ( $field['required'] == 'Yes' ? '*' : '' );
+    $arguments['placeholder'] = esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) ) . ( $field['required'] == 'Yes' ? '*' : '' );
 
     return $arguments;
 }

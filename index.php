@@ -65,18 +65,6 @@ function wppb_plugin_init() {
             return wp_convert_hr_to_bytes($val);
         }
 
-        /**
-         * Definitions
-         *
-         *
-         */
-        define('PROFILE_BUILDER_VERSION', '3.6.9' );
-        define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
-        define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
-        define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
-        define('WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR . '/translation');
-        define('WPPB_TRANSLATE_DOMAIN', 'profile-builder');
-
         /* include notices class */
         if ( file_exists(WPPB_PLUGIN_DIR . '/assets/lib/class_notices.php') )
             include_once(WPPB_PLUGIN_DIR . '/assets/lib/class_notices.php');
@@ -86,42 +74,6 @@ function wppb_plugin_init() {
             include_once(WPPB_PLUGIN_DIR . '/admin/review.php');
             $wppb_review_request = new WPPB_Review_Request ();
         }
-
-        // Determine which plugin version is active
-        $active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
-
-        if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) ){
-            
-            define('PROFILE_BUILDER', 'Profile Builder Pro');
-            define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-pro' );
-            define('WPPB_PAID_PLUGIN_URL', WP_PLUGIN_URL . '/profile-builder-pro/' );
-
-        } elseif ( in_array( 'profile-builder-dev/index.php', $active_plugins ) ){
-            
-            define('PROFILE_BUILDER', 'Profile Builder Pro');
-            define('WPPB_PAID_PLUGIN_DIR', WPPB_PLUGIN_DIR );
-            define('WPPB_PAID_PLUGIN_URL', WPPB_PLUGIN_URL );
-
-        } elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) ){
-            
-            define('PROFILE_BUILDER', 'Profile Builder Elite');
-            define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-elite' );
-            define('WPPB_PAID_PLUGIN_URL', WP_PLUGIN_URL . '/profile-builder-elite/' );
-
-        } elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) ){
-          
-            define('PROFILE_BUILDER', 'Profile Builder Unlimited');
-            define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-unlimited' );
-            define('WPPB_PAID_PLUGIN_URL', WP_PLUGIN_URL . '/profile-builder-unlimited/' );
-
-        } elseif ( in_array( 'profile-builder-basic/index.php', $active_plugins ) ){
-          
-            define('PROFILE_BUILDER', 'Profile Builder Basic');
-            define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-basic' );
-            define('WPPB_PAID_PLUGIN_URL', WP_PLUGIN_URL . '/profile-builder-basic/' );
-
-        } else
-            define('PROFILE_BUILDER', 'Profile Builder Free');
 
         /**
          * Initialize the translation for the Plugin.
@@ -217,9 +169,6 @@ function wppb_plugin_init() {
 
         /* added recaptcha and user role field since version 2.6.2 */
         include_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/recaptcha/recaptcha.php'); //need to load this here for displaying reCAPTCHA on Login and Recover Password forms
-
-        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php'))
-            include_once( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php');
 
         //Elementor Widgets
         if ( did_action( 'elementor/loaded' ) ) {
@@ -405,6 +354,58 @@ function wppb_plugin_init() {
     }
 } //end wppb_plugin_init
 add_action( 'plugins_loaded', 'wppb_plugin_init' );
+
+/**
+ * Definitions
+ *
+ *
+ */
+define('PROFILE_BUILDER_VERSION', '3.6.9' );
+define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR . '/translation');
+define('WPPB_TRANSLATE_DOMAIN', 'profile-builder');
+
+// Determine which plugin version is active
+$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+
+if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) ){
+    
+    define('PROFILE_BUILDER', 'Profile Builder Pro');
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-pro' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-pro/' );
+
+} elseif ( in_array( 'profile-builder-dev/index.php', $active_plugins ) ){
+    
+    define('PROFILE_BUILDER', 'Profile Builder Pro');
+    define('WPPB_PAID_PLUGIN_DIR', WPPB_PLUGIN_DIR );
+    define('WPPB_PAID_PLUGIN_URL', WPPB_PLUGIN_URL );
+
+} elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) ){
+    
+    define('PROFILE_BUILDER', 'Profile Builder Elite');
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-elite' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-elite/' );
+
+} elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) ){
+    
+    define('PROFILE_BUILDER', 'Profile Builder Unlimited');
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-unlimited' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-unlimited/' );
+
+} elseif ( in_array( 'profile-builder-basic/index.php', $active_plugins ) ){
+    
+    define('PROFILE_BUILDER', 'Profile Builder Basic');
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-basic' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-basic/' );
+
+} else
+    define('PROFILE_BUILDER', 'Profile Builder Free');
+
+// This needs to be loaded here since we try to plug some functions, not suited for plugins_loaded hook
+if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php'))
+    include_once( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php');
 
 /* add a redirect when plugin is activated */
 if( !function_exists( 'wppb_activate_plugin_redirect' ) ){

@@ -856,12 +856,10 @@ function wppb_initialize_live_select( container_name ){
 function wppb_enable_select2(container_name){
     // Select2 initialization on manage fields.
 
-	jQuery.fn.select2 = wppbSelect2;
-
-    jQuery( container_name + ' #field').select2({
+	wppbSelect2.call( jQuery( container_name + ' #field'), {
         placeholder: 'Select an option',
         allowClear: true
-    })
+    });
 
     var $eventSelect = jQuery( container_name + ' #field');
     $eventSelect.on("select2:open", function (e) {

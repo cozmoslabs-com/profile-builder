@@ -276,8 +276,8 @@ function wppb_validate_captcha_response( $publickey, $privatekey ){
 /* the function to add reCAPTCHA to the registration form of PB */
 function wppb_recaptcha_handler ( $output, $form_location, $field, $user_id, $field_check_errors, $request_data ){
     if ( $field['field'] == 'reCAPTCHA' ){
-        $item_title = apply_filters( 'wppb_'.$form_location.'_recaptcha_custom_field_'.$field['id'].'_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'] ) );
-        $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'] );
+        $item_title = apply_filters( 'wppb_'.$form_location.'_recaptcha_custom_field_'.$field['id'].'_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) );
+        $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'], true );
 
         wppb_recaptcha_set_default_values();
         if ( ($form_location == 'register') && ( isset($field['captcha-pb-forms']) ) && (strpos($field['captcha-pb-forms'],'pb_register') !== false) ) {
@@ -353,8 +353,8 @@ function wppb_display_recaptcha_recover_password( $output ){
 
     if ( !empty($field) ) {
         $publickey = trim($field['public-key']);
-        $item_title = apply_filters('wppb_recover_password_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title']));
-        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description']);
+        $item_title = apply_filters('wppb_recover_password_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
+        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
         // check where reCAPTCHA should display and add reCAPTCHA html
         if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_recover_password' ) !== false ) ) {
@@ -455,8 +455,8 @@ function wppb_display_recaptcha_login_form($form_part, $args) {
     $field = wppb_get_recaptcha_field();
 
     if ( !empty($field) ) {
-        $item_title = apply_filters('wppb_login_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title']));
-        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description']);
+        $item_title = apply_filters('wppb_login_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
+        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
         if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_login' ) !== false ) ) { // check where reCAPTCHA should display and add reCAPTCHA html
 
@@ -486,8 +486,8 @@ function wppb_display_recaptcha_wp_login_form(){
     $field = wppb_get_recaptcha_field();
 
     if ( !empty($field) ) {
-        $item_title = apply_filters('wppb_login_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title']));
-        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description']);
+        $item_title = apply_filters('wppb_login_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
+        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
         if ( isset($field['captcha-wp-forms']) && (strpos( $field['captcha-wp-forms'],'default_wp_login' ) !== false) ) { // check where reCAPTCHA should display and add reCAPTCHA html
 
@@ -553,8 +553,8 @@ function wppb_display_recaptcha_default_wp_recover_password() {
 
     if (!empty($field)) {
         $publickey = trim($field['public-key']);
-        $item_title = apply_filters('wppb_recover_password_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title']));
-        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description']);
+        $item_title = apply_filters('wppb_recover_password_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
+        $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
         if ( isset($field['captcha-wp-forms']) && (strpos( $field['captcha-wp-forms'], 'default_wp_recover_password') !== false) ) { // check where reCAPTCHA should display and add reCAPTCHA html
 
@@ -604,8 +604,8 @@ function wppb_display_recaptcha_default_wp_register(){
     if (!empty($field)) {
 
             $publickey = trim($field['public-key']);
-            $item_title = apply_filters('wppb_register_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title']));
-            $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description']);
+            $item_title = apply_filters('wppb_register_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
+            $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
             wppb_recaptcha_set_default_values();
             if (isset($field['captcha-wp-forms']) && (strpos($field['captcha-wp-forms'], 'default_wp_register') !== false)) { // check where reCAPTCHA should display and add reCAPTCHA html

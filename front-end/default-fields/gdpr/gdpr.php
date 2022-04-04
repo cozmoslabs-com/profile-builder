@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function wppb_gdpr_handler( $output, $form_location, $field, $user_id, $field_check_errors, $request_data ){
     if ( $field['field'] == 'GDPR Checkbox' ){
         if ( $form_location != 'back_end' ){
-            $item_title = apply_filters( 'wppb_'.$form_location.'_gdpr_custom_field_'.$field['id'].'_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'] ) );
-            $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'] );
+            $item_title = apply_filters( 'wppb_'.$form_location.'_gdpr_custom_field_'.$field['id'].'_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) );
+            $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'], true );
 
             if( $form_location != 'register' )
                 $input_value = ((wppb_user_meta_exists($user_id, $field['meta-name']) != null) ? get_user_meta($user_id, $field['meta-name'], true) : '');

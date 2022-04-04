@@ -733,9 +733,14 @@ class Profile_Builder_Form_Creator{
         else
             $selected = get_current_user_id();
 
-        $query_args['fields'] = array( 'ID', 'user_login', 'display_name' );
-        $query_args['role'] = apply_filters( 'wppb_edit_profile_user_dropdown_role', '', $form_name );
+        $query_args = array(
+            'fields'  => array( 'ID', 'user_login', 'display_name' ),
+            'role'    => apply_filters( 'wppb_edit_profile_user_dropdown_role', '', $form_name ),
+            'orderby' => array( 'display_name', 'user_login' ),
+        );
+
         $users = get_users( apply_filters( 'wppb_edit_other_users_dropdown_query_args', $query_args ) );
+        
         if( !empty( $users ) ) {
 
             /* turn it in a select2 */

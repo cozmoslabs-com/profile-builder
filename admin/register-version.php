@@ -13,13 +13,13 @@ if( !is_multisite() ){
         if ( PROFILE_BUILDER != 'Profile Builder Free' )
             add_submenu_page('profile-builder', __('Register Your Version', 'profile-builder'), __('Register Version', 'profile-builder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content');
     }
-    add_action('admin_menu', 'wppb_register_your_version_submenu_page', 20);
+    add_action('admin_menu', 'wppb_register_your_version_submenu_page', 29);
 } else {
     function wppb_multisite_register_your_version_page() {
         if ( PROFILE_BUILDER != 'Profile Builder Free' )
             add_menu_page(__('Profile Builder Register', 'profile-builder'), __('Profile Builder Register', 'profile-builder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content', WPPB_PLUGIN_URL . 'assets/images/pb-menu-icon.png');
     }
-    add_action('network_admin_menu', 'wppb_multisite_register_your_version_page', 20);
+    add_action('network_admin_menu', 'wppb_multisite_register_your_version_page', 29);
 }
 
 
@@ -35,9 +35,11 @@ function wppb_register_your_version_content() {
     ?>
     <div class="wrap wppb-wrap">
         <?php
-        if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
+        $versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Dev' );
+
+	    if( in_array( PROFILE_BUILDER, $versions ) ) {
             wppb_serial_form('pro');
-        } elseif ( PROFILE_BUILDER == 'Profile Builder Hobbyist' ){
+        } elseif ( PROFILE_BUILDER == 'Profile Builder Hobbyist' || PROFILE_BUILDER == 'Profile Builder Basic' ){
             wppb_serial_form('hobbyist');
         }
         ?>
@@ -105,8 +107,10 @@ function wppb_check_serial_number($oldVal, $newVal, $resetCron = false){
 	$serial_number_set = $newVal;
 
 	$response = wp_remote_get( 'http://updatemetadata.cozmoslabs.com/checkserial/?serialNumberSent='.$serial_number_set );
+	
+    $versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Dev' );
 
-	if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
+	if( in_array( PROFILE_BUILDER, $versions ) ) {
         wppb_update_serial_status($response, 'pro');
 
         if( $resetCron === true )
@@ -234,42 +238,48 @@ class WPPB_add_notices{
 	}
 }
 
-// Switch to the main site
-if( is_multisite() && function_exists( 'switch_to_blog' )
-	&& function_exists( 'get_main_site_id' ))
-	switch_to_blog( get_main_site_id() );
 
-if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
-    $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_pro_serial_status', 'empty' );
-    $version = 'pro';
+if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
 
-} elseif( PROFILE_BUILDER == 'Profile Builder Hobbyist' ) {
-    $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_hobbyist_serial_status', 'empty' );
-    $version = 'hobbyist';
-}
-if( is_multisite() && function_exists( 'restore_current_blog' ) )
-    restore_current_blog();
+    // Switch to the main site
+    if( is_multisite() && function_exists( 'switch_to_blog' )
+        && function_exists( 'get_main_site_id' ))
+        switch_to_blog( get_main_site_id() );
 
-if ( $wppb_profile_builder_pro_hobbyist_serial_status == 'notFound' || $wppb_profile_builder_pro_hobbyist_serial_status == 'empty' ){
-    if( !is_multisite() )
-        $register_url = 'admin.php?page=profile-builder-register';
-    else
-        $register_url = network_admin_url( 'admin.php?page=profile-builder-register' );
+    if ( file_exists(WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php') ){
+        $wppb_profile_builder_pro_hobbyist_serial_status = get_option('wppb_profile_builder_pro_serial');
+        $version = 'pro';
+    } else {
+        $wppb_profile_builder_pro_hobbyist_serial_status = get_option('wppb_profile_builder_hobbyist_serial');
+        $version = 'hobbyist';
+    }
 
-	new WPPB_add_notices( 'wppb', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder') . '</p>', "<a href='". esc_url( $register_url ) ."'>", "</a>", "<a href='https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
-}
-elseif ( $wppb_profile_builder_pro_hobbyist_serial_status == 'expired' ){
-        /* on our plugin pages do not add the dismiss button for the expired notification*/
-        $notification_instance = WPPB_Plugin_Notifications::get_instance();
-        if( $notification_instance->is_plugin_page() )
-            $message = '<p>' . __( 'Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder') . '</p>';
+    if( is_multisite() && function_exists( 'restore_current_blog' ) )
+        restore_current_blog();
+
+    if ( $wppb_profile_builder_pro_hobbyist_serial_status == 'notFound' || $wppb_profile_builder_pro_hobbyist_serial_status == 'empty' ){
+        if( !is_multisite() )
+            $register_url = 'admin.php?page=profile-builder-register';
         else
-            $message = '<p>' . __( 'Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder') . '</p>';
+            $register_url = network_admin_url( 'admin.php?page=profile-builder-register' );
 
-    new WPPB_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( $message, "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". esc_url( add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+        new WPPB_add_notices( 'wppb', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder') . '</p>', "<a href='". esc_url( $register_url ) ."'>", "</a>", "<a href='https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+    }
+    elseif ( $wppb_profile_builder_pro_hobbyist_serial_status == 'expired' ){
+            /* on our plugin pages do not add the dismiss button for the expired notification*/
+            $notification_instance = WPPB_Plugin_Notifications::get_instance();
+            if( $notification_instance->is_plugin_page() )
+                $message = '<p>' . __( 'Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder') . '</p>';
+            else
+                $message = '<p>' . __( 'Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder') . '</p>';
+
+        new WPPB_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( $message, "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". esc_url( add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+    }
+    elseif( strpos( $wppb_profile_builder_pro_hobbyist_serial_status, 'aboutToExpire' ) === 0 ){
+        $serial_status_parts = explode( '#', $wppb_profile_builder_pro_hobbyist_serial_status );
+        $date = $serial_status_parts[1];
+        new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", $date, "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+    }
+
 }
-elseif( strpos( $wppb_profile_builder_pro_hobbyist_serial_status, 'aboutToExpire' ) === 0 ){
-    $serial_status_parts = explode( '#', $wppb_profile_builder_pro_hobbyist_serial_status );
-    $date = $serial_status_parts[1];
-    new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", $date, "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
-}
+

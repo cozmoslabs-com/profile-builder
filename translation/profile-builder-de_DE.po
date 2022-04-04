@@ -2,17 +2,17 @@
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-02 09:07+0200\n"
+"Project-Id-Version: Profile Builder\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2022-03-15 09:44+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.0\n"
-"Project-Id-Version: Profile Builder\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: de_DE\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: profile-builder-2.0/admin/general-settings.php:154
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
@@ -40,7 +40,7 @@ msgstr "Einzelne Umleitungen in Shortcodes definiert; der <strong><em>Redirect_p
 
 #: profile-builder-2.0/admin/manage-fields.php:1217
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Modules."
-msgstr "Wenn du verschiedene Felder in den Anmelde- und Profilbearbeitungs-Formularen verwenden möchtest, benutze bitte die Mehrfach-Registrierungs und Profilbearbeitungsformular Module,"
+msgstr "Wenn du verschiedene Felder in den Anmelde- und Profilbearbeitungs-Formularen verwenden möchtest, benutze bitte die Mehrfach-Registrierungs und Profilbearbeitungsformular Module."
 
 #: profile-builder-2.0/modules/custom-redirects/custom_redirects_admin.php:240
 msgid "Multiple Registration and Edit Profile form settings Redirects"
@@ -4651,11 +4651,11 @@ msgstr "Das Konto %1s wurde erfolgreich erstellt!"
 #: profile-builder-2.0/front-end/class-formbuilder.php:318
 #: profile-builder-2.0/front-end/class-formbuilder.php:328
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
-msgstr "Bevor du auf dein Konto %1S zugreifen kannst, musst du deine E-Mail-Adresse bestätigen. Bitte überprüfe deinen Posteingang und klicke auf den Aktivierungslink."
+msgstr "Bevor du auf dein Konto %1s zugreifen kannst, musst du deine E-Mail-Adresse bestätigen. Bitte überprüfe deinen Posteingang und klicke auf den Aktivierungslink."
 
 #: profile-builder-2.0/front-end/class-formbuilder.php:324
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
-msgstr "Bevor du auf dein Konto %1S zugreifen kannst, muss es von einem Administrator genehmigt werden. Über eine Bestätigung wirst du per E-Mail benachrichtigt."
+msgstr "Bevor du auf dein Konto %1s zugreifen kannst, muss es von einem Administrator genehmigt werden. Über eine Bestätigung wirst du per E-Mail benachrichtigt."
 
 #: profile-builder-2.0/front-end/class-formbuilder.php:347
 msgid "Your profile has been successfully updated!"

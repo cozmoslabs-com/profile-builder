@@ -217,7 +217,7 @@ function wppb_general_settings_content() {
 
 
 		<?php
-		if ( file_exists( WPPB_PLUGIN_DIR.'/features/admin-approval/admin-approval.php' ) ){
+		if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/admin-approval/admin-approval.php' ) ){
 		?>
 			<tr>
 				<th scope="row">

@@ -27,8 +27,8 @@ function wppb_blog_details_handler( $output, $form_location, $field, $user_id, $
 
     $output = '<ul>';
 
-    $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'default_field_'.$field['id'].'_description_translation', $field['description'] );
-    $heading = '<li class="wppb-form-field wppb-blog-details-heading"><h4>'.wppb_icl_t('plugin profile-builder-pro', 'default_field_'.$field['id'].'_title_translation', $field['field-title']).'</h4><span class="wppb-description-delimiter">'.$item_description.'</span></li>';
+    $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'default_field_'.$field['id'].'_description_translation', $field['description'], true );
+    $heading = '<li class="wppb-form-field wppb-blog-details-heading"><h4>'.wppb_icl_t('plugin profile-builder-pro', 'default_field_'.$field['id'].'_title_translation', $field['field-title'], true).'</h4><span class="wppb-description-delimiter">'.$item_description.'</span></li>';
     $output .= apply_filters( 'wppb_blog_details_heading', $heading );
 
 

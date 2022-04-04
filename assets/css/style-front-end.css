@@ -803,7 +803,7 @@ li.wppb-facet-search{
 6.0 Media Queries
 --------------------------------------------------------------*/
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 
 	.wppb-form-field label,
 	#wppb-login-wrap .login-username label,
@@ -815,7 +815,6 @@ li.wppb-facet-search{
 		float:none;
 	}
 
-	.wppb-form-field input,
     .wppb-form-field input[type="text"], .wppb-form-field input[type="number"], .wppb-form-field input[type="email"], .wppb-form-field input[type="url"], .wppb-form-field input[type="password"], .wppb-form-field input[type="search"],
     .wppb-form-field select,
 	.wppb-form-field textarea,
@@ -888,7 +887,8 @@ li.wppb-facet-search{
     right: 4px;
 	/* fields bottom padding  / 2 */
     top: -7px;
-    background: transparent;
+    background: transparent !important;
+    background-color: transparent !important;
     border: 1px solid transparent;
     box-shadow: none;
 	padding: 0;

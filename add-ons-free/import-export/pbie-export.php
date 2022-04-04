@@ -10,9 +10,11 @@ add_action( 'admin_init', 'wppb_pbie_export_our_json' );
 function wppb_pbie_export_our_json() {
 	if( isset( $_POST['cozmos-export'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_export_settings' ) ) {
 		/* get Profile Builder version */
-		if ( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+		$versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Dev' );
+
+		if( in_array( PROFILE_BUILDER, $versions ) ) {
 			$version = 'pro';
-		} elseif( PROFILE_BUILDER == 'Profile Builder Hobbyist' ) {
+		} elseif( PROFILE_BUILDER == 'Profile Builder Hobbyist' || PROFILE_BUILDER == 'Profile Builder Basic' ) {
 			$version = 'hobbyist';
 		}
 
