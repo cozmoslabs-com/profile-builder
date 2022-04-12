@@ -899,9 +899,9 @@
 <?php __("You will receive a link to create a new password via email.", "profile-builder"); ?>
 <?php __("Get New Password", "profile-builder"); ?>
 <?php __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profile-builder' ); ?>
-<?php __('Password Reset from \%1$s\', 'profile-builder' ); ?>
+<?php __('Password Reset from %1$s', 'profile-builder' ); ?>
 <?php __("You have successfully reset your password.", "profile-builder"); ?>
-<?php __('Password Successfully Reset for %1$s on \%2$s\', 'profile-builder' ); ?>
+<?php __('Password Successfully Reset for %1$s on %2$s', 'profile-builder' ); ?>
 <?php __('%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s', 'profile-builder' ); ?>
 <?php __("You are already logged in. You can change your password on the edit profile form.", "profile-builder"); ?>
 <?php __("The password must not be empty!", "profile-builder"); ?>

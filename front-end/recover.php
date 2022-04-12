@@ -184,7 +184,7 @@ function wppb_send_recovery_email( $user, $success ){
     $recovery_email_message  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profile-builder'), $display_username_email, '<a href="'.esc_url( add_query_arg( array( 'key' => $key ), wppb_curpageurl() ) ).'">'.esc_url( add_query_arg( array( 'key' => $key ), wppb_curpageurl() ) ).'</a>' );
     $recovery_email_message  = apply_filters( 'wppb_recover_password_message_content_sent_to_user1', $recovery_email_message, $requested_user_id, $requested_user_login, $requested_user_email );
 
-    $recovery_email_message_title = sprintf(__('Password Reset from "%1$s"', 'profile-builder'), $blogname = get_option('blogname') );
+    $recovery_email_message_title = sprintf(__('Password Reset from %1$s', 'profile-builder'), $blogname = get_option('blogname') );
     $recovery_email_message_title = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recovery_email_message_title, $requested_user_login);
 
     $recovery_email_from = apply_filters ( 'wppb_recover_password_notification_email_from_field', get_bloginfo( 'name' ) );
@@ -213,7 +213,7 @@ function wppb_send_successful_password_reset_email( $user, $new_pass ){
     //send secondary mail to the user containing the username and the new password
     $recovery_email_message  = __( 'You have successfully reset your password.', 'profile-builder' );
     $recovery_email_message  = apply_filters( 'wppb_recover_password_message_content_sent_to_user2', $recovery_email_message, $display_username_email, $new_pass, $user->ID );
-    $recovery_email_message_title = sprintf( __('Password Successfully Reset for %1$s on "%2$s"', 'profile-builder' ), $display_username_email, $blogname = get_option('blogname') );
+    $recovery_email_message_title = sprintf( __('Password Successfully Reset for %1$s on %2$s', 'profile-builder' ), $display_username_email, $blogname = get_option('blogname') );
     $recovery_email_message_title = apply_filters( 'wppb_recover_password_message_title_sent_to_user2', $recovery_email_message_title, $display_username_email );
     $recovery_email_from = apply_filters ( 'wppb_recover_password_success_notification_email_from_field', get_bloginfo( 'name' ) );
     $recovery_email_context = 'email_user_recover_success';

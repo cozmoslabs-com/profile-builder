@@ -3655,7 +3655,7 @@ msgid "Someone requested that the password be reset for the following account: <
 msgstr ""
 
 #: front-end/recover.php:187
-msgid "Password Reset from \"%1$s\""
+msgid "Password Reset from %1$s"
 msgstr ""
 
 #: front-end/recover.php:214
@@ -3663,7 +3663,7 @@ msgid "You have successfully reset your password."
 msgstr ""
 
 #: front-end/recover.php:216
-msgid "Password Successfully Reset for %1$s on \"%2$s\""
+msgid "Password Successfully Reset for %1$s on %2$s"
 msgstr ""
 
 #: front-end/recover.php:234
