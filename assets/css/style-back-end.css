@@ -686,6 +686,144 @@ p .wppb-button-free {
     height:45px;
 }
 
+/*Disable sorting functionality for PB metaboxes*/
+
+/*email customizer*/
+.postbox#uec_common_settings .ui-sortable-handle,
+.postbox#uec_default_registration .ui-sortable-handle,
+.postbox#uec_reg_with_email_confirmation .ui-sortable-handle,
+.postbox#uec_reg_with_admin_approval .ui-sortable-handle,
+.postbox#uec_notif_approved_email .ui-sortable-handle,
+.postbox#uec_notif_unapproved_email .ui-sortable-handle,
+.postbox#uec_reset .ui-sortable-handle,
+.postbox#uec_reset_success .ui-sortable-handle,
+.postbox#uec_change_email_request .ui-sortable-handle,
+.postbox#uec_change_email .ui-sortable-handle,
+.postbox#uec_epaa_notification .ui-sortable-handle,
+.postbox#aec_common_settings .ui-sortable-handle,
+.postbox#aec_default_registration .ui-sortable-handle,
+.postbox#aec_reg_with_admin_approval .ui-sortable-handle,
+.postbox#aec_user_password_reset .ui-sortable-handle,
+.postbox#aec_epaa_notification .ui-sortable-handle,
+.postbox#page-save-metabox .ui-sortable-handle,
+
+    /*labels edit*/
+.postbox#pble-id .ui-sortable-handle,
+.postbox#pble-id-side .ui-sortable-handle,
+.postbox#pble-id-side-impexp .ui-sortable-handle,
+.postbox#pble-id-side-info .ui-sortable-handle,
+
+    /*manage fields*/
+.postbox#manage-fields .ui-sortable-handle,
+.postbox#manage-fields-info .ui-sortable-handle,
+.postbox#wppb-msf-side .ui-sortable-handle,
+
+    /*custom redirects*/
+.postbox#wppb_custom_redirects_user .ui-sortable-handle,
+.postbox#wppb_custom_redirects_role .ui-sortable-handle,
+.postbox#wppb_custom_redirects_global .ui-sortable-handle,
+.postbox#wppb_custom_redirects_default_wp_pages .ui-sortable-handle,
+.postbox#custom-redirects-info .ui-sortable-handle,
+
+    /*social connect*/
+.postbox#wppb-social-connect-id .ui-sortable-handle,
+.postbox#wppb-social-connect-info-id .ui-sortable-handle,
+
+    /*userlisting*/
+.postbox#wppb-ul-settings-args .ui-sortable-handle,
+.postbox#wppb-ul-faceted-args .ui-sortable-handle,
+.postbox#wppb-ul-search-settings .ui-sortable-handle,
+.postbox#wppb-ul-templates .ui-sortable-handle,
+.postbox#wppb-single-ul-templates .ui-sortable-handle,
+.postbox#submitdiv .ui-sortable-handle,
+.postbox#wppb-ul-side .ui-sortable-handle,
+
+    /*multiple registration forms*/
+.postbox#wppb-rf-settings-args .ui-sortable-handle,
+.postbox#wppb-rf-fields .ui-sortable-handle,
+.postbox#submitdiv .ui-sortable-handle,
+.postbox#wppb-sc-rf-side .ui-sortable-handle,
+.postbox#wppb-rf-side .ui-sortable-handle,
+.postbox#wppb-msf-side .ui-sortable-handle,
+
+    /*multiple edit profile forms*/
+.postbox#wppb-epf-settings-args .ui-sortable-handle,
+.postbox#wppb-epf-fields .ui-sortable-handle,
+.postbox#submitdiv .ui-sortable-handle,
+.postbox#wppb-sc-epf-side .ui-sortable-handle,
+.postbox#wppb-epf-side .ui-sortable-handle,
+.postbox#wppb-msf-side .ui-sortable-handle {
+    pointer-events: none;
+}
+
+/*email customizer*/
+.postbox#uec_common_settings .handle-actions,
+.postbox#uec_default_registration .handle-actions,
+.postbox#uec_reg_with_email_confirmation .handle-actions,
+.postbox#uec_reg_with_admin_approval .handle-actions,
+.postbox#uec_notif_approved_email .handle-actions,
+.postbox#uec_notif_unapproved_email .handle-actions,
+.postbox#uec_reset .handle-actions,
+.postbox#uec_reset_success .handle-actions,
+.postbox#uec_change_email_request .handle-actions,
+.postbox#uec_change_email .handle-actions,
+.postbox#uec_epaa_notification .handle-actions,
+.postbox#aec_common_settings .handle-actions,
+.postbox#aec_default_registration .handle-actions,
+.postbox#aec_reg_with_admin_approval .handle-actions,
+.postbox#aec_user_password_reset .handle-actions,
+.postbox#aec_epaa_notification .handle-actions,
+.postbox#page-save-metabox .handle-actions,
+
+    /*labels edit*/
+.postbox#pble-id .handle-actions,
+.postbox#pble-id-side .handle-actions,
+.postbox#pble-id-side-impexp .handle-actions,
+.postbox#pble-id-side-info .handle-actions,
+
+    /*manage fields*/
+.postbox#manage-fields .handle-actions,
+.postbox#manage-fields-info .handle-actions,
+.postbox#wppb-msf-side .handle-actions,
+
+    /*custom redirects*/
+.postbox#wppb_custom_redirects_user .handle-actions,
+.postbox#wppb_custom_redirects_role .handle-actions,
+.postbox#wppb_custom_redirects_global .handle-actions,
+.postbox#wppb_custom_redirects_default_wp_pages .handle-actions,
+.postbox#custom-redirects-info .handle-actions,
+
+    /*social connect*/
+.postbox#wppb-social-connect-id .handle-actions,
+.postbox#wppb-social-connect-info-id .handle-actions,
+
+    /*userlisting*/
+.postbox#wppb-ul-settings-args .handle-actions,
+.postbox#wppb-ul-faceted-args .handle-actions,
+.postbox#wppb-ul-search-settings .handle-actions,
+.postbox#wppb-ul-templates .handle-actions,
+.postbox#wppb-single-ul-templates .handle-actions,
+.postbox#submitdiv .handle-actions,
+.postbox#wppb-ul-side .handle-actions,
+
+    /*multiple registration forms*/
+.postbox#wppb-rf-settings-args .handle-actions,
+.postbox#wppb-rf-fields .handle-actions,
+.postbox#submitdiv .handle-actions,
+.postbox#wppb-sc-rf-side .handle-actions,
+.postbox#wppb-rf-side .handle-actions,
+.postbox#wppb-msf-side .handle-actions,
+
+    /*multiple edit profile forms*/
+.postbox#wppb-epf-settings-args .handle-actions,
+.postbox#wppb-epf-fields .handle-actions,
+.postbox#submitdiv .handle-actions,
+.postbox#wppb-sc-epf-side .handle-actions,
+.postbox#wppb-epf-side .handle-actions,
+.postbox#wppb-msf-side .handle-actions {
+    display: none;
+}
+
 /**************************************************/
 /* Extra styling for admin notices
 /**************************************************/

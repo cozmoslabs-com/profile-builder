@@ -48,7 +48,7 @@ function wppb_check_password_value( $message, $field, $request_data, $form_locat
 			return wppb_required_field_error($field["field-title"]);
 	}
 
-    if ( trim( $request_data['passw1'] ) != '' ){
+    if ( isset( $request_data['passw1'] ) && trim( $request_data['passw1'] ) != '' ){
         $wppb_generalSettings = get_option( 'wppb_general_settings' );
 
         if( wppb_check_password_length( $request_data['passw1'] ) )

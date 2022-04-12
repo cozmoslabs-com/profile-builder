@@ -22,7 +22,9 @@ function wppb_update_patch(){
 	do_action( 'wppb_before_default_changes', PROFILE_BUILDER_VERSION, $wppb_version );
 	
 	if ( version_compare( PROFILE_BUILDER_VERSION, $wppb_version, '>' ) ) {
-		if ( ( PROFILE_BUILDER == 'Profile Builder Pro' ) || ( PROFILE_BUILDER == 'Profile Builder Hobbyist' ) ){
+        $paid_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Basic' );
+
+		if ( in_array( PROFILE_BUILDER, $paid_versions ) ){
 
 			/* stopped creating them on 01.02.2016 */
 			/*$upload_dir = wp_upload_dir();
@@ -36,8 +38,10 @@ function wppb_update_patch(){
 			
 			wppb_pro_hobbyist_v1_3_13();
 		}
-		
-		if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
+    
+        $pro_versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited' );
+
+		if ( in_array( PROFILE_BUILDER, $pro_versions ) ){
 			wppb_pro_v1_3_15();
 		}
 		
@@ -46,11 +50,15 @@ function wppb_update_patch(){
 
 	//this should run only once, mainly if the old version is < 2.0 (can be anything)
 	if ( version_compare( $wppb_version, 2.0, '<' ) ) {
-		if ( ( PROFILE_BUILDER == 'Profile Builder Pro' ) || ( PROFILE_BUILDER == 'Profile Builder Hobbyist' ) || ( PROFILE_BUILDER == 'Profile Builder Free' ) ){
+        $all_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Basic', 'Profile Builder Free' );
+
+		if ( in_array( PROFILE_BUILDER, $all_versions ) ){
 			wppb_pro_hobbyist_free_v2_0();
 		}
 		
-		if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
+        $pro_versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited' );
+
+		if ( in_array( PROFILE_BUILDER, $pro_versions ) ){
 			wppb_pro_userlisting_compatibility_upgrade();
 			wppb_pro_email_customizer_compatibility_upgrade();
 		}
@@ -58,7 +66,9 @@ function wppb_update_patch(){
 
 	// this should run only once, mainly if the old version is < 2.2.5 (can be anything)
 	if ( version_compare( $wppb_version, '2.2.5', '<' ) ) {
-		if ( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+        $pro_versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited' );
+
+		if ( in_array( PROFILE_BUILDER, $pro_versions ) ){
 			wppb_new_custom_redirects_compatibility();
 		}
 	}

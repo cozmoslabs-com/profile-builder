@@ -13,1264 +13,16 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../pb-add-on-bbpress/bbpress-page.php:24, ../pb-add-on-bbpress/bbpress-page.php:24, admin/add-ons.php:134
-msgid "bbPress"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:69
-msgid "bbPress Integration"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:78
-msgid "Choose (Single) User Listing to display under bbPress user Profile tab:"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:82, ../pb-add-on-bbpress/bbpress-page.php:117, ../pb-add-on-woocommerce/woosync-page.php:80, ../pb-add-on-woocommerce/woosync-page.php:115, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:232, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:307, add-ons/user-listing/userlisting.php:591, add-ons/user-listing/userlisting.php:588, add-ons/user-listing/userlisting.php:586, add-ons/user-listing/userlisting.php:569, add-ons/user-listing/userlisting.php:566, add-ons/user-listing/userlisting.php:564, features/content-restriction/content-restriction.php:136
-msgid "None"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:105
-msgid "Select which Single User-listing managed via Profile Builder should replace the default bbPress user profile."
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:113
-msgid "Choose Edit Profile form to display under bbPress Profile Edit tab:"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:118, ../pb-add-on-buddypress/buddypress-page.php:98, ../pb-add-on-woocommerce/woosync-page.php:116
-msgid "Default Edit Profile"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:141
-msgid "Select Profile Builder Edit Profile form to replace the bbPress Profile Edit tab."
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:148
-msgid "Replace bbPress Login form:"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:152, ../pb-add-on-social-connect/index.php:353, ../pb-add-on-social-connect/index.php:412, admin/general-settings.php:163, admin/general-settings.php:178, admin/general-settings.php:227, admin/general-settings.php:272, admin/private-website.php:69, admin/private-website.php:136, admin/private-website.php:151, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, features/content-restriction/content-restriction.php:88, features/two-factor-authentication/class-two-factor-authentication.php:124, admin/advanced-settings/includes/forms/placeholder-labels.php:136, assets/misc/elementor/widgets/class-pb-widget-l.php:76, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-ul.php:108
-msgid "No"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:153, ../pb-add-on-social-connect/index.php:352, ../pb-add-on-social-connect/index.php:411, admin/general-settings.php:149, admin/general-settings.php:162, admin/general-settings.php:177, admin/general-settings.php:226, admin/general-settings.php:273, admin/manage-fields.php:193, admin/private-website.php:70, admin/private-website.php:137, admin/private-website.php:150, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2573, features/content-restriction/content-restriction.php:89, features/two-factor-authentication/class-two-factor-authentication.php:125, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:181, admin/advanced-settings/includes/views/view-fields.php:197, admin/advanced-settings/includes/views/view-fields.php:217, admin/advanced-settings/includes/views/view-fields.php:240, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-fields.php:277, admin/advanced-settings/includes/views/view-fields.php:295, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:75, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:179, assets/misc/elementor/widgets/class-pb-widget-ul.php:107
-msgid "Yes"
-msgstr ""
-
-#: ../pb-add-on-bbpress/bbpress-page.php:157
-msgid "Select \"Yes\" to replace the default bbPress Login form with the Profile Builder Login form."
-msgstr ""
-
-#: ../pb-add-on-bbpress/index.php:321
-msgid "bbPress needs to be installed and activated for Profile Builder - bbPress Integration Add-on to work as expected!"
-msgstr ""
-
-#: ../pb-add-on-bbpress/index.php:181, ../pb-add-on-bbpress/index.php:196
-msgid "Forum Role"
-msgstr ""
-
-#: ../pb-add-on-bbpress/index.php:182, ../pb-add-on-bbpress/index.php:176, ../pb-add-on-bbpress/index.php:197, ../pb-add-on-bbpress/index.php:247
-msgid "Topics Started"
-msgstr ""
-
-#: ../pb-add-on-bbpress/index.php:183, ../pb-add-on-bbpress/index.php:177, ../pb-add-on-bbpress/index.php:198, ../pb-add-on-bbpress/index.php:249
-msgid "Replies Created"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:26, ../pb-add-on-buddypress/buddypress-page.php:26, admin/add-ons.php:87
-msgid "BuddyPress"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:45
-msgid "BuddyPress Integration"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:50
-msgid "Import BuddyPress Fields to Profile Builder"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:53
-msgid "Import BuddyPress Fields"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:55
-msgid "Create fields in Profile Builder that match the existing ones in BuddyPress and import all the user field entries.<br><a href=\"https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/buddypress/#Import_BuddyPress_Fields_to_Profile_Builder\">Learn more about importing BuddyPress fields</a>."
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:61
-msgid "Registration form:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:65, add-ons/email-customizer/user-email-customizer.php:104
-msgid "Default Registration"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:87
-msgid "Select Profile Builder Registration form to replace the BuddyPress Registration form.<br>Registration emails will now be managed in Profile Builder -> User Email Customizer"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:94
-msgid "Edit Profile form:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:120
-msgid "Select Profile Builder Edit Profile form to replace the BuddyPress Profile Edit tab."
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:131
-msgid "User Listing template:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:157
-msgid "Select which User Listing template managed by Profile Builder should replace the default BuddyPress user profile view."
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:164
-msgid "Use All-User Listing?"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:170
-msgid "Enable PB User Listing on BuddyPress Members page"
-msgstr ""
-
-#: ../pb-add-on-buddypress/buddypress-page.php:172
-msgid "Check this if All User-listing managed via Profile Builder should replace the default BuddyPress Members page.<br>The template used will be the one selected above."
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:20
-msgid "Allow members to override"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:20
-msgid "Enforce field visibility"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:22
-msgid "BuddyPress Default Field Visibility"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:23
-msgid "BuddyPress Allow Custom Visibility"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:119, ../pb-add-on-buddypress/field-visibility.php:105
-msgid "This field can be seen by: "
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:105
-msgid "Change"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:110
-msgid "Who can see this field?"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:115
-msgid "Close"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:216, ../pb-add-on-custom-profile-menus/index.php:269
-msgid "Everyone"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:220
-msgid "Only Me"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:224, ../pb-add-on-buddypress/mustache-vars.php:329
-msgid "All Members"
-msgstr ""
-
-#: ../pb-add-on-buddypress/field-visibility.php:228, ../pb-add-on-buddypress/mustache-vars.php:333
-msgid "My Friends"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:34
-msgid "<h2>Import BuddyPress Fields to Profile Builder</h2>"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:40
-msgid "BuddyPress is not installed and active. Import aborted!"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:53
-msgid "Importing User entries BuddyPress Fields to Profile Builder...<br><br>"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:55
-msgid "Done."
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:55
-msgid "Back to BuddyPress Settings page"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:44
-msgid "Importing BuddyPress Field Settings to Profile Builder...<br><br>"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:51, ../pb-add-on-buddypress/import-bp-fields.php:328
-msgid "If the page does not redirect automatically"
-msgstr ""
-
-#: ../pb-add-on-buddypress/import-bp-fields.php:51, ../pb-add-on-buddypress/import-bp-fields.php:328
-msgid "click here"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:382
-msgid "BuddyPress needs to be installed and activated for Profile Builder - BuddyPress Integration Add-on to work as expected!"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:222
-msgid "Profile Builder Avatar field is disabled to allow use of BuddyPress Avatar."
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:511, admin/manage-fields.php:332
-msgid "Name"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:514
-msgid "Username:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:518
-msgid "First Name:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:522
-msgid "Last Name:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:526
-msgid "Nickname:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:530
-msgid "Display name:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:534, admin/manage-fields.php:338
-msgid "Contact Info"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:537
-msgid "Website:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:541, admin/manage-fields.php:349
-msgid "About Yourself"
-msgstr ""
-
-#: ../pb-add-on-buddypress/index.php:544
-msgid "Biographical Info:"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:15, ../pb-add-on-buddypress/mustache-vars.php:47
-msgid "BuddyPress Avatar"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:16, ../pb-add-on-buddypress/mustache-vars.php:48
-msgid "BuddyPress Cover Photo"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:17, ../pb-add-on-buddypress/mustache-vars.php:29, ../pb-add-on-buddypress/mustache-vars.php:256
-msgid "BuddyPress Last Active"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:21
-msgid "BuddyPress Add Friend Button"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:24
-msgid "BuddyPress Latest Update"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:134
-msgid "Never active"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:239
-msgid "Last Active"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:272
-msgid "My BuddyPress Friends Tab"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:373
-msgid "BuddyPress field visibility syntax"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:393
-msgid "Are you sure you want to reset this template?"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:393
-msgid "Reset to Default BuddyPress User Listing Templates"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:394
-msgid "<b>Note:</b> This action is not reversible. All modifications to this template will be lost!"
-msgstr ""
-
-#: ../pb-add-on-buddypress/mustache-vars.php:408
-msgid "Reset template"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:178
-msgid "Login Label"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:183, ../pb-add-on-custom-profile-menus/index.php:305, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:13, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:60, features/login-widget/login-widget.php:61, assets/misc/elementor/widgets/class-pb-widget-l.php:26
-msgid "Login"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:186
-msgid "Logout Label"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:191, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:16, front-end/class-formbuilder.php:187
-msgid "Logout"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:197
-msgid "Form page URL"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:200
-msgid "Login page URL"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:203
-msgid "Login Form page URL"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:206
-msgid "Edit Profile Form page URL"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:209
-msgid "Register Form page URL"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:248
-msgid "Display Mode"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:255, features/content-restriction/content-restriction-meta-box.php:68
-msgid "Logged In Users"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:262
-msgid "Logged Out Users"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:276
-msgid "Restrict menu item to a minimum role"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:277
-msgid "Works only if Display Mode: Logged In Users is selected"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:308, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:67, assets/misc/elementor/widgets/class-pb-widget-epf.php:32
-msgid "Edit Profile"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:311, ../pb-add-on-custom-profile-menus/wppb-custom-profile-menus.php:74, front-end/class-formbuilder.php:464, front-end/login.php:583, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
-msgid "Register"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:317
-msgid "iFrame Title"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:327
-msgid "iFrame Size"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:330
-msgid "Height (px)"
-msgstr ""
-
-#: ../pb-add-on-custom-profile-menus/index.php:337
-msgid "Width (px)"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:209
-msgid "Requires Admin Approval on Edit Profile"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:209
-msgid "Choose if this field requires an administrator to approve any modifications on the edit profile forms"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:310
-msgid "This field requires admin approval on edit profile"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:379
-msgid "Finish Review and Send Notifications"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:380
-msgid "Approve All"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:398
-msgid "This field requires approval by an administrator"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:427, features/admin-approval/class-admin-approval.php:355
-msgid "Unapproved"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:427, features/admin-approval/class-admin-approval.php:353
-msgid "Approved"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:767, ../pb-add-on-edit-profile-approved-by-admin/index.php:797
-msgid "Your profile has been reviewed by an administrator"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:789
-msgid "Approved fields:%s"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:793
-msgid "Unapproved fields:%s"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:816
-msgid "Field %1$s changed from %2$s to %3$s"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:824
-msgid "The user %1$s has updated their profile and some of the fields require admin approval:<br><br> %2$s"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:826
-msgid "Access this link to approve changes: %1$s"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:829
-msgid "A user has updated their profile. Some fields need approval"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:849
-msgid "Field %1$s requires approval from an administrator"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:924
-msgid "Show users that require review"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:926
-msgid "Show reviewed users with unapproved fields"
-msgstr ""
-
-#: ../pb-add-on-edit-profile-approved-by-admin/index.php:929
-msgid "Exit Review Mode"
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/index.php:128
-msgid "MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:102, ../pb-add-on-multi-step-forms/index.php:556
-msgid "Step"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:103
-msgid "Title for Tab"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:104
-msgid "Add Break Points to edit tabs title."
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:105
-msgid "Publish the form to edit tabs title."
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:106, ../pb-add-on-multi-step-forms/index.php:220
-msgid "Publish the form before adding Break Points!"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:107
-msgid "Request in process, please wait a few seconds before a new one!"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:148
-msgid "Multi-Step Forms"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:225
-msgid "To enable MSF you must add Break Points."
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:226, ../pb-add-on-multi-step-forms/index.php:201
-msgid "Pagination and Tabs:"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:227, ../pb-add-on-multi-step-forms/index.php:202
-msgid "Enable Pagination"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:228, ../pb-add-on-multi-step-forms/index.php:203
-msgid "Enable Tabs"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:228, ../pb-add-on-multi-step-forms/index.php:203
-msgid "Edit Tabs Title"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:192
-msgid "Multi-Step Forms options updated."
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:197
-msgid "Enable on:"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:198
-msgid "PB Default Register Form"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:199
-msgid "PB Default Edit Profile Form"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:200
-msgid "To enable it on Multiple Registration and Edit-Profile Forms you must add Break Points in each form page."
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:205
-msgid "Update Multi-Step"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:477
-msgid "Next"
-msgstr ""
-
-#: ../pb-add-on-multi-step-forms/index.php:478
-msgid "Previous"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:211, ../pb-add-on-social-connect/index.php:212, ../pb-add-on-social-connect/index.php:320, ../pb-add-on-social-connect/index.php:324, admin/add-ons.php:102
-msgid "Social Connect"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:231
-msgid "Display on the Following Forms"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:232
-msgid "Disable Registration on"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:232
-msgid "Allow only login with Social Connect on Profile Builder Login Form.<br>Social Connect will still automatically register users on other forms."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:233
-msgid "Facebook Login"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:234
-msgid "Facebook App ID"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:235
-msgid "Google Login"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:236
-msgid "Google Client ID"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:237
-msgid "Twitter Login"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:238
-msgid "Twitter API Key"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:239
-msgid "Twitter API Secret"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:240
-msgid "LinkedIn Login"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:241
-msgid "LinkedIn Client ID"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:242
-msgid "LinkedIn Client Secret"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:243
-msgid "Buttons Order"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:243
-msgid "Drag and drop the dots to re-order."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:244
-msgid "Buttons Re-Order"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:244
-msgid "Save the buttons order from the buttons order checkboxes"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:245
-msgid "Buttons Location"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:245
-msgid "Display social buttons before or after the forms fields."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:246
-msgid "Buttons Style"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:247
-msgid "Google Sign In Button"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:248
-msgid "Heading Before Buttons (Login/Register)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:248, ../pb-add-on-social-connect/index.php:249
-msgid "Empty field will remove the heading."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:249
-msgid "Heading Before Buttons (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:250
-msgid "Facebook Button Text (Login/Register)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:251
-msgid "Google Button Text (Login/Register)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:252
-msgid "Twitter Button Text (Login/Register)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:253
-msgid "LinkedIn Button Text (Login/Register)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:254
-msgid "Facebook Button Text (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:255
-msgid "Google Button Text (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:256
-msgid "Twitter Button Text (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:257
-msgid "LinkedIn Button Text (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:258
-msgid "Unlink Accounts (Edit Profile)"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:258
-msgid "This option will display linked social platforms to users accounts and will allow to easily unlink them in Edit Profile page."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:259
-msgid "Default Social Connect CSS in the Front-end"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:265, admin/admin-functions.php:211, admin/general-settings.php:112, admin/general-settings.php:112
-msgid "Settings"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:279
-msgid "Help"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:349
-msgid "Display Social Connect buttons:"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:398
-msgid "You have successfully unlinked %% from your account."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:410
-msgid "An account with this email address already exists.<br> Do you want to connect it?"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:413
-msgid "Please enter your website account password"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:414
-msgid "Please enter a new email"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:415
-msgid "You have successfully linked your account to %%."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:416, ../pb-add-on-social-connect/twitter/twitter.php:112
-msgid "Something went wrong. Please try again later!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:417
-msgid "Before you can access your account you need to confirm your email address. Please check your inbox and click the activation link."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:418
-msgid "<strong>ERROR</strong>: You need to confirm your email address before you can log in."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:419
-msgid "Before you can access your account an administrator has to approve it. You will be notified via email."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:420, features/admin-approval/admin-approval.php:196
-msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:421
-msgid "You will be redirected in 5 seconds. If not, click %%."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:422, features/functions.php:1363
-msgid "here"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:423
-msgid "<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:424
-msgid "Wrong password!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:425
-msgid "Please enter a valid email!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:426
-msgid "You can only login on this form.<br>Register with your social account on the register form."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:427
-msgid "Continue"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:428, ../pb-add-on-social-connect/index.php:447, ../pb-add-on-social-connect/index.php:462
-msgid "Ok"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:436
-msgid "To create a new account please confirm:"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:437
-msgid "You must agree to the Terms And Conditions to create a new account."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:445, ../pb-add-on-social-connect/index.php:446
-msgid "Please enter your Facebook email!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:459
-msgid "Waiting for Twitter..."
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:460, ../pb-add-on-social-connect/index.php:461
-msgid "Please enter your Twitter email!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:753
-msgid "Profile Builder not active!"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:902, admin/admin-functions.php:38, admin/general-settings.php:11
-msgid "General Settings"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:906
-msgid "Application Settings"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:910
-msgid "Appearance Settings"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:974
-msgid "Unlink"
-msgstr ""
-
-#: ../pb-add-on-social-connect/index.php:981
-msgid "Your account is linked with:"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:5, ../pb-add-on-woocommerce/shipping-fields.php:5
-msgid "Country"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:6, ../pb-add-on-woocommerce/shipping-fields.php:6, admin/manage-fields.php:334, add-ons/user-listing/userlisting.php:890, admin/advanced-settings/includes/views/view-fields.php:127
-msgid "First Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:7, ../pb-add-on-woocommerce/shipping-fields.php:7, admin/manage-fields.php:335, add-ons/user-listing/userlisting.php:893, admin/advanced-settings/includes/views/view-fields.php:133
-msgid "Last Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:8, ../pb-add-on-woocommerce/shipping-fields.php:8
-msgid "Company Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:9, ../pb-add-on-woocommerce/shipping-fields.php:9
-msgid "Address"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:11, ../pb-add-on-woocommerce/shipping-fields.php:11
-msgid "Town / City"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:12, ../pb-add-on-woocommerce/shipping-fields.php:12
-msgid "State / County"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:13, ../pb-add-on-woocommerce/shipping-fields.php:13
-msgid "Postcode / Zip"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:14
-msgid "Email Address"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:15
-msgid "Phone"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/billing-fields.php:281
-msgid "Ship to a different address?"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:870
-msgid "WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:167, ../pb-add-on-woocommerce/index.php:753
-msgid "Billing Address"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:167
-msgid "Displays customer billing fields in front-end. "
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:171, ../pb-add-on-woocommerce/index.php:754
-msgid "Shipping Address"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:171
-msgid "Displays customer shipping fields in front-end. "
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:263, ../pb-add-on-woocommerce/index.php:282, ../pb-add-on-woocommerce/index.php:382, ../pb-add-on-woocommerce/index.php:379, ../pb-add-on-woocommerce/index.php:809
-msgid "Address line 2"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:271
-msgid "Billing Fields"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:271
-msgid "Select which WooCommerce Billing fields to display to the user ( drag and drop to re-order ) and which should be required"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:272
-msgid "Billing Fields Order"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:272
-msgid "Save the billing fields order from the billing fields checkboxes"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:273
-msgid "Billing Fields Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:273
-msgid "Save the billing fields names"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:290
-msgid "Shipping Fields"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:290
-msgid "Select which WooCommerce Shipping fields to display to the user ( drag and drop to re-order ) and which should be required"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:291
-msgid "Shipping Fields Order"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:291
-msgid "Save the shipping fields order from the shipping fields checkboxes"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:292
-msgid "Shipping Fields Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:292
-msgid "Save the shipping fields names"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:320
-msgid "Field Name"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:321, admin/manage-fields.php:251
-msgid "Required"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:384
-msgid "Click to edit "
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:408, front-end/default-fields/email/email.php:69
-msgid "The email you entered is not a valid email address."
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:666
-msgid "No options available. Please select one country."
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:685, ../pb-add-on-woocommerce/index.php:710
-msgid "Billing "
-msgstr ""
-
-#: ../pb-add-on-woocommerce/index.php:693, ../pb-add-on-woocommerce/index.php:717
-msgid "Shipping "
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woo-checkout-field-support.php:83
-msgid "Display on WooCommerce Checkout"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woo-checkout-field-support.php:83
-msgid "Whether the field should be added to the WooCommerce checkout form or not"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:23, ../pb-add-on-woocommerce/woosync-page.php:23, ../pb-add-on-woocommerce/woosync-page.php:70, admin/add-ons.php:110
-msgid "WooCommerce Sync"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:76
-msgid "Choose Register form to display on My Account page:"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:81
-msgid "Default Register"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:104
-msgid "Select which Profile Builder Register form to display on My Account page from WooCommerce. <br/> This will also add the Profile Builder Login form to MyAccount page."
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:111
-msgid "Choose Edit Profile form to display on My Account page:"
-msgstr ""
-
-#: ../pb-add-on-woocommerce/woosync-page.php:139
-msgid "Select which Profile Builder Edit-profile form to display on My Account page from WooCommerce."
-msgstr ""
-
-#: index.php:260
+#: index.php:341
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:256
+#: index.php:337
 msgid "To enable updates, please enter your serial number on the <a href=\"%s\">Register Version</a> page. If you don't have a serial number, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>."
 msgstr ""
 
 #: index.php:41
 msgid "%s is also activated. You need to deactivate it before activating this version of the plugin."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:11, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:11, admin/add-ons.php:126
-msgid "MailChimp"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:35
-msgid "MailChimp Integration"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:60, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:67, ../pb-add-on-mailchimp-integration/admin/manage-fields.php:64, ../pb-add-on-mailchimp-integration/admin/manage-fields.php:60, ../pb-add-on-mailchimp-integration/admin/manage-fields.php:46, ../pb-add-on-mailchimp-integration/admin/manage-fields.php:42
-msgid "MailChimp List"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:61, ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:68
-msgid "Fields Count"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:82
-msgid "We couldn't find any lists"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:44
-msgid "Before you can make any changes you will need to add a MailChimp API key."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:94, assets/lib/class-mustache-templates/class-mustache-templates.php:255, assets/lib/wck-api/wordpress-creation-kit.php:343
-msgid "Save"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:119
-msgid "MailChimp API Key:"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:126
-msgid "Either the API key is not valid or we could not connect to MailChimp to validate it!"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:124
-msgid "The API key was successfully validated!"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:129
-msgid "Enter a MailChimp API key. You can create keys in your MailChimp account."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:157, assets/lib/wck-api/wordpress-creation-kit.php:548
-msgid "Edit this item"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:171, features/functions.php:1052, features/roles-editor/roles-editor.php:181, assets/lib/wck-api/wordpress-creation-kit.php:406
-msgid "Cancel"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:202
-msgid "Field Associations:"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:211
-msgid "This field is required in MailChimp"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:261
-msgid "Associate each MailChimp field with a Profile Builder field"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:295
-msgid "Group Associations:"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:334
-msgid "Associate each MailChimp group with a Profile Builder field"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:357
-msgid "Extra Options:"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:366, ../pb-add-on-mailchimp-integration/admin/widget.php:229
-msgid "Double Opt-In"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:367, ../pb-add-on-mailchimp-integration/admin/widget.php:230
-msgid "If you select double opt-in, the user will receive an email to confirm the subscription"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:382, ../pb-add-on-mailchimp-integration/admin/widget.php:241
-msgid "Enable GDPR"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:383, ../pb-add-on-mailchimp-integration/admin/widget.php:242
-msgid "If checked will enable GDPR on this list. <a href=\"%s\" target=\"_blank\">You must also enable GDPR on the list from mailchimp</a>"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:437, ../pb-add-on-mailchimp-integration/admin/manage-fields.php:46
-msgid "Something went wrong. Either the API key is invalid or we could not connect to MailChimp to validate the key."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:430
-msgid "MailChimp API key is invalid"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/mailchimp-page.php:428
-msgid "MailChimp API key is empty"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:52, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:38
-msgid "Select a list..."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:64
-msgid "We couldn't find any lists in your MailChimp settings."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:60
-msgid "Select in which MailChimp list you wish to add a new subscriber"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:61, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:48
-msgid "Checked by Default"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:61, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:48
-msgid "If checked the Subscribe checkbox in the front-end will be checked by default on register forms"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:62, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:49
-msgid "Hide on Edit Profile"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:62, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:49
-msgid "If checked this field will not be displayed on edit profile forms"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:42
-msgid "Please enter a MailChimp API key <a href=\"%s\">here</a>."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/manage-fields.php:84
-msgid ""
-"Please select at least one MailChimp list \n"
-""
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:14
-msgid "Profile Builder MailChimp Widget"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:15
-msgid "Adds a basic subscribe form so that your users can subscribe to your MailChimp lists"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:158
-msgid "Submit"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:98, ../pb-add-on-mailchimp-integration/admin/widget.php:93, ../pb-add-on-mailchimp-integration/admin/widget.php:91
-msgid "%s"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:68, ../pb-add-on-mailchimp-integration/admin/widget.php:250
-msgid "Something went wrong. Either the MailChimp API key is missing or it is invalid."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:185
-msgid "Subscribe to Newsletter"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:193
-msgid "Title"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:198
-msgid "Select the list your new subscriber will be added to"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:201
-msgid "Select..."
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:216
-msgid "Select which fields to show"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:225
-msgid "Extra Options"
-msgstr ""
-
-#: ../pb-add-on-mailchimp-integration/admin/widget.php:383
-msgid "Please select a list first"
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:43
-msgid "No list was found."
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:53, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:51, ../pb-add-on-mailpoet-integration/admin/manage-fields.php:47
-msgid "MailPoet List"
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:53
-msgid "Please install and activate MailPoet plugin."
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:51
-msgid "We couldn't find any lists in your MailPoet settings."
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:47
-msgid "Select in which MailPoet list you wish to add a new subscriber"
-msgstr ""
-
-#: ../pb-add-on-mailpoet-integration/admin/manage-fields.php:73
-msgid ""
-"Please select at least one MailPoet list \n"
-""
-msgstr ""
-
-#: ../pb-add-on-social-connect/facebook/facebook.php:38
-msgid "Sign in with Facebook"
-msgstr ""
-
-#: ../pb-add-on-social-connect/facebook/facebook.php:32
-msgid "Link with Facebook"
-msgstr ""
-
-#: ../pb-add-on-social-connect/google/google.php:38
-msgid "Sign in with Google"
-msgstr ""
-
-#: ../pb-add-on-social-connect/google/google.php:32
-msgid "Link with Google"
-msgstr ""
-
-#: ../pb-add-on-social-connect/linkedin/linkedin.php:46
-msgid "Sign in with LinkedIn"
-msgstr ""
-
-#: ../pb-add-on-social-connect/linkedin/linkedin.php:40
-msgid "Link with LinkedIn"
-msgstr ""
-
-#: ../pb-add-on-social-connect/twitter/twitter.php:58
-msgid "Error Receiving Request Token"
-msgstr ""
-
-#: ../pb-add-on-social-connect/twitter/twitter.php:53
-msgid "Connection with twitter Failed"
-msgstr ""
-
-#: ../pb-add-on-social-connect/twitter/twitter.php:151
-msgid "Sign in with Twitter"
-msgstr ""
-
-#: ../pb-add-on-social-connect/twitter/twitter.php:145
-msgid "Link with Twitter"
 msgstr ""
 
 #: admin/add-ons.php:16, admin/add-ons.php:16
@@ -1293,7 +45,7 @@ msgstr ""
 msgid "These Add-ons are available with the Pro and Unlimited license"
 msgstr ""
 
-#: admin/add-ons.php:45, admin/basic-info.php:178
+#: admin/add-ons.php:45, admin/basic-info.php:180
 msgid "Multiple Registration Forms"
 msgstr ""
 
@@ -1305,11 +57,11 @@ msgstr ""
 msgid "Multiple Edit Profile Forms"
 msgstr ""
 
-#: admin/add-ons.php:53, admin/basic-info.php:183
+#: admin/add-ons.php:53, admin/basic-info.php:185
 msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
 msgstr ""
 
-#: admin/add-ons.php:59, admin/basic-info.php:160, add-ons/user-listing/userlisting.php:11, add-ons/user-listing/userlisting.php:12, add-ons/user-listing/userlisting.php:17, add-ons/user-listing/userlisting.php:23, assets/misc/elementor/widgets/class-pb-widget-ul.php:56, assets/misc/elementor/widgets/class-pb-widget-ul.php:95
+#: admin/add-ons.php:59, admin/basic-info.php:162, add-ons/user-listing/userlisting.php:11, add-ons/user-listing/userlisting.php:12, add-ons/user-listing/userlisting.php:17, add-ons/user-listing/userlisting.php:23, assets/misc/elementor/widgets/class-pb-widget-ul.php:58, assets/misc/elementor/widgets/class-pb-widget-ul.php:97
 msgid "User Listing"
 msgstr ""
 
@@ -1317,7 +69,7 @@ msgstr ""
 msgid "Easy to edit templates for listing your users as well as creating single user pages."
 msgstr ""
 
-#: admin/add-ons.php:66, admin/basic-info.php:168, admin/general-settings.php:34
+#: admin/add-ons.php:66, admin/basic-info.php:170, admin/general-settings.php:36
 msgid "Email Customizer"
 msgstr ""
 
@@ -1325,7 +77,7 @@ msgstr ""
 msgid "Simple to use customization of the WordPress Registration Emails"
 msgstr ""
 
-#: admin/add-ons.php:73, admin/basic-info.php:172, add-ons/custom-redirects/custom_redirects_admin.php:33, add-ons/custom-redirects/custom_redirects_admin.php:34
+#: admin/add-ons.php:73, admin/basic-info.php:174, add-ons/custom-redirects/custom_redirects_admin.php:33, add-ons/custom-redirects/custom_redirects_admin.php:34
 msgid "Custom Redirects"
 msgstr ""
 
@@ -1333,12 +85,16 @@ msgstr ""
 msgid "Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login, lost password and registration forms."
 msgstr ""
 
-#: admin/add-ons.php:80, admin/basic-info.php:186
+#: admin/add-ons.php:80, admin/basic-info.php:188
 msgid "Repeater Fields"
 msgstr ""
 
 #: admin/add-ons.php:81
 msgid "The Repeater Field Module makes it really easy to add repeater front-end fields or groups of fields to your user profile. Integration with both the Email Customizer and User Listing modules, makes creating advanced user profiles possible."
+msgstr ""
+
+#: admin/add-ons.php:87, add-ons-advanced/buddypress/includes/buddypress-page.php:26, add-ons-advanced/buddypress/includes/buddypress-page.php:26
+msgid "BuddyPress"
 msgstr ""
 
 #: admin/add-ons.php:88
@@ -1350,11 +106,19 @@ msgid "Advanced Add-ons"
 msgstr ""
 
 #: admin/add-ons.php:97
-msgid "These Add-ons are available with the Hobbyist, Pro and Unlimited license"
+msgid "These Add-ons are available with the Basic, Pro and Unlimited license"
+msgstr ""
+
+#: admin/add-ons.php:102, add-ons-advanced/social-connect/index.php:206, add-ons-advanced/social-connect/index.php:207, add-ons-advanced/social-connect/index.php:315, add-ons-advanced/social-connect/index.php:319
+msgid "Social Connect"
 msgstr ""
 
 #: admin/add-ons.php:103
 msgid "Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google+ or Twitter."
+msgstr ""
+
+#: admin/add-ons.php:110, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:70
+msgid "WooCommerce Sync"
 msgstr ""
 
 #: admin/add-ons.php:111
@@ -1369,15 +133,23 @@ msgstr ""
 msgid "Extends the functionality of Profile Builder by adding the possibility of having multi-page registration and edit-profile forms."
 msgstr ""
 
+#: admin/add-ons.php:126, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11
+msgid "MailChimp"
+msgstr ""
+
 #: admin/add-ons.php:127
 msgid "Easily associate MailChimp list fields with Profile Builder fields and set advanced settings for each list."
+msgstr ""
+
+#: admin/add-ons.php:134, add-ons-advanced/bbpress/bbpress-page.php:24, add-ons-advanced/bbpress/bbpress-page.php:24
+msgid "bbPress"
 msgstr ""
 
 #: admin/add-ons.php:135
 msgid "This add-on allows you to integrate Profile Builder with the popular forums plugin, bbPress."
 msgstr ""
 
-#: admin/add-ons.php:142
+#: admin/add-ons.php:142, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/manage-fields.php:46
 msgid "Campaign Monitor"
 msgstr ""
 
@@ -1425,7 +197,7 @@ msgstr ""
 msgid "These Add-ons are available in all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:189
+#: admin/add-ons.php:189, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:48
 msgid "Import and Export"
 msgstr ""
 
@@ -1441,7 +213,7 @@ msgstr ""
 msgid "This add-on extends the functionality of Profile Builder by allowing you to add custom css classes for fields."
 msgstr ""
 
-#: admin/add-ons.php:205
+#: admin/add-ons.php:205, add-ons-free/maximum-character-length/maximum-character-length.php:28
 msgid "Maximum Character Length"
 msgstr ""
 
@@ -1449,7 +221,7 @@ msgstr ""
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:221
+#: admin/add-ons.php:221, add-ons-free/labels-edit/labels-edit.php:196, add-ons-free/labels-edit/labels-edit.php:197
 msgid "Labels Edit"
 msgstr ""
 
@@ -1513,7 +285,7 @@ msgstr ""
 msgid "WordPress Passwordless Login is a plugin that allows your users to login without a password."
 msgstr ""
 
-#: admin/add-ons.php:401
+#: admin/add-ons.php:419
 msgid "%1$sAdd-ons settings saved successfully%2$s"
 msgstr ""
 
@@ -1533,11 +305,11 @@ msgstr ""
 msgid "User-Role"
 msgstr ""
 
-#: admin/admin-bar.php:64
+#: admin/admin-bar.php:64, add-ons-advanced/field-visibility/index.php:167
 msgid "Visibility"
 msgstr ""
 
-#: admin/admin-bar.php:79, admin/manage-fields.php:36, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:230, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:98
+#: admin/admin-bar.php:79, admin/manage-fields.php:36, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:230, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:101
 msgid "Default"
 msgstr ""
 
@@ -1549,12 +321,16 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: admin/admin-bar.php:92, admin/general-settings.php:346, admin/private-website.php:162, admin/register-version.php:96, features/functions.php:1045, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
+#: admin/admin-bar.php:92, admin/general-settings.php:348, admin/private-website.php:162, admin/register-version.php:95, features/functions.php:1045, add-ons-advanced/woocommerce/woosync-page.php:149, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
 msgid "Save Changes"
 msgstr ""
 
 #: admin/admin-functions.php:38
 msgid "Login is set to be done using the Email. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
+msgstr ""
+
+#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:901
+msgid "General Settings"
 msgstr ""
 
 #: admin/admin-functions.php:42
@@ -1565,59 +341,63 @@ msgstr ""
 msgid "Blog Details - only appears on the Registration page!"
 msgstr ""
 
-#: admin/admin-functions.php:133
+#: admin/admin-functions.php:134
 msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:332
+#: admin/admin-functions.php:139, admin/general-settings.php:334
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:333, features/functions.php:788, features/functions.php:812
+#: admin/admin-functions.php:139, admin/general-settings.php:335, features/functions.php:788, features/functions.php:812
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:334, features/functions.php:788, features/functions.php:812
+#: admin/admin-functions.php:139, admin/general-settings.php:336, features/functions.php:788, features/functions.php:812
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:138, admin/general-settings.php:335, features/functions.php:788, features/functions.php:812
+#: admin/admin-functions.php:139, admin/general-settings.php:337, features/functions.php:788, features/functions.php:812
 msgid "Strong"
 msgstr ""
 
-#: admin/admin-functions.php:149
+#: admin/admin-functions.php:150
 msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
 msgstr ""
 
-#: admin/admin-functions.php:190
+#: admin/admin-functions.php:191
 msgid "Save Settings"
 msgstr ""
 
-#: admin/admin-functions.php:188
+#: admin/admin-functions.php:189
 msgid "Add Field"
 msgstr ""
 
-#: admin/admin-functions.php:225
+#: admin/admin-functions.php:212, admin/general-settings.php:114, admin/general-settings.php:114, add-ons-advanced/social-connect/index.php:260
+msgid "Settings"
+msgstr ""
+
+#: admin/admin-functions.php:226
 msgid "View Profile Builder documentation"
 msgstr ""
 
-#: admin/admin-functions.php:225
+#: admin/admin-functions.php:226
 msgid "Docs"
 msgstr ""
 
-#: admin/admin-functions.php:244
+#: admin/admin-functions.php:245
 msgid "All the free add-ons have been migrated to the main plugin. Their old individual plugins have been disabled and you can delete them from your site if you were using them: <ul><li>Profile Builder - Custom CSS Classes on fields</li><li>Profile Builder - Customization Toolbox Add-On</li><li>Profile Builder - Email Confirmation Field</li><li>Profile Builder - GDPR Communication Preferences</li><li>Profile Builder - Import and Export Add-On</li><li>Profile Builder - Labels Edit Add-On</li><li>Profile Builder - Maximum Character Length Add-On</li><li>Profile Builder - Multiple Admin E-mails Add-On</li><li>Profile Builder - Placeholder Labels Add-On</li></ul>"
 msgstr ""
 
-#: admin/admin-functions.php:246, admin/admin-functions.php:258
+#: admin/admin-functions.php:247, admin/admin-functions.php:259
 msgid "See details"
 msgstr ""
 
-#: admin/admin-functions.php:247, admin/admin-functions.php:259, admin/review.php:94
+#: admin/admin-functions.php:248, admin/admin-functions.php:260, admin/review.php:94
 msgid "Dismiss this notice."
 msgstr ""
 
-#: admin/admin-functions.php:256
+#: admin/admin-functions.php:257
 msgid "You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab."
 msgstr ""
 
@@ -1625,267 +405,267 @@ msgstr ""
 msgid "Basic Information"
 msgstr ""
 
-#: admin/basic-info.php:30
+#: admin/basic-info.php:32
 msgid "Version %s"
 msgstr ""
 
-#: admin/basic-info.php:31
+#: admin/basic-info.php:33
 msgid "<strong>Profile Builder </strong> %s"
 msgstr ""
 
-#: admin/basic-info.php:32
+#: admin/basic-info.php:34
 msgid "The best way to add front-end registration, edit profile and login forms."
 msgstr ""
 
-#: admin/basic-info.php:45
+#: admin/basic-info.php:47
 msgid "You can see all the pages with Profile Builder form shortcodes here:"
 msgstr ""
 
-#: admin/basic-info.php:46
+#: admin/basic-info.php:48
 msgid "View Form Pages"
 msgstr ""
 
-#: admin/basic-info.php:40
+#: admin/basic-info.php:42
 msgid "Speed up the setup process by automatically creating the form pages:"
 msgstr ""
 
-#: admin/basic-info.php:41
+#: admin/basic-info.php:43
 msgid "Create Form Pages"
 msgstr ""
 
-#: admin/basic-info.php:52
+#: admin/basic-info.php:54
 msgid "Login Form"
 msgstr ""
 
-#: admin/basic-info.php:53
+#: admin/basic-info.php:55
 msgid "Friction-less login using %s shortcode or a widget."
 msgstr ""
 
-#: admin/basic-info.php:56, add-ons/multiple-forms/register-forms.php:11, add-ons/multiple-forms/register-forms.php:12
+#: admin/basic-info.php:58, add-ons/multiple-forms/register-forms.php:11, add-ons/multiple-forms/register-forms.php:12
 msgid "Registration Form"
 msgstr ""
 
-#: admin/basic-info.php:57
+#: admin/basic-info.php:59
 msgid "Beautiful registration forms fully customizable using the %s shortcode."
 msgstr ""
 
-#: admin/basic-info.php:60
+#: admin/basic-info.php:62
 msgid "Edit Profile Form"
 msgstr ""
 
-#: admin/basic-info.php:61
+#: admin/basic-info.php:63
 msgid "Straight forward edit profile forms using %s shortcode."
 msgstr ""
 
-#: admin/basic-info.php:67
+#: admin/basic-info.php:69
 msgid "Extra Features"
 msgstr ""
 
-#: admin/basic-info.php:68
+#: admin/basic-info.php:70
 msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
 msgstr ""
 
-#: admin/basic-info.php:69
+#: admin/basic-info.php:71
 msgid "Enable extra features"
 msgstr ""
 
-#: admin/basic-info.php:73, assets/misc/elementor/widgets/class-pb-widget-l.php:63, assets/misc/elementor/widgets/class-pb-widget-rp.php:26
+#: admin/basic-info.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:63, assets/misc/elementor/widgets/class-pb-widget-rp.php:26
 msgid "Recover Password"
 msgstr ""
 
-#: admin/basic-info.php:74
+#: admin/basic-info.php:76
 msgid "Allow users to recover their password in the front-end using the %s."
 msgstr ""
 
-#: admin/basic-info.php:77
+#: admin/basic-info.php:79
 msgid "Admin Approval (*)"
 msgstr ""
 
-#: admin/basic-info.php:78
+#: admin/basic-info.php:80
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
 msgstr ""
 
-#: admin/basic-info.php:81
+#: admin/basic-info.php:83
 msgid "Email Confirmation"
 msgstr ""
 
-#: admin/basic-info.php:82
+#: admin/basic-info.php:84
 msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
 msgstr ""
 
-#: admin/basic-info.php:85, admin/general-settings.php:13, features/content-restriction/content-restriction.php:27, features/content-restriction/content-restriction.php:27
+#: admin/basic-info.php:87, admin/general-settings.php:13, features/content-restriction/content-restriction.php:27, features/content-restriction/content-restriction.php:27
 msgid "Content Restriction"
 msgstr ""
 
-#: admin/basic-info.php:86
+#: admin/basic-info.php:88
 msgid "Restrict users from accessing certain pages, posts or custom post types based on user role or logged-in status."
 msgstr ""
 
-#: admin/basic-info.php:89
+#: admin/basic-info.php:91
 msgid "Minimum Password Length and Strength Meter"
 msgstr ""
 
-#: admin/basic-info.php:90
+#: admin/basic-info.php:92
 msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
 msgstr ""
 
-#: admin/basic-info.php:93
+#: admin/basic-info.php:95
 msgid "Login with Email or Username"
 msgstr ""
 
-#: admin/basic-info.php:94
+#: admin/basic-info.php:96
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:97, features/roles-editor/roles-editor.php:245, features/roles-editor/roles-editor.php:246, features/roles-editor/roles-editor.php:251, features/roles-editor/roles-editor.php:258
+#: admin/basic-info.php:99, features/roles-editor/roles-editor.php:245, features/roles-editor/roles-editor.php:246, features/roles-editor/roles-editor.php:251, features/roles-editor/roles-editor.php:258
 msgid "Roles Editor"
 msgstr ""
 
-#: admin/basic-info.php:98
+#: admin/basic-info.php:100
 msgid "Add, remove, clone and edit roles and also capabilities for these roles."
 msgstr ""
 
-#: admin/basic-info.php:111
+#: admin/basic-info.php:113
 msgid "Customize Your Forms The Way You Want (*)"
 msgstr ""
 
-#: admin/basic-info.php:112
+#: admin/basic-info.php:114
 msgid "With Extra Profile Fields you can create the exact registration form your project needs."
 msgstr ""
 
-#: admin/basic-info.php:116
+#: admin/basic-info.php:118
 msgid "Get started with extra fields"
 msgstr ""
 
-#: admin/basic-info.php:114
+#: admin/basic-info.php:116
 msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
 msgstr ""
 
-#: admin/basic-info.php:119
+#: admin/basic-info.php:121
 msgid "Avatar Upload"
 msgstr ""
 
-#: admin/basic-info.php:120
+#: admin/basic-info.php:122
 msgid "Generic Uploads"
 msgstr ""
 
-#: admin/basic-info.php:121
+#: admin/basic-info.php:123
 msgid "Agree To Terms Checkbox"
 msgstr ""
 
-#: admin/basic-info.php:122
+#: admin/basic-info.php:124
 msgid "Datepicker"
 msgstr ""
 
-#: admin/basic-info.php:123
+#: admin/basic-info.php:125
 msgid "Timepicker"
 msgstr ""
 
-#: admin/basic-info.php:124
+#: admin/basic-info.php:126
 msgid "Colorpicker"
 msgstr ""
 
-#: admin/basic-info.php:125
+#: admin/basic-info.php:127
 msgid "reCAPTCHA"
 msgstr ""
 
-#: admin/basic-info.php:126
+#: admin/basic-info.php:128
 msgid "Country Select"
 msgstr ""
 
-#: admin/basic-info.php:127
+#: admin/basic-info.php:129
 msgid "Currency Select"
 msgstr ""
 
-#: admin/basic-info.php:128
+#: admin/basic-info.php:130
 msgid "Timezone Select"
 msgstr ""
 
-#: admin/basic-info.php:132
+#: admin/basic-info.php:134
 msgid "Input / Hidden Input"
 msgstr ""
 
-#: admin/basic-info.php:133
+#: admin/basic-info.php:135
 msgid "Number"
 msgstr ""
 
-#: admin/basic-info.php:134
+#: admin/basic-info.php:136
 msgid "Checkbox"
 msgstr ""
 
-#: admin/basic-info.php:135
+#: admin/basic-info.php:137
 msgid "Select"
 msgstr ""
 
-#: admin/basic-info.php:136
+#: admin/basic-info.php:138
 msgid "Radio Buttons"
 msgstr ""
 
-#: admin/basic-info.php:137
+#: admin/basic-info.php:139
 msgid "Textarea"
 msgstr ""
 
-#: admin/basic-info.php:138
+#: admin/basic-info.php:140
 msgid "Validation"
 msgstr ""
 
-#: admin/basic-info.php:139
+#: admin/basic-info.php:141
 msgid "Map"
 msgstr ""
 
-#: admin/basic-info.php:140
+#: admin/basic-info.php:142
 msgid "HTML"
 msgstr ""
 
-#: admin/basic-info.php:149
+#: admin/basic-info.php:151
 msgid "Powerful Add-ons (**)"
 msgstr ""
 
-#: admin/basic-info.php:150
+#: admin/basic-info.php:152
 msgid "Everything you will need to manage your users is probably already available using the Pro Add-ons."
 msgstr ""
 
-#: admin/basic-info.php:152
+#: admin/basic-info.php:154
 msgid "Enable your add-ons"
 msgstr ""
 
-#: admin/basic-info.php:155
+#: admin/basic-info.php:157
 msgid "Find out more about PRO Modules"
 msgstr ""
 
-#: admin/basic-info.php:164
+#: admin/basic-info.php:166
 msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: %s."
 msgstr ""
 
-#: admin/basic-info.php:162
+#: admin/basic-info.php:164
 msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
 msgstr ""
 
-#: admin/basic-info.php:169
+#: admin/basic-info.php:171
 msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
 msgstr ""
 
-#: admin/basic-info.php:173
+#: admin/basic-info.php:175
 msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
 msgstr ""
 
-#: admin/basic-info.php:179
+#: admin/basic-info.php:181
 msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
 msgstr ""
 
-#: admin/basic-info.php:182
+#: admin/basic-info.php:184
 msgid "Multiple Edit-profile Forms"
 msgstr ""
 
-#: admin/basic-info.php:187
+#: admin/basic-info.php:189
 msgid "Set up a repeating group of fields on register and edit profile forms. Limit the number of repeated groups for each user role."
 msgstr ""
 
-#: admin/basic-info.php:223
+#: admin/basic-info.php:225
 msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
 msgstr ""
 
-#: admin/basic-info.php:224
+#: admin/basic-info.php:226
 msgid "** only available in the %1$sPro version%2$s."
 msgstr ""
 
@@ -1969,147 +749,155 @@ msgstr ""
 msgid "Fields"
 msgstr ""
 
-#: admin/general-settings.php:22, admin/advanced-settings/advanced-settings.php:21
+#: admin/general-settings.php:23, admin/advanced-settings/advanced-settings.php:21
 msgid "Userlisting"
 msgstr ""
 
-#: admin/general-settings.php:23, admin/advanced-settings/advanced-settings.php:22
+#: admin/general-settings.php:25, admin/advanced-settings/advanced-settings.php:22
 msgid "Shortcodes"
 msgstr ""
 
-#: admin/general-settings.php:24, admin/advanced-settings/advanced-settings.php:23
+#: admin/general-settings.php:26, admin/advanced-settings/advanced-settings.php:23
 msgid "Admin"
 msgstr ""
 
-#: admin/general-settings.php:28, features/two-factor-authentication/class-two-factor-authentication.php:78, features/two-factor-authentication/class-two-factor-authentication.php:78, features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:176, features/two-factor-authentication/class-two-factor-authentication.php:229
+#: admin/general-settings.php:30, features/two-factor-authentication/class-two-factor-authentication.php:78, features/two-factor-authentication/class-two-factor-authentication.php:78, features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:176, features/two-factor-authentication/class-two-factor-authentication.php:229
 msgid "Two-Factor Authentication"
 msgstr ""
 
-#: admin/general-settings.php:35
+#: admin/general-settings.php:37
 msgid "User Emails"
 msgstr ""
 
-#: admin/general-settings.php:36
+#: admin/general-settings.php:38
 msgid "Administrator Emails"
 msgstr ""
 
-#: admin/general-settings.php:133
+#: admin/general-settings.php:135
 msgid "Profile Builder Settings"
 msgstr ""
 
-#: admin/general-settings.php:146
+#: admin/general-settings.php:148
 msgid "Load Profile Builder's own CSS file in the front-end:"
 msgstr ""
 
-#: admin/general-settings.php:151
+#: admin/general-settings.php:151, admin/general-settings.php:164, admin/general-settings.php:179, admin/general-settings.php:228, admin/general-settings.php:275, admin/manage-fields.php:193, admin/private-website.php:70, admin/private-website.php:137, admin/private-website.php:150, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2573, add-ons-advanced/bbpress/bbpress-page.php:157, add-ons-advanced/social-connect/index.php:347, add-ons-advanced/social-connect/index.php:406, features/content-restriction/content-restriction.php:89, features/two-factor-authentication/class-two-factor-authentication.php:125, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:181, admin/advanced-settings/includes/views/view-fields.php:197, admin/advanced-settings/includes/views/view-fields.php:217, admin/advanced-settings/includes/views/view-fields.php:240, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-fields.php:277, admin/advanced-settings/includes/views/view-fields.php:295, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:75, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:182, assets/misc/elementor/widgets/class-pb-widget-ul.php:109
+msgid "Yes"
+msgstr ""
+
+#: admin/general-settings.php:153
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:158
+#: admin/general-settings.php:160
 msgid "Automatically Log In:"
 msgstr ""
 
-#: admin/general-settings.php:166
+#: admin/general-settings.php:165, admin/general-settings.php:180, admin/general-settings.php:229, admin/general-settings.php:274, admin/private-website.php:69, admin/private-website.php:136, admin/private-website.php:151, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons-advanced/bbpress/bbpress-page.php:156, add-ons-advanced/social-connect/index.php:348, add-ons-advanced/social-connect/index.php:407, features/content-restriction/content-restriction.php:88, features/two-factor-authentication/class-two-factor-authentication.php:124, admin/advanced-settings/includes/forms/placeholder-labels.php:136, assets/misc/elementor/widgets/class-pb-widget-l.php:76, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:183, assets/misc/elementor/widgets/class-pb-widget-ul.php:110
+msgid "No"
+msgstr ""
+
+#: admin/general-settings.php:168
 msgid "Select \"Yes\" to automatically log in new users after successful registration."
 msgstr ""
 
-#: admin/general-settings.php:173
+#: admin/general-settings.php:175
 msgid "\"Email Confirmation\" Activated:"
 msgstr ""
 
-#: admin/general-settings.php:181
+#: admin/general-settings.php:183
 msgid "This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" module."
 msgstr ""
 
-#: admin/general-settings.php:183
+#: admin/general-settings.php:185
 msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
 msgstr ""
 
-#: admin/general-settings.php:191
+#: admin/general-settings.php:193
 msgid "\"Email Confirmation\" Landing Page:"
 msgstr ""
 
-#: admin/general-settings.php:196
+#: admin/general-settings.php:198
 msgid "Existing Pages"
 msgstr ""
 
-#: admin/general-settings.php:211
+#: admin/general-settings.php:213
 msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
 msgstr ""
 
-#: admin/general-settings.php:222
+#: admin/general-settings.php:224
 msgid "\"Admin Approval\" Activated:"
 msgstr ""
 
-#: admin/general-settings.php:230
+#: admin/general-settings.php:232
 msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
 msgstr ""
 
-#: admin/general-settings.php:237
+#: admin/general-settings.php:239
 msgid "\"Admin Approval\" on User Role:"
 msgstr ""
 
-#: admin/general-settings.php:256
+#: admin/general-settings.php:258
 msgid "Select on what user roles to activate Admin Approval."
 msgstr ""
 
-#: admin/general-settings.php:268
+#: admin/general-settings.php:270
 msgid "\"Roles Editor\" Activated:"
 msgstr ""
 
-#: admin/general-settings.php:276
+#: admin/general-settings.php:278
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:287
+#: admin/general-settings.php:289
 msgid "\"Admin Approval\" Feature:"
 msgstr ""
 
-#: admin/general-settings.php:290
+#: admin/general-settings.php:292
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
 msgstr ""
 
-#: admin/general-settings.php:297
+#: admin/general-settings.php:299
 msgid "Allow Users to Log in With:"
 msgstr ""
 
-#: admin/general-settings.php:301
+#: admin/general-settings.php:303
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:302, admin/manage-fields.php:333, front-end/login.php:339, front-end/login.php:353, front-end/login.php:537, add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2526, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
+#: admin/general-settings.php:304, admin/manage-fields.php:333, front-end/login.php:339, front-end/login.php:353, front-end/login.php:537, add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2526, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:303, front-end/login.php:534, front-end/recover.php:118, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:884, add-ons/user-listing/userlisting.php:2527, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
+#: admin/general-settings.php:305, front-end/login.php:534, front-end/recover.php:118, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:884, add-ons/user-listing/userlisting.php:2527, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
 msgid "Email"
 msgstr ""
 
-#: admin/general-settings.php:306
+#: admin/general-settings.php:308
 msgid "\"Username and Email\" - users can Log In with either their Username or their Email."
 msgstr ""
 
-#: admin/general-settings.php:307
+#: admin/general-settings.php:309
 msgid "\"Username\" - users can only Log In with their Username. Both the Username and Email fields will be shown in the front-end forms."
 msgstr ""
 
-#: admin/general-settings.php:308
+#: admin/general-settings.php:310
 msgid "\"Email\" - users can only Log In with their Email. The Username field will be hidden in the front-end forms and Usernames will be automatically generated based on the Emails."
 msgstr ""
 
-#: admin/general-settings.php:315
+#: admin/general-settings.php:317
 msgid "Minimum Password Length:"
 msgstr ""
 
-#: admin/general-settings.php:320
+#: admin/general-settings.php:322
 msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
 msgstr ""
 
-#: admin/general-settings.php:327
+#: admin/general-settings.php:329
 msgid "Minimum Password Strength:"
 msgstr ""
 
-#: admin/general-settings.php:331
+#: admin/general-settings.php:333
 msgid "Disabled"
 msgstr ""
 
@@ -2161,7 +949,7 @@ msgstr ""
 msgid "Meta-name"
 msgstr ""
 
-#: admin/manage-fields.php:189, add-ons/custom-redirects/custom_redirects_admin.php:69, add-ons/custom-redirects/custom_redirects_admin.php:99, add-ons/custom-redirects/custom_redirects_admin.php:118, add-ons/custom-redirects/custom_redirects_admin.php:143, add-ons/multiple-forms/edit-profile-forms.php:246, add-ons/multiple-forms/register-forms.php:267, add-ons/user-listing/userlisting.php:923, assets/misc/elementor/widgets/class-pb-widget-ul.php:170
+#: admin/manage-fields.php:189, add-ons/custom-redirects/custom_redirects_admin.php:69, add-ons/custom-redirects/custom_redirects_admin.php:99, add-ons/custom-redirects/custom_redirects_admin.php:118, add-ons/custom-redirects/custom_redirects_admin.php:143, add-ons/multiple-forms/edit-profile-forms.php:246, add-ons/multiple-forms/register-forms.php:267, add-ons/user-listing/userlisting.php:923, assets/misc/elementor/widgets/class-pb-widget-ul.php:172
 msgid "ID"
 msgstr ""
 
@@ -2241,7 +1029,7 @@ msgstr ""
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: admin/manage-fields.php:199
+#: admin/manage-fields.php:199, add-ons-free/labels-edit/labels-edit.php:373
 msgid "Labels"
 msgstr ""
 
@@ -2529,6 +1317,10 @@ msgstr ""
 msgid "Leave it empty for no restriction"
 msgstr ""
 
+#: admin/manage-fields.php:251, add-ons-advanced/woocommerce/index.php:261
+msgid "Required"
+msgstr ""
+
 #: admin/manage-fields.php:251
 msgid "Whether the field is required or not"
 msgstr ""
@@ -2597,8 +1389,20 @@ msgstr ""
 msgid "Registration & Edit Profile Forms"
 msgstr ""
 
+#: admin/manage-fields.php:332, add-ons-advanced/buddypress/buddypress-activator.php:48, add-ons-advanced/buddypress/index.php:481, add-ons-advanced/campaign-monitor/admin/widget.php:226, add-ons-advanced/campaign-monitor/admin/widget.php:228
+msgid "Name"
+msgstr ""
+
 #: admin/manage-fields.php:333
 msgid "Usernames cannot be changed."
+msgstr ""
+
+#: admin/manage-fields.php:334, add-ons/user-listing/userlisting.php:890, add-ons-advanced/woocommerce/billing-fields.php:6, add-ons-advanced/woocommerce/shipping-fields.php:6, admin/advanced-settings/includes/views/view-fields.php:127
+msgid "First Name"
+msgstr ""
+
+#: admin/manage-fields.php:335, add-ons/user-listing/userlisting.php:893, add-ons-advanced/woocommerce/billing-fields.php:7, add-ons-advanced/woocommerce/shipping-fields.php:7, admin/advanced-settings/includes/views/view-fields.php:133
+msgid "Last Name"
 msgstr ""
 
 #: admin/manage-fields.php:336, add-ons/user-listing/userlisting.php:917, add-ons/user-listing/userlisting.php:2535
@@ -2607,6 +1411,10 @@ msgstr ""
 
 #: admin/manage-fields.php:337
 msgid "Display name publicly as"
+msgstr ""
+
+#: admin/manage-fields.php:338, add-ons-advanced/buddypress/buddypress-activator.php:71, add-ons-advanced/buddypress/index.php:504
+msgid "Contact Info"
 msgstr ""
 
 #: admin/manage-fields.php:339
@@ -2627,6 +1435,10 @@ msgstr ""
 
 #: admin/manage-fields.php:346
 msgid "Jabber / Google Talk"
+msgstr ""
+
+#: admin/manage-fields.php:349, add-ons-advanced/buddypress/buddypress-activator.php:78, add-ons-advanced/buddypress/index.php:511
+msgid "About Yourself"
 msgstr ""
 
 #: admin/manage-fields.php:350, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:902, add-ons/user-listing/userlisting.php:2530
@@ -4241,11 +3053,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons/multiple-forms/multiple-forms.php:411, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:872, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
+#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:373, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:872, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:180, features/roles-editor/roles-editor.php:910, features/roles-editor/roles-editor.php:899, features/roles-editor/roles-editor.php:890, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:180, features/roles-editor/roles-editor.php:910, features/roles-editor/roles-editor.php:899, features/roles-editor/roles-editor.php:890, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -4253,15 +3065,15 @@ msgstr ""
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr ""
 
-#: admin/manage-fields.php:1388
+#: admin/manage-fields.php:1390
 msgid "With Profile Builder Pro you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms add-on."
 msgstr ""
 
-#: admin/manage-fields.php:1386
+#: admin/manage-fields.php:1388
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1487
+#: admin/manage-fields.php:1489
 msgid "Search Location"
 msgstr ""
 
@@ -4445,79 +3257,79 @@ msgstr ""
 msgid "Disable the WordPress REST-API for non-logged in users when Private Website is enabled"
 msgstr ""
 
-#: admin/register-version.php:23, admin/register-version.php:23
+#: admin/register-version.php:20, admin/register-version.php:20
 msgid "Profile Builder Register"
 msgstr ""
 
-#: admin/register-version.php:15
+#: admin/register-version.php:14
 msgid "Register Your Version"
 msgstr ""
 
-#: admin/register-version.php:15
+#: admin/register-version.php:14
 msgid "Register Version"
 msgstr ""
 
-#: admin/register-version.php:62
+#: admin/register-version.php:61
 msgid "Register your version of %s"
 msgstr ""
 
-#: admin/register-version.php:70
+#: admin/register-version.php:69
 msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
 msgstr ""
 
-#: admin/register-version.php:71
+#: admin/register-version.php:70
 msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
 msgstr ""
 
-#: admin/register-version.php:73
+#: admin/register-version.php:72
 msgid " Serial Number:"
 msgstr ""
 
-#: admin/register-version.php:86
+#: admin/register-version.php:85
 msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
 msgstr ""
 
-#: admin/register-version.php:84
+#: admin/register-version.php:83
 msgid "The serial number couldn't be validated because it expired!"
 msgstr ""
 
-#: admin/register-version.php:84
+#: admin/register-version.php:83
 msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
 msgstr ""
 
-#: admin/register-version.php:82
+#: admin/register-version.php:81
 msgid "The serial number is about to expire soon!"
 msgstr ""
 
-#: admin/register-version.php:82
+#: admin/register-version.php:81
 msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
 msgstr ""
 
-#: admin/register-version.php:80
+#: admin/register-version.php:79
 msgid "The serial number entered couldn't be validated!"
 msgstr ""
 
-#: admin/register-version.php:78
+#: admin/register-version.php:77
 msgid "The serial number was successfully validated!"
 msgstr ""
 
-#: admin/register-version.php:88
+#: admin/register-version.php:87
 msgid "(e.g. CLPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr ""
 
-#: admin/register-version.php:276
+#: admin/register-version.php:281
 msgid "Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s"
 msgstr ""
 
-#: admin/register-version.php:269
+#: admin/register-version.php:274
 msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s"
 msgstr ""
 
-#: admin/register-version.php:267
+#: admin/register-version.php:272
 msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s"
 msgstr ""
 
-#: admin/register-version.php:261
+#: admin/register-version.php:266
 msgid "Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s"
 msgstr ""
 
@@ -4585,6 +3397,10 @@ msgstr ""
 msgid "Incorrect phone number"
 msgstr ""
 
+#: features/functions.php:1052, features/roles-editor/roles-editor.php:181, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:171, assets/lib/wck-api/wordpress-creation-kit.php:406
+msgid "Cancel"
+msgstr ""
+
 #: features/functions.php:1073, assets/lib/wck-api/wordpress-creation-kit.php:447
 msgid "Content"
 msgstr ""
@@ -4597,23 +3413,27 @@ msgstr ""
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1364
+#: features/functions.php:1365, add-ons-advanced/social-connect/index.php:417
+msgid "here"
+msgstr ""
+
+#: features/functions.php:1366
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1540
+#: features/functions.php:1542
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1581
+#: features/functions.php:1583
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1618
+#: features/functions.php:1620
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1636, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1638, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -4631,6 +3451,10 @@ msgstr ""
 
 #: front-end/class-formbuilder.php:187
 msgid "Log out of this account."
+msgstr ""
+
+#: front-end/class-formbuilder.php:187, add-ons-advanced/custom-profile-menus/index.php:61, add-ons-advanced/custom-profile-menus/index.php:62, add-ons-advanced/custom-profile-menus/index.php:183, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:16
+msgid "Logout"
 msgstr ""
 
 #: front-end/class-formbuilder.php:167
@@ -4681,23 +3505,27 @@ msgstr ""
 msgid "Add User"
 msgstr ""
 
+#: front-end/class-formbuilder.php:464, front-end/login.php:583, add-ons-advanced/custom-profile-menus/index.php:303, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:75, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+msgid "Register"
+msgstr ""
+
 #: front-end/class-formbuilder.php:549
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:784
+#: front-end/class-formbuilder.php:789
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:766
+#: front-end/class-formbuilder.php:771
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:768
+#: front-end/class-formbuilder.php:773
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:810
+#: front-end/class-formbuilder.php:815
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -4726,7 +3554,7 @@ msgstr ""
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:318, front-end/login.php:410, front-end/login.php:448, front-end/recover.php:18, front-end/recover.php:324, features/two-factor-authentication/class-two-factor-authentication.php:574, front-end/extra-fields/extra-fields.php:95
+#: front-end/login.php:318, front-end/login.php:410, front-end/login.php:448, front-end/recover.php:18, front-end/recover.php:324, features/two-factor-authentication/class-two-factor-authentication.php:574, front-end/extra-fields/extra-fields.php:97
 msgid "ERROR"
 msgstr ""
 
@@ -5146,7 +3974,7 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons/email-customizer/admin-email-customizer.php:80, add-ons/email-customizer/admin-email-customizer.php:111, add-ons/email-customizer/admin-email-customizer.php:142, add-ons/email-customizer/admin-email-customizer.php:182, add-ons/email-customizer/user-email-customizer.php:83, add-ons/email-customizer/user-email-customizer.php:114, add-ons/email-customizer/user-email-customizer.php:146, add-ons/email-customizer/user-email-customizer.php:177, add-ons/email-customizer/user-email-customizer.php:209, add-ons/email-customizer/user-email-customizer.php:241, add-ons/email-customizer/user-email-customizer.php:273, add-ons/email-customizer/user-email-customizer.php:307, add-ons/email-customizer/user-email-customizer.php:341, add-ons/email-customizer/user-email-customizer.php:380
+#: add-ons/email-customizer/admin-email-customizer.php:80, add-ons/email-customizer/admin-email-customizer.php:111, add-ons/email-customizer/admin-email-customizer.php:142, add-ons/email-customizer/admin-email-customizer.php:178, add-ons/email-customizer/user-email-customizer.php:83, add-ons/email-customizer/user-email-customizer.php:114, add-ons/email-customizer/user-email-customizer.php:146, add-ons/email-customizer/user-email-customizer.php:177, add-ons/email-customizer/user-email-customizer.php:209, add-ons/email-customizer/user-email-customizer.php:241, add-ons/email-customizer/user-email-customizer.php:273, add-ons/email-customizer/user-email-customizer.php:307, add-ons/email-customizer/user-email-customizer.php:341, add-ons/email-customizer/user-email-customizer.php:377
 msgid "Email Subject"
 msgstr ""
 
@@ -5154,7 +3982,7 @@ msgstr ""
 msgid "A new subscriber has (been) registered!"
 msgstr ""
 
-#: add-ons/email-customizer/admin-email-customizer.php:87, add-ons/email-customizer/admin-email-customizer.php:118, add-ons/email-customizer/admin-email-customizer.php:149, add-ons/email-customizer/admin-email-customizer.php:189, add-ons/email-customizer/user-email-customizer.php:90, add-ons/email-customizer/user-email-customizer.php:121, add-ons/email-customizer/user-email-customizer.php:153, add-ons/email-customizer/user-email-customizer.php:184, add-ons/email-customizer/user-email-customizer.php:216, add-ons/email-customizer/user-email-customizer.php:248, add-ons/email-customizer/user-email-customizer.php:280, add-ons/email-customizer/user-email-customizer.php:314, add-ons/email-customizer/user-email-customizer.php:348, add-ons/email-customizer/user-email-customizer.php:387
+#: add-ons/email-customizer/admin-email-customizer.php:87, add-ons/email-customizer/admin-email-customizer.php:118, add-ons/email-customizer/admin-email-customizer.php:149, add-ons/email-customizer/admin-email-customizer.php:185, add-ons/email-customizer/user-email-customizer.php:90, add-ons/email-customizer/user-email-customizer.php:121, add-ons/email-customizer/user-email-customizer.php:153, add-ons/email-customizer/user-email-customizer.php:184, add-ons/email-customizer/user-email-customizer.php:216, add-ons/email-customizer/user-email-customizer.php:248, add-ons/email-customizer/user-email-customizer.php:280, add-ons/email-customizer/user-email-customizer.php:314, add-ons/email-customizer/user-email-customizer.php:348, add-ons/email-customizer/user-email-customizer.php:384
 msgid "Enable email"
 msgstr ""
 
@@ -5185,7 +4013,7 @@ msgstr ""
 msgid "Admin Notification for User Password Reset"
 msgstr ""
 
-#: add-ons/email-customizer/admin-email-customizer.php:178
+#: add-ons/email-customizer/admin-email-customizer.php:174
 msgid ""
 "<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n"
 "<br>\n"
@@ -5195,11 +4023,11 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons/email-customizer/admin-email-customizer.php:186
+#: add-ons/email-customizer/admin-email-customizer.php:182
 msgid "[{{site_name}}] A user has updated their profile. Some fields need approval"
 msgstr ""
 
-#: add-ons/email-customizer/admin-email-customizer.php:204
+#: add-ons/email-customizer/admin-email-customizer.php:200
 msgid "Admin Notification for Edit Profile Approved by Admin"
 msgstr ""
 
@@ -5320,6 +4148,10 @@ msgid ""
 "<h3>Welcome to {{site_name}}!</h3>\n"
 "<p>Your username is: {{username}}</p>\n"
 ""
+msgstr ""
+
+#: add-ons/email-customizer/user-email-customizer.php:104, add-ons-advanced/buddypress/includes/buddypress-page.php:65
+msgid "Default Registration"
 msgstr ""
 
 #: add-ons/email-customizer/user-email-customizer.php:110
@@ -5449,7 +4281,7 @@ msgstr ""
 msgid "Changed Email Address Notification"
 msgstr ""
 
-#: add-ons/email-customizer/user-email-customizer.php:376
+#: add-ons/email-customizer/user-email-customizer.php:373
 msgid ""
 "<p>Your profile has been reviewed by an administrator:</p>\n"
 "<br>\n"
@@ -5458,11 +4290,11 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons/email-customizer/user-email-customizer.php:384
+#: add-ons/email-customizer/user-email-customizer.php:381
 msgid "[{{site_name}}] Your profile has been reviewed by an administrator"
 msgstr ""
 
-#: add-ons/email-customizer/user-email-customizer.php:402
+#: add-ons/email-customizer/user-email-customizer.php:399
 msgid "User Notification for Edit Profile Approved by Admin"
 msgstr ""
 
@@ -5570,19 +4402,19 @@ msgstr ""
 msgid "This form is empty."
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:227
+#: add-ons/multiple-forms/multiple-forms.php:226
 msgid "You need to specify the title of the form before creating it"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:411
+#: add-ons/multiple-forms/multiple-forms.php:410
 msgid "<pre>Title (Type)</pre>"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:411
+#: add-ons/multiple-forms/multiple-forms.php:410
 msgid "Delete all items"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:411
+#: add-ons/multiple-forms/multiple-forms.php:410, add-ons-free/labels-edit/labels-edit.php:373, add-ons-free/labels-edit/labels-edit.php:373
 msgid "Delete all"
 msgstr ""
 
@@ -5792,6 +4624,10 @@ msgstr ""
 
 #: add-ons/user-listing/userlisting.php:473
 msgid "User not found"
+msgstr ""
+
+#: add-ons/user-listing/userlisting.php:591, add-ons/user-listing/userlisting.php:588, add-ons/user-listing/userlisting.php:586, add-ons/user-listing/userlisting.php:569, add-ons/user-listing/userlisting.php:566, add-ons/user-listing/userlisting.php:564, add-ons-advanced/bbpress/bbpress-page.php:86, add-ons-advanced/bbpress/bbpress-page.php:121, add-ons-advanced/woocommerce/woosync-page.php:80, add-ons-advanced/woocommerce/woosync-page.php:115, features/content-restriction/content-restriction.php:136, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:557, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:232, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:307
+msgid "None"
 msgstr ""
 
 #: add-ons/user-listing/userlisting.php:914, add-ons/user-listing/userlisting.php:2543
@@ -6078,6 +4914,900 @@ msgstr ""
 msgid "No results found!"
 msgstr ""
 
+#: add-ons-advanced/bbpress/bbpress-page.php:71
+msgid "bbPress Integration"
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:82
+msgid "Choose (Single) User Listing to display under bbPress user Profile tab:"
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:109
+msgid "Select which Single User-listing managed via Profile Builder should replace the default bbPress user profile."
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:117
+msgid "Choose Edit Profile form to display under bbPress Profile Edit tab:"
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:122, add-ons-advanced/woocommerce/woosync-page.php:116, add-ons-advanced/buddypress/includes/buddypress-page.php:98
+msgid "Default Edit Profile"
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:145
+msgid "Select Profile Builder Edit Profile form to replace the bbPress Profile Edit tab."
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:152
+msgid "Replace bbPress Login form:"
+msgstr ""
+
+#: add-ons-advanced/bbpress/bbpress-page.php:161
+msgid "Select \"Yes\" to replace the default bbPress Login form with the Profile Builder Login form."
+msgstr ""
+
+#: add-ons-advanced/bbpress/index.php:296
+msgid "bbPress needs to be installed and activated for Profile Builder - bbPress Integration Add-on to work as expected!"
+msgstr ""
+
+#: add-ons-advanced/bbpress/index.php:156, add-ons-advanced/bbpress/index.php:171
+msgid "Forum Role"
+msgstr ""
+
+#: add-ons-advanced/bbpress/index.php:157, add-ons-advanced/bbpress/index.php:151, add-ons-advanced/bbpress/index.php:172, add-ons-advanced/bbpress/index.php:222
+msgid "Topics Started"
+msgstr ""
+
+#: add-ons-advanced/bbpress/index.php:158, add-ons-advanced/bbpress/index.php:152, add-ons-advanced/bbpress/index.php:173, add-ons-advanced/bbpress/index.php:224
+msgid "Replies Created"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:51, add-ons-advanced/buddypress/index.php:484
+msgid "Username:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:55, add-ons-advanced/buddypress/index.php:488
+msgid "First Name:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:59, add-ons-advanced/buddypress/index.php:492
+msgid "Last Name:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:63, add-ons-advanced/buddypress/index.php:496
+msgid "Nickname:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:67, add-ons-advanced/buddypress/index.php:500
+msgid "Display name:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:74, add-ons-advanced/buddypress/index.php:507
+msgid "Website:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/buddypress-activator.php:81, add-ons-advanced/buddypress/index.php:514
+msgid "Biographical Info:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/index.php:366
+msgid "BuddyPress needs to be installed and activated for Profile Builder - BuddyPress Integration Add-on to work as expected!"
+msgstr ""
+
+#: add-ons-advanced/buddypress/index.php:206
+msgid "Profile Builder Avatar field is disabled to allow use of BuddyPress Avatar."
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:61, add-ons-advanced/custom-profile-menus/index.php:175, add-ons-advanced/custom-profile-menus/index.php:297, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:13, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:61, features/login-widget/login-widget.php:61, assets/misc/elementor/widgets/class-pb-widget-l.php:26
+msgid "Login"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:63
+msgid "Login - iFrame"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:64
+msgid "Edit Profile - iFrame"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:65
+msgid "Register - iFrame"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:106
+msgid "Add to Menu"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:170
+msgid "Login Label"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:178
+msgid "Logout Label"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:189
+msgid "Form page URL"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:192
+msgid "Login page URL"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:195
+msgid "Login Form page URL"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:198
+msgid "Edit Profile Form page URL"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:201
+msgid "Register Form page URL"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:240
+msgid "Display Mode"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:247, features/content-restriction/content-restriction-meta-box.php:68
+msgid "Logged In Users"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:254
+msgid "Logged Out Users"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:261, add-ons-advanced/buddypress/includes/field-visibility.php:216
+msgid "Everyone"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:268
+msgid "Restrict menu item to a minimum role"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:269
+msgid "Works only if Display Mode: Logged In Users is selected"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:300, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:68, assets/misc/elementor/widgets/class-pb-widget-epf.php:32
+msgid "Edit Profile"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:309
+msgid "iFrame Title"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:319
+msgid "iFrame Size"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:322
+msgid "Height (px)"
+msgstr ""
+
+#: add-ons-advanced/custom-profile-menus/index.php:329
+msgid "Width (px)"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:187
+msgid "Requires Admin Approval on Edit Profile"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:187
+msgid "Choose if this field requires an administrator to approve any modifications on the edit profile forms"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:288
+msgid "This field requires admin approval on edit profile"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:357
+msgid "Finish Review and Send Notifications"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:358
+msgid "Approve All"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:376
+msgid "This field requires approval by an administrator"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:405, features/admin-approval/class-admin-approval.php:355
+msgid "Unapproved"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:405, features/admin-approval/class-admin-approval.php:353
+msgid "Approved"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:745, add-ons-advanced/edit-profile-approved-by-admin/index.php:775
+msgid "Your profile has been reviewed by an administrator"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:767
+msgid "Approved fields:%s"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:771
+msgid "Unapproved fields:%s"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:794
+msgid "Field %1$s changed from %2$s to %3$s"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:802
+msgid "The user %1$s has updated their profile and some of the fields require admin approval:<br><br> %2$s"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:804
+msgid "Access this link to approve changes: %1$s"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:807
+msgid "A user has updated their profile. Some fields need approval"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:827
+msgid "Field %1$s requires approval from an administrator"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:902
+msgid "Show users that require review"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:904
+msgid "Show reviewed users with unapproved fields"
+msgstr ""
+
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:907
+msgid "Exit Review Mode"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:167
+msgid "<strong>Admin Only</strong> field is visible only for administrators. <strong>User Locked</strong> field is visible for both administrators and users, but only administrators have the capability to edit it."
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:168
+msgid "User Role Visibility"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:168
+msgid "Select which user roles see this field"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:169
+msgid "Location Visibility"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:169
+msgid "Select the locations you wish the field to appear"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:187
+msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre><pre class=\"wppb-mb-head-visibility\"></pre>"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:208
+msgid "This field is visible only for administrators."
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:211
+msgid "This field is visible for both administrators and users, but only administrators have the capability to edit it."
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:234
+msgid "This field is visible only for the following user roles: %1$s"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:280
+msgid "This field is visible only in the following locations: %1$s"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:422
+msgid "Get file"
+msgstr ""
+
+#: add-ons-advanced/field-visibility/index.php:563
+msgid "You do not have the capabilities necessary to edit this field."
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/index.php:106
+msgid "MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:38, add-ons-advanced/multi-step-forms/index.php:492
+msgid "Step"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:39
+msgid "Title for Tab"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:40
+msgid "Add Break Points to edit tabs title."
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:41
+msgid "Publish the form to edit tabs title."
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:42, add-ons-advanced/multi-step-forms/index.php:156
+msgid "Publish the form before adding Break Points!"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:43
+msgid "Request in process, please wait a few seconds before a new one!"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:84
+msgid "Multi-Step Forms"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:161
+msgid "To enable MSF you must add Break Points."
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:162, add-ons-advanced/multi-step-forms/index.php:137
+msgid "Pagination and Tabs:"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:163, add-ons-advanced/multi-step-forms/index.php:138
+msgid "Enable Pagination"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:164, add-ons-advanced/multi-step-forms/index.php:139
+msgid "Enable Tabs"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:164, add-ons-advanced/multi-step-forms/index.php:139
+msgid "Edit Tabs Title"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:128
+msgid "Multi-Step Forms options updated."
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:133
+msgid "Enable on:"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:134
+msgid "PB Default Register Form"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:135
+msgid "PB Default Edit Profile Form"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:136
+msgid "To enable it on Multiple Registration and Edit-Profile Forms you must add Break Points in each form page."
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:141
+msgid "Update Multi-Step"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:413
+msgid "Next"
+msgstr ""
+
+#: add-ons-advanced/multi-step-forms/index.php:414
+msgid "Previous"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:226
+msgid "Display on the Following Forms"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:227
+msgid "Disable Registration on"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:227
+msgid "Allow only login with Social Connect on Profile Builder Login Form.<br>Social Connect will still automatically register users on other forms."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:228
+msgid "Facebook Login"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:229
+msgid "Facebook App ID"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:230
+msgid "Google Login"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:231
+msgid "Google Client ID"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:232
+msgid "Twitter Login"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:233
+msgid "Twitter API Key"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:234
+msgid "Twitter API Secret"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:235
+msgid "LinkedIn Login"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:236
+msgid "LinkedIn Client ID"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:237
+msgid "LinkedIn Client Secret"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:238
+msgid "Buttons Order"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:238
+msgid "Drag and drop the dots to re-order."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:239
+msgid "Buttons Re-Order"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:239
+msgid "Save the buttons order from the buttons order checkboxes"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:240
+msgid "Buttons Location"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:240
+msgid "Display social buttons before or after the forms fields."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:241
+msgid "Buttons Style"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:242
+msgid "Google Sign In Button"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:243
+msgid "Heading Before Buttons (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:243, add-ons-advanced/social-connect/index.php:244
+msgid "Empty field will remove the heading."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:244
+msgid "Heading Before Buttons (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:245
+msgid "Facebook Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:246
+msgid "Google Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:247
+msgid "Twitter Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:248
+msgid "LinkedIn Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:249
+msgid "Facebook Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:250
+msgid "Google Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:251
+msgid "Twitter Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:252
+msgid "LinkedIn Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:253
+msgid "Unlink Accounts (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:253
+msgid "This option will display linked social platforms to users accounts and will allow to easily unlink them in Edit Profile page."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:254
+msgid "Default Social Connect CSS in the Front-end"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:274
+msgid "Help"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:344
+msgid "Display Social Connect buttons:"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:393
+msgid "You have successfully unlinked %% from your account."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:405
+msgid "An account with this email address already exists.<br> Do you want to connect it?"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:408
+msgid "Please enter your website account password"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:409
+msgid "Please enter a new email"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:410
+msgid "You have successfully linked your account to %%."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:411, add-ons-advanced/social-connect/twitter/twitter.php:112
+msgid "Something went wrong. Please try again later!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:412
+msgid "Before you can access your account you need to confirm your email address. Please check your inbox and click the activation link."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:413
+msgid "<strong>ERROR</strong>: You need to confirm your email address before you can log in."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:414
+msgid "Before you can access your account an administrator has to approve it. You will be notified via email."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:415, features/admin-approval/admin-approval.php:196
+msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:416
+msgid "You will be redirected in 5 seconds. If not, click %%."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:418
+msgid "<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:419
+msgid "Wrong password!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:420
+msgid "Please enter a valid email!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:421
+msgid "You can only login on this form.<br>Register with your social account on the register form."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:422
+msgid "Continue"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:423, add-ons-advanced/social-connect/index.php:442, add-ons-advanced/social-connect/index.php:457
+msgid "Ok"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:431
+msgid "To create a new account please confirm:"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:432
+msgid "You must agree to the Terms And Conditions to create a new account."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:440, add-ons-advanced/social-connect/index.php:441
+msgid "Please enter your Facebook email!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:454
+msgid "Waiting for Twitter..."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:455, add-ons-advanced/social-connect/index.php:456
+msgid "Please enter your Twitter email!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:750
+msgid "Profile Builder not active!"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:905
+msgid "Application Settings"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:909
+msgid "Appearance Settings"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:973
+msgid "Unlink"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:980
+msgid "Your account is linked with:"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:5, add-ons-advanced/woocommerce/shipping-fields.php:5
+msgid "Country"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:8, add-ons-advanced/woocommerce/shipping-fields.php:8
+msgid "Company Name"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:9, add-ons-advanced/woocommerce/shipping-fields.php:9
+msgid "Address"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:11, add-ons-advanced/woocommerce/shipping-fields.php:11
+msgid "Town / City"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:12, add-ons-advanced/woocommerce/shipping-fields.php:12
+msgid "State / County"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:13, add-ons-advanced/woocommerce/shipping-fields.php:13
+msgid "Postcode / Zip"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:14
+msgid "Email Address"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:15
+msgid "Phone"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/billing-fields.php:281
+msgid "Ship to a different address?"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:810
+msgid "WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:203, add-ons-advanced/woocommerce/index.php:222, add-ons-advanced/woocommerce/index.php:322, add-ons-advanced/woocommerce/index.php:319, add-ons-advanced/woocommerce/index.php:749
+msgid "Address line 2"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:211
+msgid "Billing Fields"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:211
+msgid "Select which WooCommerce Billing fields to display to the user ( drag and drop to re-order ) and which should be required"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:212
+msgid "Billing Fields Order"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:212
+msgid "Save the billing fields order from the billing fields checkboxes"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:213
+msgid "Billing Fields Name"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:213
+msgid "Save the billing fields names"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:230
+msgid "Shipping Fields"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:230
+msgid "Select which WooCommerce Shipping fields to display to the user ( drag and drop to re-order ) and which should be required"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:231
+msgid "Shipping Fields Order"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:231
+msgid "Save the shipping fields order from the shipping fields checkboxes"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:232
+msgid "Shipping Fields Name"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:232
+msgid "Save the shipping fields names"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:260
+msgid "Field Name"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:324
+msgid "Click to edit "
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:348, front-end/default-fields/email/email.php:69
+msgid "The email you entered is not a valid email address."
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:606
+msgid "No options available. Please select one country."
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:625, add-ons-advanced/woocommerce/index.php:650
+msgid "Billing "
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:633, add-ons-advanced/woocommerce/index.php:657
+msgid "Shipping "
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:693, add-ons-advanced/woocommerce/woocommerce-activator.php:26
+msgid "Billing Address"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/index.php:694, add-ons-advanced/woocommerce/woocommerce-activator.php:30
+msgid "Shipping Address"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woo-checkout-field-support.php:83
+msgid "Display on WooCommerce Checkout"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woo-checkout-field-support.php:83
+msgid "Whether the field should be added to the WooCommerce checkout form or not"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woocommerce-activator.php:26
+msgid "Displays customer billing fields in front-end. "
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woocommerce-activator.php:30
+msgid "Displays customer shipping fields in front-end. "
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woosync-page.php:76
+msgid "Choose Register form to display on My Account page:"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woosync-page.php:81
+msgid "Default Register"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woosync-page.php:104
+msgid "Select which Profile Builder Register form to display on My Account page from WooCommerce. <br/> This will also add the Profile Builder Login form to MyAccount page."
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woosync-page.php:111
+msgid "Choose Edit Profile form to display on My Account page:"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/woosync-page.php:139
+msgid "Select which Profile Builder Edit-profile form to display on My Account page from WooCommerce."
+msgstr ""
+
+#: add-ons-free/custom-css-classes-on-fields/custom-css-classes-on-fields.php:31
+msgid "CSS Class"
+msgstr ""
+
+#: add-ons-free/custom-css-classes-on-fields/custom-css-classes-on-fields.php:32
+msgid "Add a class to a field. Should not contain dots(.) and for multiple classes separate by space."
+msgstr ""
+
+#: add-ons-free/import-export/import-export.php:28, add-ons-free/import-export/pbie-import.php:42, add-ons-free/labels-edit/labels-edit.php:324
+msgid "Import"
+msgstr ""
+
+#: add-ons-free/import-export/import-export.php:29, add-ons-free/import-export/pbie-export.php:123, add-ons-free/labels-edit/labels-edit.php:336
+msgid "Export"
+msgstr ""
+
+#: add-ons-free/import-export/pbie-export.php:119
+msgid "Export Profile Builder options as a .json file. This allows you to easily import the configuration into another site."
+msgstr ""
+
+#: add-ons-free/import-export/pbie-import.php:34
+msgid "Import Profile Builder options from a .json file. This allows you to easily import the configuration from another site. "
+msgstr ""
+
+#: add-ons-free/import-export/pbie-import.php:42
+msgid "This will overwrite your old PB settings! Are you sure you want to continue?"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:115
+msgid " labels scanned."
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:215
+msgid "Label to Edit"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:216
+msgid "New Label"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:222
+msgid "Edit Labels"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:238
+msgid "Rescan Lables"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:264
+msgid "Informations"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:298
+msgid "Import and Export Labels"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:312
+msgid "Import Labels from a .json file."
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:314
+msgid "Easily import the labels from another site."
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:324
+msgid "This will overwrite all your old edited labels!\nAre you sure you want to continue?"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:329
+msgid "Export Labels as a .json file."
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:331
+msgid "Easily import the labels into another site."
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:362
+msgid "You must select a label to edit!"
+msgstr ""
+
+#: add-ons-free/labels-edit/labels-edit.php:425
+msgid "No labels edited, nothing to export!"
+msgstr ""
+
+#: add-ons-free/maximum-character-length/maximum-character-length.php:28
+msgid "Specify the maximum number of characters a user can type in this field"
+msgstr ""
+
+#: add-ons-free/maximum-character-length/maximum-character-length.php:49
+msgid ""
+"The entered character number is not numerical\n"
+""
+msgstr ""
+
 #: admin/advanced-settings/advanced-settings.php:38
 msgid "Toolbox"
 msgstr ""
@@ -6114,7 +5844,7 @@ msgstr ""
 msgid "Your account has to be confirmed by an administrator before you can log in."
 msgstr ""
 
-#: features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:404, features/admin-approval/admin-approval.php:388, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
+#: features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:405, features/admin-approval/admin-approval.php:389, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
 msgid "Admin Approval"
 msgstr ""
 
@@ -6134,11 +5864,11 @@ msgstr ""
 msgid "User successfully deleted!"
 msgstr ""
 
-#: features/admin-approval/admin-approval.php:90, features/admin-approval/admin-approval.php:402
+#: features/admin-approval/admin-approval.php:90, features/admin-approval/admin-approval.php:403
 msgid "User successfully unapproved!"
 msgstr ""
 
-#: features/admin-approval/admin-approval.php:80, features/admin-approval/admin-approval.php:386
+#: features/admin-approval/admin-approval.php:80, features/admin-approval/admin-approval.php:387
 msgid "User successfully approved!"
 msgstr ""
 
@@ -6214,7 +5944,7 @@ msgstr ""
 msgid "The approval link is not valid! Please <a href=\"%s\"> log in </a> to approve the user manually. "
 msgstr ""
 
-#: features/admin-approval/admin-approval.php:365
+#: features/admin-approval/admin-approval.php:366
 msgid "Admin Approval Unsuccessful"
 msgstr ""
 
@@ -6905,7 +6635,7 @@ msgstr ""
 msgid "The usernames cannot be changed."
 msgstr ""
 
-#: features/upgrades/upgrades.php:167
+#: features/upgrades/upgrades.php:177
 msgid "This Profile Builder add-on has been migrated to the main plugin and is no longer used. You can delete it."
 msgstr ""
 
@@ -6969,6 +6699,652 @@ msgstr ""
 msgid ""
 "Please enter a unique field title.\n"
 ""
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:45
+msgid "BuddyPress Integration"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:50
+msgid "Import BuddyPress Fields to Profile Builder"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:53
+msgid "Import BuddyPress Fields"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:55
+msgid "Create fields in Profile Builder that match the existing ones in BuddyPress and import all the user field entries.<br><a href=\"https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/buddypress/#Import_BuddyPress_Fields_to_Profile_Builder\">Learn more about importing BuddyPress fields</a>."
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:61
+msgid "Registration form:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:87
+msgid "Select Profile Builder Registration form to replace the BuddyPress Registration form.<br>Registration emails will now be managed in Profile Builder -> User Email Customizer"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:94
+msgid "Edit Profile form:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:120
+msgid "Select Profile Builder Edit Profile form to replace the BuddyPress Profile Edit tab."
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:133
+msgid "User Listing template:"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:159
+msgid "Select which User Listing template managed by Profile Builder should replace the default BuddyPress user profile view."
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:166
+msgid "Use All-User Listing?"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:172
+msgid "Enable PB User Listing on BuddyPress Members page"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/buddypress-page.php:174
+msgid "Check this if All User-listing managed via Profile Builder should replace the default BuddyPress Members page.<br>The template used will be the one selected above."
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:20
+msgid "Allow members to override"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:20
+msgid "Enforce field visibility"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:22
+msgid "BuddyPress Default Field Visibility"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:23
+msgid "BuddyPress Allow Custom Visibility"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:119, add-ons-advanced/buddypress/includes/field-visibility.php:105
+msgid "This field can be seen by: "
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:105
+msgid "Change"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:110
+msgid "Who can see this field?"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:115
+msgid "Close"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:220
+msgid "Only Me"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:224, add-ons-advanced/buddypress/includes/mustache-vars.php:329
+msgid "All Members"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/field-visibility.php:228, add-ons-advanced/buddypress/includes/mustache-vars.php:333
+msgid "My Friends"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:34
+msgid "<h2>Import BuddyPress Fields to Profile Builder</h2>"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:40
+msgid "BuddyPress is not installed and active. Import aborted!"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:53
+msgid "Importing User entries BuddyPress Fields to Profile Builder...<br><br>"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:55
+msgid "Done."
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:55
+msgid "Back to BuddyPress Settings page"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:44
+msgid "Importing BuddyPress Field Settings to Profile Builder...<br><br>"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:51, add-ons-advanced/buddypress/includes/import-bp-fields.php:328
+msgid "If the page does not redirect automatically"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/import-bp-fields.php:51, add-ons-advanced/buddypress/includes/import-bp-fields.php:328
+msgid "click here"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:15, add-ons-advanced/buddypress/includes/mustache-vars.php:47
+msgid "BuddyPress Avatar"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:16, add-ons-advanced/buddypress/includes/mustache-vars.php:48
+msgid "BuddyPress Cover Photo"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:17, add-ons-advanced/buddypress/includes/mustache-vars.php:29, add-ons-advanced/buddypress/includes/mustache-vars.php:256
+msgid "BuddyPress Last Active"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:21
+msgid "BuddyPress Add Friend Button"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:24
+msgid "BuddyPress Latest Update"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:134
+msgid "Never active"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:239
+msgid "Last Active"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:272
+msgid "My BuddyPress Friends Tab"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:373
+msgid "BuddyPress field visibility syntax"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:393
+msgid "Are you sure you want to reset this template?"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:393
+msgid "Reset to Default BuddyPress User Listing Templates"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:394
+msgid "<b>Note:</b> This action is not reversible. All modifications to this template will be lost!"
+msgstr ""
+
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:408
+msgid "Reset template"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:38
+msgid "Campaign Monitor Integration"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:58, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:94, assets/lib/class-mustache-templates/class-mustache-templates.php:255, assets/lib/wck-api/wordpress-creation-kit.php:343
+msgid "Save"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:85
+msgid "Campaign Monitor API key:"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:96
+msgid "Either the API key is not valid or we could not connect to Campaign Monitor to validate it!"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:92, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:124
+msgid "The API key was successfully validated!"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:100
+msgid "Enter your Campaign Monitor account API key."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:126
+msgid "Select client:"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:136
+msgid "Loading clients..."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:148
+msgid "Select a client that you would like to edit."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:188
+msgid "Select a client..."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:186
+msgid "No clients found"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:266, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:274
+msgid "Client List"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:267, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:275, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:61, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:68
+msgid "Fields Count"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:348
+msgid "Retrieves changes made in your Campaign Monitor account and matches it with the saved data from the add-on. This does not save the new data, so you will have to manually save."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:348
+msgid "Synchronize client data"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:349
+msgid "Change client"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:413
+msgid "No lists were found."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:437
+msgid "Click to edit"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:523, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:202
+msgid "Field Associations:"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:579
+msgid "Associate each Campaign Monitor field with a Profile Builder field"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:601, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:357
+msgid "Extra Options:"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:609, add-ons-advanced/campaign-monitor/admin/widget.php:236
+msgid "Resubscribe"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:612, add-ons-advanced/campaign-monitor/admin/widget.php:239
+msgid "If the subscriber is in an inactive state or has previously been unsubscribed and you check the Resubscribe option, they will be re-added to the list. Therefore, this method should be used with caution and only where suitable."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:658
+msgid "Campaign Monitor API key is invalid"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:656
+msgid "Campaign Monitor API key is empty"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:52, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:52, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:38
+msgid "Select a list..."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:63, add-ons-advanced/campaign-monitor/admin/manage-fields.php:60, add-ons-advanced/campaign-monitor/admin/manage-fields.php:42
+msgid "Campaign Monitor List"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:63
+msgid "We couldn't find any lists in your Campaign Monitor settings."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:60
+msgid "Select in which Campaign Monitor list you wish to add a new subscriber"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:61, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:62, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:49
+msgid "Hide on Edit Profile"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:61, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:62, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:49
+msgid "If checked this field will not be displayed on edit profile forms"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:46
+msgid "Something went wrong. Either the API key is invalid or we could not connect to Campaign Monitor to validate the key."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:42
+msgid "Please enter a Campaign Monitor API key <a href=\"%s\">here</a>."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/manage-fields.php:83
+msgid ""
+"Please select at least one Campaign Monitor list \n"
+""
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:14
+msgid "Profile Builder Campaign Monitor Widget"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:15
+msgid "Adds a basic subscribe form so that your users can subscribe to your Campaign Monitor lists"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:157, add-ons-advanced/mailchimp-integration/admin/widget.php:158
+msgid "Submit"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:93
+msgid "%s"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:68
+msgid "Something went wrong. Either the Campaign Monitor API key is missing or it is invalid."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:245
+msgid "The Campaign Monitor API key is either missing or is invalid."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:182, add-ons-advanced/mailchimp-integration/admin/widget.php:185
+msgid "Subscribe to Newsletter"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:191, add-ons-advanced/mailchimp-integration/admin/widget.php:193
+msgid "Title"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:197, add-ons-advanced/mailchimp-integration/admin/widget.php:198
+msgid "Select the list your new subscriber will be added to"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:208
+msgid "No lists found"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:202
+msgid "Select list..."
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:213, add-ons-advanced/mailchimp-integration/admin/widget.php:216
+msgid "Select which fields to show"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:219, add-ons-advanced/campaign-monitor/admin/widget.php:221
+msgid "Email address"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:225
+msgid "fullname"
+msgstr ""
+
+#: add-ons-advanced/campaign-monitor/admin/widget.php:231
+msgid "Extra options"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:35
+msgid "MailChimp Integration"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:60, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:67, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:64, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:60, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:46, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:42
+msgid "MailChimp List"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:82
+msgid "We couldn't find any lists"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:44
+msgid "Before you can make any changes you will need to add a MailChimp API key."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:119
+msgid "MailChimp API Key:"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:126
+msgid "Either the API key is not valid or we could not connect to MailChimp to validate it!"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:129
+msgid "Enter a MailChimp API key. You can create keys in your MailChimp account."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:157, assets/lib/wck-api/wordpress-creation-kit.php:548
+msgid "Edit this item"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:211
+msgid "This field is required in MailChimp"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:261
+msgid "Associate each MailChimp field with a Profile Builder field"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:295
+msgid "Group Associations:"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:334
+msgid "Associate each MailChimp group with a Profile Builder field"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:366, add-ons-advanced/mailchimp-integration/admin/widget.php:229
+msgid "Double Opt-In"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:367, add-ons-advanced/mailchimp-integration/admin/widget.php:230
+msgid "If you select double opt-in, the user will receive an email to confirm the subscription"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:382, add-ons-advanced/mailchimp-integration/admin/widget.php:241
+msgid "Enable GDPR"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:383, add-ons-advanced/mailchimp-integration/admin/widget.php:242
+msgid "If checked will enable GDPR on this list. <a href=\"%s\" target=\"_blank\">You must also enable GDPR on the list from mailchimp</a>"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:437, add-ons-advanced/mailchimp-integration/admin/manage-fields.php:46
+msgid "Something went wrong. Either the API key is invalid or we could not connect to MailChimp to validate the key."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:430
+msgid "MailChimp API key is invalid"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:428
+msgid "MailChimp API key is empty"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:64
+msgid "We couldn't find any lists in your MailChimp settings."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:60
+msgid "Select in which MailChimp list you wish to add a new subscriber"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:61, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:48
+msgid "Checked by Default"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:61, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:48
+msgid "If checked the Subscribe checkbox in the front-end will be checked by default on register forms"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:42
+msgid "Please enter a MailChimp API key <a href=\"%s\">here</a>."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/manage-fields.php:84
+msgid ""
+"Please select at least one MailChimp list \n"
+""
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:14
+msgid "Profile Builder MailChimp Widget"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:15
+msgid "Adds a basic subscribe form so that your users can subscribe to your MailChimp lists"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:154, add-ons-advanced/mailchimp-integration/front-end/mailchimp-field.php:108, add-ons-advanced/mailchimp-integration/front-end/mailchimp-field.php:81
+msgid "By checking this box I consent to the use of my information provided for email marketing purposes."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:98, add-ons-advanced/mailchimp-integration/admin/widget.php:93
+msgid "You have been subscribed to our newsletter"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:91
+msgid "A confirmation email has been sent to the e-mail address you have provided"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:68, add-ons-advanced/mailchimp-integration/admin/widget.php:250
+msgid "Something went wrong. Either the MailChimp API key is missing or it is invalid."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:201
+msgid "Select..."
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:225
+msgid "Extra Options"
+msgstr ""
+
+#: add-ons-advanced/mailchimp-integration/admin/widget.php:383
+msgid "Please select a list first"
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:43
+msgid "No list was found."
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:53, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:51, add-ons-advanced/mailpoet-integration/admin/manage-fields.php:47
+msgid "MailPoet List"
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:53
+msgid "Please install and activate MailPoet plugin."
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:51
+msgid "We couldn't find any lists in your MailPoet settings."
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:47
+msgid "Select in which MailPoet list you wish to add a new subscriber"
+msgstr ""
+
+#: add-ons-advanced/mailpoet-integration/admin/manage-fields.php:73
+msgid ""
+"Please select at least one MailPoet list \n"
+""
+msgstr ""
+
+#: add-ons-advanced/social-connect/facebook/facebook.php:38
+msgid "Sign in with Facebook"
+msgstr ""
+
+#: add-ons-advanced/social-connect/facebook/facebook.php:32
+msgid "Link with Facebook"
+msgstr ""
+
+#: add-ons-advanced/social-connect/google/google.php:38
+msgid "Sign in with Google"
+msgstr ""
+
+#: add-ons-advanced/social-connect/google/google.php:32
+msgid "Link with Google"
+msgstr ""
+
+#: add-ons-advanced/social-connect/linkedin/linkedin.php:46
+msgid "Sign in with LinkedIn"
+msgstr ""
+
+#: add-ons-advanced/social-connect/linkedin/linkedin.php:40
+msgid "Link with LinkedIn"
+msgstr ""
+
+#: add-ons-advanced/social-connect/twitter/twitter.php:58
+msgid "Error Receiving Request Token"
+msgstr ""
+
+#: add-ons-advanced/social-connect/twitter/twitter.php:53
+msgid "Connection with twitter Failed"
+msgstr ""
+
+#: add-ons-advanced/social-connect/twitter/twitter.php:151
+msgid "Sign in with Twitter"
+msgstr ""
+
+#: add-ons-advanced/social-connect/twitter/twitter.php:145
+msgid "Link with Twitter"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24
+msgid "Communication Preferences"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9
+msgid "Telephone"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9
+msgid "SMS"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9
+msgid "Post"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24
+msgid "Select which communication preferences are available on your site ( drag and drop to re-order )"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:25
+msgid "Communication Preferences Order"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:25
+msgid "Save the communication preferences order"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:53, front-end/extra-fields/avatar/avatar.php:87, front-end/extra-fields/checkbox/checkbox.php:45, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input/input.php:30, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/radio/radio.php:44, front-end/extra-fields/select/select.php:51, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/select2/select2.php:74, front-end/extra-fields/textarea/textarea.php:30, front-end/extra-fields/upload/upload.php:82, front-end/extra-fields/wysiwyg/wysiwyg.php:56
+msgid "required"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:77
+msgid "Date"
+msgstr ""
+
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:77
+msgid "Preference"
+msgstr ""
+
+#: add-ons-free/import-export/inc/class-pbie-import.php:26, add-ons-free/labels-edit/inc/class-pble-import.php:26
+msgid "You are not allowed to do this!"
+msgstr ""
+
+#: add-ons-free/import-export/inc/class-pbie-import.php:73, add-ons-free/labels-edit/inc/class-pble-import.php:42
+msgid "Uploaded file is not valid json!"
+msgstr ""
+
+#: add-ons-free/import-export/inc/class-pbie-import.php:104
+msgid "You do not have the capabilities required to do this!"
+msgstr ""
+
+#: add-ons-free/import-export/inc/class-pbie-import.php:99, add-ons-free/labels-edit/inc/class-pble-import.php:62
+msgid "Please select a .json file to import!"
+msgstr ""
+
+#: add-ons-free/import-export/inc/class-pbie-import.php:93, add-ons-free/labels-edit/inc/class-pble-import.php:56
+msgid "Import successfully!"
+msgstr ""
+
+#: add-ons-free/labels-edit/inc/class-pble-import.php:56
+msgid "Page will refresh in 3 seconds..."
 msgstr ""
 
 #: assets/lib/wck-api/wordpress-creation-kit.php:343
@@ -7097,10 +7473,6 @@ msgstr ""
 
 #: front-end/extra-fields/avatar/avatar.php:22, front-end/extra-fields/upload/upload.php:18, front-end/extra-fields/upload/upload.php:130, assets/lib/wck-api/fields/upload.php:43
 msgid "Remove"
-msgstr ""
-
-#: front-end/extra-fields/avatar/avatar.php:86, front-end/extra-fields/checkbox/checkbox.php:45, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input/input.php:30, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/radio/radio.php:44, front-end/extra-fields/select/select.php:51, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/select2/select2.php:74, front-end/extra-fields/textarea/textarea.php:30, front-end/extra-fields/upload/upload.php:82, front-end/extra-fields/wysiwyg/wysiwyg.php:56
-msgid "required"
 msgstr ""
 
 #: front-end/extra-fields/honeypot/honeypot.php:25
@@ -7687,7 +8059,7 @@ msgstr ""
 msgid "Radius"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-l.php:46, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:89, assets/misc/elementor/widgets/class-pb-widget-rp.php:46
+#: assets/misc/elementor/widgets/class-pb-widget-l.php:46, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:92, assets/misc/elementor/widgets/class-pb-widget-rp.php:46
 msgid "Form Settings"
 msgstr ""
 
@@ -7695,7 +8067,7 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-l.php:56, assets/misc/elementor/widgets/class-pb-widget-l.php:65, assets/misc/elementor/widgets/class-pb-widget-l.php:98, assets/misc/elementor/widgets/class-pb-widget-l.php:107, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:234, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:253
+#: assets/misc/elementor/widgets/class-pb-widget-l.php:56, assets/misc/elementor/widgets/class-pb-widget-l.php:65, assets/misc/elementor/widgets/class-pb-widget-l.php:98, assets/misc/elementor/widgets/class-pb-widget-l.php:107, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:237, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:256
 msgid "Enter URL"
 msgstr ""
 
@@ -7703,35 +8075,35 @@ msgstr ""
 msgid "Show Authenticator Code Field"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-l.php:88, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:222
+#: assets/misc/elementor/widgets/class-pb-widget-l.php:88, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:225
 msgid "Redirects"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:145
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:148
 msgid "Form"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:164
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:167
 msgid "Assigned Role"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:177
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180
 msgid "Automatic Login"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:211
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:214
 msgid "Edit the Settings for this form %1$shere%2$s"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:242
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:245
 msgid "Redirect after Edit Profile"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:240
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:243
 msgid "Redirect after Registration"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:251
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:254
 msgid "Redirect after Logout"
 msgstr ""
 
@@ -7739,42 +8111,42 @@ msgstr ""
 msgid "There are no available controls for the Password Recovery form"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:76
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:78
 msgid "Listing Settings"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:105
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:107
 msgid "Single"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:117
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:119
 msgid "Meta Key"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:119
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:121
 msgid "Enter Meta Key"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:130
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:132
 msgid "Meta Value"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:132
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:134
 msgid "Enter Meta Value"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:144
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:146
 msgid "Include"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:146, assets/misc/elementor/widgets/class-pb-widget-ul.php:159
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:148, assets/misc/elementor/widgets/class-pb-widget-ul.php:161
 msgid "Enter User IDs"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:157
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:159
 msgid "Exclude"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-ul.php:172
+#: assets/misc/elementor/widgets/class-pb-widget-ul.php:174
 msgid "Enter User ID"
 msgstr ""
