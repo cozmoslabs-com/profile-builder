@@ -3,7 +3,7 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.7.2
+ * Version: 3.7.3
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
@@ -319,9 +319,9 @@ function wppb_plugin_init() {
             if( PROFILE_BUILDER == 'Profile Builder Pro' )
                 $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBP', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-pro-update');
             else if( PROFILE_BUILDER == 'Profile Builder Basic' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBH', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-basic-update');
+                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBH', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-hobbyist-update');
             else if( PROFILE_BUILDER == 'Profile Builder Elite' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBP', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-elite-update');
+                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBE', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-elite-update');
             else if( PROFILE_BUILDER == 'Profile Builder Unlimited' )
                 $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBL', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-unlimited-update');
             
@@ -360,7 +360,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.7.2' );
+define('PROFILE_BUILDER_VERSION', '3.7.3' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -394,11 +394,11 @@ if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) ){
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-unlimited' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-unlimited/' );
 
-} elseif ( in_array( 'profile-builder-basic/index.php', $active_plugins ) ){
+} elseif ( in_array( 'profile-builder-hobbyist/index.php', $active_plugins ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Basic');
-    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-basic' );
-    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-basic/' );
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-hobbyist' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-hobbyist/' );
 
 } else
     define('PROFILE_BUILDER', 'Profile Builder Free');
