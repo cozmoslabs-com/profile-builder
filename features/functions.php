@@ -314,7 +314,7 @@ $args = array(
 			'capability'	=> 'manage_options',
 			'menu_slug' 	=> 'profile-builder',
 			'page_type'		=> 'menu_page',
-			'position' 		=> '70,69',
+			'position' 		=> '70.69',
 			'priority' 		=> 1,
 			'icon_url' 		=> WPPB_PLUGIN_URL . 'assets/images/pb-menu-icon.png'
 		);

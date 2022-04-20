@@ -578,7 +578,7 @@ class WPPB_Roles_Editor {
             return;
         }
 
-        if( !isset( $_POST['wppb-re-ajax-nonce'] ) || !wp_verify_nonce( sanitize_text_field( $_POST['wppb-re-ajax-nonce'] ) ) );
+        if( !isset( $_POST['wppb-re-ajax-nonce'] ) || !wp_verify_nonce( sanitize_text_field( $_POST['wppb-re-ajax-nonce'] ), 'wppb-re-ajax-nonce' ) )
             return;
 
         if( isset( $_POST['wppb-role-slug-hidden'] ) ) {

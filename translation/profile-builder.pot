@@ -13,15 +13,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:341
+#: index.php:343
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:337
+#: index.php:339
 msgid "To enable updates, please enter your serial number on the <a href=\"%s\">Register Version</a> page. If you don't have a serial number, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>."
 msgstr ""
 
-#: index.php:41
+#: index.php:43
 msgid "%s is also activated. You need to deactivate it before activating this version of the plugin."
 msgstr ""
 
@@ -865,11 +865,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:304, admin/manage-fields.php:333, front-end/login.php:339, front-end/login.php:353, front-end/login.php:537, add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2526, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
+#: admin/general-settings.php:304, admin/manage-fields.php:333, front-end/login.php:341, front-end/login.php:355, front-end/login.php:543, add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2526, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:305, front-end/login.php:534, front-end/recover.php:118, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:884, add-ons/user-listing/userlisting.php:2527, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
+#: admin/general-settings.php:305, front-end/login.php:538, front-end/recover.php:118, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:884, add-ons/user-listing/userlisting.php:2527, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
 msgid "Email"
 msgstr ""
 
@@ -1449,7 +1449,7 @@ msgstr ""
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
 msgstr ""
 
-#: admin/manage-fields.php:351, front-end/login.php:119, front-end/recover.php:72, add-ons/email-customizer/email-customizer.php:30
+#: admin/manage-fields.php:351, front-end/login.php:121, front-end/recover.php:72, add-ons/email-customizer/email-customizer.php:30
 msgid "Password"
 msgstr ""
 
@@ -3473,7 +3473,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:302, front-end/login.php:641, assets/lib/wck-api/wordpress-creation-kit.php:787
+#: front-end/class-formbuilder.php:302, front-end/login.php:648, assets/lib/wck-api/wordpress-creation-kit.php:787
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -3505,7 +3505,7 @@ msgstr ""
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:464, front-end/login.php:583, add-ons-advanced/custom-profile-menus/index.php:303, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:75, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: front-end/class-formbuilder.php:464, front-end/login.php:590, add-ons-advanced/custom-profile-menus/index.php:303, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:75, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -3534,91 +3534,91 @@ msgstr ""
 msgid "<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href=\"%1$s\">this documentation</a> or try the <a href=\"%2$s\">support forums</a>."
 msgstr ""
 
-#: front-end/login.php:118
+#: front-end/login.php:119
 msgid "Username or Email Address"
 msgstr ""
 
-#: front-end/login.php:120
+#: front-end/login.php:122
 msgid "Remember Me"
 msgstr ""
 
-#: front-end/login.php:121
+#: front-end/login.php:123
 msgid "Log In"
 msgstr ""
 
-#: front-end/login.php:282
+#: front-end/login.php:284
 msgid "SUCCESS"
 msgstr ""
 
-#: front-end/login.php:282
+#: front-end/login.php:284
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:318, front-end/login.php:410, front-end/login.php:448, front-end/recover.php:18, front-end/recover.php:324, features/two-factor-authentication/class-two-factor-authentication.php:574, front-end/extra-fields/extra-fields.php:97
+#: front-end/login.php:320, front-end/login.php:412, front-end/login.php:450, front-end/recover.php:18, front-end/recover.php:324, features/two-factor-authentication/class-two-factor-authentication.php:574, front-end/extra-fields/extra-fields.php:97
 msgid "ERROR"
 msgstr ""
 
-#: front-end/login.php:318
+#: front-end/login.php:320
 msgid "You need to confirm your Email Address before logging in! To resend the Confirmation Email  %1$sclick here%2$s"
 msgstr ""
 
-#: front-end/login.php:414
+#: front-end/login.php:416
 msgid "The password field is empty."
 msgstr ""
 
-#: front-end/login.php:418
+#: front-end/login.php:420
 msgid "The password you entered is incorrect."
 msgstr ""
 
-#: front-end/login.php:427
+#: front-end/login.php:429
 msgid "The username field is empty"
 msgstr ""
 
-#: front-end/login.php:425
+#: front-end/login.php:427
 msgid "The username/email field is empty"
 msgstr ""
 
-#: front-end/login.php:423
+#: front-end/login.php:425
 msgid "The email field is empty."
 msgstr ""
 
-#: front-end/login.php:436
+#: front-end/login.php:438
 msgid "Invalid username."
 msgstr ""
 
-#: front-end/login.php:434
+#: front-end/login.php:436
 msgid "Invalid username or email."
 msgstr ""
 
-#: front-end/login.php:432
+#: front-end/login.php:434
 msgid "Invalid email."
 msgstr ""
 
-#: front-end/login.php:442
+#: front-end/login.php:444
 msgid "Password Lost and Found."
 msgstr ""
 
-#: front-end/login.php:442, front-end/login.php:589
+#: front-end/login.php:444, front-end/login.php:596
 msgid "Lost your password?"
 msgstr ""
 
-#: front-end/login.php:448
+#: front-end/login.php:450
 msgid "Both fields are empty."
 msgstr ""
 
-#: front-end/login.php:628, front-end/logout.php:38
+#: front-end/login.php:635, front-end/logout.php:38
 msgid "Log out of this account"
 msgstr ""
 
-#: front-end/login.php:628, front-end/logout.php:25
+#: front-end/login.php:635, front-end/logout.php:25
 msgid "Log out &raquo;"
 msgstr ""
 
-#: front-end/login.php:629
+#: front-end/login.php:636
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:541, front-end/recover.php:122
+#: front-end/login.php:548, front-end/recover.php:122
 msgid "Username or Email"
 msgstr ""
 
@@ -5925,7 +5925,7 @@ msgid "Admin Approval Error"
 msgstr ""
 
 #: features/admin-approval/admin-approval.php:334
-msgid "User not approved!"
+msgid "User status not modified!"
 msgstr ""
 
 #: features/admin-approval/admin-approval.php:336

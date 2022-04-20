@@ -1451,7 +1451,7 @@
 <?php __("Your account has been successfully created!", "profile-builder"); ?>
 <?php __("Something went wrong!", "profile-builder"); ?>
 <?php __("Admin Approval Error", "profile-builder"); ?>
-<?php __("User not approved!", "profile-builder"); ?>
+<?php __("User status not modified!", "profile-builder"); ?>
 <?php __("Admin Approval Declined", "profile-builder"); ?>
 <?php __("Do you wish to unapprove the registration?", "profile-builder"); ?>
 <?php __("Do you wish to approve the registration?", "profile-builder"); ?>

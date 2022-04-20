@@ -83,23 +83,24 @@ function wppb_process_login(){
  * @param array $args {
  *     Optional. Array of options to control the form output. Default empty array.
  *
- *     @type bool   $echo           Whether to display the login form or return the form HTML code.
- *                                  Default true (echo).
- *     @type string $redirect       URL to redirect to. Must be absolute, as in "https://example.com/mypage/".
- *                                  Default is to redirect back to the request URI.
- *     @type string $form_id        ID attribute value for the form. Default 'loginform'.
- *     @type string $label_username Label for the username or email address field. Default 'Username or Email Address'.
- *     @type string $label_password Label for the password field. Default 'Password'.
- *     @type string $label_remember Label for the remember field. Default 'Remember Me'.
- *     @type string $label_log_in   Label for the submit button. Default 'Log In'.
- *     @type string $id_username    ID attribute value for the username field. Default 'user_login'.
- *     @type string $id_password    ID attribute value for the password field. Default 'user_pass'.
- *     @type string $id_remember    ID attribute value for the remember field. Default 'rememberme'.
- *     @type string $id_submit      ID attribute value for the submit button. Default 'wp-submit'.
- *     @type bool   $remember       Whether to display the "rememberme" checkbox in the form.
- *     @type string $value_username Default value for the username field. Default empty.
- *     @type bool   $value_remember Whether the "Remember Me" checkbox should be checked by default.
- *                                  Default false (unchecked).
+ *     @type bool   $echo                      Whether to display the login form or return the form HTML code.
+ *                                             Default true (echo).
+ *     @type string $redirect                  URL to redirect to. Must be absolute, as in "https://example.com/mypage/".
+ *                                             Default is to redirect back to the request URI.
+ *     @type string $form_id                   ID attribute value for the form. Default 'loginform'.
+ *     @type string $label_username            Label for the username or email address field. Default 'Username or Email Address'.
+ *     @type string $label_username            Label for the username or email address field. Default 'Username or Email Address'.
+ *     @type string $login_username_input_type Type of input field for the username or email address.
+ *     @type string $label_remember            Label for the remember field. Default 'Remember Me'.
+ *     @type string $label_log_in              Label for the submit button. Default 'Log In'.
+ *     @type string $id_username               ID attribute value for the username field. Default 'user_login'.
+ *     @type string $id_password               ID attribute value for the password field. Default 'user_pass'.
+ *     @type string $id_remember               ID attribute value for the remember field. Default 'rememberme'.
+ *     @type string $id_submit                 ID attribute value for the submit button. Default 'wp-submit'.
+ *     @type bool   $remember                  Whether to display the "rememberme" checkbox in the form.
+ *     @type string $value_username            Default value for the username field. Default empty.
+ *     @type bool   $value_remember            Whether the "Remember Me" checkbox should be checked by default.
+ *                                             Default false (unchecked).
  *
  * }
  * @return string|void String when retrieving.
@@ -111,22 +112,23 @@ function wppb_login_form( $args = array() ) {
         $default_redirect = esc_url_raw( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
 
 	$defaults = array(
-		'echo'           => true,
+		'echo'                      => true,
 		// Default 'redirect' value takes the user back to the request URI.
-		'redirect'       => $default_redirect,
-		'form_id'        => 'wppb-loginform',
-		'label_username' => __( 'Username or Email Address', 'profile-builder' ),
-		'label_password' => __( 'Password', 'profile-builder' ),
-		'label_remember' => __( 'Remember Me', 'profile-builder' ),
-		'label_log_in'   => __( 'Log In', 'profile-builder' ),
-		'id_username'    => 'user_login',
-		'id_password'    => 'user_pass',
-		'id_remember'    => 'rememberme',
-		'id_submit'      => 'wp-submit',
-		'remember'       => true,
-		'value_username' => '',
+		'redirect'                  => $default_redirect,
+		'form_id'                   => 'wppb-loginform',
+		'label_username'            => __( 'Username or Email Address', 'profile-builder' ),
+        'login_username_input_type' => 'text',
+		'label_password'            => __( 'Password', 'profile-builder' ),
+		'label_remember'            => __( 'Remember Me', 'profile-builder' ),
+		'label_log_in'              => __( 'Log In', 'profile-builder' ),
+		'id_username'               => 'user_login',
+		'id_password'               => 'user_pass',
+		'id_remember'               => 'rememberme',
+		'id_submit'                 => 'wp-submit',
+		'remember'                  => true,
+		'value_username'            => '',
 		// Set 'value_remember' to true to default the "Remember me" checkbox to checked.
-		'value_remember' => false,
+		'value_remember'            => false,
 	);
 
 	/**
@@ -166,7 +168,7 @@ function wppb_login_form( $args = array() ) {
 			' . $login_form_top . '
 			<p class="login-username">
 				<label for="' . esc_attr( $args['id_username'] ) . '">' . esc_html( $args['label_username'] ) . '</label>
-				<input type="text" name="log" id="' . esc_attr( $args['id_username'] ) . '" class="input" value="' . esc_attr( $args['value_username'] ) . '" size="20" />
+				<input type="' . esc_attr( $args['login_username_input_type'] ) . '" name="log" id="' . esc_attr( $args['id_username'] ) . '" class="input" value="' . esc_attr( $args['value_username'] ) . '" size="20" />
 			</p>
 			<p class="login-password">
 				<label for="' . esc_attr( $args['id_password'] ) . '">' . esc_html( $args['label_password'] ) . '</label>
@@ -529,12 +531,17 @@ function wppb_front_end_login( $atts ){
 			$form_args['redirect'] = trim( $redirect_url );
 		}
 
-		// change the label argument for username is login with email is enabled
-		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
-			$form_args['label_username'] = __( 'Email', 'profile-builder' );
+        $form_args['login_username_input_type'] = 'text';
 
-        if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'username' ) )
-            $form_args['label_username'] = __( 'Username', 'profile-builder' );
+		// change the label argument for username is login with email is enabled
+		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ) {
+            $form_args['label_username'] = __('Email', 'profile-builder');
+            $form_args['login_username_input_type'] = 'email';
+        }
+
+        if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'username' ) ) {
+            $form_args['label_username'] = __('Username', 'profile-builder');
+        }
 
 		// change the label argument for username on login with username or email when Username and Email is enabled
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) )
