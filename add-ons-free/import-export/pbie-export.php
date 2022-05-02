@@ -36,6 +36,8 @@ function wppb_pbie_export_our_json() {
 				// Module Settings
 				'wppb_module_settings',
 				'wppb_module_settings_description',
+				'wppb_free_add_ons_settings',
+				'wppb_advanced_add_ons_settings',
 				// Email Customizer Settings
 				'wppb_emailc_common_settings_from_name',
 				'wppb_emailc_common_settings_from_reply_to_email',

@@ -62,7 +62,7 @@ function wppb_user_role_handler( $output, $form_location, $field, $user_id, $fie
 
 		$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
 
-        if( $form_location == 'register' || ( $form_location == 'edit_profile' && current_user_can('manage_options') && $user_can_manage_options == false ) || ( $show_user_role_on_edit_profile && !current_user_can('manage_options') ) ) {
+        if( $form_location == 'register' || ( $form_location == 'edit_profile' && apply_filters( 'wppb_user_role_select_field_capability', current_user_can('manage_options' )) && $user_can_manage_options == false ) || ( $show_user_role_on_edit_profile && !current_user_can('manage_options') ) ) {
             $error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );
 
             if ( array_key_exists( $field['id'], $field_check_errors ) )
@@ -95,7 +95,7 @@ function wppb_user_role_handler( $output, $form_location, $field, $user_id, $fie
 
 				$output .= '</select>';
 
-            if( $form_location == 'edit_profile' && !$show_user_role_on_edit_profile )
+            if( $form_location == 'edit_profile' && !$show_user_role_on_edit_profile && !apply_filters( 'wppb_user_role_select_field_capability', current_user_can('manage_options' )) )
                 $output .= '<span class="wppb-description-delimiter">'. __( 'Only administrators can see this field on edit profile forms.', 'profile-builder' ) .'</span>';
 
             if( !empty( $item_description ) )

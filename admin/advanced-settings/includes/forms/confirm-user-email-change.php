@@ -40,7 +40,10 @@ function wppb_toolbox_check_pending_email() {
 
     if ( empty( $unapproved_email_address ) && !isset( $_GET['wppb_epaa_review_users'] )) {
         $transient_check_key = apply_filters('wppb_pending_email_change_transient_key', '');
-        $transient_check = get_transient('wppb_pending_email_change_request_exists_' . $transient_check_key);
+
+        if ( !empty( $transient_check_key ) )
+            $transient_check = get_transient( 'wppb_pending_email_change_request_exists_' . $transient_check_key );
+        else $transient_check = false;
 
         if ( $transient_check !== false )
             $input_status = 'disabled';

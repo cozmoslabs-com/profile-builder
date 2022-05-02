@@ -3,10 +3,15 @@
 function wppb_toolbox_unique_display_name( $message, $field, $request_data, $form_location ) {
 
 	if ( isset( $request_data['display_name']) )  {
-		if ( isset( $_GET['edit_user'] ) )
-			$user = get_userdata( sanitize_text_field( $_GET['edit_user'] ) );
-		else
-			$user = wp_get_current_user();
+		if ( isset( $_GET['edit_user'] ) ) {
+            $user = get_userdata(sanitize_text_field($_GET['edit_user']));
+        }
+		else if ( isset( $request_data['user_id'] ) ) {
+            $user = get_userdata($request_data['user_id']);
+        }
+        else {
+            $user = wp_get_current_user();
+        }
 
 		if ( $request_data['display_name'] == $user->display_name )
 			return $message;
