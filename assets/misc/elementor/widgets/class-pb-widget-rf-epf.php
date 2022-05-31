@@ -57,7 +57,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
             ];
         }
 
-        if ( is_plugin_active( 'pb-add-on-multi-step-forms/index.php' ) ) {
+        if ( wppb_check_if_add_on_is_active( 'multi-step-forms' ) ) {
             $styles[] = 'wppb-msf-style-frontend';
         }
 
@@ -133,10 +133,11 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
 
             if ( $the_query->have_posts() ) {
                 foreach ( $the_query->posts as $post ) {
-                    $form_titles    ['-'.Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = $post->post_title ;
-                    $edit_form_links[    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_edit_post_link($post->ID);
-                    $form_fields    [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_post_meta($post->ID, $fields_post_meta_key, true);
-                    $social_connect [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_post_meta($post->ID, 'wppb_sc_rf_epf_active', true);
+                    $form_titles      ['-'.Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = $post->post_title ;
+                    $edit_form_links  [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_edit_post_link($post->ID);
+                    $form_fields      [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_post_meta($post->ID, $fields_post_meta_key, true);
+                    $social_connect   [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_post_meta($post->ID, 'wppb_sc_rf_epf_active', true);
+                    $msf_break_points [    Wordpress_Creation_Kit_PB::wck_generate_slug( $post->post_title )] = get_post_meta($post->ID, 'wppb_msf_break_points', true);
                 }
                 wp_reset_postdata();
             }
@@ -414,6 +415,40 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                 ]
             );
         }
+
+        // Style for the MSF buttons
+        if ( wppb_check_if_add_on_is_active( 'multi-step-forms' ) ) {
+            $conditions = [];
+
+            foreach ( $edit_form_links as $form_slug => $edit_form_link ) {
+                if ( $form_slug === 'default' && !empty( get_option( 'wppb_msf_break_points', false ) ) ) {
+                    $conditions['pb_form_name'][] = '';
+                } elseif ( !empty( $msf_break_points[$form_slug] ) ) {
+                    $conditions['pb_form_name'][] = '-' . $form_slug;
+                }
+            }
+
+            $sections['msf_default'] = [
+                    'selector' => '.wppb-msf-button',
+                    'section_name' => 'Default'
+            ];
+            $sections['msf_pagination'] = [
+                'selector' => '.wppb-msf-pagination',
+                'section_name' => 'Pagination'
+            ];
+            $sections['msf_tabs'] = [
+                'selector' => '.wppb-msf-tabs',
+                'section_name' => 'Tabs'
+            ];
+
+            $this->add_styling_control_group(
+                'Multi Step Forms Buttons',
+                $conditions,
+                $section_id_prefix . '_' . $form_slug . '_msf',
+                $sections
+            );
+        }
+
     }
 
     /**

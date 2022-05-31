@@ -329,7 +329,7 @@ msgstr ""
 msgid "Login is set to be done using the Email. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
 msgstr ""
 
-#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:901
+#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:904
 msgid "General Settings"
 msgstr ""
 
@@ -517,7 +517,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:99, features/roles-editor/roles-editor.php:245, features/roles-editor/roles-editor.php:246, features/roles-editor/roles-editor.php:251, features/roles-editor/roles-editor.php:258
+#: admin/basic-info.php:99, features/roles-editor/roles-editor.php:61, features/roles-editor/roles-editor.php:62, features/roles-editor/roles-editor.php:275, features/roles-editor/roles-editor.php:276, features/roles-editor/roles-editor.php:281, features/roles-editor/roles-editor.php:288
 msgid "Roles Editor"
 msgstr ""
 
@@ -538,7 +538,7 @@ msgid "Get started with extra fields"
 msgstr ""
 
 #: admin/basic-info.php:116
-msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
+msgid "Extra Profile Fields are available in Basic or PRO versions"
 msgstr ""
 
 #: admin/basic-info.php:121
@@ -662,7 +662,7 @@ msgid "Set up a repeating group of fields on register and edit profile forms. Li
 msgstr ""
 
 #: admin/basic-info.php:225
-msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
+msgid " * only available in the %1$Basic and Pro versions%2$s."
 msgstr ""
 
 #: admin/basic-info.php:226
@@ -781,7 +781,7 @@ msgstr ""
 msgid "Load Profile Builder's own CSS file in the front-end:"
 msgstr ""
 
-#: admin/general-settings.php:151, admin/general-settings.php:164, admin/general-settings.php:179, admin/general-settings.php:228, admin/general-settings.php:275, admin/manage-fields.php:193, admin/private-website.php:70, admin/private-website.php:137, admin/private-website.php:150, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2590, add-ons-advanced/bbpress/bbpress-page.php:157, add-ons-advanced/social-connect/index.php:347, add-ons-advanced/social-connect/index.php:406, features/content-restriction/content-restriction.php:89, features/two-factor-authentication/class-two-factor-authentication.php:125, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:181, admin/advanced-settings/includes/views/view-fields.php:197, admin/advanced-settings/includes/views/view-fields.php:217, admin/advanced-settings/includes/views/view-fields.php:240, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-fields.php:277, admin/advanced-settings/includes/views/view-fields.php:295, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:75, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:182, assets/misc/elementor/widgets/class-pb-widget-ul.php:109
+#: admin/general-settings.php:151, admin/general-settings.php:164, admin/general-settings.php:179, admin/general-settings.php:228, admin/general-settings.php:275, admin/manage-fields.php:193, admin/private-website.php:70, admin/private-website.php:137, admin/private-website.php:150, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2590, add-ons-advanced/bbpress/bbpress-page.php:161, add-ons-advanced/social-connect/index.php:347, add-ons-advanced/social-connect/index.php:406, features/content-restriction/content-restriction.php:89, features/two-factor-authentication/class-two-factor-authentication.php:125, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:181, admin/advanced-settings/includes/views/view-fields.php:197, admin/advanced-settings/includes/views/view-fields.php:217, admin/advanced-settings/includes/views/view-fields.php:240, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-fields.php:277, admin/advanced-settings/includes/views/view-fields.php:295, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:75, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:183, assets/misc/elementor/widgets/class-pb-widget-ul.php:109
 msgid "Yes"
 msgstr ""
 
@@ -793,7 +793,7 @@ msgstr ""
 msgid "Automatically Log In:"
 msgstr ""
 
-#: admin/general-settings.php:165, admin/general-settings.php:180, admin/general-settings.php:229, admin/general-settings.php:274, admin/private-website.php:69, admin/private-website.php:136, admin/private-website.php:151, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons-advanced/bbpress/bbpress-page.php:156, add-ons-advanced/social-connect/index.php:348, add-ons-advanced/social-connect/index.php:407, features/content-restriction/content-restriction.php:88, features/two-factor-authentication/class-two-factor-authentication.php:124, admin/advanced-settings/includes/forms/placeholder-labels.php:136, assets/misc/elementor/widgets/class-pb-widget-l.php:76, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:183, assets/misc/elementor/widgets/class-pb-widget-ul.php:110
+#: admin/general-settings.php:165, admin/general-settings.php:180, admin/general-settings.php:229, admin/general-settings.php:274, admin/private-website.php:69, admin/private-website.php:136, admin/private-website.php:151, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons-advanced/bbpress/bbpress-page.php:160, add-ons-advanced/social-connect/index.php:348, add-ons-advanced/social-connect/index.php:407, features/content-restriction/content-restriction.php:88, features/two-factor-authentication/class-two-factor-authentication.php:124, admin/advanced-settings/includes/forms/placeholder-labels.php:136, assets/misc/elementor/widgets/class-pb-widget-l.php:76, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:184, assets/misc/elementor/widgets/class-pb-widget-ul.php:110
 msgid "No"
 msgstr ""
 
@@ -854,7 +854,7 @@ msgid "\"Admin Approval\" Feature:"
 msgstr ""
 
 #: admin/general-settings.php:292
-msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
+msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$Basic or PRO versions%2$s."
 msgstr ""
 
 #: admin/general-settings.php:299
@@ -865,7 +865,7 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:304, admin/manage-fields.php:333, front-end/login.php:341, front-end/login.php:355, front-end/login.php:543, add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2543, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
+#: admin/general-settings.php:304, admin/manage-fields.php:333, front-end/login.php:341, front-end/login.php:355, front-end/login.php:543, add-ons/custom-redirects/custom_redirects_admin.php:61, add-ons/email-customizer/email-customizer.php:28, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:336, add-ons/user-listing/userlisting.php:878, add-ons/user-listing/userlisting.php:2543, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, admin/advanced-settings/includes/views/view-fields.php:121
 msgid "Username"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgid "Choose one of the supported field types"
 msgstr ""
 
 #: admin/manage-fields.php:136
-msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
+msgid ". Extra Field Types are available in <a href=\"%s\">Basic or PRO versions</a>."
 msgstr ""
 
 #: admin/manage-fields.php:172
@@ -949,7 +949,7 @@ msgstr ""
 msgid "Meta-name"
 msgstr ""
 
-#: admin/manage-fields.php:189, add-ons/custom-redirects/custom_redirects_admin.php:69, add-ons/custom-redirects/custom_redirects_admin.php:99, add-ons/custom-redirects/custom_redirects_admin.php:118, add-ons/custom-redirects/custom_redirects_admin.php:143, add-ons/multiple-forms/edit-profile-forms.php:246, add-ons/multiple-forms/register-forms.php:267, add-ons/user-listing/userlisting.php:923, assets/misc/elementor/widgets/class-pb-widget-ul.php:172
+#: admin/manage-fields.php:189, add-ons/custom-redirects/custom_redirects_admin.php:70, add-ons/custom-redirects/custom_redirects_admin.php:100, add-ons/custom-redirects/custom_redirects_admin.php:119, add-ons/custom-redirects/custom_redirects_admin.php:144, add-ons/multiple-forms/edit-profile-forms.php:246, add-ons/multiple-forms/register-forms.php:267, add-ons/user-listing/userlisting.php:923, assets/misc/elementor/widgets/class-pb-widget-ul.php:172
 msgid "ID"
 msgstr ""
 
@@ -3053,11 +3053,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:373, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:872, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
+#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:373, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:183, add-ons/custom-redirects/custom_redirects_admin.php:197, add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:180, features/roles-editor/roles-editor.php:910, features/roles-editor/roles-editor.php:899, features/roles-editor/roles-editor.php:890, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3217,7 +3217,7 @@ msgstr ""
 msgid "Redirects to this page if not logged in. We recommend this page contains the [wppb-login] shortcode."
 msgstr ""
 
-#: admin/private-website.php:96, add-ons/custom-redirects/custom_redirects_admin.php:253
+#: admin/private-website.php:96, add-ons/custom-redirects/custom_redirects_admin.php:254
 msgid "You can force access to wp-login.php so you don't get locked out of the site by accessing the link:"
 msgstr ""
 
@@ -3397,7 +3397,7 @@ msgstr ""
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1052, features/roles-editor/roles-editor.php:181, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:171, assets/lib/wck-api/wordpress-creation-kit.php:406
+#: features/functions.php:1052, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:171, assets/lib/wck-api/wordpress-creation-kit.php:406
 msgid "Cancel"
 msgstr ""
 
@@ -3775,158 +3775,162 @@ msgid "After Successful Email Confirmation"
 msgstr ""
 
 #: add-ons/custom-redirects/custom_redirects_admin.php:54
-msgid "After Successful Password Reset"
+msgid "After Password Change Request"
 msgstr ""
 
 #: add-ons/custom-redirects/custom_redirects_admin.php:55
+msgid "After Successful Password Reset"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:56
 msgid "Dashboard (redirect users from accessing the dashboard)"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:59, add-ons/user-listing/userlisting.php:168, add-ons/user-listing/userlisting.php:2545
+#: add-ons/custom-redirects/custom_redirects_admin.php:60, add-ons/user-listing/userlisting.php:168, add-ons/user-listing/userlisting.php:2545
 msgid "User ID"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:65
+#: add-ons/custom-redirects/custom_redirects_admin.php:66
 msgid "User ID or Username"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:66
+#: add-ons/custom-redirects/custom_redirects_admin.php:67
 msgid "User ID / Username"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:66
+#: add-ons/custom-redirects/custom_redirects_admin.php:67
 msgid "Please select and enter the ID or username of your user."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:67, add-ons/custom-redirects/custom_redirects_admin.php:97, add-ons/custom-redirects/custom_redirects_admin.php:116, add-ons/custom-redirects/custom_redirects_admin.php:135
+#: add-ons/custom-redirects/custom_redirects_admin.php:68, add-ons/custom-redirects/custom_redirects_admin.php:98, add-ons/custom-redirects/custom_redirects_admin.php:117, add-ons/custom-redirects/custom_redirects_admin.php:136
 msgid "Redirect Type"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:68, add-ons/custom-redirects/custom_redirects_admin.php:98, add-ons/custom-redirects/custom_redirects_admin.php:117, add-ons/custom-redirects/custom_redirects_admin.php:142, features/content-restriction/content-restriction.php:115
+#: add-ons/custom-redirects/custom_redirects_admin.php:69, add-ons/custom-redirects/custom_redirects_admin.php:99, add-ons/custom-redirects/custom_redirects_admin.php:118, add-ons/custom-redirects/custom_redirects_admin.php:143, features/content-restriction/content-restriction.php:115
 msgid "Redirect URL"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:68, add-ons/custom-redirects/custom_redirects_admin.php:98, add-ons/custom-redirects/custom_redirects_admin.php:117, add-ons/custom-redirects/custom_redirects_admin.php:142
+#: add-ons/custom-redirects/custom_redirects_admin.php:69, add-ons/custom-redirects/custom_redirects_admin.php:99, add-ons/custom-redirects/custom_redirects_admin.php:118, add-ons/custom-redirects/custom_redirects_admin.php:143
 msgid "Can contain the following dynamic tags:{{homeurl}}, {{siteurl}}, {{user_id}}, {{user_nicename}}, {{http_referer}}"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:75, add-ons/custom-redirects/custom_redirects_admin.php:245
+#: add-ons/custom-redirects/custom_redirects_admin.php:76, add-ons/custom-redirects/custom_redirects_admin.php:246
 msgid "Individual User Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:88
+#: add-ons/custom-redirects/custom_redirects_admin.php:89
 msgid "... Choose"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:96, add-ons/email-customizer/email-customizer.php:31
+#: add-ons/custom-redirects/custom_redirects_admin.php:97, add-ons/email-customizer/email-customizer.php:31
 msgid "User Role"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:96
+#: add-ons/custom-redirects/custom_redirects_admin.php:97
 msgid "Select a user role."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:105, add-ons/custom-redirects/custom_redirects_admin.php:246
+#: add-ons/custom-redirects/custom_redirects_admin.php:106, add-ons/custom-redirects/custom_redirects_admin.php:247
 msgid "User Role based Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:124, add-ons/custom-redirects/custom_redirects_admin.php:247
+#: add-ons/custom-redirects/custom_redirects_admin.php:125, add-ons/custom-redirects/custom_redirects_admin.php:248
 msgid "Global Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:137
+#: add-ons/custom-redirects/custom_redirects_admin.php:138
 msgid "Login ( wp-login.php )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:138
+#: add-ons/custom-redirects/custom_redirects_admin.php:139
 msgid "Register ( wp-login.php?action=register )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:139
+#: add-ons/custom-redirects/custom_redirects_admin.php:140
 msgid "Lost Password ( wp-login.php?action=lostpassword )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:140
+#: add-ons/custom-redirects/custom_redirects_admin.php:141
 msgid "Author Archive ( http://sitename.com/author/admin )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:149
+#: add-ons/custom-redirects/custom_redirects_admin.php:150
 msgid "Redirect Default WordPress Forms and Pages"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:161
+#: add-ons/custom-redirects/custom_redirects_admin.php:162
 msgid "How does this work?"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:183
+#: add-ons/custom-redirects/custom_redirects_admin.php:184
 msgid "<pre>User ID / Username</pre><pre>Redirect</pre><pre>URL</pre>"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:197
+#: add-ons/custom-redirects/custom_redirects_admin.php:198
 msgid "<pre>User Role</pre><pre>Redirect</pre><pre>URL</pre>"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:211, add-ons/custom-redirects/custom_redirects_admin.php:225
+#: add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226
 msgid "<pre>Redirect</pre><pre>URL</pre>"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:240
+#: add-ons/custom-redirects/custom_redirects_admin.php:241
 msgid "These redirects happen after a successful action, like registration or after a successful login."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:242
+#: add-ons/custom-redirects/custom_redirects_admin.php:243
 msgid "Which redirect happens depends on the following priority:"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:244
+#: add-ons/custom-redirects/custom_redirects_admin.php:245
 msgid "Multiple Registration and Edit Profile form settings Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:248
+#: add-ons/custom-redirects/custom_redirects_admin.php:249
 msgid "Individual redirects defined in shortcodes; <strong><em>redirect_priority=\"top\"</em></strong> parameter can be added in any shortcode, then that shortcode redirect will have priority over all other redirects."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:251
+#: add-ons/custom-redirects/custom_redirects_admin.php:252
 msgid "Redirect Default WordPress forms and pages"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:252
+#: add-ons/custom-redirects/custom_redirects_admin.php:253
 msgid "With these you can redirect various WordPress forms and pages to pages created with profile builder."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:255
+#: add-ons/custom-redirects/custom_redirects_admin.php:256
 msgid "Available tags for dynamic URLs"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:256
+#: add-ons/custom-redirects/custom_redirects_admin.php:257
 msgid "You use the following tags in your URLs to redirect users to various pages."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:258
+#: add-ons/custom-redirects/custom_redirects_admin.php:259
 msgid "generates a url of the current website homepage."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:259
+#: add-ons/custom-redirects/custom_redirects_admin.php:260
 msgid "in WordPress the <a target='_blank' href='https://codex.wordpress.org/Function_Reference/site_url'>site url</a> can be different then the home url"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:260
+#: add-ons/custom-redirects/custom_redirects_admin.php:261
 msgid "the ID of the user"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:261
+#: add-ons/custom-redirects/custom_redirects_admin.php:262
 msgid "the URL sanitized version of the username, the user nicename can be safely used in URLs since it can't contain special characters or spaces."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:262
+#: add-ons/custom-redirects/custom_redirects_admin.php:263
 msgid "the URL of the previously visited page"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:263
+#: add-ons/custom-redirects/custom_redirects_admin.php:264
 msgid "the default URL set by WordPress after login"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:358, add-ons/custom-redirects/custom_redirects_admin.php:352, add-ons/custom-redirects/custom_redirects_admin.php:346
+#: add-ons/custom-redirects/custom_redirects_admin.php:359, add-ons/custom-redirects/custom_redirects_admin.php:353, add-ons/custom-redirects/custom_redirects_admin.php:347
 msgid "You can't add duplicate redirects!"
 msgstr ""
 
@@ -4450,7 +4454,7 @@ msgstr ""
 msgid "No Registration Forms found in trash"
 msgstr ""
 
-#: add-ons/multiple-forms/register-forms.php:219, features/roles-editor/roles-editor.php:171
+#: add-ons/multiple-forms/register-forms.php:219, features/roles-editor/roles-editor.php:201
 msgid "Default Role"
 msgstr ""
 
@@ -4522,11 +4526,11 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:169, add-ons/user-listing/userlisting.php:338, add-ons/user-listing/userlisting.php:920, add-ons/user-listing/userlisting.php:2554, features/admin-approval/class-admin-approval.php:178, features/roles-editor/roles-editor.php:256
+#: add-ons/user-listing/userlisting.php:169, add-ons/user-listing/userlisting.php:338, add-ons/user-listing/userlisting.php:920, add-ons/user-listing/userlisting.php:2554, features/admin-approval/class-admin-approval.php:178, features/roles-editor/roles-editor.php:286
 msgid "Role"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:170, features/roles-editor/roles-editor.php:366, features/roles-editor/roles-editor.php:530
+#: add-ons/user-listing/userlisting.php:170, features/roles-editor/roles-editor.php:396, features/roles-editor/roles-editor.php:560
 msgid "Role Slug"
 msgstr ""
 
@@ -4602,7 +4606,7 @@ msgstr ""
 msgid "Firstname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:339, add-ons/user-listing/userlisting.php:905, features/roles-editor/roles-editor.php:451
+#: add-ons/user-listing/userlisting.php:339, add-ons/user-listing/userlisting.php:905, features/roles-editor/roles-editor.php:481
 msgid "Posts"
 msgstr ""
 
@@ -4626,7 +4630,7 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:591, add-ons/user-listing/userlisting.php:588, add-ons/user-listing/userlisting.php:586, add-ons/user-listing/userlisting.php:569, add-ons/user-listing/userlisting.php:566, add-ons/user-listing/userlisting.php:564, add-ons-advanced/bbpress/bbpress-page.php:86, add-ons-advanced/bbpress/bbpress-page.php:121, add-ons-advanced/woocommerce/woosync-page.php:80, add-ons-advanced/woocommerce/woosync-page.php:115, features/content-restriction/content-restriction.php:136, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:557, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:232, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:307
+#: add-ons/user-listing/userlisting.php:591, add-ons/user-listing/userlisting.php:588, add-ons/user-listing/userlisting.php:586, add-ons/user-listing/userlisting.php:569, add-ons/user-listing/userlisting.php:566, add-ons/user-listing/userlisting.php:564, add-ons-advanced/bbpress/bbpress-page.php:90, add-ons-advanced/bbpress/bbpress-page.php:125, add-ons-advanced/woocommerce/woosync-page.php:80, add-ons-advanced/woocommerce/woosync-page.php:115, features/content-restriction/content-restriction.php:136, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:557, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:232, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:307
 msgid "None"
 msgstr ""
 
@@ -4914,35 +4918,35 @@ msgstr ""
 msgid "No results found!"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:71
+#: add-ons-advanced/bbpress/bbpress-page.php:75
 msgid "bbPress Integration"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:82
+#: add-ons-advanced/bbpress/bbpress-page.php:86
 msgid "Choose (Single) User Listing to display under bbPress user Profile tab:"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:109
+#: add-ons-advanced/bbpress/bbpress-page.php:113
 msgid "Select which Single User-listing managed via Profile Builder should replace the default bbPress user profile."
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:117
+#: add-ons-advanced/bbpress/bbpress-page.php:121
 msgid "Choose Edit Profile form to display under bbPress Profile Edit tab:"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:122, add-ons-advanced/woocommerce/woosync-page.php:116, add-ons-advanced/buddypress/includes/buddypress-page.php:98
+#: add-ons-advanced/bbpress/bbpress-page.php:126, add-ons-advanced/woocommerce/woosync-page.php:116, add-ons-advanced/buddypress/includes/buddypress-page.php:98
 msgid "Default Edit Profile"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:145
+#: add-ons-advanced/bbpress/bbpress-page.php:149
 msgid "Select Profile Builder Edit Profile form to replace the bbPress Profile Edit tab."
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:152
+#: add-ons-advanced/bbpress/bbpress-page.php:156
 msgid "Replace bbPress Login form:"
 msgstr ""
 
-#: add-ons-advanced/bbpress/bbpress-page.php:161
+#: add-ons-advanced/bbpress/bbpress-page.php:165
 msgid "Select \"Yes\" to replace the default bbPress Login form with the Profile Builder Login form."
 msgstr ""
 
@@ -5098,71 +5102,71 @@ msgstr ""
 msgid "Choose if this field requires an administrator to approve any modifications on the edit profile forms"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:288
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:291
 msgid "This field requires admin approval on edit profile"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:357
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:360
 msgid "Finish Review and Send Notifications"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:358
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:361
 msgid "Approve All"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:376
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:379
 msgid "This field requires approval by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:405, features/admin-approval/class-admin-approval.php:355
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:408, features/admin-approval/class-admin-approval.php:355
 msgid "Unapproved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:405, features/admin-approval/class-admin-approval.php:353
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:408, features/admin-approval/class-admin-approval.php:353
 msgid "Approved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:745, add-ons-advanced/edit-profile-approved-by-admin/index.php:775
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:752, add-ons-advanced/edit-profile-approved-by-admin/index.php:782
 msgid "Your profile has been reviewed by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:767
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:774
 msgid "Approved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:771
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:778
 msgid "Unapproved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:794
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:801
 msgid "Field %1$s changed from %2$s to %3$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:802
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:809
 msgid "The user %1$s has updated their profile and some of the fields require admin approval:<br><br> %2$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:804
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:811
 msgid "Access this link to approve changes: %1$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:807
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:814
 msgid "A user has updated their profile. Some fields need approval"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:827
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:834
 msgid "Field %1$s requires approval from an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:902
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:909
 msgid "Show users that require review"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:904
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:911
 msgid "Show reviewed users with unapproved fields"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:907
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:914
 msgid "Exit Review Mode"
 msgstr ""
 
@@ -5534,23 +5538,23 @@ msgstr ""
 msgid "Please enter your Twitter email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:750
+#: add-ons-advanced/social-connect/index.php:753
 msgid "Profile Builder not active!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:905
+#: add-ons-advanced/social-connect/index.php:908
 msgid "Application Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:909
+#: add-ons-advanced/social-connect/index.php:912
 msgid "Appearance Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:973
+#: add-ons-advanced/social-connect/index.php:976
 msgid "Unlink"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:980
+#: add-ons-advanced/social-connect/index.php:983
 msgid "Your account is linked with:"
 msgstr ""
 
@@ -6020,67 +6024,67 @@ msgstr ""
 msgid "This field has conditional logic enabled."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:77, features/content-restriction/content-restriction-meta-box.php:19
+#: features/content-restriction/class-elementor-content-restriction.php:85, features/content-restriction/content-restriction-meta-box.php:19
 msgid "Profile Builder Content Restriction"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:90
+#: features/content-restriction/class-elementor-content-restriction.php:98
 msgid "Restrict to logged in users"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:92
+#: features/content-restriction/class-elementor-content-restriction.php:100
 msgid "Allow only logged in users to see this content."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:102
+#: features/content-restriction/class-elementor-content-restriction.php:110
 msgid "Restrict to logged out users"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:104
+#: features/content-restriction/class-elementor-content-restriction.php:112
 msgid "Allow only logged out users to see this content."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:114
+#: features/content-restriction/class-elementor-content-restriction.php:122
 msgid "Restrict by User Roles"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:129
+#: features/content-restriction/class-elementor-content-restriction.php:137
 msgid "Allow users which have the specified role to see this content."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:138, features/content-restriction/content-restriction-meta-box.php:127
+#: features/content-restriction/class-elementor-content-restriction.php:146, features/content-restriction/content-restriction-meta-box.php:127
 msgid "Restriction Messages"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:146
+#: features/content-restriction/class-elementor-content-restriction.php:154
 msgid "Enable Restriction Messages"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:148
+#: features/content-restriction/class-elementor-content-restriction.php:156
 msgid "Replace hidden content with the default messages from PB -> Settings -> Content Restriction, a custom message or an Elementor Template."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:154, features/content-restriction/content-restriction-meta-box.php:133
+#: features/content-restriction/class-elementor-content-restriction.php:162, features/content-restriction/content-restriction-meta-box.php:133
 msgid "Enable Custom Messages"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:156
+#: features/content-restriction/class-elementor-content-restriction.php:164
 msgid "Add a custom message or template."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:165
+#: features/content-restriction/class-elementor-content-restriction.php:173
 msgid "Content type"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:169
+#: features/content-restriction/class-elementor-content-restriction.php:177
 msgid "Text"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:173
+#: features/content-restriction/class-elementor-content-restriction.php:181
 msgid "Template"
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:190
+#: features/content-restriction/class-elementor-content-restriction.php:198
 msgid "Select Template"
 msgstr ""
 
@@ -6324,214 +6328,214 @@ msgstr ""
 msgid "Password Recovery page URL (optional):"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:172
+#: features/roles-editor/roles-editor.php:202
 msgid "Your Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:173
+#: features/roles-editor/roles-editor.php:203
 msgid "Role name is required."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:174
+#: features/roles-editor/roles-editor.php:204
 msgid "No capabilities found."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:175
+#: features/roles-editor/roles-editor.php:205
 msgid "Select capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:176
+#: features/roles-editor/roles-editor.php:206
 msgid "Delete Permanently"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:177
+#: features/roles-editor/roles-editor.php:207
 msgid ""
 "This will permanently delete the capability from your site and from every user role.\n"
 "\n"
 "It can't be undone!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:178
+#: features/roles-editor/roles-editor.php:208
 msgid "This capability is not saved until you click Update!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:179
+#: features/roles-editor/roles-editor.php:209
 msgid "This capability is not saved until you click Publish!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:182, features/roles-editor/roles-editor.php:432
+#: features/roles-editor/roles-editor.php:212, features/roles-editor/roles-editor.php:462
 msgid "Add New Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:183
+#: features/roles-editor/roles-editor.php:213
 msgid "Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:184
+#: features/roles-editor/roles-editor.php:214
 msgid "You can't delete this capability from your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:247, features/roles-editor/roles-editor.php:248
+#: features/roles-editor/roles-editor.php:277, features/roles-editor/roles-editor.php:278
 msgid "Add New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:249
+#: features/roles-editor/roles-editor.php:279
 msgid "Edit Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:250
+#: features/roles-editor/roles-editor.php:280
 msgid "New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:252
+#: features/roles-editor/roles-editor.php:282
 msgid "View Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:253
+#: features/roles-editor/roles-editor.php:283
 msgid "Search the Roles Editor"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:254
+#: features/roles-editor/roles-editor.php:284
 msgid "No roles found"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:255
+#: features/roles-editor/roles-editor.php:285
 msgid "No roles found in trash"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:284
+#: features/roles-editor/roles-editor.php:314
 msgid "Enter role name here"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:297, features/roles-editor/roles-editor.php:300
+#: features/roles-editor/roles-editor.php:327, features/roles-editor/roles-editor.php:330
 msgid "Role updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:298
+#: features/roles-editor/roles-editor.php:328
 msgid "Custom field updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:299
+#: features/roles-editor/roles-editor.php:329
 msgid "Custom field deleted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:301
+#: features/roles-editor/roles-editor.php:331
 msgid "Role restored to revision from %s"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:302
+#: features/roles-editor/roles-editor.php:332
 msgid "Role created."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:303
+#: features/roles-editor/roles-editor.php:333
 msgid "Role saved."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:304
+#: features/roles-editor/roles-editor.php:334
 msgid "Role submitted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:305
+#: features/roles-editor/roles-editor.php:335
 msgid "Role scheduled for: <strong>%1$s</strong>"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:305
+#: features/roles-editor/roles-editor.php:335
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:306
+#: features/roles-editor/roles-editor.php:336
 msgid "Role draft updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:365
+#: features/roles-editor/roles-editor.php:395
 msgid "Role Name"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:367, features/roles-editor/roles-editor.php:524
+#: features/roles-editor/roles-editor.php:397, features/roles-editor/roles-editor.php:554
 msgid "Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:368, features/roles-editor/roles-editor.php:475, features/roles-editor/roles-editor.php:519
+#: features/roles-editor/roles-editor.php:398, features/roles-editor/roles-editor.php:505, features/roles-editor/roles-editor.php:549
 msgid "Users"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:414
+#: features/roles-editor/roles-editor.php:444
 msgid "Edit Role Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:425
+#: features/roles-editor/roles-editor.php:455
 msgid "Add a new capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:428
+#: features/roles-editor/roles-editor.php:458
 msgid "Add Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:435
+#: features/roles-editor/roles-editor.php:465
 msgid "Please select an existing capability or add a new one!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:436
+#: features/roles-editor/roles-editor.php:466
 msgid "You can't add a hidden capability!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:437
+#: features/roles-editor/roles-editor.php:467
 msgid "This capability already exists!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:443
+#: features/roles-editor/roles-editor.php:473
 msgid "All"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:447
+#: features/roles-editor/roles-editor.php:477
 msgid "General"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:455
+#: features/roles-editor/roles-editor.php:485
 msgid "Pages"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:459
+#: features/roles-editor/roles-editor.php:489
 msgid "Media"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:463
+#: features/roles-editor/roles-editor.php:493
 msgid "Taxonomies"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:467
+#: features/roles-editor/roles-editor.php:497
 msgid "Appearance"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:471
+#: features/roles-editor/roles-editor.php:501
 msgid "Plugins"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:479
+#: features/roles-editor/roles-editor.php:509
 msgid "Custom"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:883
+#: features/roles-editor/roles-editor.php:913
 msgid "Clone"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:909
+#: features/roles-editor/roles-editor.php:939
 msgid "Are you sure?\nThis will permanently delete the role and cannot be undone!\nUsers assigned only on this role will be moved to the default role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:898
+#: features/roles-editor/roles-editor.php:928
 msgid "Change Default"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:899
+#: features/roles-editor/roles-editor.php:929
 msgid "You can't delete the default role. Change it first."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:890
+#: features/roles-editor/roles-editor.php:920
 msgid "You can't delete your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:1126
+#: features/roles-editor/roles-editor.php:1156
 msgid "Edit User Roles"
 msgstr ""
 
@@ -8067,7 +8071,7 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-l.php:56, assets/misc/elementor/widgets/class-pb-widget-l.php:65, assets/misc/elementor/widgets/class-pb-widget-l.php:98, assets/misc/elementor/widgets/class-pb-widget-l.php:107, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:237, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:256
+#: assets/misc/elementor/widgets/class-pb-widget-l.php:56, assets/misc/elementor/widgets/class-pb-widget-l.php:65, assets/misc/elementor/widgets/class-pb-widget-l.php:98, assets/misc/elementor/widgets/class-pb-widget-l.php:107, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:238, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:257
 msgid "Enter URL"
 msgstr ""
 
@@ -8075,35 +8079,35 @@ msgstr ""
 msgid "Show Authenticator Code Field"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-l.php:88, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:225
+#: assets/misc/elementor/widgets/class-pb-widget-l.php:88, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:226
 msgid "Redirects"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:148
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:149
 msgid "Form"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:167
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:168
 msgid "Assigned Role"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:181
 msgid "Automatic Login"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:214
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:215
 msgid "Edit the Settings for this form %1$shere%2$s"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:245
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:246
 msgid "Redirect after Edit Profile"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:243
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:244
 msgid "Redirect after Registration"
 msgstr ""
 
-#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:254
+#: assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:255
 msgid "Redirect after Logout"
 msgstr ""
 

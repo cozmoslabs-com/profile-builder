@@ -697,7 +697,8 @@ add_action( 'wp_ajax_wppb_handle_email_confirmation_cases', 'wppb_handle_email_c
 
 
 $wppb_general_settings = get_option( 'wppb_general_settings', 'not_found' );
-if( $wppb_general_settings != 'not_found' )
+if( $wppb_general_settings != 'not_found' ){
+
     if( !empty($wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
         if ( is_multisite() ){
             /* don't display on network admin */
@@ -717,12 +718,4 @@ if( $wppb_general_settings != 'not_found' )
             add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
     }
 
-
-// function to delete the users from the _signups table also
-function wppb_delete_user_from_signups( $user_id ) {
-	global $wpdb;
-
-    $user = get_user_by( 'id', $user_id );
-	$wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_email' => $user->user_email ) );
 }
-add_action( 'delete_user', 'wppb_delete_user_from_signups' );

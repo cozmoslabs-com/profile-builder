@@ -133,7 +133,7 @@ function wppb_populate_manage_fields(){
 	//Free to Pro call to action on Manage Fields page
 	$field_description = __('Choose one of the supported field types','profile-builder');
 	if( PROFILE_BUILDER == 'Profile Builder Free' ) {
-		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Hobbyist or PRO versions</a>.' , 'profile-builder'), esc_url( 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
+		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Basic or PRO versions</a>.' , 'profile-builder'), esc_url( 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
 	}
 
     //user roles

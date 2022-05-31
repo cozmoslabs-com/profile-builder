@@ -113,7 +113,7 @@ function wppb_basic_info_content() {
 				<h3><?php esc_html_e( 'Customize Your Forms The Way You Want (*)', 'profile-builder' ); ?></h3>
 				<p><?php esc_html_e( 'With Extra Profile Fields you can create the exact registration form your project needs.', 'profile-builder' ); ?></p>
 				<?php if ($version == 'Free'){ ?>
-					<p><a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extrafields&utm_campaign=PBFree" class="wppb-button-free"><?php esc_html_e( 'Extra Profile Fields are available in Hobbyist or PRO versions', 'profile-builder' ); ?></a></p>
+					<p><a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extrafields&utm_campaign=PBFree" class="wppb-button-free"><?php esc_html_e( 'Extra Profile Fields are available in Basic or PRO versions', 'profile-builder' ); ?></a></p>
 				<?php } else {?>
 					<p><a href="admin.php?page=manage-fields" class="button"><?php esc_html_e( 'Get started with extra fields', 'profile-builder' ); ?></a></p>
 				<?php } ?>
@@ -222,7 +222,7 @@ function wppb_basic_info_content() {
 		<div>
 			<h3>Extra Notes</h3>
 			<ul>
-				<li><?php printf( esc_html__( ' * only available in the %1$sHobbyist and Pro versions%2$s.', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
+				<li><?php printf( esc_html__( ' * only available in the %1$Basic and Pro versions%2$s.', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
 				<li><?php printf( esc_html__( '** only available in the %1$sPro version%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
 			</ul>
 		</div>

@@ -130,7 +130,7 @@
 <?php __("Customize Your Forms The Way You Want (*)", "profile-builder"); ?>
 <?php __("With Extra Profile Fields you can create the exact registration form your project needs.", "profile-builder"); ?>
 <?php __("Get started with extra fields", "profile-builder"); ?>
-<?php __("Extra Profile Fields are available in Hobbyist or PRO versions", "profile-builder"); ?>
+<?php __("Extra Profile Fields are available in Basic or PRO versions", "profile-builder"); ?>
 <?php __("Avatar Upload", "profile-builder"); ?>
 <?php __("Generic Uploads", "profile-builder"); ?>
 <?php __("Agree To Terms Checkbox", "profile-builder"); ?>
@@ -161,7 +161,7 @@
 <?php __("Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users.", "profile-builder"); ?>
 <?php __("Multiple Edit-profile Forms", "profile-builder"); ?>
 <?php __("Set up a repeating group of fields on register and edit profile forms. Limit the number of repeated groups for each user role.", "profile-builder"); ?>
-<?php __(' * only available in the %1$sHobbyist and Pro versions%2$s.', 'profile-builder' ); ?>
+<?php __(' * only available in the %1$Basic and Pro versions%2$s.', 'profile-builder' ); ?>
 <?php __('** only available in the %1$sPro version%2$s.', 'profile-builder' ); ?>
 <?php __("Quick Feedback", "profile-builder"); ?>
 <?php __("Because we care about our clients, please leave us feedback on why you are no longer using our plugin.", "profile-builder"); ?>
@@ -209,7 +209,7 @@
 <?php __("\"Roles Editor\" Activated:", "profile-builder"); ?>
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("\"Admin Approval\" Feature:", "profile-builder"); ?>
-<?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s.', 'profile-builder' ); ?>
+<?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$Basic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Allow Users to Log in With:", "profile-builder"); ?>
 <?php __("Username and Email", "profile-builder"); ?>
 <?php __("Username", "profile-builder"); ?>
@@ -226,7 +226,7 @@
 <?php __("Standard", "profile-builder"); ?>
 <?php __("Advanced", "profile-builder"); ?>
 <?php __("Choose one of the supported field types", "profile-builder"); ?>
-<?php __(". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>.", "profile-builder"); ?>
+<?php __(". Extra Field Types are available in <a href=\"%s\">Basic or PRO versions</a>.", "profile-builder"); ?>
 <?php __("Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this will only affect subsequent entries", "profile-builder"); ?>
 <?php __("Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this might take long in case of a very big user-count", "profile-builder"); ?>
 <?php __("Field Title", "profile-builder"); ?>
@@ -929,6 +929,7 @@
 <?php __("After Registration", "profile-builder"); ?>
 <?php __("After Edit Profile", "profile-builder"); ?>
 <?php __("After Successful Email Confirmation", "profile-builder"); ?>
+<?php __("After Password Change Request", "profile-builder"); ?>
 <?php __("After Successful Password Reset", "profile-builder"); ?>
 <?php __("Dashboard (redirect users from accessing the dashboard)", "profile-builder"); ?>
 <?php __("User ID", "profile-builder"); ?>

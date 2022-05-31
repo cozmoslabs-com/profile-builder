@@ -8,6 +8,11 @@ class WPPB_Roles_Editor {
         // Create Roles Editor CPT
         add_action( 'init', array( $this, 'create_roles_editor_cpt' ) );
 
+        // Add User Roles entry under PB menu as well
+        add_action( 'init', array( $this, 'submenu_page' ), 25 );
+
+        add_action( 'admin_init', array( $this, 'redirect_to_roles_editor' ), 25 );
+
         // Create a Roles Editor CPT post for every existing role
         add_action( 'current_screen', array( $this, 'create_post_for_role' ) );
 
@@ -48,6 +53,31 @@ class WPPB_Roles_Editor {
         add_action( 'load-user-new.php', array( $this, 'actions_on_user_new' ) );
         add_action( 'load-user-edit.php', array( $this, 'actions_on_user_edit' ) );
 
+    }
+
+    function submenu_page(){
+
+        $args = array(
+			'menu_title' 	=> __( 'Roles Editor', 'profile-builder' ),
+			'page_title' 	=> __( 'Roles Editor', 'profile-builder' ),
+			'menu_slug'		=> 'wppb-roles-editor',
+			'page_type'		=> 'submenu_page',
+			'capability'	=> 'manage_options',
+			'priority'		=> 12,
+			'parent_slug'	=> 'profile-builder'
+		);
+
+		if( class_exists( 'WCK_Page_Creator_PB' ) ) {
+			new WCK_Page_Creator_PB( $args );
+		}
+
+    }
+
+    function redirect_to_roles_editor(){
+        if( isset( $_GET['page'] ) && $_GET['page'] == 'wppb-roles-editor' ){
+            wp_redirect( admin_url( 'edit.php?post_type=wppb-roles-editor' ) );
+            die();
+        }
     }
 
     function scripts_admin() {

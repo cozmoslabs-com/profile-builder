@@ -3,14 +3,14 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.7.5
+ * Version: 3.7.6
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * Elementor tested up to: 3.6.5
- * Elementor Pro tested up to: 3.6.4
+ * Elementor Pro tested up to: 3.7.1
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -362,7 +362,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.7.5' );
+define('PROFILE_BUILDER_VERSION', '3.7.6' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -370,33 +370,34 @@ define('WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR . '/translation');
 define('WPPB_TRANSLATE_DOMAIN', 'profile-builder');
 
 // Determine which plugin version is active
-$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+$active_plugins         = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+$active_network_plugins = get_site_option('active_sitewide_plugins');
 
-if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) ){
+if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-pro/index.php'] ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Pro');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-pro' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-pro/' );
 
-} elseif ( in_array( 'profile-builder-dev/index.php', $active_plugins ) ){
+} elseif ( in_array( 'profile-builder-dev/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-dev/index.php'] ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Pro');
     define('WPPB_PAID_PLUGIN_DIR', WPPB_PLUGIN_DIR );
     define('WPPB_PAID_PLUGIN_URL', WPPB_PLUGIN_URL );
 
-} elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) ){
+} elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-elite/index.php'] ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Elite');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-elite' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-elite/' );
 
-} elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) ){
+} elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-unlimited/index.php'] ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Unlimited');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-unlimited' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-unlimited/' );
 
-} elseif ( in_array( 'profile-builder-hobbyist/index.php', $active_plugins ) ){
+} elseif ( in_array( 'profile-builder-hobbyist/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-hobbyist/index.php'] ) ){
     
     define('PROFILE_BUILDER', 'Profile Builder Basic');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-hobbyist' );
