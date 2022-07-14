@@ -222,7 +222,7 @@ function wppb_basic_info_content() {
 		<div>
 			<h3>Extra Notes</h3>
 			<ul>
-				<li><?php printf( esc_html__( ' * only available in the %1$Basic and Pro versions%2$s.', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
+				<li><?php printf( esc_html__( ' * only available in the %1$sBasic and Pro versions%2$s.', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
 				<li><?php printf( esc_html__( '** only available in the %1$sPro version%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'" target="_blank">', '</a>' );?></li>
 			</ul>
 		</div>

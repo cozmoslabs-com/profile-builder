@@ -504,6 +504,10 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                 case 'Default - Password':
                     $field_meta = 'passw1';
                     $targets = $this->handle_placeholder_labels_active( $targets );
+                    $wppb_generalSettings = get_option( 'wppb_general_settings' );
+                    if ( !empty( $wppb_generalSettings['minimum_password_length'] ) || !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
+                        $targets['description'] = '';
+                    }
                     $targets['input'] = '';
                     break;
                 case 'Default - Repeat Password':

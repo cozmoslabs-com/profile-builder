@@ -161,7 +161,7 @@
 <?php __("Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users.", "profile-builder"); ?>
 <?php __("Multiple Edit-profile Forms", "profile-builder"); ?>
 <?php __("Set up a repeating group of fields on register and edit profile forms. Limit the number of repeated groups for each user role.", "profile-builder"); ?>
-<?php __(' * only available in the %1$Basic and Pro versions%2$s.', 'profile-builder' ); ?>
+<?php __(' * only available in the %1$sBasic and Pro versions%2$s.', 'profile-builder' ); ?>
 <?php __('** only available in the %1$sPro version%2$s.', 'profile-builder' ); ?>
 <?php __("Quick Feedback", "profile-builder"); ?>
 <?php __("Because we care about our clients, please leave us feedback on why you are no longer using our plugin.", "profile-builder"); ?>
@@ -209,7 +209,7 @@
 <?php __("\"Roles Editor\" Activated:", "profile-builder"); ?>
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("\"Admin Approval\" Feature:", "profile-builder"); ?>
-<?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$Basic or PRO versions%2$s.', 'profile-builder' ); ?>
+<?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Allow Users to Log in With:", "profile-builder"); ?>
 <?php __("Username and Email", "profile-builder"); ?>
 <?php __("Username", "profile-builder"); ?>

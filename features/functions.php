@@ -1691,11 +1691,11 @@ function wppb_gdpr_delete_user() {
             $user = new WP_User( absint( $_REQUEST['wppb_user'] ) );
 
             if (!empty($user->roles)) {
-                foreach ($user->roles as $role) {
-                    if ($role != 'administrator') {
-                        wp_delete_user( absint( $_REQUEST['wppb_user'] ) );
-                    }
-                }
+				if( !in_array( 'administrator', $user->roles ) ){
+					wp_delete_user( absint( $_REQUEST['wppb_user'] ) );
+
+					do_action( 'wppb_gdpr_user_deleted', absint( $_REQUEST['wppb_user'] ) );
+				}
             }
 
             $args = array('wppb_user', 'wppb_action', 'wppb_nonce');
