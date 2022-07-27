@@ -3,7 +3,7 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.7.7
+ * Version: 3.7.8
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
@@ -134,8 +134,8 @@ function wppb_plugin_init() {
             new WPPB_Two_Factor_Authenticator();
         }
 
-        if (file_exists(WPPB_PLUGIN_DIR . '/update/update-checker.php')) {
-            include_once(WPPB_PLUGIN_DIR . '/update/update-checker.php');
+        if (file_exists(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php')) {
+            include_once(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php');
             include_once(WPPB_PLUGIN_DIR . '/admin/register-version.php');
         }
 
@@ -307,32 +307,48 @@ function wppb_plugin_init() {
 
 
         /**
-         * Check for updates
-         *
+         * Add explanatory message on the plugins page when updates are not available
          *
          */
-        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists(WPPB_PLUGIN_DIR . '/update/update-checker.php') ) {
+        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php') ) {
 
-            if ( file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) )
-                $localSerial = get_option('wppb_profile_builder_pro_serial');
-            else
-                $localSerial = get_option('wppb_profile_builder_hobbyist_serial');
+            if ( class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
 
-            if( PROFILE_BUILDER == 'Profile Builder Pro' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBP', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-pro-update');
-            else if( PROFILE_BUILDER == 'Profile Builder Basic' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBH', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-hobbyist-update');
-            else if( PROFILE_BUILDER == 'Profile Builder Elite' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBE', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-elite-update');
-            else if( PROFILE_BUILDER == 'Profile Builder Unlimited' )
-                $wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPBL', WPPB_PAID_PLUGIN_DIR . '/index.php', 'profile-builder-unlimited-update');
-            
+                $serial = wppb_get_serial_number();
+
+                if( ! function_exists('get_plugin_data') ){
+                    require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                }
+
+                $plugin_data       = get_plugin_data( WPPB_PAID_PLUGIN_DIR . '/index.php', false );
+                $pb_plugin_version = ( $plugin_data && $plugin_data['Version'] ) ? $plugin_data['Version'] : '3.7.6' ;
+
+                if( PROFILE_BUILDER == 'Profile Builder Pro' )
+                    $pb_cl_plugin_id = '30695';
+                else if( PROFILE_BUILDER == 'Profile Builder Basic' )
+                    $pb_cl_plugin_id = '30697';
+                else if( PROFILE_BUILDER == 'Profile Builder Elite' )
+                    $pb_cl_plugin_id = '416191';
+                else if( PROFILE_BUILDER == 'Profile Builder Unlimited' )
+                    $pb_cl_plugin_id = '30699';
+
+                // setup the updater
+                $wppb_edd_updater = new WPPB_EDD_SL_Plugin_Updater('https://cozmoslabs.com', WPPB_PAID_PLUGIN_DIR . '/index.php', array(
+                        'version'   => $pb_plugin_version,   // current version number
+                        'license'   => $serial,         
+                        'item_name' => PROFILE_BUILDER,      // name of this plugin
+                        'item_id'   => $pb_cl_plugin_id,
+                        'author'    => 'Cozmoslabs',         // author of this plugin
+                        'beta'      => false
+                    )
+                );
+                    
+            }
+
             function wppb_plugin_update_message( $plugin_data, $new_data ) {
-
-                $wppb_version = file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) ? 'pro' : 'hobbyist';
                 
-                $wppb_profile_builder_serial        = get_option( 'wppb_profile_builder_'.$wppb_version.'_serial' );
-                $wppb_profile_builder_serial_status = get_option( 'wppb_profile_builder_'.$wppb_version.'_serial_status' );
+                $wppb_profile_builder_serial        = wppb_get_serial_number();
+                $wppb_profile_builder_serial_status = wppb_get_serial_number_status();
 
                 if( empty( $wppb_profile_builder_serial ) ){
 
@@ -362,7 +378,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.7.7' );
+define('PROFILE_BUILDER_VERSION', '3.7.8' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

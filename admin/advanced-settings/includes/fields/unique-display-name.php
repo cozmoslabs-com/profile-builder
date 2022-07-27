@@ -27,7 +27,11 @@ function wppb_toolbox_unique_display_name_edit_profile( $message, $field, $reque
 add_filter( 'wppb_check_form_field_default-display-name-publicly-as', 'wppb_toolbox_unique_display_name_edit_profile', 20, 4 );
 
 function wppb_toolbox_unique_display_name_register( $display_name ){
-    if ( isset( $_POST['action'] ) && $_POST['action'] === 'register' ) {
+    if ( isset( $_POST['action'] ) &&
+        ( ( $_POST['action'] === 'register' ) ||
+            ( isset( $_POST['todo'] ) && $_POST['action'] === 'wppb_handle_email_confirmation_cases' && $_POST['todo'] === 'confirm' )
+        )
+    ) {
         if (isset($display_name)) {
             if (wppb_toolbox_unique_display_name_check($display_name)) {
                 $i = 1;

@@ -93,6 +93,9 @@
                     <li class="description">
                         <?php esc_html_e( 'For example, you can redirect these users to the Edit Profile form so they can add the missing info.', 'profile-builder' ); ?>
                     </li>
+                    <li class="description">
+                        <?php esc_html_e( 'This option will not work if you have conditional logic implemented in the form.', 'profile-builder' ); ?>
+                    </li>
                 </ul>
             </td>
         </tr>

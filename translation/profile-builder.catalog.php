@@ -803,18 +803,14 @@
 <?php __("Profile Builder Register", "profile-builder"); ?>
 <?php __("Register Your Version", "profile-builder"); ?>
 <?php __("Register Version", "profile-builder"); ?>
-<?php __("Register your version of %s", "profile-builder"); ?>
-<?php __("Now that you acquired a copy of %s, you should take the time and register it with the serial number you received", "profile-builder"); ?>
+<?php __("Register your version of Profile Builder", "profile-builder"); ?>
+<?php __("Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received.", "profile-builder"); ?>
 <?php __("If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support.", "profile-builder"); ?>
-<?php __(" Serial Number:", "profile-builder"); ?>
-<?php __("The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!", "profile-builder"); ?>
-<?php __("The serial number couldn't be validated because it expired!", "profile-builder"); ?>
-<?php __(' Your serial number is expired, please %1$s Renew Your License%2$s.', 'profile-builder' ); ?>
-<?php __("The serial number is about to expire soon!", "profile-builder"); ?>
-<?php __(' Your serial number is about to expire, please %1$s Renew Your License%2$s.', 'profile-builder' ); ?>
-<?php __("The serial number entered couldn't be validated!", "profile-builder"); ?>
-<?php __("The serial number was successfully validated!", "profile-builder"); ?>
-<?php __("(e.g. CLPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)", "profile-builder"); ?>
+<?php __("License key", "profile-builder"); ?>
+<?php __("Activate License", "profile-builder"); ?>
+<?php __("Deactivate License", "profile-builder"); ?>
+<?php __("Your license is invalid", "profile-builder"); ?>
+<?php __("Active on this site", "profile-builder"); ?>
 <?php __('Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
@@ -1882,6 +1878,7 @@
 <?php __("Redirect Page:", "profile-builder"); ?>
 <?php __("By activating this option, logged in users which have empty required fields on their profile will be redirected to the page you added above.", "profile-builder"); ?>
 <?php __("For example, you can redirect these users to the Edit Profile form so they can add the missing info.", "profile-builder"); ?>
+<?php __("This option will not work if you have conditional logic implemented in the form.", "profile-builder"); ?>
 <?php __("Ban certain words from being used in fields", "profile-builder"); ?>
 <?php __("On", "profile-builder"); ?>
 <?php __("Affected fields:", "profile-builder"); ?>
