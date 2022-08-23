@@ -321,7 +321,7 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: admin/admin-bar.php:92, admin/general-settings.php:348, admin/private-website.php:162, features/functions.php:1045, add-ons-advanced/woocommerce/woosync-page.php:149, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:312, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
+#: admin/admin-bar.php:92, admin/general-settings.php:348, admin/private-website.php:162, features/functions.php:1055, add-ons-advanced/woocommerce/woosync-page.php:149, features/content-restriction/content-restriction.php:162, features/two-factor-authentication/class-two-factor-authentication.php:156, assets/lib/class-mustache-templates/class-mustache-templates.php:392, assets/lib/wck-api/wordpress-creation-kit.php:405, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:312, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
 msgid "Save Changes"
 msgstr ""
 
@@ -385,20 +385,16 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: admin/admin-functions.php:245
-msgid "All the free add-ons have been migrated to the main plugin. Their old individual plugins have been disabled and you can delete them from your site if you were using them: <ul><li>Profile Builder - Custom CSS Classes on fields</li><li>Profile Builder - Customization Toolbox Add-On</li><li>Profile Builder - Email Confirmation Field</li><li>Profile Builder - GDPR Communication Preferences</li><li>Profile Builder - Import and Export Add-On</li><li>Profile Builder - Labels Edit Add-On</li><li>Profile Builder - Maximum Character Length Add-On</li><li>Profile Builder - Multiple Admin E-mails Add-On</li><li>Profile Builder - Placeholder Labels Add-On</li></ul>"
+#: admin/admin-functions.php:257
+msgid "You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab."
 msgstr ""
 
-#: admin/admin-functions.php:247, admin/admin-functions.php:259
+#: admin/admin-functions.php:259
 msgid "See details"
 msgstr ""
 
-#: admin/admin-functions.php:248, admin/admin-functions.php:260, admin/review.php:94
+#: admin/admin-functions.php:260, admin/review.php:94
 msgid "Dismiss this notice."
-msgstr ""
-
-#: admin/admin-functions.php:257
-msgid "You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab."
 msgstr ""
 
 #: admin/basic-info.php:11, admin/basic-info.php:11
@@ -3053,11 +3049,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1066, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:373, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
+#: admin/manage-fields.php:1362, features/functions.php:1076, features/functions.php:1083, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:373, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:548
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1362, features/functions.php:1059, features/functions.php:1073, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1362, features/functions.php:1069, features/functions.php:1083, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:447, assets/lib/wck-api/wordpress-creation-kit.php:549, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3301,20 +3297,28 @@ msgstr ""
 msgid "Active on this site"
 msgstr ""
 
+#: admin/register-version.php:234
+msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s"
+msgstr ""
+
+#: admin/register-version.php:232
+msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s"
+msgstr ""
+
+#: admin/register-version.php:225
+msgid "Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s"
+msgstr ""
+
 #: admin/register-version.php:244
 msgid "Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s"
 msgstr ""
 
-#: admin/register-version.php:233
-msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s"
+#: admin/register-version.php:253
+msgid "Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>"
 msgstr ""
 
-#: admin/register-version.php:231
-msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s"
-msgstr ""
-
-#: admin/register-version.php:224
-msgid "Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s"
+#: admin/register-version.php:257
+msgid " %1$sDismiss%2$s"
 msgstr ""
 
 #: admin/review.php:73
@@ -3369,55 +3373,55 @@ msgstr ""
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:964
+#: features/functions.php:974
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1002, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1012, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1009
+#: features/functions.php:1019
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1052, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:171, assets/lib/wck-api/wordpress-creation-kit.php:406
+#: features/functions.php:1062, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:171, assets/lib/wck-api/wordpress-creation-kit.php:406
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1073, assets/lib/wck-api/wordpress-creation-kit.php:447
+#: features/functions.php:1083, assets/lib/wck-api/wordpress-creation-kit.php:447
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1261
+#: features/functions.php:1271
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1274
+#: features/functions.php:1284
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1365, add-ons-advanced/social-connect/index.php:417
+#: features/functions.php:1375, add-ons-advanced/social-connect/index.php:417
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1366
+#: features/functions.php:1376
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1542
+#: features/functions.php:1552
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1583
+#: features/functions.php:1593
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1620
+#: features/functions.php:1630
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1638, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1648, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 

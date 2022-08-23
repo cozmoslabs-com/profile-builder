@@ -198,7 +198,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                     continue;
                 }
                 foreach ($form_fields['default'] as $key_2 => $form_field_default) {
-                    if ($form_field_default['id'] === $form_field['id']) {
+                    if ($form_field_default['id'] == $form_field['id']) {
                         $form_fields['default'][$key_2]['control_group_conditions']['pb_form_name'][] = '-'.$form_slug;
                     }
                 }

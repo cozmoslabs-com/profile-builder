@@ -92,10 +92,9 @@
 <?php __("Settings", "profile-builder"); ?>
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
-<?php __("All the free add-ons have been migrated to the main plugin. Their old individual plugins have been disabled and you can delete them from your site if you were using them: <ul><li>Profile Builder - Custom CSS Classes on fields</li><li>Profile Builder - Customization Toolbox Add-On</li><li>Profile Builder - Email Confirmation Field</li><li>Profile Builder - GDPR Communication Preferences</li><li>Profile Builder - Import and Export Add-On</li><li>Profile Builder - Labels Edit Add-On</li><li>Profile Builder - Maximum Character Length Add-On</li><li>Profile Builder - Multiple Admin E-mails Add-On</li><li>Profile Builder - Placeholder Labels Add-On</li></ul>", "profile-builder"); ?>
+<?php __("You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab.", "profile-builder"); ?>
 <?php __("See details", "profile-builder"); ?>
 <?php __("Dismiss this notice.", "profile-builder"); ?>
-<?php __("You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab.", "profile-builder"); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("Version %s", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
@@ -811,10 +810,12 @@
 <?php __("Deactivate License", "profile-builder"); ?>
 <?php __("Your license is invalid", "profile-builder"); ?>
 <?php __("Active on this site", "profile-builder"); ?>
-<?php __('Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>
+<?php __('Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
+<?php __("Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>", "profile-builder"); ?>
+<?php __(' %1$sDismiss%2$s', 'profile-builder' ); ?>
 <?php __("Hello! Seems like you've been using Profile Builder to create front-end user forms. That's awesome!", "profile-builder"); ?>
 <?php __("If you can spare a few moments to rate it on WordPress.org, it would help us a lot (and boost my motivation).", "profile-builder"); ?>
 <?php __("~ Paul, developer of Profile Builder", "profile-builder"); ?>

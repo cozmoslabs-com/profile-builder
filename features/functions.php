@@ -847,9 +847,19 @@ function wppb_password_strength_check(){
                         jQuery('#pass-strength-result').html( pwsL10n.empty );
                         return;
                     }
-
+            <?php
+            global $wp_version;
+            if ( version_compare( $wp_version, "4.8", ">" ) ) {
+                ?>
                     strength = wp.passwordStrength.meter( pass1, wp.passwordStrength.userInputDisallowedList(), pass2 );
-
+                <?php
+            }
+            else {
+                ?>
+                    strength = wp.passwordStrength.meter( pass1, wp.passwordStrength.userInputBlacklist(), pass2);
+                <?php
+            }
+            ?>
                     switch ( strength ) {
                         case 2:
                             jQuery('#pass-strength-result').addClass('bad').html( pwsL10n.bad );
@@ -1704,6 +1714,22 @@ function wppb_gdpr_delete_user() {
         }
     }
 }
+
+/**
+ * Function that removes user information from comments when the User Account is deleted using Edit Profile Form
+ */
+function wppb_gdpr_remove_user_info_from_comments( $user_id ) {
+    $user_comments = get_comments('user_id='.$user_id);
+    foreach ( $user_comments as $comment ) {
+        $comment_data = array();
+        $comment_data['comment_ID'] = $comment->comment_ID;
+        $comment_data['comment_author'] = '';
+        $comment_data['comment_author_email'] = '';
+        $comment_data['comment_author_url'] = '';
+        wp_update_comment( $comment_data );
+    }
+}
+add_action( 'wppb_gdpr_user_deleted', 'wppb_gdpr_remove_user_info_from_comments' );
 
 
 /**

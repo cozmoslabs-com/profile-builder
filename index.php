@@ -3,14 +3,14 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.7.8
+ * Version: 3.7.9
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
- * Elementor tested up to: 3.6.1
- * Elementor Pro tested up to: 3.6.4
+ * Elementor tested up to: 3.7.2
+ * Elementor Pro tested up to: 3.7.3
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -352,7 +352,7 @@ function wppb_plugin_init() {
 
                 if( empty( $wppb_profile_builder_serial ) ){
 
-                    echo '<br />' . wp_kses_post( sprintf( __('To enable updates, please enter your serial number on the <a href="%s">Register Version</a> page. If you don\'t have a serial number, please see <a href="%s" target="_blank">details & pricing</a>.', 'profile-builder' ), esc_url( admin_url('admin.php?page=profile-builder-register') ), 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=wppb-plugins-page&utm_campaign=WPPB' . $wppb_version ) );
+                    echo '<br />' . wp_kses_post( sprintf( __('To enable updates, please enter your serial number on the <a href="%s">Register Version</a> page. If you don\'t have a serial number, please see <a href="%s" target="_blank">details & pricing</a>.', 'profile-builder' ), esc_url( admin_url('admin.php?page=profile-builder-register') ), 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=wppb-plugins-page&utm_campaign=WPPB' ) );
 
                 } else if( $wppb_profile_builder_serial_status == 'expired' ) {
 
@@ -378,7 +378,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.7.8' );
+define('PROFILE_BUILDER_VERSION', '3.7.9' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

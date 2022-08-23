@@ -130,6 +130,8 @@ function wppb_content_restriction_post_redirect() {
         return;
     }
 
+    $woo_shop_or_post->ID = apply_filters( 'wppb_restricted_post_redirect_post_id', $woo_shop_or_post->ID );
+
     $redirect_url             = '';
     $post_restriction_type    = get_post_meta( $woo_shop_or_post->ID, 'wppb-content-restrict-type', true );
     $settings                 = get_option( 'wppb_content_restriction_settings', array() );

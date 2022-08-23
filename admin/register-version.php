@@ -210,6 +210,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
 
     $wppb_serial_number = wppb_get_serial_number();
     $wppb_serial_status = wppb_get_serial_number_status();
+    $license_details    = get_option( 'wppb_license_details', false );
 
     if( is_multisite() && function_exists( 'restore_current_blog' ) )
         restore_current_blog();
@@ -234,18 +235,42 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
 
         new WPPB_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( $message, "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". esc_url( add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
     }
-    else {
-        // Maybe add about to expire notice
-        $license_details = get_option( 'wppb_license_details', false );
+    
+    
+    // Maybe add about to expire notice
+    if( !empty( $license_details ) && !empty( $license_details->expires ) ){
 
-        if( !empty( $license_details ) && !empty( $license_details->expires ) ){
-
-            if( strtotime( $license_details->expires ) < strtotime( '+14 days' ) ){
-                new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ), "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
-            }
+        if( strtotime( $license_details->expires ) < strtotime( '+14 days' ) ){
+            new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ), "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
         }
 
     }
+
+    if( isset( $license_details->license ) && $license_details->license == 'invalid' ){
+
+        if( isset( $license_details->error ) && $license_details->error == 'no_activations_left' ){
+
+            $activations_limit_message = sprintf( __( 'Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class="button-primary" href="%s">Upgrade now</a>', 'profile-builder' ), esc_url( 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=WPPB&utm_content=add-on-page-license-activation-limit' ) );
+
+            $notification_instance = WPPB_Plugin_Notifications::get_instance();
+            if( !$notification_instance->is_plugin_page() ) {//add the dismiss button only on other pages in admin
+                $activations_limit_message .= sprintf(__(' %1$sDismiss%2$s', 'profile-builder'), "<a class='dismiss-right' href='" . esc_url(add_query_arg('wppb_basic_activations_limit_dismiss_notification', '0')) . "'>", "</a>");
+                $force_show = false;
+            } else {
+                $force_show = true;//sets the forceShow parameter of WPPB_add_notices to true so we don't take into consideration the dismiss user meta
+            }
+
+            new WPPB_add_notices( 'wppb_basic_activations_limit',
+                $activations_limit_message,
+                'error',
+                '',
+                '',
+                $force_show );
+        }
+
+    }
+
+    
 
 }
 
