@@ -184,8 +184,13 @@ class Wordpress_Creation_Kit_PB{
 		else
 			$post_id = '';
 
-		//output the add form
-		self::create_add_form($metabox['args']['meta_array'], $metabox['args']['meta_name'], $post);
+
+
+//		//output the add form or themes metabox content
+        if ($metabox['id'] == 'wppb-ul-themes-settings' ) {
+            echo $metabox['args']['meta_array']; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        }
+        else self::create_add_form($metabox['args']['meta_array'], $metabox['args']['meta_name'], $post);
 
         //output the entries only for repeater fields
         if( !$this->args['single'] )

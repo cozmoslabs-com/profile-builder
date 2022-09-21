@@ -1194,6 +1194,8 @@
 <?php __("Search Fields", "profile-builder"); ?>
 <?php __("Choose the fields in which the Search Field will look in", "profile-builder"); ?>
 <?php __("Search Settings", "profile-builder"); ?>
+<?php __("Themes: add style to your user listing section", "profile-builder"); ?>
+<?php __("You can now add beautifully pre-designed templates to showcase the user base on your website using one of the <strong>user listing templates</strong> available in the %sUser Listing add-on%s.", "profile-builder"); ?>
 <?php __("You need to activate the Userlisting feature from within the \"Add-ons\" page!", "profile-builder"); ?>
 <?php __("You can find it in the Profile Builder menu.", "profile-builder"); ?>
 <?php __("No results found!", "profile-builder"); ?>
@@ -1492,6 +1494,7 @@
 <?php __("&hellip;", "profile-builder"); ?>
 <?php __("You must be logged in to view the comments.", "profile-builder"); ?>
 <?php __("Comments are restricted for your user role.", "profile-builder"); ?>
+<?php __("This product cannot be purchased by your user role.", "profile-builder"); ?>
 <?php __("This content is restricted for your user role.", "profile-builder"); ?>
 <?php __("You must be logged in to view this content.", "profile-builder"); ?>
 <?php __("Display Options", "profile-builder"); ?>
@@ -1501,6 +1504,9 @@
 <?php __("Display For", "profile-builder"); ?>
 <?php __("Checking only \"Logged In Users\" will show this %s to all logged in users, regardless of user role.", "profile-builder"); ?>
 <?php __("Checking any user role will show this %s only to users that have one of those user roles assigned.", "profile-builder"); ?>
+<?php __("Purchase Options", "profile-builder"); ?>
+<?php __("Who can purchase?", "profile-builder"); ?>
+<?php __("Select who can purchase this product.", "profile-builder"); ?>
 <?php __("Restriction Redirect URL", "profile-builder"); ?>
 <?php __("Enable Custom Redirect URL", "profile-builder"); ?>
 <?php __("Check if you wish to add a custom redirect URL for this %s.", "profile-builder"); ?>
@@ -1509,6 +1515,7 @@
 <?php __("Check if you wish to add custom messages for this %s.", "profile-builder"); ?>
 <?php __("Messages for logged-out users", "profile-builder"); ?>
 <?php __("Messages for logged-in users", "profile-builder"); ?>
+<?php __("Messages for restricted product purchase", "profile-builder"); ?>
 <?php __("Content Restriction Settings", "profile-builder"); ?>
 <?php __("Enable Content Restriction", "profile-builder"); ?>
 <?php __("Activate Content Restriction", "profile-builder"); ?>
@@ -1516,6 +1523,7 @@
 <?php __("If you select \"Redirect\", the post's content will be protected by redirecting the user to the URL you specify. The redirect happens only when accessing a single post. On archive pages the restriction message will be displayed, instead of the content.", "profile-builder"); ?>
 <?php __("Message for logged-out users", "profile-builder"); ?>
 <?php __("Message for logged-in users", "profile-builder"); ?>
+<?php __("WooCommerce Restriction Messages", "profile-builder"); ?>
 <?php __("Restricted Posts Preview", "profile-builder"); ?>
 <?php __("Show the first %s words of the post's content", "profile-builder"); ?>
 <?php __("Show the content before the \"more\" tag", "profile-builder"); ?>
