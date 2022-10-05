@@ -570,7 +570,10 @@ class Wordpress_Creation_Kit_PB{
             $select_options = array();
             foreach($field_details['options']['optgroups'] as $optgroup) {
                 foreach($optgroup['options'] as $group_option ){
-                    $select_options[] = $group_option;
+
+					if( !is_array( $group_option ) )
+                    	$select_options[] = $group_option;
+						
                 }
             }
 
@@ -578,7 +581,13 @@ class Wordpress_Creation_Kit_PB{
         }
 
 		foreach( $field_details['options'] as $option ){
-			if ( strpos( $option, $value ) !== false ){
+
+			if( is_array( $option ) ){
+
+				if( !empty( $option['field_name'] ) )
+					return $option['field_name'];
+
+			} elseif ( strpos( $option, $value ) !== false ){
 				if( strpos( $option, '%' ) === false ){
 					return $value;
 				} else {
@@ -591,7 +600,9 @@ class Wordpress_Creation_Kit_PB{
 					}
 				}
 			}
+
 		}
+
         //this was added for select-2 custom values that do not exist in the defined options
 		return $value;
 	}
@@ -1322,14 +1333,31 @@ class Wordpress_Creation_Kit_PB{
 	}
 
     static function wck_generate_select_option($option, $values, $i, $current_value){
-        if( strpos( $option, '%' ) === false ){
+
+		$disabled = '';
+
+		if( is_array( $option ) ){
+
+			if( !empty( $option['field_name'] ) ){
+				$label = $option['field_name'];
+
+				if( !empty( $values ) )
+					$value_attr = $values[$i];
+				else
+					$value_attr = $option;
+				
+				if( !empty( $option['disabled'] ) && $option['disabled'] == true ){
+					$disabled = ' disabled';
+				}
+			}
+
+		} elseif( strpos( $option, '%' ) === false ){
             $label = $option;
             if( !empty( $values ) )
                 $value_attr = $values[$i];
             else
                 $value_attr = $option;
-        }
-        else{
+        } else {
             $option_parts = explode( '%', $option );
             if( !empty( $option_parts ) ){
                 if( empty( $option_parts[0] ) && count( $option_parts ) == 3 ){
@@ -1349,7 +1377,15 @@ class Wordpress_Creation_Kit_PB{
             }
         }
 
-        $optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. selected( $value_attr, $current_value, false ) .' >'. esc_html( $label ) .'</option>';
+		// title is set only for disabled options to let users know those fields are available in a paid version
+		if( !empty( $disabled ) ){
+			if( isset( $value_attr['field_name'] ) && $value_attr['field_name'] == 'Subscription Plans' )
+				$title = esc_attr( __( 'Install the free Paid Member Subscriptions plugin to get access this field.', 'profile-builder' ) );
+			else
+				$title = esc_attr( __( 'This field is available in our paid plans.', 'profile-builder' ) );
+		}
+
+        $optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. selected( $value_attr, $current_value, false ) . esc_attr( $disabled ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
         return $optionOutput;
     }
 

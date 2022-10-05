@@ -57,7 +57,7 @@ function wppb_serial_form(){
         <p><?php esc_html_e( 'If you register this version of Profile Builder, you\'ll receive information regarding upgrades, patches, and technical support.', 'profile-builder' ) ?></p>
 
         <div class="wppb-serial-wrap">
-            <form method="post" action="options.php">
+            <form method="post" action="<?php echo !is_multisite() ? 'options.php' : 'edit.php'; ?>">
                 <?php settings_fields( 'wppb_license_key' ); ?>
 
                 <label for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>

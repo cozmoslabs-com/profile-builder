@@ -31,7 +31,13 @@ function wppb_get_settings_pages(){
 	}
 
     //add sub-pages here for email customizer
-	if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) ) {
+	if( file_exists( WPPB_PLUGIN_DIR . '/features/email-customizer/email-customizer.php' ) ){
+		
+		$settings_pages['pages']['user-email-customizer'] = __( 'Email Customizer', 'profile-builder' );
+		$settings_pages['sub-pages']['user-email-customizer']['user-email-customizer'] = __( 'User Emails', 'profile-builder' );
+		$settings_pages['sub-pages']['user-email-customizer']['admin-email-customizer'] = __( 'Administrator Emails', 'profile-builder' );
+
+	} else if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) ) {
 		if( ( isset($wppb_module_settings['wppb_emailCustomizerAdmin']) && $wppb_module_settings['wppb_emailCustomizerAdmin'] == 'show' ) || ( isset($wppb_module_settings['wppb_emailCustomizer']) && $wppb_module_settings['wppb_emailCustomizer'] == 'show') ){
 			$settings_pages['pages']['user-email-customizer'] = __( 'Email Customizer', 'profile-builder' );
 			$settings_pages['sub-pages']['user-email-customizer']['user-email-customizer'] = __( 'User Emails', 'profile-builder' );
@@ -338,6 +344,42 @@ function wppb_general_settings_content() {
 					</select>
 				</td>
 			</tr>
+
+            <tr>
+                <th scope="row">
+                    <?php esc_html_e( 'Select Recover Password Page:', 'profile-builder' ); ?>
+                </th>
+                <td>
+                    <select name="wppb_general_settings[lost_password_page]" class="wppb-select">
+                        <option value=""> <?php esc_html_e( 'None', 'profile-builder' ); ?></option>
+                        <?php
+                        $args = array(
+                            'post_type' => 'page',
+                            'post_status' => 'publish',
+                            'numberposts' => -1,
+                            'orderby' => 'name',
+                            'order' => 'ASC'
+                        );
+                        $pages = get_posts( $args );
+
+                        foreach ( $pages as $key => $value ){
+                            echo '<option value="'.esc_attr( $value->guid ).'"';
+                            if ( $wppb_generalSettings['lost_password_page'] == $value->guid )
+                                echo ' selected';
+
+                            echo '>' . esc_html( $value->post_title ) . '</option>';
+                        }
+
+                        ?>
+
+                    </select>
+
+                    <ul>
+                        <li class="description"><?php printf( esc_html__( 'Select the page which contains the %1$s[wppb-recover-password]%2$s shortcode.', 'profile-builder' ), '<strong>','</strong>' ) ?> </li>
+                    </ul>
+
+                </td>
+            </tr>
 
 			<?php do_action( 'wppb_extra_general_settings', $wppb_generalSettings ); ?>
 		</table>

@@ -166,24 +166,23 @@ if ( is_admin() ){
 	add_action( 'admin_init', 'wppb_register_settings' );
 
 	// display the same extra profile fields in the admin panel also
-	if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists ( WPPB_PAID_PLUGIN_DIR.'/front-end/extra-fields/extra-fields.php' ) ){
-		require_once( WPPB_PAID_PLUGIN_DIR.'/front-end/extra-fields/extra-fields.php' );
+	if ( file_exists ( WPPB_PLUGIN_DIR.'/front-end/default-fields/fields-functions.php' ) ){
+		require_once( WPPB_PLUGIN_DIR.'/front-end/default-fields/fields-functions.php' );
 
-		add_action( 'show_user_profile', 'display_profile_extra_fields_in_admin', 10 );
-		add_action( 'edit_user_profile', 'display_profile_extra_fields_in_admin', 10 );
+		add_action( 'show_user_profile', 'wppb_display_fields_in_admin', 10 );
+		add_action( 'edit_user_profile', 'wppb_display_fields_in_admin', 10 );
         global $pagenow;
         if( $pagenow != 'user-new.php' )
-            add_action( 'user_profile_update_errors', 'wppb_validate_backend_fields', 10, 3 );
-		add_action( 'personal_options_update', 'save_profile_extra_fields_in_admin', 10 );
-		add_action( 'edit_user_profile_update', 'save_profile_extra_fields_in_admin', 10 );
+            add_action( 'user_profile_update_errors', 'wppb_validate_fields_in_admin', 10, 3 );
+		add_action( 'personal_options_update', 'wppb_save_fields_in_admin', 10 );
+		add_action( 'edit_user_profile_update', 'wppb_save_fields_in_admin', 10 );
 	}
 
 	/* we need to include the fields here for conditional fields when they run through ajax, the extra-fields were already included above for backend forms */
-    $wppb_generalSettings = get_option( 'wppb_general_settings' );
-	if( wp_doing_ajax() && wppb_conditional_fields_exists() && isset( $wppb_generalSettings['conditional_fields_ajax'] ) && $wppb_generalSettings['conditional_fields_ajax'] === 'yes' ) {
-        if (file_exists(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php'))
-            require_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php');
-    }
+	// now they are loaded all the time so the simple upload functionality works correctly as well, since 3.8.1
+	if (file_exists(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php'))
+		require_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php');
+
 
 }else if ( !is_admin() ){
 	// include the stylesheet
@@ -376,6 +375,7 @@ function wppb_print_cpt_script( $hook ){
         ( strpos( $hook, 'profile-builder_page_' ) === 0 ) ||
         ( $hook == 'edit.php' && ( isset( $_GET['post_type'] ) && $_GET['post_type'] === 'wppb-roles-editor' ) ) ||
 		( $hook == 'admin_page_profile-builder-pms-promo') ||
+		( $hook == 'toplevel_page_profile-builder-register') || //multisite register version page
 		( $hook == 'admin_page_profile-builder-private-website') ) {
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
 	}

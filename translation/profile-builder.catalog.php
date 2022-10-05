@@ -13,8 +13,6 @@
 <?php __("Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles.", "profile-builder"); ?>
 <?php __("User Listing", "profile-builder"); ?>
 <?php __("Easy to edit templates for listing your users as well as creating single user pages.", "profile-builder"); ?>
-<?php __("Email Customizer", "profile-builder"); ?>
-<?php __("Simple to use customization of the WordPress Registration Emails", "profile-builder"); ?>
 <?php __("Custom Redirects", "profile-builder"); ?>
 <?php __("Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login, lost password and registration forms.", "profile-builder"); ?>
 <?php __("Repeater Fields", "profile-builder"); ?>
@@ -120,6 +118,8 @@
 <?php __("Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address.", "profile-builder"); ?>
 <?php __("Content Restriction", "profile-builder"); ?>
 <?php __("Restrict users from accessing certain pages, posts or custom post types based on user role or logged-in status.", "profile-builder"); ?>
+<?php __("Email Customizer", "profile-builder"); ?>
+<?php __("Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval.", "profile-builder"); ?>
 <?php __("Minimum Password Length and Strength Meter", "profile-builder"); ?>
 <?php __("Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength.", "profile-builder"); ?>
 <?php __("Login with Email or Username", "profile-builder"); ?>
@@ -130,24 +130,21 @@
 <?php __("With Extra Profile Fields you can create the exact registration form your project needs.", "profile-builder"); ?>
 <?php __("Get started with extra fields", "profile-builder"); ?>
 <?php __("Extra Profile Fields are available in Basic or PRO versions", "profile-builder"); ?>
-<?php __("Avatar Upload", "profile-builder"); ?>
 <?php __("Generic Uploads", "profile-builder"); ?>
 <?php __("Agree To Terms Checkbox", "profile-builder"); ?>
 <?php __("Datepicker", "profile-builder"); ?>
 <?php __("Timepicker", "profile-builder"); ?>
 <?php __("Colorpicker", "profile-builder"); ?>
-<?php __("reCAPTCHA", "profile-builder"); ?>
 <?php __("Country Select", "profile-builder"); ?>
 <?php __("Currency Select", "profile-builder"); ?>
 <?php __("Timezone Select", "profile-builder"); ?>
-<?php __("Input / Hidden Input", "profile-builder"); ?>
-<?php __("Number", "profile-builder"); ?>
-<?php __("Checkbox", "profile-builder"); ?>
-<?php __("Select", "profile-builder"); ?>
-<?php __("Radio Buttons", "profile-builder"); ?>
-<?php __("Textarea", "profile-builder"); ?>
-<?php __("Validation", "profile-builder"); ?>
 <?php __("Map", "profile-builder"); ?>
+<?php __("Select 2 Multiple", "profile-builder"); ?>
+<?php __("Phone", "profile-builder"); ?>
+<?php __("Hidden Input", "profile-builder"); ?>
+<?php __("Number", "profile-builder"); ?>
+<?php __("Validation", "profile-builder"); ?>
+<?php __("Select CPT", "profile-builder"); ?>
 <?php __("HTML", "profile-builder"); ?>
 <?php __("Powerful Add-ons (**)", "profile-builder"); ?>
 <?php __("Everything you will need to manage your users is probably already available using the Pro Add-ons.", "profile-builder"); ?>
@@ -155,7 +152,6 @@
 <?php __("Find out more about PRO Modules", "profile-builder"); ?>
 <?php __("To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: %s.", "profile-builder"); ?>
 <?php __("Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings.", "profile-builder"); ?>
-<?php __("Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval.", "profile-builder"); ?>
 <?php __("Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away.", "profile-builder"); ?>
 <?php __("Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users.", "profile-builder"); ?>
 <?php __("Multiple Edit-profile Forms", "profile-builder"); ?>
@@ -220,6 +216,9 @@
 <?php __("Enter the minimum characters the password should have. Leave empty for no minimum limit", "profile-builder"); ?>
 <?php __("Minimum Password Strength:", "profile-builder"); ?>
 <?php __("Disabled", "profile-builder"); ?>
+<?php __("Select Recover Password Page:", "profile-builder"); ?>
+<?php __("None", "profile-builder"); ?>
+<?php __('Select the page which contains the %1$s[wppb-recover-password]%2$s shortcode.', 'profile-builder' ); ?>
 <?php __("Form Fields", "profile-builder"); ?>
 <?php __("Manage Form Fields", "profile-builder"); ?>
 <?php __("Standard", "profile-builder"); ?>
@@ -1125,7 +1124,6 @@
 <?php __("You do not have permission to view this user list.", "profile-builder"); ?>
 <?php __("You do not have the required user role to view this user list.", "profile-builder"); ?>
 <?php __("User not found", "profile-builder"); ?>
-<?php __("None", "profile-builder"); ?>
 <?php __("Jabber", "profile-builder"); ?>
 <?php __("Yim", "profile-builder"); ?>
 <?php __("Aim", "profile-builder"); ?>
@@ -1366,7 +1364,6 @@
 <?php __("State / County", "profile-builder"); ?>
 <?php __("Postcode / Zip", "profile-builder"); ?>
 <?php __("Email Address", "profile-builder"); ?>
-<?php __("Phone", "profile-builder"); ?>
 <?php __("Ship to a different address?", "profile-builder"); ?>
 <?php __("WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!", "profile-builder"); ?>
 <?php __("Address line 2", "profile-builder"); ?>
@@ -1396,7 +1393,7 @@
 <?php __("Displays customer shipping fields in front-end. ", "profile-builder"); ?>
 <?php __("Choose Register form to display on My Account page:", "profile-builder"); ?>
 <?php __("Default Register", "profile-builder"); ?>
-<?php __("Select which Profile Builder Register form to display on My Account page from WooCommerce. <br/> This will also add the Profile Builder Login form to MyAccount page.", "profile-builder"); ?>
+<?php __("Select which Profile Builder Register form to display on My Account page from WooCommerce. %s This will also add the Profile Builder Login form to MyAccount page.", "profile-builder"); ?>
 <?php __("Choose Edit Profile form to display on My Account page:", "profile-builder"); ?>
 <?php __("Select which Profile Builder Edit-profile form to display on My Account page from WooCommerce.", "profile-builder"); ?>
 <?php __("CSS Class", "profile-builder"); ?>
@@ -1813,7 +1810,10 @@
 <?php __("Add Entry", "profile-builder"); ?>
 <?php __("Delete this item", "profile-builder"); ?>
 <?php __("Please enter a value for the required field ", "profile-builder"); ?>
+<?php __("This field is available in our paid plans.", "profile-builder"); ?>
+<?php __("Install the free Paid Member Subscriptions plugin to get access this field.", "profile-builder"); ?>
 <?php __("Profile Builder Forms", "profile-builder"); ?>
+<?php __("Remove", "profile-builder"); ?>
 <?php __("Yes, I'd like to create a new site", "profile-builder"); ?>
 <?php __("Your site url will look like this:<br>", "profile-builder"); ?>
 <?php __("Site URL slug", "profile-builder"); ?>
@@ -1834,6 +1834,11 @@
 <?php __("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder"); ?>
 <?php __("To use reCAPTCHA you must get an API public key from:", "profile-builder"); ?>
 <?php __("Click the BACK button on your browser, and try again.", "profile-builder"); ?>
+<?php __("Files must be smaller than ", "profile-builder"); ?>
+<?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
+<?php __("An error occurred, please try again later.", "profile-builder"); ?>
+<?php __("Select File", "profile-builder"); ?>
+<?php __("Upload ", "profile-builder"); ?>
 <?php __("As an administrator you cannot change your role.", "profile-builder"); ?>
 <?php __("Only administrators can see this field on edit profile forms.", "profile-builder"); ?>
 <?php __("You cannot register this user role", "profile-builder"); ?>
@@ -1841,7 +1846,6 @@
 <?php __("This username is invalid because it uses illegal characters.", "profile-builder"); ?>
 <?php __("Please enter a valid username.", "profile-builder"); ?>
 <?php __("This username is already reserved to be used soon.", "profile-builder"); ?>
-<?php __("Remove", "profile-builder"); ?>
 <?php __("The hidden Honeypot field must be empty.", "profile-builder"); ?>
 <?php __("You must enter a valid URL.", "profile-builder"); ?>
 <?php __("Please add the Google Maps API key for this field.", "profile-builder"); ?>
@@ -1852,11 +1856,6 @@
 <?php __('Value must be less than or equal to %1$s', 'profile-builder' ); ?>
 <?php __("Required phone number format: ", "profile-builder"); ?>
 <?php __("...Choose", "profile-builder"); ?>
-<?php __("Select File", "profile-builder"); ?>
-<?php __("Upload ", "profile-builder"); ?>
-<?php __("Files must be smaller than ", "profile-builder"); ?>
-<?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
-<?php __("An error occurred, please try again later.", "profile-builder"); ?>
 <?php __("This display name is already in use. Please choose another one.", "profile-builder"); ?>
 <?php __("Email address change request for %s", "profile-builder"); ?>
 <?php __('Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s', 'profile-builder' ); ?>
