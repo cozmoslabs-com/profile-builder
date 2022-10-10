@@ -178,10 +178,12 @@ if ( is_admin() ){
 		add_action( 'edit_user_profile_update', 'wppb_save_fields_in_admin', 10 );
 	}
 
-	/* we need to include the fields here for conditional fields when they run through ajax, the extra-fields were already included above for backend forms */
-	// now they are loaded all the time so the simple upload functionality works correctly as well, since 3.8.1
+	// Since 3.8.1 fields are loaded in the back-end all the time: for conditional logic, simple uploads, display fields in admin functionalities
 	if (file_exists(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php'))
 		require_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/default-fields.php');
+
+	if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/extra-fields.php'))
+		require_once(WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/extra-fields.php');
 
 
 }else if ( !is_admin() ){
