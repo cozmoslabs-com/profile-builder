@@ -50,7 +50,10 @@ function wppb_serial_form(){
     $license = wppb_get_serial_number();
     ?>
     <div id="wppb-register-version-page" class="wrap">
-        <h2><?php esc_html_e( "Register your version of Profile Builder", 'profile-builder' ); ?></h2>
+        <h2>
+            <?php esc_html_e( "Register your version of Profile Builder", 'profile-builder' ); ?>
+            <a href="https://www.cozmoslabs.com/docs/profile-builder-2/basic-information-installation/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Register_your_version" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+        </h2>
 
         <p><?php esc_html_e( 'Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received.', 'profile-builder' ) ?></p>
 

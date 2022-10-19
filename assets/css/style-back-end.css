@@ -66,7 +66,7 @@
 }
 
 .wppb-badge.Hobbyist, .wppb-badge.Basic{
-	background:url(../images/pb-logo-freepng) center no-repeat;
+	background:url(../images/pb-logo-free.png) center no-repeat;
 }
 
 .wppb-badge.Free{
@@ -1000,4 +1000,54 @@ Advanced Settings or Toolbox (legacy addon)
     background-color: #ffa0a0 !important;
     border-color: #f04040 !important;
     color: #2c3338 !important;
+}
+
+
+/**********************************************************************************/
+/* Link (question mark icon) to PB Docs set in pages/custom-posts/settings titles
+/**********************************************************************************/
+.wp-admin a.wppb-docs-link {
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+    height: auto;
+    width: auto;
+    font-size: 30px;
+}
+
+[class*="profile-builder"].wp-admin .wrap form > h2 {
+    line-height: 30px;
+}
+
+.wp-admin.profile-builder_page_manage-fields #wppb-msf-side .wppb-docs-link,
+.wp-admin.profile-builder_page_custom-redirects .wck-post-box .wppb-docs-link,
+.wp-admin.post-type-wppb-ul-cpt #wppb-ul-themes-settings .inside .wppb-docs-link,
+.wp-admin.post-type-wppb-ul-cpt .wck-add-form .wppb-docs-link {
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.wp-admin.post-type-wppb-ul-cpt #wppb-single-ul-templates .inside .wppb-docs-link,
+.wp-admin.post-type-wppb-ul-cpt #wppb-ul-templates .inside .wppb-docs-link {
+    position: absolute;
+    right: 1px;
+    top: -5px;
+}
+
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-edit-profile-approved-by-admin,
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-conditional-logic-enabled,
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-location-visibility,
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-user-role-visibility {
+    line-height: 30px;
+}
+
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-visibility .mb-right-column {
+    position: relative;
+}
+
+.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-visibility .mb-right-column .wppb-docs-link {
+    position: absolute;
+    top: 0;
+    left: 255px;
 }

@@ -3,7 +3,7 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.8.2
+ * Version: 3.8.3
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
@@ -188,6 +188,9 @@ function wppb_plugin_init() {
             if (file_exists(WPPB_PLUGIN_DIR . 'assets/misc/elementor/class-elementor.php'))
                 include_once WPPB_PLUGIN_DIR . 'assets/misc/elementor/class-elementor.php';
         }
+
+        //Blocks
+        include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/manage-blocks.php');
 
         //Elementor Content Restriction
         global $content_restriction_activated;
@@ -389,7 +392,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.8.2' );
+define('PROFILE_BUILDER_VERSION', '3.8.3' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -411,6 +414,7 @@ if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $act
     define('PROFILE_BUILDER', 'Profile Builder Pro');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-dev' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-dev/' );
+    define('PROFILE_BUILDER_PAID_VERSION', 'dev' );
 
 } elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-elite/index.php'] ) ){
     

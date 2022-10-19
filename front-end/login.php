@@ -502,7 +502,7 @@ function wppb_front_end_login( $atts ){
 	global $wppb_login_shortcode;
 	$wppb_login_shortcode = true;
 
-    extract( shortcode_atts( array( 'display' => true, 'redirect' => '', 'redirect_url' => '', 'logout_redirect_url' => wppb_curpageurl(), 'register_url' => '', 'lostpassword_url' => '', 'redirect_priority' => 'normal', 'show_2fa_field' => '' ), $atts ) );
+    extract( shortcode_atts( array( 'display' => true, 'redirect' => '', 'redirect_url' => '', 'logout_redirect_url' => wppb_curpageurl(), 'register_url' => '', 'lostpassword_url' => '', 'redirect_priority' => 'normal', 'show_2fa_field' => '', 'block' => false ), $atts ) );
 
 	$wppb_generalSettings = get_option('wppb_general_settings');
 
@@ -512,7 +512,7 @@ function wppb_front_end_login( $atts ){
         $is_elementor_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
     }
 
-	if( !is_user_logged_in() || $is_elementor_edit_mode ){
+	if( !is_user_logged_in() || $is_elementor_edit_mode || $block === 'true' ){
 		// set up the form arguments
 		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit' );
 

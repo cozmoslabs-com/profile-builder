@@ -138,7 +138,10 @@ function wppb_general_settings_content() {
 	wppb_generate_default_settings_defaults();
 ?>
 	<div class="wrap wppb-wrap">
-		<h2><?php esc_html_e( 'Profile Builder Settings', 'profile-builder' ); ?></h2>
+		<h2>
+            <?php esc_html_e( 'Profile Builder Settings', 'profile-builder' ); ?>
+            <a href="https://www.cozmoslabs.com/docs/profile-builder-2/general-settings/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+        </h2>
 
         <?php settings_errors(); ?>
 
@@ -364,7 +367,7 @@ function wppb_general_settings_content() {
 
                         foreach ( $pages as $key => $value ){
                             echo '<option value="'.esc_attr( $value->guid ).'"';
-                            if ( $wppb_generalSettings['lost_password_page'] == $value->guid )
+                            if ( isset( $wppb_generalSettings['lost_password_page'] ) && $wppb_generalSettings['lost_password_page'] == $value->guid )
                                 echo ' selected';
 
                             echo '>' . esc_html( $value->post_title ) . '</option>';

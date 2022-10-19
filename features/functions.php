@@ -242,7 +242,8 @@ function wppb_mail( $to, $subject, $message, $message_from = null, $context = nu
 
 	if ( $send_email ) {
 		//we add this filter to enable html encoding
-		add_filter('wp_mail_content_type', 'wppb_html_content_type' );
+		if( apply_filters( 'wppb_mail_enable_html', true, $context, $to, $subject, $message ) )
+			add_filter('wp_mail_content_type', 'wppb_html_content_type' );
 
 		$atts = apply_filters( 'wppb_mail', compact( 'to', 'subject', 'message', 'headers' ), $context );
 
@@ -1821,4 +1822,33 @@ function wppb_check_if_add_on_is_active( $slug ){
     }
 
     return false;
+}
+
+/**
+ * Function that checks if Two-Factor Authentication is active
+ */
+
+function wppb_is_2fa_active(){
+    $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
+    if( isset( $wppb_two_factor_authentication_settings['enabled'] ) && $wppb_two_factor_authentication_settings['enabled'] === 'yes' ) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Function that returns an array containing the User Listing names
+ */
+
+function wppb_get_userlisting_names(){
+    $ul_names = array();
+    $userlisting_posts = get_posts( array( 'posts_per_page' => -1, 'post_status' =>'publish', 'post_type' => 'wppb-ul-cpt', 'orderby' => 'post_date', 'order' => 'ASC' ) );
+    if( !empty( $userlisting_posts ) ){
+        foreach ( $userlisting_posts as $post ){
+            $ul_names[ $post->post_name ] = $post->post_title;
+        }
+    }
+    reset($ul_names);
+    return $ul_names;
 }

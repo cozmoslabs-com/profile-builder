@@ -134,7 +134,7 @@ function wppb_basic_info_content() {
 
                 <ul style="float: left;">
 					<li><?php esc_html_e( 'Map', 'profile-builder' ); ?></li>
-                    <li><?php esc_html_e( 'Select 2 Multiple', 'profile-builder' ); ?></li>
+                    <li><?php esc_html_e( 'Select 2 (Multiple)', 'profile-builder' ); ?></li>
                     <li><?php esc_html_e( 'Phone', 'profile-builder' ); ?></li>
                     <li><?php esc_html_e( 'Hidden Input', 'profile-builder' ); ?></li>
                     <li><?php esc_html_e( 'Number', 'profile-builder' ); ?></li>

@@ -248,12 +248,7 @@ abstract class PB_Elementor_Widget extends \Elementor\Widget_Base {
      * @return bool
      */
     protected function is_2fa_active(){
-        $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
-        if( isset( $wppb_two_factor_authentication_settings['enabled'] ) && $wppb_two_factor_authentication_settings['enabled'] === 'yes' ) {
-            return true;
-        }
-
-        return false;
+        return wppb_is_2fa_active();
     }
 
     /**
@@ -315,7 +310,7 @@ abstract class PB_Elementor_Widget extends \Elementor\Widget_Base {
                 return wppb_front_end_login( $atts );
             case 'rp':
                 include_once( WPPB_PLUGIN_DIR.'/front-end/recover.php' );
-                return wppb_front_end_password_recovery();
+                return wppb_front_end_password_recovery( [] );
             case 'ul':
                 if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
                     include_once( WPPB_PAID_PLUGIN_DIR.'/add-ons/user-listing/userlisting.php' );
