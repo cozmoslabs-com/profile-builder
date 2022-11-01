@@ -3,14 +3,14 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.8.3
+ * Version: 3.8.4
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
- * Elementor tested up to: 3.7.8
- * Elementor Pro tested up to: 3.7.7
+ * Elementor tested up to: 3.6.1
+ * Elementor Pro tested up to: 3.6.4
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -392,7 +392,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.8.3' );
+define('PROFILE_BUILDER_VERSION', '3.8.4' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

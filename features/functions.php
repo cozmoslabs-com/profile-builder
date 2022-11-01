@@ -485,12 +485,15 @@ function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt 
 		if( !empty( $customUserAvatar ) ){
 			if( is_numeric( $customUserAvatar ) ){
 				$img_attr = wp_get_attachment_image_src( $customUserAvatar, 'wppb-avatar-size-'.$size );
-				if( $img_attr[3] === false ){
-					$img_attr = wp_get_attachment_image_src( $customUserAvatar, 'thumbnail' );
-					$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+
+				if( is_array( $img_attr ) ){
+					if( $img_attr[3] === false ){
+						$img_attr = wp_get_attachment_image_src( $customUserAvatar, 'thumbnail' );
+						$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+					}
+					else
+						$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$img_attr[2]}' width='{$img_attr[1]}' />";
 				}
-				else
-					$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$img_attr[2]}' width='{$img_attr[1]}' />";
 			}
 			else {
 				$customUserAvatar = get_user_meta($my_user_id, 'resized_avatar_' . $avatar_field['id'], true);

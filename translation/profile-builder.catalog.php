@@ -2000,7 +2000,6 @@
 <?php __("Radius", "profile-builder"); ?>
 <?php __("Form Settings", "profile-builder"); ?>
 <?php __("Registration", "profile-builder"); ?>
-<?php __("Enter URL", "profile-builder"); ?>
 <?php __("Show Authenticator Code Field", "profile-builder"); ?>
 <?php __("Redirects", "profile-builder"); ?>
 <?php __("Assigned Role", "profile-builder"); ?>
@@ -2013,7 +2012,6 @@
 <?php __("Listing Settings", "profile-builder"); ?>
 <?php __("Single", "profile-builder"); ?>
 <?php __("Meta Key", "profile-builder"); ?>
-<?php __("Enter Meta Key", "profile-builder"); ?>
 <?php __("Meta Value", "profile-builder"); ?>
 <?php __("Enter Meta Value", "profile-builder"); ?>
 <?php __("Include", "profile-builder"); ?>

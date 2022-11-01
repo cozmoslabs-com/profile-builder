@@ -100,6 +100,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
         $form_titles = array(
             '' => __( 'Default', 'profile-builder' )
         );
+        $page_titles = $this->get_all_pages();
         $form_fields = array(
             'default' => get_option( 'wppb_manage_fields' )
         );
@@ -234,10 +235,11 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
 
         unset($params);
         $params = [
-            'type'        => \Elementor\Controls_Manager::TEXT,
-            'placeholder' => __( 'Enter URL', 'profile-builder' ),
+            'type'        => \Elementor\Controls_Manager::SELECT,
+            'options'     => $page_titles,
+            'default'     => '',
             'condition'   => [
-                'pb_form_name'=>'',
+                'pb_form_name' => '',
             ],
         ];
         if ( $form_type === 'rf' ){
@@ -252,9 +254,10 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
             $this->add_control(
                 'pb_logout_redirect_url',
                 array(
-                    'label' => __('Redirect after Logout', 'profile-builder'),
-                    'type' => \Elementor\Controls_Manager::TEXT,
-                    'placeholder' => __('Enter URL', 'profile-builder'),
+                    'label'       => __('Redirect after Logout', 'profile-builder'),
+                    'type'        => \Elementor\Controls_Manager::SELECT,
+                    'options'     => $page_titles,
+                    'default'     => '',
                 )
             );
         }

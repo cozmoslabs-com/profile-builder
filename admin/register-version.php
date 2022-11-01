@@ -253,7 +253,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
 
         if( isset( $license_details->error ) && $license_details->error == 'no_activations_left' ){
 
-            $activations_limit_message = sprintf( __( 'Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class="button-primary" href="%s">Upgrade now</a>', 'profile-builder' ), esc_url( 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=WPPB&utm_content=add-on-page-license-activation-limit' ) );
+            $activations_limit_message = '<p>' . sprintf( __( 'Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class="button-primary" href="%s">Upgrade now</a>', 'profile-builder' ), esc_url( 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=WPPB&utm_content=add-on-page-license-activation-limit' ) ) . '</p>';
 
             $notification_instance = WPPB_Plugin_Notifications::get_instance();
             if( !$notification_instance->is_plugin_page() ) {//add the dismiss button only on other pages in admin
@@ -264,6 +264,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
             }
 
             new WPPB_add_notices( 'wppb_basic_activations_limit',
+                'profile_builder_basic',
                 $activations_limit_message,
                 'error',
                 '',
