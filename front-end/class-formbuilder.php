@@ -764,26 +764,6 @@ class Profile_Builder_Form_Creator{
                     </select>
                 </p>
             </form>
-            <script type="text/javascript">
-                jQuery("select").filter(function() {
-                    if ( this.id.startsWith( "wppb-" ) && this.id.endsWith( "user-to-edit" ) ) {
-                        return this;
-                    }
-                }).on("change", function () {
-                    window.location.href = jQuery(this).val();
-                });
-                jQuery(function(){
-                    jQuery("select").filter(function() {
-                        if ( this.id.startsWith( "wppb-" ) && this.id.endsWith( "user-to-edit" ) ) {
-                            return this;
-                        }
-                    }).select2().on("select2:open", function(){
-                        if( jQuery(".wppb-user-to-edit").parents( ".overlay-container" ).length ){
-                            jQuery(".wppb-user-to-edit").data("select2").dropdown.$dropdownContainer.css( "z-index", "99999999" );
-                        }
-                    });
-                })
-            </script>
         <?php
         }
         else{
@@ -797,6 +777,12 @@ class Profile_Builder_Form_Creator{
             wp_enqueue_script( 'wppb_front_end_script', WPPB_PLUGIN_URL. 'assets/js/script-front-end.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
             wp_print_scripts( 'wppb_front_end_script' );
         }
+
+        if ( current_user_can( 'manage_options' ) ) {
+            wp_enqueue_script( 'wppb_select_user_to_edit_js', WPPB_PLUGIN_URL. 'assets/js/select-user-to-edit.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
+            wp_print_scripts( 'wppb_select_user_to_edit_js' );
+        }
+
     }
 
     /**
