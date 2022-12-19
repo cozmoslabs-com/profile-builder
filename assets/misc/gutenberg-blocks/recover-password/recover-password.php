@@ -17,36 +17,8 @@ add_action(
             true
         );
         register_block_type(
-            'wppb/recover-password',
+            __DIR__,
             [
-                'api_version'             => 2,
-                'title'                   => __( 'Recover Password' , 'profile-builder' ),
-                'description'             => __( 'Displays the Front End Recover Password Form.' , 'profile-builder' ),
-                'category'                => 'wppb-block',
-                'keywords'                => [
-                    __( 'Recover' , 'profile-builder' ),
-                    __( 'Password' , 'profile-builder' ),
-                    __( 'Recover Password' , 'profile-builder' ),
-                    __( 'Form' , 'profile-builder' ),
-                ],
-                'example'                 => [
-                    'attributes'          => [
-                        'is_preview'      => true,
-                        'is_editor'       => true,
-                    ],
-                ],
-                'editor_script'           => 'wppb-block-recover-password',
-                'attributes'              => [
-                    'is_preview'          => [
-                        'type'            => 'boolean',
-                        'default'         => false,
-                    ],
-                    'is_editor'           => [
-                        'type'            => 'boolean',
-                        'default'         => false,
-                    ],
-                ],
-
                 'render_callback' => function( $attributes, $content ) {
                     ob_start();
                     do_action( 'wppb/recover-password/render_callback', $attributes, $content );

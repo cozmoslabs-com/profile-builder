@@ -855,7 +855,8 @@ function wppb_password_strength_check(){
                     }
             <?php
             global $wp_version;
-            if ( version_compare( $wp_version, "4.8", ">" ) ) {
+
+            if ( version_compare( $wp_version, "4.9.0", ">=" ) ) {
                 ?>
                     strength = wp.passwordStrength.meter( pass1, wp.passwordStrength.userInputDisallowedList(), pass2 );
                 <?php
@@ -1171,9 +1172,11 @@ function wppb_add_gmt_offset( $timestamp ) {
  * @return string $extra_attributes
  */
 function wppb_add_html_tag_required_to_fields( $extra_attributes, $field, $form_location = '' ) {
-	if ( $field['field'] != "Checkbox" && isset( $field['required'] ) && $field['required'] == 'Yes' ){
-		if( !( ( $field['field'] == "Default - Password" || $field['field'] == "Default - Repeat Password" ) && $form_location == 'edit_profile' ) )
+	if ( isset( $field['required'] ) && $field['required'] == 'Yes' ){
+
+		if( !in_array( $field['field'], array( 'Checkbox', 'Default - Password', 'Default - Repeat Password', 'GDPR Communication Preferences' ) ) && $form_location == 'edit_profile' )
 			$extra_attributes .= ' required ';
+
 	}
 	return $extra_attributes;
 }

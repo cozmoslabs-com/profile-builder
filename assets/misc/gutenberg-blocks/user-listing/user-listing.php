@@ -16,71 +16,9 @@ add_action(
             microtime(),
             true
         );
-
-        $ul_names = wppb_get_userlisting_names();
-        $default_key = is_null( key($ul_names) ) ? '' : key($ul_names);
-
         register_block_type(
-            'wppb/user-listing',
+            __DIR__,
             [
-                'api_version'                 => 2,
-                'title'                       => __( 'User Listing' , 'profile-builder' ),
-                'description'                 => __( 'Displays the Front End User Listing.' , 'profile-builder' ),
-                'category'                    => 'wppb-block',
-                'keywords'                    => [
-                    __( 'User' , 'profile-builder' ),
-                    __( 'Listing' , 'profile-builder' ),
-                    __( 'User Listing' , 'profile-builder' ),
-                    __( 'Form' , 'profile-builder' ),
-                ],
-                'example'                     => [
-                    'attributes'              => [
-                        'name'                => '',
-                        'single'              => false,
-                        'meta_key'            => 'false',
-                        'meta_value'          => '',
-                        'include_manual'      => '',
-                        'exclude_manual'      => '',
-                        'id'                  => '',
-                        'is_preview'          => true,
-                    ],
-                ],
-                'editor_script'               => 'wppb-block-user-listing',
-                'attributes'                  => [
-                    'name'                    => [
-                        'type'                => 'string',
-                        'default'             => $default_key,
-                    ],
-                    'single'                  => [
-                        'type'                => 'boolean',
-                        'default'             => false,
-                    ],
-                    'meta_key'                => [
-                        'type'                => 'string',
-                        'default'             => '',
-                    ],
-                    'meta_value'              => [
-                        'type'                => 'string',
-                        'default'             => '',
-                    ],
-                    'include_manual'                 => [
-                        'type'                => 'string',
-                        'default'             => '',
-                    ],
-                    'exclude_manual'                 => [
-                        'type'                => 'string',
-                        'default'             => '',
-                    ],
-                    'id'                      => [
-                        'type'                => 'string',
-                        'default'             => '',
-                    ],
-                    'is_preview'              => [
-                        'type'                => 'boolean',
-                        'default'             => false,
-                    ],
-                ],
-
                 'render_callback' => function( $attributes, $content ) {
                     ob_start();
                     do_action( 'wppb/user-listing/render_callback', $attributes, $content );

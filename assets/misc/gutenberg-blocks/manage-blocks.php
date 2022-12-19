@@ -55,11 +55,11 @@ if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
     add_filter( 'block_categories', 'register_layout_category' );
 }
 
-include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/login.php');
-include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/register.php');
-include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/edit-profile.php');
-include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/recover-password.php');
+include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/login/login.php');
+include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/register/register.php');
+include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/edit-profile/edit-profile.php');
+include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/recover-password/recover-password.php');
 
 if( defined( 'WPPB_PAID_PLUGIN_URL' ) && wppb_check_if_add_on_is_active( 'wppb_userListing' ) ) {
-    include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/user-listing.php');
+    include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/user-listing/user-listing.php');
 }

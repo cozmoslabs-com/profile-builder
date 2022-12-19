@@ -17,42 +17,8 @@ add_action(
             true
         );
         register_block_type(
-            'wppb/edit-profile',
+            __DIR__,
             [
-                'api_version'              => 2,
-                'title'                    => __( 'Edit Profile' , 'profile-builder' ),
-                'description'              => __( 'Displays the Front End Edit Profile Form.' , 'profile-builder' ),
-                'category'                 => 'wppb-block',
-                'keywords'                 => [
-                    __( 'Edit' , 'profile-builder' ),
-                    __( 'Profile' , 'profile-builder' ),
-                    __( 'Edit Profile' , 'profile-builder' ),
-                    __( 'Form' , 'profile-builder' ),
-                ],
-                'example'                  => [
-                    'attributes'           => [
-                        'form_name'        => '',
-                        'redirect_url'     => '',
-                        'is_preview'       => true,
-                    ],
-                ],
-                'editor_script'            => 'wppb-block-edit-profile',
-                'attributes'               => [
-                    'form_name'            => [
-                        'type'             => 'string',
-                        'default'          => '',
-                    ],
-                    'redirect_url'         => [
-                        'type'             => 'string',
-                        'default'          => '',
-
-                    ],
-                    'is_preview'           => [
-                        'type'             => 'boolean',
-                        'default'          => false,
-                    ],
-                ],
-
                 'render_callback' => function( $attributes, $content ) {
                     ob_start();
                     do_action( 'wppb/edit-profile/render_callback', $attributes, $content );

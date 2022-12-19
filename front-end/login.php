@@ -260,7 +260,9 @@ function wppb_resend_confirmation_email() {
     if( !isset( $_GET['wppb-action'] ) || $_GET['wppb-action'] != 'resend_email_confirmation' || !isset( $_GET['email'] ))
         return;
 
-    $transient_check_key = Wordpress_Creation_Kit_PB::wck_generate_slug( sanitize_email( $_GET['email'] ));
+    $user_email = base64_decode( sanitize_text_field( $_GET['email'] ));
+
+    $transient_check_key = Wordpress_Creation_Kit_PB::wck_generate_slug( $user_email );
     $transient_check = get_transient('wppb_confirmation_email_already_sent_'.$transient_check_key);
 
     if ( $transient_check === false ) {
@@ -274,14 +276,14 @@ function wppb_resend_confirmation_email() {
             include_once( WPPB_PLUGIN_DIR . '/assets/lib/class-mustache-templates/class-mustache-templates.php' );
 
         global $wpdb;
-        $sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", sanitize_email( $_GET['email'] )), ARRAY_A );
+        $sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $user_email ), ARRAY_A );
 
         // if the email address exists in wp_signups table, resend Confirmation Email and redirect to display notification
         if ( $sql_result ) {
             wppb_signup_user_notification( sanitize_text_field( $sql_result['user_login'] ), sanitize_email( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
-            $transient_key = Wordpress_Creation_Kit_PB::wck_generate_slug( sanitize_email( $_GET['email'] ));
+            $transient_key = Wordpress_Creation_Kit_PB::wck_generate_slug( $user_email );
             set_transient('wppb_confirmation_email_already_sent_' . $transient_key, true, 900 );
-            $error_string = '<strong>' . __('SUCCESS', 'profile-builder') . '</strong>: ' . sprintf( __( 'Activation email sent to %s', 'profile-builder' ), sanitize_email( $_GET['email'] ));
+            $error_string = '<strong>' . __('SUCCESS', 'profile-builder') . '</strong>: ' . sprintf( __( 'Activation email sent to %s', 'profile-builder' ),  str_replace('+','-wppb-plus-', $user_email));
             $wppb_success_message_nonce = wp_create_nonce( 'wppb_login_error_'.$error_string);
             $current_url = wppb_curpageurl();
             $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), '_wpnonce' => $wppb_success_message_nonce, 'request_form_location' => 'page', 'wppb_message_type' => 'success');
@@ -314,8 +316,8 @@ function wppb_change_error_message($error_message) {
 		// if the email address exists in wp_signups table, display message and link to resend Confirmation Email
 		if ( isset($sql_result) ) {
 			$confirmation_url_nonce = wp_create_nonce( 'wppb_confirmation_url_nonce' );
-			$current_url = wppb_curpageurl();
-			$arr_params = array('email' => sanitize_email( $check_user ), 'wppb-action' => 'resend_email_confirmation', '_wpnonce' => $confirmation_url_nonce);
+            $current_url = strtok( wppb_curpageurl(), '?' );
+			$arr_params = array('email' => base64_encode( $check_user ), 'wppb-action' => 'resend_email_confirmation', '_wpnonce' => $confirmation_url_nonce);
 			$confirmation_url = add_query_arg($arr_params, $current_url);
 			$error_message = '<strong>' . __('ERROR', 'profile-builder') . '</strong>: ' . sprintf( __( 'You need to confirm your Email Address before logging in! To resend the Confirmation Email  %1$sclick here%2$s', 'profile-builder' ), '<a href="' . esc_url( $confirmation_url ) . '" title="Resend Confirmation Email">', '</a>.' );
 		}
@@ -567,7 +569,7 @@ function wppb_front_end_login( $atts ){
                 if ( isset( $_GET['wppb_message_type'] ) && $_GET['wppb_message_type'] == 'success' )
                     $message_type = 'wppb-success';
                 else $message_type = 'wppb-error';
-                $loginerror = '<p class="'. $message_type .'">' . wp_kses_post($error_string) . '</p><!-- .error -->';
+                $loginerror = '<p class="'. $message_type .'">' . wp_kses_post(str_replace( '-wppb-plus-', '+', $error_string)) . '</p><!-- .error -->';
                 if (isset($_GET['request_form_location'])) {
                     if ($_GET['request_form_location'] === 'widget' && !in_the_loop()) {
                         $login_form .= $loginerror;
@@ -595,7 +597,7 @@ function wppb_front_end_login( $atts ){
                     $i++;
                 }
                 if (!empty($lostpassword_url)) {
-                    if ($i != 0) $login_form .= ' | ';
+                    if ($i != 0) $login_form .= '<span class="login-separator"> | </span>';
                     if ( wppb_check_missing_http( $lostpassword_url ) ) $lostpassword_url = "http://" . $lostpassword_url;
                     $login_form .= '<a class="login-lost-password" href="'. esc_url($lostpassword_url) .'">'. apply_filters('wppb_login_lostpass_text', __('Lost your password?','profile-builder')) .'</a>';
                 }

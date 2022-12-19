@@ -1300,6 +1300,7 @@
 <?php __("Facebook App ID", "profile-builder"); ?>
 <?php __("Google Login", "profile-builder"); ?>
 <?php __("Google Client ID", "profile-builder"); ?>
+<?php __("Google Client Name", "profile-builder"); ?>
 <?php __("Twitter Login", "profile-builder"); ?>
 <?php __("Twitter API Key", "profile-builder"); ?>
 <?php __("Twitter API Secret", "profile-builder"); ?>
@@ -1405,10 +1406,16 @@
 <?php __("This will overwrite your old PB settings! Are you sure you want to continue?", "profile-builder"); ?>
 <?php __(" labels scanned.", "profile-builder"); ?>
 <?php __("Label to Edit", "profile-builder"); ?>
+<?php __("Here you will see the default label so you can copy it.", "profile-builder"); ?>
 <?php __("New Label", "profile-builder"); ?>
 <?php __("Edit Labels", "profile-builder"); ?>
 <?php __("Rescan Lables", "profile-builder"); ?>
+<?php __("Rescan all Profile Builder labels.", "profile-builder"); ?>
 <?php __("Informations", "profile-builder"); ?>
+<?php __("Variables:", "profile-builder"); ?>
+<?php __("Place them like in the default string!", "profile-builder"); ?>
+<?php __("Old Label", "profile-builder"); ?>
+<?php __("Read more detailed informations", "profile-builder"); ?>
 <?php __("Import and Export Labels", "profile-builder"); ?>
 <?php __("Import Labels from a .json file.", "profile-builder"); ?>
 <?php __("Easily import the labels from another site.", "profile-builder"); ?>
@@ -1813,16 +1820,6 @@
 <?php __("This field is available in our paid plans.", "profile-builder"); ?>
 <?php __("Install the free Paid Member Subscriptions plugin to get access this field.", "profile-builder"); ?>
 <?php __("Profile Builder Forms", "profile-builder"); ?>
-<?php __("Displays the Front End Edit Profile Form.", "profile-builder"); ?>
-<?php __("Profile", "profile-builder"); ?>
-<?php __("Form", "profile-builder"); ?>
-<?php __("Displays the Front End Login form.", "profile-builder"); ?>
-<?php __("Displays the Front End Recover Password Form.", "profile-builder"); ?>
-<?php __("Recover", "profile-builder"); ?>
-<?php __("Displays the Front End Registration Form.", "profile-builder"); ?>
-<?php __("Displays the Front End User Listing.", "profile-builder"); ?>
-<?php __("User", "profile-builder"); ?>
-<?php __("Listing", "profile-builder"); ?>
 <?php __("Remove", "profile-builder"); ?>
 <?php __("Yes, I'd like to create a new site", "profile-builder"); ?>
 <?php __("Your site url will look like this:<br>", "profile-builder"); ?>
@@ -2002,6 +1999,7 @@
 <?php __("Registration", "profile-builder"); ?>
 <?php __("Show Authenticator Code Field", "profile-builder"); ?>
 <?php __("Redirects", "profile-builder"); ?>
+<?php __("Form", "profile-builder"); ?>
 <?php __("Assigned Role", "profile-builder"); ?>
 <?php __("Automatic Login", "profile-builder"); ?>
 <?php __('Edit the Settings for this form %1$shere%2$s', 'profile-builder' ); ?>

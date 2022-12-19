@@ -443,7 +443,7 @@ class Profile_Builder_Form_Creator{
         $wppb_form_class .= $wppb_user_role_class;
 
         ?>
-        <form enctype="multipart/form-data" method="post" id="<?php echo esc_attr( apply_filters( 'wppb_form_id', $wppb_form_id, $this ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wppb_form_class', $wppb_form_class, $this ) ); ?>" action="<?php echo esc_url( apply_filters( 'wppb_form_action', wppb_curpageurl() ) ); ?>">
+        <form enctype="multipart/form-data" method="post" id="<?php echo esc_attr( apply_filters( 'wppb_form_id', $wppb_form_id, $this ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wppb_form_class', $wppb_form_class, $this ) ); ?>" action="<?php echo esc_url( apply_filters( 'wppb_form_action', wppb_curpageurl(), $this->args ) ); ?>">
 			<?php
             do_action( 'wppb_form_args_before_output', $this->args );
             $this->args = apply_filters( 'wppb_filter_form_args_before_output', $this->args );

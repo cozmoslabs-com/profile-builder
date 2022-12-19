@@ -17,54 +17,8 @@ add_action(
             true
         );
         register_block_type(
-            'wppb/register',
+            __DIR__,
             [
-                'api_version'                      => 2,
-                'title'                            => __( 'Register' , 'profile-builder' ),
-                'description'                      => __( 'Displays the Front End Registration Form.' , 'profile-builder' ),
-                'category'                         => 'wppb-block',
-                'keywords'                         => [
-                    __( 'Register' , 'profile-builder' ),
-                    __( 'Form' , 'profile-builder' ),
-                ],
-                'example'                          => [
-                    'attributes'                   => [
-                        'form_name'                => '',
-                        'role'                     => '',
-                        'automatic_login'          => false,
-                        'redirect_url'             => '',
-                        'logout_redirect_url'      => '',
-                        'is_preview'               => true,
-                    ],
-                ],
-                'editor_script'                    => 'wppb-block-register',
-                'attributes'                       => [
-                    'form_name'                    => [
-                        'type'                     => 'string',
-                        'default'                  => '',
-                    ],
-                    'role'                         => [
-                        'type'                     => 'string',
-                        'default'                  => '',
-                    ],
-                    'automatic_login'              => [
-                        'type'                     => 'boolean',
-                        'default'                  => false,
-                    ],
-                    'redirect_url'                 => [
-                        'type'                     => 'string',
-                        'default'                  => '',
-                    ],
-                    'logout_redirect_url'          => [
-                        'type'                     => 'string',
-                        'default'                  => '',
-                    ],
-                    'is_preview'                   => [
-                        'type'                     => 'boolean',
-                        'default'                  => false,
-                    ],
-                ],
-
                 'render_callback' => function( $attributes, $content ) {
                     ob_start();
                     do_action( 'wppb/register/render_callback', $attributes, $content );
