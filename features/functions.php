@@ -99,7 +99,9 @@ if(!function_exists('wppb_curpageurl')){
         $req_uri = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( $_SERVER['REQUEST_URI'] ) : '';
 
         if( function_exists('wppb_get_abs_home') ) {
-            $home_path = trim(parse_url(wppb_get_abs_home(), PHP_URL_PATH), '/');
+			$url = parse_url( wppb_get_abs_home(), PHP_URL_PATH );
+
+            $home_path = !empty( $url ) ? trim($url, '/') : $url;
             $home_path_regex = sprintf('|^%s|i', preg_quote($home_path, '|'));
 
             // Trim path info from the end and the leading home path from the front.

@@ -411,13 +411,13 @@ function wppb_general_settings_sanitize( $wppb_generalSettings ) {
 	if( !empty( $wppb_generalSettings ) ){
 		foreach( $wppb_generalSettings as $settings_name => $settings_value ){
 			if( $settings_name == "minimum_password_length" || $settings_name == "activationLandingPage" )
-				$wppb_generalSettings[$settings_name] = filter_var( $settings_value, FILTER_SANITIZE_NUMBER_INT );
+				$wppb_generalSettings[$settings_name] = absint( $settings_value );
 			elseif( $settings_name == "extraFieldsLayout" || $settings_name == "emailConfirmation" || $settings_name == "adminApproval" || $settings_name == "loginWith" || $settings_name == "minimum_password_strength" )
-				$wppb_generalSettings[$settings_name] = filter_var( $settings_value, FILTER_SANITIZE_STRING );
+				$wppb_generalSettings[$settings_name] = sanitize_text_field( $settings_value );
 			elseif( $settings_name == "adminApprovalOnUserRole" ){
 				if( is_array( $settings_value ) && !empty( $settings_value ) ){
 					foreach( $settings_value as $key => $value ){
-						$wppb_generalSettings[$settings_name][$key] = filter_var( $value, FILTER_SANITIZE_STRING );
+						$wppb_generalSettings[$settings_name][$key] = sanitize_text_field( $value );
 					}
 				}
 			}

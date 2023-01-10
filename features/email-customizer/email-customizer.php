@@ -403,11 +403,6 @@ add_filter ( 'email_change_email', 'wppb_email_customizer_change_email_address_c
 add_filter ( 'email_change_email', 'wppb_email_customizer_change_email_address_title_filter_handler', 10, 3);
 add_filter ( 'email_change_email', 'wppb_email_customizer_change_email_address_header_filter_handler', 10, 3);
 
-if( function_exists( 'wppb_in_init_edit_profile_approval' ) ) {
-	add_filter('wppb_epaa_user_email_content', 'wppb_email_customizer_epaa_content_filter_handler', 10, 4);
-	add_filter('wppb_epaa_user_email_subject', 'wppb_email_customizer_epaa_title_filter_handler', 10, 4);
-}
-
 // using filters, we overwrite the old content with the new one from the email customizer (for the admin)
 add_filter ( 'wppb_register_admin_email_subject_without_admin_approval', 'wppb_email_customizer_admin_approval_new_user_signup_filter_handler', 10, 5 );
 add_filter ( 'wppb_register_admin_email_message_without_admin_approval', 'wppb_email_customizer_admin_approval_new_user_signup_filter_handler', 10, 5 );
@@ -417,12 +412,6 @@ add_filter ( 'wppb_register_admin_email_message_with_admin_approval', 'wppb_emai
 
 add_filter ( 'wppb_recover_password_message_content_sent_to_admin', 'wppb_admin_email_customizer_password_reset_content_filter_handler', 10, 4 );
 add_filter ( 'wppb_recover_password_message_title_sent_to_admin', 'wppb_admin_email_customizer_password_reset_title_filter_handler', 10, 2 );
-
-if( function_exists( 'wppb_in_init_edit_profile_approval' ) ) {
-	add_filter('wppb_epaa_admin_email_content', 'wppb_admin_email_customizer_epaa_content_filter_handler', 10, 4);
-	add_filter('wppb_epaa_admin_email_subject', 'wppb_admin_email_customizer_epaa_title_filter_handler', 10, 4);
-}
-
 
 // Mustache variables
 

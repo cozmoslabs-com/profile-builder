@@ -4,7 +4,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.1
-Stable tag: 3.8.6
+Stable tag: 3.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,6 +177,13 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 15. Edit or Add New User Role
 
 == Changelog ==
+= 3.8.7 =
+* Fix: compatibility issues with PHP 8.1
+* Fix: warning coming from WYSIWYG field in some cases
+* Misc: changed Roles Editor capability to delete_users
+* Misc: more small changes regarding Gutenberg blocks
+* Misc: compatibility fix for JetEngine plugin
+
 = 3.8.6 =
 * Fix: The GDPR Communication Preferences field required you to select all options in order to register
 * Fix: Some strings that couldn't be translated
