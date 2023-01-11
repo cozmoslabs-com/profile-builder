@@ -63,6 +63,6 @@ include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/register/register.
 include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/edit-profile/edit-profile.php');
 include_once(WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/recover-password/recover-password.php');
 
-if( defined( 'WPPB_PAID_PLUGIN_URL' ) && wppb_check_if_add_on_is_active( 'wppb_userListing' ) ) {
-    include_once(WPPB_PLUGIN_DIR . '/add-ons/user-listing/assets/misc/gutenberg-blocks/user-listing/user-listing.php');
-}
+if( defined( 'WPPB_PAID_PLUGIN_URL' ) && wppb_check_if_add_on_is_active( 'wppb_userListing' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/user-listing/assets/misc/gutenberg-blocks/user-listing/user-listing.php' ) )
+    include_once( WPPB_PAID_PLUGIN_DIR . '/add-ons/user-listing/assets/misc/gutenberg-blocks/user-listing/user-listing.php' );
+
