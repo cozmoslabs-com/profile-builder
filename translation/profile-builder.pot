@@ -6659,7 +6659,7 @@ msgstr ""
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:573, features/two-factor-authentication/class-two-factor-authentication.php:685, features/two-factor-authentication/class-two-factor-authentication.php:689
+#: features/two-factor-authentication/class-two-factor-authentication.php:573, features/two-factor-authentication/class-two-factor-authentication.php:687, features/two-factor-authentication/class-two-factor-authentication.php:691
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
@@ -6667,7 +6667,7 @@ msgstr ""
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:713
+#: features/two-factor-authentication/class-two-factor-authentication.php:715
 msgid "Authenticator Code"
 msgstr ""
 

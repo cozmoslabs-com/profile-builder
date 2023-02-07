@@ -4,7 +4,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.1
-Stable tag: 3.8.8
+Stable tag: 3.8.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,6 +177,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 15. Edit or Add New User Role
 
 == Changelog ==
+= 3.8.9 =
+* Fix: Deprecated function from Elementor integration
+* Fix: A validation issue appearing in some cases when making changes in the back-end to users
+* Fix: Allow empty required fields advanced option to work with the Map field
+* Fix: Issue with redirect delay advanced settings option that couldn't be emptied
+* Misc: Added a filter over the From Website Email: wppb_from_website_email
+* Misc: Added a fitler over the Radio field Labels and Options: wppb_radio_labels_array, wppb_radio_options_array
+
 = 3.8.8 =
 * Fix warning regarding extra assets loading
 

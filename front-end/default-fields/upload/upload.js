@@ -50,7 +50,7 @@ function validate_simple_upload(){
                 jQuery("#p_" + uploadInputName).text(error);
                 uploadButton.val('');
             } else {
-                var fieldName = uploadInputName.replace(/^(simple_upload_)/,'');
+                var fieldName = uploadInputName.replace(/^(simple_upload_)/, '').replace(/(-)/, '_');;
                 var formData = new FormData();
                 if (uploadButton.closest('.wppb-upload').length > 0) {
                     formData.append('action', 'wppb_woo_simple_upload');

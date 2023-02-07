@@ -60,11 +60,11 @@ class PB_Elementor {
 	public function register_widgets() {
 		$this->include_widgets_files();
 
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PB_Elementor_Edit_Profile_Widget() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PB_Elementor_Login_Widget() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PB_Elementor_Recover_Password_Widget() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PB_Elementor_Register_Widget() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PB_Elementor_User_Listing_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new PB_Elementor_Edit_Profile_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new PB_Elementor_Login_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new PB_Elementor_Recover_Password_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new PB_Elementor_Register_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new PB_Elementor_User_Listing_Widget() );
 	}
 
     public function add_category( $elements_manager ) {

@@ -196,7 +196,12 @@ if( !class_exists('WPPB_toolbox') ){
             }
 
             if( isset( $settings['redirect-delay-timer'] ) ){
-                $settings['redirect-delay-timer'] = abs((int)$settings['redirect-delay-timer']);
+
+                if( $settings['redirect-delay-timer'] == '' )
+                    $settings['redirect-delay-timer'] = '';
+                else
+                    $settings['redirect-delay-timer'] = abs( (int)$settings['redirect-delay-timer'] );
+
             }
 
             if( isset( $settings['modify-permalinks-single'] ) )

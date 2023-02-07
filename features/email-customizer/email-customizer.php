@@ -1204,7 +1204,8 @@ function wppb_website_email($sender_email){
         }
     }
 
-    return $sender_email;
+	return apply_filters( 'wppb_from_website_email', $sender_mail );
+	
 }
 
 // function that filters the From name
