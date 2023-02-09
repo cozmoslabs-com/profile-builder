@@ -1193,32 +1193,29 @@ add_filter( 'mustache_variable_ec_user_meta_labels', 'wppb_ec_replace_user_meta_
 
 // function that filters the From email address
 function wppb_website_email($sender_email){
-    $wppb_addonOptions = get_option( 'wppb_module_settings' );
 
-    if ( ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ) || ( isset( $wppb_addonOptions['wppb_emailCustomizerAdmin'] ) && $wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show' ) ){
-        $reply_to_email = get_option( 'wppb_emailc_common_settings_from_reply_to_email', 'not_found' );
-        if ( $reply_to_email != 'not_found' ) {
-            $reply_to_email = str_replace('{{reply_to}}', get_bloginfo('admin_email'), $reply_to_email );
-            if( is_email( $reply_to_email ) )
-                $sender_email = $reply_to_email;
-        }
-    }
+    $reply_to_email = get_option( 'wppb_emailc_common_settings_from_reply_to_email', 'not_found' );
 
-	return apply_filters( 'wppb_from_website_email', $sender_mail );
+	if ( $reply_to_email != 'not_found' ) {
+		$reply_to_email = str_replace('{{reply_to}}', get_bloginfo('admin_email'), $reply_to_email );
+		
+		if( is_email( $reply_to_email ) )
+			$sender_email = $reply_to_email;
+	}
+
+	return apply_filters( 'wppb_from_website_email', $sender_email );
 	
 }
 
 // function that filters the From name
 function wppb_website_name($site_name){
-    $wppb_addonOptions = get_option( 'wppb_module_settings' );
-
-    if ( ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ) || ( isset( $wppb_addonOptions['wppb_emailCustomizerAdmin'] ) && $wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show' ) ){
-        $email_from_name = get_option( 'wppb_emailc_common_settings_from_name', 'not_found' );
-        if ( $email_from_name != 'not_found' ) {
-            $email_from_name = str_replace('{{site_name}}', get_bloginfo('name'), $email_from_name );
-            $site_name = $email_from_name;
-        }
-    }
+    
+	$email_from_name = get_option( 'wppb_emailc_common_settings_from_name', 'not_found' );
+	
+	if ( $email_from_name != 'not_found' ) {
+		$email_from_name = str_replace('{{site_name}}', get_bloginfo('name'), $email_from_name );
+		$site_name = $email_from_name;
+	}
 
     return html_entity_decode( htmlspecialchars_decode( $site_name, ENT_QUOTES ), ENT_QUOTES );
 }
