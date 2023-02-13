@@ -902,6 +902,7 @@
 <?php __("You are already logged in. You can change your password on the edit profile form.", "profile-builder"); ?>
 <?php __("The password must not be empty!", "profile-builder"); ?>
 <?php __("The key cannot be empty!", "profile-builder"); ?>
+<?php __("Login cannot be empty!", "profile-builder"); ?>
 <?php __("Invalid key!", "profile-builder"); ?>
 <?php __("The entered passwords don't match!", "profile-builder"); ?>
 <?php __("The password must have the minimum length of %s characters", "profile-builder"); ?>

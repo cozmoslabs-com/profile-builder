@@ -849,7 +849,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:314, front-end/login.php:540, front-end/recover.php:118, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
+#: admin/general-settings.php:314, front-end/login.php:540, front-end/recover.php:96, add-ons/email-customizer/email-customizer.php:29, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
 msgid "Email"
 msgstr ""
 
@@ -1441,7 +1441,7 @@ msgstr ""
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
 msgstr ""
 
-#: admin/manage-fields.php:398, front-end/login.php:121, front-end/recover.php:72, add-ons/email-customizer/email-customizer.php:30, features/email-customizer/email-customizer.php:30
+#: admin/manage-fields.php:398, front-end/login.php:121, front-end/recover.php:49, add-ons/email-customizer/email-customizer.php:30, features/email-customizer/email-customizer.php:30
 msgid "Password"
 msgstr ""
 
@@ -1449,7 +1449,7 @@ msgstr ""
 msgid "Type your password."
 msgstr ""
 
-#: admin/manage-fields.php:399, front-end/recover.php:73
+#: admin/manage-fields.php:399, front-end/recover.php:50
 msgid "Repeat Password"
 msgstr ""
 
@@ -3365,7 +3365,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:821, front-end/recover.php:386, front-end/default-fields/password/password.php:59
+#: features/functions.php:821, front-end/recover.php:380, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -3538,7 +3538,7 @@ msgstr ""
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:322, front-end/login.php:414, front-end/login.php:452, front-end/recover.php:18, front-end/recover.php:326, features/two-factor-authentication/class-two-factor-authentication.php:577, front-end/default-fields/fields-functions.php:62, front-end/extra-fields/extra-fields.php:118
+#: front-end/login.php:322, front-end/login.php:414, front-end/login.php:452, front-end/recover.php:18, front-end/recover.php:309, features/two-factor-authentication/class-two-factor-authentication.php:577, front-end/default-fields/fields-functions.php:62, front-end/extra-fields/extra-fields.php:118
 msgid "ERROR"
 msgstr ""
 
@@ -3602,7 +3602,7 @@ msgstr ""
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:550, front-end/recover.php:122
+#: front-end/login.php:550, front-end/recover.php:100
 msgid "Username or Email"
 msgstr ""
 
@@ -3614,99 +3614,103 @@ msgstr ""
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
 msgstr ""
 
-#: front-end/recover.php:93
+#: front-end/recover.php:70
 msgid "Reset Password"
 msgstr ""
 
-#: front-end/recover.php:121
+#: front-end/recover.php:99
 msgid "Please enter your username or email address."
 msgstr ""
 
-#: front-end/recover.php:117
+#: front-end/recover.php:95
 msgid "Please enter your email address."
 msgstr ""
 
-#: front-end/recover.php:125
+#: front-end/recover.php:103
 msgid "You will receive a link to create a new password via email."
 msgstr ""
 
-#: front-end/recover.php:138
+#: front-end/recover.php:116
 msgid "Get New Password"
 msgstr ""
 
-#: front-end/recover.php:184
+#: front-end/recover.php:167
 msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
 msgstr ""
 
-#: front-end/recover.php:187
+#: front-end/recover.php:170
 msgid "Password Reset from %1$s"
 msgstr ""
 
-#: front-end/recover.php:214
+#: front-end/recover.php:197
 msgid "You have successfully reset your password."
 msgstr ""
 
-#: front-end/recover.php:216
+#: front-end/recover.php:199
 msgid "Password Successfully Reset for %1$s on %2$s"
 msgstr ""
 
-#: front-end/recover.php:234
+#: front-end/recover.php:217
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
 msgstr ""
 
-#: front-end/recover.php:271
+#: front-end/recover.php:254
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:446
+#: front-end/recover.php:438
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:365
+#: front-end/recover.php:348
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:371, front-end/recover.php:472
+#: front-end/recover.php:358
+msgid "Login cannot be empty!"
+msgstr ""
+
+#: front-end/recover.php:365, front-end/recover.php:465
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:376
+#: front-end/recover.php:370
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:382, front-end/default-fields/password/password.php:55
+#: front-end/recover.php:376, front-end/default-fields/password/password.php:55
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:393
+#: front-end/recover.php:387
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:299
+#: front-end/recover.php:282
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:299
+#: front-end/recover.php:282
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:342
+#: front-end/recover.php:325
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:342
+#: front-end/recover.php:325
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:312
+#: front-end/recover.php:295
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:326
+#: front-end/recover.php:309
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
-#: front-end/recover.php:472
+#: front-end/recover.php:465
 msgid "ERROR:"
 msgstr ""
 
@@ -4111,11 +4115,11 @@ msgstr ""
 msgid "Approval URL"
 msgstr ""
 
-#: add-ons/email-customizer/email-customizer.php:601, features/email-customizer/email-customizer.php:578
+#: add-ons/email-customizer/email-customizer.php:602, features/email-customizer/email-customizer.php:579
 msgid "The users selected password at signup"
 msgstr ""
 
-#: add-ons/email-customizer/email-customizer.php:609, add-ons/email-customizer/email-customizer.php:616, add-ons/email-customizer/email-customizer.php:630, features/email-confirmation/email-confirmation.php:618, features/email-customizer/email-customizer.php:586, features/email-customizer/email-customizer.php:593, features/email-customizer/email-customizer.php:607
+#: add-ons/email-customizer/email-customizer.php:610, add-ons/email-customizer/email-customizer.php:617, add-ons/email-customizer/email-customizer.php:631, features/email-confirmation/email-confirmation.php:618, features/email-customizer/email-customizer.php:587, features/email-customizer/email-customizer.php:594, features/email-customizer/email-customizer.php:608
 msgid "Your selected password at signup"
 msgstr ""
 
