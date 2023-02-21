@@ -60,6 +60,7 @@ function wppb_le_scan_labels( $nonce ) {
 			'email.php',
 			'username.php',
 			'password-repeat.php',
+            'form-designs.php',
             'profile-builder.catalog.php'
 		)
 	);

@@ -79,12 +79,12 @@
 <?php __("General Settings", "profile-builder"); ?>
 <?php __("Display name publicly as - only appears on the Edit Profile page!", "profile-builder"); ?>
 <?php __("Blog Details - only appears on the Registration page!", "profile-builder"); ?>
-<?php __("<strong>ERROR</strong>: The password must have the minimum length of %s characters", "profile-builder"); ?>
+<?php __("<strong>ERROR:</strong> The password must have the minimum length of %s characters", "profile-builder"); ?>
 <?php __("Very weak", "profile-builder"); ?>
 <?php __("Weak", "profile-builder"); ?>
 <?php __("Medium", "profile-builder"); ?>
 <?php __("Strong", "profile-builder"); ?>
-<?php __("<strong>ERROR</strong>: The password must have a minimum strength of %s", "profile-builder"); ?>
+<?php __("<strong>ERROR:</strong> The password must have a minimum strength of %s", "profile-builder"); ?>
 <?php __("Save Settings", "profile-builder"); ?>
 <?php __("Add Field", "profile-builder"); ?>
 <?php __("Settings", "profile-builder"); ?>
@@ -93,6 +93,8 @@
 <?php __("You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab.", "profile-builder"); ?>
 <?php __("See details", "profile-builder"); ?>
 <?php __("Dismiss this notice.", "profile-builder"); ?>
+<?php __('You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
+<?php __('You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("Version %s", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
@@ -185,10 +187,11 @@
 <?php __("User Emails", "profile-builder"); ?>
 <?php __("Administrator Emails", "profile-builder"); ?>
 <?php __("Profile Builder Settings", "profile-builder"); ?>
-<?php __("Load Profile Builder's own CSS file in the front-end:", "profile-builder"); ?>
-<?php __("Yes", "profile-builder"); ?>
-<?php __('You can find the default file here: %1$s', 'profile-builder' ); ?>
+<?php __("Select Form Design:", "profile-builder"); ?>
+<?php __("Have a look at the new Profile Builder - Form Styles:", "profile-builder"); ?>
+<?php __('You can now beautify your forms using new Styles. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Automatically Log In:", "profile-builder"); ?>
+<?php __("Yes", "profile-builder"); ?>
 <?php __("No", "profile-builder"); ?>
 <?php __("Select \"Yes\" to automatically log in new users after successful registration.", "profile-builder"); ?>
 <?php __("\"Email Confirmation\" Activated:", "profile-builder"); ?>
@@ -219,6 +222,8 @@
 <?php __("Select Recover Password Page:", "profile-builder"); ?>
 <?php __("None", "profile-builder"); ?>
 <?php __('Select the page which contains the %1$s[wppb-recover-password]%2$s shortcode.', 'profile-builder' ); ?>
+<?php __("Load Profile Builder's own CSS file in the front-end:", "profile-builder"); ?>
+<?php __('You can find the default file here: %1$s', 'profile-builder' ); ?>
 <?php __("Form Fields", "profile-builder"); ?>
 <?php __("Manage Form Fields", "profile-builder"); ?>
 <?php __("Standard", "profile-builder"); ?>
@@ -864,14 +869,14 @@
 <?php __("User to edit:", "profile-builder"); ?>
 <?php __("Select User", "profile-builder"); ?>
 <?php __("Something went wrong. Please try again!", "profile-builder"); ?>
-<?php __('<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href=\%1$s\>this documentation</a> or try the <a href=\%2$s\>support forums</a>.', 'profile-builder' ); ?>
+<?php __('<strong>ERROR:</strong> Cookies are blocked due to unexpected output. For help, please see <a href=\%1$s\>this documentation</a> or try the <a href=\%2$s\>support forums</a>.', 'profile-builder' ); ?>
 <?php __("Username or Email Address", "profile-builder"); ?>
 <?php __("Remember Me", "profile-builder"); ?>
 <?php __("Log In", "profile-builder"); ?>
-<?php __("SUCCESS", "profile-builder"); ?>
+<?php __("SUCCESS: ", "profile-builder"); ?>
 <?php __("Activation email sent to %s", "profile-builder"); ?>
-<?php __("ERROR", "profile-builder"); ?>
-<?php __('You need to confirm your Email Address before logging in! To resend the Confirmation Email  %1$sclick here%2$s', 'profile-builder' ); ?>
+<?php __("ERROR: ", "profile-builder"); ?>
+<?php __('You need to confirm your Email Address before logging in! </br>To resend the Confirmation Email  %1$sclick here%2$s.', 'profile-builder' ); ?>
 <?php __("The password field is empty.", "profile-builder"); ?>
 <?php __("The password you entered is incorrect.", "profile-builder"); ?>
 <?php __("The username field is empty", "profile-builder"); ?>
@@ -912,8 +917,8 @@
 <?php __("The email address entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct email address.", "profile-builder"); ?>
 <?php __("Check your email for the confirmation link.", "profile-builder"); ?>
-<?php __('There was an error while trying to send the activation link to %1$s!', 'profile-builder' ); ?>
 <?php __("ERROR:", "profile-builder"); ?>
+<?php __('There was an error while trying to send the activation link to %1$s!', 'profile-builder' ); ?>
 <?php __("Invalid activation key!", "profile-builder"); ?>
 <?php __("This username is now active!", "profile-builder"); ?>
 <?php __("There was an error while trying to activate the user.", "profile-builder"); ?>
@@ -1194,7 +1199,6 @@
 <?php __("Choose the fields in which the Search Field will look in", "profile-builder"); ?>
 <?php __("Search Settings", "profile-builder"); ?>
 <?php __("Themes: add style to your user listing section", "profile-builder"); ?>
-<?php __("You can now add beautifully pre-designed templates to showcase the user base on your website using one of the <strong>user listing templates</strong> available in the %sUser Listing add-on%s.", "profile-builder"); ?>
 <?php __("You need to activate the Userlisting feature from within the \"Add-ons\" page!", "profile-builder"); ?>
 <?php __("You can find it in the Profile Builder menu.", "profile-builder"); ?>
 <?php __("No results found!", "profile-builder"); ?>
@@ -1339,9 +1343,9 @@
 <?php __("You have successfully linked your account to %%.", "profile-builder"); ?>
 <?php __("Something went wrong. Please try again later!", "profile-builder"); ?>
 <?php __("Before you can access your account you need to confirm your email address. Please check your inbox and click the activation link.", "profile-builder"); ?>
-<?php __("<strong>ERROR</strong>: You need to confirm your email address before you can log in.", "profile-builder"); ?>
+<?php __("<strong>ERROR:</strong> You need to confirm your email address before you can log in.", "profile-builder"); ?>
 <?php __("Before you can access your account an administrator has to approve it. You will be notified via email.", "profile-builder"); ?>
-<?php __("<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in.", "profile-builder"); ?>
+<?php __("<strong>ERROR:</strong> Your account has to be confirmed by an administrator before you can log in.", "profile-builder"); ?>
 <?php __("You will be redirected in 5 seconds. If not, click %%.", "profile-builder"); ?>
 <?php __("<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first.", "profile-builder"); ?>
 <?php __("Wrong password!", "profile-builder"); ?>
@@ -1556,6 +1560,20 @@
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and the password: %3$s<br/><br/>Access your account: %4$s ', 'profile-builder' ); ?>
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and your password is the one that you have selected during registration.<br/><br/>Access your account: %3$s ', 'profile-builder' ); ?>
 <?php __("The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!", "profile-builder"); ?>
+<?php __("Address Line 2", "profile-builder"); ?>
+<?php __("Address Line 1", "profile-builder"); ?>
+<?php __("Don’t have an account?", "profile-builder"); ?>
+<?php __("WELCOME BACK", "profile-builder"); ?>
+<?php __("Please enter your details.", "profile-builder"); ?>
+<?php __("Manage your profile information", "profile-builder"); ?>
+<?php __("ERROR!", "profile-builder"); ?>
+<?php __("SUCCESS!", "profile-builder"); ?>
+<?php __("NOTE!", "profile-builder"); ?>
+<?php __("WARNING!", "profile-builder"); ?>
+<?php __("Log in", "profile-builder"); ?>
+<?php __("Create a new account", "profile-builder"); ?>
+<?php __("Edit account", "profile-builder"); ?>
+<?php __("Subscription Payment", "profile-builder"); ?>
 <?php __("This login widget lets you add a login form in the sidebar.", "profile-builder"); ?>
 <?php __("Profile Builder Login Widget", "profile-builder"); ?>
 <?php __("Title:", "profile-builder"); ?>
@@ -1640,6 +1658,7 @@
 <?php __("Authenticator Code", "profile-builder"); ?>
 <?php __("The usernames cannot be changed.", "profile-builder"); ?>
 <?php __("This Profile Builder add-on has been migrated to the main plugin and is no longer used. You can delete it.", "profile-builder"); ?>
+<?php __("ERROR", "profile-builder"); ?>
 <?php __("Limit", "profile-builder"); ?>
 <?php __("Enable limit to the number of fields to be generated by users in front end forms ", "profile-builder"); ?>
 <?php __("General Limit", "profile-builder"); ?>

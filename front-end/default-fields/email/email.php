@@ -43,9 +43,9 @@ function wppb_email_handler( $output, $form_location, $field, $user_id, $field_c
                 $cancel_request_url = add_query_arg($arr_params, $current_url);
                 $pending_new_email_address = apply_filters('wppb_new_email_address','');
 
-                    $output .= '<span class="wppb-description-delimiter">' . sprintf(__('There is a pending change request of your email to: %s', 'profile-builder'), '<strong>' . $pending_new_email_address . '</strong>');
-                    $output .= '<a style="float: right;" href="' . esc_url($cancel_request_url) . '">' . __('Cancel request', 'profile-builder') . '</a></span>';
-                }
+                $output .= '<span class="wppb-description-delimiter">' . sprintf(__('There is a pending change request of your email to: %s', 'profile-builder'), '<strong>' . $pending_new_email_address . '</strong>');
+                $output .= '<a class="wppb-cancel-request" style="float: right;" href="' . esc_url($cancel_request_url) . '">' . __('Cancel request', 'profile-builder') . '</a></span>';
+            }
         }
 
 
