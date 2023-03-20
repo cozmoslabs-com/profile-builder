@@ -1215,3 +1215,12 @@ Advanced Settings or Toolbox (legacy addon)
     align-items: center;
     gap: 20px;
 }
+
+p.wppb-form-desig-description {
+    font-weight: 400;
+    font-style: italic;
+}
+
+p.wppb-form-desig-description a {
+    text-decoration: none;
+}

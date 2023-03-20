@@ -23,6 +23,23 @@ function wppb_check_for_unapproved_user( $data, $what ){
 	return $message;
 }
 
+/**
+
+ * Function that retrieves the unique user key from the database. If we don't have one we generate one and add it to the database
+ * 
+ * @param string $requested_user_login the user login
+ */
+
+function wppb_retrieve_activation_key( $requested_user_login ){
+
+    $user = get_user_by( 'login', $requested_user_login ); 
+
+    if( empty( $user ) || !function_exists( 'get_password_reset_key' ) )
+        return false;
+
+    return get_password_reset_key( $user );
+
+}
 
  /**
  * Function that creates a generate new password form

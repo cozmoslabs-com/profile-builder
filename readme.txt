@@ -3,8 +3,8 @@ Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungurea
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 6.1
-Stable tag: 3.9.2
+Tested up to: 6.2
+Stable tag: 3.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,6 +177,16 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 15. Edit or Add New User Role
 
 == Changelog ==
+= 3.9.3 =
+* Fix: Issue with roles having the 'edit_users' capability could not select other users to edit on a front-end edit profile form
+* Fix: Simple Upload field issue where file was saved in some cases when validation failed
+* Fix: Potential error appearing in some cases when loading the mustache functionality
+* Fix: Add backwards compatibility for removed `wppb_retrieve_activation_key()` function, which is now a wrapper to `get_password_reset_key()`
+* Misc: Small fixes for Placeholder Labels option
+* Misc: Make sure strings catalog doesn't contain empty entries
+* Misc: Fix some path loading issues for advanvced settings
+* Misc: Use appropriate widget registration function for Elementor versions older than 3.5.
+
 = 3.9.2 =
 * Fix: some notices appearing on PHP 8.1
 * Misc: Form Designs compatibility

@@ -1,4 +1,3 @@
-<?php __("", "profile-builder"); ?>
 <?php __("To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew.", "profile-builder"); ?>
 <?php __("To enable updates, please enter your serial number on the <a href=\"%s\">Register Version</a> page. If you don't have a serial number, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>.", "profile-builder"); ?>
 <?php __("%s is also activated. You need to deactivate it before activating this version of the plugin.", "profile-builder"); ?>
@@ -1560,6 +1559,7 @@
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and the password: %3$s<br/><br/>Access your account: %4$s ', 'profile-builder' ); ?>
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and your password is the one that you have selected during registration.<br/><br/>Access your account: %3$s ', 'profile-builder' ); ?>
 <?php __("The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!", "profile-builder"); ?>
+<?php __('To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \Enable Placeholder Labels\ Option in %3$sAdvanced Settings%4$s.', 'profile-builder' ); ?>
 <?php __("Address Line 2", "profile-builder"); ?>
 <?php __("Address Line 1", "profile-builder"); ?>
 <?php __("Don’t have an account?", "profile-builder"); ?>
