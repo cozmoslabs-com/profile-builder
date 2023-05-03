@@ -61,7 +61,7 @@
     text-rendering: optimizelegibility;
 }
 
-.wppb-badge.Pro, .wppb-badge.Elite, .wppb-badge.Unlimited{
+.wppb-badge.Pro, .wppb-badge.Agency, .wppb-badge.Unlimited{
 	background:url(../images/pb-logo-free.png) center no-repeat;
 }
 

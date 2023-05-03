@@ -297,21 +297,23 @@ function wppb_resend_confirmation_email() {
 add_action('init', 'wppb_resend_confirmation_email');
 
 function wppb_change_error_message($error_message) {
+
+    $wppb_generalSettings = get_option( 'wppb_general_settings' );
+
+    if (empty( $wppb_generalSettings['emailConfirmation'] ) || $wppb_generalSettings['emailConfirmation'] !== 'yes')
+        return $error_message;
 	
 	if( isset( $_REQUEST['log'] ) ){
 		global $wpdb;
 		$check_user = sanitize_text_field( $_REQUEST['log'] );
-		$wppb_generalSettings = get_option( 'wppb_general_settings' );
 
-		if ( !empty( $wppb_generalSettings['emailConfirmation'] ) && $wppb_generalSettings['emailConfirmation'] === 'yes' ) {
-			if ( is_email( $check_user ))
-				$sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", sanitize_email( $check_user )), ARRAY_A );
-			else {
-				$sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_login = %s", sanitize_user( $check_user )), ARRAY_A );
-				if ( $sql_result )
-					$check_user = $sql_result['user_email'];
-			}
-		}
+        if ( is_email( $check_user ))
+            $sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", sanitize_email( $check_user )), ARRAY_A );
+        else {
+            $sql_result = $wpdb->get_row( $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_login = %s", sanitize_user( $check_user )), ARRAY_A );
+            if ( $sql_result )
+                $check_user = $sql_result['user_email'];
+        }
 
 		// if the email address exists in wp_signups table, display message and link to resend Confirmation Email
 		if ( isset($sql_result) ) {

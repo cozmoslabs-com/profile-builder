@@ -31,7 +31,7 @@ function wppb_block_editor_enqueue()
         //Social Connect
         wp_enqueue_style('wppb-sc-frontend-style', WPPB_PAID_PLUGIN_URL . 'add-ons-advanced/social-connect/assets/css/wppb_sc_main_frontend.css', false, PROFILE_BUILDER_VERSION);
 
-        if ( in_array( PROFILE_BUILDER, ['Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited'] ) ) {
+        if ( in_array( PROFILE_BUILDER, ['Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited'] ) ) {
             //Userlisting
             wp_enqueue_script('wppb-userlisting-js', WPPB_PAID_PLUGIN_URL . 'add-ons/user-listing/userlisting.js', array('jquery', 'jquery-touch-punch'), PROFILE_BUILDER_VERSION, true);
             wp_localize_script('wppb-userlisting-js', 'wppb_userlisting_obj', array('pageSlug' => wppb_get_users_pagination_slug()));

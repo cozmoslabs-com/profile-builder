@@ -162,7 +162,7 @@ function wppb_general_settings_content() {
                         <?php echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                     </th>
                     <td style="padding: 0; margin: 0;">
-                        <input type="hidden" id="wppb-active-form-design" name="wppb_general_settings[formsDesign]" value="<?php echo ( !empty( $wppb_generalSettings['formsDesign'] ) ? esc_html( $wppb_generalSettings['formsDesign'] ) : 'forms_style_default' ) ?>" class="wppb-select">
+                        <input type="hidden" id="wppb-active-form-design" name="wppb_general_settings[formsDesign]" value="<?php echo ( !empty( $wppb_generalSettings['formsDesign'] ) ? esc_html( $wppb_generalSettings['formsDesign'] ) : 'form-style-default' ) ?>" class="wppb-select">
                     </td>
                 </tr>
             <?php } ?>
@@ -498,34 +498,34 @@ function wppb_display_form_designs_preview() {
             'id' => 'form-style-default',
             'name' => 'Default',
             'images' => array(
-                'main' => WPPB_PLUGIN_URL.'/assets/images/pb-default-forms.jpg',
+                'main' => WPPB_PLUGIN_URL.'assets/images/pb-default-forms.jpg',
             ),
         ),
         array(
             'id' => 'form-style-1',
             'name' => 'Style 1',
             'images' => array(
-                'main' => WPPB_PLUGIN_URL.'/assets/images/style1-slide1.jpg',
-                'slide1' => WPPB_PLUGIN_URL.'/assets/images/style1-slide2.jpg',
-                'slide2' => WPPB_PLUGIN_URL.'/assets/images/style1-slide3.jpg',
+                'main' => WPPB_PLUGIN_URL.'assets/images/style1-slide1.jpg',
+                'slide1' => WPPB_PLUGIN_URL.'assets/images/style1-slide2.jpg',
+                'slide2' => WPPB_PLUGIN_URL.'assets/images/style1-slide3.jpg',
             ),
         ),
         array(
             'id' => 'form-style-2',
             'name' => 'Style 2',
             'images' => array(
-                'main' => WPPB_PLUGIN_URL.'/assets/images/style2-slide1.jpg',
-                'slide1' => WPPB_PLUGIN_URL.'/assets/images/style2-slide2.jpg',
-                'slide2' => WPPB_PLUGIN_URL.'/assets/images/style2-slide3.jpg',
+                'main' => WPPB_PLUGIN_URL.'assets/images/style2-slide1.jpg',
+                'slide1' => WPPB_PLUGIN_URL.'assets/images/style2-slide2.jpg',
+                'slide2' => WPPB_PLUGIN_URL.'assets/images/style2-slide3.jpg',
             ),
         ),
         array(
             'id' => 'form-style-3',
             'name' => 'Style 3',
             'images' => array(
-                'main' => WPPB_PLUGIN_URL.'/assets/images/style3-slide1.jpg',
-                'slide1' => WPPB_PLUGIN_URL.'/assets/images/style3-slide2.jpg',
-                'slide2' => WPPB_PLUGIN_URL.'/assets/images/style3-slide3.jpg',
+                'main' => WPPB_PLUGIN_URL.'assets/images/style3-slide1.jpg',
+                'slide1' => WPPB_PLUGIN_URL.'assets/images/style3-slide2.jpg',
+                'slide2' => WPPB_PLUGIN_URL.'assets/images/style3-slide3.jpg',
             ),
         )
     );

@@ -101,7 +101,11 @@ if(!function_exists('wppb_curpageurl')){
         if( function_exists('wppb_get_abs_home') ) {
 			$url = parse_url( wppb_get_abs_home(), PHP_URL_PATH );
 
-            $home_path = !empty( $url ) ? trim($url, '/') : $url;
+            $home_path = !empty( $url ) ? trim( $url, '/' ) : $url;
+
+			if( $home_path === null || $home_path === false )
+				$home_path = '';
+
             $home_path_regex = sprintf('|^%s|i', preg_quote($home_path, '|'));
 
             // Trim path info from the end and the leading home path from the front.
@@ -1343,7 +1347,7 @@ function wppb_get_redirect_url( $redirect_priority, $redirect_type, $redirect_ur
         $redirect_priority = 'normal';
     }
 
-	$versions = array( 'Profile Builder Pro', 'Profile Builder Elite', 'Profile Builder Unlimited', 'Profile Builder Dev' );
+	$versions = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited', 'Profile Builder Dev' );
 
 	if( in_array( PROFILE_BUILDER, $versions ) ) {
 		$wppb_module_settings = get_option( 'wppb_module_settings' );

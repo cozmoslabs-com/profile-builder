@@ -3,7 +3,7 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.9.3
+ * Version: 3.9.4
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
@@ -156,21 +156,6 @@ function wppb_plugin_init() {
                 add_shortcode('wppb-list-users', 'wppb_user_listing_shortcode');
             } else
                 add_shortcode('wppb-list-users', 'wppb_list_all_users_display_error');
-
-            if( !file_exists( WPPB_PLUGIN_DIR . '/features/email-customizer/email-customizer.php' ) ){
-
-                include_once( WPPB_PAID_PLUGIN_DIR . '/add-ons/email-customizer/email-customizer.php' );
-
-                $wppb_email_customizer_activate = 'hide';
-                if ( ( !empty( $wppb_module_settings['wppb_emailCustomizer'] ) && $wppb_module_settings['wppb_emailCustomizer'] == 'show' ) || ( !empty( $wppb_module_settings['wppb_emailCustomizerAdmin'] ) && $wppb_module_settings['wppb_emailCustomizerAdmin'] == 'show' ) )
-                    $wppb_email_customizer_activate = 'show';
-
-                if ( $wppb_email_customizer_activate == 'show' )
-                    include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/email-customizer/admin-email-customizer.php');
-
-                if ( $wppb_email_customizer_activate == 'show' )
-                    include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/email-customizer/user-email-customizer.php');
-            }
 
         }
 
@@ -349,7 +334,7 @@ function wppb_plugin_init() {
                     $pb_cl_plugin_id = '30695';
                 else if( PROFILE_BUILDER == 'Profile Builder Basic' )
                     $pb_cl_plugin_id = '30697';
-                else if( PROFILE_BUILDER == 'Profile Builder Elite' )
+                else if( PROFILE_BUILDER == 'Profile Builder Agency' )
                     $pb_cl_plugin_id = '416191';
                 else if( PROFILE_BUILDER == 'Profile Builder Unlimited' )
                     $pb_cl_plugin_id = '30699';
@@ -400,7 +385,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.9.3' );
+define('PROFILE_BUILDER_VERSION', '3.9.4' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -424,11 +409,11 @@ if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $act
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-dev/' );
     define('PROFILE_BUILDER_PAID_VERSION', 'dev' );
 
-} elseif ( in_array( 'profile-builder-elite/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-elite/index.php'] ) ){
+} elseif ( in_array( 'profile-builder-agency/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-agency/index.php'] ) ){
     
-    define('PROFILE_BUILDER', 'Profile Builder Elite');
-    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-elite' );
-    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-elite/' );
+    define('PROFILE_BUILDER', 'Profile Builder Agency');
+    define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-agency' );
+    define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-agency/' );
 
 } elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-unlimited/index.php'] ) ){
     

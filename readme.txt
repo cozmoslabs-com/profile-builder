@@ -4,7 +4,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.2
-Stable tag: 3.9.3
+Stable tag: 3.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,6 +177,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 15. Edit or Add New User Role
 
 == Changelog ==
+= 3.9.4 =
+* Fix: issue with trying to load non existing CSS files
+* Fix: incompatibility issue Elementor, WooCommerce and Profile Builder product viewing restriction
+* Fix: issue with the confirmation link for Resend Confirmation Email
+* Misc: fix warning appearing on PHP 8
+* Misc: fix double slash issues when trying to load some files
+* Misc: improve Email Confirmation check when trying to show the resend email link
+
 = 3.9.3 =
 * Fix: Issue with roles having the 'edit_users' capability could not select other users to edit on a front-end edit profile form
 * Fix: Simple Upload field issue where file was saved in some cases when validation failed

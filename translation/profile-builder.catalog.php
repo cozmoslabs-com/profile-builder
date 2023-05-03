@@ -970,83 +970,6 @@
 <?php __("the URL of the previously visited page", "profile-builder"); ?>
 <?php __("the default URL set by WordPress after login", "profile-builder"); ?>
 <?php __("You can't add duplicate redirects!", "profile-builder"); ?>
-<?php __("Admin Email Customizer", "profile-builder"); ?>
-<?php __("Admin Email Customizer Settings", "profile-builder"); ?>
-<?php __("Settings saved.", "profile-builder"); ?>
-<?php __("These settings are also replicated in the \"User Email Customizer\" settings-page upon save.", "profile-builder"); ?>
-<?php __("Valid tags {{reply_to}} and {{site_name}}", "profile-builder"); ?>
-<?php __("From (name)", "profile-builder"); ?>
-<?php __("From (reply-to email)", "profile-builder"); ?>
-<?php __("Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email", "profile-builder"); ?>
-<?php __("Common Settings", "profile-builder"); ?>
-<?php __("<p>New subscriber on {{site_name}}.</p>\n<p>Username:{{username}}</p>\n<p>Email:{{user_email}}</p>\n", "profile-builder"); ?>
-<?php __("Email Subject", "profile-builder"); ?>
-<?php __("A new subscriber has (been) registered!", "profile-builder"); ?>
-<?php __("Enable email", "profile-builder"); ?>
-<?php __("Default Registration & Registration with Email Confirmation", "profile-builder"); ?>
-<?php __("<p>New subscriber on {{site_name}}.</p>\n<p>Username:{{username}}</p>\n<p>Email:{{user_email}}</p>\n<p>The Admin Approval feature was activated at the time of registration,\nso please remember that you need to approve this user before he/she can log in!</p>", "profile-builder"); ?>
-<?php __("Registration with Admin Approval", "profile-builder"); ?>
-<?php __("<p>{{username}} has requested a password change via the password reset feature.</p>\n", "profile-builder"); ?>
-<?php __("Admin Notification for User Password Reset", "profile-builder"); ?>
-<?php __("<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n<br>\n{{modified_fields}}\n<br>\n<p>Access this link to approve changes: {{approval_url}}</p>\n", "profile-builder"); ?>
-<?php __("[{{site_name}}] A user has updated their profile. Some fields need approval", "profile-builder"); ?>
-<?php __("Admin Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
-<?php __("Available Tags", "profile-builder"); ?>
-<?php __("User Fields Tags", "profile-builder"); ?>
-<?php __("Site Url", "profile-builder"); ?>
-<?php __("Site Name", "profile-builder"); ?>
-<?php __("User Id", "profile-builder"); ?>
-<?php __("User Role Label", "profile-builder"); ?>
-<?php __("Reply To", "profile-builder"); ?>
-<?php __("Blog URL", "profile-builder"); ?>
-<?php __("Activation Key", "profile-builder"); ?>
-<?php __("Activation Url", "profile-builder"); ?>
-<?php __("Activation Link", "profile-builder"); ?>
-<?php __("Reset Key", "profile-builder"); ?>
-<?php __("Reset Url", "profile-builder"); ?>
-<?php __("Reset Link", "profile-builder"); ?>
-<?php __("Change Email Address Link", "profile-builder"); ?>
-<?php __("Approve User Url", "profile-builder"); ?>
-<?php __("Approve User Link", "profile-builder"); ?>
-<?php __("Unapprove User Url", "profile-builder"); ?>
-<?php __("Unapprove User Link", "profile-builder"); ?>
-<?php __("Approved Fields", "profile-builder"); ?>
-<?php __("Unapproved Fields", "profile-builder"); ?>
-<?php __("Modified Fields", "profile-builder"); ?>
-<?php __("Approval URL", "profile-builder"); ?>
-<?php __("The users selected password at signup", "profile-builder"); ?>
-<?php __("Your selected password at signup", "profile-builder"); ?>
-<?php __("User Email Customizer", "profile-builder"); ?>
-<?php __("User Email Customizer Settings", "profile-builder"); ?>
-<?php __("These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save.", "profile-builder"); ?>
-<?php __("<h3>Welcome to {{site_name}}!</h3>\n<p>Your username is: {{username}}</p>\n", "profile-builder"); ?>
-<?php __("Default Registration", "profile-builder"); ?>
-<?php __("<p>To activate your user, please click the following link:<br/>\n{{{activation_link}}}</p>\n<p>After you activate, you will receive another email with your credentials.</p>\n", "profile-builder"); ?>
-<?php __("[{{site_name}}] Activate {{username}}", "profile-builder"); ?>
-<?php __("Registration with Email Confirmation", "profile-builder"); ?>
-<?php __("<h3>Welcome to {{site_name}}!</h3>\n<p>Your username is: {{username}}</p>\n<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n", "profile-builder"); ?>
-<?php __("A new account has been created for you on {{site_name}}", "profile-builder"); ?>
-<?php __("<h3>Good News!</h3>\n<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n", "profile-builder"); ?>
-<?php __("Your account on {{site_name}} has been approved!", "profile-builder"); ?>
-<?php __("User Approval Notification", "profile-builder"); ?>
-<?php __("<h3>Hello,</h3>\n<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n", "profile-builder"); ?>
-<?php __("Your account on {{site_name}} has been unapproved!", "profile-builder"); ?>
-<?php __("Unapproved User Notification", "profile-builder"); ?>
-<?php __("<p>Someone requested that the password be reset for the following account: {{site_name}}<br/>\nUsername: {{username}}</p>\n<p>If this was a mistake, just ignore this email and nothing will happen.</p>\n<p>To reset your password, visit the following address:<br/>\n{{{reset_link}}}</p>\n", "profile-builder"); ?>
-<?php __("[{{site_name}}] Password Reset", "profile-builder"); ?>
-<?php __("Password Reset Email", "profile-builder"); ?>
-<?php __("<p>You have successfully reset your password.</p>\n", "profile-builder"); ?>
-<?php __("[{{site_name}}] Password Reset Successfully", "profile-builder"); ?>
-<?php __("Password Reset Success Email", "profile-builder"); ?>
-<?php __("<h3>Hi {{username}},</h3>\n<p>There is an email address change request on {{site_name}}.</p>\n<p>To change your email address click on: {{{user_email_change_link}}}</p>\n<p>Regards,<br>\nAll at {{site_name}}<br>\n<a href=\"{{site_url}}\">{{site_url}}</a></p>", "profile-builder"); ?>
-<?php __("[{{site_name}}] Notice of Email Change Request", "profile-builder"); ?>
-<?php __("Change Email Address Request Notification", "profile-builder"); ?>
-<?php __("<h3>Hi {{username}},</h3>\n<p>This notice confirms that your email was changed on {{site_name}}.</p>\n<p>If you did not change your email, please contact the Site Administrator at %s</p>\n<p>This email has been sent to {{user_email}}</p>\n<p>Regards,<br>\nAll at {{site_name}}<br>\n<a href=\"{{site_url}}\">{{site_url}}</a></p>", "profile-builder"); ?>
-<?php __("[{{site_name}}] Notice of Email Change", "profile-builder"); ?>
-<?php __("Changed Email Address Notification", "profile-builder"); ?>
-<?php __("<p>Your profile has been reviewed by an administrator:</p>\n<br>\n<p>Approved Fields: {{approved_fields}}</p>\n<p>Unapproved Fields: {{unapproved_fields}}</p>\n", "profile-builder"); ?>
-<?php __("[{{site_name}}] Your profile has been reviewed by an administrator", "profile-builder"); ?>
-<?php __("User Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
 <?php __("Edit-profile Form", "profile-builder"); ?>
 <?php __("Add New", "profile-builder"); ?>
 <?php __("Add new Edit-profile Form", "profile-builder"); ?>
@@ -1102,6 +1025,7 @@
 <?php __("Search the User Listing", "profile-builder"); ?>
 <?php __("No User Listing found", "profile-builder"); ?>
 <?php __("No User Listing found in trash", "profile-builder"); ?>
+<?php __("Blog URL", "profile-builder"); ?>
 <?php __("Display name as", "profile-builder"); ?>
 <?php __("Role", "profile-builder"); ?>
 <?php __("Role Slug", "profile-builder"); ?>
@@ -1116,6 +1040,7 @@
 <?php __("Faceted Menus", "profile-builder"); ?>
 <?php __("User Count", "profile-builder"); ?>
 <?php __("Map of listed users", "profile-builder"); ?>
+<?php __("User Fields Tags", "profile-builder"); ?>
 <?php __("Sort Tags", "profile-builder"); ?>
 <?php __("Extra Functions", "profile-builder"); ?>
 <?php __("Go Back Link", "profile-builder"); ?>
@@ -1245,6 +1170,14 @@
 <?php __("iFrame Size", "profile-builder"); ?>
 <?php __("Height (px)", "profile-builder"); ?>
 <?php __("Width (px)", "profile-builder"); ?>
+<?php __("<p>Your profile has been reviewed by an administrator:</p>\n<br>\n<p>Approved Fields: {{approved_fields}}</p>\n<p>Unapproved Fields: {{unapproved_fields}}</p>\n", "profile-builder"); ?>
+<?php __("Email Subject", "profile-builder"); ?>
+<?php __("[{{site_name}}] Your profile has been reviewed by an administrator", "profile-builder"); ?>
+<?php __("Enable email", "profile-builder"); ?>
+<?php __("User Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
+<?php __("<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n<br>\n{{modified_fields}}\n<br>\n<p>Access this link to approve changes: {{approval_url}}</p>\n", "profile-builder"); ?>
+<?php __("[{{site_name}}] A user has updated their profile. Some fields need approval", "profile-builder"); ?>
+<?php __("Admin Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
 <?php __("Requires Admin Approval on Edit Profile", "profile-builder"); ?>
 <?php __("Choose if this field requires an administrator to approve any modifications on the edit profile forms", "profile-builder"); ?>
 <?php __("This field requires admin approval on edit profile", "profile-builder"); ?>
@@ -1554,11 +1487,78 @@
 <?php __("To activate your user, please click the following link:<br><br>%s%s%s<br><br>After you activate it you will receive yet *another email* with your login.", "profile-builder"); ?>
 <?php __("There was an error while trying to activate the user", "profile-builder"); ?>
 <?php __("That username is already activated!", "profile-builder"); ?>
+<?php __("A new subscriber has (been) registered!", "profile-builder"); ?>
 <?php __('New subscriber on %1$s.<br/><br/>Username:%2$s<br/>Email:%3$s<br/>', 'profile-builder' ); ?>
 <?php __('[%1$s] Your new account information', 'profile-builder' ); ?>
+<?php __("Your selected password at signup", "profile-builder"); ?>
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and the password: %3$s<br/><br/>Access your account: %4$s ', 'profile-builder' ); ?>
 <?php __('Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and your password is the one that you have selected during registration.<br/><br/>Access your account: %3$s ', 'profile-builder' ); ?>
 <?php __("The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!", "profile-builder"); ?>
+<?php __("Admin Email Customizer", "profile-builder"); ?>
+<?php __("Admin Email Customizer Settings", "profile-builder"); ?>
+<?php __("Settings saved.", "profile-builder"); ?>
+<?php __("These settings are also replicated in the \"User Email Customizer\" settings-page upon save.", "profile-builder"); ?>
+<?php __("Valid tags {{reply_to}} and {{site_name}}", "profile-builder"); ?>
+<?php __("From (name)", "profile-builder"); ?>
+<?php __("From (reply-to email)", "profile-builder"); ?>
+<?php __("Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email", "profile-builder"); ?>
+<?php __("Common Settings", "profile-builder"); ?>
+<?php __("<p>New subscriber on {{site_name}}.</p>\n<p>Username:{{username}}</p>\n<p>Email:{{user_email}}</p>\n", "profile-builder"); ?>
+<?php __("Default Registration & Registration with Email Confirmation", "profile-builder"); ?>
+<?php __("<p>New subscriber on {{site_name}}.</p>\n<p>Username:{{username}}</p>\n<p>Email:{{user_email}}</p>\n<p>The Admin Approval feature was activated at the time of registration,\nso please remember that you need to approve this user before he/she can log in!</p>", "profile-builder"); ?>
+<?php __("Registration with Admin Approval", "profile-builder"); ?>
+<?php __("<p>{{username}} has requested a password change via the password reset feature.</p>\n", "profile-builder"); ?>
+<?php __("Admin Notification for User Password Reset", "profile-builder"); ?>
+<?php __("Available Tags", "profile-builder"); ?>
+<?php __("Site Url", "profile-builder"); ?>
+<?php __("Site Name", "profile-builder"); ?>
+<?php __("User Id", "profile-builder"); ?>
+<?php __("User Role Label", "profile-builder"); ?>
+<?php __("Reply To", "profile-builder"); ?>
+<?php __("Activation Key", "profile-builder"); ?>
+<?php __("Activation Url", "profile-builder"); ?>
+<?php __("Activation Link", "profile-builder"); ?>
+<?php __("Reset Key", "profile-builder"); ?>
+<?php __("Reset Url", "profile-builder"); ?>
+<?php __("Reset Link", "profile-builder"); ?>
+<?php __("Change Email Address Link", "profile-builder"); ?>
+<?php __("Approve User Url", "profile-builder"); ?>
+<?php __("Approve User Link", "profile-builder"); ?>
+<?php __("Unapprove User Url", "profile-builder"); ?>
+<?php __("Unapprove User Link", "profile-builder"); ?>
+<?php __("Approved Fields", "profile-builder"); ?>
+<?php __("Unapproved Fields", "profile-builder"); ?>
+<?php __("Modified Fields", "profile-builder"); ?>
+<?php __("Approval URL", "profile-builder"); ?>
+<?php __("The users selected password at signup", "profile-builder"); ?>
+<?php __("User Email Customizer", "profile-builder"); ?>
+<?php __("User Email Customizer Settings", "profile-builder"); ?>
+<?php __("These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save.", "profile-builder"); ?>
+<?php __("<h3>Welcome to {{site_name}}!</h3>\n<p>Your username is: {{username}}</p>\n", "profile-builder"); ?>
+<?php __("Default Registration", "profile-builder"); ?>
+<?php __("<p>To activate your user, please click the following link:<br/>\n{{{activation_link}}}</p>\n<p>After you activate, you will receive another email with your credentials.</p>\n", "profile-builder"); ?>
+<?php __("[{{site_name}}] Activate {{username}}", "profile-builder"); ?>
+<?php __("Registration with Email Confirmation", "profile-builder"); ?>
+<?php __("<h3>Welcome to {{site_name}}!</h3>\n<p>Your username is: {{username}}</p>\n<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n", "profile-builder"); ?>
+<?php __("A new account has been created for you on {{site_name}}", "profile-builder"); ?>
+<?php __("<h3>Good News!</h3>\n<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n", "profile-builder"); ?>
+<?php __("Your account on {{site_name}} has been approved!", "profile-builder"); ?>
+<?php __("User Approval Notification", "profile-builder"); ?>
+<?php __("<h3>Hello,</h3>\n<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n", "profile-builder"); ?>
+<?php __("Your account on {{site_name}} has been unapproved!", "profile-builder"); ?>
+<?php __("Unapproved User Notification", "profile-builder"); ?>
+<?php __("<p>Someone requested that the password be reset for the following account: {{site_name}}<br/>\nUsername: {{username}}</p>\n<p>If this was a mistake, just ignore this email and nothing will happen.</p>\n<p>To reset your password, visit the following address:<br/>\n{{{reset_link}}}</p>\n", "profile-builder"); ?>
+<?php __("[{{site_name}}] Password Reset", "profile-builder"); ?>
+<?php __("Password Reset Email", "profile-builder"); ?>
+<?php __("<p>You have successfully reset your password.</p>\n", "profile-builder"); ?>
+<?php __("[{{site_name}}] Password Reset Successfully", "profile-builder"); ?>
+<?php __("Password Reset Success Email", "profile-builder"); ?>
+<?php __("<h3>Hi {{username}},</h3>\n<p>There is an email address change request on {{site_name}}.</p>\n<p>To change your email address click on: {{{user_email_change_link}}}</p>\n<p>Regards,<br>\nAll at {{site_name}}<br>\n<a href=\"{{site_url}}\">{{site_url}}</a></p>", "profile-builder"); ?>
+<?php __("[{{site_name}}] Notice of Email Change Request", "profile-builder"); ?>
+<?php __("Change Email Address Request Notification", "profile-builder"); ?>
+<?php __("<h3>Hi {{username}},</h3>\n<p>This notice confirms that your email was changed on {{site_name}}.</p>\n<p>If you did not change your email, please contact the Site Administrator at %s</p>\n<p>This email has been sent to {{user_email}}</p>\n<p>Regards,<br>\nAll at {{site_name}}<br>\n<a href=\"{{site_url}}\">{{site_url}}</a></p>", "profile-builder"); ?>
+<?php __("[{{site_name}}] Notice of Email Change", "profile-builder"); ?>
+<?php __("Changed Email Address Notification", "profile-builder"); ?>
 <?php __('To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \Enable Placeholder Labels\ Option in %3$sAdvanced Settings%4$s.', 'profile-builder' ); ?>
 <?php __("Address Line 2", "profile-builder"); ?>
 <?php __("Address Line 1", "profile-builder"); ?>
@@ -1888,6 +1888,7 @@
 <?php __('Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s', 'profile-builder' ); ?>
 <?php __("Placeholder Labels", "profile-builder"); ?>
 <?php __("Replace labels with placeholders:", "profile-builder"); ?>
+<?php __("Select an option", "profile-builder"); ?>
 <?php __("Resend activation email", "profile-builder"); ?>
 <?php __("Allow users with the 'delete_users' capability to view the Admin Approval list", "profile-builder"); ?>
 <?php __("By checking this option, you will allow users that have the 'delete_users' capability to access and use the Admin Approval list.", "profile-builder"); ?>
