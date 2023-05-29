@@ -465,7 +465,7 @@ msgstr ""
 msgid "Enable extra features"
 msgstr ""
 
-#: admin/basic-info.php:75, features/form-designs/form-designs.php:457, assets/misc/elementor/widgets/class-pb-widget-l.php:66, assets/misc/elementor/widgets/class-pb-widget-rp.php:26
+#: admin/basic-info.php:75, features/form-designs/form-designs.php:458, assets/misc/elementor/widgets/class-pb-widget-l.php:66, assets/misc/elementor/widgets/class-pb-widget-rp.php:26
 msgid "Recover Password"
 msgstr ""
 
@@ -861,7 +861,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:330, front-end/login.php:542, front-end/recover.php:113, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9
+#: admin/general-settings.php:330, front-end/login.php:542, front-end/recover.php:113, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:10
 msgid "Email"
 msgstr ""
 
@@ -3425,19 +3425,19 @@ msgstr ""
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1567
+#: features/functions.php:1571
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1608
+#: features/functions.php:1612
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1645
+#: features/functions.php:1649
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1663, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1667, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -3477,7 +3477,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:302, front-end/login.php:656, assets/lib/wck-api/wordpress-creation-kit.php:803
+#: front-end/class-formbuilder.php:302, front-end/login.php:656, assets/lib/wck-api/wordpress-creation-kit.php:797
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -4773,7 +4773,7 @@ msgid ""
 "<br>\n"
 "{{modified_fields}}\n"
 "<br>\n"
-"<p>Access this link to approve changes: {{approval_url}}</p>\n"
+"<p>Access this link to approve changes: {{{approval_link}}}</p>\n"
 ""
 msgstr ""
 
@@ -5971,7 +5971,7 @@ msgstr ""
 msgid "resend the activation link?"
 msgstr ""
 
-#: features/email-confirmation/class-email-confirmation.php:123, features/email-confirmation/class-email-confirmation.php:220
+#: features/email-confirmation/class-email-confirmation.php:123, features/email-confirmation/class-email-confirmation.php:220, features/form-designs/form-designs.php:485
 msgid "Resend Activation Email"
 msgstr ""
 
@@ -6035,7 +6035,7 @@ msgstr ""
 msgid "[%1$s] Your new account information"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:618, features/email-customizer/email-customizer.php:587, features/email-customizer/email-customizer.php:594, features/email-customizer/email-customizer.php:608
+#: features/email-confirmation/email-confirmation.php:618, features/email-customizer/email-customizer.php:588, features/email-customizer/email-customizer.php:595, features/email-customizer/email-customizer.php:609
 msgid "Your selected password at signup"
 msgstr ""
 
@@ -6206,7 +6206,11 @@ msgstr ""
 msgid "Approval URL"
 msgstr ""
 
-#: features/email-customizer/email-customizer.php:579
+#: features/email-customizer/email-customizer.php:71
+msgid "Approval Link"
+msgstr ""
+
+#: features/email-customizer/email-customizer.php:580
 msgid "The users selected password at signup"
 msgstr ""
 
@@ -6364,60 +6368,56 @@ msgstr ""
 msgid "To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \"Enable Placeholder Labels\" Option in %3$sAdvanced Settings%4$s."
 msgstr ""
 
-#: features/form-designs/form-designs.php:197, features/form-designs/form-designs.php:205
+#: features/form-designs/form-designs.php:198, features/form-designs/form-designs.php:206
 msgid "Address Line 2"
 msgstr ""
 
-#: features/form-designs/form-designs.php:200, features/form-designs/form-designs.php:208
+#: features/form-designs/form-designs.php:201, features/form-designs/form-designs.php:209
 msgid "Address Line 1"
 msgstr ""
 
-#: features/form-designs/form-designs.php:299
+#: features/form-designs/form-designs.php:300
 msgid "Don’t have an account?"
 msgstr ""
 
-#: features/form-designs/form-designs.php:304
+#: features/form-designs/form-designs.php:305
 msgid "WELCOME BACK"
 msgstr ""
 
-#: features/form-designs/form-designs.php:305
+#: features/form-designs/form-designs.php:306
 msgid "Please enter your details."
 msgstr ""
 
-#: features/form-designs/form-designs.php:309
+#: features/form-designs/form-designs.php:310
 msgid "Manage your profile information"
 msgstr ""
 
-#: features/form-designs/form-designs.php:337, features/form-designs/form-designs.php:338
+#: features/form-designs/form-designs.php:338, features/form-designs/form-designs.php:339
 msgid "ERROR!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:339
+#: features/form-designs/form-designs.php:340
 msgid "SUCCESS!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:340, features/form-designs/form-designs.php:341, features/form-designs/form-designs.php:426
+#: features/form-designs/form-designs.php:341, features/form-designs/form-designs.php:342, features/form-designs/form-designs.php:427
 msgid "NOTE!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:342, features/form-designs/form-designs.php:343, features/form-designs/form-designs.php:344
+#: features/form-designs/form-designs.php:343, features/form-designs/form-designs.php:344, features/form-designs/form-designs.php:345
 msgid "WARNING!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:448
+#: features/form-designs/form-designs.php:449
 msgid "Log in"
 msgstr ""
 
-#: features/form-designs/form-designs.php:466
+#: features/form-designs/form-designs.php:467
 msgid "Create a new account"
 msgstr ""
 
-#: features/form-designs/form-designs.php:475
+#: features/form-designs/form-designs.php:476
 msgid "Edit account"
-msgstr ""
-
-#: features/form-designs/form-designs.php:498
-msgid "Subscription Payment"
 msgstr ""
 
 #: features/login-widget/login-widget.php:12
@@ -7435,7 +7435,7 @@ msgstr ""
 msgid "Save the communication preferences order"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:53, front-end/default-fields/avatar/avatar.php:87, front-end/default-fields/checkbox/checkbox.php:45, front-end/default-fields/input/input.php:30, front-end/default-fields/radio/radio.php:44, front-end/default-fields/select/select.php:51, front-end/default-fields/select2/select2.php:74, front-end/default-fields/textarea/textarea.php:30, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/upload/upload.php:82, front-end/extra-fields/wysiwyg/wysiwyg.php:58
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:53, front-end/default-fields/avatar/avatar.php:87, front-end/default-fields/checkbox/checkbox.php:47, front-end/default-fields/input/input.php:30, front-end/default-fields/radio/radio.php:44, front-end/default-fields/select/select.php:51, front-end/default-fields/select2/select2.php:74, front-end/default-fields/textarea/textarea.php:30, front-end/extra-fields/colorpicker/colorpicker.php:45, front-end/extra-fields/datepicker/datepicker.php:40, front-end/extra-fields/input-email/input-email.php:30, front-end/extra-fields/input-hidden/input-hidden.php:34, front-end/extra-fields/input-url/input-url.php:30, front-end/extra-fields/language/language.php:34, front-end/extra-fields/map/map.php:57, front-end/extra-fields/number/number.php:30, front-end/extra-fields/phone/phone.php:39, front-end/extra-fields/select-cpt/select-cpt.php:59, front-end/extra-fields/select-multiple/select-multiple.php:47, front-end/extra-fields/select-timezone/select-timezone.php:49, front-end/extra-fields/select2/select2-multiple.php:88, front-end/extra-fields/upload/upload.php:82, front-end/extra-fields/wysiwyg/wysiwyg.php:58
 msgid "required"
 msgstr ""
 
@@ -7479,15 +7479,15 @@ msgstr ""
 msgid "Delete this item"
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:754
+#: assets/lib/wck-api/wordpress-creation-kit.php:748
 msgid "Please enter a value for the required field "
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:1385
+#: assets/lib/wck-api/wordpress-creation-kit.php:1379
 msgid "This field is available in our paid plans."
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:1383
+#: assets/lib/wck-api/wordpress-creation-kit.php:1377
 msgid "Install the free Paid Member Subscriptions plugin to get access this field."
 msgstr ""
 

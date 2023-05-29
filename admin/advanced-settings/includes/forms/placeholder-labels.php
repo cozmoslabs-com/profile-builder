@@ -286,3 +286,25 @@ function wppb_pbpl_add_pms_fields_placeholder( $form_fields ) {
 }
 add_filter('wppb_output_fields_filter', 'wppb_pbpl_add_pms_fields_placeholder' );
 
+
+/**
+ * Add Placeholder to Resend Activation Email Form
+ *
+ */
+function wppb_pbpl_resend_activation( $extra_attr, $input_title, $input_type ) {
+    $extra_attr .= ' placeholder="'. esc_attr( $input_title ) . '" ';
+
+    return $extra_attr;
+}
+add_filter( 'wppb_resend_activation_extra_attr', 'wppb_pbpl_resend_activation', 10, 3 );
+
+function wppb_pbpl_add_resend_activation_classes( $classes, $field ) {
+    $forms_settings = get_option( 'wppb_toolbox_forms_settings' );
+
+    if ( $forms_settings['placeholder-labels'] == 'yes' )
+        $classes .= ' pbpl-class';
+
+    return $classes;
+}
+add_filter( 'wppb_resend_activation_extra_css_class', 'wppb_pbpl_add_resend_activation_classes', 20, 2);
+

@@ -182,6 +182,9 @@ function wppb_toolbox_change_user_email_address() {
         }
 
         delete_transient('wppb_pending_email_change_request_exists_' . $transient_check_key );
+
+        wp_redirect( remove_query_arg( array_keys( $_GET ), wppb_curpageurl() ) );
+        exit;
     }
 
 }
@@ -203,6 +206,9 @@ function wppb_toolbox_cancel_pending_user_email_change_request() {
     }
 
     delete_transient('wppb_pending_email_change_request_exists_' . $transient_check_key );
+
+    wp_redirect( remove_query_arg( array_keys( $_GET ), wppb_curpageurl() ) );
+    exit;
 }
 
 

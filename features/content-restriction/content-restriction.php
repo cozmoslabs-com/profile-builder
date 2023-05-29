@@ -181,10 +181,11 @@ function wppb_content_restriction_content() {
 
 }
 
-function wppb_content_restriction_scripts_styles() {
-
-    wp_enqueue_script( 'wppb_content_restriction_js', plugin_dir_url( __FILE__ ) .'assets/js/content-restriction.js', array( 'jquery' ), PROFILE_BUILDER_VERSION );
-    wp_enqueue_style( 'wppb_content_restriction_css', plugin_dir_url( __FILE__ ) .'assets/css/content-restriction.css', array(), PROFILE_BUILDER_VERSION );
-
+function wppb_content_restriction_scripts_styles($hook_suffix) {
+    //Check if it's an editing or adding new post page
+    if( $hook_suffix === 'post-new.php' || $hook_suffix === 'edit.php' ){
+            wp_enqueue_script( 'wppb_content_restriction_js', plugin_dir_url( __FILE__ ) .'assets/js/content-restriction.js', array( 'jquery' ), PROFILE_BUILDER_VERSION );
+            wp_enqueue_style( 'wppb_content_restriction_css', plugin_dir_url( __FILE__ ) .'assets/css/content-restriction.css', array(), PROFILE_BUILDER_VERSION );
+    }
 }
 

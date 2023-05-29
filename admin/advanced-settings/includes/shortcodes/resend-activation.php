@@ -5,9 +5,9 @@ function wppb_toolbox_resend_activation_url_handler() {
     $button_name = __('Resend activation email', 'profile-builder');
     $output = '<form enctype="multipart/form-data" method="post" id="wppbc-resend_activation" class="wppb-user-forms" action="">';
     $output .= '
-        <li>
+        <li class="wppb-form-field'. apply_filters( 'wppb_resend_activation_extra_css_class', '', 'resend_activation_email') .'">
         <label for="username_email" style="padding-right: 30px;">'.__( 'Email', 'profile-builder' ).'</label>
-        <input  class="text-input" name="email" type="text" id="username_email" value="" />
+        <input  class="text-input" name="email" type="text" id="username_email" value="" '. apply_filters( 'wppb_resend_activation_extra_attr', '', __( 'Email', 'profile-builder' ), 'text' ) .'/>
         <div style="padding-top: 20px;">
             <input name="resend_activation" type="submit" id="wppbc-resend-activation-button" class="submit button" value="'. $button_name . '" />
             <input name="action" type="hidden" id="action" value="wppbc_resend_activation" />
@@ -16,7 +16,8 @@ function wppb_toolbox_resend_activation_url_handler() {
         </li>
     </form>';
 
-    return $output;
+//    return $output;
+    return apply_filters('wppb_resend_activation_form_before_content_output', $output);
 }
 
  add_action( 'init', 'wppb_toolbox_resend_activation_url', 999 );

@@ -1456,6 +1456,9 @@ function wppb_private_website_functionality(){
 		if( $wppb_private_website_settings['private_website'] == 'yes' ){
 			if( !is_user_logged_in() ){
 
+				if(is_404())
+					return;
+
 				//force wp-login.php if you accidentally get locked out
 				global $pagenow;
 				if( $pagenow === 'wp-login.php' && isset( $_GET['wppb_force_wp_login'] ) )
@@ -1490,8 +1493,8 @@ function wppb_private_website_functionality(){
 
 				$redirect_to_id = $wppb_private_website_settings['redirect_to'];
 				if( !empty( $redirect_to_id ) ) {
-					$redirect_url = get_permalink($redirect_to_id);
-					$allowed_pages[] = $redirect_to_id;
+						$redirect_url = get_permalink($redirect_to_id);
+						$allowed_pages[] = $redirect_to_id;
 				}
 				else {
 					//don't redirect if we are already on the wp-login.php page
@@ -1528,6 +1531,7 @@ function wppb_private_website_functionality(){
 			}
 		}
 	}
+
 }
 
 //add classes on the body to know if we have enabled private website options

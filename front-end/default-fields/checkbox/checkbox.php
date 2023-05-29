@@ -28,15 +28,17 @@ function wppb_checkbox_handler( $output, $form_location, $field, $user_id, $fiel
 			$output = '
 				<label for="'.$field['meta-name'].'">'.$item_title.$error_mark.'</label>';
 					$output .= '<ul class="wppb-checkboxes">';
-						$output .= '<li class="wppb-hidden"><input type="hidden" value="" name="' . $field['meta-name'] . '"></li>';
-					foreach( $checkbox_values as $key => $value ){
-						$output .= '<li><input value="'.esc_attr( trim( $value ) ).'" class="custom_field_checkbox" name="' . $field['meta-name'] . '[]" id="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" type="checkbox" '. $extra_attr .' ';
+                    $output .= '<li class="wppb-hidden"><input type="hidden" value="" name="' . $field['meta-name'] . '"></li>';
+					foreach( $checkbox_values as $key => $value ) {
+                        if ( $value !== "" ) {
+                            $output .= '<li><input value="' . esc_attr(trim($value)) . '" class="custom_field_checkbox" name="' . $field['meta-name'] . '[]" id="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" type="checkbox" ' . $extra_attr . ' ';
 
-						if ( in_array( trim( $value ), $input_value ) )
-							$output .= ' checked';
+                            if (in_array(trim($value), $input_value))
+                                $output .= ' checked';
 
-						$output .= ' /><label for="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" class="wppb-rc-value">'.( ( !isset( $checkbox_labels[$key] ) || !$checkbox_labels[$key] ) ? trim( $checkbox_values[$key] ) : trim( $checkbox_labels[$key] ) ).'</label></li>';
-					}
+                            $output .= ' /><label for="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" class="wppb-rc-value">' . ((!isset($checkbox_labels[$key]) || !$checkbox_labels[$key]) ? trim($checkbox_values[$key]) : trim($checkbox_labels[$key])) . '</label></li>';
+                        }
+                    }
 				$output .= '</ul>';
             if( !empty( $item_description ) )
                 $output .= '<span class="wppb-description-delimiter">'.$item_description.'</span>';
@@ -50,15 +52,16 @@ function wppb_checkbox_handler( $output, $form_location, $field, $user_id, $fiel
 						<td>';
                         $output .= '<ul class="wppb-checkboxes">';
                         $output .= '<li class="wppb-hidden"><input type="hidden" value="" name="' . $field['meta-name'] . '"></li>';
-						foreach( $checkbox_values as $key => $value ){
-							$output .= '<li><input value="'.esc_attr( trim( $value ) ).'" class="custom_field_checkbox '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="' . $field['meta-name'] . '[]" id="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" type="checkbox"';
+						foreach( $checkbox_values as $key => $value ) {
+                            if ( $value !== "" ) {
+                                $output .= '<li><input value="' . esc_attr(trim($value)) . '" class="custom_field_checkbox ' . apply_filters('wppb_fields_extra_css_class', '', $field) . '" name="' . $field['meta-name'] . '[]" id="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" type="checkbox"';
 
-							if ( in_array( trim( $value ), $input_value ) )
-								$output .= ' checked';
+                                if (in_array(trim($value), $input_value))
+                                    $output .= ' checked';
 
-							$output .= ' /><label for="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" class="wppb-rc-value">'.( ( !isset( $checkbox_labels[$key] ) || !$checkbox_labels[$key] ) ? trim( $checkbox_values[$key] ) : trim( $checkbox_labels[$key] ) ).'</label></li>';
-						}
-
+                                $output .= ' /><label for="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" class="wppb-rc-value">' . ((!isset($checkbox_labels[$key]) || !$checkbox_labels[$key]) ? trim($checkbox_values[$key]) : trim($checkbox_labels[$key])) . '</label></li>';
+                            }
+                        }
 						$output .= '</ul>
 						<span class="wppb-description-delimiter">'.$item_description.'</span>
 						</td>

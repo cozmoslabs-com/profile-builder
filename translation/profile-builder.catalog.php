@@ -1175,7 +1175,7 @@
 <?php __("[{{site_name}}] Your profile has been reviewed by an administrator", "profile-builder"); ?>
 <?php __("Enable email", "profile-builder"); ?>
 <?php __("User Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
-<?php __("<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n<br>\n{{modified_fields}}\n<br>\n<p>Access this link to approve changes: {{approval_url}}</p>\n", "profile-builder"); ?>
+<?php __("<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n<br>\n{{modified_fields}}\n<br>\n<p>Access this link to approve changes: {{{approval_link}}}</p>\n", "profile-builder"); ?>
 <?php __("[{{site_name}}] A user has updated their profile. Some fields need approval", "profile-builder"); ?>
 <?php __("Admin Notification for Edit Profile Approved by Admin", "profile-builder"); ?>
 <?php __("Requires Admin Approval on Edit Profile", "profile-builder"); ?>
@@ -1530,6 +1530,7 @@
 <?php __("Unapproved Fields", "profile-builder"); ?>
 <?php __("Modified Fields", "profile-builder"); ?>
 <?php __("Approval URL", "profile-builder"); ?>
+<?php __("Approval Link", "profile-builder"); ?>
 <?php __("The users selected password at signup", "profile-builder"); ?>
 <?php __("User Email Customizer", "profile-builder"); ?>
 <?php __("User Email Customizer Settings", "profile-builder"); ?>
@@ -1573,7 +1574,6 @@
 <?php __("Log in", "profile-builder"); ?>
 <?php __("Create a new account", "profile-builder"); ?>
 <?php __("Edit account", "profile-builder"); ?>
-<?php __("Subscription Payment", "profile-builder"); ?>
 <?php __("This login widget lets you add a login form in the sidebar.", "profile-builder"); ?>
 <?php __("Profile Builder Login Widget", "profile-builder"); ?>
 <?php __("Title:", "profile-builder"); ?>

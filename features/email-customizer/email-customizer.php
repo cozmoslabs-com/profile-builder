@@ -68,6 +68,7 @@ function wppb_email_customizer_generate_default_meta_merge_tags( $special_merge_
     if ( $special_merge_tags == 'epaa_notification_admin' ){
         $merge_tags[] = array( 'name' => 'modified_fields', 'type' => 'ec_epaa_modified_fields', 'label' => __( 'Modified Fields', 'profile-builder' )  );
         $merge_tags[] = array( 'name' => 'approval_url', 'type' => 'ec_epaa_approval_url',  'label' => __( 'Approval URL', 'profile-builder' )  );
+        $merge_tags[] = array( 'name' => 'approval_link', 'type' => 'ec_epaa_approval_link', 'unescaped' => true, 'label' => __( 'Approval Link', 'profile-builder' )  );
     }
 
 	return $merge_tags;
@@ -1046,7 +1047,7 @@ add_filter( 'mustache_variable_ec_epaa_modified_fields', 'wppb_epaa_replace_modi
 
 
 /**
- * Function that filters and returns the approval URL for Edit Profile Approved by Admin.
+ * Function that filters and returns the approval_url for Edit Profile Approved by Admin.
  *
  * @since v.2.7.3
  *
@@ -1059,13 +1060,30 @@ add_filter( 'mustache_variable_ec_epaa_modified_fields', 'wppb_epaa_replace_modi
  */
 function wppb_epaa_replace_approval_url( $value, $merge_tag_name, $merge_tag, $extra_data ){
 
-    if( ! empty ( $extra_data['approval_url'] ) ) {
+    if( isset( $extra_data['approval_url'] ) )
         return $extra_data['approval_url'];
-    }
-
-    return '';
 }
 add_filter( 'mustache_variable_ec_epaa_approval_url', 'wppb_epaa_replace_approval_url', 10, 4 );
+
+
+/**
+ * Function that filters and returns the approval_link for Edit Profile Approved by Admin.
+ *
+ * @since v.2.0
+ *
+ * @param string $value
+ * @param string $merge_tag_name
+ * @param string $merge_tag
+ * @param array $extra_data
+ *
+ * @return string
+ */
+function wppb_epaa_replace_approval_link( $value, $merge_tag_name, $merge_tag, $extra_data ){
+    if ( isset( $extra_data['approval_url'] ) )
+        return '<a href="'.$extra_data['approval_url'].'" target="_blank">'.$extra_data['approval_url'].'</a>';
+}
+add_filter( 'mustache_variable_ec_epaa_approval_link', 'wppb_epaa_replace_approval_link', 10, 4 );
+
 
 
 /**

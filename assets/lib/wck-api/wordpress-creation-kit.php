@@ -710,12 +710,6 @@ class Wordpress_Creation_Kit_PB{
 		wp_register_style('wordpress-creation-kit-css', plugins_url('/wordpress-creation-kit.css', __FILE__), array(), PROFILE_BUILDER_VERSION );
 		wp_enqueue_style('wordpress-creation-kit-css');
 
-		// wysiwyg
-//		wp_register_script( 'wck-tinymce', plugins_url( '/assets/js/tiny_mce/tiny_mce.js', __FILE__ ), array(), '1.0', true );
-//		wp_enqueue_script( 'wck-tinymce' );
-//		wp_register_script( 'wck-tinymce-init', plugins_url( '/assets/js/tiny_mce/wck_tiny_mce_init.js', __FILE__ ), array(), '1.0', true );
-//		wp_enqueue_script( 'wck-tinymce-init' );
-
         //select 2 KEEP the wppb-select2 handle so we don't include it multiple times, seeing we include it from PB as well
         wp_enqueue_script( 'wppb-select2', plugins_url( '/assets/js/select2/select2.min.js', __FILE__ ), array(), PROFILE_BUILDER_VERSION, true );
         wp_enqueue_script( 'wppb-select2-compat', WPPB_PLUGIN_URL . 'assets/js/select2-compat.js', array(), PROFILE_BUILDER_VERSION, true );
