@@ -703,6 +703,7 @@ function wppb_edit_form_properties( container_name, element_id ){
 
 
 function wppb_display_needed_fields( index, container_name, current_field_select ){
+
 	var show_rows = fields[index.trim()]['show_rows'];
 	for (var key in show_rows) {
 		jQuery(  show_rows[key], jQuery( current_field_select ).parents( '.mb-list-entry-fields' ) ).show();

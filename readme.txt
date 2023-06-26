@@ -4,7 +4,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.2
-Stable tag: 3.9.5
+Stable tag: 3.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,6 +177,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 15. Edit or Add New User Role
 
 == Changelog ==
+= 3.9.6 = 
+* Fix: Issue with Content Restriction settings page and metabox not loading scripts correctly
+* Fix: Input field issue when it contained apostrophes and an error triggered on the back-end edit user page
+* Misc: Added `wppb_avatar_field_transform_file_to_attachment` filter to disable the automatic conversion to attachment that the plugin does
+* Misc: GDPR field will not display in the back-end the date and time at which the user gave the consent
+
 = 3.9.5 =
 * Fix: Issue with Private Website functionality redirecting the 404 page
 * Fix: An issue with Email Change Request email being sent twice

@@ -39,7 +39,7 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
             else
                 $input_value = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
 
-            if( !empty( $input_value ) && !is_numeric( $input_value ) ){
+            if( !empty( $input_value ) && !is_numeric( $input_value ) && apply_filters( 'wppb_avatar_field_transform_file_to_attachment', true, $field ) ){
                 /* we have a file url and we need to change it into an attachment */
                 // Check the type of file. We'll use this as the 'post_mime_type'.
                 $wp_upload_dir = wp_upload_dir();
