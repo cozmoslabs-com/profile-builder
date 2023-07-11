@@ -59,9 +59,11 @@ add_filter( 'wppb_output_form_field_default-e-mail', 'wppb_email_handler', 10, 6
 /* handle field validation */
 function wppb_check_email_value( $message, $field, $request_data, $form_location ){
 	global $wpdb;
-	// apply filter to allow stripping slashes if necessary
+
     if ( isset( $request_data['email'] ) ) {
-        $request_data['email'] = apply_filters('wppb_before_processing_email_from_forms', $request_data['email']);
+
+        $request_data['email'] = apply_filters('wppb_before_processing_email_from_forms', stripslashes( $request_data['email'] ) );
+
         if ((isset($request_data['email']) && (trim($request_data['email']) == '')) && ($field['required'] == 'Yes'))
             return wppb_required_field_error($field["field-title"]);
 

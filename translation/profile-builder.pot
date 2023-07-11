@@ -861,7 +861,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:330, front-end/login.php:542, front-end/recover.php:113, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:10
+#: admin/general-settings.php:330, front-end/login.php:542, front-end/recover.php:115, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2568, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:10
 msgid "Email"
 msgstr ""
 
@@ -3385,7 +3385,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:825, front-end/recover.php:397, front-end/default-fields/password/password.php:59
+#: features/functions.php:825, front-end/recover.php:399, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -3622,7 +3622,7 @@ msgstr ""
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:552, front-end/recover.php:117
+#: front-end/login.php:552, front-end/recover.php:119
 msgid "Username or Email"
 msgstr ""
 
@@ -3634,103 +3634,103 @@ msgstr ""
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
 msgstr ""
 
-#: front-end/recover.php:87
+#: front-end/recover.php:89
 msgid "Reset Password"
 msgstr ""
 
-#: front-end/recover.php:116
+#: front-end/recover.php:118
 msgid "Please enter your username or email address."
 msgstr ""
 
-#: front-end/recover.php:112
+#: front-end/recover.php:114
 msgid "Please enter your email address."
 msgstr ""
 
-#: front-end/recover.php:120
+#: front-end/recover.php:122
 msgid "You will receive a link to create a new password via email."
 msgstr ""
 
-#: front-end/recover.php:133
+#: front-end/recover.php:135
 msgid "Get New Password"
 msgstr ""
 
-#: front-end/recover.php:184
+#: front-end/recover.php:186
 msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
 msgstr ""
 
-#: front-end/recover.php:187
+#: front-end/recover.php:189
 msgid "Password Reset from %1$s"
 msgstr ""
 
-#: front-end/recover.php:214
+#: front-end/recover.php:216
 msgid "You have successfully reset your password."
 msgstr ""
 
-#: front-end/recover.php:216
+#: front-end/recover.php:218
 msgid "Password Successfully Reset for %1$s on %2$s"
 msgstr ""
 
-#: front-end/recover.php:234
+#: front-end/recover.php:236
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
 msgstr ""
 
-#: front-end/recover.php:271
+#: front-end/recover.php:273
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:455
+#: front-end/recover.php:457
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:365
+#: front-end/recover.php:367
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:375
+#: front-end/recover.php:377
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:382, front-end/recover.php:482
+#: front-end/recover.php:384, front-end/recover.php:484
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:387
+#: front-end/recover.php:389
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:393, front-end/default-fields/password/password.php:55
+#: front-end/recover.php:395, front-end/default-fields/password/password.php:55
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:404
+#: front-end/recover.php:406
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:299
+#: front-end/recover.php:301
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:299
+#: front-end/recover.php:301
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:342
+#: front-end/recover.php:344
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:342
+#: front-end/recover.php:344
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:312
+#: front-end/recover.php:314
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:326, front-end/recover.php:482, features/two-factor-authentication/class-two-factor-authentication.php:577
+#: front-end/recover.php:328, front-end/recover.php:484, features/two-factor-authentication/class-two-factor-authentication.php:577
 msgid "ERROR:"
 msgstr ""
 
-#: front-end/recover.php:326
+#: front-end/recover.php:328
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
@@ -4785,79 +4785,79 @@ msgstr ""
 msgid "Admin Notification for Edit Profile Approved by Admin"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:265
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:270
 msgid "Requires Admin Approval on Edit Profile"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:265
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:270
 msgid "Choose if this field requires an administrator to approve any modifications on the edit profile forms"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:369
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:374
 msgid "This field requires admin approval on edit profile"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:438
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:443
 msgid "Finish Review and Send Notifications"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:439
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:444
 msgid "Approve All"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:457
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:462
 msgid "This field requires approval by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:486, features/admin-approval/class-admin-approval.php:355
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:491, features/admin-approval/class-admin-approval.php:355
 msgid "Unapproved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:486, features/admin-approval/class-admin-approval.php:353
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:491, features/admin-approval/class-admin-approval.php:353
 msgid "Approved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:834, add-ons-advanced/edit-profile-approved-by-admin/index.php:864
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:839, add-ons-advanced/edit-profile-approved-by-admin/index.php:869
 msgid "Your profile has been reviewed by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:856
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:861
 msgid "Approved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:860
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:865
 msgid "Unapproved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:883
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:888
 msgid "Field %1$s changed from %2$s to %3$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:891
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:896
 msgid "The user %1$s has updated their profile and some of the fields require admin approval:<br><br> %2$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:893
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:898
 msgid "Access this link to approve changes: %1$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:896
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:901
 msgid "A user has updated their profile. Some fields need approval"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:916
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:921
 msgid "Field %1$s requires approval from an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:991
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:996
 msgid "Show users that require review"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:993
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:998
 msgid "Show reviewed users with unapproved fields"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:996
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:1001
 msgid "Exit Review Mode"
 msgstr ""
 
@@ -5349,7 +5349,7 @@ msgstr ""
 msgid "Click to edit "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:348, front-end/default-fields/email/email.php:69
+#: add-ons-advanced/woocommerce/index.php:348, front-end/default-fields/email/email.php:71
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
@@ -7531,19 +7531,19 @@ msgstr ""
 msgid "If you change this, we will send you an email at your new address to confirm it. <br /><strong>The new address will not become active until confirmed.</strong>"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:73, front-end/extra-fields/input-email/input-email.php:70
+#: front-end/default-fields/email/email.php:75, front-end/extra-fields/input-email/input-email.php:70
 msgid "You must enter a valid email address."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:88, front-end/default-fields/email/email.php:82
+#: front-end/default-fields/email/email.php:90, front-end/default-fields/email/email.php:84
 msgid "This email is already reserved to be used soon."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:88, front-end/default-fields/email/email.php:82, front-end/default-fields/email/email.php:98, front-end/default-fields/email/email.php:118, front-end/default-fields/username/username.php:51, front-end/default-fields/username/username.php:67
+#: front-end/default-fields/email/email.php:90, front-end/default-fields/email/email.php:84, front-end/default-fields/email/email.php:100, front-end/default-fields/email/email.php:120, front-end/default-fields/username/username.php:51, front-end/default-fields/username/username.php:67
 msgid "Please try a different one!"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:98, front-end/default-fields/email/email.php:118
+#: front-end/default-fields/email/email.php:100, front-end/default-fields/email/email.php:120
 msgid "This email is already in use."
 msgstr ""
 

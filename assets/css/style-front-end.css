@@ -187,7 +187,9 @@
 
 .wppb-form-field.wppb-default-password,
 .wppb-form-field.wppb-default-repeat-password,
-#wppb-login-wrap .login-password {
+#wppb-login-wrap .login-password,
+#wppb-recover-password-container .wppb-form-field.passw1,
+#wppb-recover-password-container .wppb-form-field.passw2 {
     position: relative;
 }
 
@@ -895,7 +897,9 @@ li.wppb-facet-search{
 --------------------------------------------------------------*/
 .wppb-form-field.wppb-default-password button.wppb-toggle-pw,
 .wppb-form-field.wppb-default-repeat-password button.wppb-toggle-pw,
-#wppb-login-wrap .login-password button.wppb-toggle-pw {
+#wppb-login-wrap .login-password button.wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.passw1 .wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.passw2 .wppb-toggle-pw {
     position: absolute;
     right: 4px;
 	/* fields bottom padding  / 2 */
@@ -916,7 +920,9 @@ li.wppb-facet-search{
 
 .wppb-form-field.wppb-default-password button img,
 .wppb-form-field.wppb-default-repeat-password button img,
-#wppb-login-wrap .login-password button img {
+#wppb-login-wrap .login-password button img,
+#wppb-recover-password-container .wppb-form-field.passw1 button img,
+#wppb-recover-password-container .wppb-form-field.passw2 button img {
     width: 20px;
 }
 

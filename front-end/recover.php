@@ -70,6 +70,7 @@ function wppb_create_recover_password_form( $user, $post_data ){
 			<li class="wppb-form-field passw1'. apply_filters( 'wppb_recover_field_extra_css_class', '', 'passw1') .'">
 				<label for="passw1">'. esc_html( $password_label ) .'</label>
 				<input class="password" name="passw1" type="password" id="passw1" value="" autocomplete="off" title="'. esc_attr( wppb_password_length_text() ).'" '. apply_filters( 'wppb_recover_password_extra_attr', '', esc_html( $password_label ), 'password' ) .' />
+				'. wppb_password_visibility_toggle_html() .'
 				<span class="wppb-description-delimiter">'. wppb_password_length_text() .' '. wppb_password_strength_description() .'</span>'.
             /* if we have active the password strength checker */
             wppb_password_strength_checker_html().'
@@ -78,6 +79,7 @@ function wppb_create_recover_password_form( $user, $post_data ){
 			<li class="wppb-form-field passw2'. apply_filters( 'wppb_recover_field_extra_css_class', '', 'passw2') .'">
 				<label for="passw2">'. esc_html( $repeat_password_label ) .'</label>
 				<input class="password" name="passw2" type="password" id="passw2" value="" autocomplete="off" '. apply_filters( 'wppb_recover_password_extra_attr', '', esc_html( $repeat_password_label ), 'repeat_password' ) .' />
+			    '. wppb_password_visibility_toggle_html() .'
 			</li><!-- .passw2 -->';
 			
 		echo apply_filters( 'wppb_recover_password_form_input', $recover_inputPassword, $passw_one, $passw_two, $user->ID ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

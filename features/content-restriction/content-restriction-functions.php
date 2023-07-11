@@ -257,7 +257,8 @@ function wppb_content_restriction_shortcode( $atts, $content = null ) {
         array(
             'user_roles'    => array(),
             'display_to'    => '',
-            'message'       => ''
+            'message'       => '',
+	        'users_id'       => array()
         ),
         $atts
     );
@@ -290,22 +291,37 @@ function wppb_content_restriction_shortcode( $atts, $content = null ) {
             return $message;
         }
 
-        if( ! empty( $args['user_roles'] ) ) {
-            $user_roles = array_map( 'trim', explode( ',', $args['user_roles'] ) );
-            $user_data = get_userdata( get_current_user_id() );
+		if( ! empty($args['users_id'] ) ){
+			$users_id=array_map('trim', explode(',', $args['users_id']));
+			$current_user_id = get_current_user_id(); // the current id user
+			if( ! empty($current_user_id)){
+				if(in_array($current_user_id, $users_id))
+				{
+					return do_shortcode( $content );
+				}
+				else{
+					return $message;
+				}
+			}
+		}
+		elseif( ! empty( $args['user_roles'] ) ) {
+				$user_roles = array_map( 'trim', explode( ',', $args['user_roles'] ) );
+				$user_data = get_userdata( get_current_user_id() );
 
-            if( ! empty( $user_data->roles ) ) {
-                $common_user_roles = array_intersect( $user_roles, $user_data->roles );
+				if( ! empty( $user_data->roles ) ) {
+					$common_user_roles = array_intersect( $user_roles, $user_data->roles );
 
-                if( ! empty( $common_user_roles ) ) {
-                    return do_shortcode( $content );
-                } else {
-                    return $message;
-                }
-            }
-        } else {
-            return do_shortcode( $content );
-        }
+					if( ! empty( $common_user_roles ) ) {
+						return do_shortcode( $content );
+					} else {
+						return $message;
+					}
+				}
+			} else {
+
+				return do_shortcode( $content );
+			}
+
     } else {
         if( $args['display_to'] == 'not_logged_in' ) {
             return do_shortcode( $content );
