@@ -313,7 +313,7 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: admin/admin-bar.php:95, admin/general-settings.php:421, admin/private-website.php:165, features/functions.php:1068, add-ons-advanced/woocommerce/woosync-page.php:152, features/content-restriction/content-restriction.php:177, features/two-factor-authentication/class-two-factor-authentication.php:159, assets/lib/class-mustache-templates/class-mustache-templates.php:421, assets/lib/wck-api/wordpress-creation-kit.php:410, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:77, admin/advanced-settings/includes/views/view-userlisting.php:91
+#: admin/admin-bar.php:95, admin/general-settings.php:421, admin/private-website.php:165, features/functions.php:1066, add-ons-advanced/woocommerce/woosync-page.php:152, features/content-restriction/content-restriction.php:177, features/two-factor-authentication/class-two-factor-authentication.php:159, assets/lib/class-mustache-templates/class-mustache-templates.php:421, assets/lib/wck-api/wordpress-creation-kit.php:410, admin/advanced-settings/includes/views/view-admin.php:112, admin/advanced-settings/includes/views/view-fields.php:309, admin/advanced-settings/includes/views/view-forms.php:407, admin/advanced-settings/includes/views/view-shortcodes.php:92, admin/advanced-settings/includes/views/view-userlisting.php:91
 msgid "Save Changes"
 msgstr ""
 
@@ -341,15 +341,15 @@ msgstr ""
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:360, features/functions.php:800, features/functions.php:824
+#: admin/admin-functions.php:139, admin/general-settings.php:360, features/functions.php:798, features/functions.php:822
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:361, features/functions.php:800, features/functions.php:824
+#: admin/admin-functions.php:139, admin/general-settings.php:361, features/functions.php:798, features/functions.php:822
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:362, features/functions.php:800, features/functions.php:824
+#: admin/admin-functions.php:139, admin/general-settings.php:362, features/functions.php:798, features/functions.php:822
 msgid "Strong"
 msgstr ""
 
@@ -385,15 +385,15 @@ msgstr ""
 msgid "See details"
 msgstr ""
 
-#: admin/admin-functions.php:260, admin/admin-functions.php:386, admin/review.php:94
+#: admin/admin-functions.php:260, admin/admin-functions.php:393, admin/review.php:94
 msgid "Dismiss this notice."
 msgstr ""
 
-#: admin/admin-functions.php:377
+#: admin/admin-functions.php:384
 msgid "You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:375
+#: admin/admin-functions.php:382
 msgid "You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s."
 msgstr ""
 
@@ -781,7 +781,7 @@ msgstr ""
 msgid "Automatically Log In:"
 msgstr ""
 
-#: admin/general-settings.php:189, admin/general-settings.php:204, admin/general-settings.php:253, admin/general-settings.php:300, admin/general-settings.php:408, admin/manage-fields.php:240, admin/private-website.php:73, admin/private-website.php:140, admin/private-website.php:153, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2614, add-ons-advanced/bbpress/bbpress-page.php:164, add-ons-advanced/social-connect/index.php:348, add-ons-advanced/social-connect/index.php:407, features/content-restriction/content-restriction.php:93, features/two-factor-authentication/class-two-factor-authentication.php:128, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:184, admin/advanced-settings/includes/views/view-fields.php:200, admin/advanced-settings/includes/views/view-fields.php:220, admin/advanced-settings/includes/views/view-fields.php:243, admin/advanced-settings/includes/views/view-fields.php:263, admin/advanced-settings/includes/views/view-fields.php:280, admin/advanced-settings/includes/views/view-fields.php:296, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:184, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
+#: admin/general-settings.php:189, admin/general-settings.php:204, admin/general-settings.php:253, admin/general-settings.php:300, admin/general-settings.php:408, admin/manage-fields.php:240, admin/private-website.php:73, admin/private-website.php:140, admin/private-website.php:153, add-ons/multiple-forms/edit-profile-forms.php:206, add-ons/multiple-forms/register-forms.php:229, add-ons/multiple-forms/register-forms.php:230, add-ons/user-listing/userlisting.php:2614, add-ons-advanced/bbpress/bbpress-page.php:164, add-ons-advanced/social-connect/index.php:348, add-ons-advanced/social-connect/index.php:407, features/content-restriction/content-restriction.php:93, features/two-factor-authentication/class-two-factor-authentication.php:128, admin/advanced-settings/includes/forms/placeholder-labels.php:135, admin/advanced-settings/includes/views/view-admin.php:18, admin/advanced-settings/includes/views/view-admin.php:34, admin/advanced-settings/includes/views/view-admin.php:50, admin/advanced-settings/includes/views/view-admin.php:69, admin/advanced-settings/includes/views/view-admin.php:100, admin/advanced-settings/includes/views/view-fields.php:18, admin/advanced-settings/includes/views/view-fields.php:66, admin/advanced-settings/includes/views/view-fields.php:184, admin/advanced-settings/includes/views/view-fields.php:200, admin/advanced-settings/includes/views/view-fields.php:220, admin/advanced-settings/includes/views/view-fields.php:243, admin/advanced-settings/includes/views/view-fields.php:263, admin/advanced-settings/includes/views/view-fields.php:280, admin/advanced-settings/includes/views/view-fields.php:296, admin/advanced-settings/includes/views/view-forms.php:19, admin/advanced-settings/includes/views/view-forms.php:148, admin/advanced-settings/includes/views/view-forms.php:166, admin/advanced-settings/includes/views/view-forms.php:183, admin/advanced-settings/includes/views/view-forms.php:198, admin/advanced-settings/includes/views/view-forms.php:213, admin/advanced-settings/includes/views/view-forms.php:233, admin/advanced-settings/includes/views/view-forms.php:250, admin/advanced-settings/includes/views/view-forms.php:286, admin/advanced-settings/includes/views/view-forms.php:307, admin/advanced-settings/includes/views/view-forms.php:327, admin/advanced-settings/includes/views/view-forms.php:349, admin/advanced-settings/includes/views/view-forms.php:371, admin/advanced-settings/includes/views/view-forms.php:391, admin/advanced-settings/includes/views/view-shortcodes.php:16, admin/advanced-settings/includes/views/view-shortcodes.php:32, admin/advanced-settings/includes/views/view-shortcodes.php:48, admin/advanced-settings/includes/views/view-shortcodes.php:64, admin/advanced-settings/includes/views/view-shortcodes.php:80, admin/advanced-settings/includes/views/view-userlisting.php:53, admin/advanced-settings/includes/views/view-userlisting.php:75, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:184, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
 msgid "Yes"
 msgstr ""
 
@@ -3065,11 +3065,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1089, features/functions.php:1096, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:374, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:452, assets/lib/wck-api/wordpress-creation-kit.php:553
+#: admin/manage-fields.php:1409, features/functions.php:1087, features/functions.php:1094, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:374, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:452, assets/lib/wck-api/wordpress-creation-kit.php:553
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1082, features/functions.php:1096, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:452, assets/lib/wck-api/wordpress-creation-kit.php:554, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1409, features/functions.php:1080, features/functions.php:1094, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:452, assets/lib/wck-api/wordpress-creation-kit.php:554, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3373,71 +3373,71 @@ msgstr ""
 msgid "Honeypot"
 msgstr ""
 
-#: features/functions.php:774
+#: features/functions.php:772
 msgid "Strength indicator"
 msgstr ""
 
-#: features/functions.php:800, features/functions.php:824
+#: features/functions.php:798, features/functions.php:822
 msgid "Very Weak"
 msgstr ""
 
-#: features/functions.php:814
+#: features/functions.php:812
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:825, front-end/recover.php:399, front-end/default-fields/password/password.php:59
+#: features/functions.php:823, front-end/recover.php:399, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:987
+#: features/functions.php:985
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1025, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1023, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1032
+#: features/functions.php:1030
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1075, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:174, assets/lib/wck-api/wordpress-creation-kit.php:411
+#: features/functions.php:1073, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:451, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:174, assets/lib/wck-api/wordpress-creation-kit.php:411
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1096, assets/lib/wck-api/wordpress-creation-kit.php:452
+#: features/functions.php:1094, assets/lib/wck-api/wordpress-creation-kit.php:452
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1286
+#: features/functions.php:1284
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1299
+#: features/functions.php:1297
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1390, add-ons-advanced/social-connect/index.php:418
+#: features/functions.php:1388, add-ons-advanced/social-connect/index.php:418
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1391
+#: features/functions.php:1389
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1571
+#: features/functions.php:1569
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1612
+#: features/functions.php:1610
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1649
+#: features/functions.php:1647
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1667, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1665, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -4130,7 +4130,7 @@ msgstr ""
 msgid "Please wait while the pins are loading..."
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:556
+#: add-ons/user-listing/one-map-listing.php:558
 msgid "The API Key was not provided."
 msgstr ""
 
@@ -5349,7 +5349,7 @@ msgstr ""
 msgid "Click to edit "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:348, front-end/default-fields/email/email.php:71
+#: add-ons-advanced/woocommerce/index.php:348, front-end/default-fields/email/email.php:70
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
@@ -7519,31 +7519,31 @@ msgstr ""
 msgid "Privacy: I would like my site to appear in search engines, and in public listings around this network."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:46
+#: front-end/default-fields/email/email.php:45
 msgid "There is a pending change request of your email to: %s"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:47
+#: front-end/default-fields/email/email.php:46
 msgid "Cancel request"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:37
+#: front-end/default-fields/email/email.php:36
 msgid "If you change this, we will send you an email at your new address to confirm it. <br /><strong>The new address will not become active until confirmed.</strong>"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:75, front-end/extra-fields/input-email/input-email.php:70
+#: front-end/default-fields/email/email.php:74, front-end/extra-fields/input-email/input-email.php:70
 msgid "You must enter a valid email address."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:90, front-end/default-fields/email/email.php:84
+#: front-end/default-fields/email/email.php:89, front-end/default-fields/email/email.php:83
 msgid "This email is already reserved to be used soon."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:90, front-end/default-fields/email/email.php:84, front-end/default-fields/email/email.php:100, front-end/default-fields/email/email.php:120, front-end/default-fields/username/username.php:51, front-end/default-fields/username/username.php:67
+#: front-end/default-fields/email/email.php:89, front-end/default-fields/email/email.php:83, front-end/default-fields/email/email.php:99, front-end/default-fields/email/email.php:119, front-end/default-fields/username/username.php:51, front-end/default-fields/username/username.php:67
 msgid "Please try a different one!"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:100, front-end/default-fields/email/email.php:120
+#: front-end/default-fields/email/email.php:99, front-end/default-fields/email/email.php:119
 msgid "This email is already in use."
 msgstr ""
 
@@ -8105,6 +8105,10 @@ msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:69
 msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder-2/developers-knowledge-base/shortcodes/format-date-shortcode/\">this url</a>."
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-shortcodes.php:76
+msgid "Enable List Roles shortcode"
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-userlisting.php:12

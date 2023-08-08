@@ -1993,6 +1993,7 @@
 <?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder-2/developers-knowledge-base/shortcodes/resend-confirmation-email/\">this url</a>.", "profile-builder"); ?>
 <?php __("Enable Format Date shortcode", "profile-builder"); ?>
 <?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder-2/developers-knowledge-base/shortcodes/format-date-shortcode/\">this url</a>.", "profile-builder"); ?>
+<?php __("Enable List Roles shortcode", "profile-builder"); ?>
 <?php __("Change placeholder text for Search box", "profile-builder"); ?>
 <?php __("This refers to the placeholder text from the <strong>{{{extra_search_all_fields}}}</strong> tag.", "profile-builder"); ?>
 <?php __("Default text is <strong>Search Users by All Fields</strong>, use this option to change it to something else. Leave empty if you do not want to change it.", "profile-builder"); ?>

@@ -34,18 +34,18 @@ function wppb_basic_info_content() {
 		<p class="wppb-info-text"><?php printf( esc_html__( 'The best way to add front-end registration, edit profile and login forms.', 'profile-builder' ) ); ?></p>
 		<hr />
 		<?php
-		$wppb_pages_created = get_option( 'wppb_pages_created' );
+		$wppb_pages_created    = get_option( 'wppb_pages_created' );
 		$shortcode_pages_query = new WP_Query( array( 'post_type' => 'page', 's' => '[wppb-' ) );
 		if( empty( $wppb_pages_created ) && !$shortcode_pages_query->have_posts() ){
 		?>
 			<div class="wppb-auto-form-creation wppb-2-1-col">
 				<div><h3><?php esc_html_e( 'Speed up the setup process by automatically creating the form pages:', 'profile-builder' ); ?></h3></div>
-				<div><a href="<?php echo esc_url( admin_url('admin.php?page=profile-builder-basic-info&wppb_create_pages=true') ) ?>" class="button primary button-primary button-hero"><?php esc_html_e( 'Create Form Pages', 'profile-builder' ); ?></a></div>
+				<div><a href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=profile-builder-basic-info&wppb_create_pages=true' ), 'wppb_create_pages' ) ) ?>" class="button primary button-primary button-hero"><?php esc_html_e( 'Create Form Pages', 'profile-builder' ); ?></a></div>
 			</div>
 		<?php }else{ ?>
 			<div class="wppb-auto-form-creation wppb-forms-created wppb-2-1-col">
 				<div><h3><?php esc_html_e( 'You can see all the pages with Profile Builder form shortcodes here:', 'profile-builder' ); ?></h3></div>
-				<div><a href="<?php echo esc_url( admin_url('edit.php?s=%5Bwppb-&post_status=all&post_type=page&action=-1&m=0&paged=1&action2=-1') ) ?>" class="button primary button-primary button-hero"><?php esc_html_e( 'View Form Pages', 'profile-builder' ); ?></a></div>
+				<div><a href="<?php echo esc_url( admin_url( 'edit.php?s=%5Bwppb-&post_status=all&post_type=page&action=-1&m=0&paged=1&action2=-1' ) ) ?>" class="button primary button-primary button-hero"><?php esc_html_e( 'View Form Pages', 'profile-builder' ); ?></a></div>
 			</div>
 		<?php } ?>
 

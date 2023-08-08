@@ -72,6 +72,21 @@
             </td>
         </tr>
 
+        <tr>
+            <th><?php esc_html_e( 'Enable List Roles shortcode', 'profile-builder' ); ?></th>
+
+            <td>
+                <label><input type="checkbox" name="wppb_toolbox_shortcodes_settings[list-roles]"<?php echo ( ( isset( $settings['list-roles'] ) && ( $settings['list-roles'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
+				    <?php esc_html_e( 'Yes', 'profile-builder' ); ?>
+                </label>
+
+                <ul>
+                    <li class="description">
+					    <?php echo wp_kses_post( sprintf('You can read more info about this shortcode by following <a href="%s">this url</a>.', "https://www.cozmoslabs.com/docs/profile-builder-2/developers-knowledge-base/shortcodes/format-date-shortcode/") ); ?>
+                    </li>
+                </ul>
+            </td>
+        </tr>
     </table>
 
     <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>

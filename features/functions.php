@@ -705,7 +705,6 @@ function wppb_resize_avatar( $userID, $userlisting_size = null, $userlisting_cro
 }
 
 
-if ( is_admin() ){
 	// add a hook to delete the user from the _signups table if either the email confirmation is activated, or it is a wpmu installation
 	function wppb_delete_user_from_signups_table($user_id) {
 		global $wpdb;
@@ -729,7 +728,6 @@ if ( is_admin() ){
         else
             add_action('delete_user', 'wppb_delete_user_from_signups_table');
     }
-}
 
 
 
@@ -1708,30 +1706,29 @@ function wppb_profile_builder_wp_exporter( $email_address, $page = 1 ) {
 add_action( 'template_redirect', 'wppb_gdpr_delete_user') ;
 function wppb_gdpr_delete_user() {
 
-    if( isset( $_GET['wppb_user'] ) && ! empty( $_GET['wppb_user'] ) ) {
+	if( isset( $_GET['wppb_user'] ) && ! empty( $_GET['wppb_user'] ) ) {
+		$edited_user_id = get_current_user_id();
+		if ( ( ! is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ) {
+			$edited_user_id = absint( $_GET['wppb_user'] );
+		}
 
-        $edited_user_id = get_current_user_id();
-        if ( ( !is_multisite() && current_user_can('edit_users') ) || ( is_multisite() && current_user_can('manage_network') ) ) {
-                $edited_user_id = absint($_GET['wppb_user']);
-        }
+		if ( isset( $_REQUEST['wppb_action'] ) && $_REQUEST['wppb_action'] == 'wppb_delete_user' && isset( $_REQUEST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['wppb_nonce'] ), 'wppb-user-own-account-deletion' ) && isset( $_REQUEST['wppb_user'] ) && $edited_user_id == $_REQUEST['wppb_user'] ) {
+			require_once( ABSPATH . 'wp-admin/includes/user.php' );
+			$user = new WP_User( absint( $_REQUEST['wppb_user'] ) );
 
-        if (isset($_REQUEST['wppb_action']) && $_REQUEST['wppb_action'] == 'wppb_delete_user' && isset( $_REQUEST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['wppb_nonce'] ), 'wppb-user-own-account-deletion') && isset($_REQUEST['wppb_user']) && $edited_user_id == $_REQUEST['wppb_user']) {
-            require_once(ABSPATH . 'wp-admin/includes/user.php');
-            $user = new WP_User( absint( $_REQUEST['wppb_user'] ) );
-
-            if (!empty($user->roles)) {
-				if( !in_array( 'administrator', $user->roles ) ){
+			if ( ! empty( $user->roles ) ) {
+				if ( ! in_array( 'administrator', $user->roles ) ) {
 					wp_delete_user( absint( $_REQUEST['wppb_user'] ) );
 
 					do_action( 'wppb_gdpr_user_deleted', absint( $_REQUEST['wppb_user'] ) );
 				}
-            }
+			}
 
-            $args = array('wppb_user', 'wppb_action', 'wppb_nonce');
-            nocache_headers();
-            wp_redirect(remove_query_arg($args));
-        }
-    }
+			$args = array( 'wppb_user', 'wppb_action', 'wppb_nonce' );
+			nocache_headers();
+			wp_redirect( remove_query_arg( $args ) );
+		}
+	}
 }
 
 /**

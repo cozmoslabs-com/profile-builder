@@ -1141,7 +1141,7 @@ class WPPB_Roles_Editor {
         wp_nonce_field( 'new_user_roles', 'wppb_re_new_user_roles_nonce' );
 
         if( apply_filters( 'wppb_backend_allow_multiple_user_roles_selection', true ) ) {
-            $this->roles_field_display($user_roles);
+            $this->roles_field_display( $user_roles );
         }
     }
 
@@ -1207,11 +1207,14 @@ class WPPB_Roles_Editor {
 
     function roles_update_user_new_and_edit( $user ) {
 
-        if( ! empty( $_POST['wppb_re_user_roles'] ) ) {
+        if( ! empty( $_POST['wppb_re_user_roles'] ) || !empty( $_POST['role'] ) ) {
 
             $old_roles = (array) $user->roles;
 
-            $new_roles = array_map( array( $this, 'sanitize_role' ), $_POST['wppb_re_user_roles'] );//phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if( isset( $_POST['wppb_re_user_roles'] ) )
+                $new_roles = array_map( array( $this, 'sanitize_role' ), $_POST['wppb_re_user_roles'] );//phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            else
+                $new_roles = array( $this->sanitize_role( $_POST['role'] ) ); //phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
             foreach( $new_roles as $new_role ) {
                 if( ! in_array( $new_role, (array) $user->roles ) ) {
