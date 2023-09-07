@@ -550,8 +550,8 @@ class WPPB_Plugin_Updater {
     protected function license_page_url( ){
 
         if( !is_multisite() )
-            return admin_url( 'admin.php?page=profile-builder-register' );
-        else 
+            return admin_url( 'admin.php?page=profile-builder-general-settings' );
+        else
             return network_admin_url( 'admin.php?page=profile-builder-register' );
 
     }

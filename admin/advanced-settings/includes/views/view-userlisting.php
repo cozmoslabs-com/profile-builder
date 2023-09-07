@@ -6,87 +6,62 @@
 
     <?php settings_fields( 'wppb_toolbox_userlisting_settings' ); ?>
 
-    <table class="form-table">
+    <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-no-title-section">
+        <div class="cozmoslabs-form-field-wrapper">
+            <label class="cozmoslabs-form-field-label" for="toolbox-search-placeholder-text"><?php esc_html_e( 'Search Box Placeholder', 'profile-builder' ); ?></label>
+            <input type="text" id="toolbox-search-placeholder-text" name="wppb_toolbox_userlisting_settings[search-placeholder-text]" value="<?php echo ( !empty( $settings['search-placeholder-text']) ? esc_attr( $settings['search-placeholder-text'] ) : '' ); ?>">
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'This refers to the placeholder text from the "{{{extra_search_all_fields}}}" tag.', 'profile-builder' ); ?></p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Default text is "Search Users by All Fields", use this option to change it to something else. Leave empty if you do not want to change it.', 'profile-builder' ); ?></p>
+        </div>
 
-        <tr>
-            <th><?php esc_html_e( 'Change placeholder text for Search box', 'profile-builder' ); ?></th>
+        <div class="cozmoslabs-form-field-wrapper">
+            <label class="cozmoslabs-form-field-label" for="toolbox-modify-permalinks-single"><?php esc_html_e( 'Single Userlisting Base URL', 'profile-builder' ); ?></label>
+            <input type="text" id="toolbox-modify-permalinks-single" name="wppb_toolbox_userlisting_settings[modify-permalinks-single]" value="<?php echo ( !empty( $settings['modify-permalinks-single']) ? esc_attr( $settings['modify-permalinks-single'] ) : '' ); ?>">
 
-            <td>
-                <input type="text" name="wppb_toolbox_userlisting_settings[search-placeholder-text]" value="<?php echo ( !empty( $settings['search-placeholder-text']) ? esc_attr( $settings['search-placeholder-text'] ) : '' ); ?>">
+            <p class="cozmoslabs-description cozmoslabs-description-space-left">
+                <?php esc_html_e( 'By default Single Userlisting URLs contain the word "user".', 'profile-builder' ); ?>
+                <br>
+                <em><?php esc_html_e( 'eg.: ', 'profile-builder' ); echo esc_url( home_url( 'userlisting/user/123' ) ); ?></em>
+            </p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'You can change the word "user" to something else. Leave empty if you do not want to change it.', 'profile-builder' ); ?></p>
+        </div>
 
-                <ul>
-                    <li class="description">
-                        <?php echo wp_kses_post( __( 'This refers to the placeholder text from the <strong>{{{extra_search_all_fields}}}</strong> tag.', 'profile-builder' ) ); ?>
-                    </li>
-                    <li class="description">
-                        <?php echo wp_kses_post( __( 'Default text is <strong>Search Users by All Fields</strong>, use this option to change it to something else. Leave empty if you do not want to change it.', 'profile-builder' ) ); ?>
-                    </li>
-                </ul>
-            </td>
-        </tr>
+        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+            <label class="cozmoslabs-form-field-label" for="toolbox-use-nicename-single"><?php esc_html_e('Single Userlisting URLs Nicename', 'profile-builder'); ?></label>
 
-        <tr>
-            <th><?php esc_html_e( 'Modify base URL for Single Userlisting', 'profile-builder' ); ?></th>
+            <div class="cozmoslabs-toggle-container">
+                <input type="checkbox" id="toolbox-use-nicename-single" name="wppb_toolbox_userlisting_settings[use-nicename-single]"<?php echo ( ( isset( $settings['use-nicename-single'] ) && ( $settings['use-nicename-single'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
+                <label class="cozmoslabs-toggle-track" for="toolbox-use-nicename-single"></label>
+            </div>
 
-            <td>
-                <input type="text" name="wppb_toolbox_userlisting_settings[modify-permalinks-single]" value="<?php echo ( !empty( $settings['modify-permalinks-single']) ? esc_attr( $settings['modify-permalinks-single'] ) : '' ); ?>">
+            <div class="cozmoslabs-toggle-description">
+                <p class="cozmoslabs-description"><?php esc_html_e( 'Make the Single Userlisting URLs work with user nicename.', 'profile-builder' ); ?></p>
+            </div>
 
-                <ul>
-                    <li class="description">
-                        <?php
-                            echo wp_kses_post( __( 'By default Single Userlisting URLs contain the word <strong>user</strong>. eg.: ', 'profile-builder' ) );
-                            echo esc_url( home_url( 'userlisting/user/123' ) );
-                        ?>
-                    </li>
-                    <li class="description">
-                        <?php echo wp_kses_post( __( 'Using this option, you can change the word <strong>user</strong> to something else. Leave empty if you do not want to change it.', 'profile-builder' ) ); ?>
-                    </li>
-                </ul>
-            </td>
-        </tr>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left">
+                <?php esc_html_e( 'By default Single Userlisting URLs are generated using the users ID.', 'profile-builder' ); ?>
+                <br>
+                <em><?php esc_html_e( 'eg.: ', 'profile-builder' ); echo esc_url( home_url( 'userlisting/user/123' ) ); ?></em>
+            </p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option the URLs will be generated using the users "nicename".', 'profile-builder' ); ?></p>
+        </div>
 
-        <tr>
-            <th><?php esc_html_e( 'Make the Single Userlisting URLs work with user nicename', 'profile-builder' ); ?></th>
+        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+            <label class="cozmoslabs-form-field-label" for="toolbox-remove-repetitions"><?php esc_html_e('Remove Faceted Menus Counters', 'profile-builder'); ?></label>
 
-            <td>
-                <label><input type="checkbox" name="wppb_toolbox_userlisting_settings[use-nicename-single]"<?php echo ( ( isset( $settings['use-nicename-single'] ) && ( $settings['use-nicename-single'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
-                    <?php esc_html_e( 'Yes', 'profile-builder' ); ?>
-                </label>
+            <div class="cozmoslabs-toggle-container">
+                <input type="checkbox" id="toolbox-remove-repetitions" name="wppb_toolbox_userlisting_settings[remove-repetitions]"<?php echo ( ( isset( $settings['remove-repetitions'] ) && ( $settings['remove-repetitions'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
+                <label class="cozmoslabs-toggle-track" for="toolbox-remove-repetitions"></label>
+            </div>
 
-                <ul>
-                    <li class="description">
-                        <?php
-                            esc_html_e( 'By default Single Userlisting URLs are generated using the users ID. eg.: ', 'profile-builder' );
-                            echo esc_url( home_url( 'userlisting/user/123' ) );
-                        ?>
-                    </li>
-                    <li class="description">
-                        <?php echo wp_kses_post( __( 'With this option activated, the URLs will be generated using the users <strong>nicename</strong>.', 'profile-builder' ) ); ?>
-                    </li>
-                </ul>
-            </td>
-        </tr>
+            <div class="cozmoslabs-toggle-description">
+                <p class="cozmoslabs-description"><?php esc_html_e( 'Remove repetition counts from Faceted Menus.', 'profile-builder' ); ?></p>
+            </div>
 
-        <tr>
-            <th><?php esc_html_e( 'Remove repetition counts from Faceted Menus', 'profile-builder' ); ?></th>
-
-            <td>
-                <label><input type="checkbox" name="wppb_toolbox_userlisting_settings[remove-repetitions]"<?php echo ( ( isset( $settings['remove-repetitions'] ) && ( $settings['remove-repetitions'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
-                    <?php esc_html_e( 'Yes', 'profile-builder' ); ?>
-                </label>
-
-                <ul>
-                    <li class="description">
-                        <?php esc_html_e( 'The number of users that share a particular value is shown for the Select and Checkbox facet types.', 'profile-builder' ); ?>
-                    </li>
-                    <li class="description">
-                        <?php esc_html_e( 'If you enable this option they will be hidden.', 'profile-builder' ); ?>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-
-    </table>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'The number of users that share a particular value is shown for the Select and Checkbox facet types.', 'profile-builder' ); ?></p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option the counters will be hidden.', 'profile-builder' ); ?></p>
+        </div>
+    </div>
 
     <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
 

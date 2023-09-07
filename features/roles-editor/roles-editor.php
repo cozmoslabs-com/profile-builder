@@ -98,7 +98,7 @@ class WPPB_Roles_Editor {
             }
 
             $wp_default_styles = $this->wp_default_styles();
-            $styles_exceptions = array( 'wppb-serial-notice-css', 'acf-global', 'wppb-back-end-style', 'query-monitor' );
+            $styles_exceptions = array( 'wppb-serial-notice-css', 'acf-global', 'wppb-back-end-style', 'wppb-new-back-end-style', 'query-monitor' );
             foreach( $wp_styles->registered as $key => $value ) {
                 if( ! in_array( $key, $wp_default_styles ) && ! in_array( $key, $styles_exceptions ) ) {
                     wp_deregister_style( $key );
@@ -449,7 +449,7 @@ class WPPB_Roles_Editor {
 
         ?>
         <div id="wppb-role-edit-caps-div" style="margin: 15px 0 5px; 0;">
-            <div id="wppb-role-edit-add-caps">
+            <div id="wppb-role-edit-add-caps " class="cozmoslabs-form-field-wrapper">
                 <select style="width: 40%; display: none;" class="wppb-capabilities-select" multiple="multiple"></select>
 
                 <input class="wppb-add-new-cap-input" type="text" placeholder="<?php esc_html_e( 'Add a new capability', 'profile-builder' ) ?>">

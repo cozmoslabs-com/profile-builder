@@ -239,7 +239,7 @@ function wppb_le_side_metabox() {
 		__( 'Rescan Lables', 'profile-builder' ),
 		'wppb_le_rescan_button',
 		'profile-builder_page_pb-labels-edit',
-		'side'
+		'normal'
 	);
 }
 add_action( 'add_meta_boxes', 'wppb_le_side_metabox' );
@@ -247,13 +247,14 @@ add_action( 'add_meta_boxes', 'wppb_le_side_metabox' );
 // Rescan side meta-box content
 function wppb_le_rescan_button() {
 	?>
-	<div class="wrap">
-        <?php echo '<p>'. esc_html__( 'Rescan all Profile Builder labels.', 'profile-builder' ) .'</p>'; ?>
+	<div class="wrap cozmoslabs-form-field-wrapper">
 
 		<form action="" method="post">
             <input type="hidden" name="wppb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wppb_rescan_labels' ) ); ?>" />
 			<input type="submit" class="button-primary" name="rescan" value="Rescan" />
 		</form>
+
+        <?php echo '<p class="cozmoslabs-description cozmoslabs-description-align-right">'. esc_html__( 'Rescan all Profile Builder labels.', 'profile-builder' ) .'</p>'; ?>
 	</div>
 <?php
 }
@@ -265,7 +266,7 @@ function wppb_le_info_side_metabox() {
 		__( 'Informations', 'profile-builder' ),
 		'wppb_le_info',
 		'profile-builder_page_pb-labels-edit',
-		'side'
+		'normal'
 	);
 }
 add_action( 'add_meta_boxes', 'wppb_le_info_side_metabox' );
@@ -273,22 +274,22 @@ add_action( 'add_meta_boxes', 'wppb_le_info_side_metabox' );
 // Informations side meta-box content
 function wppb_le_info() {
 	?>
-	<div class="wrap">
-        <p><b> <?php echo  esc_html__( 'Variables:', 'profile-builder' ) ?> </b></p>
-		<ul>
-			<li>%1$s</li>
-			<li>%2$s</li>
-			<li>%s</li>
-			<li>etc.</li>
-		</ul>
-        <p><b> <?php echo  esc_html__( 'Place them like in the default string!', 'profile-builder' ) ?> </b></p>
-		<p><?php echo  esc_html__( 'Example:', 'profile-builder' ) ?></p>
-		<p>
-			<b><?php echo  esc_html__( 'Old Label', 'profile-builder' ) ?>:</b><br>in %1$d sec, click %2$s.%3$s<br>
-			<b><?php echo  esc_html__( 'New Label', 'profile-builder' ) ?>:</b><br>click %2$s.%3$s in %1$d sec<br>
-		</p>
-		<a href="http://www.cozmoslabs.com/?p=40126" target="_blank"><?php echo  esc_html__( 'Read more detailed informations', 'profile-builder' ) ?></a>
-	</div>
+    <div class="cozmoslabs-form-field-wrapper">
+        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Variables', 'profile-builder' ) ?></label>
+        <p class="cozmoslabs-description" style="display: flex; gap: 10px;"><span>%1$s</span> <span>%2$s</span> <span>%s</span> <span>etc.</span></p>
+    </div>
+
+    <p class="cozmoslabs-description cozmoslabs-description-space-left"><strong><?php echo  esc_html__( 'Place them like in the default string!', 'profile-builder' ) ?></strong></p>
+
+    <div class="cozmoslabs-form-field-wrapper">
+        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Example', 'profile-builder' ) ?></label>
+        <div>
+            <p class="cozmoslabs-description"><strong><?php esc_html_e( 'Old Label: ', 'profile-builder' ) ?></strong> <span>in %1$d sec, click %2$s.%3$s</span></p>
+            <p class="cozmoslabs-description"><strong><?php esc_html_e( 'New Label: ', 'profile-builder' ) ?></strong> <span>click %2$s.%3$s in %1$d sec</span></p>
+        </div>
+    </div>
+
+    <p class="cozmoslabs-description cozmoslabs-description-space-left"><a href="http://www.cozmoslabs.com/?p=40126" target="_blank"><?php echo  esc_html__( 'Read more detailed informations', 'profile-builder' ) ?></a></p>
 <?php
 }
 
@@ -299,7 +300,7 @@ function wppb_le_impexp_metabox() {
 		__( 'Import and Export Labels', 'profile-builder' ),
 		'wppb_le_impexp_content',
 		'profile-builder_page_pb-labels-edit',
-		'side'
+		'normal'
 	);
 }
 add_action( 'add_meta_boxes', 'wppb_le_impexp_metabox' );
@@ -309,34 +310,33 @@ function wppb_le_impexp_content() {
 	// call import function
     wppb_le_import();
 	?>
-	<p>
-		<?php esc_html_e( 'Import Labels from a .json file.', 'profile-builder' ); ?>
-		<br>
-		<?php esc_html_e( 'Easily import the labels from another site.', 'profile-builder' ); ?>
-	</p>
-	<form name="pble-upload" method="post" action="" enctype= "multipart/form-data">
+	<h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Import Labels from a .json file.', 'profile-builder' ); ?></h4>
 
+	<form name="pble-upload" method="post" action="" enctype= "multipart/form-data">
 		<input type="hidden" name="wppb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wppb_import_labels' ) ); ?>" />
 
-		<div class="wrap">
+		<div class="wrap cozmoslabs-form-field-wrapper">
+            <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'JSON File', 'profile-builder' ); ?></label>
 			<input type="file" name="pble-upload" value="pble-upload" id="pble-upload" />
 		</div>
-		<div class="wrap">
-			<input class="button-primary" type="submit" name="pble-import" value=<?php esc_html_e( 'Import', 'profile-builder' ); ?> id="pble-import" onclick="return confirm( '<?php esc_html_e( 'This will overwrite all your old edited labels!\nAre you sure you want to continue?', 'profile-builder' ); ?>' )" />
-		</div>
+
+        <div class="wrap cozmoslabs-form-field-wrapper">
+            <input class="button-primary" type="submit" name="pble-import" value=<?php esc_html_e( 'Import', 'profile-builder' ); ?> id="pble-import" onclick="return confirm( '<?php esc_html_e( 'This will overwrite all your old edited labels!\nAre you sure you want to continue?', 'profile-builder' ); ?>' )" />
+            <p class="cozmoslabs-description cozmoslabs-description-align-right"><?php esc_html_e( 'Easily import the labels from another site.', 'profile-builder' ); ?></p>
+        </div>
 	</form>
-	<hr>
-	<p>
-		<?php esc_html_e( 'Export Labels as a .json file.', 'profile-builder' ); ?>
-		<br>
-		<?php esc_html_e( 'Easily import the labels into another site.', 'profile-builder' ); ?>
-	</p>
-	<div class="wrap">
-		<form action="" method="post">
-			<input type="hidden" name="wppb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wppb_export_labels' ) ); ?>" />
-			<input class="button-primary" type="submit" name="pble-export" value=<?php esc_html_e( 'Export', 'profile-builder' ); ?> id="pble-export" />
-		</form>
-	</div>
+
+	<hr style="margin: 35px 0;">
+
+	<h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Export Labels as a .json file.', 'profile-builder' ); ?></h4>
+    <form action="" method="post">
+        <input type="hidden" name="wppb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wppb_export_labels' ) ); ?>" />
+
+        <div class="wrap cozmoslabs-form-field-wrapper">
+            <input class="button-primary" type="submit" name="pble-export" value=<?php esc_html_e( 'Export', 'profile-builder' ); ?> id="pble-export" />
+            <p class="cozmoslabs-description cozmoslabs-description-align-right"><?php esc_html_e( 'Easily import the labels into another site.', 'profile-builder' ); ?></p>
+        </div>
+    </form>
 <?php
 }
 

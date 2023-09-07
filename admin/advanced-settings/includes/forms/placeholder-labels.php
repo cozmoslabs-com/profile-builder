@@ -103,11 +103,11 @@ function wppb_pbpl_add_meta_boxes() {
     if( $pbpl_pb_moduleSettings != 'not_found' ) {
 
         if( $pbpl_pb_moduleSettings['wppb_multipleRegistrationForms'] == 'show' ) {
-            add_meta_box( 'pbpl-rf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-rf-cpt', 'side', 'low' );
+            add_meta_box( 'pbpl-rf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-rf-cpt', 'normal', 'low' );
         }
 
         if( $pbpl_pb_moduleSettings['wppb_multipleEditProfileForms'] == 'show' ) {
-            add_meta_box( 'pbpl-epf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-epf-cpt', 'side', 'low' );
+            add_meta_box( 'pbpl-epf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-epf-cpt', 'normal', 'low' );
         }
 
     }
@@ -127,14 +127,17 @@ function wppb_pbpl_meta_box_content( $post ) {
     $pbpl_select_value = esc_attr( $pbpl_select_value );
 
     ?>
-    <div class="wrap">
-        <p>
-            <label for="pbpl-active" ><?php esc_html_e( 'Replace labels with placeholders:', 'profile-builder' ) ?></label>
-        </p>
-        <select name="pbpl-active" id="pbpl-active" class="mb-select">
-            <option value="yes" <?php selected( $pbpl_select_value, 'yes' ); ?>><?php esc_html_e( 'Yes', 'profile-builder' ) ?></option>
-            <option value="no" <?php selected( $pbpl_select_value, 'no' ); ?>><?php esc_html_e( 'No', 'profile-builder' ) ?></option>
-        </select>
+    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+        <label class="cozmoslabs-form-field-label" for="pbpl-active"><?php esc_html_e( 'Enable Placeholders', 'profile-builder' ); ?></label>
+
+        <div class="cozmoslabs-toggle-container">
+            <input type="checkbox" id="pbpl-active" name="pbpl-active" value="yes" <?php echo $pbpl_select_value == 'yes' ? 'checked' : ''; ?>>
+            <label class="cozmoslabs-toggle-track" for="pbpl-active"></label>
+        </div>
+
+        <div class="cozmoslabs-toggle-description">
+            <p class="cozmoslabs-description"><?php esc_html_e( 'Replace labels with placeholders', 'profile-builder' ) ?></p>
+        </div>
     </div>
     <?php
 }
@@ -154,6 +157,7 @@ function wppb_pbpl_save_meta_box_option() {
 
         update_post_meta( $post->ID, 'pbpl-active', $pbpl_select_value );
     }
+    elseif ( !empty( $post->ID ) )  update_post_meta( $post->ID, 'pbpl-active', 'no' );
 }
 add_action( 'save_post', 'wppb_pbpl_save_meta_box_option' );
 

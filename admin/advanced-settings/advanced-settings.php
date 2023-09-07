@@ -44,11 +44,21 @@ if( !class_exists('WPPB_toolbox') ){
             if ( isset( $_GET['tab'] ) && array_key_exists( sanitize_text_field( $_GET['tab'] ), $this->tabs) )
                 $this->active_tab = sanitize_text_field( $_GET['tab'] );
             ?>
-            <div class="wrap wppb-wrap wppb-toolbox-wrap">
-                <h2>
-                    <?php esc_html_e( 'Advanced Settings', 'profile-builder'); ?>
-                    <a href="https://www.cozmoslabs.com/docs/profile-builder-2/general-settings/advanced-settings/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
-                </h2>
+            <div class="wrap wppb-wrap wppb-toolbox-wrap cozmoslabs-wrap">
+
+                <h1></h1>
+                <!-- WordPress Notices are added after the h1 tag -->
+
+                <div class="cozmoslabs-page-header">
+                    <div class="cozmoslabs-section-title">
+
+                        <h2 class="cozmoslabs-page-title">
+                            <?php esc_html_e( 'Advanced Settings', 'profile-builder'); ?>
+                            <a href="https://www.cozmoslabs.com/docs/profile-builder/general-settings/advanced-settings/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+                        </h2>
+
+                    </div>
+                </div>
 
                 <?php settings_errors(); ?>
 

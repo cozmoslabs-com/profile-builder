@@ -362,7 +362,7 @@ function wppb_populate_manage_fields(){
         'meta_name' 	=> 'wppb_manage_fields_info',
         'meta_array' 	=> '',
         'context'		=> 'option',
-        'mb_context'    => 'side'
+        'mb_context'    => 'normal'
     );
     new Wordpress_Creation_Kit_PB( $args );
 }
@@ -1421,13 +1421,15 @@ add_action( 'wck_metabox_content_header_wppb_manage_fields', 'wppb_manage_fields
  */
 function wppb_add_content_before_manage_fields(){
 ?>
-    <p><?php esc_html_e('Use these shortcodes on the pages you want the forms to be displayed:', 'profile-builder'); ?></p>
-        <ul>
-            <li><strong class="nowrap">[wppb-register]</strong></li>
-            <li><strong class="nowrap">[wppb-edit-profile]</strong></li>
-            <li><strong class="nowrap">[wppb-register role="author"]</strong></li>
-        </ul>
-    <p>
+    <p class="cozmoslabs-description"><?php esc_html_e('Use these shortcodes on the pages you want the forms to be displayed:', 'profile-builder'); ?></p>
+
+    <ul class="cozmoslabs-shortcodes-list">
+        <li><strong class="nowrap">[wppb-register]</strong></li>
+        <li><strong class="nowrap">[wppb-edit-profile]</strong></li>
+        <li><strong class="nowrap">[wppb-register role="author"]</strong></li>
+    </ul>
+
+    <p class="cozmoslabs-description">
     <?php
     $versions = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited', 'Profile Builder Dev' );
 

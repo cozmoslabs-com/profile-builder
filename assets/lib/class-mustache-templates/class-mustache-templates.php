@@ -322,7 +322,7 @@ class PB_Mustache_Generate_Admin_Box{
 			// get data for this field
 			extract( $field );
 			if ( !empty( $desc ) )
-				$desc = '<span class="description">' . $desc . '</span>';
+				$desc = '<p class="cozmoslabs-description cozmoslabs-description-space-left">' . $desc . '</p>';
 
 			// get value of this field if it exists for this post
 			if( isset( $_GET['page'] ) ){
@@ -340,9 +340,9 @@ class PB_Mustache_Generate_Admin_Box{
 
 			// begin a table row with
 			echo '<tr>
-					<td class="' . esc_attr( $id ) . ' ' . esc_attr( $type ) . '">';
-					if( $type != 'header' && !empty( $label ) ){
-					    echo '<label for="' . esc_attr( $id ) . '" class="wppb_mustache_label">' . esc_html( $label ) . '</label>';
+					<td class="cozmoslabs-form-field-wrapper ' . esc_attr( $id ) . ' ' . esc_attr( $type ) . '">';
+					if( $type != 'header' && $type != 'checkbox' && !empty( $label ) ){
+					    echo '<label for="' . esc_attr( $id ) . '" class="wppb_mustache_label cozmoslabs-form-field-label">' . esc_html( $label ) . '</label>';
                     }
 					switch( $type ) {
 						// text
@@ -358,8 +358,12 @@ class PB_Mustache_Generate_Admin_Box{
 						break;
 						// checkbox
 						case 'checkbox':
-							echo '<input type="checkbox" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '"' . checked( esc_attr( $meta ), 'on', false ) . ' value="on" />
-									<label for="' . esc_attr( $id ) . '">' . esc_html( $desc ) . '</label>';
+
+                            echo '  <div class="cozmoslabs-toggle-container">
+                                        <input type="checkbox" name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '"' . checked( esc_attr( $meta ), 'on', false ) . ' value="on" />
+                                        <label class="cozmoslabs-toggle-track" for="' . esc_attr( $id ) . '">' . esc_html( $desc ) . '</label>
+                                    </div>
+                                    ';
 						break;
 						// select
 						case 'select':
@@ -384,7 +388,7 @@ class PB_Mustache_Generate_Admin_Box{
 						break;
 						// text
 						case 'header':
-							echo '<h4>'. esc_html( $default ) .'</h4>';
+							echo '<h4 class="cozmoslabs-description">'. esc_html( $default ) .'</h4>';
 						break;
 					} //end switch
 

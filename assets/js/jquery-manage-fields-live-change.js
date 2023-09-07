@@ -637,7 +637,7 @@ function wppb_hide_properties_for_already_added_fields( container_name ){
 
 function wppb_hide_all ( container_name ){
 	jQuery( container_name + ' ' + '.mb-list-entry-fields > li' ).each(function() {
-		if ( !( ( jQuery(this).hasClass('row-field') ) || ( jQuery(this).children().hasClass('button-primary') ) ) ){
+		if ( !( ( jQuery(this).hasClass('row-field') ) || ( jQuery(this).children().hasClass('button-primary') ) ) || jQuery(this).hasClass('row-rpf-button') ){
 			jQuery(this).hide();
 		}
 	});
@@ -917,7 +917,7 @@ jQuery(function(){
 		remake: function ($field) {
 			var $rows = $field.children('.wck-checkboxes');
 			if (!$rows.length) {
-				$field.prepend('<div class="wck-checkboxes"> </div>');
+				$field.prepend('<div class="wck-checkboxes cozmoslabs-checkbox-list"> </div>');
 				var $rows = $field.children('.wck-checkboxes');
 			}
 			if ($rows.length) {
@@ -933,7 +933,7 @@ jQuery(function(){
 				$ddwn.on('change', function() {
 					var val = $(this).val();
 					if ('' !== val) {
-						$rows.append('<div><label><input type="checkbox" name="' + $(this).data('list') + '" id="' + $(this).data('list') + '_' + val + '" value="' + val + '" checked="checked" class="mb-checkbox mb-field">' + $(this).children('option').filter(':selected').text() + '</label></div>');
+						$rows.append('<div class="cozmoslabs-chckbox-container"><input type="checkbox" name="' + $(this).data('list') + '" id="' + $(this).data('list') + '_' + val + '" value="' + val + '" checked="checked" class="mb-checkbox mb-field"><label for="' + $(this).data('list') + '_' + val + '">' + $(this).children('option').filter(':selected').text() + '</label></div>');
 						$(this).children('option').filter(':selected').remove();
 						SortSelCheck.sortable($rows);
 					}

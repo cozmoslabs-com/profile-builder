@@ -6,7 +6,7 @@ function wppb_signup_schema( $oldVal, $newVal ){
 	// Declare these as global in case schema.php is included from a function.
 	global $wpdb, $wp_queries, $charset_collate;
 
-	if ($newVal['emailConfirmation'] == 'yes'){
+	if ( !empty( $wppb_general_settings['emailConfirmation'] ) && $newVal['emailConfirmation'] == 'yes'){
 
 		//The database character collate.
 		$charset_collate = '';

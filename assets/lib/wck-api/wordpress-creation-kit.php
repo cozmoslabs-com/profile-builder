@@ -234,12 +234,17 @@ class Wordpress_Creation_Kit_PB{
         else
             $single_prefix = '';
 
-        $element .= '<label for="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'],  $details ) ) .'" class="field-label">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), ucfirst($details['title']) ) .':';
+        $context_slug = !empty($context) ? $context . '_' : '';
+        $label_for = $context_slug . $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'],  $details ) );
+        if ( $details['type'] === 'checkbox' && !empty( $details['options'] ) && count( $details['options'] ) == 1 ) {
+            $label_for = $label_for . '_yes';
+        }
+
+        $element .= '<label class="cozmoslabs-form-field-label" for="'. $label_for .'" class="field-label">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), ucfirst($details['title']) );
         if( !empty( $details['required'] ) && $details['required'] )
 			$element .= '<span class="required">*</span>';
 		$element .= '</label>';
 
-		$element .= '<div class="mb-right-column">';
 
 		// Allow for appeding custom markup before the element.
 		$element .= apply_filters( 'wck_output_form_field_before_customtype_' . $details['type'], '', $value, $details, $single_prefix );
@@ -272,11 +277,9 @@ class Wordpress_Creation_Kit_PB{
 		// Allow for appeding custom markup after the element.
 		$element .= apply_filters( 'wck_output_form_field_after_customtype_' . $details['type'], '', $value, $details, $single_prefix );
 
-		if( !empty( $details['description'] ) ){
-			$element .= '<p class="description">'. $details['description'].'</p>';
-		}
-
-		$element .= '</div><!-- .mb-right-column -->';
+        if( !empty( $details['description'] ) ){
+            $element .= '<p class="cozmoslabs-description cozmoslabs-description-space-left">'. $details['description'].'</p>';
+        }
 
 		$element = apply_filters( "wck_output_form_field_{$meta}_" . Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), $element );
 
@@ -331,8 +334,18 @@ class Wordpress_Creation_Kit_PB{
                             if (isset($results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'], $details )]))
                                 $value = $results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'], $details )];
                         }
+
+                        $extra_class = '';
+                        if ( $details['type'] === 'checkbox' && !empty( $details['options'] ) ) {
+                            $number_of_options = count( $details['options'] );
+
+                            if ( $number_of_options == 1 )
+                                $extra_class .= ' cozmoslabs-toggle-switch';
+                            elseif ( $number_of_options > 1 )
+                                $extra_class .= ' cozmoslabs-checkbox-list-wrapper';
+                        }
                         ?>
-							<li class="row-<?php echo esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) ?>">
+							<li class="row-<?php echo esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) ?> cozmoslabs-form-field-wrapper <?php echo esc_html( apply_filters( 'wck_form_field_wrapper_extra_classes', $extra_class ) ) ?>">
                                 <?php echo self::wck_output_form_field( $meta, $details, $value, $context, $post_id ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</li>
 						<?php
@@ -344,7 +357,7 @@ class Wordpress_Creation_Kit_PB{
 				}
 				?>
                 <?php if( ! $this->args['single'] || $this->args['context'] == 'option' ){ ?>
-                    <li style="overflow:visible;" class="add-entry-button">
+                    <li class="add-entry-button cozmoslabs-button-group">
                         <a href="javascript:void(0)" class="button-primary" onclick="addMeta('<?php echo esc_js($meta); ?>', '<?php echo esc_js( $post_id ); ?>', '<?php echo esc_js($nonce); ?>')"><span><?php if( $this->args['single'] ) echo esc_html( apply_filters( 'wck_add_entry_button', __( 'Save', 'profile-builder' ), $meta, $post ) ); else echo esc_html( apply_filters( 'wck_add_entry_button', __( 'Add Entry', 'profile-builder' ), $meta, $post ) ); ?></span></a>
                     </li>
                 <?php }elseif($this->args['single'] && $this->args['context'] == 'post_meta' ){ ?>
@@ -393,11 +406,21 @@ class Wordpress_Creation_Kit_PB{
 					else
 						$value = '';
 
+                    $extra_class = '';
+                    if ( $details['type'] === 'checkbox' && !empty( $details['options'] ) ) {
+                        $number_of_options = count( $details['options'] );
+
+                        if ( $number_of_options == 1 )
+                            $extra_class = 'cozmoslabs-toggle-switch';
+                        elseif ( $number_of_options > 1 )
+                            $extra_class = 'cozmoslabs-checkbox-list-wrapper';
+                    }
+
 					$form = apply_filters( "wck_before_update_form_{$meta}_element_{$i}", $form, $element_id, $value );
 
-					$form .= '<li class="row-'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'">';
+					$form .= '<li class="row-'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .' cozmoslabs-form-field-wrapper '. apply_filters( 'wck_form_field_wrapper_extra_classes', $extra_class) .'">';
 
-					$form .= self::wck_output_form_field( $meta, $details, $value, 'edit_form', $id );
+					$form .= self::wck_output_form_field( $meta, $details, $value, 'edit_form', $id ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 					$form .= '</li>';
 
@@ -406,9 +429,9 @@ class Wordpress_Creation_Kit_PB{
 					$i++;
 				}
 			}
-			$form .= '<li style="overflow:visible;">';
+			$form .= '<li class="cozmoslabs-button-group">';
 			$form .= '<a href="javascript:void(0)" class="button-primary" onclick=\'updateMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($update_nonce).'")\'><span>'. apply_filters( 'wck_save_changes_button', __( 'Save Changes', 'profile-builder' ), $meta ) .'</span></a>';
-			$form .= '<a href="javascript:void(0)" class="button-secondary" style="margin-left:10px;" onclick=\'removeUpdateForm("'. esc_js( 'update_container_'.$meta.'_'.$element_id ). '" )\'><span>'. apply_filters( 'wck_cancel_button', __(   'Cancel', 'profile-builder' ), $meta ) .'</span></a>';
+			$form .= '<a href="javascript:void(0)" class="button button-secondary" style="margin-left:10px;" onclick=\'removeUpdateForm("'. esc_js( 'update_container_'.$meta.'_'.$element_id ). '" )\'><span>'. apply_filters( 'wck_cancel_button', __(   'Cancel', 'profile-builder' ), $meta ) .'</span></a>';
 			$form .= '</li>';
 
 			$form .= '</ul>';
@@ -550,7 +573,7 @@ class Wordpress_Creation_Kit_PB{
 		}
 
 		$list .= '</td>';
-		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'profile-builder' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','profile-builder'), $meta ) .'</a></td>';
+		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'profile-builder' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','profile-builder'), $meta ) .'</a></td>';
 		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'profile-builder' ) .'">'. apply_filters( 'wck_delete_button', __( 'Delete', 'profile-builder' ), $meta) .'</a></td>';
 		$list .= apply_filters( 'wck_add_content_after_columns', '', $list, $meta );
 
@@ -1562,7 +1585,7 @@ class WCK_Page_Creator_PB{
 	 */
 	function wck_page_template(){
 		?>
-		<div class="wrap">
+		<div class="wrap cozmoslabs-wrap">
 
 			<?php if( !empty( $this->args['page_icon'] ) ): ?>
 			<div id="<?php echo esc_attr( $this->args['menu_slug'] );//phpcs:ignore ?>-icon" style="background: url('<?php echo $this->args['page_icon']; ?>') no-repeat;" class="icon32">
@@ -1570,7 +1593,18 @@ class WCK_Page_Creator_PB{
 			</div>
 			<?php endif; ?>
 
-			<h2><?php echo esc_html( $this->args['page_title'] ) ?></h2>
+            <h1></h1>
+            <!-- WordPress Notices are added after the h1 tag -->
+
+            <div class="cozmoslabs-page-header">
+                <div class="cozmoslabs-section-title">
+
+                    <h2 class="cozmoslabs-page-title">
+                        <?php echo esc_html( $this->args['page_title'] ) ?>
+                    </h2>
+
+                </div>
+            </div>
 
 			<div id="poststuff">
 
@@ -1580,7 +1614,7 @@ class WCK_Page_Creator_PB{
 				<?php do_action( 'wck_before_meta_boxes', $this->hookname ); ?>
 
 				<div class="metabox-holder">
-					<div class="wck-post-body">
+					<div class="wck-post-body <?php echo ( $this->hookname === 'profile-builder_page_user-email-customizer' || $this->hookname === 'profile-builder_page_admin-email-customizer' ) ? 'cozmoslabs-email-customizer-section' : '' ?>">
 						<div class="post-box-container column-1 normal">
 							<?php do_action( 'wck_before_column1_metabox_content', $this->hookname ); ?>
 							<?php do_meta_boxes( $this->hookname, 'normal', null ); ?>

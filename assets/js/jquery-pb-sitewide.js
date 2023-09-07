@@ -16,10 +16,12 @@ function setShortcodeInputWidth( $inputField ) {
     tempSpan.className = "wppb-shortcode-temp";
     tempSpan.innerHTML = $inputField.val();
     document.body.appendChild(tempSpan);
-    var tempWidth = tempSpan.scrollWidth;
+
+    var tempWidth = jQuery(tempSpan).outerWidth();
+
     document.body.removeChild(tempSpan);
 
-    $inputField.outerWidth( tempWidth );
+    $inputField.outerWidth( tempWidth + 18 );
 }
 
 jQuery( document ).ready( function() {
@@ -66,7 +68,7 @@ jQuery( function(){
 jQuery( function(){
     jQuery( '#wppb-rf-settings-args').on('change', '#redirect', function(){
         if( jQuery(this).val() == 'Yes' ){
-            jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).show();
+            jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).css('display', 'flex');
         }
         else{
             jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).hide();
@@ -75,7 +77,7 @@ jQuery( function(){
 
     jQuery( '#wppb-epf-settings-args').on('change', '#redirect', function(){
         if( jQuery(this).val() == 'Yes' ){
-            jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).show();
+            jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).css('display', 'flex');
         }
         else{
             jQuery( '.row-url, .row-display-messages', jQuery(this).parent().parent().parent()).hide();
@@ -84,7 +86,11 @@ jQuery( function(){
 
 
     jQuery( '#wppb-ul-settings-args').on('click', '#visible-only-to-logged-in-users_yes', function(){
-        jQuery( '.row-visible-to-following-roles', jQuery(this).parent().parent().parent().parent().parent().parent()).toggle();
+
+        if (jQuery(this).is(':checked')) {
+            jQuery( '.row-visible-to-following-roles').css('display', 'flex');
+        }
+        else jQuery( '.row-visible-to-following-roles').css('display', 'none');
     });
 
     jQuery( '#wppb-ul-faceted-args').on('change', '#facet-type', function(){
@@ -198,39 +204,38 @@ jQuery( function() {
 
         wppbSelect2.call( jQuery('#toolbox-restricted-emails'), {
             tags: true,
-            width: '100%'
         });
 
         jQuery('.wppb-toolbox-switch').on('click', function () {
             if (jQuery(this).prop('checked'))
-                jQuery('.wppb-toolbox-accordion').show();
+                jQuery('.wppb-toolbox-accordion').css('display','flex');
             else
                 jQuery('.wppb-toolbox-accordion').hide();
         });
 
-        jQuery('#wppb-toolbox-send-credentials-hide').on('click', function () {
+        jQuery('#toolbox-send-credentials-hide').on('click', function () {
             if (jQuery(this).prop('checked'))
-                jQuery('#toolbox-send-credentials-text').parent().hide();
+                jQuery('#wppb-toolbox-send-credentials-text').hide();
             else
-                jQuery('#toolbox-send-credentials-text').parent().show();
+                jQuery('#wppb-toolbox-send-credentials-text').css('display','flex');
         });
 
-        jQuery('#wppb-toolbox-redirect-users-hide').on('click', function () {
+        jQuery('#toolbox-redirect-if-empty-required').on('click', function () {
             if (jQuery(this).prop('checked'))
-                jQuery('#toolbox-redirect-users-url').parent().show();
+                jQuery('#wppb-toolbox-redirect-if-empty-required-url').css('display','flex');
             else
-                jQuery('#toolbox-redirect-users-url').parent().hide();
+                jQuery('#wppb-toolbox-redirect-if-empty-required-url').hide();
         });
 
 
         if (jQuery('.wppb-toolbox-switch').prop('checked'))
-            jQuery('.wppb-toolbox-accordion').show();
+            jQuery('.wppb-toolbox-accordion').css('display','flex');
 
-        if (jQuery('#wppb-toolbox-send-credentials-hide').prop('checked'))
-            jQuery('#toolbox-send-credentials-text').parent().hide();
+        if (jQuery('#toolbox-send-credentials-hide').prop('checked'))
+            jQuery('#wppb-toolbox-send-credentials-text').hide();
 
-        if (jQuery('#wppb-toolbox-redirect-users-hide').prop('checked'))
-            jQuery('#toolbox-redirect-users-url').parent().show();
+        if (jQuery('#toolbox-redirect-if-empty-required').prop('checked'))
+            jQuery('#wppb-toolbox-redirect-if-empty-required-url').css('display','flex');
     }
 });
 
@@ -245,67 +250,79 @@ jQuery(document).on('select2:open', function() {
  * */
 jQuery(document).ready( function () {
     // email customizer
-    jQuery('.wp-admin.profile-builder_page_user-email-customizer .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-email-customizer/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
-    jQuery('.wp-admin.profile-builder_page_admin-email-customizer .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/admin-email-customizer/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_user-email-customizer .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-email-customizer/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_admin-email-customizer .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/admin-email-customizer/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 
     // roles editor
-    jQuery('.wp-admin.post-type-wppb-roles-editor .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/general-settings/roles-editor/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.post-type-wppb-roles-editor .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/general-settings/roles-editor/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 
     // manage form fields
-    jQuery('.wp-admin.profile-builder_page_manage-fields .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/manage-user-fields/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_manage-fields .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
     jQuery('html').on('wpbFormMetaLoaded', function() {
         // conditional logic
-        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-conditional-logic-enabled .mb-right-column label').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/manage-user-fields/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Conditional_Logic" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
+        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-conditional-logic-enabled .mb-right-column label').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Conditional_Logic" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
         // visibility
-        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-visibility .mb-right-column').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
+        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-visibility .mb-right-column').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
         // user role visibility
-        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-user-role-visibility .mb-right-column .wck-checkboxes').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Role_Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-user-role-visibility .mb-right-column .wck-checkboxes').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Role_Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
         // location visibility
-        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-location-visibility .mb-right-column .wck-checkboxes').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Location_Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-location-visibility .mb-right-column .wck-checkboxes').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/field-visibility/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Location_Visibility" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
         // admin approval
-        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-edit-profile-approved-by-admin .mb-right-column .wck-checkboxes label').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/edit-profile-approved-by-admin/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
+        jQuery('.wp-admin.profile-builder_page_manage-fields .update_container_wppb_manage_fields ul.mb-list-entry-fields li.row-edit-profile-approved-by-admin .mb-right-column .wck-checkboxes label').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/edit-profile-approved-by-admin/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 10px"></a>');
     });
 
     // register forms
-    jQuery('.wp-admin.post-type-wppb-rf-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/multiple-registration-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.post-type-wppb-rf-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/multiple-registration-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 
     // edit profile forms
-    jQuery('.wp-admin.post-type-wppb-epf-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/multiple-edit-profile-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.post-type-wppb-epf-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/multiple-edit-profile-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 
     // user-listing
-    jQuery('.wp-admin.post-type-wppb-ul-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt .wrap h1.wp-heading-inline').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
     // ul settings
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_page_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Listing_Settings" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_page_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Listing_Settings" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // ul faceted menus
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_faceted_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Faceted_Menus" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_faceted_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Faceted_Menus" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // ul search settings
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_search_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Search_Settings" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb_ul_search_settings').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Search_Settings" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // ul themes
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-ul-themes-settings .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Themes" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-ul-themes-settings .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Themes" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // ul all users template
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-ul-templates .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#The_All-Userlisting_Template" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-ul-templates .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#The_All-Userlisting_Template" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // ul single user template
-    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-single-ul-templates .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#The_Single-Userlisting_Template" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.post-type-wppb-ul-cpt #wppb-single-ul-templates .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/user-listing/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#The_Single-Userlisting_Template" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
 
     // custom redirects
-    jQuery('.wp-admin.profile-builder_page_custom-redirects .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_custom-redirects .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
     // cr individual user
-    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_user .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Individual_User_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_user .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Individual_User_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // cr user role based
-    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_role .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Role_based_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_role .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#User_Role_based_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // cr global
-    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_global .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Global_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_global .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Global_Redirects" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
     // cr default wp pages
-    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_default_wp_pages .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Redirect_Default_WordPress_Forms_and_Pages" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.profile-builder_page_custom-redirects #wppb_custom_redirects_default_wp_pages .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Redirect_Default_WordPress_Forms_and_Pages" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
 
     // social connect
-    jQuery('.wp-admin.profile-builder_page_wppb-social-connect .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/social-connect/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_wppb-social-connect .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/social-connect/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 
     // multi-step forms
-    jQuery('.wp-admin.profile-builder_page_manage-fields #wppb-msf-side .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/multi-step-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+    jQuery('.wp-admin.profile-builder_page_manage-fields #wppb-msf-side .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/multi-step-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
 
     // labels edit
-    jQuery('.wp-admin.profile-builder_page_pb-labels-edit .wrap > h2').append('<a href="https://www.cozmoslabs.com/docs/profile-builder-2/add-ons/labels-edit/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+    jQuery('.wp-admin.profile-builder_page_pb-labels-edit .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/labels-edit/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
+});
+
+
+/**
+ * Initialize Select2
+ *
+ * */
+jQuery(document).ready(function() {
+
+    if (typeof jQuery.fn.select2 === 'function')
+        jQuery('.wppb-select2').select2();
+
 });
 
 
@@ -319,25 +336,6 @@ jQuery(document).ready( function () {
  * */
 
 jQuery( document ).ready(function(){
-
-    // Activate Design
-    jQuery('.wppb-forms-design-activate button.activate').click(function ( element ) {
-        let themeID, i, allDesigns;
-
-        themeID = jQuery(element.target).data('theme-id');
-
-        jQuery('#wppb-active-form-design').val(themeID);
-
-        allDesigns = jQuery('.wppb-forms-design');
-        for (i = 0; i < allDesigns.length; i++) {
-            if ( jQuery(allDesigns[i]).hasClass('active')) {
-                jQuery('.wppb-forms-design-title strong', allDesigns[i] ).hide();
-                jQuery(allDesigns[i]).removeClass('active');
-            }
-        }
-        jQuery('#wppb-forms-design-browser .wppb-forms-design#'+themeID).addClass('active');
-
-    });
 
     jQuery('.wppb-forms-design-preview').click(function (e) {
         let themeID = e.target.id.replace('-info', '');
@@ -410,4 +408,73 @@ function previousSlideshowImage( currentSlide, themeID ){
             jQuery('#modal-' + themeID + ' .wppb-forms-design-sildeshow-previous').addClass('disabled');
 
     }
+}
+
+
+/**
+ * Hide/Show Roles Selector
+ *
+ * */
+jQuery(document).ready(function() {
+    let input = jQuery('input#wppb-auth-enable'),
+        rolesSelector = jQuery('#wppb-auth-roles-selector');
+
+    input.click(function (e) {
+        rolesSelector.toggle();
+    });
+
+});
+
+
+/**
+ * Set Edit View wrap width for: Register Form, Edit Profile Form & User-Listing
+ *
+ * */
+jQuery(document).ready(function() {
+    if (jQuery('#wppb-rf-settings-args').length > 0) {
+        jQuery('body.post-type-wppb-rf-cpt #wpbody-content > .wrap').css({
+            "max-width" : "1200px",
+            "margin" : "0 auto",
+        });
+    }
+
+    if (jQuery('#wppb-epf-settings-args').length > 0) {
+        jQuery('body.post-type-wppb-epf-cpt #wpbody-content > .wrap').css({
+            "max-width" : "1200px",
+            "margin" : "0 auto",
+        });
+    }
+
+    if (jQuery('#wppb-ul-settings-args').length > 0) {
+        jQuery('body.post-type-wppb-ul-cpt #wpbody-content > .wrap').css({
+            "max-width" : "1200px",
+            "margin" : "0 auto",
+        });
+    }
+});
+
+
+
+/**
+ * Reposition the Update/Publish button/section on scroll in Admin Dashboard --> PB CPTs
+ */
+jQuery( function() {
+    if(jQuery('body').is('[class*="post-type-wppb"]') && jQuery('#side-sortables #submitdiv').length > 0 )
+        wppbRepositionUpdateButton();
+});
+
+function wppbRepositionUpdateButton() {
+    let elementOffset = jQuery('#side-sortables').offset().top,
+        mobileScreen  = window.matchMedia("(max-width: 850px)"),
+        breakPoint    = 0;
+
+    if (mobileScreen.matches)
+        breakPoint = elementOffset + 115; // 115px buttons container height
+    else breakPoint = elementOffset - 32; // 32px admin bar height
+
+    jQuery(window).on('scroll', function() {
+        if ( jQuery(window).scrollTop() >= (breakPoint) )
+            jQuery('#side-sortables').addClass('cozmoslabs-publish-metabox-fixed');
+        else jQuery('#side-sortables').removeClass('cozmoslabs-publish-metabox-fixed');
+    });
 }

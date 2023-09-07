@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function wppb_register_settings() {
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
 	register_setting( 'wppb_general_settings', 'wppb_general_settings', 'wppb_general_settings_sanitize' );
-	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
+//	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
 	register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
 	register_setting( 'wppb_profile_builder_hobbyist_serial', 'wppb_profile_builder_hobbyist_serial' );
 	register_setting( 'wppb_module_settings', 'wppb_module_settings' );
@@ -73,24 +73,24 @@ function wppb_add_plugin_stylesheet() {
 
 
 function wppb_show_admin_bar($content){
-	global $current_user;
+    global $current_user;
 
-	$adminSettingsPresent = get_option('wppb_display_admin_settings','not_found');
-	$show = null;
+    $general_settings = get_option( 'wppb_general_settings' );
+    $selected_roles = isset( $general_settings['hide_admin_bar_for'] ) ? $general_settings['hide_admin_bar_for'] : '';
 
-	if ($adminSettingsPresent != 'not_found' && $current_user->ID)
-		foreach ($current_user->roles as $role_key) {
-			if (empty($GLOBALS['wp_roles']->roles[$role_key]))
-				continue;
-			$role = $GLOBALS['wp_roles']->roles[$role_key];
-			if (isset($adminSettingsPresent[$role['name']])) {
-				if ($adminSettingsPresent[$role['name']] == 'show')
-					$show = true;
-				if ($adminSettingsPresent[$role['name']] == 'hide' && $show === null)
-					$show = false;
-			}
-		}
-	return $show === null ? $content : $show;
+    $show = null;
+
+    if ( $general_settings != 'not_found' && $current_user->ID && !empty( $selected_roles ) )
+        foreach ( $current_user->roles as $role_key ) {
+            if ( empty( $GLOBALS['wp_roles']->roles[$role_key] ) )
+                continue;
+            $role = $GLOBALS['wp_roles']->roles[$role_key];
+
+            if ( !empty( $selected_roles ) && in_array( $role['name'], $selected_roles ) && $show === null )
+                $show = false;
+
+        }
+    return $show === null ? $content : $show;
 }
 
 
@@ -408,12 +408,17 @@ function wppb_print_cpt_script( $hook ){
 
 		if ( ( 'wppb-epf-cpt' == $post_type ) || ( 'wppb-rf-cpt' == $post_type ) || ( 'wppb-ul-cpt' == $post_type ) ){
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
-			wp_enqueue_script( 'wppb-epf-rf', WPPB_PLUGIN_URL . 'assets/js/jquery-epf-rf.js', array(), PROFILE_BUILDER_VERSION, true );
+            wp_enqueue_script( 'wppb-epf-rf', WPPB_PLUGIN_URL . 'assets/js/jquery-epf-rf.js', array(), PROFILE_BUILDER_VERSION, true );
 		}
 		else if( 'wppb-roles-editor' == $post_type ){
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', array(), PROFILE_BUILDER_VERSION );
 		}
 	}
+    else if ( isset( $_GET['page'] ) ) {
+        wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', array(), PROFILE_BUILDER_VERSION );
+    }
+
+
 
     wp_enqueue_script( 'wppb-sitewide', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-sitewide.js', array(), PROFILE_BUILDER_VERSION, true );
 
@@ -1451,7 +1456,7 @@ add_action( 'login_init', 'wppb_private_website_functionality', 1 );
 function wppb_private_website_functionality(){
 	$wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
 	if( $wppb_private_website_settings != 'not_found' ){
-		if( $wppb_private_website_settings['private_website'] == 'yes' ){
+		if( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ){
 			if( !is_user_logged_in() ){
 
 				if(is_404())
@@ -1537,10 +1542,10 @@ add_filter( 'body_class', 'wppb_private_website_body_classes' );
 function wppb_private_website_body_classes( $classes ){
     $wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
     if( $wppb_private_website_settings != 'not_found' ) {
-        if ($wppb_private_website_settings['private_website'] == 'yes') {
+        if ( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ) {
             if (!is_user_logged_in()) {
                 $classes[] = 'wppb-private-website';
-                if ($wppb_private_website_settings['hide_menus'] == 'yes') {
+                if ( !empty( $wppb_private_website_settings['hide_menus'] ) && $wppb_private_website_settings['hide_menus'] == 'yes' ) {
                     $classes[] = 'wppb-private-website-hide-menus';
                 }
             }
@@ -1564,7 +1569,7 @@ add_action('do_feed_atom_comments', 'wppb_disable_feed', 1);
 function wppb_disable_feed() {
 	$wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
 	if( $wppb_private_website_settings != 'not_found' ) {
-		if ($wppb_private_website_settings['private_website'] == 'yes') {
+		if ( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ) {
 			if (!is_user_logged_in()) {
 				wp_die( wp_kses_post( sprintf( __('No feed available,please visit our <a href="%s">homepage</a>!', 'profile-builder' ), get_bloginfo('url') ) ) );
 			}
@@ -1581,8 +1586,8 @@ add_filter('rest_jsonp_enabled', 'wppb_disable_rest');
 function wppb_disable_rest( $bool ){
 	$wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
 	if( $wppb_private_website_settings != 'not_found' ) {
-		if ($wppb_private_website_settings['private_website'] == 'yes') {
-		    if ( isset( $wppb_private_website_settings[ 'disable_rest_api' ] ) && $wppb_private_website_settings[ 'disable_rest_api' ] == 'no' ) {
+		if ( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ) {
+		    if ( !isset( $wppb_private_website_settings[ 'disable_rest_api' ] ) || $wppb_private_website_settings[ 'disable_rest_api' ] !== 'yes' ) {
 		        return $bool;
             }
 			if (!is_user_logged_in()) {
@@ -1602,8 +1607,8 @@ function wppb_disable_rest_api_authentication($result) {
 
     $wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
     if( $wppb_private_website_settings != 'not_found' ) {
-        if ($wppb_private_website_settings['private_website'] == 'yes') {
-            if ( isset( $wppb_private_website_settings[ 'disable_rest_api' ] ) && $wppb_private_website_settings[ 'disable_rest_api' ] == 'no' ) {
+        if ( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ) {
+            if ( !isset( $wppb_private_website_settings[ 'disable_rest_api' ] ) || $wppb_private_website_settings[ 'disable_rest_api' ] !== 'yes' ) {
                 return $result;
             }
             if (!is_user_logged_in() && isset( $_SERVER['REQUEST_URI'] ) && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token" && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token/validate") {
@@ -1623,7 +1628,7 @@ add_filter('wp_page_menu', 'wppb_hide_menus');
 function wppb_hide_menus( $menu ){
 	$wppb_private_website_settings = get_option( 'wppb_private_website_settings', 'not_found' );
 	if( $wppb_private_website_settings != 'not_found' ) {
-		if ($wppb_private_website_settings['private_website'] == 'yes') {
+		if ( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ) {
 			if ( !is_user_logged_in() && ( !empty($wppb_private_website_settings['hide_menus']) &&  $wppb_private_website_settings['hide_menus'] == 'yes' ) ) {
 				return '';
 			}

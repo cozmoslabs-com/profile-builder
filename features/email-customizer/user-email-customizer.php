@@ -333,7 +333,7 @@ function wppb_user_email_customizer_add_mustache_in_backend(){
         )
     );
 
-    new PB_Mustache_Generate_Admin_Box( 'uec_change_email_request', __( 'Change Email Address Request Notification', 'profile-builder' ), 'profile-builder_page_user-email-customizer', 'core', $mustache_vars, '', $fields );
+    new PB_Mustache_Generate_Admin_Box( 'uec_change_email_request', __( 'Change Email Address Request Email', 'profile-builder' ), 'profile-builder_page_user-email-customizer', 'core', $mustache_vars, '', $fields );
 
     /*
     * Change Email Address Notification

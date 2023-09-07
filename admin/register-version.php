@@ -1,20 +1,14 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
- * Function that creates the "Register your version" submenu page
+ * Function that creates the "Register your version" submenu page for Multisite Environment
  *
  * @since v.2.0
  *
  * @return void
  */
-
-if( !is_multisite() ){
-    function wppb_register_your_version_submenu_page(){
-        if ( PROFILE_BUILDER != 'Profile Builder Free' )
-            add_submenu_page('profile-builder', __('Register Your Version', 'profile-builder'), __('Register Version', 'profile-builder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content');
-    }
-    add_action('admin_menu', 'wppb_register_your_version_submenu_page', 29);
-} else {
+if( is_multisite() ) {
     function wppb_multisite_register_your_version_page() {
         if ( PROFILE_BUILDER != 'Profile Builder Free' )
             add_menu_page(__('Profile Builder Register', 'profile-builder'), __('Profile Builder Register', 'profile-builder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content', WPPB_PLUGIN_URL . 'assets/images/pb-menu-icon.png');
@@ -35,11 +29,12 @@ function wppb_register_your_version_content() {
     <div class="wrap wppb-wrap">
         <?php wppb_serial_form(); ?>
     </div>
-<?php
+    <?php
 }
 
+
 /**
- * Function that creates the "Register your version" form 
+ * Function that creates the "Register your version" form
  *
  * @since v.2.0
  *
@@ -52,32 +47,24 @@ function wppb_serial_form(){
     <div id="wppb-register-version-page" class="wrap">
         <h2>
             <?php esc_html_e( "Register your version of Profile Builder", 'profile-builder' ); ?>
-            <a href="https://www.cozmoslabs.com/docs/profile-builder-2/basic-information-installation/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Register_your_version" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+            <a href="https://www.cozmoslabs.com/docs/profile-builder/basic-information-installation/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Register_your_version" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
         </h2>
-
         <p><?php esc_html_e( 'Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received.', 'profile-builder' ) ?></p>
-
         <p><?php esc_html_e( 'If you register this version of Profile Builder, you\'ll receive information regarding upgrades, patches, and technical support.', 'profile-builder' ) ?></p>
-
         <div class="wppb-serial-wrap">
             <form method="post" action="<?php echo !is_multisite() ? 'options.php' : 'edit.php'; ?>">
                 <?php settings_fields( 'wppb_license_key' ); ?>
-
                 <label for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>
-
                 <div class="wppb-serial-wrap__holder">
                     <input id="wppb_license_key" name="wppb_license_key" type="password" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
                     <?php wp_nonce_field( 'wppb_license_nonce', 'wppb_license_nonce' ); ?>
-
                     <?php if( $status !== false && $status == 'valid' ) {
                         $button_name =  'wppb_edd_license_deactivate';
                         $button_value = __('Deactivate License', 'profile-builder' );
-
                         if( empty( $details['invalid'] ) )
                             echo '<span title="'. esc_html__( 'Active on this site', 'profile-builder' ) .'" class="wppb-active-license dashicons dashicons-yes"></span>';
                         else
                             echo '<span title="'. esc_html__( 'Your license is invalid', 'profile-builder' ) .'" class="wppb-invalid-license dashicons dashicons-warning"></span>';
-
                     } else {
                         $button_name =  'wppb_edd_license_activate';
                         $button_value = __('Activate License', 'profile-builder');
@@ -88,9 +75,9 @@ function wppb_serial_form(){
             </form>
         </div>
     </div>
-
     <?php
 }
+
 
 /**
  * Retrieve saved license key
@@ -221,11 +208,11 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
     if( empty( $wppb_serial_number ) || $wppb_serial_status == 'missing' ) {
 
         if( !is_multisite() )
-            $register_url = 'admin.php?page=profile-builder-register';
+            $register_url = 'admin.php?page=profile-builder-general-settings';
         else
-            $register_url = network_admin_url( 'admin.php?page=profile-builder-register' );
+            $register_url = network_admin_url( 'admin.php?page=profile-builder-general-settings' );
 
-        new WPPB_add_notices( 'wppb', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder') . '</p>', "<a href='". esc_url( $register_url ) ."'>", "</a>", "<a href='https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_license_status' );
+        new WPPB_add_notices( 'wppb', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder') . '</p>', "<a href='". esc_url( $register_url ) ."'>", "</a>", "<a href='https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase#pricing' target='_blank' class='button-primary'>", "</a>" ), 'wppb_license_status' );
 
     }
     elseif ( $wppb_serial_status == 'expired' ){

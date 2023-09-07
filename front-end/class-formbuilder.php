@@ -646,7 +646,8 @@ class Profile_Builder_Form_Creator{
         }
 
 		/* filter so we can bypass Email Confirmation on register */
-		$wppb_general_settings['emailConfirmation'] = apply_filters( 'wppb_email_confirmation_on_register', $wppb_general_settings['emailConfirmation'], $global_request );
+        if ( isset( $wppb_general_settings['emailConfirmation'] ) )
+            $wppb_general_settings['emailConfirmation'] = apply_filters( 'wppb_email_confirmation_on_register', $wppb_general_settings['emailConfirmation'], $global_request );
 
         if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
             $new_user_signup = true;

@@ -240,13 +240,8 @@ class CL_Addons_List_Table extends WP_List_Table {
     function display_addons(){
         ?>
         <div class="wrap" id="cl-add-ons-listing">
-            <h1 class="cl-main-header"><?php echo esc_html( $this->header['title'] );?></h1>
 
             <form id="cl-addons" method="post">
-
-                <?php $this->show_search_box(); ?>
-
-                <?php $this->show_sumbit_button(); ?>
 
                 <?php
 
@@ -256,7 +251,6 @@ class CL_Addons_List_Table extends WP_List_Table {
                     }
                 }
                 ?>
-                <?php $this->show_sumbit_button(); ?>
 
                 <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                 <input type="hidden" name="cl_all_add_ons" value="<?php echo esc_attr( implode( '|' ,$this->all_addons ) ); ?>" />
