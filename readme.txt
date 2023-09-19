@@ -112,7 +112,7 @@ For more functionality check out [Profile Builder Add-ons page](https://www.cozm
 * [Custom Login Page Templates](https://www.cozmoslabs.com/add-ons/custom-login-page-templates/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - customize the default WordPress login page with your own design.
 * [Client Portal](https://www.cozmoslabs.com/add-ons/client-portal/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - create private pages for your website users that only an administrator can edit.
 * [Custom CSS Classes on Fields](https://www.cozmoslabs.com/add-ons/custom-css-classes-fields/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - add custom CSS classes for fields
-* [Import and Export](https://www.cozmoslabs.com/add-ons/import-and-export/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allows you to import and export all Profile Builder Settings data
+* [Import and Export](https://www.cozmoslabs.com/add-ons/import-export/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allows you to import and export all Profile Builder Settings data
 * [Passwordless Login](https://www.cozmoslabs.com/add-ons/passwordless-login/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allow your users to login without a password
 * [Maximum Character Length](https://www.cozmoslabs.com/add-ons/maximum-character-length/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - set a maximum character length for custom input or textarea fields
 * [Labels Edit](https://www.cozmoslabs.com/add-ons/labels-edit/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - easily edit all Profile Builder labels
