@@ -26,15 +26,15 @@ Elevate your user experience and boost sign-ups with beautiful GDPR-compliant re
 
 Personalize your website by incorporating front-end user login and user registration forms, providing users with a convenient way of signing up or accessing their profiles. 
 This is ideal for:
-* Online Communities & Associations
+* [Online Communities](https://www.cozmoslabs.com/256613-best-wordpress-community-plugins/) & Associations
 * Online Courses
 * News and Resource Websites
 
 == Modern and Elegant User Profiles, Listings, and Directories ==
 
 From creating user profiles and a member directory to listing job offers or your community services, Profile Builder gives you the tools you need to monitor your users, control how and where they log in, as well as implement security measures to protect all those involved. This is ideal for: 
-* Business Directory
-* Member Directory
+* [Business Directory](https://www.cozmoslabs.com/660412-wordpress-business-directory-plugin/)
+* [Member Directory](https://www.cozmoslabs.com/515090-wordpress-user-listing-2/)
 * Job Boards
 * Consultancy Services
 
