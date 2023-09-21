@@ -1,4 +1,4 @@
-=== User Profile Builder - Beautiful User Registration Forms & User Profiles ===
+=== User Profile Builder - Beautiful User Registration Forms, User Profile & User Role Editor ===
 Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
@@ -42,8 +42,8 @@ From creating user profiles and a member directory to listing job offers or your
 
 Take control of user access throughout your website, define users’ viewing permissions, and regulate their ability to purchase your products. You can do this based on user role or logged-in status, and you can also manage user roles and capabilities using the built-in role editor. This is ideal for:
 * Private Websites
-* Private Content
-* Private WooCommerce Stores
+* [Private Content](https://www.cozmoslabs.com/387767-wordpress-password-protect-post-content/)
+* [Private WooCommerce Stores](https://www.cozmoslabs.com/418232-woocommerce-private-store/)
 * Members-Only WooCommerce Stores
 
 
