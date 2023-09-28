@@ -1,4 +1,4 @@
-=== User Profile Builder - Beautiful User Registration Forms, User Profile & User Role Editor ===
+=== User Profile Builder - Beautiful User Registration Forms, User Profiles & User Role Editor ===
 Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
@@ -8,7 +8,7 @@ Stable tag: 3.9.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Powerful user profile plugin for creating front-end user registration forms, login and user profile forms. Includes content restriction and user role editor.
+Powerful user profile plugin for creating front-end user registration forms, login and user profile forms. Includes user role editor and content restriction.
 
 == Description ==
 
@@ -182,19 +182,20 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 1. User Registration Form Style preview
 2. Register Form - Front-end User Registration Page with Custom Fields
 3. Edit Profile Form Style Preview
-4. User Profile Form - Front-end User Profile Page with Custom User Fields
-5. Login Form - Front-end User Login Page
-6. Recover Password Page
-7. Basic Information page for Profile Builder, user registration plugin
-8. General Settings in Profile Builder user profile plugin
-9. Manage User Registration Form Fields (Add, Edit or Delete)
-10. Drag & Drop to Reorder User Profile Fields
-11. Content Restriction settings for User Profile Builder, user registration plugin
-12. Private website settings - restrict access to entire site
-13. User Profile Builder Advanced Settings 
-14. Settings for Customizing User Emails
-15. User Roles Editor - create custom user roles or edit existing roles and capabilities
-16. Edit or Add New User Role
+4. User Listing and Individual User Profile Page (available in Pro)
+5. Member Directory template with search and filtering options (available in Pro)
+6. Login Form - Front-end User Login Page
+7. Recover Password Page
+8. Basic Information page for Profile Builder, user registration plugin
+9. General Settings in Profile Builder user profile plugin
+10. Manage User Registration Form Fields (Add, Edit or Delete)
+11. Drag & Drop to Reorder User Profile Fields
+12. Content Restriction settings for User Profile Builder, user registration plugin
+13. Private website settings - restrict access to entire site
+14. User Profile Builder Advanced Settings 
+15. Settings for Customizing User Emails
+16. User Roles Editor - create custom user roles or edit existing roles and capabilities
+17. Edit or Add New User Role
 
 == Changelog ==
 = 3.9.9 =
