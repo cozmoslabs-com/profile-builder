@@ -3,7 +3,7 @@
 .wppb-user-forms #wppb-loginform .login-password label,
 .wppb-user-forms #wppb-loginform .wppb-recaptcha label,
 .wppb-form-field.pbpl-class label,
-.pms-field.pbpl-class label {
+.pms-field.pbpl-class:not(form[id^="pms"] .pms-field) label {
     text-indent: -99999px;
     position: absolute;
     left: -99999px;

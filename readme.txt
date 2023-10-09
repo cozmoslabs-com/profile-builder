@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.3
-Stable tag: 3.9.9
+Stable tag: 3.10.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,17 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.0 =
+* Feature: Content Restriction for Gutenberg Blocks. You can now restrict any block based on user roles
+* Fix: A notice appearing from the Email Confirmation functionality in some cases
+* Fix: Random fixes for the new settings pages design
+* Fix: A notice coming from the Capitalize First Last Name advanced setting
+* Fix: Warning messages coming with PHP 8.2
+* Fix: Correctly save GDPR checkbox value when Email Confirmation is used
+* Misc: Disabling the auto scroll of forms had unintended effects, the option now only disables the auto scroll functionality
+* Misc: Add a filter over the Content Restriction metabox so it can be used to select for who and where to show it
+* Misc: Allow admins on multi-site to view the User to Edit field from Edit Profile forms if their user role has the `remove_users` capability
+
 = 3.9.9 =
 * Updated back-end interfaces to a more modern style
 

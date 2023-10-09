@@ -14,13 +14,17 @@ function wppb_content_restriction_add_meta_box() {
 
     if( ! empty( $post_types ) ) {
         foreach( $post_types as $post_type ) {
-            add_meta_box(
-                'wppb_post_content_restriction',
-                __( 'Profile Builder Content Restriction', 'profile-builder' ),
-                'wppb_content_restriction_meta_box_output',
-                $post_type,
-                'normal'
-            );
+
+            if( apply_filters( 'wppb_content_restriction_enabled_for_post_type', true, $post_type ) ){
+                add_meta_box(
+                    'wppb_post_content_restriction',
+                    __( 'Profile Builder Content Restriction', 'profile-builder' ),
+                    'wppb_content_restriction_meta_box_output',
+                    $post_type,
+                    'normal'
+                );
+            }
+
         }
     }
 

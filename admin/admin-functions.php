@@ -383,8 +383,7 @@ function wppb_form_design_new_styles_notification() {
     else
         $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ), '<strong>', '</strong>', '<a href="'. get_site_url() .'/wp-admin/admin.php?page=profile-builder-general-settings#wppb-form_desings">', '</a>') . '</p>';
 
-
-    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo-free.png' )) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo-free.png' : '';
+    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' )) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
     $ul_icon = ( !empty($ul_icon_url)) ? '<img src="'. $ul_icon_url .'" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder - Form Designs">' : '';
 
     $message = $ul_icon;

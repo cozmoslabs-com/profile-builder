@@ -1,0 +1,27 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-wppb-content-restriction-start .wppb-content-restriction-start-container {
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px #1e1e1e;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  padding: 1em;
+  width: 100%;
+}
+.wp-block-wppb-content-restriction-start .wppb-content-restriction-start-container .wppb-content-restriction-start-logo {
+  height: 24px;
+  margin-left: 0;
+  margin-right: 12px;
+  width: 24px;
+}
+/*.wp-block-wppb-content-restriction-start .wppb-content-restriction-start-container .wppb-content-restriction-start-title {
+}*/

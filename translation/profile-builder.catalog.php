@@ -765,8 +765,11 @@
 <?php __("If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons.", "profile-builder"); ?>
 <?php __("Search Location", "profile-builder"); ?>
 <?php __("Paid Accounts", "profile-builder"); ?>
+<?php __("Users can pay for an account with", "profile-builder"); ?>
+<?php __("Profile Builder and Paid Member Subscriptions", "profile-builder"); ?>
 <?php __("Paid Member Subscriptions - a free WordPress plugin", "profile-builder"); ?>
 <?php __("With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to sign up for paid accounts.", "profile-builder"); ?>
+<?php __("Other features of Paid Member Subscriptions are:", "profile-builder"); ?>
 <?php __("Paid & Free Subscriptions", "profile-builder"); ?>
 <?php __("Restrict Content", "profile-builder"); ?>
 <?php __("Member Management", "profile-builder"); ?>
@@ -780,8 +783,8 @@
 <?php __("Plugin is Active", "profile-builder"); ?>
 <?php __("Plugin has been activated", "profile-builder"); ?>
 <?php __("Retry Install", "profile-builder"); ?>
-<?php __("Plugin is <strong>active</strong>", "profile-builder"); ?>
-<?php __("Plugin is <strong>inactive</strong>", "profile-builder"); ?>
+<?php __('Plugin is %1$s active %2$s', 'profile-builder' ); ?>
+<?php __('Plugin is %1$s inactive %2$s', 'profile-builder' ); ?>
 <?php __("Deactivate", "profile-builder"); ?>
 <?php __("Plugin has been deactivated.", "profile-builder"); ?>
 <?php __("Free", "profile-builder"); ?>
@@ -792,6 +795,15 @@
 <?php __("Compatible with your version of Profile Builder.", "profile-builder"); ?>
 <?php __("Could not install plugin. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>.", "profile-builder"); ?>
 <?php __("Step by Step Quick Setup", "profile-builder"); ?>
+<?php __("Setting up Paid Member Subscriptions opens the door to paid user accounts.", "profile-builder"); ?>
+<?php __("Create Subscription Plans", "profile-builder"); ?>
+<?php __("With Paid Member Subscriptions it’s fairly easy to create tiered subscription plans for your users.", "profile-builder"); ?>
+<?php __("Adding a new subscription gives you access to the following options to set up: subscription name, description, duration, the price, status and user role.", "profile-builder"); ?>
+<?php __("Add Subscriptions field to Profile Builder -> Manage Fields", "profile-builder"); ?>
+<?php __("The new Subscription Plans field will add a list of radio buttons with membership details to Profile Builder registration forms.", "profile-builder"); ?>
+<?php __("Start getting user payments", "profile-builder"); ?>
+<?php __("To finalize registration for a paid account, users will need to complete the payment.", "profile-builder"); ?>
+<?php __("Members created with Profile Builder registration form will have the user role of the selected subscription.", "profile-builder"); ?>
 <?php __('Allow your users to have <strong>paid accounts with Profile Builder</strong>. %1$sFind out how >%2$s %3$sDismiss%4$s', 'profile-builder' ); ?>
 <?php __("Private Website Settings", "profile-builder"); ?>
 <?php __("Activate Private Website. It will restrict the content, RSS and REST API for your website.", "profile-builder"); ?>
@@ -815,7 +827,7 @@
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
-<?php __("Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>", "profile-builder"); ?>
+<?php __("Your <strong>%s</strong> license has reached its activation limit.<br> Upgrade now for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>", "profile-builder"); ?>
 <?php __(' %1$sDismiss%2$s', 'profile-builder' ); ?>
 <?php __("Hello! Seems like you've been using Profile Builder to create front-end user forms. That's awesome!", "profile-builder"); ?>
 <?php __("If you can spare a few moments to rate it on WordPress.org, it would help us a lot (and boost my motivation).", "profile-builder"); ?>
@@ -1748,9 +1760,9 @@
 <?php __("Change client", "profile-builder"); ?>
 <?php __("No lists were found.", "profile-builder"); ?>
 <?php __("Click to edit", "profile-builder"); ?>
-<?php __("Field Associations:", "profile-builder"); ?>
+<?php __("Field Associations", "profile-builder"); ?>
 <?php __("Associate each Campaign Monitor field with a Profile Builder field", "profile-builder"); ?>
-<?php __("Extra Options:", "profile-builder"); ?>
+<?php __("Extra Options", "profile-builder"); ?>
 <?php __("Resubscribe", "profile-builder"); ?>
 <?php __("If the subscriber is in an inactive state or has previously been unsubscribed and you check the Resubscribe option, they will be re-added to the list. Therefore, this method should be used with caution and only where suitable.", "profile-builder"); ?>
 <?php __("Campaign Monitor API key is invalid", "profile-builder"); ?>
@@ -1788,12 +1800,10 @@
 <?php __("Either the API key is not valid or we could not connect to MailChimp to validate it!", "profile-builder"); ?>
 <?php __("Enter a MailChimp API key. You can create keys in your MailChimp account.", "profile-builder"); ?>
 <?php __("Edit this item", "profile-builder"); ?>
-<?php __("Field Associations", "profile-builder"); ?>
 <?php __("Associate each MailChimp field with a Profile Builder field", "profile-builder"); ?>
 <?php __("This field is required in MailChimp", "profile-builder"); ?>
 <?php __("Group Associations", "profile-builder"); ?>
 <?php __("Associate each MailChimp group with a Profile Builder field", "profile-builder"); ?>
-<?php __("Extra Options", "profile-builder"); ?>
 <?php __("Double Opt-In", "profile-builder"); ?>
 <?php __("Enable double opt-in.", "profile-builder"); ?>
 <?php __("If enabled, the user will receive an email to confirm the subscription.", "profile-builder"); ?>

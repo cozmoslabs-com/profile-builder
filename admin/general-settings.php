@@ -545,7 +545,7 @@ function wppb_display_form_designs_preview() {
         ),
         array(
             'id' => 'form-style-1',
-            'name' => 'Style 1',
+            'name' => 'Sublime',
             'images' => array(
                 'main' => WPPB_PLUGIN_URL.'assets/images/style1-slide1.jpg',
                 'slide1' => WPPB_PLUGIN_URL.'assets/images/style1-slide2.jpg',
@@ -554,7 +554,7 @@ function wppb_display_form_designs_preview() {
         ),
         array(
             'id' => 'form-style-2',
-            'name' => 'Style 2',
+            'name' => 'Greenery',
             'images' => array(
                 'main' => WPPB_PLUGIN_URL.'assets/images/style2-slide1.jpg',
                 'slide1' => WPPB_PLUGIN_URL.'assets/images/style2-slide2.jpg',
@@ -563,7 +563,7 @@ function wppb_display_form_designs_preview() {
         ),
         array(
             'id' => 'form-style-3',
-            'name' => 'Style 3',
+            'name' => 'Slim',
             'images' => array(
                 'main' => WPPB_PLUGIN_URL.'assets/images/style3-slide1.jpg',
                 'slide1' => WPPB_PLUGIN_URL.'assets/images/style3-slide2.jpg',

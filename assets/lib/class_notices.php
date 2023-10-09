@@ -115,7 +115,7 @@ Class WPPB_Plugin_Notifications {
     function remove_other_plugin_notices(){
 
         //remove all notifications from start page
-        if( isset( $_GET['page'] ) && ( $_GET['page'] == 'profile-builder-basic-info' || ( $_GET['page'] == 'profile-builder-add-ons' && !isset( $_GET['cl_add_ons_listing_success'] ) ) ) ) {//on addons page we use notices to display success mesage so we can't remove it in that case
+        if( isset( $_GET['page'] ) && ( $_GET['page'] == 'profile-builder-basic-info' || $_GET['page'] == 'profile-builder-pms-promo' || ( $_GET['page'] == 'profile-builder-add-ons' && !isset( $_GET['cl_add_ons_listing_success'] ) ) ) ) {//on addons page we use notices to display success mesage so we can't remove it in that case
             remove_all_actions('admin_notices');
         }
 

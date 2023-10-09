@@ -15,6 +15,7 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
         private $api_url = '';
         private $api_data = array();
         private $name = '';
+        private $beta = false;
         private $slug = '';
         private $version = '';
         private $wp_override = false;

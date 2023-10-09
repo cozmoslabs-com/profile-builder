@@ -1193,10 +1193,6 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
     box-shadow: none;
 }
 
-.ui-widget.ui-widget-content {
-    max-width: 95%;
-}
-
 
 /* Tables */
 body[class*="profile-builder_page_"] .wp-list-table th {
@@ -2017,6 +2013,107 @@ div.wppb-notice .button-primary {
     font-weight: 500;
     color: #e76054;
     font-size: 11px;
+}
+
+
+/***********************************************************/
+/* Cross Promotion Page
+/***********************************************************/
+
+body.admin_page_profile-builder-pms-promo #wpcontent {
+    padding: 0;
+}
+
+body.admin_page_profile-builder-pms-promo .wppb-badge.wppb-pb-pms {
+    background:url(../images/pb-pms-cross-promotion.png) center no-repeat #FFFFFF;
+    border: 1px solid #9FAAB8;
+    background-size: 100%;
+    margin: 0;
+}
+
+body.admin_page_profile-builder-pms-promo .wppb-add-on-user-messages {
+    display: none;
+}
+
+body.admin_page_profile-builder-pms-promo .cozmoslabs-form-subsection-wrapper > .cozmoslabs-subsection-image {
+    text-align: center;
+    margin-top: 30px;
+}
+
+body.admin_page_profile-builder-pms-promo .cozmoslabs-form-subsection-wrapper > .cozmoslabs-subsection-image img {
+    max-width: 80%;
+}
+
+#pb-pms-cross-promo-header {
+    padding: 30px;
+}
+
+#pb-pms-cross-promo-header .cozmoslabs-page-header {
+    margin: 0;
+}
+
+#pb-pms-cross-promo-pms-plugin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+#pb-pms-cross-promo-pms-plugin .wppb-recommended-plugin {
+    width: 100%;
+}
+
+#pb-pms-cross-promo-pms-fetures ul {
+    padding-left: 20px;
+    list-style: square;
+}
+
+#pb-pms-cross-promo-pms-plugin .wppb-add-on-compatible .button-primary,
+#pb-pms-cross-promo-pms-plugin .wppb-add-on-compatible .button-secondary,
+#pms-bottom-install .wppb-add-on-compatible .button-primary,
+#pms-bottom-install .wppb-add-on-compatible .button-secondary {
+    height: 35px;
+    min-width: unset;
+}
+
+#pb-pms-cross-promo-pms-plugin .wppb-add-on-compatible span {
+    line-height: 35px;
+}
+
+#pb-pms-cross-promo-pms-plugin .wppb-add-on-compatible span.wppb-add-on-message {
+    margin-left: 5px;
+}
+
+#pb-pms-cross-promo-pms-plugin .wppb-recommended-plugin-banner {
+    background: #E7F3EE;
+    padding: 15px 30px;
+    margin-bottom: 5px;
+    border: 1px solid #A8C2B7;
+}
+
+#pms-bottom-install {
+    margin-top: 35px;
+    /*padding: 20px 30px;*/
+    /*background: #E7F3EE;*/
+}
+
+#pms-bottom-install .plugin-card-bottom {
+    background: #E8F2FF;
+    padding: 20px 30px;
+    border: 1px solid #9FAAB8;
+}
+
+#pms-bottom-install .plugin-card-bottom span {
+    line-height: 40px;
+}
+
+#pms-bottom-install .plugin-card-bottom span.wppb-add-on-message {
+    margin-left: 5px;
+}
+
+#pb-pms-cross-promo-pms-plugin .plugin-card-bottom .button,
+#pms-bottom-install .plugin-card-bottom .button {
+    opacity: 1 !important;
 }
 
 

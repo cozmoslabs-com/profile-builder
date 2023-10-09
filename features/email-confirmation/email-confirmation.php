@@ -325,6 +325,16 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 
                     update_user_meta( $user_id, $value['meta-name'], trim( $selected_values, ',' ) );
                 }
+                case 'GDPR Checkbox':{
+                    if ( isset($meta[wppb_handle_meta_name($value['meta-name'])]) ) {
+                        if (isset($meta[wppb_handle_meta_name($value['meta-name'])]) && !empty($meta[wppb_handle_meta_name($value['meta-name'])]) && $meta[wppb_handle_meta_name($value['meta-name'])]==='agree') {
+                            update_user_meta($user_id, $value['meta-name'], $meta[$value['meta-name']]);
+                            if (isset($meta['gdpr_agreement_time']) && !empty($meta['gdpr_agreement_time'])) {
+                                update_user_meta($user_id, 'gdpr_agreement_time', $meta['gdpr_agreement_time']);
+                            }
+                        }
+                    }
+                }
                 default: {
 					if ( isset( $meta[$value['meta-name']] ) ) {
 						update_user_meta($user_id, $value['meta-name'], $meta[$value['meta-name']]);
@@ -350,6 +360,11 @@ function wppb_signup_user( $username, $user_email, $login_after_register, $meta 
         $login_after_register = false;
     }
     $meta [ 'wppb_login_after_register_'.$meta['user_login'] ] = $login_after_register;
+
+    // save the gdpr_agreement_time if necessary
+    if ( array_key_exists('user_consent_gdpr', $meta) && $meta [ 'user_consent_gdpr' ] === 'agree' ) {
+        $meta [ 'gdpr_agreement_time' ] = time();
+    }
 
 	// Format data
 	$user = sanitize_user( $username, true );

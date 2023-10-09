@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:365
+#: index.php:377
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:361
+#: index.php:373
 msgid "To enable updates, please enter your serial number on the <a href=\"%s\">Register Version</a> page. If you don't have a serial number, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>."
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Extends the functionality of Profile Builder by allowing you to change visibility options for the extra fields."
 msgstr ""
 
-#: admin/add-ons.php:151, add-ons-advanced/edit-profile-approved-by-admin/index.php:164
+#: admin/add-ons.php:151, add-ons-advanced/edit-profile-approved-by-admin/index.php:166
 msgid "Edit Profile Approved by Admin"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders."
 msgstr ""
 
-#: admin/add-ons.php:239
+#: admin/add-ons.php:239, admin/pms-cross-promotion.php:63
 msgid "Paid Member Subscriptions"
 msgstr ""
 
@@ -349,7 +349,7 @@ msgstr ""
 msgid "See details"
 msgstr ""
 
-#: admin/admin-functions.php:260, admin/admin-functions.php:393, admin/review.php:94
+#: admin/admin-functions.php:260, admin/admin-functions.php:392, admin/review.php:94
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -629,11 +629,11 @@ msgstr ""
 msgid "Paid user profiles with Profile Builder and Paid Member Subscriptions"
 msgstr ""
 
-#: admin/basic-info.php:260
+#: admin/basic-info.php:260, admin/pms-cross-promotion.php:60
 msgid "One of the most requested features in Profile Builder was for users to be able to pay for an account."
 msgstr ""
 
-#: admin/basic-info.php:261
+#: admin/basic-info.php:261, admin/pms-cross-promotion.php:62
 msgid "Now that is possible using the free WordPress plugin - "
 msgstr ""
 
@@ -893,7 +893,7 @@ msgstr ""
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:463, admin/private-website.php:168, features/functions.php:1071, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:189, assets/lib/class-mustache-templates/class-mustache-templates.php:425, assets/lib/wck-api/wordpress-creation-kit.php:433, admin/advanced-settings/includes/views/view-admin.php:97, admin/advanced-settings/includes/views/view-fields.php:257, admin/advanced-settings/includes/views/view-forms.php:338, admin/advanced-settings/includes/views/view-shortcodes.php:96, admin/advanced-settings/includes/views/view-userlisting.php:66
+#: admin/general-settings.php:463, admin/private-website.php:168, features/functions.php:1071, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:189, assets/lib/class-mustache-templates/class-mustache-templates.php:426, assets/lib/wck-api/wordpress-creation-kit.php:433, admin/advanced-settings/includes/views/view-admin.php:97, admin/advanced-settings/includes/views/view-fields.php:257, admin/advanced-settings/includes/views/view-forms.php:338, admin/advanced-settings/includes/views/view-shortcodes.php:96, admin/advanced-settings/includes/views/view-userlisting.php:66
 msgid "Save Changes"
 msgstr ""
 
@@ -3121,115 +3121,163 @@ msgstr ""
 msgid "Paid Accounts"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:34
+#: admin/pms-cross-promotion.php:58
+msgid "Users can pay for an account with"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:59
+msgid "Profile Builder and Paid Member Subscriptions"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:71
 msgid "Paid Member Subscriptions - a free WordPress plugin"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:38
+#: admin/pms-cross-promotion.php:72
 msgid "With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to sign up for paid accounts."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:41
+#: admin/pms-cross-promotion.php:77
+msgid "Other features of Paid Member Subscriptions are:"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:79
 msgid "Paid & Free Subscriptions"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:42
+#: admin/pms-cross-promotion.php:80
 msgid "Restrict Content"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:43
+#: admin/pms-cross-promotion.php:81
 msgid "Member Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:44
+#: admin/pms-cross-promotion.php:82
 msgid "Email Templates"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:45
+#: admin/pms-cross-promotion.php:83
 msgid "Account Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:46
+#: admin/pms-cross-promotion.php:84
 msgid "Subscription Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:47
+#: admin/pms-cross-promotion.php:85
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:79, admin/pms-cross-promotion.php:115, admin/pms-cross-promotion.php:194, features/two-factor-authentication/class-two-factor-authentication.php:141, features/two-factor-authentication/class-two-factor-authentication.php:253
+#: admin/pms-cross-promotion.php:116, admin/pms-cross-promotion.php:154, admin/pms-cross-promotion.php:239, features/two-factor-authentication/class-two-factor-authentication.php:141, features/two-factor-authentication/class-two-factor-authentication.php:253
 msgid "Activate"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:81
+#: admin/pms-cross-promotion.php:118
 msgid "Downloading and installing..."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:82
+#: admin/pms-cross-promotion.php:119
 msgid "Installation complete"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:84
+#: admin/pms-cross-promotion.php:121
 msgid "Plugin is Active"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:85
+#: admin/pms-cross-promotion.php:122
 msgid "Plugin has been activated"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:86
+#: admin/pms-cross-promotion.php:123
 msgid "Retry Install"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:88, admin/pms-cross-promotion.php:126, admin/pms-cross-promotion.php:205
-msgid "Plugin is <strong>active</strong>"
+#: admin/pms-cross-promotion.php:125, admin/pms-cross-promotion.php:165, admin/pms-cross-promotion.php:250
+msgid "Plugin is %1$s active %2$s"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:89, admin/pms-cross-promotion.php:124, admin/pms-cross-promotion.php:203
-msgid "Plugin is <strong>inactive</strong>"
+#: admin/pms-cross-promotion.php:126, admin/pms-cross-promotion.php:163, admin/pms-cross-promotion.php:248
+msgid "Plugin is %1$s inactive %2$s"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:91, admin/pms-cross-promotion.php:119, admin/pms-cross-promotion.php:198
+#: admin/pms-cross-promotion.php:128, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243
 msgid "Deactivate"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:92
+#: admin/pms-cross-promotion.php:129
 msgid "Plugin has been deactivated."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:103
+#: admin/pms-cross-promotion.php:142
 msgid "Free"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:105
+#: admin/pms-cross-promotion.php:144
 msgid "Accept user payments, create subscription plans and restrict content on your website."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:106
+#: admin/pms-cross-promotion.php:145
 msgid "More Details"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:138, admin/pms-cross-promotion.php:217
+#: admin/pms-cross-promotion.php:177, admin/pms-cross-promotion.php:262
 msgid "Install Now"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:135, admin/pms-cross-promotion.php:214
+#: admin/pms-cross-promotion.php:174, admin/pms-cross-promotion.php:259
 msgid "Download Now"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:142, admin/pms-cross-promotion.php:221
+#: admin/pms-cross-promotion.php:181, admin/pms-cross-promotion.php:266
 msgid "Compatible with your version of Profile Builder."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:147
+#: admin/pms-cross-promotion.php:186
 msgid "Could not install plugin. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:156
+#: admin/pms-cross-promotion.php:194
 msgid "Step by Step Quick Setup"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:240
+#: admin/pms-cross-promotion.php:195
+msgid "Setting up Paid Member Subscriptions opens the door to paid user accounts."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:198
+msgid "Create Subscription Plans"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:199
+msgid "With Paid Member Subscriptions it’s fairly easy to create tiered subscription plans for your users."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:200
+msgid "Adding a new subscription gives you access to the following options to set up: subscription name, description, duration, the price, status and user role."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:209
+msgid "Add Subscriptions field to Profile Builder -> Manage Fields"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:210
+msgid "The new Subscription Plans field will add a list of radio buttons with membership details to Profile Builder registration forms."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:219
+msgid "Start getting user payments"
+msgstr ""
+
+#: admin/pms-cross-promotion.php:220
+msgid "To finalize registration for a paid account, users will need to complete the payment."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:221
+msgid "Members created with Profile Builder registration form will have the user role of the selected subscription."
+msgstr ""
+
+#: admin/pms-cross-promotion.php:285
 msgid "Allow your users to have <strong>paid accounts with Profile Builder</strong>. %1$sFind out how >%2$s %3$sDismiss%4$s"
 msgstr ""
 
@@ -3322,7 +3370,7 @@ msgid "Your <strong>Profile Builder</strong> license is about to expire on %5$s.
 msgstr ""
 
 #: admin/register-version.php:243
-msgid "Your <strong>Profile Builder Basic</strong> license has reached its activation limit.<br> Upgrade now to <strong>Pro</strong> for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>"
+msgid "Your <strong>%s</strong> license has reached its activation limit.<br> Upgrade now for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>"
 msgstr ""
 
 #: admin/register-version.php:247
@@ -3521,7 +3569,7 @@ msgstr ""
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:804
+#: front-end/class-formbuilder.php:809
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -3742,7 +3790,7 @@ msgstr ""
 msgid "Your email was successfully confirmed."
 msgstr ""
 
-#: front-end/register.php:122, features/email-confirmation/email-confirmation.php:687
+#: front-end/register.php:122, features/email-confirmation/email-confirmation.php:702
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
 msgstr ""
 
@@ -3750,7 +3798,7 @@ msgstr ""
 msgid "This username is already activated!"
 msgstr ""
 
-#: front-end/register.php:81, features/email-confirmation/email-confirmation.php:486
+#: front-end/register.php:81, features/email-confirmation/email-confirmation.php:501
 msgid "Could not create user!"
 msgstr ""
 
@@ -3998,7 +4046,7 @@ msgstr ""
 msgid "Form Shortcode"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:205, add-ons/multiple-forms/register-forms.php:229, features/content-restriction/content-restriction-meta-box.php:37, features/content-restriction/content-restriction.php:123
+#: add-ons/multiple-forms/edit-profile-forms.php:205, add-ons/multiple-forms/register-forms.php:229, features/content-restriction/content-restriction-meta-box.php:41, features/content-restriction/content-restriction.php:123
 msgid "Redirect"
 msgstr ""
 
@@ -4702,7 +4750,7 @@ msgstr ""
 msgid "Display Mode"
 msgstr ""
 
-#: add-ons-advanced/custom-profile-menus/index.php:247, features/content-restriction/content-restriction-meta-box.php:74, features/content-restriction/content-restriction-meta-box.php:121
+#: add-ons-advanced/custom-profile-menus/index.php:247, features/content-restriction/content-restriction-meta-box.php:78, features/content-restriction/content-restriction-meta-box.php:125
 msgid "Logged In Users"
 msgstr ""
 
@@ -4742,7 +4790,7 @@ msgstr ""
 msgid "Width (px)"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:109
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:111
 msgid ""
 "<p>Your profile has been reviewed by an administrator:</p>\n"
 "<br>\n"
@@ -4751,23 +4799,23 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:113, add-ons-advanced/edit-profile-approved-by-admin/index.php:142, features/email-customizer/admin-email-customizer.php:83, features/email-customizer/admin-email-customizer.php:114, features/email-customizer/admin-email-customizer.php:145, features/email-customizer/user-email-customizer.php:86, features/email-customizer/user-email-customizer.php:117, features/email-customizer/user-email-customizer.php:151, features/email-customizer/user-email-customizer.php:182, features/email-customizer/user-email-customizer.php:213, features/email-customizer/user-email-customizer.php:248, features/email-customizer/user-email-customizer.php:280, features/email-customizer/user-email-customizer.php:314, features/email-customizer/user-email-customizer.php:348
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:115, add-ons-advanced/edit-profile-approved-by-admin/index.php:144, features/email-customizer/admin-email-customizer.php:83, features/email-customizer/admin-email-customizer.php:114, features/email-customizer/admin-email-customizer.php:145, features/email-customizer/user-email-customizer.php:86, features/email-customizer/user-email-customizer.php:117, features/email-customizer/user-email-customizer.php:151, features/email-customizer/user-email-customizer.php:182, features/email-customizer/user-email-customizer.php:213, features/email-customizer/user-email-customizer.php:248, features/email-customizer/user-email-customizer.php:280, features/email-customizer/user-email-customizer.php:314, features/email-customizer/user-email-customizer.php:348
 msgid "Email Subject"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:117
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:119
 msgid "[{{site_name}}] Your profile has been reviewed by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:120, add-ons-advanced/edit-profile-approved-by-admin/index.php:149, features/email-customizer/admin-email-customizer.php:90, features/email-customizer/admin-email-customizer.php:121, features/email-customizer/admin-email-customizer.php:152, features/email-customizer/user-email-customizer.php:93, features/email-customizer/user-email-customizer.php:124, features/email-customizer/user-email-customizer.php:158, features/email-customizer/user-email-customizer.php:189, features/email-customizer/user-email-customizer.php:220, features/email-customizer/user-email-customizer.php:255, features/email-customizer/user-email-customizer.php:287, features/email-customizer/user-email-customizer.php:321, features/email-customizer/user-email-customizer.php:355
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:122, add-ons-advanced/edit-profile-approved-by-admin/index.php:151, features/email-customizer/admin-email-customizer.php:90, features/email-customizer/admin-email-customizer.php:121, features/email-customizer/admin-email-customizer.php:152, features/email-customizer/user-email-customizer.php:93, features/email-customizer/user-email-customizer.php:124, features/email-customizer/user-email-customizer.php:158, features/email-customizer/user-email-customizer.php:189, features/email-customizer/user-email-customizer.php:220, features/email-customizer/user-email-customizer.php:255, features/email-customizer/user-email-customizer.php:287, features/email-customizer/user-email-customizer.php:321, features/email-customizer/user-email-customizer.php:355
 msgid "Enable email"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:135
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:137
 msgid "Edit Profile Approved by Admin Email"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:138
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:140
 msgid ""
 "<p>The user {{username}} has updated their profile and some of the fields require admin approval:</p>\n"
 "<br>\n"
@@ -4777,83 +4825,83 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:146
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:148
 msgid "[{{site_name}}] A user has updated their profile. Some fields need approval"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:270
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:272
 msgid "Requires Admin Approval on Edit Profile"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:270
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:272
 msgid "Choose if this field requires an administrator to approve any modifications on the edit profile forms"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:374
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:376
 msgid "This field requires admin approval on edit profile"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:443
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:445
 msgid "Finish Review and Send Notifications"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:444
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:446
 msgid "Approve All"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:462
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:464
 msgid "This field requires approval by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:491, features/admin-approval/class-admin-approval.php:355
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:493, features/admin-approval/class-admin-approval.php:355
 msgid "Unapproved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:491, features/admin-approval/class-admin-approval.php:353
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:493, features/admin-approval/class-admin-approval.php:353
 msgid "Approved"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:839, add-ons-advanced/edit-profile-approved-by-admin/index.php:869
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:841, add-ons-advanced/edit-profile-approved-by-admin/index.php:871
 msgid "Your profile has been reviewed by an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:861
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:863
 msgid "Approved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:865
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:867
 msgid "Unapproved fields:%s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:888
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:890
 msgid "Field %1$s changed from %2$s to %3$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:896
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:898
 msgid "The user %1$s has updated their profile and some of the fields require admin approval:<br><br> %2$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:898
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:900
 msgid "Access this link to approve changes: %1$s"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:901
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:903
 msgid "A user has updated their profile. Some fields need approval"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:921
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:923
 msgid "Field %1$s requires approval from an administrator"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:996
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:998
 msgid "Show users that require review"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:998
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:1000
 msgid "Show reviewed users with unapproved fields"
 msgstr ""
 
-#: add-ons-advanced/edit-profile-approved-by-admin/index.php:1001
+#: add-ons-advanced/edit-profile-approved-by-admin/index.php:1003
 msgid "Exit Review Mode"
 msgstr ""
 
@@ -5779,7 +5827,7 @@ msgstr ""
 msgid "This field has conditional logic enabled."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:85, features/content-restriction/content-restriction-meta-box.php:19
+#: features/content-restriction/class-elementor-content-restriction.php:85, features/content-restriction/content-restriction-meta-box.php:21
 msgid "Profile Builder Content Restriction"
 msgstr ""
 
@@ -5807,7 +5855,7 @@ msgstr ""
 msgid "Allow users which have the specified role to see this content."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:146, features/content-restriction/content-restriction-meta-box.php:175
+#: features/content-restriction/class-elementor-content-restriction.php:146, features/content-restriction/content-restriction-meta-box.php:179
 msgid "Restriction Messages"
 msgstr ""
 
@@ -5819,7 +5867,7 @@ msgstr ""
 msgid "Replace hidden content with the default messages from PB -> Settings -> Content Restriction, a custom message or an Elementor Template."
 msgstr ""
 
-#: features/content-restriction/class-elementor-content-restriction.php:162, features/content-restriction/content-restriction-meta-box.php:181
+#: features/content-restriction/class-elementor-content-restriction.php:162, features/content-restriction/content-restriction-meta-box.php:185
 msgid "Enable Custom Messages"
 msgstr ""
 
@@ -5867,79 +5915,79 @@ msgstr ""
 msgid "You must be logged in to view this content."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:33
+#: features/content-restriction/content-restriction-meta-box.php:37
 msgid "Display Options"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:37, features/content-restriction/content-restriction.php:118
+#: features/content-restriction/content-restriction-meta-box.php:41, features/content-restriction/content-restriction.php:118
 msgid "Message"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:42, features/content-restriction/content-restriction.php:113
+#: features/content-restriction/content-restriction-meta-box.php:46, features/content-restriction/content-restriction.php:113
 msgid "Type of Restriction"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:47
+#: features/content-restriction/content-restriction-meta-box.php:51
 msgid "Settings Default"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:61
+#: features/content-restriction/content-restriction-meta-box.php:65
 msgid "Display For"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:91
+#: features/content-restriction/content-restriction-meta-box.php:95
 msgid "Checking only \"Logged In Users\" will show this %s to all logged in users, regardless of user role."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:95
+#: features/content-restriction/content-restriction-meta-box.php:99
 msgid "Checking any user role will show this %s only to users that have one of those user roles assigned."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:105
+#: features/content-restriction/content-restriction-meta-box.php:109
 msgid "Purchase Options"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:114
+#: features/content-restriction/content-restriction-meta-box.php:118
 msgid "Who can purchase?"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:137
+#: features/content-restriction/content-restriction-meta-box.php:141
 msgid "Select who can purchase this product."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:148
+#: features/content-restriction/content-restriction-meta-box.php:152
 msgid "Restriction Redirect URL"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:154
+#: features/content-restriction/content-restriction-meta-box.php:158
 msgid "Enable Custom Redirect URL"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:161
+#: features/content-restriction/content-restriction-meta-box.php:165
 msgid "Enable if you wish to add a custom redirect URL for this %s."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:168
+#: features/content-restriction/content-restriction-meta-box.php:172
 msgid "Custom Redirect URL"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:170
+#: features/content-restriction/content-restriction-meta-box.php:174
 msgid "Add a URL where you wish to redirect users that do not have access to this %s and try to access it directly."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:188
+#: features/content-restriction/content-restriction-meta-box.php:192
 msgid "Enable if you wish to add custom messages for this %s."
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:196
+#: features/content-restriction/content-restriction-meta-box.php:200
 msgid "Messages for logged-out users"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:201
+#: features/content-restriction/content-restriction-meta-box.php:205
 msgid "Messages for logged-in users"
 msgstr ""
 
-#: features/content-restriction/content-restriction-meta-box.php:208
+#: features/content-restriction/content-restriction-meta-box.php:212
 msgid "Messages for restricted product purchase"
 msgstr ""
 
@@ -6047,47 +6095,47 @@ msgstr ""
 msgid "There was an error performing that action!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:442
+#: features/email-confirmation/email-confirmation.php:457
 msgid "[%1$s] Activate %2$s"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:445
+#: features/email-confirmation/email-confirmation.php:460
 msgid "To activate your user, please click the following link:<br><br>%s%s%s<br><br>After you activate it you will receive yet *another email* with your login."
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:512
+#: features/email-confirmation/email-confirmation.php:527
 msgid "There was an error while trying to activate the user"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:489
+#: features/email-confirmation/email-confirmation.php:504
 msgid "That username is already activated!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:560, features/email-customizer/admin-email-customizer.php:87
+#: features/email-confirmation/email-confirmation.php:575, features/email-customizer/admin-email-customizer.php:87
 msgid "A new subscriber has (been) registered!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:563
+#: features/email-confirmation/email-confirmation.php:578
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>Email:%3$s<br/>"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:614
+#: features/email-confirmation/email-confirmation.php:629
 msgid "[%1$s] Your new account information"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:618, features/email-customizer/email-customizer.php:588, features/email-customizer/email-customizer.php:595, features/email-customizer/email-customizer.php:609
+#: features/email-confirmation/email-confirmation.php:633, features/email-customizer/email-customizer.php:588, features/email-customizer/email-customizer.php:595, features/email-customizer/email-customizer.php:609
 msgid "Your selected password at signup"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:626
+#: features/email-confirmation/email-confirmation.php:641
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and the password: %3$s<br/><br/>Access your account: %4$s "
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:624
+#: features/email-confirmation/email-confirmation.php:639
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and your password is the one that you have selected during registration.<br/><br/>Access your account: %3$s "
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:679
+#: features/email-confirmation/email-confirmation.php:694
 msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
 msgstr ""
 
@@ -7045,7 +7093,7 @@ msgstr ""
 msgid "Campaign Monitor Integration"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:70, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:106, assets/lib/class-mustache-templates/class-mustache-templates.php:284, assets/lib/wck-api/wordpress-creation-kit.php:361
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:70, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:106, assets/lib/class-mustache-templates/class-mustache-templates.php:285, assets/lib/wck-api/wordpress-creation-kit.php:361
 msgid "Save"
 msgstr ""
 
@@ -7121,31 +7169,31 @@ msgstr ""
 msgid "Click to edit"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:552
-msgid "Field Associations:"
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:552, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:223
+msgid "Field Associations"
 msgstr ""
 
 #: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:608
 msgid "Associate each Campaign Monitor field with a Profile Builder field"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:630
-msgid "Extra Options:"
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:631, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:380, add-ons-advanced/mailchimp-integration/admin/widget.php:225
+msgid "Extra Options"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:638, add-ons-advanced/campaign-monitor/admin/widget.php:236
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:640, add-ons-advanced/campaign-monitor/admin/widget.php:236
 msgid "Resubscribe"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:641, add-ons-advanced/campaign-monitor/admin/widget.php:239
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:648, add-ons-advanced/campaign-monitor/admin/widget.php:239
 msgid "If the subscriber is in an inactive state or has previously been unsubscribed and you check the Resubscribe option, they will be re-added to the list. Therefore, this method should be used with caution and only where suitable."
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:687
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:698
 msgid "Campaign Monitor API key is invalid"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:685
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:696
 msgid "Campaign Monitor API key is empty"
 msgstr ""
 
@@ -7283,10 +7331,6 @@ msgstr ""
 msgid "Edit this item"
 msgstr ""
 
-#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:223
-msgid "Field Associations"
-msgstr ""
-
 #: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:224
 msgid "Associate each MailChimp field with a Profile Builder field"
 msgstr ""
@@ -7301,10 +7345,6 @@ msgstr ""
 
 #: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:357
 msgid "Associate each MailChimp group with a Profile Builder field"
-msgstr ""
-
-#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:380, add-ons-advanced/mailchimp-integration/admin/widget.php:225
-msgid "Extra Options"
 msgstr ""
 
 #: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:389, add-ons-advanced/mailchimp-integration/admin/widget.php:229

@@ -10,6 +10,7 @@ class PB_Mustache_Generate_Template{
 	var $mustache_vars = array( );
 	var $template = '';
 	var $extra_values = array( );
+	var $fields = array( );
 
 	/**
 	 * constructor for the class

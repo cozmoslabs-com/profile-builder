@@ -774,11 +774,16 @@ class Profile_Builder_Form_Creator{
     }
 
     static function wppb_frontend_scripts(){
+        
+        wp_register_script( 'wppb_front_end_script', WPPB_PLUGIN_URL. 'assets/js/script-front-end.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
+        
         $wppb_toolbox_forms_settings = get_option( 'wppb_toolbox_forms_settings' );
-	    if( !isset( $wppb_toolbox_forms_settings[ 'disable-automatic-scrolling' ] ) ){
-            wp_enqueue_script( 'wppb_front_end_script', WPPB_PLUGIN_URL. 'assets/js/script-front-end.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
-            wp_print_scripts( 'wppb_front_end_script' );
+	    if( isset( $wppb_toolbox_forms_settings[ 'disable-automatic-scrolling' ] ) ){
+            wp_add_inline_script( 'wppb_front_end_script', "var wppb_disable_automatic_scrolling = 1;", 'before' );
         }
+
+        wp_enqueue_script( 'wppb_front_end_script' );
+        wp_print_scripts( 'wppb_front_end_script' );
 
         if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ){
             wp_enqueue_script( 'wppb_select_user_to_edit_js', WPPB_PLUGIN_URL. 'assets/js/select-user-to-edit.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
