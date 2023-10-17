@@ -56,7 +56,9 @@ class Profile_Builder_Form_Creator{
 
 		$this->wppb_retrieve_custom_settings();
 
-        if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) )
+        // NOTE: for Multisite, the capability we check against is `remove_users` because `edit_users` is on the do not allow on multisite list for current_user_can()
+        // current_user_can( 'edit_users' ) will only return true on a Multisite for Super Administrator Users
+        if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) )
             add_action( 'wppb_before_edit_profile_fields', array( 'Profile_Builder_Form_Creator', 'wppb_edit_profile_select_user_to_edit' ), 10, 4 );
 
         //enqueue frontend scripts for forms
@@ -708,7 +710,7 @@ class Profile_Builder_Form_Creator{
 	function wppb_get_desired_user_id(){
 		if( $this->args['form_type'] == 'edit_profile' ){
 			//only admins
-			if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ) {
+            if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) ){
 				if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) ){
 					return absint( $_GET['edit_user'] );
 				}
@@ -785,7 +787,7 @@ class Profile_Builder_Form_Creator{
         wp_enqueue_script( 'wppb_front_end_script' );
         wp_print_scripts( 'wppb_front_end_script' );
 
-        if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ){
+        if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) ){
             wp_enqueue_script( 'wppb_select_user_to_edit_js', WPPB_PLUGIN_URL. 'assets/js/select-user-to-edit.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
             wp_print_scripts( 'wppb_select_user_to_edit_js' );
         }

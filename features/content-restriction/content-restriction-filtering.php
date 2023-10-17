@@ -384,7 +384,7 @@ if( function_exists( 'wc_get_page_id' ) ) {
                 
             $message = '<div class="woocommerce"><div class="woocommerce-info wppb-woo-restriction-message wppb-woo-restricted-product-purchasing-message">' . $message . '</div></div>';
 
-            $output .= $message;
+            $output .= do_shortcode( $message );
 
             $post->post_password = null;
 

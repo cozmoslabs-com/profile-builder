@@ -399,6 +399,9 @@ function wppb_print_cpt_script( $hook ){
         wp_enqueue_script( 'thickbox' );
     }
 
+    if ( $hook == 'profile-builder_page_profile-builder-dashboard' )
+        wp_enqueue_script( 'jquery-pb-dashboard', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-dashboard.js', array(), PROFILE_BUILDER_VERSION, true );
+
 	if ( isset( $_GET['post_type'] ) || isset( $_GET['post'] ) ){
 		if ( isset( $_GET['post_type'] ) )
 			$post_type = sanitize_text_field( $_GET['post_type'] );

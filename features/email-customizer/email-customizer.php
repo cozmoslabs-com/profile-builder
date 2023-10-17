@@ -307,6 +307,9 @@ function wppb_email_customizer_change_email_address_header_filter_handler( $emai
 function wppb_email_customizer_change_email_address_content_filter_handler ( $default, $old_user_data, $new_user_data ){
 	$email_customizer_option = get_option( 'wppb_user_emailc_change_email_address_content', 'not_found' );
 
+    if( file_exists( WPPB_PLUGIN_DIR . '/assets/lib/class-mustache-templates/class-mustache-templates.php' ) )
+        require_once( WPPB_PLUGIN_DIR . '/assets/lib/class-mustache-templates/class-mustache-templates.php' );
+
 	if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) ) {
 
 		$email_change_email = $default;

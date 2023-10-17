@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.3
-Stable tag: 3.10.0
+Stable tag: 3.10.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,7 @@ You can use the following shortcode list or available plugin blocks to quickly d
 * **User Role Select** field on register and edit profile forms
 * **Content Restriction**: [restrict content](https://www.cozmoslabs.com/105571-restrict-content-user-role-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) based on current users role or logged in status
 * Restrict WooCommerce shop page and products
+* Restrict Gutenberg blocks
 * Invisible reCAPTCHA support for both Profile Builder forms as well as default WordPress forms
 * **Private Website**: setup a [WordPress private site](https://www.cozmoslabs.com/132715-wordpress-private-site/) that is visible only to members or logged in users
 * **GDPR**: collect users consent about the data you collect about them under the new [GDPR law](https://www.cozmoslabs.com/docs/profile-builder-2/how-to-make-profile-builder-forms-gdpr-compliant/) requirements
@@ -198,6 +199,13 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.1 =
+* Feature: Added Onboarding Wizard for easier plugin setup
+* Feature: New main plugin page Dashboard which serves as a quick plugin overview
+* Fix: Parse shortcodes from the WooCommerce Content Restriction messages
+* Fix: Issue where the Email Change notification couldn't be customized through the Email Customizer
+* Fix: Random changes for the new settings pages
+
 = 3.10.0 =
 * Feature: Content Restriction for Gutenberg Blocks. You can now restrict any block based on user roles
 * Fix: A notice appearing from the Email Confirmation functionality in some cases

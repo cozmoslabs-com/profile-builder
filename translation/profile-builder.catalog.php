@@ -21,7 +21,7 @@
 <?php __("Basic Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available with the Basic, Pro and Agency license", "profile-builder"); ?>
 <?php __("Social Connect", "profile-builder"); ?>
-<?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google+ or Twitter.", "profile-builder"); ?>
+<?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter.", "profile-builder"); ?>
 <?php __("WooCommerce Sync", "profile-builder"); ?>
 <?php __("Syncs Profile Builder with WooCommerce, allowing you to manage the user Shipping and Billing fields from WooCommerce with Profile Builder.", "profile-builder"); ?>
 <?php __("Multi Step Forms", "profile-builder"); ?>
@@ -157,6 +157,19 @@
 <?php __("Easily translate your entire WordPress website", "profile-builder"); ?>
 <?php __("Translate your Profile Builder forms with a WordPress translation plugin that anyone can use.", "profile-builder"); ?>
 <?php __("It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders", "profile-builder"); ?>
+<?php __("Dashboard", "profile-builder"); ?>
+<?php __("Setup Wizard", "profile-builder"); ?>
+<?php __("Totals", "profile-builder"); ?>
+<?php __("Recent Registrations", "profile-builder"); ?>
+<?php __("%1s registered as a %2s role", "profile-builder"); ?>
+<?php __("View All Users", "profile-builder"); ?>
+<?php __("Setup Progress Review", "profile-builder"); ?>
+<?php __("Open the Setup Wizard", "profile-builder"); ?>
+<?php __("Useful shortcodes for setup", "profile-builder"); ?>
+<?php __("Use these shortcodes to quickly setup and customize your membership website.", "profile-builder"); ?>
+<?php __("Learn more about shortcodes", "profile-builder"); ?>
+<?php __("All Users", "profile-builder"); ?>
+<?php __("New Registered Users", "profile-builder"); ?>
 <?php __("Quick Feedback", "profile-builder"); ?>
 <?php __("Because we care about our clients, please leave us feedback on why you are no longer using our plugin.", "profile-builder"); ?>
 <?php __("Lacking certain features", "profile-builder"); ?>
@@ -219,6 +232,7 @@
 <?php __("Load CSS", "profile-builder"); ?>
 <?php __('You can find the default file here: %1$s', 'profile-builder' ); ?>
 <?php __("Save Changes", "profile-builder"); ?>
+<?php __("Available in the Pro versions of the plugin", "profile-builder"); ?>
 <?php __('You can now beautify your forms using new Styles. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Register Website", "profile-builder"); ?>
 <?php __("License key", "profile-builder"); ?>
@@ -835,6 +849,18 @@
 <?php __("Ok, I will gladly help!", "profile-builder"); ?>
 <?php __("No, thanks.", "profile-builder"); ?>
 <?php __('If you enjoy using <strong> %1$s </strong> please <a href=\%2$s\ target=\_blank\>rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profile-builder' ); ?>
+<?php __("User Pages", "profile-builder"); ?>
+<?php __("Design & UI", "profile-builder"); ?>
+<?php __("Addons", "profile-builder"); ?>
+<?php __("Ready!", "profile-builder"); ?>
+<?php __("Create user pages for registration, login, edit profile and password reset.", "profile-builder"); ?>
+<?php __("Choose a design and optimize the login and registration flow for your users.", "profile-builder"); ?>
+<?php __("Learn about and enable addons for extra functionality.", "profile-builder"); ?>
+<?php __("Add extra fields to the registration and edit profile forms.", "profile-builder"); ?>
+<?php __("Restrict your content based on the user role.", "profile-builder"); ?>
+<?php __("Create new user roles with the Role Editor.", "profile-builder"); ?>
+<?php __("Progress Review", "profile-builder"); ?>
+<?php __("Follow these steps to start registering users on your website. %1s out of %2s complete.", "profile-builder"); ?>
 <?php __("GDPR Checkbox", "profile-builder"); ?>
 <?php __("I allow the website to collect and store the data I submit through this form.", "profile-builder"); ?>
 <?php __("Honeypot", "profile-builder"); ?>
@@ -1394,6 +1420,41 @@
 <?php __("is", "profile-builder"); ?>
 <?php __("has", "profile-builder"); ?>
 <?php __('%1$s of the emails provided in the Admin Emails field %2$s invalid and %3$s been removed from the list', 'profile-builder' ); ?>
+<?php __("Skip Setup", "profile-builder"); ?>
+<?php __("Create the user experience you need for your project", "profile-builder"); ?>
+<?php __("Enable addons and add extra features to your website", "profile-builder"); ?>
+<?php __("Available in the Pro version", "profile-builder"); ?>
+<?php __("Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login and registration forms.", "profile-builder"); ?>
+<?php __("Available in the Basic and Pro versions", "profile-builder"); ?>
+<?php __('Explore 20+ free and PRO addons from %1$s the Profile Builder admin page %2$s once the onboarding is complete.', 'profile-builder' ); ?>
+<?php __("Design & User Experience Settings", "profile-builder"); ?>
+<?php __("Customize the way your users interact with the website!", "profile-builder"); ?>
+<?php __('%3$sYou can now beautify your forms using new Styles. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ); ?>
+<?php __("The default style is there to let you customize the CSS and in general will receive the look and feel from your own themes styling. ", "profile-builder"); ?>
+<?php __("Optimize the login and registration flow for your members!", "profile-builder"); ?>
+<?php __("Automatically log users in after registration", "profile-builder"); ?>
+<?php __("You can modify each role individually in the settings", "profile-builder"); ?>
+<?php __("Hide the admin bar for the subscriber role", "profile-builder"); ?>
+<?php __("Email Confirmation after registration", "profile-builder"); ?>
+<?php __("Admin Approval for new users", "profile-builder"); ?>
+<?php __("You’re all setup and ready to go", "profile-builder"); ?>
+<?php __("Profile Builder is almost ready to run your user registration and login.", "profile-builder"); ?>
+<?php __("You can always change these settings from the plugin settings page.", "profile-builder"); ?>
+<?php __("Get valuable insights, tips, and strategies on how to create, grow and monetize your own membership and community websites with WordPress.", "profile-builder"); ?>
+<?php __("Yes Please!", "profile-builder"); ?>
+<?php __("Please check your email to confirm the subscription.", "profile-builder"); ?>
+<?php __("Continue to Your Profile Builder Dashboard", "profile-builder"); ?>
+<?php __("Quick Setup Wizard", "profile-builder"); ?>
+<?php __("Ready to welcome your new users?", "profile-builder"); ?>
+<?php __("To offer your users a welcoming experience, we'll need to create a few pages designed specifically for registration, login, account management and password reset.", "profile-builder"); ?>
+<?php __("You can select only one page or all of them. The pages can also be setup later manually.", "profile-builder"); ?>
+<?php __("Registration", "profile-builder"); ?>
+<?php __("New users can register, add their information and even automatically login after submitting the form. You can customize it with custom fields like birthday or favorite car brand.", "profile-builder"); ?>
+<?php __("View Page", "profile-builder"); ?>
+<?php __("Once users have an account, they can use the login page to get access to the restricted content you might offer.", "profile-builder"); ?>
+<?php __("Through the edit profile page, users can manage their profile information or fill in extra details that we’re not asked during registration.", "profile-builder"); ?>
+<?php __("Password reset", "profile-builder"); ?>
+<?php __("A simple form where users can reset their password in case they forgot it.", "profile-builder"); ?>
 <?php __("Your account has to be confirmed by an administrator before you can log in.", "profile-builder"); ?>
 <?php __("Do you want to", "profile-builder"); ?>
 <?php __("Your session has expired! Please refresh the page and try again.", "profile-builder"); ?>
@@ -1432,7 +1493,6 @@
 <?php __("Do you want to bulk unapprove the selected users?", "profile-builder"); ?>
 <?php __("Do you want to bulk approve the selected users?", "profile-builder"); ?>
 <?php __("Pending", "profile-builder"); ?>
-<?php __("All Users", "profile-builder"); ?>
 <?php __("Search Users", "profile-builder"); ?>
 <?php __("Number of items per page:", "profile-builder"); ?>
 <?php __("Conditional Logic", "profile-builder"); ?>
@@ -2082,7 +2142,6 @@
 <?php __("Border", "profile-builder"); ?>
 <?php __("Radius", "profile-builder"); ?>
 <?php __("Form Settings", "profile-builder"); ?>
-<?php __("Registration", "profile-builder"); ?>
 <?php __("Show Authenticator Code Field", "profile-builder"); ?>
 <?php __("Redirects", "profile-builder"); ?>
 <?php __("Form", "profile-builder"); ?>

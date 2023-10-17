@@ -576,11 +576,16 @@ function wppb_display_form_designs_preview() {
 
     foreach ( $form_designs_data as $form_design ) {
 
-        if ( $form_design['id'] != 'form-style-default' )
-            $preview_button = '<div class="wppb-forms-design-preview button-secondary" id="'. $form_design['id'] .'-info">Preview</div>';
-        else $preview_button = '';
+        if ( $form_design['id'] != 'form-style-default' ) {
+            $preview_button = '<div class="wppb-forms-design-preview button-secondary" id="' . $form_design['id'] . '-info">Preview</div>';
+            $title = esc_html__( 'Available in the Pro versions of the plugin', 'profile-builder' );
+        }
+        else {
+            $preview_button = '';
+            $title = '';
+        }
 
-        $output .= '<div class="wppb-forms-design" id="'. $form_design['id'] .'">
+        $output .= '<div class="wppb-forms-design" id="'. $form_design['id'] .'" title="'. $title .'">
                         <label>' . $form_design['name'] . '</label>
                         <div class="wppb-forms-design-screenshot">
                             <img src="' . $form_design['images']['main'] . '" alt="Form Design">

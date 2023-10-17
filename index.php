@@ -3,14 +3,14 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.10.0
+ * Version: 3.10.1
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
- * Elementor tested up to: 3.16.4
- * Elementor Pro tested up to: 3.16.4
+ * Elementor tested up to: 3.16.5
+ * Elementor Pro tested up to: 3.16.5
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -104,6 +104,8 @@ function wppb_plugin_init() {
         include_once(WPPB_PLUGIN_DIR . '/features/upgrades/upgrades.php');
         include_once(WPPB_PLUGIN_DIR . '/features/functions.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/admin-functions.php');
+        include_once(WPPB_PLUGIN_DIR . '/admin/setup-wizard.php');
+        include_once(WPPB_PLUGIN_DIR . '/admin/dashboard.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/basic-info.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/general-settings.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/advanced-settings/advanced-settings.php');
@@ -396,7 +398,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.10.0' );
+define('PROFILE_BUILDER_VERSION', '3.10.1' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -457,3 +459,33 @@ if( !function_exists( 'wppb_activate_plugin_redirect' ) ){
     }
     add_action( 'activated_plugin', 'wppb_activate_plugin_redirect' );
 }
+
+/**
+ * Check if Setup Wizard should run
+ *
+ */
+function set_setup_wizard_transient() {
+
+    $slugs = array(
+        '/profile-builder-pro/index.php',
+        '/profile-builder-dev/index.php',
+        '/profile-builder-agency/index.php',
+        '/profile-builder-unlimited/index.php',
+        '/profile-builder-hobbyist/index.php',
+    );
+
+    $paid_plugin_active = false;
+
+    foreach( $slugs as $slug ){
+        if( file_exists( WP_PLUGIN_DIR . $slug ) ){
+            $paid_plugin_active = true;
+            break;
+        }
+    }
+
+    // Run Setup Wizard ?
+    if ( !$paid_plugin_active )
+        set_transient( 'wppb_run_setup_wizard', 'true', 120 );
+
+}
+register_activation_hook( __FILE__, 'set_setup_wizard_transient' );

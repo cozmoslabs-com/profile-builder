@@ -265,7 +265,7 @@ function wppb_basic_info_content() {
 
             <div class="cozmoslabs-basic-info-recommended">
                 <div class="cozmoslabs-basic-info-recommended-img">
-                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-trp-cross-promotion.png', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
+                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-trp-cross-promotion.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
                 </div>
 
                 <div class="cozmoslabs-basic-info-recommended-info">
