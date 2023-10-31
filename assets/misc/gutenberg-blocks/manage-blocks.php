@@ -9,6 +9,26 @@ function wppb_block_editor_enqueue()
 
     wp_enqueue_style('wppb_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-front-end.css', array('wp-edit-blocks'), PROFILE_BUILDER_VERSION);
 
+    // load the corresponding Form Design stylesheets
+    $active_design = 'form-style-default';
+    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) )
+        $active_design = wppb_get_active_form_design();
+
+    if ( $active_design === 'form-style-default' ) {
+
+        if ( wp_is_block_theme() )
+            wp_enqueue_style('wppb_block_themes_front_end_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-block-themes-front-end.css', array('wp-edit-blocks'), PROFILE_BUILDER_VERSION);
+
+    }
+    else { // if $active_design is other than 'form-style-default' the constants WPPB_PAID_PLUGIN_DIR and WPPB_PAID_PLUGIN_URL are defined (verified at line:14)
+
+        if ( file_exists( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/css/' . $active_design . '/form-design-general-style.css' ) )
+            wp_enqueue_style( 'wppb_form_designs_general_style', WPPB_PAID_PLUGIN_URL . 'features/form-designs/css/' . $active_design . '/form-design-general-style.css', array('wp-edit-blocks'),PROFILE_BUILDER_VERSION );
+
+        if ( file_exists( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/css/' . $active_design  .'/extra-form-notifications-style.css' ) )
+            wp_enqueue_style( 'wppb_register_success_notification_style', WPPB_PAID_PLUGIN_URL . 'features/form-designs/css/' . $active_design  .'/extra-form-notifications-style.css', array('wp-edit-blocks'),PROFILE_BUILDER_VERSION );
+    }
+
     //Select
     // Don't enqueue when JetEngine is active
     if( !class_exists( 'Jet_Engine' ) ){

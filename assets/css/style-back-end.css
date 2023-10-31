@@ -1,3 +1,7 @@
+.wp-submenu a[href="users.php?page=unconfirmed_emails"] {
+    display: none !important;
+}
+
 .cozmoslabs-wrap {
     max-width: 900px !important;
     margin: 0 auto;
@@ -8,6 +12,12 @@
 
 .cozmoslabs-wrap--big {
     max-width: 1150px !important;
+}
+
+@media screen and ( min-width: 1600px ) {
+    .cozmoslabs-wrap {
+        max-width: 1200px !important;
+    }
 }
 
 body[class*="profile-builder_page_"] #screen-meta-links {
@@ -1672,12 +1682,17 @@ div.wppb-notice .button-primary {
 /* Manage Fields Page
 /***********************************************************/
 
-.profile-builder_page_manage-fields .cozmoslabs-wrap {
-    max-width: 1200px !important;
-}
-
 .profile-builder_page_manage-fields .metabox-holder .column-1 {
      margin-right:0;
+}
+
+#container_wppb_manage_fields .wck-content ul,
+#container_wppb_manage_fields .wck-content li {
+    margin: 0;
+}
+
+#container_wppb_manage_fields .wck-content li pre {
+    font-size: 13px;
 }
 
 #container_wppb_manage_fields li strong {
@@ -1707,7 +1722,7 @@ div.wppb-notice .button-primary {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url('../images/sorting-icon-dots.png') no-repeat center center;;
+    background: url('../images/sorting-icon-dots.png') no-repeat center center;
     vertical-align: middle;
     margin-right: 7px;
     cursor: move;
@@ -1720,6 +1735,9 @@ div.wppb-notice .button-primary {
     width:27%;
     font-family:"Open Sans", Arial, sans-serif;
     font-size:14px;
+
+    padding-right: 10px;
+    box-sizing: border-box;
 }
 
 #container_wppb_manage_fields pre.wppb-mb-head-required,
@@ -2108,8 +2126,6 @@ body.admin_page_profile-builder-pms-promo .cozmoslabs-form-subsection-wrapper > 
 
 #pms-bottom-install {
     margin-top: 35px;
-    /*padding: 20px 30px;*/
-    /*background: #E7F3EE;*/
 }
 
 #pms-bottom-install .plugin-card-bottom {
@@ -2590,17 +2606,6 @@ body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-acti
         display: none;
     }
 
-
-    /* AddOns */
-    #cl-add-ons-listing .wp-list-table .column-add_on {
-        display: block;
-        flex-basis: 100px !important;
-    }
-
-    #cl-add-ons-listing .wp-list-table .column-add_on:before,
-    #cl-add-ons-listing .wp-list-table .column-icon .toggle-row {
-        display: none;
-    }
 }
 
 

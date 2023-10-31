@@ -954,6 +954,7 @@
 <?php __("Check your email for the confirmation link.", "profile-builder"); ?>
 <?php __("ERROR:", "profile-builder"); ?>
 <?php __('There was an error while trying to send the activation link to %1$s!', 'profile-builder' ); ?>
+<?php __("Could not find registration. Contact administrator.", "profile-builder"); ?>
 <?php __("Invalid activation key!", "profile-builder"); ?>
 <?php __("This username is now active!", "profile-builder"); ?>
 <?php __("There was an error while trying to activate the user.", "profile-builder"); ?>

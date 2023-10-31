@@ -147,6 +147,10 @@ class WPPB_Setup_Wizard {
             // Hide Admin Bar For Subscriber Role
             if( isset( $_POST['hide_admin_bar_for_subscriber'] ) ) {
 
+                if ( empty( $general_settings['hide_admin_bar_for'] ) && !is_array( $general_settings['hide_admin_bar_for'] ) ) {
+                    $general_settings['hide_admin_bar_for'] = array();
+                }
+
                 if ( empty( $general_settings['hide_admin_bar_for'] ) || !in_array( 'Subscriber', $general_settings['hide_admin_bar_for'] ) )
                     $general_settings['hide_admin_bar_for'][] = 'Subscriber';
 

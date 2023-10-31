@@ -29,7 +29,7 @@
 
 #cl-add-ons-listing #cl-addons {
     width: 100%;
-    max-width: 1390px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
@@ -46,9 +46,8 @@
 }
 
 #cl-add-ons-listing .wp-list-table tbody {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
     gap: 20px;
 }
 
@@ -56,7 +55,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 450px;
+    /*width: 450px;*/
     height: 220px;
     padding: 18px;
     box-sizing: border-box;
@@ -149,5 +148,56 @@
     color: #3858E9;
     box-shadow: none;
     margin: 0;
+}
+
+
+/***********************************************************/
+/* Responsive
+/***********************************************************/
+
+@media screen and (max-width: 499px) {
+    #cl-add-ons-listing .wp-list-table tbody tr {
+        height: unset;
+    }
+
+    #cl-add-ons-listing .wp-list-table tbody tr .column-actions {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 782px) {
+
+    #cl-add-ons-listing .wp-list-table .column-add_on {
+        display: block;
+        flex-basis: 100px !important;
+    }
+
+    #cl-add-ons-listing .wp-list-table .column-add_on:before,
+    #cl-add-ons-listing .wp-list-table .column-icon .toggle-row {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1139px) {
+    #cl-add-ons-listing #cl-addons {
+        max-width: 450px !important;
+    }
+
+    #cl-add-ons-listing .wp-list-table tbody {
+        grid-template-columns: minmax(100%, 450px);
+    }
+}
+
+@media screen and (min-width: 1140px) and (max-width: 1609px) {
+    #cl-add-ons-listing #cl-addons {
+        max-width: 920px !important;
+    }
+}
+
+@media screen and (min-width: 1610px) {
+    #cl-add-ons-listing #cl-addons {
+        max-width: 1390px !important;
+    }
 }
 

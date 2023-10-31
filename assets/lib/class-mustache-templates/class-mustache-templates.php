@@ -8,6 +8,7 @@
  */
 class PB_Mustache_Generate_Template{
 	var $mustache_vars = array( );
+	var $mustache_vars_array = array( );
 	var $template = '';
 	var $extra_values = array( );
 	var $fields = array( );
@@ -112,6 +113,7 @@ class PB_Mustache_Generate_Admin_Box{
 	var $id; // string meta box id
 	var $title; // string title
 	var $page; // string|array post type to add meta box to
+	var $fields; // string|array post type to add meta box to
 	var $priority;
 	var $mustache_vars;
 	var $default_value;
@@ -446,6 +448,7 @@ class PB_Mustache_Generate_Admin_Box{
                 /* to avoid conflicts with other plugins we send an empty post object as the second parameter with a fake post type */
 				$post = new WP_Post( new stdClass() );
                 $post->post_type = 'wppb-mustache-settings-page';
+                remove_all_actions('save_post', 9 );// This was added for Breeze cache compatibility
                 remove_all_actions('save_post', 10 );//remove all actions that could run on the save_post hook on priority 10 than could expect a numeric post id instead of a string like $this->id. Ex: add_action( 'save_post', array( $this, 'refresh_post_word_count' ) ); in WPML translation management
 				remove_all_actions('save_post', PHP_INT_MAX );//same for PHP_INT_MAX priority: add_action( 'save_post', array( $this, 'queue_save_post_actions' ), PHP_INT_MAX, 2 );
 				do_action( 'save_post', $this->id, $post, false );

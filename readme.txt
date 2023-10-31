@@ -3,8 +3,8 @@ Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungurea
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 6.3
-Stable tag: 3.10.1
+Tested up to: 6.4
+Stable tag: 3.10.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.2 =
+* Fix: An error triggering from the Setup Wizard in a case
+* Fix: Back-end compatibility error that was being triggered when the Breeze Cache plugin was active
+* Fix: For Gutenberg Content Restriction messages that weren't centered on the page
+* Fix: Some warnings and notices appearing on PHP 8.2
+* Fix: Declare WooCommerce HPOS compatibility
+* Misc: random fixes for the new back-end styles
+
 = 3.10.1 =
 * Feature: Added Onboarding Wizard for easier plugin setup
 * Feature: New main plugin page Dashboard which serves as a quick plugin overview

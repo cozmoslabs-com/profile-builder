@@ -435,7 +435,7 @@ function wppb_add_ec_submenu_page() {
         if( !empty($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes') ){
             $hook = add_submenu_page('users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page');
             add_action( "load-$hook", 'wppb_ec_screen_options' ); //add screen options to Unconfirmed Email Users page
-            remove_submenu_page('users.php', 'unconfirmed_emails'); //hide the page in the admin menu
+            //remove_submenu_page('users.php', 'unconfirmed_emails'); //hide the page in the admin menu
         }
     }
 }
@@ -452,7 +452,7 @@ add_action('admin_menu', 'wppb_add_ec_submenu_page');
  * it's the way the list tables are used in the WordPress core.
  */
 function wppb_unconfirmed_email_address_custom_menu_page(){
-    
+
     //Create an instance of our package class...
     $listTable = new wpp_list_unfonfirmed_email_table();
     //Fetch, prepare, sort, and filter our data...

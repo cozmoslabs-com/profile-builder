@@ -36,6 +36,7 @@
 
 .cozmoslabs-wrap #poststuff {
     position: relative;
+    padding-top: 0;
 }
 
 .cozmoslabs-email-customizer-section .cozmoslabs-form-field-wrapper {

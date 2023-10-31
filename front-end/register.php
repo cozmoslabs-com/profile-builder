@@ -46,6 +46,9 @@ function wppb_activate_signup( $key ) {
 
 	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE activation_key = %s", $key ) ) );
 
+	if( empty( $signup ) )
+		return apply_filters( 'wppb_register_activate_user_error_message6', '<p class="error">'.__( 'Could not find registration. Contact administrator.', 'profile-builder' ).'</p>');
+
     $user_login = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? trim( $signup->user_email ) : trim( $signup->user_login ) );
 
     $user_email = esc_sql( $signup->user_email );
