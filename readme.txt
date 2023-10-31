@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.4
-Stable tag: 3.10.2
+Stable tag: 3.10.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,10 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.3 =
+* Fix: Fatal error introduced in last version
+* Misc: Small styling changes for Setup Wizard page
+
 = 3.10.2 =
 * Fix: An error triggering from the Setup Wizard in a case
 * Fix: Back-end compatibility error that was being triggered when the Breeze Cache plugin was active

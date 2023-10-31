@@ -72,7 +72,7 @@ function wppb_add_plugin_stylesheet() {
 	}
 
     // load stylesheet for the Default Form Style if no other Form Style is active and the active WP Theme is a Block Theme
-    $active_design = wppb_get_active_form_design();
+    $active_design = function_exists( 'wppb_get_active_form_design' ) ? wppb_get_active_form_design() : 'form-style-default';
     if ( $active_design === 'form-style-default' && wp_is_block_theme() && file_exists( WPPB_PLUGIN_DIR . 'assets/css/style-block-themes-front-end.css' ) ) {
         wp_register_style( 'wppb_block_themes_front_end_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-block-themes-front-end.css', array(), PROFILE_BUILDER_VERSION );
         wp_enqueue_style( 'wppb_block_themes_front_end_stylesheet' );

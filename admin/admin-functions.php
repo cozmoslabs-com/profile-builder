@@ -439,8 +439,11 @@ function wppb_get_pb_page_post_slug() {
  */
 function wppb_insert_page_banner() {
     $pb_slug = wppb_get_pb_page_post_slug();
-    $page_name = '';
 
+    if ( $pb_slug === 'profile-builder-dashboard' && isset( $_GET['subpage'] ) && $_GET['subpage'] === 'wppb-setup' )
+        return;
+
+    $page_name = '';
     if ( $pb_slug == 'profile-builder-add-ons' )
         $page_name = ' Addons';
 
