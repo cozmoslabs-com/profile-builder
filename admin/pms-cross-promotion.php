@@ -8,12 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @return void
  */
 function wppb_register_pms_cross_promo() {
-	add_submenu_page( '', __( 'Paid Accounts', 'profile-builder' ), __( 'Paid Accounts', 'profile-builder' ), 'manage_options', 'profile-builder-pms-promo', 'wppb_pms_cross_promo' );
+	add_submenu_page( 'Profile Builder Paid Accounts', __( 'Paid Accounts', 'profile-builder' ), __( 'Paid Accounts', 'profile-builder' ), 'manage_options', 'profile-builder-pms-promo', 'wppb_pms_cross_promo' );
 }
 add_action( 'admin_menu', 'wppb_register_pms_cross_promo', 2 );
 
 
 function wppb_deactivate_pms_plugin() {
+    check_ajax_referer( 'wppb-activate-addon', 'nonce' );
+
     if ( current_user_can( 'activate_plugins' )  && !empty( $_POST['wppb_add_on_to_deactivate'] ) && !empty( $_POST['wppb_add_on_index'] ) ) {
         $plugin_path = str_replace(array("http://", "https://"), "", sanitize_text_field( $_POST['wppb_add_on_to_deactivate']) );
         deactivate_plugins( $plugin_path );
@@ -28,6 +30,8 @@ add_action('wp_ajax_wppb_add_on_deactivate', 'wppb_deactivate_pms_plugin');
 
 
 function wppb_activate_pms_plugin() {
+    check_ajax_referer( 'wppb-activate-addon', 'nonce' );
+
     if ( current_user_can( 'activate_plugins' ) && !empty( $_POST['wppb_add_on_to_activate'] ) && !empty( $_POST['wppb_add_on_index'] )  ) {
         $plugin_path = str_replace(array("http://", "https://"), "", sanitize_text_field( $_POST['wppb_add_on_to_activate']) );
         activate_plugin( $plugin_path );
@@ -135,7 +139,7 @@ function wppb_pms_cross_promo() {
                                 <a target="_blank" href="http://wordpress.org/plugins/paid-member-subscriptions/">
                                     <img src="<?php echo esc_url( plugins_url( '../assets/images/pms-banner.png', __FILE__ ) ); ?>" width="100%">
                                 </a>
-                            </div
+                            </div>
                             <h3 class="wppb-add-on-title">
                                 <a target="_blank" href="http://wordpress.org/plugins/paid-member-subscriptions/">Paid Member Subscriptions</a>
                             </h3>

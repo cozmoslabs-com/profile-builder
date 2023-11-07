@@ -1027,12 +1027,53 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
     height: 215px !important;
 }
 
-.cozmoslabs-wysiwyg-wrapper .mce-statusbar {
-    display: none;
-}
-
 .cozmoslabs-wysiwyg-wrapper .cozmoslabs-description {
     padding: 10px  5px;
+}
+
+/* add link popup */
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp {
+    padding: 5px 10px;
+}
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .wp-link-input input[type="text"],
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .wp-link-input input[type="text"] {
+    border: 1px solid #949494;
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #1E1E1E;
+    padding: 0 10px;
+    height: 30px;
+    box-shadow: none;
+}
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .wp-link-input input[type="text"]:hover,
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .wp-link-input input[type="text"]:focus,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .wp-link-input input[type="text"]:hover,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .wp-link-input input[type="text"]:focus {
+    border-color: #3858E9;
+    color: #1E1E1E;
+}
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .mce-btn.mce-primary,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primary {
+    background: #3858E9 !important;
+    border: 1px solid #3858E9 !important;
+    border-radius: 2px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 28px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .mce-btn.mce-primary:hover,
+body[class*="post-type-wppb-"] .mce-inline-toolbar-grp .mce-btn.mce-primary:focus,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primary:hover,
+body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primary:focus {
+    background: #1D35B4 !important;
+    border-color: #1D35B4 !important;
+    box-shadow: none;
 }
 
 
@@ -1058,7 +1099,8 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
     color: #ca4a1f;
 }
 
-#wppb-register-version .cozmoslabs-description-container {
+#wppb-register-version .cozmoslabs-description-container,
+#wppb-register-version-page .cozmoslabs-description-container {
     flex-basis: calc( 100% - 230px);
     display: flex;
     flex-direction: column;
@@ -1069,7 +1111,23 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
     margin: 5px 0 0 230px;
 }
 
+#wppb-register-version-page .cozmoslabs-description-container {
+    flex-basis: auto;
+}
 
+.cozmoslabs-form-field-serial-number .cozmoslabs-description {
+    color: inherit !important;
+}
+
+#wppb-register-version .cozmoslabs-form-field-serial-number .cozmoslabs-description-container.red,
+#wppb-register-version-page .cozmoslabs-form-field-serial-number .cozmoslabs-description-container.red {
+    background: #fde0dd;
+}
+
+#wppb-register-version .cozmoslabs-form-field-serial-number .cozmoslabs-description-container.yellow,
+#wppb-register-version-page .cozmoslabs-form-field-serial-number .cozmoslabs-description-container.yellow {
+    background: #FDFBE6;
+}
 
 /**********************************************************************************************************************/
 
@@ -2877,4 +2935,8 @@ body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-acti
 
 .wppb-dashboard-progress .wppb-setup-progress__step:not(:first-child) {
     border-top: 0;
+}
+
+.wppb-active-license::before {
+    color: green;
 }

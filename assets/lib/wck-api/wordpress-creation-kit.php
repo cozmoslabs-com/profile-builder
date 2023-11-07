@@ -96,6 +96,7 @@ class Wordpress_Creation_Kit_PB{
 		add_action("wp_ajax_wck_reorder_meta".$this->args['meta_name'], array( &$this, 'wck_reorder_meta') );
 
 		add_action('add_meta_boxes', array( &$this, 'wck_add_metabox') );
+		add_action('wck_add_meta_boxes', array( &$this, 'wck_add_metabox') );
 
         /* For single forms we save them the old fashion way */
         if( $this->args['single'] ){
@@ -1540,7 +1541,11 @@ class WCK_Page_Creator_PB{
 	 */
 	function wck_settings_page_add_meta_boxes() {
         global $post;
-		do_action( 'add_meta_boxes', $this->hookname, $post );
+		
+		if( empty( $post ) || empty( $post->ID ) )
+			do_action( 'wck_add_meta_boxes', $this->hookname, $post );
+		else
+			do_action( 'add_meta_boxes', $this->hookname, $post );
 	}
 
 	/**

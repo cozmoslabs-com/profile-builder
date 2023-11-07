@@ -27,57 +27,12 @@ if( is_multisite() ) {
 function wppb_register_your_version_content() {
     ?>
     <div class="wrap wppb-wrap">
-        <?php wppb_serial_form(); ?>
-    </div>
-    <?php
-}
-
-
-/**
- * Function that creates the "Register your version" form
- *
- * @since v.2.0
- *
- * @return void
- */
-function wppb_serial_form(){
-    $status  = wppb_get_serial_number_status();
-    $license = wppb_get_serial_number();
-    ?>
-    <div id="wppb-register-version-page" class="wrap">
-        <h2>
-            <?php esc_html_e( "Register your version of Profile Builder", 'profile-builder' ); ?>
-            <a href="https://www.cozmoslabs.com/docs/profile-builder/basic-information-installation/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Register_your_version" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
-        </h2>
-        <p><?php esc_html_e( 'Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received.', 'profile-builder' ) ?></p>
-        <p><?php esc_html_e( 'If you register this version of Profile Builder, you\'ll receive information regarding upgrades, patches, and technical support.', 'profile-builder' ) ?></p>
-        <div class="wppb-serial-wrap">
-            <form method="post" action="<?php echo !is_multisite() ? 'options.php' : 'edit.php'; ?>">
-                <?php settings_fields( 'wppb_license_key' ); ?>
-                <label for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>
-                <div class="wppb-serial-wrap__holder">
-                    <input id="wppb_license_key" name="wppb_license_key" type="password" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
-                    <?php wp_nonce_field( 'wppb_license_nonce', 'wppb_license_nonce' ); ?>
-                    <?php if( $status !== false && $status == 'valid' ) {
-                        $button_name =  'wppb_edd_license_deactivate';
-                        $button_value = __('Deactivate License', 'profile-builder' );
-                        if( empty( $details['invalid'] ) )
-                            echo '<span title="'. esc_html__( 'Active on this site', 'profile-builder' ) .'" class="wppb-active-license dashicons dashicons-yes"></span>';
-                        else
-                            echo '<span title="'. esc_html__( 'Your license is invalid', 'profile-builder' ) .'" class="wppb-invalid-license dashicons dashicons-warning"></span>';
-                    } else {
-                        $button_name =  'wppb_edd_license_activate';
-                        $button_value = __('Activate License', 'profile-builder');
-                    }
-                    ?>
-                    <input type="submit" class="button-secondary" name="<?php echo esc_attr( $button_name ); ?>" value="<?php echo esc_attr( $button_value ); ?>"/>
-                </div>
-            </form>
+        <div id="wppb-register-version-page" class="wrap">
+            <?php wppb_add_register_version_form(); ?>
         </div>
     </div>
     <?php
 }
-
 
 /**
  * Retrieve saved license key
@@ -228,7 +183,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
     
     
     // Maybe add about to expire notice
-    if( !empty( $license_details ) && !empty( $license_details->expires ) && $license_details->expires !== 'lifetime' ){
+    if( $wppb_serial_status != 'expired' && !empty( $license_details ) && !empty( $license_details->expires ) && $license_details->expires !== 'lifetime' ){
 
         if( ( !isset( $license_details->subscription_status ) || $license_details->subscription_status != 'active' ) && strtotime( $license_details->expires ) < strtotime( '+14 days' ) ){
             new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ), "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );

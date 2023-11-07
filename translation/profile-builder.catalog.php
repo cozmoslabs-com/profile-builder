@@ -240,8 +240,14 @@
 <?php __("Deactivate License", "profile-builder"); ?>
 <?php __("Your license is invalid", "profile-builder"); ?>
 <?php __("Active on this site", "profile-builder"); ?>
-<?php __("Enter your license key. Your license key can be found in your Cozmoslabs account. ", "profile-builder"); ?>
-<?php __("You can use this core version of Profile Builder for free. For priority support and advanced functionality, a license key is required.", "profile-builder"); ?>
+<?php __("Enter your license key. Your license key can be found in your %sCozmoslabs account%s. ", "profile-builder"); ?>
+<?php __("You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s.", "profile-builder"); ?>
+<?php __("Your %s license has reached its activation limit.", "profile-builder"); ?>
+<?php __("%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more.", "profile-builder"); ?>
+<?php __("Your %s license has expired.", "profile-builder"); ?>
+<?php __('Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support.', 'profile-builder' ); ?>
+<?php __("Your %s license is about to expire on %s", "profile-builder"); ?>
+<?php __("Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support.", "profile-builder"); ?>
 <?php __("Form Fields", "profile-builder"); ?>
 <?php __("Manage Form Fields", "profile-builder"); ?>
 <?php __("Default", "profile-builder"); ?>
@@ -834,9 +840,6 @@
 <?php __("Disable REST-API", "profile-builder"); ?>
 <?php __("Disable the WordPress REST-API for non-logged in users when Private Website is enabled", "profile-builder"); ?>
 <?php __("Profile Builder Register", "profile-builder"); ?>
-<?php __("Register your version of Profile Builder", "profile-builder"); ?>
-<?php __("Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received.", "profile-builder"); ?>
-<?php __("If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support.", "profile-builder"); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>

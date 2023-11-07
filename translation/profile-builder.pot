@@ -245,7 +245,7 @@ msgstr ""
 msgid "Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders."
 msgstr ""
 
-#: admin/add-ons.php:239, admin/pms-cross-promotion.php:63
+#: admin/add-ons.php:239, admin/pms-cross-promotion.php:67
 msgid "Paid Member Subscriptions"
 msgstr ""
 
@@ -301,19 +301,19 @@ msgstr ""
 msgid "<strong>ERROR:</strong> The password must have the minimum length of %s characters"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:338
+#: admin/admin-functions.php:139, admin/general-settings.php:342
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:339, features/functions.php:814, features/functions.php:838
+#: admin/admin-functions.php:139, admin/general-settings.php:343, features/functions.php:820, features/functions.php:844
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:340, features/functions.php:814, features/functions.php:838
+#: admin/admin-functions.php:139, admin/general-settings.php:344, features/functions.php:820, features/functions.php:844
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:341, features/functions.php:814, features/functions.php:838
+#: admin/admin-functions.php:139, admin/general-settings.php:345, features/functions.php:820, features/functions.php:844
 msgid "Strong"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgstr ""
 msgid "Allow users to recover their password in the front-end using the %s."
 msgstr ""
 
-#: admin/basic-info.php:103, admin/general-settings.php:244, admin/general-settings.php:259, features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:407, features/admin-approval/admin-approval.php:391, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
+#: admin/basic-info.php:103, admin/general-settings.php:248, admin/general-settings.php:263, features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:407, features/admin-approval/admin-approval.php:391, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
 msgid "Admin Approval"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
 msgstr ""
 
-#: admin/basic-info.php:113, admin/general-settings.php:197
+#: admin/basic-info.php:113, admin/general-settings.php:201
 msgid "Email Confirmation"
 msgstr ""
 
@@ -493,7 +493,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:138, admin/general-settings.php:297, features/roles-editor/roles-editor.php:61, features/roles-editor/roles-editor.php:62, features/roles-editor/roles-editor.php:275, features/roles-editor/roles-editor.php:276, features/roles-editor/roles-editor.php:281, features/roles-editor/roles-editor.php:288
+#: admin/basic-info.php:138, admin/general-settings.php:301, features/roles-editor/roles-editor.php:61, features/roles-editor/roles-editor.php:62, features/roles-editor/roles-editor.php:275, features/roles-editor/roles-editor.php:276, features/roles-editor/roles-editor.php:281, features/roles-editor/roles-editor.php:288
 msgid "Roles Editor"
 msgstr ""
 
@@ -629,11 +629,11 @@ msgstr ""
 msgid "Paid user profiles with Profile Builder and Paid Member Subscriptions"
 msgstr ""
 
-#: admin/basic-info.php:260, admin/pms-cross-promotion.php:60
+#: admin/basic-info.php:260, admin/pms-cross-promotion.php:64
 msgid "One of the most requested features in Profile Builder was for users to be able to pay for an account."
 msgstr ""
 
-#: admin/basic-info.php:261, admin/pms-cross-promotion.php:62
+#: admin/basic-info.php:261, admin/pms-cross-promotion.php:66
 msgid "Now that is possible using the free WordPress plugin - "
 msgstr ""
 
@@ -797,163 +797,163 @@ msgstr ""
 msgid "Profile Builder Settings"
 msgstr ""
 
-#: admin/general-settings.php:164
+#: admin/general-settings.php:168
 msgid "Design & User Experience"
 msgstr ""
 
-#: admin/general-settings.php:165, admin/setup-wizard/view-tab-general.php:15
+#: admin/general-settings.php:169, admin/setup-wizard/view-tab-general.php:15
 msgid "Choose a style that better suits your website."
 msgstr ""
 
-#: admin/general-settings.php:166
+#: admin/general-settings.php:170
 msgid "The default style is there to let you customize the CSS and in general will receive the look and feel from your own theme’s styling."
 msgstr ""
 
-#: admin/general-settings.php:181
+#: admin/general-settings.php:185
 msgid "Optimize The login and Registration flow for your members"
 msgstr ""
 
-#: admin/general-settings.php:184, add-ons/multiple-forms/register-forms.php:228
+#: admin/general-settings.php:188, add-ons/multiple-forms/register-forms.php:228
 msgid "Automatically Log In"
 msgstr ""
 
-#: admin/general-settings.php:192
+#: admin/general-settings.php:196
 msgid "Select \"Yes\" to automatically log in new users after successful registration."
 msgstr ""
 
-#: admin/general-settings.php:207
+#: admin/general-settings.php:211
 msgid "This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" module."
 msgstr ""
 
-#: admin/general-settings.php:208
+#: admin/general-settings.php:212
 msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
 msgstr ""
 
-#: admin/general-settings.php:216
+#: admin/general-settings.php:220
 msgid "Email Confirmation Page"
 msgstr ""
 
-#: admin/general-settings.php:220
+#: admin/general-settings.php:224
 msgid "Existing Pages"
 msgstr ""
 
-#: admin/general-settings.php:235
+#: admin/general-settings.php:239
 msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time."
 msgstr ""
 
-#: admin/general-settings.php:247
+#: admin/general-settings.php:251
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
-#: admin/general-settings.php:267
+#: admin/general-settings.php:271
 msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
 msgstr ""
 
-#: admin/general-settings.php:272
+#: admin/general-settings.php:276
 msgid "Admin Approval User Role"
 msgstr ""
 
-#: admin/general-settings.php:305
+#: admin/general-settings.php:309
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:313
+#: admin/general-settings.php:317
 msgid "Allow Users to Log in With:"
 msgstr ""
 
-#: admin/general-settings.php:316
+#: admin/general-settings.php:320
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:317, admin/manage-fields.php:380, front-end/login.php:345, front-end/login.php:359, front-end/login.php:547, add-ons/custom-redirects/custom_redirects_admin.php:61, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:339, add-ons/user-listing/userlisting.php:885, add-ons/user-listing/userlisting.php:2570, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, features/email-customizer/email-customizer.php:28, admin/advanced-settings/includes/views/view-fields.php:103
+#: admin/general-settings.php:321, admin/manage-fields.php:380, front-end/login.php:345, front-end/login.php:359, front-end/login.php:547, add-ons/custom-redirects/custom_redirects_admin.php:61, add-ons/user-listing/userlisting.php:113, add-ons/user-listing/userlisting.php:339, add-ons/user-listing/userlisting.php:885, add-ons/user-listing/userlisting.php:2570, features/admin-approval/class-admin-approval.php:174, features/email-confirmation/class-email-confirmation.php:168, features/email-customizer/email-customizer.php:28, admin/advanced-settings/includes/views/view-fields.php:103
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:318, front-end/login.php:542, front-end/recover.php:115, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2571, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:10
+#: admin/general-settings.php:322, front-end/login.php:542, front-end/recover.php:115, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:891, add-ons/user-listing/userlisting.php:2571, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:169, features/email-customizer/email-customizer.php:29, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:24, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:9, admin/advanced-settings/includes/shortcodes/resend-activation.php:10
 msgid "Email"
 msgstr ""
 
-#: admin/general-settings.php:321
+#: admin/general-settings.php:325
 msgid "Choose what the user will be logging in with."
 msgstr ""
 
-#: admin/general-settings.php:326
+#: admin/general-settings.php:330
 msgid "Minimum Password Length"
 msgstr ""
 
-#: admin/general-settings.php:329
+#: admin/general-settings.php:333
 msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
 msgstr ""
 
-#: admin/general-settings.php:334
+#: admin/general-settings.php:338
 msgid "Minimum Password Strength"
 msgstr ""
 
-#: admin/general-settings.php:337
+#: admin/general-settings.php:341
 msgid "Disabled"
 msgstr ""
 
-#: admin/general-settings.php:344
+#: admin/general-settings.php:348
 msgid "A stronger password strength will probably force the user to not reuse passwords from other websites."
 msgstr ""
 
-#: admin/general-settings.php:349
+#: admin/general-settings.php:353
 msgid "Password Recovery Page"
 msgstr ""
 
-#: admin/general-settings.php:352, add-ons/user-listing/userlisting.php:598, add-ons/user-listing/userlisting.php:595, add-ons/user-listing/userlisting.php:593, add-ons/user-listing/userlisting.php:576, add-ons/user-listing/userlisting.php:573, add-ons/user-listing/userlisting.php:571, add-ons-advanced/bbpress/bbpress-page.php:101, add-ons-advanced/bbpress/bbpress-page.php:132, add-ons-advanced/woocommerce/woosync-page.php:91, add-ons-advanced/woocommerce/woosync-page.php:122, features/content-restriction/content-restriction.php:144, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:586, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:254, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:329
+#: admin/general-settings.php:356, add-ons/user-listing/userlisting.php:598, add-ons/user-listing/userlisting.php:595, add-ons/user-listing/userlisting.php:593, add-ons/user-listing/userlisting.php:576, add-ons/user-listing/userlisting.php:573, add-ons/user-listing/userlisting.php:571, add-ons-advanced/bbpress/bbpress-page.php:101, add-ons-advanced/bbpress/bbpress-page.php:132, add-ons-advanced/woocommerce/woosync-page.php:91, add-ons-advanced/woocommerce/woosync-page.php:122, features/content-restriction/content-restriction.php:144, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:586, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:254, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:329
 msgid "None"
 msgstr ""
 
-#: admin/general-settings.php:373
+#: admin/general-settings.php:377
 msgid "Select the page which contains the \"[wppb-recover-password]\" shortcode."
 msgstr ""
 
-#: admin/general-settings.php:378
+#: admin/general-settings.php:382
 msgid "Hide Admin Bar for User Roles"
 msgstr ""
 
-#: admin/general-settings.php:394
+#: admin/general-settings.php:398
 msgid "Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for."
 msgstr ""
 
-#: admin/general-settings.php:407, features/two-factor-authentication/class-two-factor-authentication.php:85, features/two-factor-authentication/class-two-factor-authentication.php:86, features/two-factor-authentication/class-two-factor-authentication.php:139
+#: admin/general-settings.php:411, features/two-factor-authentication/class-two-factor-authentication.php:85, features/two-factor-authentication/class-two-factor-authentication.php:86, features/two-factor-authentication/class-two-factor-authentication.php:139
 msgid "Two-Factor Authentication"
 msgstr ""
 
-#: admin/general-settings.php:415
+#: admin/general-settings.php:419
 msgid "Activate the Google Authenticator functionality."
 msgstr ""
 
-#: admin/general-settings.php:428
+#: admin/general-settings.php:432
 msgid "Enable Authenticator For"
 msgstr ""
 
-#: admin/general-settings.php:432
+#: admin/general-settings.php:436
 msgid "ALL ROLES"
 msgstr ""
 
-#: admin/general-settings.php:440
+#: admin/general-settings.php:444
 msgid "\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles."
 msgstr ""
 
-#: admin/general-settings.php:445
+#: admin/general-settings.php:449
 msgid "Load CSS"
 msgstr ""
 
-#: admin/general-settings.php:452
+#: admin/general-settings.php:456
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:463, admin/private-website.php:168, features/functions.php:1082, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:189, assets/lib/class-mustache-templates/class-mustache-templates.php:428, assets/lib/wck-api/wordpress-creation-kit.php:433, admin/advanced-settings/includes/views/view-admin.php:97, admin/advanced-settings/includes/views/view-fields.php:257, admin/advanced-settings/includes/views/view-forms.php:338, admin/advanced-settings/includes/views/view-shortcodes.php:96, admin/advanced-settings/includes/views/view-userlisting.php:66
+#: admin/general-settings.php:467, admin/private-website.php:168, features/functions.php:1088, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:189, assets/lib/class-mustache-templates/class-mustache-templates.php:428, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:97, admin/advanced-settings/includes/views/view-fields.php:257, admin/advanced-settings/includes/views/view-forms.php:338, admin/advanced-settings/includes/views/view-shortcodes.php:96, admin/advanced-settings/includes/views/view-userlisting.php:66
 msgid "Save Changes"
 msgstr ""
 
-#: admin/general-settings.php:581
+#: admin/general-settings.php:585
 msgid "Available in the Pro versions of the plugin"
 msgstr ""
 
-#: admin/general-settings.php:628
+#: admin/general-settings.php:632
 msgid "You can now beautify your forms using new Styles. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
@@ -961,32 +961,56 @@ msgstr ""
 msgid "Register Website"
 msgstr ""
 
-#: admin/general-settings.php:655, admin/register-version.php:57
+#: admin/general-settings.php:655
 msgid "License key"
 msgstr ""
 
-#: admin/general-settings.php:672, admin/register-version.php:70
+#: admin/general-settings.php:672
 msgid "Activate License"
 msgstr ""
 
-#: admin/general-settings.php:663, admin/register-version.php:63
+#: admin/general-settings.php:663
 msgid "Deactivate License"
 msgstr ""
 
-#: admin/general-settings.php:668, admin/register-version.php:67
+#: admin/general-settings.php:668
 msgid "Your license is invalid"
 msgstr ""
 
-#: admin/general-settings.php:666, admin/register-version.php:65
+#: admin/general-settings.php:666
 msgid "Active on this site"
 msgstr ""
 
-#: admin/general-settings.php:679
-msgid "Enter your license key. Your license key can be found in your Cozmoslabs account. "
+#: admin/general-settings.php:695
+msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
+msgstr ""
+
+#: admin/general-settings.php:696
+msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
+msgstr ""
+
+#: admin/general-settings.php:690
+msgid "Your %s license has reached its activation limit."
+msgstr ""
+
+#: admin/general-settings.php:691
+msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
+msgstr ""
+
+#: admin/general-settings.php:685
+msgid "Your %s license has expired."
+msgstr ""
+
+#: admin/general-settings.php:686
+msgid "Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
 #: admin/general-settings.php:680
-msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, a license key is required."
+msgid "Your %s license is about to expire on %s"
+msgstr ""
+
+#: admin/general-settings.php:681
+msgid "Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
 #: admin/manage-fields.php:18
@@ -3149,11 +3173,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1103, features/functions.php:1110, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:374, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:475, assets/lib/wck-api/wordpress-creation-kit.php:576
+#: admin/manage-fields.php:1409, features/functions.php:1109, features/functions.php:1116, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:187, add-ons-free/labels-edit/labels-edit.php:374, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1096, features/functions.php:1110, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:475, assets/lib/wck-api/wordpress-creation-kit.php:577, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1409, features/functions.php:1102, features/functions.php:1116, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:187, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3177,163 +3201,163 @@ msgstr ""
 msgid "Paid Accounts"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:58
+#: admin/pms-cross-promotion.php:62
 msgid "Users can pay for an account with"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:59
+#: admin/pms-cross-promotion.php:63
 msgid "Profile Builder and Paid Member Subscriptions"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:71
+#: admin/pms-cross-promotion.php:75
 msgid "Paid Member Subscriptions - a free WordPress plugin"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:72
+#: admin/pms-cross-promotion.php:76
 msgid "With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to sign up for paid accounts."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:77
+#: admin/pms-cross-promotion.php:81
 msgid "Other features of Paid Member Subscriptions are:"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:79
+#: admin/pms-cross-promotion.php:83
 msgid "Paid & Free Subscriptions"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:80
+#: admin/pms-cross-promotion.php:84
 msgid "Restrict Content"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:81
+#: admin/pms-cross-promotion.php:85
 msgid "Member Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:82
+#: admin/pms-cross-promotion.php:86
 msgid "Email Templates"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:83
+#: admin/pms-cross-promotion.php:87
 msgid "Account Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:84
+#: admin/pms-cross-promotion.php:88
 msgid "Subscription Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:85
+#: admin/pms-cross-promotion.php:89
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:116, admin/pms-cross-promotion.php:154, admin/pms-cross-promotion.php:239, features/two-factor-authentication/class-two-factor-authentication.php:141, features/two-factor-authentication/class-two-factor-authentication.php:253
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, features/two-factor-authentication/class-two-factor-authentication.php:141, features/two-factor-authentication/class-two-factor-authentication.php:253
 msgid "Activate"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:118
+#: admin/pms-cross-promotion.php:122
 msgid "Downloading and installing..."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:119
+#: admin/pms-cross-promotion.php:123
 msgid "Installation complete"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:121
+#: admin/pms-cross-promotion.php:125
 msgid "Plugin is Active"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:122
+#: admin/pms-cross-promotion.php:126
 msgid "Plugin has been activated"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:123
+#: admin/pms-cross-promotion.php:127
 msgid "Retry Install"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:125, admin/pms-cross-promotion.php:165, admin/pms-cross-promotion.php:250
+#: admin/pms-cross-promotion.php:129, admin/pms-cross-promotion.php:169, admin/pms-cross-promotion.php:254
 msgid "Plugin is %1$s active %2$s"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:126, admin/pms-cross-promotion.php:163, admin/pms-cross-promotion.php:248
+#: admin/pms-cross-promotion.php:130, admin/pms-cross-promotion.php:167, admin/pms-cross-promotion.php:252
 msgid "Plugin is %1$s inactive %2$s"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:128, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243
+#: admin/pms-cross-promotion.php:132, admin/pms-cross-promotion.php:162, admin/pms-cross-promotion.php:247
 msgid "Deactivate"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:129
+#: admin/pms-cross-promotion.php:133
 msgid "Plugin has been deactivated."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:142
+#: admin/pms-cross-promotion.php:146
 msgid "Free"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:144
+#: admin/pms-cross-promotion.php:148
 msgid "Accept user payments, create subscription plans and restrict content on your website."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:145
+#: admin/pms-cross-promotion.php:149
 msgid "More Details"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:177, admin/pms-cross-promotion.php:262
+#: admin/pms-cross-promotion.php:181, admin/pms-cross-promotion.php:266
 msgid "Install Now"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:174, admin/pms-cross-promotion.php:259
+#: admin/pms-cross-promotion.php:178, admin/pms-cross-promotion.php:263
 msgid "Download Now"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:181, admin/pms-cross-promotion.php:266
+#: admin/pms-cross-promotion.php:185, admin/pms-cross-promotion.php:270
 msgid "Compatible with your version of Profile Builder."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:186
+#: admin/pms-cross-promotion.php:190
 msgid "Could not install plugin. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:194
+#: admin/pms-cross-promotion.php:198
 msgid "Step by Step Quick Setup"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:195
+#: admin/pms-cross-promotion.php:199
 msgid "Setting up Paid Member Subscriptions opens the door to paid user accounts."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:198
+#: admin/pms-cross-promotion.php:202
 msgid "Create Subscription Plans"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:199
+#: admin/pms-cross-promotion.php:203
 msgid "With Paid Member Subscriptions it’s fairly easy to create tiered subscription plans for your users."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:200
+#: admin/pms-cross-promotion.php:204
 msgid "Adding a new subscription gives you access to the following options to set up: subscription name, description, duration, the price, status and user role."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:209
+#: admin/pms-cross-promotion.php:213
 msgid "Add Subscriptions field to Profile Builder -> Manage Fields"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:210
+#: admin/pms-cross-promotion.php:214
 msgid "The new Subscription Plans field will add a list of radio buttons with membership details to Profile Builder registration forms."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:219
+#: admin/pms-cross-promotion.php:223
 msgid "Start getting user payments"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:220
+#: admin/pms-cross-promotion.php:224
 msgid "To finalize registration for a paid account, users will need to complete the payment."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:221
+#: admin/pms-cross-promotion.php:225
 msgid "Members created with Profile Builder registration form will have the user role of the selected subscription."
 msgstr ""
 
-#: admin/pms-cross-promotion.php:285
+#: admin/pms-cross-promotion.php:289
 msgid "Allow your users to have <strong>paid accounts with Profile Builder</strong>. %1$sFind out how >%2$s %3$sDismiss%4$s"
 msgstr ""
 
@@ -3397,39 +3421,27 @@ msgstr ""
 msgid "Profile Builder Register"
 msgstr ""
 
-#: admin/register-version.php:49
-msgid "Register your version of Profile Builder"
-msgstr ""
-
-#: admin/register-version.php:52
-msgid "Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received."
-msgstr ""
-
-#: admin/register-version.php:53
-msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
-msgstr ""
-
-#: admin/register-version.php:224
+#: admin/register-version.php:179
 msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s"
 msgstr ""
 
-#: admin/register-version.php:222
+#: admin/register-version.php:177
 msgid "Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s"
 msgstr ""
 
-#: admin/register-version.php:215
+#: admin/register-version.php:170
 msgid "Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s"
 msgstr ""
 
-#: admin/register-version.php:234
+#: admin/register-version.php:189
 msgid "Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s"
 msgstr ""
 
-#: admin/register-version.php:243
+#: admin/register-version.php:198
 msgid "Your <strong>%s</strong> license has reached its activation limit.<br> Upgrade now for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>"
 msgstr ""
 
-#: admin/register-version.php:247
+#: admin/register-version.php:202
 msgid " %1$sDismiss%2$s"
 msgstr ""
 
@@ -3505,83 +3517,83 @@ msgstr ""
 msgid "Follow these steps to start registering users on your website. %1s out of %2s complete."
 msgstr ""
 
-#: features/functions.php:364
+#: features/functions.php:370
 msgid "GDPR Checkbox"
 msgstr ""
 
-#: features/functions.php:364
+#: features/functions.php:370
 msgid "I allow the website to collect and store the data I submit through this form."
 msgstr ""
 
-#: features/functions.php:364
+#: features/functions.php:370
 msgid "Honeypot"
 msgstr ""
 
-#: features/functions.php:788
+#: features/functions.php:794
 msgid "Strength indicator"
 msgstr ""
 
-#: features/functions.php:814, features/functions.php:838
+#: features/functions.php:820, features/functions.php:844
 msgid "Very Weak"
 msgstr ""
 
-#: features/functions.php:828
+#: features/functions.php:834
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:839, front-end/recover.php:399, front-end/default-fields/password/password.php:59
+#: features/functions.php:845, front-end/recover.php:399, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:1001
+#: features/functions.php:1007
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1039, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1045, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1046
+#: features/functions.php:1052
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1089, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:434
+#: features/functions.php:1095, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:435
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1110, assets/lib/wck-api/wordpress-creation-kit.php:475
+#: features/functions.php:1116, assets/lib/wck-api/wordpress-creation-kit.php:476
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1300
+#: features/functions.php:1306
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1313
+#: features/functions.php:1319
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1404, add-ons-advanced/social-connect/index.php:424
+#: features/functions.php:1410, add-ons-advanced/social-connect/index.php:424
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1405
+#: features/functions.php:1411
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1585
+#: features/functions.php:1591
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1626
+#: features/functions.php:1632
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1663
+#: features/functions.php:1669
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1681, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1687, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -3621,7 +3633,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:304, front-end/login.php:656, assets/lib/wck-api/wordpress-creation-kit.php:820
+#: front-end/class-formbuilder.php:304, front-end/login.php:656, assets/lib/wck-api/wordpress-creation-kit.php:821
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -3890,15 +3902,15 @@ msgstr ""
 msgid "This username is now active!"
 msgstr ""
 
-#: front-end/register.php:167
+#: front-end/register.php:168
 msgid "There was an error while trying to activate the user."
 msgstr ""
 
-#: front-end/register.php:124
+#: front-end/register.php:125
 msgid "Your email was successfully confirmed."
 msgstr ""
 
-#: front-end/register.php:125, features/email-confirmation/email-confirmation.php:702
+#: front-end/register.php:126, features/email-confirmation/email-confirmation.php:702
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
 msgstr ""
 
@@ -7337,7 +7349,7 @@ msgstr ""
 msgid "Campaign Monitor Integration"
 msgstr ""
 
-#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:70, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:106, assets/lib/class-mustache-templates/class-mustache-templates.php:287, assets/lib/wck-api/wordpress-creation-kit.php:361
+#: add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:70, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:106, assets/lib/class-mustache-templates/class-mustache-templates.php:287, assets/lib/wck-api/wordpress-creation-kit.php:362
 msgid "Save"
 msgstr ""
 
@@ -7571,7 +7583,7 @@ msgstr ""
 msgid "Enter a MailChimp API key. You can create keys in your MailChimp account."
 msgstr ""
 
-#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:172, assets/lib/wck-api/wordpress-creation-kit.php:576
+#: add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:172, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit this item"
 msgstr ""
 
@@ -7823,23 +7835,23 @@ msgstr ""
 msgid "Page will refresh in 3 seconds..."
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:361
+#: assets/lib/wck-api/wordpress-creation-kit.php:362
 msgid "Add Entry"
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:577
+#: assets/lib/wck-api/wordpress-creation-kit.php:578
 msgid "Delete this item"
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:771
+#: assets/lib/wck-api/wordpress-creation-kit.php:772
 msgid "Please enter a value for the required field "
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:1402
+#: assets/lib/wck-api/wordpress-creation-kit.php:1403
 msgid "This field is available in our paid plans."
 msgstr ""
 
-#: assets/lib/wck-api/wordpress-creation-kit.php:1400
+#: assets/lib/wck-api/wordpress-creation-kit.php:1401
 msgid "Install the free Paid Member Subscriptions plugin to get access this field."
 msgstr ""
 

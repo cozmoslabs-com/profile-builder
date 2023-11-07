@@ -149,11 +149,15 @@ function wppb_general_settings_content() {
 
         <?php settings_errors(); ?>
 
-		<?php wppb_generate_settings_tabs() ?>
+		<?php wppb_generate_settings_tabs(); ?>
 
         <?php wppb_load_necessary_scripts(); ?>
 
-		<?php wppb_add_register_version_form() ?>
+		<?php if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && defined( 'PROFILE_BUILDER_PAID_VERSION' ) ) : ?>
+            <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
+                <?php wppb_add_register_version_form(); ?>
+            </div>
+        <?php endif; ?>
 
 		<form method="post" action="options.php#general-settings">
 		<?php $wppb_generalSettings = get_option( 'wppb_general_settings' ); ?>
@@ -449,7 +453,7 @@ function wppb_general_settings_content() {
                         <label class="cozmoslabs-toggle-track" for="extraFieldsLayout"></label>
                     </div>
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'\assets\css\style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+                        <p class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'/assets/css/style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
                     </div>
                 </div>
 
@@ -636,54 +640,66 @@ function wppb_display_form_designs_preview() {
  *
  */
 function wppb_add_register_version_form() {
-
-    if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) && !defined( 'PROFILE_BUILDER_PAID_VERSION' ) )
-        return '';
-
-    $status  = wppb_get_serial_number_status();
-    $license = wppb_get_serial_number();
+    $status          = wppb_get_serial_number_status();
+    $license         = wppb_get_serial_number();
+    $license_details = get_option( 'wppb_license_details', false );
     ?>
 
-    <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
-        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Register Website', 'profile-builder' ) ?></h4>
+    <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Register Website', 'profile-builder' ) ?></h4>
 
-        <form method="post" action="<?php echo !is_multisite() ? 'options.php' : 'edit.php'; ?>">
-            <?php settings_fields( 'wppb_license_key' ); ?>
+    <form method="post" action="<?php echo !is_multisite() ? 'options.php' : 'edit.php'; ?>">
+        <?php settings_fields( 'wppb_license_key' ); ?>
 
-            <div class="cozmoslabs-form-field-wrapper">
+        <div class="cozmoslabs-form-field-wrapper cozmoslabs-form-field-serial-number">
 
-                <label class="cozmoslabs-form-field-label" for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>
+            <label class="cozmoslabs-form-field-label" for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>
 
-                <div class="cozmoslabs-serial-wrap__holder">
-                    <input id="wppb_license_key" name="wppb_license_key" type="password" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
-                    <?php wp_nonce_field( 'wppb_license_nonce', 'wppb_license_nonce' ); ?>
+            <div class="cozmoslabs-serial-wrap__holder">
+                <input id="wppb_license_key" name="wppb_license_key" type="password" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
+                <?php wp_nonce_field( 'wppb_license_nonce', 'wppb_license_nonce' ); ?>
 
-                    <?php if( $status !== false && $status == 'valid' ) {
-                        $button_name =  'wppb_edd_license_deactivate';
-                        $button_value = __('Deactivate License', 'profile-builder' );
+                <?php if( $status !== false && $status == 'valid' ) {
+                    $button_name =  'wppb_edd_license_deactivate';
+                    $button_value = __('Deactivate License', 'profile-builder' );
 
-                        if( empty( $details['invalid'] ) )
-                            echo '<span title="'. esc_html__( 'Active on this site', 'profile-builder' ) .'" class="wppb-active-license dashicons dashicons-yes"></span>';
-                        else
-                            echo '<span title="'. esc_html__( 'Your license is invalid', 'profile-builder' ) .'" class="wppb-invalid-license dashicons dashicons-warning"></span>';
+                    if( empty( $details['invalid'] ) )
+                        echo '<span title="'. esc_html__( 'Active on this site', 'profile-builder' ) .'" class="wppb-active-license dashicons dashicons-yes"></span>';
+                    else
+                        echo '<span title="'. esc_html__( 'Your license is invalid', 'profile-builder' ) .'" class="wppb-invalid-license dashicons dashicons-warning"></span>';
 
-                    } else {
-                        $button_name =  'wppb_edd_license_activate';
-                        $button_value = __('Activate License', 'profile-builder');
-                    }
-                    ?>
-                    <input type="submit" class="button-secondary" name="<?php echo esc_attr( $button_name ); ?>" value="<?php echo esc_attr( $button_value ); ?>"/>
-                </div>
-
-                <div class="cozmoslabs-description-container">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Enter your license key. Your license key can be found in your Cozmoslabs account. ', 'profile-builder' ) ?></p>
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'You can use this core version of Profile Builder for free. For priority support and advanced functionality, a license key is required.', 'profile-builder' ) ?></p>
-                </div>
-
+                } else {
+                    $button_name =  'wppb_edd_license_activate';
+                    $button_value = __('Activate License', 'profile-builder');
+                }
+                ?>
+                <input type="submit" class="button-secondary" name="<?php echo esc_attr( $button_name ); ?>" value="<?php echo esc_attr( $button_value ); ?>"/>
             </div>
-        </form>
+            
+            <?php if( $status != 'expired' && ( !empty( $license_details ) && !empty( $license_details->expires ) && $license_details->expires !== 'lifetime' ) && ( ( !isset( $license_details->subscription_status ) || $license_details->subscription_status != 'active' ) && strtotime( $license_details->expires ) < strtotime( '+14 days' ) ) ) : ?>
+                <div class="cozmoslabs-description-container yellow">
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Your %s license is about to expire on %s', 'profile-builder' ), '<strong>' . PROFILE_BUILDER . '</strong>', '<strong>' . date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ) . '</strong>' ) ); ?>
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support.', 'profile-builder' ), "<a href='https://www.cozmoslabs.com/account/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>" ) ); ?></p>
+                </div>
+            <?php elseif( $status == 'expired' ) : ?>
+                <div class="cozmoslabs-description-container red">
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Your %s license has expired.', 'profile-builder' ), '<strong>' . PROFILE_BUILDER . '</strong>' ) ); ?>
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=wppb-settings-page&utm_campaign=PBFree" target="_blank">', '</a>' ) ); ?></p>
+                </div>
+            <?php elseif( $status == 'no_activations_left' ) : ?>
+                <div class="cozmoslabs-description-container red">
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Your %s license has reached its activation limit.', 'profile-builder' ), '<strong>' . PROFILE_BUILDER . '</strong>' ) ); ?>
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( '%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=wppb-settings-page&utm_campaign=PB" target="_blank">', '</a>' ) ); ?>
+                </div>
+            <?php elseif( empty( $license ) || $status != 'valid' ) : ?>
+                <div class="cozmoslabs-description-container">
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'Enter your license key. Your license key can be found in your %sCozmoslabs account%s. ', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=wppb-settings-page&utm_campaign=PBFree" target="_blank">', '</a>' ) ); ?></p>
+                    <p class="cozmoslabs-description"><?php echo wp_kses_post( sprintf( __( 'You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=wppb-settings-page&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ) ); ?></p>
+                </div>
+            <?php endif; ?>
 
-    </div>
+        </div>
+    </form>
+    
     <?php
 }
 

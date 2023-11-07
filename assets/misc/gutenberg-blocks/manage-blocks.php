@@ -16,7 +16,8 @@ function wppb_block_editor_enqueue()
 
     if ( $active_design === 'form-style-default' ) {
 
-        if ( wp_is_block_theme() )
+        // load stylesheet for the Default Form Style if the active WP Theme is a Block Theme (Block Themes were introduced in WordPress since the 5.9 release)
+        if ( version_compare( get_bloginfo( 'version' ), '5.9', '>=' ) && function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() )
             wp_enqueue_style('wppb_block_themes_front_end_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-block-themes-front-end.css', array('wp-edit-blocks'), PROFILE_BUILDER_VERSION);
 
     }
