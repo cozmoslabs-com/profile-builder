@@ -187,7 +187,7 @@ class Wordpress_Creation_Kit_PB{
 
 
 
-//		//output the add form or themes metabox content
+		// output the add form or themes metabox content
         if ($metabox['id'] == 'wppb-ul-themes-settings' ) {
             echo $metabox['args']['meta_array']; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }

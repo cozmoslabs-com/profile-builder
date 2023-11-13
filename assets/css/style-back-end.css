@@ -64,6 +64,12 @@ body[class*="profile-builder_page_"] #screen-meta-links {
     padding-left: 20px;
 }
 
+/* hide PMS extra Submenu items */
+.wp-submenu a[href="admin.php?page=pms-export-page"],
+.wp-submenu a[href="admin.php?page=pms-discount-codes-bulk-add"] {
+    display: none !important;
+}
+
 
 /***********************************************************/
 /* Settings Page Header

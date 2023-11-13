@@ -441,3 +441,21 @@
     if( wppb_get_admin_approval_option_value() === 'yes' ) {
         add_filter( 'woocommerce_registration_auth_new_customer', '__return_false' );
     }
+
+    /****************************************************
+     * Plugin Name: WooCommerce
+     * Plugin URI: https://wordpress.org/plugins/woocommerce/
+     * Starting with version 7.7 WooCommerce is restricting access to the dashboard through the admin_init hook.
+     * This hook runs on async-upload.php and they disallow the uploading of files from logged out users.
+     * We remove this restriction so that our users can upload files correctly
+     ****************************************************/
+    add_filter( 'woocommerce_prevent_admin_access', 'wppb_woo_admin_access_uploads_compatibility' );
+    function wppb_woo_admin_access_uploads_compatibility( $prevent_access ){
+
+        if( isset( $_REQUEST['wppb_upload'] ) && $_REQUEST['wppb_upload'] == 'true' ){
+            return false;
+        }
+
+        return $prevent_access;
+
+    }

@@ -133,7 +133,9 @@
 .wppb-setup-content .cozmoslabs-description {
     text-align: center;
     width: 100%;
-    /* line-height: 28px !important; */
+    font-weight: 600;
+    font-size: 14px !important;
+    color: #939393 !important;
 }
 
 /* User Pages Tab */
@@ -155,6 +157,7 @@
 .wppb-setup-user-pages-field h4 {
     margin-top: 0;
     margin-bottom: 4px !important;
+    text-transform: uppercase;
 }
 
 .wppb-setup-user-pages-field__icon {
@@ -295,159 +298,6 @@
     cursor: default;
 }
 
-/*.wppb-setup-radios {*/
-/*    margin-bottom: 0.8em;*/
-/*}*/
-
-/*.wppb-setup-radios label {*/
-/*    font-size: 1.1em;*/
-/*}*/
-
-/*.wppb-setup-gateway {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: space-between;*/
-
-/*    padding-top: 20px;*/
-/*    padding-bottom: 20px;*/
-/*}*/
-
-/*.wppb-setup-gateway:last-child {*/
-/*    padding-bottom: 0;*/
-/*}*/
-
-/*.wppb-setup-flex-row {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.wppb-setup-gateway__logo {*/
-/*    max-width: 150px;*/
-/*    width: 100%;*/
-
-/*    font-size: 1.1em;*/
-/*    font-weight: bold;*/
-
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-
-/*    border-radius: 2px;*/
-/*    border: 1px solid #E8E7E7;*/
-/*    width: 100px;*/
-/*    height: 40px;*/
-/*}*/
-
-/*.wppb-setup-gateway__logo img {*/
-/*    max-width: 80px;*/
-/*}*/
-
-/*.wppb-setup-gateway__description {*/
-/*    max-width: 450px;*/
-/*    width: 100%;*/
-
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.wppb-setup-gateway__description--inner {*/
-/*    padding-left: 25px;*/
-/*}*/
-
-/*.wppb-setup-gateway .wppb-stripe-connect__button img {*/
-/*    max-width: 230px;*/
-/*}*/
-
-/*.wppb-stripe-connect__button {*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.wppb-setup-gateway.manual .wppb-setup-gateway__logo {*/
-/*    border: none;*/
-/*}*/
-
-/*.wppb-setup-gateway.manual .wppb-setup-gateway__logo img {*/
-/*    max-width: 100%;*/
-/*}*/
-
-/*.wppb-setup-toggle {*/
-/*    max-width: 100px;*/
-/*    width: 100%;*/
-
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.wppb-setup-toggle input {*/
-/*    display: none;*/
-/*}*/
-
-/*.wppb-setup-toggle label {*/
-/*    cursor: pointer;*/
-/*    text-indent: -9999px;*/
-/*    width: 40px;*/
-/*    height: 21px;*/
-/*    background: grey;*/
-/*    display: block;*/
-/*    border-radius: 100px;*/
-/*    position: relative;*/
-/*}*/
-
-/*.wppb-setup-toggle label:after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    top: 3px;*/
-/*    left: 5px;*/
-/*    width: 15px;*/
-/*    height: 15px;*/
-/*    background: #fff;*/
-/*    border-radius: 50%;*/
-/*}*/
-
-/*.wppb-setup-toggle input:checked + label {*/
-/*    background: #006799;*/
-/*}*/
-
-/*.wppb-setup-toggle input:checked + label:after {*/
-/*    left: auto;*/
-/*    right: 5px;*/
-/*}*/
-
-/*.wppb-setup-fade {*/
-/*    opacity: 0.4;*/
-/*}*/
-
-/*.wppb-setup-gateway__upsell {*/
-/*    font-size: 1.3em;*/
-/*    line-height: 1.45em;*/
-/*    text-align: center;*/
-/*    max-width: 90%;*/
-/*    margin: 0 auto;*/
-/*    background: #fdf9d1;*/
-/*    padding: 8px;*/
-/*    color: black;*/
-/*}*/
-
-/*.wppb-setup-gateway-extra {*/
-/*    display: none;*/
-/*    padding-top: 0;*/
-/*}*/
-
-/*.wppb-setup-gateway__description-extra {*/
-/*    flex-direction: column;*/
-/*    align-items: flex-start;*/
-/*}*/
-
-/*.stripe .wppb-setup-gateway__description-extra {*/
-/*    padding-left: 50px;*/
-/*}*/
-
-/*.wppb-setup-gateway__description-extra div:last-of-type {*/
-/*    margin-top: 8px;*/
-/*}*/
-
 .wppb-setup-form-button {
     display: flex;
     justify-content: center;
@@ -477,19 +327,6 @@
     color: #969696 !important;
     text-decoration: underline !important;
 }
-
-/*.wppb-setup-payment-settings {*/
-/*    margin-bottom: 60px;*/
-/*}*/
-
-/*.wppb-setup-payment-settings .cozmoslabs-form-field-wrapper {*/
-/*    margin-top: 0px !important;*/
-/*    gap: 18px;*/
-/*}*/
-
-/*.wppb-setup-payment-settings .cozmoslabs-form-field-wrapper select {*/
-/*    flex: 1;*/
-/*}*/
 
 .wppb-setup-next {
     margin-top: 40px;

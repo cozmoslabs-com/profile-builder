@@ -96,8 +96,11 @@ function wppb_show_admin_bar($content){
 
     if ( $general_settings != 'not_found' && $current_user->ID && !empty( $selected_roles ) )
         foreach ( $current_user->roles as $role_key ) {
-            if ( empty( $GLOBALS['wp_roles']->roles[$role_key] ) )
+			if( $role_key == 'administrator' && current_user_can( 'manage_options' ) )
+				break;
+            else if ( empty( $GLOBALS['wp_roles']->roles[$role_key] ) )
                 continue;
+
             $role = $GLOBALS['wp_roles']->roles[$role_key];
 
             if ( !empty( $selected_roles ) && in_array( $role['name'], $selected_roles ) && $show === null )
@@ -918,7 +921,9 @@ function wppb_password_strength_check(){
                 jQuery( document ).ready( function() {
                     // Binding to trigger checkPasswordStrength
                     jQuery('#passw1').val('').on( 'keyup', check_pass_strength );
+                    jQuery('#passw1').val('').on( 'change', check_pass_strength );
                     jQuery('#passw2').val('').on( 'keyup', check_pass_strength );
+                    jQuery('#passw2').val('').on( 'change', check_pass_strength );
                     jQuery('#pass-strength-result').show();
                 });
             </script>
@@ -1628,6 +1633,15 @@ function wppb_disable_rest_api_authentication($result) {
             if ( !isset( $wppb_private_website_settings[ 'disable_rest_api' ] ) || $wppb_private_website_settings[ 'disable_rest_api' ] !== 'yes' ) {
                 return $result;
             }
+
+			// THE EVENTS CALENDAR EXCEPTION
+			// They do some rest API calls in the front-end for their event view but due to their usage, they are breaking the authenticated user
+			// and WordPress thinks the user is not authenticated (is_user_logged_in() == false)
+			// This makes things break for logged in users whe the Private Website + Rest API functionality is enabled
+			// We are going to ignore requests that contain their nonces so we can exlude them from our restrictions
+			if( isset( $_REQUEST['_tec_view_rest_nonce_primary'] ) || isset( $_REQUEST['_tec_view_rest_nonce_secondary'] ) )
+				return $result;
+
             if (!is_user_logged_in() && isset( $_SERVER['REQUEST_URI'] ) && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token" && $_SERVER['REQUEST_URI'] !== "/wp-json/jwt-auth/v1/token/validate") {
                 return new WP_Error('rest_not_logged_in', __( 'You are not currently logged in.', 'profile-builder' ), array('status' => 401));
             }

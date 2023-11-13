@@ -7,7 +7,7 @@ jQuery( document ).on( 'change', '#wppb-dashboard-stats-select', function(){
 
         response = JSON.parse( response )
 
-        if( response.data.newly_registered )
+        if( response.data.newly_registered !== undefined && response.data.newly_registered !== null)
             jQuery('.wppb-dashboard-box.newly_registered .value').html( response.data.newly_registered )
 
     });

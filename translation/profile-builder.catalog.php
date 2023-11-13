@@ -80,11 +80,9 @@
 <?php __("Settings", "profile-builder"); ?>
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
-<?php __("You can now style %s forms from the %s interface. To get started, add a form widget to a page through %s and go to the <strong>Style</strong> tab.", "profile-builder"); ?>
-<?php __("See details", "profile-builder"); ?>
-<?php __("Dismiss this notice.", "profile-builder"); ?>
 <?php __('You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
 <?php __('You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
+<?php __("Dismiss this notice.", "profile-builder"); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
 <?php __("The best way to add front-end registration, edit profile and login forms.", "profile-builder"); ?>

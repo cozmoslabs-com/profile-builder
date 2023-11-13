@@ -53,7 +53,7 @@ function wppb_activate_signup( $key ) {
 
     $user_email = esc_sql( $signup->user_email );
     /* the password is in hashed form in the signup table so we will add it later */
-    $password = NULL;
+    $password = '';
 
     $user_id = username_exists( $user_login );
 

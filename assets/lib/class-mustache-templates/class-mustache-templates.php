@@ -167,6 +167,7 @@ class PB_Mustache_Generate_Admin_Box{
         if( defined( 'DOING_AJAX' ) && DOING_AJAX )
             return;
 
+		add_action( 'wck_add_meta_boxes', array( $this, 'add_box' ) );
 		add_action( 'add_meta_boxes', array( $this, 'add_box' ) );
 		add_action( 'save_post',  array( $this, 'save_box' ), 11, 2);
 		add_action( 'wp_insert_post',  array( $this, 'save_box' ), 11, 2);
