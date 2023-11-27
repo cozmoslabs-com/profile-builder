@@ -242,6 +242,15 @@ function wppb_add_ons_content() {
             'doc_url' => 'https://www.cozmoslabs.com/docs/paid-member-subscriptions/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBPro',
             'download_url' => 'https://wordpress.org/plugins/paid-member-subscriptions/'
         ),
+//        array(  'slug' => 'wp-webhooks/index.php',
+        array(  'slug' => 'wp-webhooks/wp-webhooks.php',
+            'type' => 'plugin',
+            'name' => __( 'WP Webhooks Automations', 'profile-builder' ),
+            'description' => __( 'Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together.', 'profile-builder' ),
+            'icon' => 'pb-add-on-wp-webhooks-icon.jpg',
+            'doc_url' => 'https://wp-webhooks.com/integrations?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBPro',
+            'download_url' => 'https://wordpress.org/plugins/wp-webhooks/'
+        ),
         array(  'slug' => 'client-portal/index.php',
             'type' => 'plugin',
             'name' => __( 'Client Portal', 'profile-builder' ),

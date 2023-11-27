@@ -33,14 +33,14 @@ function wppb_block_editor_enqueue()
     //Select
     // Don't enqueue when JetEngine is active
     if( !class_exists( 'Jet_Engine' ) ){
+        //Select2
         wp_enqueue_script('wppb_select2_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'), PROFILE_BUILDER_VERSION);
         wp_enqueue_style('wppb_select2_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css', array(), PROFILE_BUILDER_VERSION);
     }
 
 
     if ( defined( 'WPPB_PAID_PLUGIN_URL' ) ) {
-        //Select2
-        wp_enqueue_style('wppb_sl2_css', WPPB_PAID_PLUGIN_URL . 'front-end/extra-fields/select2/select2.css', false, PROFILE_BUILDER_VERSION);
+        //Select CPT
         wp_enqueue_style('wppb-select-cpt-style', WPPB_PAID_PLUGIN_URL . 'front-end/extra-fields/select-cpt/style-front-end.css', array(), PROFILE_BUILDER_VERSION);
 
         //Upload

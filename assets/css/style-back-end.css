@@ -200,6 +200,7 @@ body[class*="profile-builder_page_"] #screen-meta-links {
 /* Page Banner
 /***********************************************************/
 
+body.admin_page_profile-builder-private-website .cozmoslabs-banner,
 body[class*="profile-builder_page_"] .cozmoslabs-banner,
 body[class*="post-type-wppb-"] .cozmoslabs-banner {
     margin-left: -20px;
@@ -574,7 +575,6 @@ body[class*="post-type-wppb-"] .cozmoslabs-banner {
     border: 1px solid #3858E9;
     border-radius: 2px;
     box-sizing: border-box;
-    /*padding: 13px 30px;*/
     padding: 8px 12px;
     font-weight: 500;
     font-size: 13px;
@@ -752,6 +752,11 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
     gap: 10px;
 }
 
+.cozmoslabs-toggle-description .cozmoslabs-description {
+    font-weight: 500;
+    color: rgba( 30, 30, 30, 0.8 ) !important;
+}
+
 .cozmoslabs-toggle-description .cozmoslabs-description,
 .cozmoslabs-toggle-switch > label {
     line-height: 18px !important;
@@ -784,10 +789,10 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
 .cozmoslabs-radio-inputs-row label,
 .cozmoslabs-radio-inputs-column label {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 13px;
     line-height: 18px;
-    color: #1E1E1E;
+    color: rgba( 30, 30, 30, 0.8 );
 }
 
 .cozmoslabs-radio-inputs-row input[type=radio],
@@ -849,11 +854,11 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
 
 .cozmoslabs-checkbox-list label {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 13px;
     line-height: 26px;
-    color: #1E1E1E;
-
+    /*color: #1E1E1E;*/
+    color: rgba( 30, 30, 30, 0.8 );
     max-width: calc( 100% - 30px );
     white-space: nowrap;
     overflow: hidden;
@@ -1135,8 +1140,6 @@ body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primar
     background: #FDFBE6;
 }
 
-/**********************************************************************************************************************/
-
 
 /**************************************************/
 /* Form Designs - Admin UI styles
@@ -1152,18 +1155,11 @@ body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primar
 }
 
 .wppb-forms-design {
-    /*width: 180px;*/
-    /*flex-basis: unset;*/
-
     flex: 1;
 }
 
 .wppb-forms-design label {
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
-    line-height: 18px;
-    color: #1E1E1E;
 }
 
 .wppb-forms-design label input[type="radio"] {
@@ -1218,6 +1214,7 @@ body[class*="profile-builder_page_"] .mce-inline-toolbar-grp .mce-btn.mce-primar
 
 #form-style-default .wppb-forms-design-screenshot img {
     max-width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -1309,6 +1306,7 @@ body[class*="profile-builder_page_"] a:not(.button-secondary, .button-primary, .
 /**********************************************************************************/
 /* Link (question mark icon) to PB Docs set in pages/custom-posts/settings titles
 /**********************************************************************************/
+
 .wp-admin a.wppb-docs-link:before {
     display: none;
 }
@@ -1381,7 +1379,6 @@ body[class*="profile-builder_page_"] a:not(.button-secondary, .button-primary, .
     opacity: 1;
     content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='currentColor' class='bi bi-person' viewBox='0 0 24 24' transform='scale(1,1)'> <path d='M20 2H4C3.47 2 2.96 2.21 2.59 2.59C2.21 2.96 2 3.47 2 4V16C2 16.53 2.21 17.04 2.59 17.41C2.96 17.79 3.47 18 4 18H8L12 22L16 18H20C20.53 18 21.04 17.79 21.41 17.41S22 16.53 22 16V4C22 3.47 21.79 2.96 21.41 2.59C21.04 2.21 20.53 2 20 2M4 16V4H20V16H15.17L12 19.17L8.83 16M10.05 6.04C10.59 5.68 11.3 5.5 12.19 5.5C13.13 5.5 13.88 5.71 14.42 6.12C14.96 6.54 15.23 7.1 15.23 7.8C15.23 8.24 15.08 8.63 14.79 9C14.5 9.36 14.12 9.64 13.66 9.85C13.4 10 13.23 10.15 13.14 10.32C13.05 10.5 13 10.72 13 11H11C11 10.5 11.1 10.16 11.29 9.92C11.5 9.68 11.84 9.4 12.36 9.08C12.62 8.94 12.83 8.76 13 8.54C13.14 8.33 13.22 8.08 13.22 7.8C13.22 7.5 13.13 7.28 12.95 7.11C12.77 6.93 12.5 6.85 12.19 6.85C11.92 6.85 11.7 6.92 11.5 7.06C11.34 7.2 11.24 7.41 11.24 7.69H9.27C9.22 7 9.5 6.4 10.05 6.04M11 14V12H13V14Z' id='mainIconPathAttribute' fill='rgb(56, 88, 233)'></path> </svg>");
 }
-
 
 
 /**************************************************/
@@ -1746,8 +1743,28 @@ div.wppb-notice .button-primary {
 /* Manage Fields Page
 /***********************************************************/
 
-.profile-builder_page_manage-fields .metabox-holder .column-1 {
-     margin-right:0;
+body.profile-builder_page_manage-fields .wck-post-body {
+    clear: left;
+    float: left;
+    margin-right: -2000px;
+    width: 100%;
+}
+
+body.profile-builder_page_manage-fields .metabox-holder .column-1,
+body.profile-builder_page_manage-fields .metabox-holder .column-3 {
+    clear: both;
+    margin-right: 300px;
+}
+
+body.profile-builder_page_manage-fields .metabox-holder .column-2 {
+    float: right;
+    width: 280px;
+    clear: right;
+    position: relative;
+}
+
+body.profile-builder_page_manage-fields .metabox-holder .column-1 {
+    margin-right: 0;
 }
 
 #container_wppb_manage_fields .wck-content ul,
@@ -1760,7 +1777,7 @@ div.wppb-notice .button-primary {
 }
 
 #container_wppb_manage_fields li strong {
-    display:none !important;
+    display: none !important;
 }
 
 #container_wppb_manage_fields li .description strong {
@@ -1768,12 +1785,12 @@ div.wppb-notice .button-primary {
 }
 
 #container_wppb_manage_fields .added_fields_list li.row-meta-name {
-    display:list-item !important;
+    display: list-item !important;
 }
 
 #container_wppb_manage_fields li.row-field-title pre,
 #container_wppb_manage_fields li.row-meta-name pre {
-    min-height:10px;
+    min-height: 10px;
 }
 
 #wppb_manage_fields .ui-sortable label:not(.cozmoslabs-toggle-track),
@@ -1794,12 +1811,11 @@ div.wppb-notice .button-primary {
 }
 
 #container_wppb_manage_fields pre {
-    display:block;
-    float:left;
-    width:27%;
-    font-family:"Open Sans", Arial, sans-serif;
-    font-size:14px;
-
+    display: block;
+    float: left;
+    width: 27%;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
     padding-right: 10px;
     box-sizing: border-box;
 }
@@ -1897,24 +1913,6 @@ div.wppb-notice .button-primary {
 .profile-builder_page_manage-fields .row-map-bubble-fields .wppb_sortable_checkboxes_wrap .cozmoslabs-toggle-description {
     display: none;
 }
-
-.profile-builder_page_manage-fields #normal-sortables {
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-builder_page_manage-fields #normal-sortables #manage-fields {
-    order: 3;
-}
-
-.profile-builder_page_manage-fields #normal-sortables #manage-fields-info {
-    order: 1;
-}
-
-.profile-builder_page_manage-fields #normal-sortables #wppb-msf-side {
-    order: 2;
-}
-
 
 /* AddNew/Edit Register & Edit Profile Forms */
 .post-type-wppb-epf-cpt #normal-sortables,
@@ -2673,11 +2671,10 @@ body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-acti
 }
 
 
-
-
 /***********************************************************/
 /* Dashboard Page
 /***********************************************************/
+
 .cozmoslabs-page-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2813,8 +2810,8 @@ body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-acti
     font-size: 13px;
     font-weight: 400;
     line-height: 120%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .wppb-dashboard-shortcodes__row__input {
@@ -2904,13 +2901,11 @@ body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-acti
     content: counter( tab );
     line-height: 30px;
     border: 1px solid #0F15B0;
-    display: block;
     margin-right: 12px;
     border-radius: 50%;
     background-color: white;
     flex-shrink: 0;
     text-decoration: none !important;
-
     display: flex;
     align-items: center;
     justify-content: center;

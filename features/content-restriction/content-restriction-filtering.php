@@ -630,17 +630,3 @@ if( function_exists( 'wc_get_page_id' ) ) {
     add_filter( 'wppb_content_restriction_message_purchasing_restricted', 'wppb_content_restriction_message_wpautop', 30, 1 );
 
 }
-
-// Declare HPOS compatibility
-add_action( 'before_woocommerce_init', 'wppb_woo_declare_hpos_compatibility' );
-function wppb_woo_declare_hpos_compatibility() {
-
-    $plugin_slug = 'profile-builder/index.php';
-
-    if( file_exists( WPPB_PLUGIN_DIR . '/index-dev.php' ) )
-        $plugin_slug = 'profile-builder-dev/index.php';
-
-	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) )
-		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $plugin_slug, true );
-
-}

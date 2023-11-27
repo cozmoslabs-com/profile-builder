@@ -274,8 +274,24 @@ function wppb_basic_info_content() {
                     </div>
 
                     <p class="cozmoslabs-description"><?php esc_html_e( 'Translate your Profile Builder forms with a WordPress translation plugin that anyone can use.', 'profile-builder' ); ?></p>
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders', 'profile-builder' ); ?></p>
+                    <p class="cozmoslabs-description"><?php esc_html_e( 'It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.', 'profile-builder' ); ?></p>
                     <a href="https://wordpress.org/plugins/translatepress-multilingual/" class="button button-secondary" target="_blank">Find out how</a>
+                </div>
+            </div>
+
+            <div class="cozmoslabs-basic-info-recommended">
+                <div class="cozmoslabs-basic-info-recommended-img">
+                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/wp-webhooks-logo.png', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
+                </div>
+
+                <div class="cozmoslabs-basic-info-recommended-info">
+                    <div class="cozmoslabs-form-field-wrapper">
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Save time and money using automations', 'profile-builder' ); ?></label>
+                    </div>
+
+                    <p class="cozmoslabs-description"><?php esc_html_e( 'Create no-code automations and workflows on your WordPress site.', 'profile-builder' ); ?></p>
+                    <p class="cozmoslabs-description"><?php esc_html_e( 'Integrates with Profile Builder or Paid Member Subscriptions, depending on which plugin it\'s for.', 'profile-builder' ); ?></p>
+                    <a href="https://www.wp-webhooks.com/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBPro" class="button button-secondary" target="_blank">Find out how</a>
                 </div>
             </div>
 

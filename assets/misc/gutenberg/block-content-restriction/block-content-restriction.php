@@ -26,3 +26,59 @@ function wppb_render_blocks( $block_content, $block ) {
     return '<div>'.wppb_content_restriction_shortcode( $atts, $block_content ).'</div>';
 }
 add_filter( 'render_block', 'wppb_render_blocks', 10, 2 );
+
+
+/**
+ * Adds the `wppbContentRestriction` attribute to all blocks
+ */
+add_action( 'wp_loaded', 'wppb_add_custom_attributes_to_blocks', 199 );
+function wppb_add_custom_attributes_to_blocks() {
+
+	$registered_blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+
+	foreach( $registered_blocks as $name => $block ) {
+
+		$block->attributes['wppbContentRestriction'] = array(
+			'type'    => 'object',
+            'properties' => array(
+                'user_roles' => array(
+                    'type' => 'array',
+                ),
+                'users_ids' => array(
+                    'type' => 'string',
+                ),
+                'display_to' => array(
+                    'type' => 'string',
+                ),
+                'enable_message_logged_in' => array(
+                    'type' => 'bool',
+                ),
+                'enable_message_logged_out' => array(
+                    'type' => 'bool',
+                ),
+                'message_logged_in' => array(
+                    'type' => 'string',
+                ),
+                'message_logged_out' => array(
+                    'type' => 'string',
+                ),
+
+                'panel_open' => array(
+                    'type' => 'bool',
+                ),
+            ),
+			'default' => array(
+                'user_roles'                => array(),
+                'users_ids'                 => '',
+                'display_to'                => 'all',
+                'enable_message_logged_in'  => false,
+                'enable_message_logged_out' => false,
+                'message_logged_in'         => '',
+                'message_logged_out'        => '',
+                'panel_open'                => false,
+            ),
+		);
+	}
+
+}
+

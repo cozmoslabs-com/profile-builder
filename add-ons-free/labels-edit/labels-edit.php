@@ -242,7 +242,9 @@ function wppb_le_side_metabox() {
 		'normal'
 	);
 }
+
 add_action( 'add_meta_boxes', 'wppb_le_side_metabox' );
+add_action( 'wck_add_meta_boxes', 'wppb_le_side_metabox' );
 
 // Rescan side meta-box content
 function wppb_le_rescan_button() {
@@ -270,6 +272,7 @@ function wppb_le_info_side_metabox() {
 	);
 }
 add_action( 'add_meta_boxes', 'wppb_le_info_side_metabox' );
+add_action( 'wck_add_meta_boxes', 'wppb_le_info_side_metabox' );
 
 // Informations side meta-box content
 function wppb_le_info() {
@@ -304,6 +307,7 @@ function wppb_le_impexp_metabox() {
 	);
 }
 add_action( 'add_meta_boxes', 'wppb_le_impexp_metabox' );
+add_action( 'wck_add_meta_boxes', 'wppb_le_impexp_metabox' );
 
 // Import and Export side meta-box content
 function wppb_le_impexp_content() {

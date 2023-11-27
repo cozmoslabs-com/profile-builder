@@ -357,12 +357,12 @@ function wppb_populate_manage_fields(){
     // create the info side meta-box
     $args = array(
         'metabox_id' 	=> 'manage-fields-info',
-        'metabox_title' => __( 'Registration & Edit Profile Forms', 'profile-builder' ),
+        'metabox_title' => __( 'Form Shortcodes', 'profile-builder' ),
         'post_type' 	=> 'manage-fields',
         'meta_name' 	=> 'wppb_manage_fields_info',
         'meta_array' 	=> '',
         'context'		=> 'option',
-        'mb_context'    => 'normal'
+        'mb_context'    => 'side'
     );
     new Wordpress_Creation_Kit_PB( $args );
 }

@@ -203,3 +203,16 @@ function wppb_content_restriction_scripts_styles($hook_suffix) {
     }
 }
 
+// Declare HPOS compatibility
+add_action( 'before_woocommerce_init', 'wppb_woo_declare_hpos_compatibility' );
+function wppb_woo_declare_hpos_compatibility() {
+
+    $plugin_slug = 'profile-builder/index.php';
+
+    if( defined( 'PROFILE_BUILDER_PAID_VERSION' ) )
+        $plugin_slug = 'profile-builder-dev/index.php';
+
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) )
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $plugin_slug, true );
+
+}

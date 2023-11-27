@@ -15,16 +15,12 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
      */
     protected function register_pb_scripts_styles() {
         //Select2
-        wp_register_script('wppb_sl2_lib_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'));
+        wp_enqueue_script('wppb_sl2_lib_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'));
+        wp_enqueue_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
 
-        wp_register_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
-
-        //SelectCPT
-        wp_register_script( 'wppb_select2_js', WPPB_PLUGIN_URL .'assets/js/select2/select2.min.js', array( 'jquery' ), PROFILE_BUILDER_VERSION );
-        wp_register_style( 'wppb_select2_css', WPPB_PLUGIN_URL .'assets/css/select2/select2.min.css', array(), PROFILE_BUILDER_VERSION );
 
         if( defined( 'WPPB_PAID_PLUGIN_URL' ) ){
-            wp_register_style( 'wppb_sl2_css', WPPB_PAID_PLUGIN_URL.'front-end/extra-fields/select2/select2.css', false, PROFILE_BUILDER_VERSION );
+            //SelectCPT
             wp_register_style( 'wppb-select-cpt-style', WPPB_PAID_PLUGIN_URL.'front-end/extra-fields/select-cpt/style-front-end.css', array(), PROFILE_BUILDER_VERSION );
 
             //Upload

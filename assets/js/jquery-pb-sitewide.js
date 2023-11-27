@@ -478,3 +478,32 @@ function wppbRepositionUpdateButton() {
         else jQuery('#side-sortables').removeClass('cozmoslabs-publish-metabox-fixed');
     });
 }
+// Function that copies the shortcode from an input
+jQuery(document).ready(function() {
+    jQuery('.wppb-shortcode_copy').click(function (e) {
+
+     e.preventDefault();
+
+     navigator.clipboard.writeText(jQuery(this).val());
+
+     // Show copy message
+     var copyMessage = jQuery(this).next('.wppb-copy-message');
+     copyMessage.fadeIn(400).delay(2000).fadeOut(400);
+
+ })
+});
+
+// Function that copies the shortcode from an text
+jQuery(document).ready(function() {
+    jQuery('.wppb-shortcode_copy-text').click(function (e) {
+
+        e.preventDefault();
+
+        navigator.clipboard.writeText(jQuery(this).text());
+
+        // Show copy message
+        var copyMessage = jQuery(this).next('.wppb-copy-message');
+        copyMessage.fadeIn(400).delay(2000).fadeOut(400);
+
+    })
+});

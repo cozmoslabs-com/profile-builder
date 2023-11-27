@@ -121,9 +121,10 @@ function wppb_dashboard_page_content() {
                             <p>Add registration forms where users can sign-up and enter their initial details.</p>
                         </div>
 
-                        <div class="wppb-dashboard-shortcodes__row__input">
+                        <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-register]
                         </div>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
@@ -131,9 +132,10 @@ function wppb_dashboard_page_content() {
                             <p>Allow members to login.</p>
                         </div>
 
-                        <div class="wppb-dashboard-shortcodes__row__input">
+                        <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-login]
                         </div>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
@@ -141,9 +143,10 @@ function wppb_dashboard_page_content() {
                             <p>Allow members to edit their account information.</p>
                         </div>
 
-                        <div class="wppb-dashboard-shortcodes__row__input">
+                        <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-edit-profile]
                         </div>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
@@ -151,9 +154,10 @@ function wppb_dashboard_page_content() {
                             <p>Restrict pieces of content on individual posts and pages based on user role.</p>
                         </div>
 
-                        <div class="wppb-dashboard-shortcodes__row__input">
+                        <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-restrict user_roles="subscriber"]
                         </div>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
                     </div>
                 </div>
 

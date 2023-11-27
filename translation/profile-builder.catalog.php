@@ -58,6 +58,8 @@
 <?php __("Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.", "profile-builder"); ?>
 <?php __("Paid Member Subscriptions", "profile-builder"); ?>
 <?php __("Accept user payments, create subscription plans and restrict content on your membership site.", "profile-builder"); ?>
+<?php __("WP Webhooks Automations", "profile-builder"); ?>
+<?php __("Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together.", "profile-builder"); ?>
 <?php __("Client Portal", "profile-builder"); ?>
 <?php __("Create private pages for your website users that only an administrator can edit.", "profile-builder"); ?>
 <?php __("Custom Login Page Templates", "profile-builder"); ?>
@@ -154,7 +156,10 @@
 <?php __("Now that is possible using the free WordPress plugin - ", "profile-builder"); ?>
 <?php __("Easily translate your entire WordPress website", "profile-builder"); ?>
 <?php __("Translate your Profile Builder forms with a WordPress translation plugin that anyone can use.", "profile-builder"); ?>
-<?php __("It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders", "profile-builder"); ?>
+<?php __("It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.", "profile-builder"); ?>
+<?php __("Save time and money using automations", "profile-builder"); ?>
+<?php __("Create no-code automations and workflows on your WordPress site.", "profile-builder"); ?>
+<?php __("Integrates with Profile Builder or Paid Member Subscriptions, depending on which plugin it's for.", "profile-builder"); ?>
 <?php __("Dashboard", "profile-builder"); ?>
 <?php __("Setup Wizard", "profile-builder"); ?>
 <?php __("Totals", "profile-builder"); ?>
@@ -206,12 +211,12 @@
 <?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __('You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ); ?>
 <?php __("Admin Approval User Role", "profile-builder"); ?>
-<?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("Allow Users to Log in With:", "profile-builder"); ?>
 <?php __("Username and Email", "profile-builder"); ?>
 <?php __("Username", "profile-builder"); ?>
 <?php __("Email", "profile-builder"); ?>
 <?php __("Choose what the user will be logging in with.", "profile-builder"); ?>
+<?php __("Security", "profile-builder"); ?>
 <?php __("Minimum Password Length", "profile-builder"); ?>
 <?php __("Enter the minimum characters the password should have. Leave empty for no minimum limit", "profile-builder"); ?>
 <?php __("Minimum Password Strength", "profile-builder"); ?>
@@ -220,8 +225,10 @@
 <?php __("Password Recovery Page", "profile-builder"); ?>
 <?php __("None", "profile-builder"); ?>
 <?php __("Select the page which contains the \"[wppb-recover-password]\" shortcode.", "profile-builder"); ?>
+<?php __("Other features", "profile-builder"); ?>
 <?php __("Hide Admin Bar for User Roles", "profile-builder"); ?>
 <?php __("Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.", "profile-builder"); ?>
+<?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("Two-Factor Authentication", "profile-builder"); ?>
 <?php __("Activate the Google Authenticator functionality.", "profile-builder"); ?>
 <?php __("Enable Authenticator For", "profile-builder"); ?>
@@ -369,7 +376,7 @@
 <?php __("User Inputted Options", "profile-builder"); ?>
 <?php __("Check this to allow users to create their own options beside the pre-existing ones.", "profile-builder"); ?>
 <?php __("Form Field Properties", "profile-builder"); ?>
-<?php __("Registration & Edit Profile Forms", "profile-builder"); ?>
+<?php __("Form Shortcodes", "profile-builder"); ?>
 <?php __("Name", "profile-builder"); ?>
 <?php __("Usernames cannot be changed.", "profile-builder"); ?>
 <?php __("First Name", "profile-builder"); ?>
