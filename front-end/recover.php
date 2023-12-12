@@ -264,12 +264,16 @@ function wppb_front_end_password_recovery( $atts ){
     global $wpdb;
 
     // check if the form is being displayed in the Elementor editor
-    $is_elementor_edit_mode = false;
+    $is_elementor_edit_mode_or_divi_ajax = false;
     if( class_exists ( '\Elementor\Plugin' ) ){
-        $is_elementor_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
+        $is_elementor_edit_mode_or_divi_ajax = \Elementor\Plugin::$instance->editor->is_edit_mode();
     }
 
-    if( is_user_logged_in() && !( $is_elementor_edit_mode || $block ) ) {
+    if ( is_array( $_POST ) && array_key_exists( 'action', $_POST ) && $_POST['action'] === 'wppb_divi_extension_ajax' ) {
+        $is_elementor_edit_mode_or_divi_ajax = true;
+    }
+
+    if( is_user_logged_in() && !( $is_elementor_edit_mode_or_divi_ajax || $block ) ) {
         return apply_filters('wppb_recover_password_already_logged_in', __('You are already logged in. You can change your password on the edit profile form.', 'profile-builder'));
     }
 

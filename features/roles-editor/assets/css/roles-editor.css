@@ -315,7 +315,7 @@
 }
 
 .post-type-wppb-roles-editor #wpbody .wrap .wp-heading-inline, .post-type-wppb-roles-editor #wpbody .wrap .page-title-action {
-    display: inline-block !important;
+    display: inline-flex !important;
 }
 
 @media screen and ( max-width: 1600px ) {

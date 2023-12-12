@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.4
-Stable tag: 3.10.6
+Stable tag: 3.10.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,16 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.7 =
+* Feature: Added Divi Modules that can be used to create the pages with the plugin shortcodes
+* Fix: Compatibility issue with Elementor when setting display rules for templates
+* Fix: HPOS notification issue when a paid version of Profile Builder was active
+* Fix: An issue with the Group Details fields from Paid Member Subscriptions always being visible when the Profile Builder form was used
+* Misc: Changes to some metaboxes positioning in back-end
+* Misc: Added floating save button for certain settings pages
+* Misc: 2FA setting was being wrongly displayed in back-end for free version where it wasn't available
+* Misc: Added filters to pre-fill the input and hidden input fields: wppb_form_input_field_value and wppb_form_hidden_input_field_value
+
 = 3.10.6 =
 * Fix: Issue with Content Restriction and Gutenberg Blocks which was causing them to not load in back-end
 * Fix: WooCommerce HPOS issue where the plugin was detected as compatible only with Content Restriction active

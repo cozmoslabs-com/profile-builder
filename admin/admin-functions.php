@@ -509,8 +509,15 @@ add_action('admin_enqueue_scripts', 'wppb_maybe_remove_pms_styles', 100);
  *
  */
 function wppb_two_factor_authentication_settings_update() {
+
+    if( !isset( $_POST['option_page'] ) || $_POST['option_page'] != 'wppb_general_settings' )
+        return;
+        
     if ( isset( $_POST['wppb_two_factor_authentication_settings'] ) ) {
         update_option( 'wppb_two_factor_authentication_settings', $_POST['wppb_two_factor_authentication_settings'] ); // phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+    } else {
+        update_option( 'wppb_two_factor_authentication_settings', array( 'enabled' => 'no', 'roles' => array() ) ); // phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
     }
+
 }
 add_action( 'admin_init', 'wppb_two_factor_authentication_settings_update' );

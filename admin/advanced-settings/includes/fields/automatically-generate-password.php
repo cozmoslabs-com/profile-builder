@@ -2,7 +2,7 @@
 
 $wppb_general_settings = get_option( 'wppb_general_settings' );
 
-if ( isset( $wppb_general_settings ) && $wppb_general_settings['emailConfirmation'] == 'yes' ) {
+if ( isset( $wppb_general_settings['emailConfirmation'] ) && $wppb_general_settings['emailConfirmation'] == 'yes' ) {
     add_filter( 'wppb_register_user_email_message_with_admin_approval', 'wppb_toolbox_ec_generate_password', 20, 5 );
     add_filter( 'wppb_register_user_email_message_without_admin_approval', 'wppb_toolbox_ec_generate_password', 20, 5 );
 }
@@ -34,6 +34,13 @@ function wppb_toolbox_generate_password( $userdata, $global_request ) {
 	}
 
 	return $userdata;
+}
+
+add_filter( 'pms_stripe_wppb_password', 'wppb_toolbox_generate_password_stripe_wppb_checkout' );
+function wppb_toolbox_generate_password_stripe_wppb_checkout( $password ){
+
+    return wp_generate_password();
+
 }
 
 function wppb_toolbox_ec_generate_password( $content, $email, $password, $user_message_subject, $context ) {

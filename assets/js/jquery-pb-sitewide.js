@@ -427,73 +427,267 @@ jQuery(document).ready(function() {
 
 
 /**
- * Set Edit View wrap width for: Register Form, Edit Profile Form & User-Listing
- *
- * */
-jQuery(document).ready(function() {
-    if (jQuery('#wppb-rf-settings-args').length > 0) {
-        jQuery('body.post-type-wppb-rf-cpt #wpbody-content > .wrap').css({
-            "max-width" : "1200px",
-            "margin" : "0 auto",
-        });
-    }
-
-    if (jQuery('#wppb-epf-settings-args').length > 0) {
-        jQuery('body.post-type-wppb-epf-cpt #wpbody-content > .wrap').css({
-            "max-width" : "1200px",
-            "margin" : "0 auto",
-        });
-    }
-
-    if (jQuery('#wppb-ul-settings-args').length > 0) {
-        jQuery('body.post-type-wppb-ul-cpt #wpbody-content > .wrap').css({
-            "max-width" : "1200px",
-            "margin" : "0 auto",
-        });
-    }
-});
-
-
-
-/**
  * Reposition the Update/Publish button/section on scroll in Admin Dashboard --> PB CPTs
  */
 jQuery( function() {
+    // delay the repositioning to allow the admin notices to be displayed
     if(jQuery('body').is('[class*="post-type-wppb"]') && jQuery('#side-sortables #submitdiv').length > 0 )
-        wppbRepositionUpdateButton();
+        setTimeout(function() {
+            wppbRepositionUpdateButton();
+        }, 1000);
 });
 
 function wppbRepositionUpdateButton() {
     let elementOffset = jQuery('#side-sortables').offset().top,
-        mobileScreen  = window.matchMedia("(max-width: 850px)"),
-        breakPoint    = 0;
+        mobileScreen  = window.matchMedia("(max-width: 1401px)"),
+        breakPoint = 0,
+        formWidth = '';
 
     if (mobileScreen.matches)
         breakPoint = elementOffset + 115; // 115px buttons container height
     else breakPoint = elementOffset - 32; // 32px admin bar height
 
     jQuery(window).on('scroll', function() {
-        if ( jQuery(window).scrollTop() >= (breakPoint) )
+        if ( jQuery(window).scrollTop() >= (breakPoint) ) {
             jQuery('#side-sortables').addClass('cozmoslabs-publish-metabox-fixed');
-        else jQuery('#side-sortables').removeClass('cozmoslabs-publish-metabox-fixed');
+
+            if (mobileScreen.matches) {
+                formWidth = jQuery('#poststuff').outerWidth();
+                jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
+                    'width': formWidth + 'px',
+                });
+            }
+        }
+        else {
+            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
+                'width': 'unset',
+            });
+
+            jQuery('#side-sortables').removeClass('cozmoslabs-publish-metabox-fixed');
+        }
+    });
+
+    jQuery(window).on('resize', function() {
+        if (mobileScreen.matches) {
+            formWidth = jQuery('#poststuff').outerWidth();
+
+            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
+                'width': formWidth + 'px',
+            });
+        }
+        else {
+            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
+                'width': 'unset',
+            });
+        }
     });
 }
-// Function that copies the shortcode from an input
+
+
+/**
+ * Reposition the Publish Box/Button in Admin Dashboard --> Custom Pages
+ *
+ * */
+
+jQuery( document ).ready(setTimeout(function () {
+    let smallMediumScreen  = window.matchMedia("(max-width: 1401px)"),
+        largeScreen  = window.matchMedia("(min-width: 1402px)"),
+        pageBody = jQuery('body');
+
+    if (pageBody.is('[class*="profile-builder_page"], [class*="admin_page_profile-builder"]')) {
+        if (largeScreen.matches)
+            wppbRepositionPagePublishBox();
+        else wppbRepositionPagePublishButton();
+
+        jQuery(window).on('scroll resize', function() {
+            if (largeScreen.matches)
+                wppbRepositionPagePublishBox();
+            else wppbRepositionPagePublishButton();
+        });
+    }
+
+}, 1000));
+
+
+/**
+ *  Reposition Publish Box (large screens)
+ *
+ * */
+function wppbRepositionPagePublishBox() {
+    let topBox = jQuery('.cozmoslabs-wrap .cozmoslabs-nav-tab-wrapper'),
+        buttonWrapper = jQuery('.cozmoslabs-wrap div.submit, #side-sortables #page-save-metabox');
+
+    if ( topBox.length > 0 && buttonWrapper.length > 0 ) {
+
+        let cozmoslabsWrapper = jQuery('.cozmoslabs-wrap');
+
+        cozmoslabsWrapper.removeClass('cozmoslabs-publish-button-fixed');
+        cozmoslabsWrapper.addClass('cozmoslabs-publish-box-fixed');
+
+        let bannerHeight = jQuery('.cozmoslabs-banner').outerHeight(),
+            topBoxOffsetTop = topBox.offset().top;
+
+        let cozmoslabsWrapperWidth = cozmoslabsWrapper.outerWidth();
+
+        if (cozmoslabsWrapperWidth < 1200)
+            cozmoslabsWrapper.css({
+                'margin': '30px 10px',
+            });
+
+        // set initial position
+        wppbSetPagePublishBoxPosition();
+
+        // position the Publish Box
+        function wppbSetPagePublishBoxPosition() {
+            let distanceToTop = wppbCalculateDistanceToTop(topBox);
+
+            if (distanceToTop < 50) {
+                let buttonOffsetLeft = buttonWrapper.offset().left;
+
+                buttonWrapper.css({
+                    'position': 'fixed',
+                    'top': '50px',
+                    'left': buttonOffsetLeft,
+                    'box-shadow': '0 3px 10px 0 #aaa',
+                });
+            } else {
+                buttonWrapper.css({
+                    'position': 'absolute',
+                    'left': 'auto',
+                    'box-shadow': 'none',
+                });
+
+                if ( buttonWrapper.hasClass('submit') ) {
+                    buttonWrapper.css({
+                        'top': topBoxOffsetTop - bannerHeight - 62 + 'px', // 32px is the admin bar height + 30px cozmoslabs-wrap margin top
+                    });
+                } else {
+                    buttonWrapper.css({
+                        'top': 0,
+                    });
+                }
+
+            }
+        }
+    }
+
+}
+
+
+
+/**
+ *  Reposition Publish Button (small/medium screens)
+ *
+ * */
+function wppbRepositionPagePublishButton() {
+    let buttonWrapper = jQuery('.cozmoslabs-wrap div.submit, #side-sortables #page-save-metabox'),
+        button = jQuery('.cozmoslabs-wrap div.submit input[type="submit"], .cozmoslabs-wrap #page-save-metabox input[type="submit"]'),
+        cozmoslabsWrapper = jQuery('.cozmoslabs-wrap');
+
+    if ( buttonWrapper.length > 0 ) {
+        cozmoslabsWrapper.removeClass('cozmoslabs-publish-box-fixed');
+
+        // set initial position
+        wppbSetPagePublishButtonPosition();
+    }
+
+    // position the Publish Button
+    function wppbSetPagePublishButtonPosition() {
+        buttonWrapper.css({
+            'position': 'unset',
+        });
+
+        if (wppbElementInViewport(buttonWrapper)) {
+            cozmoslabsWrapper.removeClass('cozmoslabs-publish-button-fixed');
+
+            button.css({
+                'max-width': 'unset',
+                'margin-left': 'unset',
+            });
+        } else  {
+            cozmoslabsWrapper.addClass('cozmoslabs-publish-button-fixed');
+
+            button.css({
+                'max-width': buttonWrapper.outerWidth() + 'px',
+                'margin-left': '-10px',
+            });
+        }
+    }
+}
+
+
+/**
+ *  Calculate the distance to Top for a specific element
+ *
+ * */
+function wppbCalculateDistanceToTop(element) {
+    let scrollTop = jQuery(window).scrollTop(),
+        elementOffset = element.offset().top;
+
+    return elementOffset - scrollTop;
+}
+
+
+/**
+ *  Check if a specific element is visible on screen
+ *
+ * */
+function wppbElementInViewport(element) {
+    let elementTop = element.offset().top,
+        elementBottom = elementTop + element.outerHeight(),
+        viewportTop = jQuery(window).scrollTop(),
+        viewportBottom = viewportTop + jQuery(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+
+
+
+/**
+ *  Display initially hidden admin notices, after the scripts have loaded
+ *
+ * */
+jQuery( document ).ready(function(){
+
+    let noticeTypes = [
+        ".error",
+        ".notice"
+    ];
+
+    noticeTypes.forEach(function(notice){
+        let selector = "body[class*='builder_page_'] " + notice + ", " + "body[class*='post-type-wppb-'] " + notice;
+
+        jQuery(selector).each(function () {
+            jQuery(this).css('display', 'block');
+        });
+    });
+
+});
+
+
+/**
+ *  Function that copies the shortcode from an input
+ *
+ * */
 jQuery(document).ready(function() {
     jQuery('.wppb-shortcode_copy').click(function (e) {
 
-     e.preventDefault();
+        e.preventDefault();
 
-     navigator.clipboard.writeText(jQuery(this).val());
+        navigator.clipboard.writeText(jQuery(this).val());
 
-     // Show copy message
-     var copyMessage = jQuery(this).next('.wppb-copy-message');
-     copyMessage.fadeIn(400).delay(2000).fadeOut(400);
+        // Show copy message
+        var copyMessage = jQuery(this).next('.wppb-copy-message');
+        copyMessage.fadeIn(400).delay(2000).fadeOut(400);
 
- })
+    })
 });
 
-// Function that copies the shortcode from an text
+
+/**
+ *  Function that copies the shortcode from a text
+ *
+ * */
 jQuery(document).ready(function() {
     jQuery('.wppb-shortcode_copy-text').click(function (e) {
 

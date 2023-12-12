@@ -404,51 +404,53 @@ function wppb_general_settings_content() {
 
 				<?php } ?>
 
-                <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-					<?php
-					$wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
+                <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
 
-					$enabled = 'no';
-					if ( !empty( $wppb_two_factor_authentication_settings['enabled'] ) )
-						$enabled = $wppb_two_factor_authentication_settings['enabled'];
-					?>
+                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                        <?php
+                        $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
 
-                    <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+                        $enabled = 'no';
+                        if ( !empty( $wppb_two_factor_authentication_settings['enabled'] ) )
+                            $enabled = $wppb_two_factor_authentication_settings['enabled'];
+                        ?>
 
-                    <div class="cozmoslabs-toggle-container">
-                        <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
-                        <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
+                        <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                        <div class="cozmoslabs-toggle-container">
+                            <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
+                            <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
+                        </div>
+
+                        <div class="cozmoslabs-toggle-description">
+                            <p class="cozmoslabs-description"><?php esc_html_e( 'Activate the Google Authenticator functionality.', 'profile-builder' ); ?></p>
+                        </div>
                     </div>
 
-                    <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php esc_html_e( 'Activate the Google Authenticator functionality.', 'profile-builder' ); ?></p>
+                    <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                        <?php
+                        $roles = get_editable_roles( );
+                        $network_roles = array( );
+                        if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
+                            $network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
+                        ?>
+
+                        <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
+
+                        <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
+                            <?php
+                            echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
+
+                            foreach ($roles as $role_key => $role) {
+                                echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
+                            }
+                            ?>
+                        </select>
+
+                        <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
                     </div>
-                </div>
 
-
-                <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
-					<?php
-					$roles = get_editable_roles( );
-					$network_roles = array( );
-					if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
-						$network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
-					?>
-
-                    <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
-
-                    <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
-						<?php
-						echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
-
-						foreach ($roles as $role_key => $role) {
-							echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
-						}
-						?>
-                    </select>
-
-                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
-                </div>
-
+                <?php endif; ?>
 
                 <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
                     <label class="cozmoslabs-form-field-label" for="extraFieldsLayout"><?php esc_html_e('Load CSS', 'profile-builder'); ?></label>
@@ -466,10 +468,21 @@ function wppb_general_settings_content() {
 
 			<?php do_action( 'wppb_extra_general_settings', $wppb_generalSettings ); ?>
 
-		<input type="hidden" name="action" value="update" />
-		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'profile-builder' ); ?>" /></p>
-	</form>
-</div>
+
+
+		    <input type="hidden" name="action" value="update" />
+
+            <div class="submit">
+                <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
+                <div class="cozmoslabs-publish-button-group">
+                    <p class="submit">
+                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'profile-builder' ); ?>" />
+                    </p>
+                </div>
+            </div>
+
+        </form>
+    </div>
 
 <?php
 }

@@ -293,13 +293,17 @@ class Profile_Builder_Form_Creator{
 
 		// check if the form is being displayed in the Elementor editor
         // if true remove any messages
-        $is_elementor_edit_mode = false;
+        $is_elementor_edit_mode_or_divi_ajax = false;
         if( class_exists ( '\Elementor\Plugin' ) ){
-            $is_elementor_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
+            $is_elementor_edit_mode_or_divi_ajax = \Elementor\Plugin::$instance->editor->is_edit_mode();
             $message= "";
         }
 
-		if( !$is_elementor_edit_mode && isset( $_REQUEST['action'], $_REQUEST['form_name'], $this->args['form_name'] ) && $_REQUEST['form_name'] === $this->args['form_name'] ) {
+        if ( is_array( $_POST ) && array_key_exists( 'action', $_POST ) && $_POST['action'] === 'wppb_divi_extension_ajax' ) {
+            $is_elementor_edit_mode_or_divi_ajax = true;
+        }
+
+		if( !$is_elementor_edit_mode_or_divi_ajax && isset( $_REQUEST['action'], $_REQUEST['form_name'], $this->args['form_name'] ) && $_REQUEST['form_name'] === $this->args['form_name'] ) {
             if( ! isset( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'] ), 'wppb_verify_form_submission' ) ) {
                 echo '<span class="wppb-form-error wppb-error">'. esc_html(__( 'You are not allowed to do this.', 'profile-builder' )) . '</span>';
                 return;
@@ -411,7 +415,7 @@ class Profile_Builder_Form_Creator{
 			echo $message; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped when created */
 
 			// use this action hook to add extra content before the register form
-		do_action( 'wppb_before_'.$this->args['form_type'].'_fields', $this->args['form_name'], $this->args['ID'], $this->args['form_type'], $is_elementor_edit_mode );
+		do_action( 'wppb_before_'.$this->args['form_type'].'_fields', $this->args['form_name'], $this->args['ID'], $this->args['form_type'], $is_elementor_edit_mode_or_divi_ajax );
 
 		$wppb_user_role_class = '';
 		if( is_user_logged_in() ) {
@@ -720,10 +724,10 @@ class Profile_Builder_Form_Creator{
 		return get_current_user_id();
 	}
 
-    static function wppb_edit_profile_select_user_to_edit( $form_name, $id, $form_type, $is_elementor_edit_mode ){
+    static function wppb_edit_profile_select_user_to_edit( $form_name, $id, $form_type, $is_elementor_edit_mode_or_divi_ajax ){
 
         $display_edit_users_dropdown = apply_filters( 'wppb_display_edit_other_users_dropdown', true, $form_name );
-        if( !$display_edit_users_dropdown || $is_elementor_edit_mode )
+        if( !$display_edit_users_dropdown || $is_elementor_edit_mode_or_divi_ajax )
             return;
 
         /* add a hard cap: if we have more than 5000 users don't display the dropdown for performance considerations */

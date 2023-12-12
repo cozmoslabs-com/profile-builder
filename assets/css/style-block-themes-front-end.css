@@ -1,11 +1,18 @@
+.wppb-user-forms .pms-field,
 .wppb-user-forms .wppb-form-field {
     padding-bottom: 30px;
 }
 
 .wppb-user-forms .wppb-form-field.wppb-subscription-plans .pms-group-memberships-field {
-    display: block !important;
+    flex-direction: column;
 }
 
+.wppb-user-forms #pms-subscription-plans-discount input {
+    margin-bottom: 10px;
+}
+
+.wppb-user-forms .pms-field > label,
+.wppb-user-forms #pms-subscription-plans-discount > label,
 .wppb-user-forms .pms-group-memberships-field > label,
 .wppb-form-field:not(.wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-mailchimp-subscribe, .wppb-send-credentials-checkbox, .wppb-campaign-monitor-subscribe, .wppb-mailpoet-subscribe, .login-remember) > label {
     font-size: 18px;
@@ -14,6 +21,7 @@
     color: #090A0B;
 }
 
+.wppb-user-forms .pms-field > label,
 .wppb-user-forms .pms-group-memberships-field label,
 .wppb-form-field label,
 #wppb-login-wrap .login-username label,
@@ -42,6 +50,10 @@
     width: 100% !important;
     max-width: 100%;
     float: none !important;
+}
+
+.wppb-form-field input[type="text"]#pms_subscription_plans_discount_code {
+    max-width: calc( 100% - 170px );
 }
 
 .wppb-user-forms input[type="text"],

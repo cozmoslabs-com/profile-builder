@@ -96,8 +96,24 @@ td.wck-number {
 body.post-type-wppb-epf-cpt #poststuff,
 body.post-type-wppb-rf-cpt #poststuff,
 body.post-type-wppb-ul-cpt #poststuff {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+@media screen and (min-width: 1402px) {
+    body.post-type-wppb-epf-cpt #poststuff,
+    body.post-type-wppb-rf-cpt #poststuff,
+    body.post-type-wppb-ul-cpt #poststuff {
+        max-width: 1200px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body.post-type-wppb-epf-cpt #poststuff,
+    body.post-type-wppb-rf-cpt #poststuff,
+    body.post-type-wppb-ul-cpt #poststuff {
+        max-width: 1500px;
+    }
 }
 
 #poststuff .postbox-header {

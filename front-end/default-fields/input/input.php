@@ -13,6 +13,7 @@ function wppb_input_handler( $output, $form_location, $field, $user_id, $field_c
             $input_value = ( isset( $field['default-value'] ) ? trim( $field['default-value'] ) : '' );
 
         $input_value = ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ? trim( stripslashes( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ) : $input_value );
+		$input_value = apply_filters( 'wppb_form_input_field_value', $input_value, $field, $form_location );
 
 		if ( $form_location != 'back_end' ){
 			$error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );

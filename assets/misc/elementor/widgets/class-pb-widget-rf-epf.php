@@ -15,8 +15,8 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
      */
     protected function register_pb_scripts_styles() {
         //Select2
-        wp_enqueue_script('wppb_sl2_lib_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'));
-        wp_enqueue_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
+        // wp_enqueue_script('wppb_sl2_lib_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'));
+        // wp_enqueue_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
 
 
         if( defined( 'WPPB_PAID_PLUGIN_URL' ) ){

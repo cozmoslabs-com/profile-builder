@@ -94,6 +94,11 @@
         </div>
     </div>
 
-    <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
+    <div class="submit">
+        <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
+        <div class="cozmoslabs-publish-button-group">
+            <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
+        </div>
+    </div>
 
 </form>

@@ -285,7 +285,7 @@ class PB_Mustache_Generate_Admin_Box{
 
 			/* if it's not a post type add a side metabox with a save button */
 			if( isset( $_GET['page'] ) )
-				add_meta_box( 'page-save-metabox', __( 'Save', 'profile-builder' ), array( $this, 'page_save_meta_box' ), $page, 'side' );
+				add_meta_box( 'page-save-metabox', __( 'Update Settings', 'profile-builder' ), array( $this, 'page_save_meta_box' ), $page, 'side' );
 		}
 	}
 

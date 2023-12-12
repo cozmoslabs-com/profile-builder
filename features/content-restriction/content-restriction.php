@@ -186,7 +186,13 @@ function wppb_content_restriction_content() {
                 </div>
             <?php endif; ?>
 
-            <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
+            <div class="submit">
+                <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
+                <div class="cozmoslabs-publish-button-group">
+                    <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
+                </div>
+            </div>
+
         </form>
     </div>
     <?php
@@ -209,7 +215,7 @@ function wppb_woo_declare_hpos_compatibility() {
 
     $plugin_slug = 'profile-builder/index.php';
 
-    if( defined( 'PROFILE_BUILDER_PAID_VERSION' ) )
+    if( defined( 'PROFILE_BUILDER_PAID_VERSION' ) && PROFILE_BUILDER_PAID_VERSION == 'dev' )
         $plugin_slug = 'profile-builder-dev/index.php';
 
 	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) )

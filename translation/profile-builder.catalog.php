@@ -236,6 +236,7 @@
 <?php __("\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles.", "profile-builder"); ?>
 <?php __("Load CSS", "profile-builder"); ?>
 <?php __('You can find the default file here: %1$s', 'profile-builder' ); ?>
+<?php __("Update Settings", "profile-builder"); ?>
 <?php __("Save Changes", "profile-builder"); ?>
 <?php __("Available in the Pro versions of the plugin", "profile-builder"); ?>
 <?php __('You can now beautify your forms using new Styles. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
@@ -1071,6 +1072,7 @@
 <?php __("No User Listing found", "profile-builder"); ?>
 <?php __("No User Listing found in trash", "profile-builder"); ?>
 <?php __("Blog URL", "profile-builder"); ?>
+<?php __("Website Link", "profile-builder"); ?>
 <?php __("Display name as", "profile-builder"); ?>
 <?php __("Role", "profile-builder"); ?>
 <?php __("Role Slug", "profile-builder"); ?>
