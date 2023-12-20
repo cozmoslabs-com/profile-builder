@@ -125,6 +125,7 @@
                 if ( !empty( $settings['restricted-words-data'] ) ) {
                     foreach( $settings['restricted-words-data'] as $domain ) {
                         echo '<option value="'.esc_attr( $domain ).'" selected>'.esc_html( $domain ).'</option>';
+
                     }
                 }
                 ?>

@@ -3,10 +3,20 @@
 add_shortcode('user_meta', 'wppb_toolbox_usermeta_handler');
 function wppb_toolbox_usermeta_handler( $atts, $content=null){
 
-	if ( !isset( $atts['user_id'] ) ){
-		$user = wp_get_current_user();
-		$atts['user_id'] = $user->ID;
+	$user_id = '';
+
+	if( isset( $atts['user_id'] ) ){
+
+		if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) )
+			$user_id = $atts['user_id'];
+		
 	}
+
+	if( empty( $user_id ) ){
+		$user    = wp_get_current_user();
+		$user_id = $user->ID;
+	}
+
 	if ( !isset( $atts['size'] ) ){
 		$atts['size'] = '50';
 	}
@@ -23,7 +33,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 	if( in_array( $atts['key'], array( 'user_pass', 'user_activation_key' ) ) )
 		return;
 
-	$user = new WP_User( $atts['user_id'] );
+	$user = new WP_User( $user_id );
 
 	if ( !$user->exists() ) return;
 

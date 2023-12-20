@@ -41,6 +41,11 @@ body[class*="profile-builder_page_"] #screen-meta-links {
     top: auto;
 }
 
+body[class*="post-type-wppb-"] #lost-connection-notice,
+body[class*="post-type-wppb-"] #local-storage-notice {
+    display: none !important;
+}
+
 .wppb-backend-notice {
     display: inline-block;
     background-color: #FDFBE6;
@@ -1513,6 +1518,20 @@ body[class*="post-type-wppb-"] .button-primary.button-disabled {
 
 #container_wppb_ul_faceted_settings .wck-edit .button {
     min-width: 75px;
+}
+
+#container_wppb_ul_faceted_settings tbody tr .wck-content li strong {
+    min-width: 100px;
+}
+
+#container_wppb_ul_faceted_settings tbody tr:not(.facet_type_checkboxes) td.wck-content li.row-facet-behaviour,
+#container_wppb_ul_faceted_settings tbody tr:not(.facet_type_checkboxes) td.wck-content li.row-facet-limit {
+    display: none;
+}
+
+#container_wppb_ul_faceted_settings tbody tr.update_container_wppb_ul_faceted_settings:not(.facet_checkboxes) li.row-facet-behaviour,
+#container_wppb_ul_faceted_settings tbody tr.update_container_wppb_ul_faceted_settings:not(.facet_checkboxes) li.row-facet-limit {
+    display: none;
 }
 
 #wppb-ul-side .cozmoslabs-form-field-wrapper:first-of-type {

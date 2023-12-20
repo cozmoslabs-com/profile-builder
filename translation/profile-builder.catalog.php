@@ -202,13 +202,14 @@
 <?php __("The default style is there to let you customize the CSS and in general will receive the look and feel from your own theme’s styling.", "profile-builder"); ?>
 <?php __("Optimize The login and Registration flow for your members", "profile-builder"); ?>
 <?php __("Automatically Log In", "profile-builder"); ?>
-<?php __("Select \"Yes\" to automatically log in new users after successful registration.", "profile-builder"); ?>
+<?php __("Enable to automatically log in new users after successful registration.", "profile-builder"); ?>
 <?php __("This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" module.", "profile-builder"); ?>
 <?php __('You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s.', 'profile-builder' ); ?>
 <?php __("Email Confirmation Page", "profile-builder"); ?>
 <?php __("Existing Pages", "profile-builder"); ?>
 <?php __("Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time.", "profile-builder"); ?>
 <?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
+<?php __("Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.", "profile-builder"); ?>
 <?php __('You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ); ?>
 <?php __("Admin Approval User Role", "profile-builder"); ?>
 <?php __("Allow Users to Log in With:", "profile-builder"); ?>
@@ -228,9 +229,10 @@
 <?php __("Other features", "profile-builder"); ?>
 <?php __("Hide Admin Bar for User Roles", "profile-builder"); ?>
 <?php __("Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.", "profile-builder"); ?>
+<?php __("Easily create new custom user roles or customize any existing user role capabilities.", "profile-builder"); ?>
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("Two-Factor Authentication", "profile-builder"); ?>
-<?php __("Activate the Google Authenticator functionality.", "profile-builder"); ?>
+<?php __("Enable the Google Authenticator functionality.", "profile-builder"); ?>
 <?php __("Enable Authenticator For", "profile-builder"); ?>
 <?php __("ALL ROLES", "profile-builder"); ?>
 <?php __("\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles.", "profile-builder"); ?>
@@ -1656,17 +1658,10 @@
 <?php __('To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \Enable Placeholder Labels\ Option in %3$sAdvanced Settings%4$s.', 'profile-builder' ); ?>
 <?php __("Address Line 2", "profile-builder"); ?>
 <?php __("Address Line 1", "profile-builder"); ?>
-<?php __("Don’t have an account?", "profile-builder"); ?>
-<?php __("WELCOME BACK", "profile-builder"); ?>
-<?php __("Please enter your details.", "profile-builder"); ?>
-<?php __("Manage your profile information", "profile-builder"); ?>
 <?php __("ERROR!", "profile-builder"); ?>
 <?php __("SUCCESS!", "profile-builder"); ?>
 <?php __("NOTE!", "profile-builder"); ?>
 <?php __("WARNING!", "profile-builder"); ?>
-<?php __("Log in", "profile-builder"); ?>
-<?php __("Create a new account", "profile-builder"); ?>
-<?php __("Edit account", "profile-builder"); ?>
 <?php __("This login widget lets you add a login form in the sidebar.", "profile-builder"); ?>
 <?php __("Profile Builder Login Widget", "profile-builder"); ?>
 <?php __("Title:", "profile-builder"); ?>
@@ -2172,3 +2167,4 @@
 <?php __("Enter User IDs", "profile-builder"); ?>
 <?php __("Exclude", "profile-builder"); ?>
 <?php __("Enter User ID", "profile-builder"); ?>
+<?php __("You must select a User Listing", "profile-builder"); ?>

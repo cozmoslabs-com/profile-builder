@@ -227,7 +227,7 @@
             </p>
         </div>
 
-        <div class="cozmoslabs-form-field-wrapper wppb-toolbox-accordion">
+        <div class="cozmoslabs-form-field-wrapper">
             <label class="cozmoslabs-form-field-label" for="toolbox-redirect-delay-timer"><?php esc_html_e('Redirect Delay Timer', 'profile-builder'); ?></label>
             <input type="text" id="toolbox-redirect-delay-timer" name="wppb_toolbox_forms_settings[redirect-delay-timer]" value="<?php echo ( ( !empty( $settings['redirect-delay-timer'] ) || ( isset( $settings['redirect-delay-timer'] ) && $settings['redirect-delay-timer'] == 0 ) ) ? esc_attr( $settings['redirect-delay-timer'] ) : '' ); ?>">
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'This allows you to change the amount of seconds it takes for the "After Registration" redirect to happen.', 'profile-builder' ); ?></p>

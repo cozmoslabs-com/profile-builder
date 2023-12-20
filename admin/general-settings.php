@@ -193,7 +193,7 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description"><?php esc_html_e( 'Select "Yes" to automatically log in new users after successful registration.', 'profile-builder' ); ?></p>
+                            <p class="cozmoslabs-description"><?php esc_html_e( 'Enable to automatically log in new users after successful registration.', 'profile-builder' ); ?></p>
                         </div>
                     </div>
 
@@ -268,6 +268,7 @@ function wppb_general_settings_content() {
                             </div>
 
                             <div class="cozmoslabs-toggle-description">
+                                <p class="cozmoslabs-description wppb-aa-details"><?php esc_html_e( 'Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.', 'profile-builder' ); ?></p>
                                 <p class="cozmoslabs-description wppb-aa-user-list"><?php printf( esc_html__( 'You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=admin_approval&orderby=registered&order=desc">', '</a>' )?></p>
                             </div>
                         </div>
@@ -398,6 +399,7 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
+                            <p class="cozmoslabs-description wppb-roles-editor-details"><?php esc_html_e( 'Easily create new custom user roles or customize any existing user role capabilities.', 'profile-builder' ); ?></p>
                             <p class="cozmoslabs-description wppb-roles-editor-link"><?php printf( esc_html__( 'You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/edit.php?post_type=wppb-roles-editor">', '</a>' )?></p>
                         </div>
                     </div>
@@ -423,7 +425,7 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description"><?php esc_html_e( 'Activate the Google Authenticator functionality.', 'profile-builder' ); ?></p>
+                            <p class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></p>
                         </div>
                     </div>
 

@@ -319,10 +319,14 @@ jQuery(document).ready( function () {
  *
  * */
 jQuery(document).ready(function() {
-
-    if (typeof jQuery.fn.select2 === 'function')
-        jQuery('.wppb-select2').select2();
-
+    if (typeof jQuery.fn.select2 === 'function') {
+        if (jQuery('.wppb-select2').is('#toolbox-restricted-words-data')) {
+            jQuery('.wppb-select2').select2({
+                tags: true,
+            });
+        }
+        else jQuery('.wppb-select2').select2();
+    }
 });
 
 
