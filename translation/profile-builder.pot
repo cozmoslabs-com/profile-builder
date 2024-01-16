@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Profile Builder
+# Copyright (C) 2024 Profile Builder
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
@@ -945,7 +945,7 @@ msgstr ""
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:420, features/two-factor-authentication/class-two-factor-authentication.php:85, features/two-factor-authentication/class-two-factor-authentication.php:86, features/two-factor-authentication/class-two-factor-authentication.php:143
+#: admin/general-settings.php:420, features/two-factor-authentication/class-two-factor-authentication.php:88, features/two-factor-authentication/class-two-factor-authentication.php:89, features/two-factor-authentication/class-two-factor-authentication.php:146
 msgid "Two-Factor Authentication"
 msgstr ""
 
@@ -1105,7 +1105,7 @@ msgstr ""
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: admin/manage-fields.php:237, features/two-factor-authentication/class-two-factor-authentication.php:155, features/two-factor-authentication/class-two-factor-authentication.php:269
+#: admin/manage-fields.php:237, features/two-factor-authentication/class-two-factor-authentication.php:158, features/two-factor-authentication/class-two-factor-authentication.php:272
 msgid "Description"
 msgstr ""
 
@@ -3281,7 +3281,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, features/two-factor-authentication/class-two-factor-authentication.php:145, features/two-factor-authentication/class-two-factor-authentication.php:256
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, features/two-factor-authentication/class-two-factor-authentication.php:148, features/two-factor-authentication/class-two-factor-authentication.php:259
 msgid "Activate"
 msgstr ""
 
@@ -3914,7 +3914,7 @@ msgstr ""
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:332, front-end/recover.php:488, features/two-factor-authentication/class-two-factor-authentication.php:487
+#: front-end/recover.php:332, front-end/recover.php:488, features/two-factor-authentication/class-two-factor-authentication.php:490
 msgid "ERROR:"
 msgstr ""
 
@@ -7007,83 +7007,83 @@ msgstr ""
 msgid "Edit User Roles"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:66
+#: features/two-factor-authentication/class-two-factor-authentication.php:69
 msgid "Valid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:67
+#: features/two-factor-authentication/class-two-factor-authentication.php:70
 msgid "Invalid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:87, features/two-factor-authentication/class-two-factor-authentication.php:88
+#: features/two-factor-authentication/class-two-factor-authentication.php:90, features/two-factor-authentication/class-two-factor-authentication.php:91
 msgid "2fa_settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:150, features/two-factor-authentication/class-two-factor-authentication.php:262
+#: features/two-factor-authentication/class-two-factor-authentication.php:153, features/two-factor-authentication/class-two-factor-authentication.php:265
 msgid "Relaxed Mode"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:152, features/two-factor-authentication/class-two-factor-authentication.php:265
+#: features/two-factor-authentication/class-two-factor-authentication.php:155, features/two-factor-authentication/class-two-factor-authentication.php:268
 msgid "Allow for more time drift on your phone clock ( &#177;4 min )."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:157
+#: features/two-factor-authentication/class-two-factor-authentication.php:160
 msgid "Description that you'll see in the Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:160, features/two-factor-authentication/class-two-factor-authentication.php:276
+#: features/two-factor-authentication/class-two-factor-authentication.php:163, features/two-factor-authentication/class-two-factor-authentication.php:279
 msgid "Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:164
+#: features/two-factor-authentication/class-two-factor-authentication.php:167
 msgid "New Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:165
+#: features/two-factor-authentication/class-two-factor-authentication.php:168
 msgid "QR Code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:168, features/two-factor-authentication/class-two-factor-authentication.php:286
+#: features/two-factor-authentication/class-two-factor-authentication.php:171, features/two-factor-authentication/class-two-factor-authentication.php:289
 msgid "Scan this with the Authenticator app:"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:172, features/two-factor-authentication/class-two-factor-authentication.php:292
+#: features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:295
 msgid "Verify TOTP"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:295
+#: features/two-factor-authentication/class-two-factor-authentication.php:178, features/two-factor-authentication/class-two-factor-authentication.php:298
 msgid "Check"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:252
+#: features/two-factor-authentication/class-two-factor-authentication.php:255
 msgid "Two-Factor Authentication Settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:272
+#: features/two-factor-authentication/class-two-factor-authentication.php:275
 msgid "Description that you'll see in the Authenticator app on your phone."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:279
+#: features/two-factor-authentication/class-two-factor-authentication.php:282
 msgid "Create new secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:280
+#: features/two-factor-authentication/class-two-factor-authentication.php:283
 msgid "Show/Hide QR code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:348
+#: features/two-factor-authentication/class-two-factor-authentication.php:351
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:483, features/two-factor-authentication/class-two-factor-authentication.php:597, features/two-factor-authentication/class-two-factor-authentication.php:601
+#: features/two-factor-authentication/class-two-factor-authentication.php:486, features/two-factor-authentication/class-two-factor-authentication.php:600, features/two-factor-authentication/class-two-factor-authentication.php:604
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:487
+#: features/two-factor-authentication/class-two-factor-authentication.php:490
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:625
+#: features/two-factor-authentication/class-two-factor-authentication.php:628
 msgid "Authenticator Code"
 msgstr ""
 

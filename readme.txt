@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.4
-Stable tag: 3.10.8
+Stable tag: 3.10.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,8 +199,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.10.9 =
+* Fix: A security issue regarding missing authorization when performing a 2FA settings change. Code was actually moved from the free version to paid. Thanks to Kodai Kubono from WordFence
+* Fix: A compatibility issue with the Solid Backups plugin
+* Fix: Notices coming from the Gutenberg Blocks Content Restriction functionality
+* Misc: Fix a notice appearing from the capitalize first and last names setting
+
 = 3.10.8 =
-* Fix: Security issue regarding the usermeta shortcode. Thanks to Alex Thomas from Wordfence
+* Fix: Security issue regarding the usermeta shortcode. Thanks to Francesco Carlucci
 * Fix: A case where Select2 was not working correctly
 * Fix: Issue with Restricted Words settings where you couldn't add new words in the input
 * Fix: Issue with Divi modules assets not loading

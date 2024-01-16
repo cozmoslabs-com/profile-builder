@@ -421,7 +421,7 @@ function wppb_get_pb_page_post_slug() {
 
     if ( !empty( $post_type ) ) {
         foreach ( $possible_slugs as $slug ) {
-            if ( $post_type === $slug || strpos( $post_type, $slug ) === 0 ) {
+            if ( ($post_type === $slug || strpos( $post_type, $slug ) === 0) && strpos($post_type, 'pb_backupbuddy') === false ) {
 
                 return $post_type;
 
@@ -502,22 +502,3 @@ function wppb_maybe_remove_pms_styles() {
     }
 }
 add_action('admin_enqueue_scripts', 'wppb_maybe_remove_pms_styles', 100);
-
-
-/**
- * Update Two-Factor Authentication settings
- *
- */
-function wppb_two_factor_authentication_settings_update() {
-
-    if( !isset( $_POST['option_page'] ) || $_POST['option_page'] != 'wppb_general_settings' )
-        return;
-        
-    if ( isset( $_POST['wppb_two_factor_authentication_settings'] ) ) {
-        update_option( 'wppb_two_factor_authentication_settings', $_POST['wppb_two_factor_authentication_settings'] ); // phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-    } else {
-        update_option( 'wppb_two_factor_authentication_settings', array( 'enabled' => 'no', 'roles' => array() ) ); // phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-    }
-
-}
-add_action( 'admin_init', 'wppb_two_factor_authentication_settings_update' );

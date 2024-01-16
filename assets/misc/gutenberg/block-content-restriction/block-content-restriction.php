@@ -51,10 +51,10 @@ function wppb_add_custom_attributes_to_blocks() {
                     'type' => 'string',
                 ),
                 'enable_message_logged_in' => array(
-                    'type' => 'bool',
+                    'type' => 'boolean',
                 ),
                 'enable_message_logged_out' => array(
-                    'type' => 'bool',
+                    'type' => 'boolean',
                 ),
                 'message_logged_in' => array(
                     'type' => 'string',
@@ -64,7 +64,7 @@ function wppb_add_custom_attributes_to_blocks() {
                 ),
 
                 'panel_open' => array(
-                    'type' => 'bool',
+                    'type' => 'boolean',
                 ),
             ),
 			'default' => array(
