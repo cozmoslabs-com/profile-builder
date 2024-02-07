@@ -482,7 +482,7 @@ function wppb_output_page_banner( $page_name ) {
                            Documentation
                        </a>';
 
-    if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) || PROFILE_BUILDER_PAID_VERSION === 'dev' )
+    if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) || ( defined( 'PROFILE_BUILDER_PAID_VERSION' ) && PROFILE_BUILDER_PAID_VERSION === 'dev' ) )
         $output .= $upgrade_button;
 
     $output .= '    </div>

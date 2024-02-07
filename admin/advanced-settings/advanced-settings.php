@@ -220,6 +220,8 @@ if( !class_exists('WPPB_toolbox') ){
             if( empty( $settings['admin-emails'] ) )
                 $settings['admin-emails'] = sanitize_email( get_option('admin_email') );
 
+            $settings = apply_filters( 'wppb_advanced_settings_sanitize', $settings );
+
             return $settings;
 
         }

@@ -137,7 +137,7 @@ class WPPB_Login extends ET_Builder_Module {
 		return $fields;
 	}
 
-    public function render( $attrs, $content = null, $render_slug ) {
+    public function render( $attrs, $content, $render_slug ) {
 
         if ( !is_array( $attrs ) ) {
             return;

@@ -33,7 +33,7 @@ class WPPB_RecoverPassword extends ET_Builder_Module {
 		return array();
 	}
 
-    public function render( $attrs, $content = null, $render_slug ) {
+    public function render( $attrs, $content, $render_slug ) {
 
         include_once( WPPB_PLUGIN_DIR.'/front-end/recover.php' );
 

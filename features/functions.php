@@ -856,6 +856,7 @@ function wppb_password_strength_description() {
 /**
  * Include password strength check scripts on frontend where we have shortcodes present
  */
+add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_enqueue_password_strength_check' );
 add_action( 'wp_footer', 'wppb_enqueue_password_strength_check' );
 function wppb_enqueue_password_strength_check() {
     global $wppb_shortcode_on_front;
@@ -948,6 +949,7 @@ function wppb_password_visibility_toggle_html(){
 /**
  * Include toggle password visibility script on frontend where we have shortcodes present
  */
+add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_enqueue_password_visibility_toggle' );
 add_action( 'wp_footer', 'wppb_enqueue_password_visibility_toggle' );
 function wppb_enqueue_password_visibility_toggle() {
     global $wppb_shortcode_on_front;

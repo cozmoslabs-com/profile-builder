@@ -3,10 +3,8 @@
 function wppb_toolbox_unique_display_name_edit_profile( $message, $field, $request_data, $form_location ) {
 
 	if ( isset( $request_data['display_name']) )  {
-        if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) ){
-		    if ( isset( $_GET['edit_user'] ) ) {
-                $user = get_userdata( absint( $_GET['edit_user'] ) );
-            }
+        if( isset( $_REQUEST['edit_user'] ) && ( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) ) ){
+            $user = get_userdata( absint( $_REQUEST['edit_user'] ) );
         } else if ( isset( $request_data['user_id'] ) ) {
             $user = get_userdata( $request_data['user_id'] );
         } else {

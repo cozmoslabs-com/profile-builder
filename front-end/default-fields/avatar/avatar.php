@@ -261,3 +261,12 @@ function wppb_add_avatar_image_sizes() {
         wppb_userlisting_avatar();
     }
 }
+
+// include missing templates needed on Elementor Pages (Form inside an Elementor Popup)
+function wppb_avatar_field_scripts_and_styles() {
+    if ( is_plugin_active('elementor-pro/elementor-pro.php') && function_exists( 'wp_print_media_templates' ) ) {
+        wp_print_media_templates();
+    }
+}
+add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_avatar_field_scripts_and_styles' );
+

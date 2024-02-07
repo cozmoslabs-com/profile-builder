@@ -1433,12 +1433,27 @@
 <?php __("is", "profile-builder"); ?>
 <?php __("has", "profile-builder"); ?>
 <?php __('%1$s of the emails provided in the Admin Emails field %2$s invalid and %3$s been removed from the list', 'profile-builder' ); ?>
+<?php __("Hey %s,<br>Never miss an important update - opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.", "profile-builder"); ?>
+<?php __("Allow & Continue", "profile-builder"); ?>
+<?php __("Skip", "profile-builder"); ?>
+<?php __("This will allow Profile Builder to access:", "profile-builder"); ?>
+<?php __("Your profile overview", "profile-builder"); ?>
+<?php __("Name and email address", "profile-builder"); ?>
+<?php __("Admin Notices", "profile-builder"); ?>
+<?php __("Updates, announcements, marketing, no spam", "profile-builder"); ?>
+<?php __("Plugin status & settings", "profile-builder"); ?>
+<?php __("Active, Deactivated, installed version and settings", "profile-builder"); ?>
+<?php __("Active Plugins", "profile-builder"); ?>
+<?php __("Title, slug, version and is active", "profile-builder"); ?>
+<?php __("Privacy Policy", "profile-builder"); ?>
+<?php __("Terms of Service", "profile-builder"); ?>
 <?php __("Skip Setup", "profile-builder"); ?>
 <?php __("Create the user experience you need for your project", "profile-builder"); ?>
 <?php __("Enable addons and add extra features to your website", "profile-builder"); ?>
 <?php __("Available in the Pro version", "profile-builder"); ?>
 <?php __("Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login and registration forms.", "profile-builder"); ?>
 <?php __("Available in the Basic and Pro versions", "profile-builder"); ?>
+<?php __("Get access to 20+ add-ons with a %sPro%s license. %sBuy Now%s", "profile-builder"); ?>
 <?php __('Explore 20+ free and PRO addons from %1$s the Profile Builder admin page %2$s once the onboarding is complete.', 'profile-builder' ); ?>
 <?php __("Design & User Experience Settings", "profile-builder"); ?>
 <?php __("Customize the way your users interact with the website!", "profile-builder"); ?>
@@ -2001,9 +2016,12 @@
 <?php __("These addresses will overwrite the default Email Address from <a href=\"%s\">Settings -> General</a>.", "profile-builder"); ?>
 <?php __("Disable Multiple User Roles", "profile-builder"); ?>
 <?php __("Disable the ability to select multiple Roles for a user.", "profile-builder"); ?>
+<?php __("Marketing Optin", "profile-builder"); ?>
+<?php __("Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.", "profile-builder"); ?>
 <?php __("Auto Generate Password", "profile-builder"); ?>
 <?php __("Automatically generate password for users.", "profile-builder"); ?>
 <?php __("By enabling this option, the password will be automatically generated and emailed to the user.", "profile-builder"); ?>
+<?php __("In order for this functionality to work you need to add the {{password}} merge tag to the default user registration email.", "profile-builder"); ?>
 <?php __("Send Credentials Checkbox", "profile-builder"); ?>
 <?php __("Hidden and checked \"Send Credentials\" checkbox.", "profile-builder"); ?>
 <?php __("By default, the user needs to choose if he wants to receive a registration email.", "profile-builder"); ?>

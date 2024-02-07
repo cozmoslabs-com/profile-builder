@@ -78,10 +78,16 @@
         ?>
 
     </div>
-
-    <p class="wppb-setup-addons-info">
-        <?php printf( esc_html__( 'Explore 20+ free and PRO addons from %1$s the Profile Builder admin page %2$s once the onboarding is complete.', 'profile-builder' ), '<strong>', '</strong>' ); ?>
-    </p>
+    
+    <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) : ?>
+        <p class="wppb-setup-addons-info">
+            <?php printf( esc_html__( 'Explore 20+ free and PRO addons from %1$s the Profile Builder admin page %2$s once the onboarding is complete.', 'profile-builder' ), '<strong>', '</strong>' ); ?>
+        </p>
+    <?php else: ?>
+        <p class="wppb-setup-form-styles__upsell" style="padding-top: 14px; padding-bottom: 14px; font-size: 110%;">
+            <?php printf( esc_html__( 'Get access to 20+ add-ons with a %sPro%s license. %sBuy Now%s', 'profile-builder' ), '<strong>', '</strong>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=setup-wizard-addons&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ); ?>
+        </p>
+    <?php endif; ?>
 
     <div class="wppb-setup-form-button">
         <input type="submit" class="button primary button-primary button-hero" value="<?php esc_html_e( 'Continue', 'profile-builder' ); ?>" />

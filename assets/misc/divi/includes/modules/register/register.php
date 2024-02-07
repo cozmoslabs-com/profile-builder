@@ -140,7 +140,7 @@ class WPPB_Register extends ET_Builder_Module {
 		);
 	}
 
-    public function render( $attrs, $content = null, $render_slug ) {
+    public function render( $attrs, $content, $render_slug ) {
 
         if ( !is_array( $attrs ) ) {
             return;

@@ -92,10 +92,23 @@
                 <p class="cozmoslabs-description"><?php esc_html_e( 'Disable the ability to select multiple Roles for a user.', 'profile-builder' ); ?></p>
             </div>
         </div>
+
+        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+            <label class="cozmoslabs-form-field-label" for="toolbox-plugin-optin"><?php esc_html_e('Marketing Optin', 'profile-builder'); ?></label>
+
+            <div class="cozmoslabs-toggle-container">
+                <input type="checkbox" id="toolbox-plugin-optin" name="wppb_toolbox_admin_settings[plugin-optin]"<?php echo ( ( isset( $settings['plugin-optin'] ) && ( $settings['plugin-optin'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
+                <label class="cozmoslabs-toggle-track" for="toolbox-plugin-optin"></label>
+            </div>
+
+            <div class="cozmoslabs-toggle-description">
+                <p class="cozmoslabs-description"><?php esc_html_e( 'Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.', 'profile-builder' ); ?></p>
+            </div>
+        </div>
     </div>
 
     <div class="submit">
-        <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
+        <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ); ?></h3>
         <div class="cozmoslabs-publish-button-group">
             <?php submit_button( __( 'Save Changes', 'profile-builder' ) ); ?>
         </div>

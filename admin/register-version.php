@@ -49,6 +49,8 @@ function wppb_get_serial_number(){
             $version = 'pro';
         elseif ( PROFILE_BUILDER == 'Profile Builder Hobbyist' || PROFILE_BUILDER == 'Profile Builder Basic' )
             $version = 'hobbyist';
+        else
+            $version = '';
 
         $old_license = get_option( 'wppb_profile_builder_'.$version.'_serial' );
 

@@ -565,8 +565,8 @@ function wppb_front_end_login( $atts ){
 			}
 		}
 
-		// initialize our form variable
-		$login_form = '';
+        // initialize our form variable
+        $login_form = '';
 
 		// display our login errors
 		if( ( isset( $_GET['loginerror'] ) || isset( $_POST['loginerror'] ) ) && isset( $_GET['_wpnonce'] ) ){
@@ -585,8 +585,8 @@ function wppb_front_end_login( $atts ){
                 }
             }
 		}
-		// build our form
-		$login_form .= '<div id="wppb-login-wrap" class="wppb-user-forms">';
+        // build our form
+        $login_form .= '<div id="wppb-login-wrap" class="wppb-user-forms">';
 
         if ( empty( $lostpassword_url ) )
             $lostpassword_url = ( !empty( $wppb_generalSettings['lost_password_page'] ) ) ? $wppb_generalSettings['lost_password_page'] : '';
@@ -666,3 +666,11 @@ function wppb_login_security_check( $user, $password ) {
     return $user;
 }
 add_filter( 'wp_authenticate_user', 'wppb_login_security_check', 10, 2 );
+
+
+// include missing scripts needed on Elementor Pages (Form inside an Elementor Popup)
+function wppb_login_scripts_and_styles() {
+    if ( is_plugin_active('elementor-pro/elementor-pro.php') )
+        wp_enqueue_script( 'wppb_elementor_popup_script', WPPB_PLUGIN_URL . 'features/elementor-pro/assets/js/elementor-popup.js', array('jquery') );
+}
+add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_login_scripts_and_styles' );

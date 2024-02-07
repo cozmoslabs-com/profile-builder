@@ -22,6 +22,7 @@
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, the password will be automatically generated and emailed to the user.', 'profile-builder' ); ?></p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'In order for this functionality to work you need to add the {{password}} merge tag to the default user registration email.', 'profile-builder' ); ?></p>
         </div>
 
         <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
