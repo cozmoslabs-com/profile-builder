@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.4
-Stable tag: 3.11.0
+Stable tag: 3.11.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.11.1 =
+* Fix: Javascript error triggering from the Elementor Pro integration
+* Fix: A potential notice appearing in a case
+* Misc: Use role name instead of slug for Dashboard page Recent Registrations feed
+
 = 3.11.0 =
 * Feature: Added Content Restriction options for Divi Builder modules
 * Fix: Issue with Unique Display Name not working correctly

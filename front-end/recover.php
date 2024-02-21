@@ -533,7 +533,7 @@ function wppb_password_recovery_error( $message, $filter ){
 
 // include missing scripts needed on Elementor Pages (Form inside an Elementor Popup)
 function wppb_recover_password_scripts_and_styles() {
-    if ( is_plugin_active('elementor-pro/elementor-pro.php') )
-        wp_enqueue_script( 'wppb_elementor_popup_script', WPPB_PLUGIN_URL . 'features/elementor-pro/assets/js/elementor-popup.js', array('jquery') );
+    if ( is_plugin_active('elementor-pro/elementor-pro.php') && defined( 'WPPB_PAID_PLUGIN_URL' )  )
+        wp_enqueue_script( 'wppb_elementor_popup_script', WPPB_PAID_PLUGIN_URL . 'features/elementor-pro/assets/js/elementor-popup.js', array('jquery') );
 }
 add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_recover_password_scripts_and_styles' );

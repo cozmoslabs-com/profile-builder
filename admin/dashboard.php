@@ -56,8 +56,8 @@ function wppb_dashboard_page_content() {
 
                 <div class="wppb-dashboard-stats">
                     <?php
-                    $stats = get_users_stats();
-                    $stats_labels = get_users_stats_labels();
+                    $stats = wppb_users_stats();
+                    $stats_labels = wppb_users_stats_labels();
 
                     if( !empty( $stats ) ){
                         foreach( $stats as $key => $value ) : ?>
@@ -206,7 +206,7 @@ function wppb_get_dashboard_stats(){
 
     }
 
-    $return['data'] = get_users_stats( $args );
+    $return['data'] = wppb_users_stats( $args );
 
     echo json_encode( $return );
     die();
@@ -218,7 +218,7 @@ add_action( 'wp_ajax_wppb_get_dashboard_stats', 'wppb_get_dashboard_stats'  );
  * Get User stats
  *
  */
-function get_users_stats( $args = array() ) {
+function wppb_users_stats( $args = array() ) {
 
     $total_users = count_users();
     $users_stats = array(
@@ -256,12 +256,12 @@ function get_users_stats( $args = array() ) {
  * Get the Labels for User stats
  *
  */
-function get_users_stats_labels() {
-    $test = array(
-        'all_users'      => __( 'All Users', 'profile-builder' ),
-        'newly_registered'      => __( 'New Registered Users', 'profile-builder' ),
+function wppb_users_stats_labels() {
+    $labels = array(
+        'all_users'         => __( 'All Users', 'profile-builder' ),
+        'newly_registered'  => __( 'New Registered Users', 'profile-builder' ),
     );
-    return $test;
+    return $labels;
 }
 
 
@@ -283,7 +283,7 @@ function wppb_recent_registrations( $args = array() ) {
 
     if( !empty( $user_query->results ) ){
         foreach ( $user_query->results as $user_data ) {
-            $user_roles = is_array( $user_data->roles ) ? implode(', ', $user_data->roles) : $user_data->roles;
+            $user_roles = wppb_user_role_names( $user_data->roles );
     
             $user_info = array(
                 'id'           => $user_data->ID,
@@ -298,4 +298,24 @@ function wppb_recent_registrations( $args = array() ) {
 
 
     return $users_stats;
+}
+
+
+/**
+ * Get a list of User Role Names out of Role Slugs
+ *
+ */
+function wppb_user_role_names( $role_slugs ) {
+    if ( empty( $role_slugs ) )
+        return '';
+
+    $role_names = array();
+    foreach ( $role_slugs as $slug ) {
+        $role_names[] = wp_roles()->get_names()[$slug];
+    }
+
+    if ( !empty( $role_names ) )
+        $role_names = implode(', ', $role_names);
+
+    return $role_names;
 }

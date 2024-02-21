@@ -12,6 +12,9 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
     public function __construct(){
 
+        if( apply_filters( 'wppb_enable_plugin_optin', true ) === false )
+            return;
+
         if ( !wp_next_scheduled( 'cozmos_wppb_plugin_optin_sync' ) )
             wp_schedule_event( time(), 'weekly', 'cozmos_wppb_plugin_optin_sync' );
 

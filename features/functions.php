@@ -817,7 +817,7 @@ function wppb_check_password_length( $password ){
 //function to check password strength
 function wppb_check_password_strength(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
-    if( isset( $_POST['wppb_password_strength'] ) && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
+    if( isset( $_POST['wppb_password_strength'] ) && sanitize_text_field( $_POST['wppb_password_strength'] ) != '' && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
 		$wppb_password_strength = sanitize_text_field( $_POST['wppb_password_strength'] );
         $password_strength_array = array( 'short' => 0, 'bad' => 1, 'good' => 2, 'strong' => 3 );
         $password_strength_text = array( 'short' => __( 'Very Weak', 'profile-builder' ), 'bad' => __( 'Weak', 'profile-builder' ), 'good' => __( 'Medium', 'profile-builder' ), 'strong' => __( 'Strong', 'profile-builder' ) );
