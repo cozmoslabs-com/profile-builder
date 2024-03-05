@@ -465,6 +465,10 @@ function wppb_output_page_banner( $page_name ) {
                          Upgrade to PRO
                        </a>';
 
+    $upgrade_button_basic = '<a class="cozmoslabs-banner-link cozmoslabs-upgrade-link" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=upgrade-link&utm_campaign=PBBasic#pricing" target="_blank">
+                       <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/upgrade-link-icon.svg" alt="">
+                       Upgrade to PRO
+                     </a>';
 
     $output = '<div class="cozmoslabs-banner">
                    <div class="cozmoslabs-banner-title">
@@ -484,6 +488,11 @@ function wppb_output_page_banner( $page_name ) {
 
     if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) || ( defined( 'PROFILE_BUILDER_PAID_VERSION' ) && PROFILE_BUILDER_PAID_VERSION === 'dev' ) )
         $output .= $upgrade_button;
+
+    // Add Basic version upgrade button (not to account, to plugin purchase page)
+    if( defined( 'PROFILE_BUILDER' ) && PROFILE_BUILDER == 'Profile Builder Basic' ){
+        $output .= $upgrade_button_basic;
+    }
 
     $output .= '    </div>
                 </div>';

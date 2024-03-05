@@ -4,11 +4,11 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.4
-Stable tag: 3.11.1
+Stable tag: 3.11.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Powerful user profile plugin for creating front-end user registration forms, login and user profile forms. Includes user role editor and content restriction.
+Powerful user profile plugin to create front-end user registration forms, login & user profile forms. Includes user role editor & content restriction.
 
 == Description ==
 
@@ -199,6 +199,16 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.11.2 =
+* Fix: Exclude the register only terms and conditions field from the Redirect if Empty Required field functionality
+* Fix: Issue with password reset links when the username contained spaces
+* Fix: Issue with the Automatically Generate Passwords functionality not working when language was different than English
+* Fix: Private Website redirect preventing logins when the force login url parameter was present
+* Misc: Improvements to honeypot field
+* Misc: Change plugin icon from admin menu
+* Misc: Random changes for back-end pages design
+* Misc: Updated form styles preview images
+
 = 3.11.1 =
 * Fix: Javascript error triggering from the Elementor Pro integration
 * Fix: A potential notice appearing in a case

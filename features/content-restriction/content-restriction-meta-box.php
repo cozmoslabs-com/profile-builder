@@ -92,11 +92,11 @@ function wppb_content_restriction_meta_box_output( $post ) {
                     <?php } ?>
 
                     <p class="cozmoslabs-description">
-                        <?php echo esc_html( sprintf( __( 'Checking only "Logged In Users" will show this %s to all logged in users, regardless of user role.', 'profile-builder' ), $post->post_type) ); ?>
+                        <?php echo esc_html( sprintf( __( 'Checking only "Logged In Users" will show this %s to all logged in users, regardless of user role.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?>
                     </p>
 
                     <p class="cozmoslabs-description">
-                        <?php echo esc_html( sprintf( __( 'Checking any user role will show this %s only to users that have one of those user roles assigned.', 'profile-builder' ), $post->post_type) ); ?>
+                        <?php echo esc_html( sprintf( __( 'Checking any user role will show this %s only to users that have one of those user roles assigned.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?>
                     </p>
                 <?php } ?>
 
@@ -162,7 +162,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
                 <label class="cozmoslabs-toggle-track" for="wppb-content-restrict-custom-redirect-url-enabled"></label>
             </div>
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add a custom redirect URL for this %s.', 'profile-builder' ), $post->post_type ) ); ?></p>
+                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add a custom redirect URL for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></p>
             </div>
         </div>
 
@@ -171,7 +171,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
 
             <label class="wppb-meta-box-field-label cozmoslabs-form-field-label" for="wppb-content-restrict-custom-redirect-url"><?php esc_html_e( 'Custom Redirect URL', 'profile-builder' ); ?></label>
             <input type="text" value="<?php echo ( ! empty( $wppb_custom_redirect_url ) ? esc_url( $wppb_custom_redirect_url ) : '' ); ?>" name="wppb-content-restrict-custom-redirect-url" id="wppb-content-restrict-custom-redirect-url" class="widefat">
-            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo esc_html( sprintf( __( 'Add a URL where you wish to redirect users that do not have access to this %s and try to access it directly.', 'profile-builder' ), $post->post_type ) ); ?></p>
+            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo esc_html( sprintf( __( 'Add a URL where you wish to redirect users that do not have access to this %s and try to access it directly.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></p>
         </div>
     </div>
 
@@ -189,7 +189,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
                 <label class="cozmoslabs-toggle-track" for="wppb-content-restrict-messages-enabled"></label>
             </div>
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add custom messages for this %s.', 'profile-builder' ), $post->post_type ) ); ?></p>
+                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add custom messages for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></p>
             </div>
         </div>
 

@@ -551,8 +551,9 @@ label[for="blog-privacy"] {
     margin-left: 0;
 }
 
-.wppb-honeypot {
-    display: none;
+.wppb-1website-url {
+    position: absolute;
+    left: -99999px;
 }
 
 

@@ -56,3 +56,34 @@ div.wppb-serial-notification p{
 .wp-submenu a[href="admin.php?page=profile-builder-two-factor-authentication"] {
 	display:none !important;
 }
+
+
+/***********************************************************/
+/* WordPress Admin Menu Item
+/***********************************************************/
+
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder a.menu-top .wp-menu-image img {
+	padding-top: 6px;
+}
+
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image img,
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder:not(.wp-menu-open) a.menu-top:hover .wp-menu-image img {
+	opacity: 0;
+}
+
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image:after,
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder:not(.wp-menu-open) a.menu-top:hover .wp-menu-image:after {
+	content: url("../images/pb-menu-icon-hover.svg");
+	position: absolute;
+	top: 6px;
+	left: 7px;
+}
+
+@media screen and (max-width: 960px) {
+
+	body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image:after,
+	body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder a.menu-top:hover .wp-menu-image:after {
+		left: 6px !important;
+	}
+
+}

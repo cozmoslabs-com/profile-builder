@@ -1981,7 +1981,7 @@
 <?php __("This username is invalid because it uses illegal characters.", "profile-builder"); ?>
 <?php __("Please enter a valid username.", "profile-builder"); ?>
 <?php __("This username is already reserved to be used soon.", "profile-builder"); ?>
-<?php __("The hidden Honeypot field must be empty.", "profile-builder"); ?>
+<?php __("Something isn't right.", "profile-builder"); ?>
 <?php __("You must enter a valid URL.", "profile-builder"); ?>
 <?php __("Please add the Google Maps API key for this field.", "profile-builder"); ?>
 <?php __("Something went wrong. Please try again.", "profile-builder"); ?>

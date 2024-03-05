@@ -338,7 +338,7 @@ abstract class PB_Elementor_Widget extends \Elementor\Widget_Base {
                 include_once( WPPB_PLUGIN_DIR.'/front-end/recover.php' );
                 return wppb_front_end_password_recovery( [] );
             case 'ul':
-                if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
+                if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/user-listing/userlisting.php' ) ){
                     include_once( WPPB_PAID_PLUGIN_DIR.'/add-ons/user-listing/userlisting.php' );
                     $atts = [
                         'name'       => $settings['pb_name'],

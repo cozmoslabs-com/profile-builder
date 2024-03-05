@@ -340,6 +340,26 @@ if( !function_exists( 'pms_exclude_restricted_comments' ) ){
     }
 }
 
+
+/**
+ * Clean the LearnDash post type slug before output
+ * - displayed in Content Restriction Meta-box settings description
+ */
+function wppb_ld_handle_cr_settings_description_cpt( $post_type ) {
+
+    if ( substr( $post_type, 0, 5 ) === "sfwd-" ) {
+        $post_type = substr( $post_type, 5 );
+
+        if ( substr( $post_type, -1 ) === "s" )
+            $post_type = substr( $post_type, 0, -1 );
+
+    }
+
+    return $post_type;
+}
+add_filter( 'wppb_content_restrict_settings_description_cpt', 'wppb_ld_handle_cr_settings_description_cpt', 20 );
+
+
 /**
  * WooCommerce specific filters
  */

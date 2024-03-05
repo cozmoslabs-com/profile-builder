@@ -341,7 +341,7 @@ $args = array(
 			'page_type'		=> 'menu_page',
 			'position' 		=> '70.69',
 			'priority' 		=> 1,
-			'icon_url' 		=> WPPB_PLUGIN_URL . 'assets/images/pb-menu-icon.png'
+			'icon_url' 		=> WPPB_PLUGIN_URL . 'assets/images/pb-menu-icon.svg'
 		);
 new WCK_Page_Creator_PB( $args );
 
@@ -1483,12 +1483,12 @@ function wppb_private_website_functionality(){
 		if( !empty( $wppb_private_website_settings['private_website'] ) && $wppb_private_website_settings['private_website'] == 'yes' ){
 			if( !is_user_logged_in() ){
 
-				if(is_404())
+				if( is_404() )
 					return;
 
 				//force wp-login.php if you accidentally get locked out
 				global $pagenow;
-				if( $pagenow === 'wp-login.php' && isset( $_GET['wppb_force_wp_login'] ) )
+				if( $pagenow === 'wp-login.php' && ( isset( $_GET['wppb_force_wp_login'] ) || ( isset( $_SERVER['HTTP_REFERER'] )  && strpos( esc_url_raw( $_SERVER['HTTP_REFERER'] ), 'wppb_force_wp_login=true' ) !== false ) || ( isset($_REQUEST['redirect_to'])  && strpos( sanitize_text_field( $_REQUEST['redirect_to'] ), 'wppb_force_wp_login=true' ) !== false ) ) )
 					return;
 
 				//go through paths first if they are set

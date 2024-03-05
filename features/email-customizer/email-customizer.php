@@ -171,7 +171,7 @@ function wppb_email_customizer_password_reset_content_filter_handler( $default_s
 	$email_customizer_option = get_option( 'wppb_user_emailc_reset_email_content', 'not_found' );
 	$user = new WP_User( $user_id );
 	$key = get_password_reset_key( $user );
-	$url = add_query_arg( array( 'key' => $key, 'login' => $user->user_login ), wppb_curpageurl() );
+	$url = add_query_arg( array( 'key' => $key, 'login' => urlencode( $user->user_login ) ), wppb_curpageurl() );
 
 	if( $email_customizer_option != 'not_found' ) {
 		wppb_change_email_from_headers();

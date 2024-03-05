@@ -247,7 +247,7 @@ function wppb_basic_info_content() {
         <div class="cozmoslabs-form-subsection-wrapper" id="basic-info-recommended-plugins">
             <h2 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Recommended Plugins', 'profile-builder' );?></h2>
 
-            <div class="cozmoslabs-basic-info-recommended">
+            <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-pms">
                 <div class="cozmoslabs-basic-info-recommended-img">
                     <a href="https://wordpress.org/plugins/paid-member-subscriptions/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-pms-cross-promotion.png', __FILE__ ) ); ?>" alt="paid member subscriptions"/></a>
                 </div>
@@ -263,7 +263,7 @@ function wppb_basic_info_content() {
                 </div>
             </div>
 
-            <div class="cozmoslabs-basic-info-recommended">
+            <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-translate-press">
                 <div class="cozmoslabs-basic-info-recommended-img">
                     <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-trp-cross-promotion.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
                 </div>
@@ -279,9 +279,9 @@ function wppb_basic_info_content() {
                 </div>
             </div>
 
-            <div class="cozmoslabs-basic-info-recommended">
+            <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-wp-webhooks">
                 <div class="cozmoslabs-basic-info-recommended-img">
-                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/wp-webhooks-logo.png', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
+                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/wp-webhooks-banner.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
                 </div>
 
                 <div class="cozmoslabs-basic-info-recommended-info">

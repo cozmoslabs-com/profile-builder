@@ -747,7 +747,7 @@ class Profile_Builder_Form_Creator{
             'orderby'      => array( 'display_name', 'user_login' ),
         );
 
-        $users = get_users( apply_filters( 'wppb_edit_other_users_dropdown_query_args', $query_args ) );
+        $users = get_users( apply_filters( 'wppb_edit_other_users_dropdown_query_args', $query_args, $form_name ) );
         
         if( !empty( $users ) ) {
 

@@ -54,7 +54,7 @@ function wppb_toolbox_ec_generate_password( $content, $email, $password, $user_m
 
     wp_set_password( $password, $user->ID );
 
-    $content = str_replace( 'Your selected password at signup', $password, $content );
+    $content = str_replace( __( 'Your selected password at signup', 'profile-builder' ), $password, $content );
 
     return $content;
 }

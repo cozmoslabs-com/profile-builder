@@ -20,7 +20,7 @@ function wppb_toolbox_redirect_if_empty_required() {
 
 		foreach ( $fields as $field ){
 
-			if ( $field['required'] == 'Yes' && !empty( $field['meta-name'] ) ){
+			if ( $field['required'] == 'Yes' && !empty( $field['meta-name'] ) && $field['field'] != 'Checkbox (Terms and Conditions)' ){
 
                 if( $field['meta-name'] == 'map' )
                     $value = wppb_get_user_map_markers( $user_id, $field['meta-name'] );
