@@ -12,7 +12,7 @@ add_action(
         wp_register_script(
             'wppb-block-edit-profile',
             add_query_arg( [ 'action' => 'wppb-block-edit-profile.js', ], admin_url( 'admin-ajax.php' ) ),
-            [ 'wp-blocks', 'wp-element', 'wp-editor' ],
+            [ 'wp-blocks', 'wp-element' ],
             microtime(),
             true
         );
@@ -345,7 +345,7 @@ add_action(
             var TextControl = components.TextControl;
             var Button = components.Button;
             var Text = components.__experimentalText;
-            var InspectorControls = wp.editor.InspectorControls;
+            var InspectorControls = blockEditor.InspectorControls;
 
             blocks.registerBlockType( 'wppb/edit-profile', {
                 icon:

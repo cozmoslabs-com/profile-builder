@@ -63,27 +63,23 @@ div.wppb-serial-notification p{
 /***********************************************************/
 
 body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder a.menu-top .wp-menu-image img {
-	padding-top: 6px;
+	display: none;
 }
 
-body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image img,
-body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder:not(.wp-menu-open) a.menu-top:hover .wp-menu-image img {
-	opacity: 0;
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder a.menu-top .wp-menu-image:after {
+	content: url("../images/pb-menu-icon.svg");
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	opacity: 0.6;
 }
 
 body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image:after,
 body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder:not(.wp-menu-open) a.menu-top:hover .wp-menu-image:after {
 	content: url("../images/pb-menu-icon-hover.svg");
-	position: absolute;
-	top: 6px;
-	left: 7px;
+	opacity: 1;
 }
 
-@media screen and (max-width: 960px) {
-
-	body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.opensub a.menu-top .wp-menu-image:after,
-	body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder a.menu-top:hover .wp-menu-image:after {
-		left: 6px !important;
-	}
-
+body.admin-color-fresh ul#adminmenu .toplevel_page_profile-builder.wp-menu-open a.menu-top .wp-menu-image:after {
+	opacity: 1;
 }

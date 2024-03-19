@@ -10,7 +10,7 @@ function wppb_toolbox_check_email_domain( $message, $field, $request_data, $form
 
     if ( $restricted_domains == false ) return $message;
 
-    $domain = strtolower( substr( strrchr( $request_data['email'], '@' ), 1 ) );
+    $domain = strtolower( substr( strrchr( trim( $request_data['email'] ), '@' ), 1 ) );
     $validation_message = wppb_toolbox_get_settings( 'forms', 'restricted-email-domains-message' );
 
     if ( $type == 'allow' ) {

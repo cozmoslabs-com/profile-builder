@@ -241,7 +241,7 @@
 <?php __("Update Settings", "profile-builder"); ?>
 <?php __("Save Changes", "profile-builder"); ?>
 <?php __("Available in the Pro versions of the plugin", "profile-builder"); ?>
-<?php __('You can now beautify your forms using new Styles. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
+<?php __('You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Register Website", "profile-builder"); ?>
 <?php __("License key", "profile-builder"); ?>
 <?php __("Activate License", "profile-builder"); ?>
@@ -848,6 +848,7 @@
 <?php __("Disable REST-API", "profile-builder"); ?>
 <?php __("Disable the WordPress REST-API for non-logged in users when Private Website is enabled", "profile-builder"); ?>
 <?php __("Profile Builder Register", "profile-builder"); ?>
+<?php __("Register your version of Profile Builder", "profile-builder"); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
 <?php __('Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>
@@ -1457,7 +1458,7 @@
 <?php __('Explore 20+ free and PRO addons from %1$s the Profile Builder admin page %2$s once the onboarding is complete.', 'profile-builder' ); ?>
 <?php __("Design & User Experience Settings", "profile-builder"); ?>
 <?php __("Customize the way your users interact with the website!", "profile-builder"); ?>
-<?php __('%3$sYou can now beautify your forms using new Styles. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ); ?>
+<?php __('%3$sYou can now beautify your forms using pre-made templates. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ); ?>
 <?php __("The default style is there to let you customize the CSS and in general will receive the look and feel from your own themes styling. ", "profile-builder"); ?>
 <?php __("Optimize the login and registration flow for your members!", "profile-builder"); ?>
 <?php __("Automatically log users in after registration", "profile-builder"); ?>
@@ -2125,19 +2126,19 @@
 <?php __("For large conditional forms. Enable option for improved page performance.", "profile-builder"); ?>
 <?php __("Compare Shortcode", "profile-builder"); ?>
 <?php __("Enable Compare shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Usermeta Shortcode", "profile-builder"); ?>
 <?php __("Enable Usermeta shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Resend Activation Email Shortcode", "profile-builder"); ?>
 <?php __("Enable Resend Activation Email shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Format Date Shortcode", "profile-builder"); ?>
 <?php __("Enable Format Date shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("List Roles shortcode", "profile-builder"); ?>
 <?php __("Enable List Roles shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/#Shortcodes_List\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree/#Shortcodes_List\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Search Box Placeholder", "profile-builder"); ?>
 <?php __("This refers to the placeholder text from the \"{{{extra_search_all_fields}}}\" tag.", "profile-builder"); ?>
 <?php __("Default text is \"Search Users by All Fields\", use this option to change it to something else. Leave empty if you do not want to change it.", "profile-builder"); ?>

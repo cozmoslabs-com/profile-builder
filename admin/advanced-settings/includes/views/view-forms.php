@@ -20,7 +20,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Replace Labels with Placeholders in Profile Builder forms.', 'profile-builder' ); ?></p>
+                <label for="placeholder-labels-enable" class="cozmoslabs-description"><?php esc_html_e( 'Replace Labels with Placeholders in Profile Builder forms.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'By enabling this option you can allow or deny email domains from registering.', 'profile-builder' ); ?></p>
+                <label for="restricted-email-domains-enable" class="cozmoslabs-description"><?php esc_html_e( 'By enabling this option you can allow or deny email domains from registering.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -126,7 +126,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable “Email confirmation” for changing user email address.', 'profile-builder' ); ?></p>
+                <label for="toolbox-confirm-user-email-change" class="cozmoslabs-description"><?php esc_html_e( 'Enable “Email confirmation” for changing user email address.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'If enabled, an activation email is sent for the new email address.', 'profile-builder' ); ?></p>
@@ -142,7 +142,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Disable Email Confirmation for Social Connect registrations.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-social-connect-bypass-ec" class="cozmoslabs-description"><?php esc_html_e( 'Disable Email Confirmation for Social Connect registrations.', 'profile-builder' ); ?></label>
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Allow users that register through the Social Connect add-on to bypass the Email Confirmation feature.', 'profile-builder' ); ?></p>
@@ -158,7 +158,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Check the "Remember Me" checkbox on Login forms, by default.', 'profile-builder' ); ?></p>
+                <label for="toolbox-remember-me" class="cozmoslabs-description"><?php esc_html_e( 'Check the "Remember Me" checkbox on Login forms, by default.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -171,7 +171,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Automatically log in users after they reset their password using the Recover Password form.', 'profile-builder' ); ?></p>
+                <label for="toolbox-recover-password-autologin" class="cozmoslabs-description"><?php esc_html_e( 'Automatically log in users after they reset their password using the Recover Password form.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -184,7 +184,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Remove validation from back-end Profile page.', 'profile-builder' ); ?></p>
+                <label for="toolbox-back-end-validation" class="cozmoslabs-description"><?php esc_html_e( 'Remove validation from back-end Profile page.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -217,7 +217,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Consider "Anyone can Register" WordPress option.', 'profile-builder' ); ?></p>
+                <label for="toolbox-users-can-register" class="cozmoslabs-description"><?php esc_html_e( 'Consider "Anyone can Register" WordPress option.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
@@ -244,7 +244,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Save Admin Approval status in usermeta.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-save-admin-approval-status" class="cozmoslabs-description"><?php esc_html_e( 'Save Admin Approval status in usermeta.', 'profile-builder' ); ?></label>
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By default, the Admin Approval status is saved as a custom taxonomy that is attached to the user.', 'profile-builder' ); ?></p>
@@ -262,7 +262,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Redirect "/author" page if user is not approved.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-redirect-author-page" class="cozmoslabs-description"><?php esc_html_e( 'Redirect "/author" page if user is not approved.', 'profile-builder' ); ?></label>
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By default, users placed in Admin Approval will not be able to login, but the Author pages will be accessible.', 'profile-builder' ); ?></p>
@@ -279,7 +279,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Save "Last Login" date in usermeta.', 'profile-builder' ); ?></p>
+                <label for="toolbox-save-last-login" class="cozmoslabs-description"><?php esc_html_e( 'Save "Last Login" date in usermeta.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, each time a user logins, the date and time will be saved in the database under the "last_login_date" meta name.', 'profile-builder' ); ?></p>
@@ -295,7 +295,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Save "Last Profile Update" date in usermeta.', 'profile-builder' ); ?></p>
+                <label for="toolbox-save-last-profile-update" class="cozmoslabs-description"><?php esc_html_e( 'Save "Last Profile Update" date in usermeta.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, each time a user modifies his profile the date and time will be saved in the database under the "last_profile_update_date" meta name.', 'profile-builder' ); ?></p>
@@ -311,7 +311,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Disable automatic scrolling after submit.', 'profile-builder' ); ?></p>
+                <label for="toolbox-disable-automatic-scrolling" class="cozmoslabs-description"><?php esc_html_e( 'Disable automatic scrolling after submit.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By default, after each form submission the page will automatically scroll to the form message. By enabling this option, automatic scrolling will be disabled.', 'profile-builder' ); ?></p>
@@ -327,7 +327,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Use Ajax on conditional fields.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-ajax-conditional-logic" class="cozmoslabs-description"><?php esc_html_e( 'Use Ajax on conditional fields.', 'profile-builder' ); ?></label>
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'For large conditional forms. Enable option for improved page performance.', 'profile-builder' ); ?></p>

@@ -16,11 +16,11 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable Compare shortcode.', 'profile-builder' ); ?></p>
+                <label for="toolbox-compare" class="cozmoslabs-description"><?php esc_html_e( 'Enable Compare shortcode.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/">this url</a>.', 'profile-builder' ) ); ?>
+                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
             </p>
         </div>
 
@@ -33,11 +33,11 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable Usermeta shortcode.', 'profile-builder' ); ?></p>
+                <label for="toolbox-usermeta" class="cozmoslabs-description"><?php esc_html_e( 'Enable Usermeta shortcode.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/">this url</a>.', 'profile-builder' ) ); ?>
+                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
             </p>
         </div>
 
@@ -50,11 +50,11 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable Resend Activation Email shortcode.', 'profile-builder' ); ?></p>
+                <label for="toolbox-resend-activation" class="cozmoslabs-description"><?php esc_html_e( 'Enable Resend Activation Email shortcode.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/">this url</a>.', 'profile-builder' ) ); ?>
+                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
             </p>
         </div>
 
@@ -67,11 +67,11 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable Format Date shortcode.', 'profile-builder' ); ?></p>
+                <label for="toolbox-format-date" class="cozmoslabs-description"><?php esc_html_e( 'Enable Format Date shortcode.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/">this url</a>.', 'profile-builder' ) ); ?>
+                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
             </p>
         </div>
 
@@ -84,11 +84,11 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable List Roles shortcode.', 'profile-builder' ); ?></p>
+                <label for="toolbox-list-roles" class="cozmoslabs-description"><?php esc_html_e( 'Enable List Roles shortcode.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/#Shortcodes_List">this url</a>.', 'profile-builder' ) ); ?>
+                <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree/#Shortcodes_List" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
             </p>
         </div>
     </div>

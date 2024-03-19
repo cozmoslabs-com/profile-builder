@@ -70,7 +70,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
             $wppb_selected_roles = get_post_meta( $post->ID, 'wppb-content-restrict-user-role' );
             ?>
 
-            <div class="cozmoslabs-checkbox-list cozmoslabs-checkbox-4-col-list">
+            <div class="cozmoslabs-checkbox-list cozmoslabs-checkbox-multi-col-list">
 
                 <div class="cozmoslabs-chckbox-container">
                     <input type="checkbox" value="loggedin" <?php if( ! empty( $wppb_user_status ) && $wppb_user_status == 'loggedin' ) echo 'checked="checked"'; ?> name="wppb-content-restrict-user-status" id="wppb-content-restrict-user-status">
@@ -117,7 +117,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
             <div class="wppb-meta-box-field-wrapper cozmoslabs-form-field-wrapper cozmoslabs-checkbox-list-wrapper">
                 <label class="wppb-meta-box-field-label cozmoslabs-form-field-label"><?php esc_html_e( 'Who can purchase?', 'profile-builder' ); ?></label>
 
-                <div class="cozmoslabs-checkbox-list cozmoslabs-checkbox-4-col-list">
+                <div class="cozmoslabs-checkbox-list cozmoslabs-checkbox-multi-col-list">
 
                     <div class="cozmoslabs-chckbox-container">
                         <input type="checkbox" value="loggedin" <?php if( ! empty( $wppb_purchase_user_status ) ) checked($wppb_purchase_user_status, 'loggedin' ); ?> name="wppb-purchase-restrict-user-status" id="wppb-purchase-restrict-user-status">
@@ -162,7 +162,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
                 <label class="cozmoslabs-toggle-track" for="wppb-content-restrict-custom-redirect-url-enabled"></label>
             </div>
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add a custom redirect URL for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></p>
+                <label for="wppb-content-restrict-custom-redirect-url-enabled" class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add a custom redirect URL for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></label>
             </div>
         </div>
 
@@ -189,7 +189,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
                 <label class="cozmoslabs-toggle-track" for="wppb-content-restrict-messages-enabled"></label>
             </div>
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add custom messages for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></p>
+                <label for="wppb-content-restrict-messages-enabled" class="cozmoslabs-description"><?php echo esc_html( sprintf( __( 'Enable if you wish to add custom messages for this %s.', 'profile-builder' ), apply_filters( 'wppb_content_restrict_settings_description_cpt', $post->post_type ) ) ); ?></label>
             </div>
         </div>
 

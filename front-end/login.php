@@ -238,14 +238,19 @@ function wppb_change_login_with_email(){
 			// if this setting is active, the posted username is, in fact the user's email or username
 			if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) ) {
 				if( is_email( $_POST['log'] ) ) {
+
 					$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", sanitize_email( $_POST['log'] ) ) );
+
+					// the username can have the format of an email address, so if we can't find a user that has an account with the detected email, we set the username as that email				
+					if( empty( $username ) )
+						$username = sanitize_user( $_POST['log'] );
+
 				} else {
 					$username = sanitize_user( $_POST['log'] );
 				}
 
 				if( !empty( $username ) )
 					$_POST['log'] = $username;
-
 				else {
 					// if we don't have a username for the email entered we can't have an empty username because we will receive a field empty error
 					$_POST['log'] = 'this_is_an_invalid_email'.time();

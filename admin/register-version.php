@@ -26,9 +26,22 @@ if( is_multisite() ) {
  */
 function wppb_register_your_version_content() {
     ?>
-    <div class="wrap wppb-wrap">
-        <div id="wppb-register-version-page" class="wrap">
-            <?php wppb_add_register_version_form(); ?>
+    <div class="wrap wppb-wrap cozmoslabs-wrap">
+        <div id="wppb-register-version-page">
+
+            <h1></h1>
+            <!-- WordPress Notices are added after the h1 tag -->
+
+            <div class="cozmoslabs-page-header">
+                <div class="cozmoslabs-section-title">
+                    <h2 class="cozmoslabs-page-title"><?php esc_html_e( "Register your version of Profile Builder", 'profile-builder' ); ?></h2>
+                    <a href="https://www.cozmoslabs.com/docs/profile-builder/basic-information-installation?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs#Register_your_version" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+                </div>
+            </div>
+
+            <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
+                <?php wppb_add_register_version_form(); ?>
+            </div>
         </div>
     </div>
     <?php

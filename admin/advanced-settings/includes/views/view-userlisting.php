@@ -35,7 +35,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Make the Single Userlisting URLs work with user nicename.', 'profile-builder' ); ?></p>
+                <label for="toolbox-use-nicename-single" class="cozmoslabs-description"><?php esc_html_e( 'Make the Single Userlisting URLs work with user nicename.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left">
@@ -55,7 +55,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Remove repetition counts from Faceted Menus.', 'profile-builder' ); ?></p>
+                <label for="toolbox-remove-repetitions" class="cozmoslabs-description"><?php esc_html_e( 'Remove repetition counts from Faceted Menus.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'The number of users that share a particular value is shown for the Select and Checkbox facet types.', 'profile-builder' ); ?></p>

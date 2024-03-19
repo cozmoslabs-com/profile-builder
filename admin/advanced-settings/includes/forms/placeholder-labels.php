@@ -136,7 +136,7 @@ function wppb_pbpl_meta_box_content( $post ) {
         </div>
 
         <div class="cozmoslabs-toggle-description">
-            <p class="cozmoslabs-description"><?php esc_html_e( 'Replace labels with placeholders', 'profile-builder' ) ?></p>
+            <label for="pbpl-active" class="cozmoslabs-description"><?php esc_html_e( 'Replace labels with placeholders', 'profile-builder' ) ?></label>
         </div>
     </div>
     <?php

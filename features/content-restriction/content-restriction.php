@@ -105,7 +105,7 @@ function wppb_content_restriction_content() {
                     </div>
 
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php esc_html_e( 'Activate Content Restriction.', 'profile-builder' ); ?></p>
+                        <label for="contentRestrictionSelect" class="cozmoslabs-description"><?php esc_html_e( 'Activate Content Restriction.', 'profile-builder' ); ?></label>
                     </div>
                 </div>
 

@@ -273,7 +273,7 @@
 }
 
 .wppb-setup-addon__details p {
-    color: #757575;
+    color: #1E1E1E;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -297,7 +297,7 @@
 }
 
 .wppb-setup-addon.disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: default;
 }
 

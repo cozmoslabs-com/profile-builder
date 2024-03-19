@@ -25,21 +25,17 @@ jQuery(document).ready(function() {
 
 	// Admin Approval
 	if (jQuery( '#adminApprovalSelect' ).prop('checked')) {
-		jQuery('.wppb-aa-details').hide();
 		jQuery('.wppb-aa-user-list').show();
 	}
 	else {
-		jQuery('.wppb-aa-details').show();
 		jQuery ( '.wppb-aa-user-list' ).hide();
 	}
 
 	jQuery ('#adminApprovalSelect').on('change', function() {
 		if (jQuery( '#adminApprovalSelect' ).prop('checked')) {
-			jQuery('.wppb-aa-details').hide();
 			jQuery('.wppb-aa-user-list').show();
 		}
 		else {
-			jQuery('.wppb-aa-details').show();
 			jQuery ( '.wppb-aa-user-list' ).hide();
 		}
 	});
@@ -47,21 +43,17 @@ jQuery(document).ready(function() {
 
 	// Roles Editor
 	if (jQuery( '#rolesEditorSelect' ).prop('checked')) {
-		jQuery('.wppb-roles-editor-details').hide();
 		jQuery('.wppb-roles-editor-link').show();
 	}
 	else {
-		jQuery ( '.wppb-roles-editor-details' ).show();
 		jQuery ( '.wppb-roles-editor-link' ).hide();
 	}
 
 	jQuery ('#rolesEditorSelect').on('change', function() {
 		if (jQuery( '#rolesEditorSelect' ).prop('checked')) {
-			jQuery('.wppb-roles-editor-details').hide();
 			jQuery('.wppb-roles-editor-link').show();
 		}
 		else {
-			jQuery ( '.wppb-roles-editor-details' ).show();
 			jQuery ( '.wppb-roles-editor-link' ).hide();
 		}
 	});

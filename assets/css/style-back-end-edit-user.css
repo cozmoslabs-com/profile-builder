@@ -1,0 +1,9 @@
+body.user-edit-php #your-profile .wp-editor-wrap {
+    width: 500px !important;
+}
+
+body.user-edit-php #your-profile .custom_field_select,
+body.user-edit-php #your-profile .select2-container,
+body.user-edit-php #your-profile .custom_field_multiple_select {
+    min-width: 25em;
+}

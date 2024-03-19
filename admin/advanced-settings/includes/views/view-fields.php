@@ -18,7 +18,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Automatically generate password for users.', 'profile-builder' ); ?></p>
+                <label for="toolbox-automatically-generate-password" class="cozmoslabs-description"><?php esc_html_e( 'Automatically generate password for users.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, the password will be automatically generated and emailed to the user.', 'profile-builder' ); ?></p>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Hidden and checked "Send Credentials" checkbox.', 'profile-builder' ); ?></p>
+                <label for="toolbox-send-credentials-hide" class="cozmoslabs-description"><?php esc_html_e( 'Hidden and checked "Send Credentials" checkbox.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By default, the user needs to choose if he wants to receive a registration email.', 'profile-builder' ); ?></p>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Redirect users to a page if they have empty required fields.', 'profile-builder' ); ?></p>
+                <label for="toolbox-redirect-if-empty-required" class="cozmoslabs-description"><?php esc_html_e( 'Redirect users to a page if they have empty required fields.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, logged in users which have empty required fields on their profile will be redirected to a selected page.', 'profile-builder' ); ?></p>
@@ -89,7 +89,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Restrict certain words from being used in fields.', 'profile-builder' ); ?></p>
+                <label for="toolbox-restricted-words" class="cozmoslabs-description"><?php esc_html_e( 'Restrict certain words from being used in fields.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Allows you to define some words which users cannot use in their Username, First Name or Last Name when registering.', 'profile-builder' ); ?></p>
@@ -150,7 +150,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Unique "Display Name" for users.', 'profile-builder' ); ?></p>
+                <label for="toolbox-unique-display-name" class="cozmoslabs-description"><?php esc_html_e( 'Unique "Display Name" for users.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, users will not be able to choose a "Display Name" that is already used by another account.', 'profile-builder' ); ?></p>
@@ -165,7 +165,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Always capitalize "First Name" and "Last Name" default fields.', 'profile-builder' ); ?></p>
+                <label for="toolbox-capitalize-first-last" class="cozmoslabs-description"><?php esc_html_e( 'Always capitalize "First Name" and "Last Name" default fields.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'If you have these fields in your forms, they will be always saved with the first letter as uppercase.', 'profile-builder' ); ?></p>
@@ -182,7 +182,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Make all Datepickers use Monday as the first day of the week.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-datepicker-starts-monday" class="cozmoslabs-description"><?php esc_html_e( 'Make all Datepickers use Monday as the first day of the week.', 'profile-builder' ); ?></label>
                 </div>
             </div>
         <?php endif; ?>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="cozmoslabs-toggle-description">
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Hide Repeater Fields from the back-end Profile page.', 'profile-builder' ); ?></p>
+                    <label for="toolbox-remove-repeater-fields" class="cozmoslabs-description"><?php esc_html_e( 'Hide Repeater Fields from the back-end Profile page.', 'profile-builder' ); ?></label>
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Repeater Fields from Profile Builder do not work on the back-end User Profile page, they are just displayed. If you want to remove them completely, you can use this option.', 'profile-builder' ); ?></p>
@@ -218,7 +218,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Show the Password field visibility toggle.', 'profile-builder' ); ?></p>
+                <label for="toolbox-password-visibility-hide" class="cozmoslabs-description"><?php esc_html_e( 'Show the Password field visibility toggle.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enabling this option will show a visibility toggle button for all Password fields..', 'profile-builder' ); ?></p>
@@ -233,7 +233,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Remove all Extra Fields from back-end Edit Profile page.', 'profile-builder' ); ?></p>
+                <label for="toolbox-remove-all-fields-from-backend" class="cozmoslabs-description"><?php esc_html_e( 'Remove all Extra Fields from back-end Edit Profile page.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enabling this option will remove all Custom Fields from the backend Profile page created with Profile Builder.', 'profile-builder' ); ?></p>
@@ -248,7 +248,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Update database entries when changing meta key.', 'profile-builder' ); ?></p>
+                <label for="toolbox-update-db-meta-keys" class="cozmoslabs-description"><?php esc_html_e( 'Update database entries when changing meta key.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enabling this option, when changing the meta key of a field, existing entries from the database will be updated as well.', 'profile-builder' ); ?></p>

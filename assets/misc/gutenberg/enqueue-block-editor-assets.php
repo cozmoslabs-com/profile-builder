@@ -8,12 +8,19 @@ add_action(
         global $content_restriction_activated;
         global $wp_version;
 
+        global $pagenow;
+
+        $arrDeps = ($pagenow === 'widgets.php') ?
+            array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-widgets', 'lodash', )
+            : array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post', 'lodash', );
+
+
         //Register the Block Content Restriction assets
         if ( $content_restriction_activated == 'yes' && version_compare( $wp_version, "5.0.0", ">=" ) ) {
             wp_register_script(
                 'wppb-block-editor-assets-content-restriction',
                 WPPB_PLUGIN_URL . 'assets/misc/gutenberg/block-content-restriction/build/index.js',
-                ['wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post', 'lodash'],
+                $arrDeps,
                 PROFILE_BUILDER_VERSION
             );
             wp_enqueue_script('wppb-block-editor-assets-content-restriction');

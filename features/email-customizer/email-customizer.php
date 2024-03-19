@@ -847,7 +847,8 @@ add_filter( 'mustache_variable_ec_reset_link', 'wppb_ec_replace_reset_link', 10,
  */
 function wppb_ec_generate_user_email_change_link( $value, $merge_tag_name, $merge_tag, $extra_data ){
     if ( isset( $extra_data['change_email_url'] ) )
-        return $extra_data['change_email_url'];
+//        return $extra_data['change_email_url'];
+        return '<a href="'. $extra_data['change_email_url'] .'">'. __( 'Change Email Address Link', 'profile-builder' ) .'</a>';
 }
 add_filter( 'mustache_variable_ec_user_email_change_link', 'wppb_ec_generate_user_email_change_link', 10, 4 );
 

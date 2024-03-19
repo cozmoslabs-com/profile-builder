@@ -172,7 +172,7 @@ function wppb_general_settings_content() {
                 <div class="cozmoslabs-form-field-wrapper">
                     <?php
                     if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) ) {
-                        echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                         echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     }
                     elseif ( PROFILE_BUILDER == 'Profile Builder Free' ) {
                         echo wppb_display_form_designs_preview(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -193,7 +193,7 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description"><?php esc_html_e( 'Enable to automatically log in new users after successful registration.', 'profile-builder' ); ?></p>
+                            <label for="wppb_settings_automatically_log_in" class="cozmoslabs-description"><?php esc_html_e( 'Enable to automatically log in new users after successful registration.', 'profile-builder' ); ?></label>
                         </div>
                     </div>
 
@@ -208,9 +208,10 @@ function wppb_general_settings_content() {
 
                         </div>
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description"><?php  esc_html_e( 'This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using "Custom Redirects" module.', 'profile-builder' ); ?></p>
-                            <p class="cozmoslabs-description" id="unconfirmed-user-emails"><?php  printf( esc_html__( 'You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=unconfirmed_emails">', '</a>' )?></p>
+                            <label for="wppb_settings_email_confirmation" class="cozmoslabs-description"><?php  esc_html_e( 'This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using "Custom Redirects" module.', 'profile-builder' ); ?></label>
                         </div>
+
+                        <p class="cozmoslabs-description cozmoslabs-description-space-left" id="unconfirmed-user-emails"><?php  printf( esc_html__( 'You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=unconfirmed_emails">', '</a>' )?></p>
                     </div>
 
 
@@ -268,9 +269,10 @@ function wppb_general_settings_content() {
                             </div>
 
                             <div class="cozmoslabs-toggle-description">
-                                <p class="cozmoslabs-description wppb-aa-details"><?php esc_html_e( 'Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.', 'profile-builder' ); ?></p>
-                                <p class="cozmoslabs-description wppb-aa-user-list"><?php printf( esc_html__( 'You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=admin_approval&orderby=registered&order=desc">', '</a>' )?></p>
+                                <label for="adminApprovalSelect" class="cozmoslabs-description wppb-aa-details"><?php esc_html_e( 'Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.', 'profile-builder' ); ?></label>
                             </div>
+
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-aa-user-list"><?php printf( esc_html__( 'You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=admin_approval&orderby=registered&order=desc">', '</a>' )?></p>
                         </div>
 
                         <div class="cozmoslabs-form-field-wrapper wppb-aa-user-list">
@@ -399,9 +401,10 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description wppb-roles-editor-details"><?php esc_html_e( 'Easily create new custom user roles or customize any existing user role capabilities.', 'profile-builder' ); ?></p>
-                            <p class="cozmoslabs-description wppb-roles-editor-link"><?php printf( esc_html__( 'You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/edit.php?post_type=wppb-roles-editor">', '</a>' )?></p>
+                            <label for="rolesEditorSelect" class="cozmoslabs-description wppb-roles-editor-details"><?php esc_html_e( 'Easily create new custom user roles or customize any existing user role capabilities.', 'profile-builder' ); ?></label>
                         </div>
+
+                        <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-roles-editor-link"><?php printf( esc_html__( 'You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/edit.php?post_type=wppb-roles-editor">', '</a>' )?></p>
                     </div>
 
 				<?php } ?>
@@ -425,7 +428,7 @@ function wppb_general_settings_content() {
                         </div>
 
                         <div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></p>
+                            <label for="wppb-auth-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
                         </div>
                     </div>
 
@@ -462,7 +465,7 @@ function wppb_general_settings_content() {
                         <label class="cozmoslabs-toggle-track" for="extraFieldsLayout"></label>
                     </div>
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'/assets/css/style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+                        <label for="extraFieldsLayout" class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'/assets/css/style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
                     </div>
                 </div>
 
@@ -608,7 +611,9 @@ function wppb_display_form_designs_preview() {
         }
 
         $output .= '<div class="wppb-forms-design" id="'. $form_design['id'] .'" title="'. $title .'">
-                        <label>' . $form_design['name'] . '</label>
+                        <label>
+                            <input type="radio" id="wppb-fd-option-' . $form_design['id'] . '" value="' . $form_design['id'] . '" name="" disabled ' . ( $form_design['id'] == 'form-style-default' ? 'checked' : '' ) .'>
+                            ' . $form_design['name'] . '</label>    
                         <div class="wppb-forms-design-screenshot">
                             <img src="' . $form_design['images']['main'] . '" alt="Form Design">
                             '. $preview_button .'
@@ -647,7 +652,7 @@ function wppb_display_form_designs_preview() {
 
     $output .= '</div>';
 
-    $output .= '<p class="cozmoslabs-description">'. sprintf( esc_html__( 'You can now beautify your forms using new Styles. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=general-settings-link&utm_campaign=PBFree#pricing" target="_blank">', '</a>', '<strong>', '</strong>' ) .'</p>';
+    $output .= '<p class="cozmoslabs-description cozmoslabs-description-upsell">'. sprintf( esc_html__( 'You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-form-designs&utm_campaign=PBFree#pricing" target="_blank">', '</a>', '<strong>', '</strong>' ) .'</p>';
 
     return $output;
 }

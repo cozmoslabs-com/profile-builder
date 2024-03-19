@@ -83,7 +83,7 @@ function wppb_private_website_content() {
                     </div>
 
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php esc_html_e( 'Activate Private Website. It will restrict the content, RSS and REST API for your website.', 'profile-builder' ); ?></p>
+                        <label for="private-website-enable" class="cozmoslabs-description"><?php esc_html_e( 'Activate Private Website. It will restrict the content, RSS and REST API for your website.', 'profile-builder' ); ?></label>
                     </div>
                 </div>
 
@@ -146,7 +146,7 @@ function wppb_private_website_content() {
                     </div>
 
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php wp_kses_post( printf( __( 'Hide all menu items if you are not logged in. We recommend "<a href="%s" target="_blank">Custom Profile Menus</a>" addon if you need different menu items for logged in / logged out users.', 'profile-builder' ), 'https://www.cozmoslabs.com/add-ons/custom-profile-menus/' ) )    //phpcs:ignore; ?></p>
+                        <label for="private-website-menu-hide" class="cozmoslabs-description"><?php wp_kses_post( printf( __( 'Hide all menu items if you are not logged in. We recommend "<a href="%s" target="_blank">Custom Profile Menus</a>" addon if you need different menu items for logged in / logged out users.', 'profile-builder' ), 'https://www.cozmoslabs.com/add-ons/custom-profile-menus/' ) )    //phpcs:ignore; ?></label>
                     </div>
                 </div>
 
@@ -159,7 +159,7 @@ function wppb_private_website_content() {
                     </div>
 
                     <div class="cozmoslabs-toggle-description">
-                        <p class="cozmoslabs-description"><?php esc_html_e( 'Disable the WordPress REST-API for non-logged in users when Private Website is enabled', 'profile-builder' ); ?></p>
+                        <label for="private-website-disable-rest-api" class="cozmoslabs-description"><?php esc_html_e( 'Disable the WordPress REST-API for non-logged in users when Private Website is enabled', 'profile-builder' ); ?></label>
                     </div>
                 </div>
 

@@ -12,7 +12,7 @@ add_action(
         wp_register_script(
             'wppb-block-recover-password',
             add_query_arg( [ 'action' => 'wppb-block-recover-password.js', ], admin_url( 'admin-ajax.php' ) ),
-            [ 'wp-blocks', 'wp-element', 'wp-editor' ],
+            [ 'wp-blocks', 'wp-element' ],
             microtime(),
             true
         );

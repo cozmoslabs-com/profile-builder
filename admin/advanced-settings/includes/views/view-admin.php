@@ -18,7 +18,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Allow users with "delete_users" capability to view the Admin Approval list.', 'profile-builder' ); ?></p>
+                <label for="toolbox-admin-approval-access" class="cozmoslabs-description"><?php esc_html_e( 'Allow users with "delete_users" capability to view the Admin Approval list.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, you will allow users that have the "delete_users" capability to access and use the Admin Approval list.', 'profile-builder' ); ?></p>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Allow users with "delete_users" capability to view the Unconfirmed Emails list.', 'profile-builder' ); ?></p>
+                <label for="toolbox-email-confirmation-access" class="cozmoslabs-description"><?php esc_html_e( 'Allow users with "delete_users" capability to view the Unconfirmed Emails list.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, you will allow users that have the "delete_users" capability to see the list of Unconfirmed Email Addresses.', 'profile-builder' ); ?></p>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Disable confirmation dialog for "{{approval_url}}" or "{{approval_link}}" Email Customizer tags.', 'profile-builder' ); ?></p>
+                <label for="toolbox-admin-approval-confirmation" class="cozmoslabs-description"><?php esc_html_e( 'Disable confirmation dialog for "{{approval_url}}" or "{{approval_link}}" Email Customizer tags.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, you will disable the confirmation dialog, allowing you to approve new users simply by visiting the "{{approval_url}}" or "{{approval_link}}".', 'profile-builder' ); ?></p>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Enable multiple Admin email addresses.', 'profile-builder' ); ?></p>
+                <label for="toolbox-multiple-admin-emails" class="cozmoslabs-description"><?php esc_html_e( 'Enable multiple Admin email addresses.', 'profile-builder' ); ?></label>
             </div>
 
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php  esc_html_e( 'By enabling this option, you can set multiple admin e-mail addresses that will receive e-mail notifications sent by Profile Builder.', 'profile-builder' ); ?></p>
@@ -89,7 +89,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Disable the ability to select multiple Roles for a user.', 'profile-builder' ); ?></p>
+                <label for="toolbox-multiple-user-roles" class="cozmoslabs-description"><?php esc_html_e( 'Disable the ability to select multiple Roles for a user.', 'profile-builder' ); ?></label>
             </div>
         </div>
 
@@ -102,7 +102,7 @@
             </div>
 
             <div class="cozmoslabs-toggle-description">
-                <p class="cozmoslabs-description"><?php esc_html_e( 'Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.', 'profile-builder' ); ?></p>
+                <label for="toolbox-plugin-optin" class="cozmoslabs-description"><?php esc_html_e( 'Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.', 'profile-builder' ); ?></label>
             </div>
         </div>
     </div>

@@ -75,7 +75,7 @@ if( !empty( $details['options'] ) ){
 
         if ( $options_number == 1 )
             $element .= '<div class="cozmoslabs-toggle-description">
-                            <p class="cozmoslabs-description">'. esc_html__( 'Enable ', 'profile-builder' ) .'<strong>'. $details['title'] .'</strong></p>
+                            <label for="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $context_slug . $slug_from . '_' . $value_attr ) ) .'" class="cozmoslabs-description">'. esc_html__( 'Enable ', 'profile-builder' ) .'<strong>'. $details['title'] .'</strong></label>
                         </div>';
 	}
 

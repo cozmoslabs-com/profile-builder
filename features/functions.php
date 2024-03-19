@@ -438,7 +438,9 @@ function wppb_print_cpt_script( $hook ){
         wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', array(), PROFILE_BUILDER_VERSION );
     }
 
-
+    if ( $hook == 'user-edit.php' ) {
+        wp_enqueue_style( 'wppb-back-end-edit-user-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end-edit-user.css', array(), PROFILE_BUILDER_VERSION );
+    }
 
     wp_enqueue_script( 'wppb-sitewide', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-sitewide.js', array(), PROFILE_BUILDER_VERSION, true );
 
