@@ -18,7 +18,7 @@ msgid "To enable updates, your licence needs to be renewed. Please go to the <a 
 msgstr ""
 
 #: index.php:393
-msgid "To enable updates, please enter your serial number on the <a href=\"%s\">Register Version</a> page. If you don't have a serial number, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>."
+msgid "To enable updates, please enter your serial number on the %sSettings%s page. If you don't have a serial number, please see %sdetails & pricing%s."
 msgstr ""
 
 #: index.php:45
@@ -313,15 +313,15 @@ msgstr ""
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:330, features/functions.php:825, features/functions.php:849
+#: admin/admin-functions.php:139, admin/general-settings.php:330, features/functions.php:823, features/functions.php:847
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:331, features/functions.php:825, features/functions.php:849
+#: admin/admin-functions.php:139, admin/general-settings.php:331, features/functions.php:823, features/functions.php:847
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:332, features/functions.php:825, features/functions.php:849
+#: admin/admin-functions.php:139, admin/general-settings.php:332, features/functions.php:823, features/functions.php:847
 msgid "Strong"
 msgstr ""
 
@@ -973,11 +973,11 @@ msgstr ""
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:481, admin/private-website.php:169, features/content-restriction/content-restriction.php:190, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:111, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-forms.php:339, admin/advanced-settings/includes/views/view-shortcodes.php:97, admin/advanced-settings/includes/views/view-userlisting.php:67
+#: admin/general-settings.php:481, admin/private-website.php:169, features/content-restriction/content-restriction.php:190, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:113, admin/advanced-settings/includes/views/view-fields.php:260, admin/advanced-settings/includes/views/view-forms.php:341, admin/advanced-settings/includes/views/view-shortcodes.php:97, admin/advanced-settings/includes/views/view-userlisting.php:67
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:484, admin/private-website.php:171, features/functions.php:1097, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:192, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:113, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:341, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
+#: admin/general-settings.php:484, admin/private-website.php:171, features/functions.php:1095, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:192, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:115, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:343, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
 msgid "Save Changes"
 msgstr ""
 
@@ -3205,11 +3205,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1118, features/functions.php:1125, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:186, add-ons-free/labels-edit/labels-edit.php:378, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1409, features/functions.php:1116, features/functions.php:1123, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:186, add-ons-free/labels-edit/labels-edit.php:378, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1111, features/functions.php:1125, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:186, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1409, features/functions.php:1109, features/functions.php:1123, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:186, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3565,71 +3565,71 @@ msgstr ""
 msgid "Honeypot"
 msgstr ""
 
-#: features/functions.php:799
+#: features/functions.php:797
 msgid "Strength indicator"
 msgstr ""
 
-#: features/functions.php:825, features/functions.php:849
+#: features/functions.php:823, features/functions.php:847
 msgid "Very Weak"
 msgstr ""
 
-#: features/functions.php:839
+#: features/functions.php:837
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:850, front-end/recover.php:403, front-end/default-fields/password/password.php:59
+#: features/functions.php:848, front-end/recover.php:403, front-end/default-fields/password/password.php:59
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:1016
+#: features/functions.php:1014
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1054, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1052, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1061
+#: features/functions.php:1059
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1104, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:435
+#: features/functions.php:1102, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:435
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1125, assets/lib/wck-api/wordpress-creation-kit.php:476
+#: features/functions.php:1123, assets/lib/wck-api/wordpress-creation-kit.php:476
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1315
+#: features/functions.php:1313
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1328
+#: features/functions.php:1326
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1419, add-ons-advanced/social-connect/index.php:425
+#: features/functions.php:1417, add-ons-advanced/social-connect/index.php:425
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1420
+#: features/functions.php:1418
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1600
+#: features/functions.php:1598
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1650
+#: features/functions.php:1648
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1687
+#: features/functions.php:1685
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1705, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1703, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -3673,55 +3673,55 @@ msgstr ""
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: front-end/class-formbuilder.php:412
+#: front-end/class-formbuilder.php:421
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: front-end/class-formbuilder.php:401
+#: front-end/class-formbuilder.php:407
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:368, front-end/class-formbuilder.php:375
+#: front-end/class-formbuilder.php:371, front-end/class-formbuilder.php:378
 msgid "The account %1s has been successfully created!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:371, front-end/class-formbuilder.php:381
+#: front-end/class-formbuilder.php:374, front-end/class-formbuilder.php:384
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: front-end/class-formbuilder.php:377
+#: front-end/class-formbuilder.php:380
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:473
+#: front-end/class-formbuilder.php:482
 msgid "Update"
 msgstr ""
 
-#: front-end/class-formbuilder.php:470
+#: front-end/class-formbuilder.php:479
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:470, front-end/login.php:607, add-ons-advanced/custom-profile-menus/index.php:303, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:75, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: front-end/class-formbuilder.php:479, front-end/login.php:607, add-ons-advanced/custom-profile-menus/index.php:303, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:75, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
-#: front-end/class-formbuilder.php:555
+#: front-end/class-formbuilder.php:564
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:778
+#: front-end/class-formbuilder.php:787
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:760
+#: front-end/class-formbuilder.php:769
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:762
+#: front-end/class-formbuilder.php:771
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:819
+#: front-end/class-formbuilder.php:828
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -5791,23 +5791,23 @@ msgstr ""
 msgid "Your submission contains banned words."
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:200
+#: admin/advanced-settings/advanced-settings.php:205
 msgid "are"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:201
+#: admin/advanced-settings/advanced-settings.php:206
 msgid "have"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:197
+#: admin/advanced-settings/advanced-settings.php:202
 msgid "is"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:198
+#: admin/advanced-settings/advanced-settings.php:203
 msgid "has"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:204
+#: admin/advanced-settings/advanced-settings.php:209
 msgid "%1$s of the emails provided in the Admin Emails field %2$s invalid and %3$s been removed from the list"
 msgstr ""
 

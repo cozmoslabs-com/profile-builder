@@ -28,7 +28,7 @@ function wppb_gdpr_handler( $output, $form_location, $field, $user_id, $field_ch
             if ( isset( $input_value ) && ( $input_value == 'agree' ) )
                 $output .= ' checked="yes"';
 
-            $output .= ' />'.trim( html_entity_decode ( $item_description ) ).$error_mark.'</label>';
+            $output .= ' /><span>'.trim( html_entity_decode ( $item_description ) ).$error_mark.'</span></label>';
 
         }
 		else

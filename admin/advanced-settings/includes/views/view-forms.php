@@ -335,6 +335,8 @@
         <?php endif; ?>
     </div>
 
+    <input type="hidden" name="wppb_toolbox_current_tab" value="forms" />
+
     <div class="submit">
         <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
         <div class="cozmoslabs-publish-button-group">

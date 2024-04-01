@@ -48,6 +48,7 @@ div.wppb-serial-notification p{
 
 
 /* hide menu items */
+.wp-submenu a[href="admin.php?page=profile-builder-private-website"],
 .wp-submenu a[href="admin.php?page=profile-builder-admin-bar-settings"],
 .wp-submenu a[href="admin.php?page=profile-builder-content_restriction"],
 .wp-submenu a[href="admin.php?page=admin-email-customizer"],

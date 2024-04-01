@@ -41,7 +41,7 @@ if( !class_exists('WPPB_toolbox') ){
         public function submenu_page_callback() {
             reset( $this->tabs );
 
-            if ( isset( $_GET['tab'] ) && array_key_exists( sanitize_text_field( $_GET['tab'] ), $this->tabs) )
+            if ( isset( $_GET['tab'] ) && array_key_exists( sanitize_text_field( $_GET['tab'] ), $this->tabs ) )
                 $this->active_tab = sanitize_text_field( $_GET['tab'] );
             ?>
             <div class="wrap wppb-wrap wppb-toolbox-wrap cozmoslabs-wrap">
@@ -169,6 +169,11 @@ if( !class_exists('WPPB_toolbox') ){
 
         public function sanitize_forms_settings( $settings ) {
 
+            if ( isset( $_POST['wppb_toolbox_current_tab'] ) && array_key_exists( sanitize_text_field( $_POST['wppb_toolbox_current_tab'] ), $this->tabs ) )
+                $this->active_tab = sanitize_text_field( $_POST['wppb_toolbox_current_tab'] );
+
+            $previous_settings = get_option( 'wppb_toolbox_' . $this->active_tab . '_settings', array() );
+
             if( !empty( $settings['restricted-email-domains-data'] ) ){
                 foreach( $settings['restricted-email-domains-data'] as $key => $email )
                     $settings['restricted-email-domains-data'][$key] = strtolower( $email );
@@ -220,7 +225,7 @@ if( !class_exists('WPPB_toolbox') ){
             if( empty( $settings['admin-emails'] ) )
                 $settings['admin-emails'] = sanitize_email( get_option('admin_email') );
 
-            $settings = apply_filters( 'wppb_advanced_settings_sanitize', $settings );
+            $settings = apply_filters( 'wppb_advanced_settings_sanitize', $settings, $previous_settings );
 
             return $settings;
 

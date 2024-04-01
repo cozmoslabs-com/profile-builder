@@ -376,7 +376,7 @@ function wppb_print_cpt_script( $hook ){
         wp_enqueue_style( 'wppb-select2-style', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css', false, PROFILE_BUILDER_VERSION );
 	}
 
-	if ( $hook == 'admin_page_profile-builder-private-website' ){
+	if ( $hook == 'profile-builder_page_profile-builder-private-website' ){
 		wp_enqueue_script( 'wppb-select2', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array(), PROFILE_BUILDER_VERSION, true );
         wp_enqueue_script( 'wppb-select2-compat', WPPB_PLUGIN_URL . 'assets/js/select2-compat.js', array(), PROFILE_BUILDER_VERSION, true );
         wp_enqueue_style( 'wppb-select2-style', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css', false, PROFILE_BUILDER_VERSION );
@@ -400,9 +400,8 @@ function wppb_print_cpt_script( $hook ){
         ( $hook == 'profile-builder_page_profile-builder-content_restriction' ) ||
         ( strpos( $hook, 'profile-builder_page_' ) === 0 ) ||
         ( $hook == 'edit.php' && ( isset( $_GET['post_type'] ) && $_GET['post_type'] === 'wppb-roles-editor' ) ) ||
-		( $hook == 'admin_page_profile-builder-pms-promo') ||
 		( $hook == 'toplevel_page_profile-builder-register') || //multisite register version page
-		( $hook == 'admin_page_profile-builder-private-website') ) {
+		( $hook == 'admin_page_profile-builder-pms-promo') ) {
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
 	}
 
@@ -452,9 +451,8 @@ add_action( 'admin_enqueue_scripts', 'wppb_print_cpt_script', 9 );
  * Highlight the settings page under Profile Builder in the admin menu for these pages
  */
 //add add_action( "admin_footer-$hook", "wppb_make_setting_menu_item_highlighted" ); for other pages that don't have a parent
-add_action( "admin_footer-admin_page_profile-builder-private-website", "wppb_make_setting_menu_item_highlighted" );
+add_action( "admin_footer-profile-builder_page_profile-builder-private-website", "wppb_make_setting_menu_item_highlighted" );
 add_action( "admin_footer-profile-builder_page_profile-builder-admin-bar-settings", "wppb_make_setting_menu_item_highlighted" );
-add_action( "admin_footer-profile-builder_page_profile-builder-content_restriction", "wppb_make_setting_menu_item_highlighted" );
 add_action( "admin_footer-profile-builder_page_profile-builder-content_restriction", "wppb_make_setting_menu_item_highlighted" );
 add_action( "admin_footer-profile-builder_page_admin-email-customizer", "wppb_make_setting_menu_item_highlighted" );
 add_action( "admin_footer-profile-builder_page_user-email-customizer", "wppb_make_setting_menu_item_highlighted" );

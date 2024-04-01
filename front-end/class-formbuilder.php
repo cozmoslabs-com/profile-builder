@@ -306,6 +306,9 @@ class Profile_Builder_Form_Creator{
 		if( !$is_elementor_edit_mode_or_divi_ajax && isset( $_REQUEST['action'], $_REQUEST['form_name'], $this->args['form_name'] ) && $_REQUEST['form_name'] === $this->args['form_name'] ) {
             if( ! isset( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'] ), 'wppb_verify_form_submission' ) ) {
                 echo '<span class="wppb-form-error wppb-error">'. esc_html(__( 'You are not allowed to do this.', 'profile-builder' )) . '</span>';
+
+                ob_end_flush();
+
                 return;
             }
 
@@ -389,9 +392,12 @@ class Profile_Builder_Form_Creator{
                         if( strcasecmp($this->args['login_after_register'], 'Yes') == 0 ) {
                             $redirect = $this->wppb_log_in_user( $this->args['redirect_url'], $redirect );
                         }
-
+                        
 						echo $form_message_tpl_start . wp_kses_post( $wppb_register_success_message )  . $form_message_tpl_end . $redirect; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped above */
-						//action hook after registration success
+						
+                        ob_end_flush();
+
+                        //action hook after registration success
 	                    do_action( 'wppb_register_success', $_REQUEST, $this->args['form_name'], $user_id );
                         return;
                     } elseif( $this->args['form_type'] == 'edit_profile' ) {
@@ -402,8 +408,11 @@ class Profile_Builder_Form_Creator{
 
                         //action hook after edit profile success
 	                    do_action( 'wppb_edit_profile_success', $_REQUEST, $this->args['form_name'], $user_id );
-                        if( apply_filters( 'wppb_no_form_after_profile_update', false ) )
+
+                        if( apply_filters( 'wppb_no_form_after_profile_update', false ) ){
+                            ob_end_flush();
 	                        return;
+                        }
 					}
 
 				}

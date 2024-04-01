@@ -28,7 +28,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
         add_action( 'admin_init', array( $this, 'process_optin_actions' ) );
         add_action( 'activate_plugin', array( $this, 'process_paid_plugin_activation' ) );
         add_action( 'deactivated_plugin', array( $this, 'process_paid_plugin_deactivation' ) );
-        add_filter( 'wppb_advanced_settings_sanitize', array( $this, 'process_plugin_optin_advanced_setting' ) );
+        add_filter( 'wppb_advanced_settings_sanitize', array( $this, 'process_plugin_optin_advanced_setting' ), 20, 2 );
 
     }
 
@@ -198,7 +198,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
     }
 
     // Advanced settings
-    public function process_plugin_optin_advanced_setting( $settings ){
+    public function process_plugin_optin_advanced_setting( $settings, $previous_settings ){
 
         if( !isset( $settings['plugin-optin'] ) || $settings['plugin-optin'] == 'no' ){
 
@@ -217,8 +217,8 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
             $request = wp_remote_post( self::$base_url . 'pluginOptinArchiveSubscriber/', $args );
 
-        } else if ( isset( $settings['plugin-optin'] ) && $settings['plugin-optin'] == 'yes' ) {
-            
+        } else if ( $settings['plugin-optin'] == 'yes' && ( !isset( $previous_settings['plugin-optin'] ) || $settings['plugin-optin'] != $previous_settings['plugin-optin'] ) ) {
+
             update_option( self::$plugin_option_key, 'yes' );
             update_option( self::$plugin_option_email_key, get_option( 'admin_email' ) );
 
@@ -383,6 +383,9 @@ class Cozmoslabs_Plugin_Optin_WPPB {
                 $args['body']['2fa'] = 1;
             else
                 $args['body']['2fa'] = 0;
+
+            $args['body']['modules'] = get_option( 'wppb_module_settings', 'not_found' );
+            $args['body']['addons']  = get_option( 'wppb_advanced_add_ons_settings', array() );
 
         }
 

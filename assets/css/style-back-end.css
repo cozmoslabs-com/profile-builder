@@ -227,7 +227,6 @@ body[class*="post-type-wppb-"] .notice {
 /***********************************************************/
 
 body.toplevel_page_profile-builder-register .cozmoslabs-banner,
-body.admin_page_profile-builder-private-website .cozmoslabs-banner,
 body[class*="profile-builder_page_"] .cozmoslabs-banner,
 body[class*="post-type-wppb-"] .cozmoslabs-banner {
     margin-left: -20px;
@@ -2494,7 +2493,7 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
     .profile-builder_page_admin-email-customizer .cozmoslabs-wrap,
     .profile-builder_page_user-email-customizer .cozmoslabs-wrap,
     .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap,
-    .admin_page_profile-builder-private-website .cozmoslabs-wrap,
+    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap,
     .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap,
     .profile-builder_page_profile-builder-general-settings .cozmoslabs-wrap {
         padding-right: 300px;
@@ -2506,8 +2505,8 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
     .profile-builder_page_user-email-customizer .cozmoslabs-wrap .notice,
     .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap .error,
     .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap .notice,
-    .admin_page_profile-builder-private-website .cozmoslabs-wrap .error,
-    .admin_page_profile-builder-private-website .cozmoslabs-wrap .notice,
+    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap .error,
+    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap .notice,
     .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap .error,
     .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap .notice,
     .profile-builder_page_profile-builder-general-settings .cozmoslabs-wrap .error,
