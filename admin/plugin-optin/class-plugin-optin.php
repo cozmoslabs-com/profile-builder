@@ -384,8 +384,8 @@ class Cozmoslabs_Plugin_Optin_WPPB {
             else
                 $args['body']['2fa'] = 0;
 
-            $args['body']['modules'] = get_option( 'wppb_module_settings', 'not_found' );
-            $args['body']['addons']  = get_option( 'wppb_advanced_add_ons_settings', array() );
+            $args['body']['modules'] = json_encode( get_option( 'wppb_module_settings', 'not_found' ) );
+            $args['body']['addons']  = json_encode( get_option( 'wppb_advanced_add_ons_settings', array() ) );
 
         }
 

@@ -53,6 +53,9 @@ class WPPB_Roles_Editor {
         add_action( 'load-user-new.php', array( $this, 'actions_on_user_new' ) );
         add_action( 'load-user-edit.php', array( $this, 'actions_on_user_edit' ) );
 
+	    add_action( 'load-profile.php', array( $this, 'actions_on_user_new' ) );
+	    add_action( 'load-profile.php', array( $this, 'actions_on_user_edit' ) );
+
     }
 
     function submenu_page(){

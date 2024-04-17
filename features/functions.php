@@ -953,7 +953,8 @@ add_action( 'elementor/frontend/after_enqueue_scripts', 'wppb_enqueue_password_v
 add_action( 'wp_footer', 'wppb_enqueue_password_visibility_toggle' );
 function wppb_enqueue_password_visibility_toggle() {
     global $wppb_shortcode_on_front;
-    if( $wppb_shortcode_on_front && apply_filters( 'wppb_show_password_visibility_toggle', false ) ){
+    static $enqueued = false;
+    if( $wppb_shortcode_on_front && apply_filters( 'wppb_show_password_visibility_toggle', false ) && !$enqueued ){
 
         //load jQuery if needed
         if( !wp_script_is('jquery', 'done') ){
@@ -1004,6 +1005,7 @@ function wppb_enqueue_password_visibility_toggle() {
             }
         </script>
         <?php
+        $enqueued = true;
     }
 }
 

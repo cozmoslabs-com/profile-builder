@@ -1720,24 +1720,10 @@ function wppb_change_field_meta_key( $meta, $id, $values, $element_id ){
 			$wppb_manage_fields = get_option('wppb_manage_fields');
 			if (!empty($wppb_manage_fields)) {
 
-				/*
-				 * We need to be sure this is not a repeater.
-				 * The way we're doing this is by checking if the $values['meta-name'] is found inside $wppb_manage_fields
-				 * If it's not, it's probably inside a repeater.
-				 *
-				 * The reason we're doing this is because when we're updating a repeater field the $meta is still  'wppb_manage_fields' for some reason, while $element_id comes from the position of the repeater.
-				 *
-				 * This means we're updating last_name (if it's the 9'th position in wppb_manage_fields) instead of 'something_repeater' that's also in the 9'th position but inside the repeater group.
-				 *
-				 * Also, this code didn't account for 'something_repeater_1' etc, meaning it would have changed just 1 field, causing data loss anyway.
-				 *
-				 */
-				$is_not_repeater = false;
-				foreach ($wppb_manage_fields as $field){
-					if ( $field['meta-name'] == $values['meta-name'] ){
-						$is_not_repeater = true;
-					}
-				}
+				$is_not_repeater = true;
+
+                if( !empty( $wppb_manage_fields[$element_id] ) && $wppb_manage_fields[$element_id]['field'] == 'Repeater' )
+                    $is_not_repeater = false;
 
 				if (!empty($values['meta-name']) && $wppb_manage_fields[$element_id]['meta-name'] != $values['meta-name'] && $is_not_repeater ) {
 					$wpdb->update(

@@ -208,7 +208,7 @@
 <?php __("Email Confirmation Page", "profile-builder"); ?>
 <?php __("Existing Pages", "profile-builder"); ?>
 <?php __("Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time.", "profile-builder"); ?>
-<?php __('You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
+<?php __('Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ); ?>
 <?php __("Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.", "profile-builder"); ?>
 <?php __('You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ); ?>
 <?php __("Admin Approval User Role", "profile-builder"); ?>
@@ -2126,19 +2126,19 @@
 <?php __("For large conditional forms. Enable option for improved page performance.", "profile-builder"); ?>
 <?php __("Compare Shortcode", "profile-builder"); ?>
 <?php __("Enable Compare shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Usermeta Shortcode", "profile-builder"); ?>
 <?php __("Enable Usermeta shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Resend Activation Email Shortcode", "profile-builder"); ?>
 <?php __("Enable Resend Activation Email shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Format Date Shortcode", "profile-builder"); ?>
 <?php __("Enable Format Date shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("List Roles shortcode", "profile-builder"); ?>
 <?php __("Enable List Roles shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree/#Shortcodes_List\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs/#Shortcodes_List\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Search Box Placeholder", "profile-builder"); ?>
 <?php __("This refers to the placeholder text from the \"{{{extra_search_all_fields}}}\" tag.", "profile-builder"); ?>
 <?php __("Default text is \"Search Users by All Fields\", use this option to change it to something else. Leave empty if you do not want to change it.", "profile-builder"); ?>

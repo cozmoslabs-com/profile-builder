@@ -441,7 +441,7 @@ msgstr ""
 msgid "Allow users to recover their password in the front-end using the %s."
 msgstr ""
 
-#: admin/basic-info.php:103, admin/general-settings.php:249, admin/general-settings.php:264, features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:407, features/admin-approval/admin-approval.php:391, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
+#: admin/basic-info.php:103, admin/general-settings.php:248, admin/general-settings.php:264, features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:407, features/admin-approval/admin-approval.php:391, features/admin-approval/class-admin-approval.php:472, features/admin-approval/class-admin-approval.php:545
 msgid "Admin Approval"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 msgid "Only available in %1$s BASIC & PRO %2$s versions"
 msgstr ""
 
-#: admin/basic-info.php:109
+#: admin/basic-info.php:109, admin/general-settings.php:251
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
 msgstr ""
 
@@ -493,7 +493,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:138, admin/general-settings.php:396, features/roles-editor/roles-editor.php:61, features/roles-editor/roles-editor.php:62, features/roles-editor/roles-editor.php:275, features/roles-editor/roles-editor.php:276, features/roles-editor/roles-editor.php:281, features/roles-editor/roles-editor.php:288
+#: admin/basic-info.php:138, admin/general-settings.php:396, features/roles-editor/roles-editor.php:64, features/roles-editor/roles-editor.php:65, features/roles-editor/roles-editor.php:278, features/roles-editor/roles-editor.php:279, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:291
 msgid "Roles Editor"
 msgstr ""
 
@@ -854,7 +854,7 @@ msgid "Specify the page where the users will be directed when confirming the ema
 msgstr ""
 
 #: admin/general-settings.php:252
-msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s."
+msgid "Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
 #: admin/general-settings.php:272
@@ -977,7 +977,7 @@ msgstr ""
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:484, admin/private-website.php:171, features/functions.php:1095, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:192, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:115, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:343, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
+#: admin/general-settings.php:484, admin/private-website.php:171, features/functions.php:1097, add-ons-advanced/woocommerce/woosync-page.php:151, features/content-restriction/content-restriction.php:192, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:115, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:343, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
 msgid "Save Changes"
 msgstr ""
 
@@ -3205,11 +3205,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1116, features/functions.php:1123, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:186, add-ons-free/labels-edit/labels-edit.php:378, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:902, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1409, features/functions.php:1118, features/functions.php:1125, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons/multiple-forms/multiple-forms.php:410, add-ons-advanced/field-visibility/index.php:186, add-ons-free/labels-edit/labels-edit.php:378, features/admin-approval/class-admin-approval.php:111, features/roles-editor/roles-editor.php:905, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1409, features/functions.php:1109, features/functions.php:1123, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:186, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:210, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:929, features/roles-editor/roles-editor.php:920, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1409, features/functions.php:1111, features/functions.php:1125, add-ons/custom-redirects/custom_redirects_admin.php:184, add-ons/custom-redirects/custom_redirects_admin.php:198, add-ons/custom-redirects/custom_redirects_admin.php:212, add-ons/custom-redirects/custom_redirects_admin.php:226, add-ons-advanced/field-visibility/index.php:186, features/admin-approval/class-admin-approval.php:116, features/admin-approval/class-admin-approval.php:232, features/email-confirmation/class-email-confirmation.php:121, features/email-confirmation/class-email-confirmation.php:218, features/roles-editor/roles-editor.php:213, features/roles-editor/roles-editor.php:943, features/roles-editor/roles-editor.php:932, features/roles-editor/roles-editor.php:923, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3581,55 +3581,55 @@ msgstr ""
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:1014
+#: features/functions.php:1016
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1052, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
+#: features/functions.php:1054, front-end/default-fields/recaptcha/recaptcha.php:538, front-end/default-fields/recaptcha/recaptcha.php:529, front-end/default-fields/recaptcha/recaptcha.php:594, front-end/default-fields/recaptcha/recaptcha.php:642
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1059
+#: features/functions.php:1061
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1102, features/roles-editor/roles-editor.php:211, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:435
+#: features/functions.php:1104, features/roles-editor/roles-editor.php:214, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:480, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:186, assets/lib/wck-api/wordpress-creation-kit.php:435
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1123, assets/lib/wck-api/wordpress-creation-kit.php:476
+#: features/functions.php:1125, assets/lib/wck-api/wordpress-creation-kit.php:476
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1313
+#: features/functions.php:1315
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1326
+#: features/functions.php:1328
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1417, add-ons-advanced/social-connect/index.php:425
+#: features/functions.php:1419, add-ons-advanced/social-connect/index.php:425
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1418
+#: features/functions.php:1420
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1598
+#: features/functions.php:1600
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1648
+#: features/functions.php:1650
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1685
+#: features/functions.php:1687
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1703, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1705, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -4294,7 +4294,7 @@ msgstr ""
 msgid "No Registration Forms found in trash"
 msgstr ""
 
-#: add-ons/multiple-forms/register-forms.php:219, features/roles-editor/roles-editor.php:201
+#: add-ons/multiple-forms/register-forms.php:219, features/roles-editor/roles-editor.php:204
 msgid "Default Role"
 msgstr ""
 
@@ -4370,11 +4370,11 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:172, add-ons/user-listing/userlisting.php:344, add-ons/user-listing/userlisting.php:931, add-ons/user-listing/userlisting.php:2586, features/admin-approval/class-admin-approval.php:178, features/roles-editor/roles-editor.php:286
+#: add-ons/user-listing/userlisting.php:172, add-ons/user-listing/userlisting.php:344, add-ons/user-listing/userlisting.php:931, add-ons/user-listing/userlisting.php:2586, features/admin-approval/class-admin-approval.php:178, features/roles-editor/roles-editor.php:289
 msgid "Role"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:173, features/roles-editor/roles-editor.php:396, features/roles-editor/roles-editor.php:560
+#: add-ons/user-listing/userlisting.php:173, features/roles-editor/roles-editor.php:399, features/roles-editor/roles-editor.php:563
 msgid "Role Slug"
 msgstr ""
 
@@ -4454,7 +4454,7 @@ msgstr ""
 msgid "Firstname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:345, add-ons/user-listing/userlisting.php:916, features/roles-editor/roles-editor.php:481
+#: add-ons/user-listing/userlisting.php:345, add-ons/user-listing/userlisting.php:916, features/roles-editor/roles-editor.php:484
 msgid "Posts"
 msgstr ""
 
@@ -4498,7 +4498,7 @@ msgstr ""
 msgid "First/Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1228, add-ons/user-listing/userlisting.php:1749, add-ons/user-listing/userlisting.php:2294, add-ons/user-listing/userlisting.php:3512
+#: add-ons/user-listing/userlisting.php:1228, add-ons/user-listing/userlisting.php:1749, add-ons/user-listing/userlisting.php:2294, add-ons/user-listing/userlisting.php:3515
 msgid "Search Users by All Fields"
 msgstr ""
 
@@ -4766,15 +4766,15 @@ msgstr ""
 msgid "Themes: add style to your user listing section"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3488
+#: add-ons/user-listing/userlisting.php:3491
 msgid "You need to activate the Userlisting feature from within the \"Add-ons\" page!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3488
+#: add-ons/user-listing/userlisting.php:3491
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3663
+#: add-ons/user-listing/userlisting.php:3666
 msgid "No results found!"
 msgstr ""
 
@@ -6860,214 +6860,214 @@ msgstr ""
 msgid "Password Recovery page URL (optional):"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:202
+#: features/roles-editor/roles-editor.php:205
 msgid "Your Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:203
+#: features/roles-editor/roles-editor.php:206
 msgid "Role name is required."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:204
+#: features/roles-editor/roles-editor.php:207
 msgid "No capabilities found."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:205
+#: features/roles-editor/roles-editor.php:208
 msgid "Select capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:206
+#: features/roles-editor/roles-editor.php:209
 msgid "Delete Permanently"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:207
+#: features/roles-editor/roles-editor.php:210
 msgid ""
 "This will permanently delete the capability from your site and from every user role.\n"
 "\n"
 "It can't be undone!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:208
+#: features/roles-editor/roles-editor.php:211
 msgid "This capability is not saved until you click Update!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:209
+#: features/roles-editor/roles-editor.php:212
 msgid "This capability is not saved until you click Publish!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:212, features/roles-editor/roles-editor.php:462
+#: features/roles-editor/roles-editor.php:215, features/roles-editor/roles-editor.php:465
 msgid "Add New Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:213
+#: features/roles-editor/roles-editor.php:216
 msgid "Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:214
+#: features/roles-editor/roles-editor.php:217
 msgid "You can't delete this capability from your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:277, features/roles-editor/roles-editor.php:278
+#: features/roles-editor/roles-editor.php:280, features/roles-editor/roles-editor.php:281
 msgid "Add New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:279
+#: features/roles-editor/roles-editor.php:282
 msgid "Edit Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:280
+#: features/roles-editor/roles-editor.php:283
 msgid "New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:282
+#: features/roles-editor/roles-editor.php:285
 msgid "View Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:283
+#: features/roles-editor/roles-editor.php:286
 msgid "Search the Roles Editor"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:284
+#: features/roles-editor/roles-editor.php:287
 msgid "No roles found"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:285
+#: features/roles-editor/roles-editor.php:288
 msgid "No roles found in trash"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:314
+#: features/roles-editor/roles-editor.php:317
 msgid "Enter role name here"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:327, features/roles-editor/roles-editor.php:330
+#: features/roles-editor/roles-editor.php:330, features/roles-editor/roles-editor.php:333
 msgid "Role updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:328
+#: features/roles-editor/roles-editor.php:331
 msgid "Custom field updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:329
+#: features/roles-editor/roles-editor.php:332
 msgid "Custom field deleted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:331
+#: features/roles-editor/roles-editor.php:334
 msgid "Role restored to revision from %s"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:332
+#: features/roles-editor/roles-editor.php:335
 msgid "Role created."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:333
+#: features/roles-editor/roles-editor.php:336
 msgid "Role saved."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:334
+#: features/roles-editor/roles-editor.php:337
 msgid "Role submitted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:335
+#: features/roles-editor/roles-editor.php:338
 msgid "Role scheduled for: <strong>%1$s</strong>"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:335
+#: features/roles-editor/roles-editor.php:338
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:336
+#: features/roles-editor/roles-editor.php:339
 msgid "Role draft updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:395
+#: features/roles-editor/roles-editor.php:398
 msgid "Role Name"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:397, features/roles-editor/roles-editor.php:554
+#: features/roles-editor/roles-editor.php:400, features/roles-editor/roles-editor.php:557
 msgid "Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:398, features/roles-editor/roles-editor.php:505, features/roles-editor/roles-editor.php:549
+#: features/roles-editor/roles-editor.php:401, features/roles-editor/roles-editor.php:508, features/roles-editor/roles-editor.php:552
 msgid "Users"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:444
+#: features/roles-editor/roles-editor.php:447
 msgid "Edit Role Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:455
+#: features/roles-editor/roles-editor.php:458
 msgid "Add a new capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:458
+#: features/roles-editor/roles-editor.php:461
 msgid "Add Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:465
+#: features/roles-editor/roles-editor.php:468
 msgid "Please select an existing capability or add a new one!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:466
+#: features/roles-editor/roles-editor.php:469
 msgid "You can't add a hidden capability!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:467
+#: features/roles-editor/roles-editor.php:470
 msgid "This capability already exists!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:473
+#: features/roles-editor/roles-editor.php:476
 msgid "All"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:477
+#: features/roles-editor/roles-editor.php:480
 msgid "General"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:485
+#: features/roles-editor/roles-editor.php:488
 msgid "Pages"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:489
+#: features/roles-editor/roles-editor.php:492
 msgid "Media"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:493
+#: features/roles-editor/roles-editor.php:496
 msgid "Taxonomies"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:497
+#: features/roles-editor/roles-editor.php:500
 msgid "Appearance"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:501
+#: features/roles-editor/roles-editor.php:504
 msgid "Plugins"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:509
+#: features/roles-editor/roles-editor.php:512
 msgid "Custom"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:913
+#: features/roles-editor/roles-editor.php:916
 msgid "Clone"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:939
+#: features/roles-editor/roles-editor.php:942
 msgid "Are you sure?\nThis will permanently delete the role and cannot be undone!\nUsers assigned only on this role will be moved to the default role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:928
+#: features/roles-editor/roles-editor.php:931
 msgid "Change Default"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:929
+#: features/roles-editor/roles-editor.php:932
 msgid "You can't delete the default role. Change it first."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:920
+#: features/roles-editor/roles-editor.php:923
 msgid "You can't delete your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:1156
+#: features/roles-editor/roles-editor.php:1159
 msgid "Edit User Roles"
 msgstr ""
 
@@ -8640,7 +8640,7 @@ msgid "Enable Compare shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:23
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:28
@@ -8652,7 +8652,7 @@ msgid "Enable Usermeta shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:40
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:45
@@ -8664,7 +8664,7 @@ msgid "Enable Resend Activation Email shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:57
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:62
@@ -8676,7 +8676,7 @@ msgid "Enable Format Date shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:74
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:79
@@ -8688,7 +8688,7 @@ msgid "Enable List Roles shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:91
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBFree/#Shortcodes_List\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs/#Shortcodes_List\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-userlisting.php:11
