@@ -11,4 +11,22 @@ jQuery( document ).ready( function() {
             jQuery( elem ).attr( 'placeholder', jQuery( label ).text() );
         }
     });
+
+    // add placeholder to the 2FA Field
+    loginAuthPlaceholder();
+
 });
+
+/**
+ * Add Placeholder for 2FA Field on Login Form
+ *
+ */
+function loginAuthPlaceholder () {
+    let element = jQuery( ".login-auth input" ),
+        element_id = element.attr( 'id' ),
+        label =  jQuery( 'label[for=' + element_id + ']' );
+
+    if( element_id && label.length === 1 ) {
+        jQuery( '#' + element_id ).attr( 'placeholder', label.text() );
+    }
+}

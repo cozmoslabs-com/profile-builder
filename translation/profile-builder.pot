@@ -37,7 +37,7 @@ msgstr ""
 msgid "You must first purchase this version to have access to the addon %1$shere%2$s"
 msgstr ""
 
-#: admin/add-ons.php:40
+#: admin/add-ons.php:40, admin/add-ons.php:41
 msgid "Pro Add-ons"
 msgstr ""
 
@@ -45,247 +45,255 @@ msgstr ""
 msgid "These Add-ons are available with the Pro and Agency license"
 msgstr ""
 
-#: admin/add-ons.php:45, admin/basic-info.php:225
+#: admin/add-ons.php:41
+msgid "Get access to these Add-ons with a Pro or Agency license. %sBuy now%s"
+msgstr ""
+
+#: admin/add-ons.php:46, admin/basic-info.php:225
 msgid "Multiple Registration Forms"
 msgstr ""
 
-#: admin/add-ons.php:46
+#: admin/add-ons.php:47
 msgid "Set up multiple registration forms with different fields for certain user roles. Helps capture different information from different types of users."
 msgstr ""
 
-#: admin/add-ons.php:52
+#: admin/add-ons.php:53
 msgid "Multiple Edit Profile Forms"
 msgstr ""
 
-#: admin/add-ons.php:53, admin/basic-info.php:231
+#: admin/add-ons.php:54, admin/basic-info.php:231
 msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
 msgstr ""
 
-#: admin/add-ons.php:59, admin/basic-info.php:210, add-ons/user-listing/userlisting.php:11, add-ons/user-listing/userlisting.php:12, add-ons/user-listing/userlisting.php:17, add-ons/user-listing/userlisting.php:23, admin/setup-wizard/view-tab-addons.php:15, assets/misc/elementor/widgets/class-pb-widget-ul.php:58, assets/misc/elementor/widgets/class-pb-widget-ul.php:107
+#: admin/add-ons.php:60, admin/basic-info.php:210, add-ons/user-listing/userlisting.php:11, add-ons/user-listing/userlisting.php:12, add-ons/user-listing/userlisting.php:17, add-ons/user-listing/userlisting.php:23, admin/setup-wizard/view-tab-addons.php:15, assets/misc/elementor/widgets/class-pb-widget-ul.php:58, assets/misc/elementor/widgets/class-pb-widget-ul.php:107
 msgid "User Listing"
 msgstr ""
 
-#: admin/add-ons.php:60, admin/setup-wizard/view-tab-addons.php:18
+#: admin/add-ons.php:61, admin/setup-wizard/view-tab-addons.php:18
 msgid "Easy to edit templates for listing your users as well as creating single user pages."
 msgstr ""
 
-#: admin/add-ons.php:66, admin/basic-info.php:220, add-ons/custom-redirects/custom_redirects_admin.php:33, add-ons/custom-redirects/custom_redirects_admin.php:34, admin/setup-wizard/view-tab-addons.php:22
+#: admin/add-ons.php:67, admin/basic-info.php:220, add-ons/custom-redirects/custom_redirects_admin.php:33, add-ons/custom-redirects/custom_redirects_admin.php:34, admin/setup-wizard/view-tab-addons.php:22
 msgid "Custom Redirects"
 msgstr ""
 
-#: admin/add-ons.php:67
+#: admin/add-ons.php:68
 msgid "Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login, lost password and registration forms."
 msgstr ""
 
-#: admin/add-ons.php:73, admin/basic-info.php:235
+#: admin/add-ons.php:74, admin/basic-info.php:235
 msgid "Repeater Fields"
 msgstr ""
 
-#: admin/add-ons.php:74
+#: admin/add-ons.php:75
 msgid "The Repeater Field Module makes it really easy to add repeater front-end fields or groups of fields to your user profile. Integration with both the Email Customizer and User Listing modules, makes creating advanced user profiles possible."
 msgstr ""
 
-#: admin/add-ons.php:80, add-ons-advanced/buddypress/includes/buddypress-page.php:26, add-ons-advanced/buddypress/includes/buddypress-page.php:26
+#: admin/add-ons.php:81, add-ons-advanced/buddypress/includes/buddypress-page.php:26, add-ons-advanced/buddypress/includes/buddypress-page.php:26
 msgid "BuddyPress"
 msgstr ""
 
-#: admin/add-ons.php:81
+#: admin/add-ons.php:82
 msgid "This integration add-on allows extending BuddyPress user profiles with Profile Builder user fields."
 msgstr ""
 
-#: admin/add-ons.php:90
+#: admin/add-ons.php:91, admin/add-ons.php:92
 msgid "Basic Add-ons"
 msgstr ""
 
-#: admin/add-ons.php:90
+#: admin/add-ons.php:91
 msgid "These Add-ons are available with the Basic, Pro and Agency license"
 msgstr ""
 
-#: admin/add-ons.php:95, add-ons-advanced/social-connect/index.php:207, add-ons-advanced/social-connect/index.php:208, add-ons-advanced/social-connect/index.php:317, add-ons-advanced/social-connect/index.php:321, admin/setup-wizard/view-tab-addons.php:39
+#: admin/add-ons.php:92
+msgid "Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s"
+msgstr ""
+
+#: admin/add-ons.php:97, add-ons-advanced/social-connect/index.php:207, add-ons-advanced/social-connect/index.php:208, add-ons-advanced/social-connect/index.php:317, add-ons-advanced/social-connect/index.php:321, admin/setup-wizard/view-tab-addons.php:39
 msgid "Social Connect"
 msgstr ""
 
-#: admin/add-ons.php:96, admin/setup-wizard/view-tab-addons.php:42
+#: admin/add-ons.php:98, admin/setup-wizard/view-tab-addons.php:42
 msgid "Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter."
 msgstr ""
 
-#: admin/add-ons.php:103, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:77
+#: admin/add-ons.php:105, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:23, add-ons-advanced/woocommerce/woosync-page.php:77
 msgid "WooCommerce Sync"
 msgstr ""
 
-#: admin/add-ons.php:104
+#: admin/add-ons.php:106
 msgid "Syncs Profile Builder with WooCommerce, allowing you to manage the user Shipping and Billing fields from WooCommerce with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:111, admin/setup-wizard/view-tab-addons.php:32
+#: admin/add-ons.php:113, admin/setup-wizard/view-tab-addons.php:32
 msgid "Multi Step Forms"
 msgstr ""
 
-#: admin/add-ons.php:112, admin/setup-wizard/view-tab-addons.php:35
+#: admin/add-ons.php:114, admin/setup-wizard/view-tab-addons.php:35
 msgid "Extends the functionality of Profile Builder by adding the possibility of having multi-page registration and edit-profile forms."
 msgstr ""
 
-#: admin/add-ons.php:119, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11
+#: admin/add-ons.php:121, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:11
 msgid "MailChimp"
 msgstr ""
 
-#: admin/add-ons.php:120
+#: admin/add-ons.php:122
 msgid "Easily associate MailChimp list fields with Profile Builder fields and set advanced settings for each list."
 msgstr ""
 
-#: admin/add-ons.php:127, add-ons-advanced/bbpress/bbpress-page.php:24, add-ons-advanced/bbpress/bbpress-page.php:24
+#: admin/add-ons.php:129, add-ons-advanced/bbpress/bbpress-page.php:24, add-ons-advanced/bbpress/bbpress-page.php:24
 msgid "bbPress"
 msgstr ""
 
-#: admin/add-ons.php:128
+#: admin/add-ons.php:130
 msgid "This add-on allows you to integrate Profile Builder with the popular forums plugin, bbPress."
 msgstr ""
 
-#: admin/add-ons.php:135, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:95, add-ons-advanced/campaign-monitor/admin/manage-fields.php:46
+#: admin/add-ons.php:137, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:11, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:95, add-ons-advanced/campaign-monitor/admin/manage-fields.php:46
 msgid "Campaign Monitor"
 msgstr ""
 
-#: admin/add-ons.php:136
+#: admin/add-ons.php:138
 msgid "Easily associate Campaign Monitor client list fields with Profile Builder fields. Use Profile Builder Campaign Monitor Widget to add more subscribers to your lists."
 msgstr ""
 
-#: admin/add-ons.php:143
+#: admin/add-ons.php:145
 msgid "Field Visibility"
 msgstr ""
 
-#: admin/add-ons.php:144
+#: admin/add-ons.php:146
 msgid "Extends the functionality of Profile Builder by allowing you to change visibility options for the extra fields."
 msgstr ""
 
-#: admin/add-ons.php:151, add-ons-advanced/edit-profile-approved-by-admin/index.php:166
+#: admin/add-ons.php:153, add-ons-advanced/edit-profile-approved-by-admin/index.php:166
 msgid "Edit Profile Approved by Admin"
 msgstr ""
 
-#: admin/add-ons.php:152
+#: admin/add-ons.php:154
 msgid "Extends the functionality of Profile Builder by allowing administrators to approve profile changes made by users on individual fields."
 msgstr ""
 
-#: admin/add-ons.php:159
+#: admin/add-ons.php:161
 msgid "Custom Profile Menus"
 msgstr ""
 
-#: admin/add-ons.php:160
+#: admin/add-ons.php:162
 msgid "Add custom menu items like Login/Logout or just Logout button and Login/Register/Edit Profile in iFrame Popup."
 msgstr ""
 
-#: admin/add-ons.php:167
+#: admin/add-ons.php:169
 msgid "MailPoet"
 msgstr ""
 
-#: admin/add-ons.php:168
+#: admin/add-ons.php:170
 msgid "Allow users to subscribe to your MailPoet lists directly from the Register and Edit Profile forms."
 msgstr ""
 
-#: admin/add-ons.php:177
+#: admin/add-ons.php:179
 msgid "Free Add-ons"
 msgstr ""
 
-#: admin/add-ons.php:177
+#: admin/add-ons.php:179
 msgid "These Add-ons are available in all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:182, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:54
+#: admin/add-ons.php:184, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:14, add-ons-free/import-export/import-export.php:54
 msgid "Import and Export"
 msgstr ""
 
-#: admin/add-ons.php:183
+#: admin/add-ons.php:185
 msgid "With the help of this add-on you will be able to export all Profile Builder Settings data to a .json. You can then use this file as a back-up or you can import this data on another instance of Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:190
+#: admin/add-ons.php:192
 msgid "Custom CSS Classes on Fields"
 msgstr ""
 
-#: admin/add-ons.php:191
+#: admin/add-ons.php:193
 msgid "This add-on extends the functionality of Profile Builder by allowing you to add custom css classes for fields."
 msgstr ""
 
-#: admin/add-ons.php:198, add-ons-free/maximum-character-length/maximum-character-length.php:28
+#: admin/add-ons.php:200, add-ons-free/maximum-character-length/maximum-character-length.php:28
 msgid "Maximum Character Length"
 msgstr ""
 
-#: admin/add-ons.php:199
+#: admin/add-ons.php:201
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:206, add-ons-free/labels-edit/labels-edit.php:197, add-ons-free/labels-edit/labels-edit.php:198
+#: admin/add-ons.php:208, add-ons-free/labels-edit/labels-edit.php:197, add-ons-free/labels-edit/labels-edit.php:198
 msgid "Labels Edit"
 msgstr ""
 
-#: admin/add-ons.php:207
+#: admin/add-ons.php:209
 msgid "This add-on extends the functionality of our plugin and let us easily edit all Profile Builder labels."
 msgstr ""
 
-#: admin/add-ons.php:214
+#: admin/add-ons.php:216
 msgid "GDPR Communication Preferences"
 msgstr ""
 
-#: admin/add-ons.php:215
+#: admin/add-ons.php:217
 msgid "This add-on plugin adds a GDPR Communication preferences field to Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:226, admin/basic-info.php:248
+#: admin/add-ons.php:228, admin/basic-info.php:248
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/add-ons.php:226
+#: admin/add-ons.php:228
 msgid "These plugins are compatible with all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:231
+#: admin/add-ons.php:233
 msgid "TranslatePress"
 msgstr ""
 
-#: admin/add-ons.php:232
+#: admin/add-ons.php:234
 msgid "Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders."
 msgstr ""
 
-#: admin/add-ons.php:239, admin/pms-cross-promotion.php:67
+#: admin/add-ons.php:241, admin/pms-cross-promotion.php:67
 msgid "Paid Member Subscriptions"
 msgstr ""
 
-#: admin/add-ons.php:240
+#: admin/add-ons.php:242
 msgid "Accept user payments, create subscription plans and restrict content on your membership site."
 msgstr ""
 
-#: admin/add-ons.php:248
+#: admin/add-ons.php:250
 msgid "WP Webhooks Automations"
 msgstr ""
 
-#: admin/add-ons.php:249
+#: admin/add-ons.php:251
 msgid "Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together."
 msgstr ""
 
-#: admin/add-ons.php:256
+#: admin/add-ons.php:258
 msgid "Client Portal"
 msgstr ""
 
-#: admin/add-ons.php:257
+#: admin/add-ons.php:259
 msgid "Create private pages for your website users that only an administrator can edit."
 msgstr ""
 
-#: admin/add-ons.php:264
+#: admin/add-ons.php:266
 msgid "Custom Login Page Templates"
 msgstr ""
 
-#: admin/add-ons.php:265
+#: admin/add-ons.php:267
 msgid "Customizes the default WordPress Login Page with different templates, logo and background uploads and also adds support for custom CSS."
 msgstr ""
 
-#: admin/add-ons.php:272
+#: admin/add-ons.php:274
 msgid "Passwordless Login"
 msgstr ""
 
-#: admin/add-ons.php:273
+#: admin/add-ons.php:275
 msgid "WordPress Passwordless Login is a plugin that allows your users to login without a password."
 msgstr ""
 
-#: admin/add-ons.php:389
+#: admin/add-ons.php:391
 msgid "%1$sAdd-ons settings saved successfully%2$s"
 msgstr ""
 
@@ -945,7 +953,7 @@ msgstr ""
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:423, features/two-factor-authentication/class-two-factor-authentication.php:88, features/two-factor-authentication/class-two-factor-authentication.php:89, features/two-factor-authentication/class-two-factor-authentication.php:146
+#: admin/general-settings.php:423, features/two-factor-authentication/class-two-factor-authentication.php:88, features/two-factor-authentication/class-two-factor-authentication.php:146
 msgid "Two-Factor Authentication"
 msgstr ""
 
@@ -989,59 +997,59 @@ msgstr ""
 msgid "You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
-#: admin/general-settings.php:671
+#: admin/general-settings.php:677
 msgid "Register Website"
 msgstr ""
 
-#: admin/general-settings.php:678
+#: admin/general-settings.php:684
 msgid "License key"
 msgstr ""
 
-#: admin/general-settings.php:695
+#: admin/general-settings.php:701
 msgid "Activate License"
 msgstr ""
 
-#: admin/general-settings.php:686
+#: admin/general-settings.php:692
 msgid "Deactivate License"
 msgstr ""
 
-#: admin/general-settings.php:691
+#: admin/general-settings.php:697
 msgid "Your license is invalid"
 msgstr ""
 
-#: admin/general-settings.php:689
+#: admin/general-settings.php:695
 msgid "Active on this site"
 msgstr ""
 
-#: admin/general-settings.php:718
+#: admin/general-settings.php:724
 msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
 msgstr ""
 
-#: admin/general-settings.php:719
+#: admin/general-settings.php:725
 msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
 msgstr ""
 
-#: admin/general-settings.php:713
+#: admin/general-settings.php:719
 msgid "Your %s license has reached its activation limit."
 msgstr ""
 
-#: admin/general-settings.php:714
+#: admin/general-settings.php:720
 msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
 msgstr ""
 
-#: admin/general-settings.php:708
+#: admin/general-settings.php:714
 msgid "Your %s license has expired."
 msgstr ""
 
-#: admin/general-settings.php:709
+#: admin/general-settings.php:715
 msgid "Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
-#: admin/general-settings.php:703
+#: admin/general-settings.php:709
 msgid "Your %s license is about to expire on %s"
 msgstr ""
 
-#: admin/general-settings.php:704
+#: admin/general-settings.php:710
 msgid "Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
@@ -3617,19 +3625,19 @@ msgstr ""
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1600
+#: features/functions.php:1604
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1650
+#: features/functions.php:1654
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1687
+#: features/functions.php:1691
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1705, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
+#: features/functions.php:1709, features/email-confirmation/class-email-confirmation.php:92, features/email-confirmation/class-email-confirmation.php:171
 msgid "User Meta"
 msgstr ""
 
@@ -5618,7 +5626,7 @@ msgid "Select which Profile Builder Register form to display on My Account page 
 msgstr ""
 
 #: add-ons-advanced/woocommerce/woosync-page.php:115
-msgid "This will also add the Profile Builder Login form to MyAccount page."
+msgid "This will also add the Profile Builder Login form to My Account page."
 msgstr ""
 
 #: add-ons-advanced/woocommerce/woosync-page.php:145
@@ -6828,7 +6836,7 @@ msgstr ""
 msgid "SUCCESS!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:317, features/form-designs/form-designs.php:318, features/form-designs/form-designs.php:403
+#: features/form-designs/form-designs.php:317, features/form-designs/form-designs.php:318, features/form-designs/form-designs.php:404
 msgid "NOTE!"
 msgstr ""
 
@@ -7079,10 +7087,6 @@ msgstr ""
 msgid "Invalid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:90, features/two-factor-authentication/class-two-factor-authentication.php:91
-msgid "2fa_settings"
-msgstr ""
-
 #: features/two-factor-authentication/class-two-factor-authentication.php:153, features/two-factor-authentication/class-two-factor-authentication.php:265
 msgid "Relaxed Mode"
 msgstr ""
@@ -7139,7 +7143,7 @@ msgstr ""
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:486, features/two-factor-authentication/class-two-factor-authentication.php:600, features/two-factor-authentication/class-two-factor-authentication.php:604
+#: features/two-factor-authentication/class-two-factor-authentication.php:486, features/two-factor-authentication/class-two-factor-authentication.php:611, features/two-factor-authentication/class-two-factor-authentication.php:615
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
@@ -7147,7 +7151,7 @@ msgstr ""
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:628
+#: features/two-factor-authentication/class-two-factor-authentication.php:645
 msgid "Authenticator Code"
 msgstr ""
 

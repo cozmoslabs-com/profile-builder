@@ -6,6 +6,7 @@
 <?php __('You must first purchase this version to have access to the addon %1$shere%2$s', 'profile-builder' ); ?>
 <?php __("Pro Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available with the Pro and Agency license", "profile-builder"); ?>
+<?php __("Get access to these Add-ons with a Pro or Agency license. %sBuy now%s", "profile-builder"); ?>
 <?php __("Multiple Registration Forms", "profile-builder"); ?>
 <?php __("Set up multiple registration forms with different fields for certain user roles. Helps capture different information from different types of users.", "profile-builder"); ?>
 <?php __("Multiple Edit Profile Forms", "profile-builder"); ?>
@@ -20,6 +21,7 @@
 <?php __("This integration add-on allows extending BuddyPress user profiles with Profile Builder user fields.", "profile-builder"); ?>
 <?php __("Basic Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available with the Basic, Pro and Agency license", "profile-builder"); ?>
+<?php __("Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s", "profile-builder"); ?>
 <?php __("Social Connect", "profile-builder"); ?>
 <?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter.", "profile-builder"); ?>
 <?php __("WooCommerce Sync", "profile-builder"); ?>
@@ -1386,7 +1388,7 @@
 <?php __("Register Form", "profile-builder"); ?>
 <?php __("Default Register", "profile-builder"); ?>
 <?php __("Select which Profile Builder Register form to display on My Account page from WooCommerce.", "profile-builder"); ?>
-<?php __("This will also add the Profile Builder Login form to MyAccount page.", "profile-builder"); ?>
+<?php __("This will also add the Profile Builder Login form to My Account page.", "profile-builder"); ?>
 <?php __("Select which Profile Builder Edit-profile form to display on My Account page from WooCommerce.", "profile-builder"); ?>
 <?php __("CSS Class", "profile-builder"); ?>
 <?php __("Add a class to a field. Should not contain dots(.) and for multiple classes separate by space.", "profile-builder"); ?>
@@ -1738,7 +1740,6 @@
 <?php __("Edit User Roles", "profile-builder"); ?>
 <?php __("Valid", "profile-builder"); ?>
 <?php __("Invalid", "profile-builder"); ?>
-<?php __("2fa_settings", "profile-builder"); ?>
 <?php __("Relaxed Mode", "profile-builder"); ?>
 <?php __("Allow for more time drift on your phone clock ( &#177;4 min ).", "profile-builder"); ?>
 <?php __("Description that you'll see in the Authenticator app.", "profile-builder"); ?>

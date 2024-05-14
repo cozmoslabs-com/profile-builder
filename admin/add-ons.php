@@ -33,13 +33,14 @@ function wppb_add_ons_content() {
     $pb_addons_listing->header = array( 'title' => __('Profile Builder Add-ons', 'profile-builder' ) );
     $pb_addons_listing->current_version = PROFILE_BUILDER;
     $pb_addons_listing->tooltip_header = __( 'Profile Builder Add-ons', 'profile-builder' );
-    $pb_addons_listing->tooltip_content = sprintf( __( 'You must first purchase this version to have access to the addon %1$shere%2$s', 'profile-builder' ), '<a target="_blank" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree">', '</a>' );
+    $pb_addons_listing->tooltip_content = sprintf( __( 'You must first purchase this version to have access to the addon %1$shere%2$s', 'profile-builder' ), '<a target="_blank" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing">', '</a>' );
 
 
     //Add Pro Section
-    $pb_addons_listing->section_header = array( 'title' => __('Pro Add-ons', 'profile-builder' ), 'description' => __('These Add-ons are available with the Pro and Agency license', 'profile-builder')  );
-    $pb_addons_listing->section_versions = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited' );
-    $pb_addons_listing->items = array(
+    $pb_addons_listing->section_header      = array( 'title' => __( 'Pro Add-ons', 'profile-builder' ), 'description' => __( 'These Add-ons are available with the Pro and Agency license', 'profile-builder' )  );
+    $pb_addons_listing->section_header_free = array( 'title' => __( 'Pro Add-ons', 'profile-builder' ), 'description' => sprintf( __( 'Get access to these Add-ons with a Pro or Agency license. %sBuy now%s', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ) );
+    $pb_addons_listing->section_versions    = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited' );
+    $pb_addons_listing->items               = array(
         array(  'slug' => 'wppb_multipleRegistrationForms',
             'type' => 'add-on',
             'name' => __( 'Multiple Registration Forms', 'profile-builder' ),
@@ -87,7 +88,8 @@ function wppb_add_ons_content() {
     $pb_addons_listing->add_section();
 
     //Add Hobbyist section
-    $pb_addons_listing->section_header = array( 'title' => __('Basic Add-ons', 'profile-builder' ), 'description' => __('These Add-ons are available with the Basic, Pro and Agency license', 'profile-builder')  );
+    $pb_addons_listing->section_header = array( 'title' => __( 'Basic Add-ons', 'profile-builder' ), 'description' => __( 'These Add-ons are available with the Basic, Pro and Agency license', 'profile-builder' )  );
+    $pb_addons_listing->section_header_free = array( 'title' => __( 'Basic Add-ons', 'profile-builder' ), 'description' => sprintf( __( 'Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ) );
     $pb_addons_listing->section_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Basic', 'Profile Builder Agency', 'Profile Builder Unlimited' );
     $pb_addons_listing->items = array(
         array(  'slug' => 'social-connect',

@@ -103,7 +103,7 @@ function wppb_basic_info_content() {
                         <?php esc_html_e( 'Admin Approval', 'profile-builder' ); ?>
 
                         <?php if ($version == 'Free'){ ?>
-                            <span class="cozmoslabs-version-notice"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                            <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
                         <?php } ?>
                     </label>
                     <p class="cozmoslabs-description cozmoslabs-description-align-right"><?php esc_html_e( 'You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI.', 'profile-builder' ); ?></p>
@@ -153,7 +153,7 @@ function wppb_basic_info_content() {
                 <?php esc_html_e( 'Customize Your Forms The Way You Want', 'profile-builder' ); ?>
 
                 <?php if ($version == 'Free'){ ?>
-                    <span class="cozmoslabs-version-notice"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
                 <?php } ?>
             </h2>
             <p class="cozmoslabs-description"><?php esc_html_e( 'With Extra Profile Fields you can create the exact Registration Form your project needs.', 'profile-builder' ); ?></p>
@@ -193,7 +193,7 @@ function wppb_basic_info_content() {
                 <?php esc_html_e( 'Powerful Add-ons', 'profile-builder' );?>
 
                 <?php if ($version == 'Free'){ ?>
-                    <span class="cozmoslabs-version-notice"><?php printf( esc_html__( 'Only available in %1$s PRO %2$s version', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s PRO %2$s version', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
                 <?php } ?>
             </h2>
             <p class="cozmoslabs-description"><?php esc_html_e( 'Everything you will need to manage your users is probably already available using the Pro Add-ons.', 'profile-builder' ); ?></p>

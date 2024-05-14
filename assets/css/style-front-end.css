@@ -165,10 +165,6 @@
     margin-bottom: 0;
 }
 
-.wppb-gdpr-delete-button .wppb-delete-account {
-    width: 110px;
-}
-
 .wppb-user-forms .form-submit #register:disabled,
 .wppb-user-forms .form-submit #edit_profile:disabled {
     background: #414141;

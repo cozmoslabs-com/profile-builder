@@ -1488,12 +1488,16 @@ function wppb_private_website_functionality(){
 				if( is_404() )
 					return;
 
-				//force wp-login.php if you accidentally get locked out
+				// force wp-login.php if you accidentally get locked out
 				global $pagenow;
 				if( $pagenow === 'wp-login.php' && ( isset( $_GET['wppb_force_wp_login'] ) || ( isset( $_SERVER['HTTP_REFERER'] )  && strpos( esc_url_raw( $_SERVER['HTTP_REFERER'] ), 'wppb_force_wp_login=true' ) !== false ) || ( isset($_REQUEST['redirect_to'])  && strpos( sanitize_text_field( $_REQUEST['redirect_to'] ), 'wppb_force_wp_login=true' ) !== false ) ) )
 					return;
 
-				//go through paths first if they are set
+				// bypass requests that enter the password of a password protected post
+				if( $pagenow === 'wp-login.php' && isset( $_GET['action'] ) && $_GET['action'] == 'postpass' && isset( $_POST['post_password'] ) )
+					return;
+
+				// go through paths first if they are set
                 if( isset( $wppb_private_website_settings['allowed_paths'] ) && !empty( $wppb_private_website_settings['allowed_paths'] ) ){
                     $allowed_paths = explode( "\r\n", $wppb_private_website_settings['allowed_paths'] );
                     $parsed_url = wp_parse_url( wppb_curpageurl() );

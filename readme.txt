@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.5
-Stable tag: 3.11.5
+Stable tag: 3.11.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,10 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.11.6 =
+* Fix: Incompatibility issue between Private Website and the password protect functionality from WordPress
+* Misc: Random improvements to back-end pages
+
 = 3.11.5 =
 * Fix: Issue with the update database meta keys functionality not working
 * Fix: Compatibility issue between Elementor and Password Visibility toggle

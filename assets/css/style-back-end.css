@@ -2227,6 +2227,10 @@ div.wppb-notice .button-primary {
     color: #e76054;
 }
 
+.cozmoslabs-version-notice.cozmoslabs-description-upsell {
+    width: auto;
+}
+
 #basic-info-admin-approval .cozmoslabs-form-field-label {
     flex-direction: column;
     align-items: flex-start;

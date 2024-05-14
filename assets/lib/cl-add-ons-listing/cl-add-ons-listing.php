@@ -12,6 +12,7 @@ class CL_Addons_List_Table extends WP_List_Table {
     public $header;
 
     public $section_header;
+    public $section_header_free;
     public $section_versions;
     public $sections;
 
@@ -209,9 +210,13 @@ class CL_Addons_List_Table extends WP_List_Table {
             <?php if( !empty( $this->section_header ) ): ?>
 
                 <h2><?php echo esc_html ( $this->section_header['title'] );?></h2>
-                <?php if( !empty( $this->section_header ) ): ?>
+                
+                <?php if( !$this->current_version != 'Profile Builder Free' && !empty( $this->section_header_free ) && !in_array( $this->current_version, $this->section_versions ) ) : ?>
+                    <p class="description cozmoslabs-description-upsell"><?php echo wp_kses_post( $this->section_header_free['description'] ); ?></p>
+                <?php elseif( !empty( $this->section_header['description'] ) ) : ?>
                     <p class="description"><?php echo esc_html( $this->section_header['description'] ); ?></p>
                 <?php endif; ?>
+
             <?php endif; ?>
 
             <?php

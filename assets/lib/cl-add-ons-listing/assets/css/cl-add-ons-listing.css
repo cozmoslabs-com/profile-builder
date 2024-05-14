@@ -27,6 +27,10 @@
     margin: 0 0 10px 0;
 }
 
+#cl-add-ons-listing .cl-add-ons-section .cozmoslabs-description-upsell {
+    width: auto;
+}
+
 #cl-add-ons-listing #cl-addons {
     width: 100%;
     max-width: 920px;

@@ -1,6 +1,7 @@
 #wppb-recover-password ul li.wppb-form-field label,
 .wppb-user-forms #wppb-loginform .login-username label,
 .wppb-user-forms #wppb-loginform .login-password label,
+.wppb-user-forms #wppb-loginform .login-auth label,
 .wppb-user-forms #wppb-loginform .wppb-recaptcha label,
 .wppb-form-field.pbpl-class label,
 .pms-field.pbpl-class:not(form[id^="pms"] .pms-field) label {
@@ -48,6 +49,7 @@
 
 .wppb-user-forms #wppb-loginform .login-username input[type="text"],
 .wppb-user-forms #wppb-loginform .login-password input[type="password"],
+.wppb-user-forms #wppb-loginform .login-auth input[type="text"],
 .wppb-form-field.pbpl-class input[type="text"],
 .wppb-form-field.pbpl-class input[type="email"],
 .wppb-form-field.pbpl-class input[type="url"],

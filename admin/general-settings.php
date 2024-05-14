@@ -666,6 +666,12 @@ function wppb_add_register_version_form() {
     $status          = wppb_get_serial_number_status();
     $license         = wppb_get_serial_number();
     $license_details = get_option( 'wppb_license_details', false );
+
+    if( !empty( $license ) ){
+        // process license so it doesn't get displayed in back-end
+        $license_length = strlen( $license );
+        $license        = substr_replace( $license, '***************', 7, $license_length - 14 );
+    }
     ?>
 
     <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Register Website', 'profile-builder' ) ?></h4>
@@ -678,7 +684,7 @@ function wppb_add_register_version_form() {
             <label class="cozmoslabs-form-field-label" for="wppb_license_key"><?php esc_html_e( 'License key', 'profile-builder' ); ?></label>
 
             <div class="cozmoslabs-serial-wrap__holder">
-                <input id="wppb_license_key" name="wppb_license_key" type="password" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
+                <input id="wppb_license_key" name="wppb_license_key" type="text" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
                 <?php wp_nonce_field( 'wppb_license_nonce', 'wppb_license_nonce' ); ?>
 
                 <?php if( $status !== false && $status == 'valid' ) {
