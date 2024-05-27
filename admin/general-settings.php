@@ -455,6 +455,27 @@ function wppb_general_settings_content() {
                         <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
                     </div>
 
+                <?php else : ?>
+
+                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+
+                        <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                        <div class="cozmoslabs-toggle-container">
+                            <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
+                            <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
+                        </div>
+
+                        <div class="cozmoslabs-toggle-description">
+                            <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+                        </div>
+
+                        <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
+                            <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
+                        </p>
+
+                    </div>
+
                 <?php endif; ?>
 
                 <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">

@@ -268,7 +268,7 @@ function wppb_plugin_row_meta( $links, $file ) {
 /* hook to create pages for out forms when a user press the create pages/setup button */
 add_action( 'admin_init', 'wppb_create_form_pages' );
 function wppb_create_form_pages(){
-    
+
     if( !isset( $_GET['page'] ) || $_GET['page'] != 'profile-builder-basic-info' || !isset( $_GET['wppb_create_pages'] ) || $_GET['wppb_create_pages'] != 'true' )
         return;
 
@@ -445,7 +445,7 @@ function wppb_insert_page_banner() {
 
     $page_name = '';
     if ( $pb_slug == 'profile-builder-add-ons' )
-        $page_name = ' Addons';
+        $page_name = ' Add-Ons';
 
     if ( !empty( $pb_slug ) )
         wppb_output_page_banner($page_name);
@@ -470,18 +470,23 @@ function wppb_output_page_banner( $page_name ) {
                        Upgrade to PRO
                      </a>';
 
+    $support_url = 'https://www.cozmoslabs.com/support/?utm_source=wpbackend&utm_medium=pb-support&utm_campaign=PBSupport';
+
+    if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) )
+        $support_url = 'https://wordpress.org/support/plugin/profile-builder/';
+
     $output = '<div class="cozmoslabs-banner">
                    <div class="cozmoslabs-banner-title">
                        <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/pb-logo.svg" alt="">
                        <h4>Profile Builder'. $page_name .'</h4>
                    </div>
                    <div class="cozmoslabs-banner-buttons">
-                       <a class="cozmoslabs-banner-link cozmoslabs-support-link" href="https://www.cozmoslabs.com/support?utm_source=wpbackend&utm_medium=pb-support&utm_campaign=PBSupport" target="_blank">
+                       <a class="cozmoslabs-banner-link cozmoslabs-support-link" href="'. $support_url .'" target="_blank">
                            <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/support-link-icon.svg" alt="">
                            Support
                        </a>
-               
-                       <a class="cozmoslabs-banner-link cozmoslabs-documentation-link" href="https://www.cozmoslabs.com/docs/profile-builder?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank">
+
+                       <a class="cozmoslabs-banner-link cozmoslabs-documentation-link" href="https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank">
                            <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/docs-link-icon.svg" alt="">
                            Documentation
                        </a>';

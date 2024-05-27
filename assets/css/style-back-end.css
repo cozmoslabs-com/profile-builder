@@ -631,6 +631,7 @@ body:not(.profile-builder_page_profile-builder-basic-info) .cozmoslabs-form-fiel
     background: #fdf9d1;
     padding: 14px;
     font-size: 110%;
+    box-sizing: border-box;
 }
 
 

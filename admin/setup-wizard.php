@@ -40,7 +40,7 @@ class WPPB_Setup_Wizard {
         return array(
             'user-pages' => __( 'User Pages', 'profile-builder' ),
             'general'    => __( 'Design & UI', 'profile-builder' ),
-            'addons'     => __( 'Addons', 'profile-builder' ),
+            'addons'     => __( 'Add-Ons', 'profile-builder' ),
             'next'       => __( 'Ready!', 'profile-builder' ),
         );
     }

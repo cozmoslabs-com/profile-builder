@@ -101,6 +101,29 @@ function wppb_dashboard_page_content() {
                 <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'users.php' ) ); ?>"><?php esc_html_e( 'View All Users', 'profile-builder' ); ?></a>
             </div>
 
+            <?php if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) ) : ?>
+                <div class="postbox cozmoslabs-form-subsection-wrapper">
+                    <h4 class="cozmoslabs-subsection-title"> Have a question? Not sure how to proceed?<span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
+
+                    <p><strong><span class="dashicons dashicons-plus" style="color: #0F15B0;"></span> Open a new ticket over at</strong>
+
+                    <br>
+
+                    <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" style="display:block;padding-left:24px;margin-top:4px;">https://wordpress.org/support/plugin/profile-builder/</a></p>
+
+                    <p><strong><span class="dashicons dashicons-welcome-write-blog" style="color: #0F15B0;"></span> Describe your problem:</strong></p>
+
+                    <ul style="padding-left:24px;">
+                        <li>What you tried to do</li><li>What you expected to happen</li>
+                        <li>What actually happened</li>
+                        <li>Screenshots help. Use a service like <a href="https://snipboard.io/">snipboard.io</a> and share the link.</li>
+                    </ul>
+
+                    <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span>Get help from our team </strong></p>
+
+                </div>
+            <?php endif; ?>
+
             <div class="postbox cozmoslabs-form-subsection-wrapper wppb-dashboard-progress">
                 <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Setup Progress Review', 'profile-builder' ); ?></h4>
 
@@ -161,7 +184,7 @@ function wppb_dashboard_page_content() {
                     </div>
                 </div>
 
-                <a class="button button-secondary" href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/" target="_blank"><?php esc_html_e( 'Learn more about shortcodes', 'profile-builder' ); ?></a>
+                <a class="button button-secondary" href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=pb-shortcodes-dashboard&utm_campaign=PBDocs" target="_blank"><?php esc_html_e( 'Learn more about shortcodes', 'profile-builder' ); ?></a>
             </div>
         </div>
 
@@ -284,14 +307,14 @@ function wppb_recent_registrations( $args = array() ) {
     if( !empty( $user_query->results ) ){
         foreach ( $user_query->results as $user_data ) {
             $user_roles = wppb_user_role_names( $user_data->roles );
-    
+
             $user_info = array(
                 'id'           => $user_data->ID,
                 'display_name' => $user_data->display_name,
                 'role'         => $user_roles,
                 'reg_date'     => $user_data->user_registered,
             );
-    
+
             $users_stats[] = $user_info;
         }
     }

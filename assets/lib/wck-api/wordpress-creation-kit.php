@@ -236,12 +236,12 @@ class Wordpress_Creation_Kit_PB{
             $single_prefix = '';
 
         $context_slug = !empty($context) ? $context . '_' : '';
-        $label_for = $context_slug . $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'],  $details ) );
+        $label_for = esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'],  $details ) );
         if ( $details['type'] === 'checkbox' && !empty( $details['options'] ) && count( $details['options'] ) == 1 ) {
             $label_for = $label_for . '_yes';
         }
 
-        $element .= '<label class="cozmoslabs-form-field-label" for="'. $label_for .'" class="field-label">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), ucfirst($details['title']) );
+        $element .= '<label class="cozmoslabs-form-field-label" for="'. $label_for .'">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), ucfirst($details['title']) );
         if( !empty( $details['required'] ) && $details['required'] )
 			$element .= '<span class="required">*</span>';
 		$element .= '</label>';
