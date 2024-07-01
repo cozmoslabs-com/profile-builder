@@ -235,6 +235,7 @@
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
 <?php __("Two-Factor Authentication", "profile-builder"); ?>
 <?php __("Enable the Google Authenticator functionality.", "profile-builder"); ?>
+<?php __('Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ); ?>
 <?php __("Enable Authenticator For", "profile-builder"); ?>
 <?php __("ALL ROLES", "profile-builder"); ?>
 <?php __("\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles.", "profile-builder"); ?>
@@ -865,7 +866,6 @@
 <?php __('If you enjoy using <strong> %1$s </strong> please <a href=\%2$s\ target=\_blank\>rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profile-builder' ); ?>
 <?php __("User Pages", "profile-builder"); ?>
 <?php __("Design & UI", "profile-builder"); ?>
-<?php __("Addons", "profile-builder"); ?>
 <?php __("Ready!", "profile-builder"); ?>
 <?php __("Create user pages for registration, login, edit profile and password reset.", "profile-builder"); ?>
 <?php __("Choose a design and optimize the login and registration flow for your users.", "profile-builder"); ?>
@@ -1178,6 +1178,14 @@
 <?php __("Choose the fields in which the Search Field will look in", "profile-builder"); ?>
 <?php __("Search Settings", "profile-builder"); ?>
 <?php __("Themes: add style to your user listing section", "profile-builder"); ?>
+<?php __("Preview", "profile-builder"); ?>
+<?php __("Reset Data", "profile-builder"); ?>
+<?php __("Reset %s Theme Settings\"", "profile-builder"); ?>
+<?php __('%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme\'s Default settings, according to your choice from the options above.\', 'profile-builder' ); ?>
+<?php __("Select which settings you want to reset:", "profile-builder"); ?>
+<?php __("User-Listing Settings", "profile-builder"); ?>
+<?php __("All Theme Data", "profile-builder"); ?>
+<?php __("Confirm", "profile-builder"); ?>
 <?php __("You need to activate the Userlisting feature from within the \"Add-ons\" page!", "profile-builder"); ?>
 <?php __("You can find it in the Profile Builder menu.", "profile-builder"); ?>
 <?php __("No results found!", "profile-builder"); ?>
@@ -1285,7 +1293,7 @@
 <?php __("Next", "profile-builder"); ?>
 <?php __("Previous", "profile-builder"); ?>
 <?php __("Display on the Following Forms", "profile-builder"); ?>
-<?php __("Disable Registration", "profile-builder"); ?>
+<?php __("Disable Social Registration on Login forms", "profile-builder"); ?>
 <?php __("Allow only login with Social Connect on Profile Builder Login Form.<br>Social Connect will still automatically register users on other forms.", "profile-builder"); ?>
 <?php __("Facebook Login", "profile-builder"); ?>
 <?php __("Facebook App ID", "profile-builder"); ?>

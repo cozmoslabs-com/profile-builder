@@ -3,16 +3,16 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.11.7
+ * Version: 3.11.8
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * WC requires at least: 3.0.0
- * WC tested up to: 8.7
- * Elementor tested up to: 3.20.3
- * Elementor Pro tested up to: 3.20.3
+ * WC tested up to: 9.0
+ * Elementor tested up to: 3.22.3
+ * Elementor Pro tested up to: 3.22.3
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -373,18 +373,18 @@ function wppb_plugin_init() {
                 // setup the updater
                 $wppb_edd_updater = new WPPB_EDD_SL_Plugin_Updater('https://cozmoslabs.com', WPPB_PAID_PLUGIN_DIR . '/index.php', array(
                         'version'   => $pb_plugin_version,   // current version number
-                        'license'   => $serial,         
+                        'license'   => $serial,
                         'item_name' => PROFILE_BUILDER,      // name of this plugin
                         'item_id'   => $pb_cl_plugin_id,
                         'author'    => 'Cozmoslabs',         // author of this plugin
                         'beta'      => false
                     )
                 );
-                    
+
             }
 
             function wppb_plugin_update_message( $plugin_data, $new_data ) {
-                
+
                 $wppb_profile_builder_serial        = wppb_get_serial_number();
                 $wppb_profile_builder_serial_status = wppb_get_serial_number_status();
 
@@ -416,7 +416,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.11.7' );
+define('PROFILE_BUILDER_VERSION', '3.11.8' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -428,32 +428,32 @@ $active_plugins         = apply_filters( 'active_plugins', get_option( 'active_p
 $active_network_plugins = get_site_option('active_sitewide_plugins');
 
 if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-pro/index.php'] ) ){
-    
+
     define('PROFILE_BUILDER', 'Profile Builder Pro');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-pro' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-pro/' );
 
 } elseif ( in_array( 'profile-builder-dev/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-dev/index.php'] ) ){
-    
+
     define('PROFILE_BUILDER', 'Profile Builder Pro');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-dev' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-dev/' );
     define('PROFILE_BUILDER_PAID_VERSION', 'dev' );
 
 } elseif ( in_array( 'profile-builder-agency/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-agency/index.php'] ) ){
-    
+
     define('PROFILE_BUILDER', 'Profile Builder Agency');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-agency' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-agency/' );
 
 } elseif ( in_array( 'profile-builder-unlimited/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-unlimited/index.php'] ) ){
-    
+
     define('PROFILE_BUILDER', 'Profile Builder Unlimited');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-unlimited' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-unlimited/' );
 
 } elseif ( in_array( 'profile-builder-hobbyist/index.php', $active_plugins ) || isset( $active_network_plugins['profile-builder-hobbyist/index.php'] ) ){
-    
+
     define('PROFILE_BUILDER', 'Profile Builder Basic');
     define('WPPB_PAID_PLUGIN_DIR', WP_PLUGIN_DIR . '/profile-builder-hobbyist' );
     define('WPPB_PAID_PLUGIN_URL', plugins_url() . '/profile-builder-hobbyist/' );
@@ -462,10 +462,10 @@ if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $act
     define('PROFILE_BUILDER', 'Profile Builder Free');
 
 // This needs to be loaded here since we try to plug some functions, not suited for plugins_loaded hook
-if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php'))
-    include_once( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php');
+if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php') )
+    include_once( WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/upload/upload_helper_functions.php' );
 else if ( file_exists( WPPB_PLUGIN_DIR . '/front-end/default-fields/upload/upload_helper_functions.php' ) )
-    include_once( WPPB_PLUGIN_DIR . '/front-end/default-fields/upload/upload_helper_functions.php');
+    include_once( WPPB_PLUGIN_DIR . '/front-end/default-fields/upload/upload_helper_functions.php' );
 
 /* add a redirect when plugin is activated */
 if( !function_exists( 'wppb_activate_plugin_redirect' ) ){

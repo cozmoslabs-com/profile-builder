@@ -1,6 +1,6 @@
 <?php
- /* @param string $meta Meta name.	 
- * @param array $details Contains the details for the field.	 
+ /* @param string $meta Meta name.
+ * @param array $details Contains the details for the field.
  * @param string $value Contains input value;
  * @param string $context Context where the function is used. Depending on it some actions are preformed.;
  * @return string $element input element html string. */
@@ -25,14 +25,14 @@ if( !empty( $details['options'] ) ){
 		$found = false;
 
 		if( !is_array( $value ) )
-			$values = explode( ', ', $value );						
+			$values = explode( ', ', $value );
 		else
-			$values = $value;	
+			$values = $value;
 
 		if( strpos( $option, '%' ) === false  ){
 			$label = $option;
 			$value_attr = $option;
-			if ( in_array( $option, $values ) ) 
+			if ( in_array( $option, $values ) )
 				$found = true;
 		}
 		else{
@@ -41,7 +41,7 @@ if( !empty( $details['options'] ) ){
 				if( empty( $option_parts[0] ) && count( $option_parts ) == 3 ){
 					$label = $option_parts[1];
 					$value_attr = $option_parts[2];
-					if ( in_array( $option_parts[2], $values ) ) 
+					if ( in_array( $option_parts[2], $values ) )
 						$found = true;
 				}
 			}
@@ -73,10 +73,17 @@ if( !empty( $details['options'] ) ){
 
         $element .= '</div>';
 
-        if ( $options_number == 1 )
-            $element .= '<div class="cozmoslabs-toggle-description">
-                            <label for="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $context_slug . $slug_from . '_' . $value_attr ) ) .'" class="cozmoslabs-description">'. esc_html__( 'Enable ', 'profile-builder' ) .'<strong>'. $details['title'] .'</strong></label>
-                        </div>';
+        if ( $options_number == 1 ){
+			$include_title_in_toggle = '<strong>'. $details['title'] .'</strong>';
+
+			if( isset( $details['include_title_in_toggle'] ) && $details['include_title_in_toggle'] == false )
+				$include_title_in_toggle = '';
+
+			$element .= '<div class="cozmoslabs-toggle-description">
+				<label for="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $context_slug . $slug_from . '_' . $value_attr ) ) .'" class="cozmoslabs-description">'. esc_html__( 'Enable ', 'profile-builder' ) . $include_title_in_toggle .'</label>
+			</div>';
+		}
+
 	}
 
 	$element .= $checkboxes_wrapper_close;

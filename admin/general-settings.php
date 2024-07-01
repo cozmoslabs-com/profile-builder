@@ -153,7 +153,7 @@ function wppb_general_settings_content() {
 
         <?php wppb_load_necessary_scripts(); ?>
 
-		<?php if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && defined( 'PROFILE_BUILDER_PAID_VERSION' ) ) : ?>
+		<?php if ( !is_multisite() && defined( 'WPPB_PAID_PLUGIN_DIR' ) && defined( 'PROFILE_BUILDER_PAID_VERSION' ) ) : ?>
             <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
                 <?php wppb_add_register_version_form(); ?>
             </div>
