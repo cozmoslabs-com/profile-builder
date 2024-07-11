@@ -376,7 +376,7 @@ class Profile_Builder_Form_Creator{
                             case 'ec-no_aa-yes':
 								if( current_user_can( 'delete_users' ) ) {
 									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
-								} else { 
+								} else {
 									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
 								}
 								break;
@@ -392,9 +392,9 @@ class Profile_Builder_Form_Creator{
                         if( strcasecmp($this->args['login_after_register'], 'Yes') == 0 ) {
                             $redirect = $this->wppb_log_in_user( $this->args['redirect_url'], $redirect );
                         }
-                        
+
 						echo $form_message_tpl_start . wp_kses_post( $wppb_register_success_message )  . $form_message_tpl_end . $redirect; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped above */
-						
+
                         ob_end_flush();
 
                         //action hook after registration success
@@ -639,10 +639,11 @@ class Profile_Builder_Form_Creator{
 			if ( $this->args['form_type'] == 'register' ){
 				if ( !is_wp_error( $user_id ) ){
 					$wppb_general_settings = get_option( 'wppb_general_settings' );
-                    if( isset( $global_request['send_credentials_via_email'] ) && ( $global_request['send_credentials_via_email'] == 'sending' ) )
+                    if( ( isset( $global_request['send_credentials_via_email'] ) && ( $global_request['send_credentials_via_email'] == 'sending' ) ) || apply_filters( 'wppb_register_send_credentials_via_email', false, $user_id, $this->args ) )
                         $send_credentials_via_email = 'sending';
                     else
                         $send_credentials_via_email = '';
+
 					wppb_notify_user_registration_email( get_bloginfo( 'name' ), ( isset( $userdata['user_login'] ) ? trim( $userdata['user_login'] ) : trim( $userdata['user_email'] ) ), trim( $userdata['user_email'] ), $send_credentials_via_email, trim( $userdata['user_pass'] ), ( wppb_get_admin_approval_option_value() === 'yes' ? 'yes' : 'no' ) );
 				}
             }
@@ -757,7 +758,7 @@ class Profile_Builder_Form_Creator{
         );
 
         $users = get_users( apply_filters( 'wppb_edit_other_users_dropdown_query_args', $query_args, $form_name ) );
-        
+
         if( !empty( $users ) ) {
 
             /* turn it in a select2 */
@@ -789,9 +790,9 @@ class Profile_Builder_Form_Creator{
     }
 
     static function wppb_frontend_scripts(){
-        
+
         wp_register_script( 'wppb_front_end_script', WPPB_PLUGIN_URL. 'assets/js/script-front-end.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
-        
+
         $wppb_toolbox_forms_settings = get_option( 'wppb_toolbox_forms_settings' );
 	    if( isset( $wppb_toolbox_forms_settings[ 'disable-automatic-scrolling' ] ) ){
             wp_add_inline_script( 'wppb_front_end_script', "var wppb_disable_automatic_scrolling = 1;", 'before' );

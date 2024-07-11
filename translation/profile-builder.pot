@@ -4783,11 +4783,11 @@ msgid "Reset Data"
 msgstr ""
 
 #: add-ons/user-listing/userlisting.php:2873
-msgid "Reset %s Theme Settings\""
+msgid "Reset %s Theme Settings"
 msgstr ""
 
 #: add-ons/user-listing/userlisting.php:2874
-msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above.\""
+msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
 #: add-ons/user-listing/userlisting.php:2878

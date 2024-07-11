@@ -76,7 +76,7 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
 
         $wppb_generalSettings = get_option('wppb_general_settings');
         if (isset($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes')) {
-            $user_signup = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s AND active=0", $request_data['email']));
+            $user_signup = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s AND active=0", trim( $request_data['email'] ) ) );
 
             if (!empty($user_signup)) {
                 if ($form_location == 'register') {
@@ -84,15 +84,15 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
                 } else if ($form_location == 'edit_profile') {
                     $current_user = wp_get_current_user();
 
-                    if (!current_user_can('edit_users')) {
-                        if ($current_user->user_email != $request_data['email'])
+                    if ( !current_user_can('edit_users') ) {
+                        if ( $current_user->user_email != trim( $request_data['email'] ) )
                             return __('This email is already reserved to be used soon.', 'profile-builder') . '<br/>' . __('Please try a different one!', 'profile-builder');
                     }
                 }
             }
         }
 
-        $users = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$wpdb->users} WHERE user_email = %s", $request_data['email']));
+        $users = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->users} WHERE user_email = %s", trim( $request_data['email'] ) ) );
 
         if (!empty($users)) {
             if ($form_location == 'register')

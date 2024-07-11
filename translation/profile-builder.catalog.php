@@ -1180,8 +1180,8 @@
 <?php __("Themes: add style to your user listing section", "profile-builder"); ?>
 <?php __("Preview", "profile-builder"); ?>
 <?php __("Reset Data", "profile-builder"); ?>
-<?php __("Reset %s Theme Settings\"", "profile-builder"); ?>
-<?php __('%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme\'s Default settings, according to your choice from the options above.\', 'profile-builder' ); ?>
+<?php __("Reset %s Theme Settings", "profile-builder"); ?>
+<?php __('%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme\'s Default settings, according to your choice from the options above.', 'profile-builder' ); ?>
 <?php __("Select which settings you want to reset:", "profile-builder"); ?>
 <?php __("User-Listing Settings", "profile-builder"); ?>
 <?php __("All Theme Data", "profile-builder"); ?>

@@ -312,8 +312,16 @@ input#send_credentials_via_email {
     clear: none;
 }
 
+.wppb-form-field > span.select2-container .selection .select2-selection {
+    height: 44px;
+}
+
 .wppb-repeater .wppb-select-cpt span.select2-container {
     width: auto !important;
+}
+
+span.select2-container {
+    z-index: 9999;
 }
 
 .wppb-form-field.wppb-timepicker > span.wppb-timepicker-separator {
