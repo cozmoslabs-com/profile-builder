@@ -416,22 +416,15 @@ function previousSlideshowImage( currentSlide, themeID ){
 
 
 /**
- * Hide/Show 2FA Settings
+ * Hide/Show Roles Selector
  *
  * */
 jQuery(document).ready(function() {
-
-    // Roles Selector
     let input = jQuery('input#wppb-auth-enable'),
         rolesSelector = jQuery('#wppb-auth-roles-selector');
 
     input.click(function (e) {
         rolesSelector.toggle();
-    });
-
-    // Upgrade notice in PB Free Version
-    jQuery('input#wppb-2fa-enable').click(function (e) {
-        jQuery('#wppb-2fa-upgrade-notice').toggle();
     });
 
 });

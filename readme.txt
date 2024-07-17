@@ -3,8 +3,8 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 6.5
-Stable tag: 3.11.9
+Tested up to: 6.6
+Stable tag: 3.12.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.0 =
+* Feature: User Profile Picture free add-on - allow your users to set or edit a custom profile image using the standard WordPress media tools. Available through Gutenberg Blocks or custom insertion in the theme template
+* Fix: A notification regarding the resend email confirmation feature
+* Fix: Localize resend email confirmation shortcode messages
+* Misc: Added alt text for password visibility toggle
+
 = 3.11.9 =
 * Fix: Security issue in regards to email validation. Thanks to John Castro from WPScan
 * Fix: Isssue with Admin Approval email not sending when a form was bypassing the Email Confirmation feature

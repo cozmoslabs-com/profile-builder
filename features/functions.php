@@ -940,7 +940,7 @@ function wppb_password_visibility_toggle_html(){
     if( apply_filters( 'wppb_show_password_visibility_toggle', false ) ){
         return '
             <button type="button" class="wppb-toggle-pw wppb-show-pw hide-if-no-js" data-toggle="0" aria-label="Show password" tabindex="-1">
-                <img src="'.WPPB_PLUGIN_URL.'/assets/images/eye-outline.svg" width="20px" height="20px" />
+                <img src="'.WPPB_PLUGIN_URL.'/assets/images/eye-outline.svg" title="'. esc_html__( 'Show password', 'profile-builder' ) .'" width="20px" height="20px" />
             </button>';
     }
     return '';
@@ -995,10 +995,12 @@ function wppb_enqueue_password_visibility_toggle() {
                             input.attr("type", "text");
                             button.toggleClass("wppb-show-pw").toggleClass("wppb-hide-pw");
                             icon.attr("src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-off-outline.svg");
+                            icon.attr("title", "<?php esc_html_e( 'Hide password', 'profile-builder' ); ?>");
                         } else {
                             input.attr("type", "password");
                             button.toggleClass("wppb-show-pw").toggleClass("wppb-hide-pw");
                             icon.attr("src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-outline.svg");
+                            icon.attr("title", "<?php esc_html_e( 'Show password', 'profile-builder' ); ?>");
                         }
                     }
                 }

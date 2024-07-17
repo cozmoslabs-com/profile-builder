@@ -69,6 +69,13 @@ function wppb_add_ons_content() {
             'icon' => 'pb-add-on-custom-redirects-logo.png',
             'doc_url' => 'https://www.cozmoslabs.com/docs/profile-builder/modules/custom-redirects/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
         ),
+        array(  'slug' => 'wppb_fileRestriction',
+            'type' => 'add-on',
+            'name' => __( 'File Restriction', 'profile-builder' ),
+            'description' => __( 'Protect your Media Library by restricting direct links to media files according to user roles.', 'profile-builder' ),
+            'icon' => 'pb-add-on-file-restriction-logo.png',
+            'doc_url' => 'https://www.cozmoslabs.com/add-ons/files-restriction/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
+        ),
         array(  'slug' => 'wppb_repeaterFields',
             'type' => 'add-on',
             'name' => __( 'Repeater Fields', 'profile-builder' ),
@@ -87,7 +94,7 @@ function wppb_add_ons_content() {
     );
     $pb_addons_listing->add_section();
 
-    //Add Hobbyist section
+    //Add Basic section
     $pb_addons_listing->section_header = array( 'title' => __( 'Basic Add-ons', 'profile-builder' ), 'description' => __( 'These Add-ons are available with the Basic, Pro and Agency license', 'profile-builder' )  );
     $pb_addons_listing->section_header_free = array( 'title' => __( 'Basic Add-ons', 'profile-builder' ), 'description' => sprintf( __( 'Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ) );
     $pb_addons_listing->section_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Basic', 'Profile Builder Agency', 'Profile Builder Unlimited' );
@@ -179,6 +186,14 @@ function wppb_add_ons_content() {
     $pb_addons_listing->section_header = array( 'title' => __('Free Add-ons', 'profile-builder' ), 'description' => __('These Add-ons are available in all versions of Profile Builder', 'profile-builder')  );
     $pb_addons_listing->section_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Free', 'Profile Builder Basic', 'Profile Builder Agency', 'Profile Builder Unlimited' );
     $pb_addons_listing->items = array(
+        array(  'slug' => 'user-profile-picture',
+                'type' => 'add-on',
+                'name' => __( 'User Profile Picture', 'profile-builder' ),
+                'description' => __( 'Set or remove a custom profile image for a user using the standard WordPress media upload tool.', 'profile-builder' ),
+                'icon' => 'pb-add-on-user-profile-picture-logo.png',
+                'doc_url' => 'https://www.cozmoslabs.com/user-profile-picture/',
+                'download_url' => 'https://wordpress.org/plugins/metronet-profile-picture/'
+        ),
         array(  'slug' => 'import-export',
                 'type' => 'add-on',
                 'name' => __( 'Import and Export', 'profile-builder' ),
@@ -295,6 +310,7 @@ function wppb_generate_modules_default_values(){
     if ( $wppb_module_settings == 'not_found' ){
         $wppb_module_settings = 	array(	'wppb_userListing'					=> 'hide',
                                             'wppb_customRedirect'				=> 'hide',
+                                            'wppb_fileRestriction'				=> 'hide',
                                             'wppb_emailCustomizer'				=> 'hide',
                                             'wppb_multipleEditProfileForms'		=> 'hide',
                                             'wppb_multipleRegistrationForms'	=> 'hide',

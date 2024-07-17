@@ -973,20 +973,27 @@ li.wppb-facet-search {
 #wppb-recover-password-container .wppb-form-field.passw2 .wppb-toggle-pw {
     position: absolute;
     right: 4px;
-    /* fields bottom padding  / 2 */
-    top: -7px;
+    top: 30px;
     background: transparent !important;
     background-color: transparent !important;
     border: 1px solid transparent;
     box-shadow: none;
     padding: 0;
     margin: 0;
-    height: 100%;
+    height: 44px;
     cursor: pointer;
-
+    outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.wppb-form-field.pbpl-class.wppb-default-password button.wppb-toggle-pw,
+.wppb-form-field.pbpl-class.wppb-default-repeat-password button.wppb-toggle-pw,
+#wppb-login-wrap .login-password.pbpl-class button.wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.pbpl-class.passw1 .wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.pbpl-class.passw2 .wppb-toggle-pw {
+    top: 0;
 }
 
 .wppb-form-field.wppb-default-password button img,

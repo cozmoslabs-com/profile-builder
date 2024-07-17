@@ -56,6 +56,7 @@ function wppb_le_scan_labels( $nonce ) {
 			'edit-profile.php',
 			'admin-approval.php',
 			'email-confirmation.php',
+            'resend-activation.php',
 			'userlisting.php',
 			'email.php',
 			'username.php',

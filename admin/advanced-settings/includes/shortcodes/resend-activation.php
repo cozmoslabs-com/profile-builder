@@ -16,7 +16,6 @@ function wppb_toolbox_resend_activation_url_handler() {
         </li>
     </form>';
 
-//    return $output;
     return apply_filters('wppb_resend_activation_form_before_content_output', $output);
 }
 
@@ -28,10 +27,10 @@ function wppb_toolbox_resend_activation_url_handler() {
 
  		if ( $sql_result ){
  			wppb_signup_user_notification( trim( $sql_result['user_login'] ), trim( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
- 			echo '<script> alert("Activation email sent!");</script>';
+ 			echo '<script> alert("'. esc_html__( 'Activation email sent!', 'profile-builder' ) .'");</script>';
  		}
  		else {
- 			echo '<script> alert("No sign-up was made with that email!");</script>';
+ 			echo '<script> alert("'. esc_html__( 'No sign-up was made with that email!', 'profile-builder' ) .'");</script>';
  		}
  	}
  }

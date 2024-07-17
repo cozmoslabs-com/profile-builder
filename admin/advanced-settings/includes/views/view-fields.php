@@ -254,6 +254,8 @@
             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enabling this option, when changing the meta key of a field, existing entries from the database will be updated as well.', 'profile-builder' ); ?></p>
         </div>
 
+        <?php do_action( 'wppb_extra_toolbox_fields_settings', $settings ); ?>
+
     </div>
 
     <div class="submit">

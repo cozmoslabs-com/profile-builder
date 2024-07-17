@@ -288,7 +288,7 @@ function wppb_resend_confirmation_email() {
             wppb_signup_user_notification( sanitize_text_field( $sql_result['user_login'] ), sanitize_email( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
             $transient_key = Wordpress_Creation_Kit_PB::wck_generate_slug( $user_email );
             set_transient('wppb_confirmation_email_already_sent_' . $transient_key, true, 900 );
-            $error_string = '<strong>' . __('SUCCESS: ', 'profile-builder') . '</strong>' . sprintf( __( 'Activation email sent to %s', 'profile-builder' ), sanitize_email( $_GET['email'] ));
+            $error_string = '<strong>' . __( 'SUCCESS: ', 'profile-builder') . '</strong>' . sprintf( __( 'Activation email sent to %s', 'profile-builder' ), $user_email );
             $wppb_success_message_nonce = wp_create_nonce( 'wppb_login_error_'.$error_string);
             $current_url = wppb_curpageurl();
             $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), '_wpnonce' => $wppb_success_message_nonce, 'request_form_location' => 'page', 'wppb_message_type' => 'success');

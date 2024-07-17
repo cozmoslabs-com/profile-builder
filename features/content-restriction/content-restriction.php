@@ -158,6 +158,8 @@ function wppb_content_restriction_content() {
                     <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo esc_html__( 'Show a portion of the restricted post to logged-out users or users that are not allowed to see it.', 'profile-builder' ); ?></p>
                 </div>
 
+                <?php do_action( 'wppb_extra_content_restriction_settings', $wppb_content_restriction_settings ); ?>
+
             </div>
 
             <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-wysiwyg-container">
