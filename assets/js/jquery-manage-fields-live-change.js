@@ -396,6 +396,16 @@ var fields 	=	{
 																					'.row-overwrite-existing'
 																					]
 																},
+						'Select (Taxonomy)':							{	'show_rows'	:	[
+																					'.row-field-title',
+																					'.row-meta-name',
+																					'.row-description',
+																					'.row-default-option',
+																					'.row-taxonomy',
+																					'.row-required',
+																					'.row-overwrite-existing'
+																					]
+																},
 						"Select2": 								{	'show_rows'	:	[
 																					'.row-field-title',
 																					'.row-meta-name',

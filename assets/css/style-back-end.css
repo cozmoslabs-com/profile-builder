@@ -1027,9 +1027,7 @@ body[class*="post-type-wppb-"] .submitdelete:focus,
 .cozmoslabs-wysiwyg-wrapper .wp-editor-container .mce-toolbar-grp,
 .cozmoslabs-wysiwyg-wrapper .quicktags-toolbar {
     background-color: #ffffff;
-    padding: 0 30px;
-
-    height: 90px;
+    padding: 30px;
     display: flex;
     align-items: center;
 }
@@ -1603,12 +1601,13 @@ body[class*="post-type-wppb-"] .button-primary.button-disabled {
     height: 60px;
 }
 
-#wppb_ul_page_settings .row-visible-to-following-roles, .update_container_wppb_ul_page_settings.visible_to_logged_ .row-visible-to-following-roles {
+#wppb_ul_page_settings .row-visible-to-following-roles,
+.update_container_wppb_ul_page_settings.visible_to_logged_ .row-visible-to-following-roles {
     display:none;
 }
 
 #wppb_ul_page_settings.update_container_wppb_ul_page_settings.visible_to_logged_yes .row-visible-to-following-roles {
-    display: block;
+    display: flex;
 }
 
 
@@ -1754,7 +1753,7 @@ body[class*="post-type-wppb-"] .tablenav select:hover {
     border-color: #3858E9;
 }
 
-#titlediv #title:focus,
+body[class*="post-type-wppb-"] #titlediv #title:focus,
 body[class*="post-type-wppb-"] .wp-list-table input[type="text"]:focus,
 body[class*="post-type-wppb-"] .search-box input[type="search"]:focus,
 body[class*="post-type-wppb-"] .tablenav select:focus {
@@ -3207,7 +3206,7 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
 .wppb-optin-page__wrap {
     width: 400px;
     background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     border-radius: 8px;
     margin-top: 120px;
 }
@@ -3261,14 +3260,14 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
 }
 
 .wppb-optin-page__extra-content h4 {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     text-transform: uppercase;
 }
 
 .wppb-optin-page__extra-content p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     color: #646970;
 }
 

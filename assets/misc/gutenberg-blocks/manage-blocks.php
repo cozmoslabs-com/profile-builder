@@ -43,6 +43,9 @@ function wppb_block_editor_enqueue()
         //Select CPT
         wp_enqueue_style('wppb-select-cpt-style', WPPB_PAID_PLUGIN_URL . 'front-end/extra-fields/select-cpt/style-front-end.css', array(), PROFILE_BUILDER_VERSION);
 
+	    //Select Taxonomy
+	    wp_enqueue_style('wppb-select-taxonomy-style', WPPB_PAID_PLUGIN_URL . 'front-end/extra-fields/select-taxonomy/select-taxonomy-style.css', array(), PROFILE_BUILDER_VERSION);
+
         //Upload
         wp_enqueue_style('wppb-upload-css', WPPB_PAID_PLUGIN_URL . 'front-end/extra-fields/upload/upload.css', false, PROFILE_BUILDER_VERSION);
 

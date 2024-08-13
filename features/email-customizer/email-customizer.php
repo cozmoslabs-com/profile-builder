@@ -90,6 +90,10 @@ function wppb_email_customizer_generate_meta_merge_tags(){
 				$merge_tags[] = array( 'name' => $value['meta-name'], 'type' => 'ec_user_meta', 'label' => $value['field-title'] );
                 if( $value['field'] == 'Select' || $value['field'] == 'Select (Multiple)' || $value['field'] == 'Select (Country)' || $value['field'] == 'Select (Currency)' || $value['field'] == 'Checkbox' || $value['field'] == 'Radio' )
                     $merge_tags[] = array( 'name' => $value['meta-name'] . '_labels', 'type' => 'ec_user_meta_labels', 'label' => $value['field-title'] . ' Labels' );
+                elseif( ( $value['field'] == 'Select (CPT)' ) )
+	                $merge_tags[] = array( 'name' => $value['meta-name'].'_cpt_title_link', 'type' => 'user_meta_select_cpt', 'unescaped' => true, 'label' => $value['field-title'] );
+                elseif( ( $value['field'] == 'Select (Taxonomy)' ) )
+	                $merge_tags[] = array( 'name' => $value['meta-name'].'_taxonomy_title_link', 'type' => 'user_meta_select_taxonomy', 'unescaped' => true, 'label' => $value['field-title'] );
             }
 		}
 	}

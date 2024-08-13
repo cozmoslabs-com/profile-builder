@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.6
-Stable tag: 3.12.0
+Stable tag: 3.12.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,7 +86,7 @@ You can use the following shortcode list or available plugin blocks to quickly d
 
 The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/#pricing/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) has the following extra features:
 
-* Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select)
+* Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select, Taxonomy Select)
 * Support for Conditional Fields
 * Front-end User Listing (create fully customizable member directories, sorting included)
 * Create Multiple User Listings
@@ -199,6 +199,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.1 =
+* Fix: Security issue relating to back-end form fields. Thanks to John Castro from WPScan
+* Misc: Remove extra back-end styling that was being added to titles of CPTs
+* Misc: Make sure the WYSIWYG element shows all the items added to the toolbar
+
 = 3.12.0 =
 * Feature: User Profile Picture free add-on - allow your users to set or edit a custom profile image using the standard WordPress media tools. Available through Gutenberg Blocks or custom insertion in the theme template
 * Fix: A notification regarding the resend email confirmation feature

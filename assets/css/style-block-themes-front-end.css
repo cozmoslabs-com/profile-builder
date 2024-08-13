@@ -119,8 +119,9 @@
     border-color: #111;
 }
 
-/* Select2 & Select2 Multiple & Select CPT */
+/* Select2 & Select2 Multiple & Select CPT & Select Taxonomy*/
 .wppb-select-cpt span.select2-container,
+.wppb-select-taxonomy span.select2-container,
 .wppb-select2 span.select2-container,
 .wppb-select2-multiple span.select2-container {
     width: 100% !important;

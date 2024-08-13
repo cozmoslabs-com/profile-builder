@@ -3,16 +3,16 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.12.0
+ * Version: 3.12.1
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * WC requires at least: 3.0.0
- * WC tested up to: 9.1
- * Elementor tested up to: 3.23.1
- * Elementor Pro tested up to: 3.23.1
+ * WC tested up to: 9.0
+ * Elementor tested up to: 3.22.3
+ * Elementor Pro tested up to: 3.22.3
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -155,9 +155,11 @@ function wppb_plugin_init() {
             include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php');
             include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/repeater-field/repeater-module.php');
             include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/custom-redirects/custom-redirects.php');
-            include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons-advanced/file-restriction/index.php');
             include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/multiple-forms/multiple-forms.php');
             include_once(WPPB_PAID_PLUGIN_DIR . '/add-ons/user-listing/userlisting.php');
+
+            if( file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons-advanced/file-restriction/index.php' ) )
+                include_once( WPPB_PAID_PLUGIN_DIR . '/add-ons-advanced/file-restriction/index.php' );
 
             $wppb_module_settings = get_option('wppb_module_settings');
             if (isset($wppb_module_settings['wppb_userListing']) && ($wppb_module_settings['wppb_userListing'] == 'show')) {
@@ -422,7 +424,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.12.0' );
+define('PROFILE_BUILDER_VERSION', '3.12.1' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

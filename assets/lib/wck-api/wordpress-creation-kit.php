@@ -1403,8 +1403,13 @@ class Wordpress_Creation_Kit_PB{
 				$title = esc_attr( __( 'This field is available in our paid plans.', 'profile-builder' ) );
 		}
 
-		if( isset( $value_attr['field_name'] ) )
+		if( isset( $value_attr['field_name'] ) ) {
         	$optionOutput = '<option value=""  '. esc_attr( $disabled ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
+        }
+		else if ( is_array( $current_value ) ) {
+            $is_selected = in_array( $value_attr, $current_value ) ? 'selected="selected" ' : '';
+            $optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. $is_selected . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
+        }
 		else
         	$optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. selected( $value_attr, $current_value, false ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
 

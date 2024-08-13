@@ -114,6 +114,7 @@ function wppb_populate_manage_fields(){
         $manage_field_types['optgroups']['advanced']['options'][] = 'Select (Timezone)';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Select (Currency)';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Select (CPT)';
+        $manage_field_types['optgroups']['advanced']['options'][] = 'Select (Taxonomy)';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Checkbox (Terms and Conditions)';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Datepicker';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Timepicker';
@@ -157,6 +158,7 @@ function wppb_populate_manage_fields(){
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Select (Timezone)', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Select (Currency)', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Select (CPT)', 'disabled' => true );
+        $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Select (Taxonomy)', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Checkbox (Terms and Conditions)', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Datepicker', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Timepicker', 'disabled' => true );
@@ -209,8 +211,28 @@ function wppb_populate_manage_fields(){
     }
 
 	//cpt select
-	$post_types = get_post_types( array( 'public'   => true ), 'names' );
+	$post_types_objects = get_post_types( array( 'public'   => true ), 'objects' );
+	$post_types = array();
 
+	if ( !empty( $post_types_objects ) ) {
+		// Loop through the post types objects and extract the labels
+		foreach ( $post_types_objects as $types ) {
+			if ( isset( $types->label ) )
+				array_push( $post_types, '%' . wppb_prepare_wck_labels( $types->label ) . '%' . $types->name );
+		}
+	}
+
+    //taxonomy select
+    $taxonomies_objects = get_taxonomies( array( 'public'   => true ), 'objects' );
+    $taxonomies = array();
+
+	if ( !empty( $taxonomies_objects ) ) {
+		// Loop through the taxonomies objects and extract the labels
+		foreach ( $taxonomies_objects as $taxonomy ) {
+			if ( isset( $taxonomy->label ) )
+                array_push( $taxonomies, '%' . wppb_prepare_wck_labels( $taxonomy->label ) . '%' . $taxonomy->name );
+		}
+	}
 
 	if( apply_filters( 'wppb_update_field_meta_key_in_db', false ) ) {
 		$meta_key_description = __( 'Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this might take long in case of a very big user-count', 'profile-builder' );
@@ -260,6 +282,7 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'select', 'slug' => 'default-option-currency', 'title' => __( 'Default Option', 'profile-builder' ), 'options' => ( isset( $default_currency_options ) ) ? $default_currency_options : '', 'description' => __( "Default option of the field", 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'show-currency-symbol', 'title' => __( 'Show Currency Symbol', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the currency symbol should be displayed after the currency name in the select option.', 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'cpt', 'title' => __( 'Show Post Type', 'profile-builder' ), 'options' => $post_types, 'default' => 'post', 'description' => __( 'Posts from what post type will be displayed in the select.', 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'taxonomy', 'title' => __( 'Show Taxonomy Term', 'profile-builder' ), 'options' => $taxonomies, 'default' => 'category', 'description' => __( 'Terms from taxonomies', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'validation-possible-values', 'title' => __( 'Allowable Values', 'profile-builder' ), 'description' => __( "Enter a comma separated list of possible values. Upon registration if the value provided by the user does not match one of these values, the user will not be registered.", 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'custom-error-message', 'title' => __( 'Error Message', 'profile-builder' ), 'description' => __( "Set a custom error message that will be displayed to the user.", 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'time-format', 'title' => __( 'Time Format', 'profile-builder' ), 'options' => array( '%12 Hours%12', '%24 Hours%24' ), 'description' => __( 'Specify the time format.', 'profile-builder' ) ),
