@@ -9,7 +9,12 @@ class RecoverPassword extends AjaxComponent {
   static slug = "wppb_recover_password";
 
   _shouldReload(oldProps, newProps) {
-    return false;
+    // return false;
+
+    return (
+        oldProps.toggle_ajax_validation !== newProps.toggle_ajax_validation
+    );
+
   }
 
   _reloadFormData(props) {
@@ -17,6 +22,7 @@ class RecoverPassword extends AjaxComponent {
 
     formData.append("action", "wppb_divi_extension_ajax");
     formData.append("form_type", "rp");
+    formData.append("toggle_ajax_validation", props.toggle_ajax_validation);
 
     return formData;
   }

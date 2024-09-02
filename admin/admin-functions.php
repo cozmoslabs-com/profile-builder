@@ -373,6 +373,10 @@ function wppb_get_reserved_meta_name_list( $all_fields, $posted_values ){
  *
  */
 function wppb_form_design_new_styles_notification() {
+
+    if( current_user_can( 'manage_options' ) )
+        return;
+
     /* initiate the plugin notifications class */
     $notifications = WPPB_Plugin_Notifications::get_instance();
     /* this must be unique */
@@ -389,7 +393,7 @@ function wppb_form_design_new_styles_notification() {
     $message = $ul_icon;
     $message .= '<h3 style="margin-bottom: 0;">Profile Builder PRO - Form Designs</h3>';
     $message .= $notification_message;
-    $message .= '<a href="' . add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+    $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
     $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false );
 }

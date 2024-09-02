@@ -74,6 +74,10 @@ function wppb_add_pending_users_header_script(){
 }
 
 function wppb_get_unconfirmed_email_number(){
+
+	if( !current_user_can( 'edit_users' ) )
+		die();
+
 	global $wpdb;
 
     /* since version 2.0.7 for multisite we add a 'registered_for_blog_id' meta in the registration process
@@ -488,7 +492,8 @@ function wppb_manual_activate_signup( $activation_key ) {
 		$user_login = esc_sql( $signup->user_login );
 		$user_email = esc_sql( $signup->user_email );
         /* the password is in hashed form in the signup table and we will copy it later to the user */
-		$password = NULL;
+		// set to placeholder so it doesn't trigger internal WordPress notices coming from the trim function with PHP 8
+		$password = 'placeholder';
 
 		$user_id = username_exists($user_login);
 

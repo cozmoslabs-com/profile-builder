@@ -42,9 +42,9 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
             $this->slug = basename($_plugin_file, '.php');
 
             /**
-             * Necessary in order for the View Details button to work properly when multiple products using 
+             * Necessary in order for the View Details button to work properly when multiple products using
              * this class aare active
-             * 
+             *
              * The original takes the base file name as the slug, but our file names are just `index.php` so we
              * use the folder name instead
              */
@@ -614,7 +614,7 @@ class WPPB_Plugin_Updater {
 
 
             set_transient( 'wppb_checked_licence', 'yes', DAY_IN_SECONDS );
-            
+
         }
 
         return $transient_data;
@@ -649,6 +649,8 @@ class WPPB_Plugin_Updater {
             if( ! check_admin_referer( 'wppb_license_nonce', 'wppb_license_nonce' ) )
                 return; // get out if we didn't click the Activate button
 
+            if( !current_user_can( 'manage_options' ) )
+                return;
 
             if ( isset( $_POST['wppb_license_key'] ) && preg_match('/^[*]+$/', $_POST['wppb_license_key']) && strlen( $_POST['wppb_license_key'] ) > 5 ) { //phpcs:ignore
                 // pressed submit without altering the existing license key (containing only * as outputted by default)
@@ -800,6 +802,9 @@ class WPPB_Plugin_Updater {
             // run a quick security check
             if( ! check_admin_referer( 'wppb_license_nonce', 'wppb_license_nonce' ) )
                 return; // get out if we didn't click the Activate button
+
+            if( !current_user_can( 'manage_options' ) )
+                return;
 
             // retrieve the license from the database
             $license = trim( wppb_get_serial_number() );

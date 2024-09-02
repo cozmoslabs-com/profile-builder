@@ -120,8 +120,9 @@ add_action(
                 'lostpassword_url' => $attributes['lostpassword_url'] !== '' ? ' lostpassword_url="' . esc_url( $attributes['lostpassword_url'] ) . '"' : '',
                 'show_2fa_field' => $attributes['auth_field'] ? ' show_2fa_field="yes"' : '',
                 'block' => $attributes['is_editor'] ? ' block="true"' : '',
+                'ajax' => $attributes['ajax'] ? ' ajax="true"' : '',
             ];
-            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-login' . $atts['redirect_url'] . $atts['logout_redirect_url'] . $atts['register_url'] . $atts['lostpassword_url'] . $atts['show_2fa_field'] . $atts['block'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-login' . $atts['redirect_url'] . $atts['logout_redirect_url'] . $atts['register_url'] . $atts['lostpassword_url'] . $atts['show_2fa_field'] . $atts['block'] . $atts['ajax'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     },
     10,
@@ -192,6 +193,10 @@ add_action(
                     is_editor : {
                         type: 'boolean',
                         default: true,
+                    },
+                    ajax : {
+                        type: 'boolean',
+                        default: false,
                     },
                 },
 
@@ -280,9 +285,24 @@ add_action(
                                                 onChange: ( value ) => { props.setAttributes( { auth_field: !props.attributes.auth_field } ); }
                                             }
                                         )
+
+        <?php
+        }
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+        ?>
+                                        el( ToggleControl,
+                                            {
+                                                label: __( 'AJAX Validation' , 'profile-builder' ),
+                                                key: 'wppb/login/inspector/form-settings/ajax',
+                                                help: __( 'Use AJAX to Validate the Login Form' , 'profile-builder' ),
+                                                checked: props.attributes.ajax,
+                                                onChange: ( value ) => { props.setAttributes( { ajax: !props.attributes.ajax } ); }
+                                            }
+                                        )
         <?php
         }
         ?>
+
                                     ]
                                 ),
                                 el( PanelBody,

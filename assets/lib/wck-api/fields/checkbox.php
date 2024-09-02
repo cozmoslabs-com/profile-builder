@@ -25,7 +25,7 @@ if( !empty( $details['options'] ) ){
 		$found = false;
 
 		if( !is_array( $value ) )
-			$values = explode( ', ', $value );
+			$values = !empty( $value ) ? explode( ', ', $value ) : array();
 		else
 			$values = $value;
 

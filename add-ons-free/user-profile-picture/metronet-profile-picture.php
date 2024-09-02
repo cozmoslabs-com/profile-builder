@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'USER_PROFILE_PICTURE_VERSION', '2.6.0' );
 define( 'USER_PROFILE_PICTURE_PLUGIN_NAME', 'User Profile Picture' );
@@ -1026,7 +1028,9 @@ class User_Profile_Picture {
             array(
                 'methods'             => 'POST',
                 'callback'            => array( $this, 'rest_api_put_profile' ),
-                'permission_callback' => '__return_true',
+                'permission_callback' => function( $request ){
+                    return current_user_can( 'manage_options' );
+                }
             )
         );
         register_rest_route(
@@ -1367,7 +1371,7 @@ class User_Profile_Picture {
 
         flush_rewrite_rules( true );
 
-        $user_avatar = filter_input( INPUT_POST, 'metronet-user-avatar' );
+        $user_avatar = filter_input( INPUT_POST, 'metronet-user-avatar', FILTER_SANITIZE_STRING );
         if ( 'on' === $user_avatar ) {
             update_user_option( $user_id, 'metronet_avatar_override', 'on' );
         } else {
@@ -1495,8 +1499,11 @@ function upp_profile_img( $user_id, $args = array() ) {
         'attr' => '',
         'echo' => true,
     );
-    $args     = wp_parse_args( $args, $defaults );
-    extract( $args ); // phpcs:ignore
+    $args = wp_parse_args( $args, $defaults );
+
+    $size = $args['size'];
+    $attr = $args['attr'];
+    $echo = $args['echo'];
 
     $post_thumbnail_id = get_post_thumbnail_id( $profile_post_id );
 

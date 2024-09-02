@@ -11,7 +11,8 @@ class EditProfile extends AjaxComponent {
   _shouldReload(oldProps, newProps) {
     return (
       oldProps.form_name !== newProps.form_name ||
-      oldProps.redirect_url !== newProps.redirect_url
+      oldProps.redirect_url !== newProps.redirect_url ||
+      oldProps.toggle_ajax_validation !== newProps.toggle_ajax_validation
     );
   }
 
@@ -22,6 +23,7 @@ class EditProfile extends AjaxComponent {
     formData.append("form_type", "epf");
     formData.append("form_name", props.form_name);
     formData.append("redirect_url", props.redirect_url);
+    formData.append("toggle_ajax_validation", props.toggle_ajax_validation);
 
     return formData;
   }

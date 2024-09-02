@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_filter( 'wppb_email_confirmation_on_register', 'wppb_toolbox_bypass_email_confirmation', 2, 20 );
 function wppb_toolbox_bypass_email_confirmation( $email_confirmation, $global_request ) {

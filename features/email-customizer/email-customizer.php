@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function wppb_email_customizer_generate_merge_tags( $special_merge_tags = null ){
 
@@ -605,13 +607,12 @@ function wppb_ec_replace_password( $value, $merge_tag_name, $merge_tag, $extra_d
     if( wppb_get_admin_approval_option_value() === 'yes' ){
         if ( isset( $extra_data['user_password'] ) ) {
             global $wpdb;
-            $search_for_password = $wpdb->get_results(
-                "
-                SELECT user_pass
-                FROM $wpdb->users
-                WHERE user_pass = '".$extra_data['user_password']."'
-                "
-            );
+
+            $search_for_password = $wpdb->get_results( $wpdb->prepare(
+                "SELECT user_pass FROM $wpdb->users WHERE user_pass = '%s'",
+				$extra_data['user_password']
+			));
+
             if( !empty( $search_for_password ) )
                 return __( 'Your selected password at signup', 'profile-builder' );
         }
@@ -1225,20 +1226,20 @@ function wppb_website_email($sender_email){
 
 	if ( $reply_to_email != 'not_found' ) {
 		$reply_to_email = str_replace('{{reply_to}}', get_bloginfo('admin_email'), $reply_to_email );
-		
+
 		if( is_email( $reply_to_email ) )
 			$sender_email = $reply_to_email;
 	}
 
 	return apply_filters( 'wppb_from_website_email', $sender_email );
-	
+
 }
 
 // function that filters the From name
 function wppb_website_name($site_name){
-    
+
 	$email_from_name = get_option( 'wppb_emailc_common_settings_from_name', 'not_found' );
-	
+
 	if ( $email_from_name != 'not_found' ) {
 		$email_from_name = str_replace('{{site_name}}', get_bloginfo('name'), $email_from_name );
 		$site_name = $email_from_name;

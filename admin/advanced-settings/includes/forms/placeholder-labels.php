@@ -1,4 +1,7 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*
  * Function that enqueues the necessary scripts in the front-end area
  *

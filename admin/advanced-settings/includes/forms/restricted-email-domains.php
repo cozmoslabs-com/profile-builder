@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function wppb_toolbox_check_email_domain( $message, $field, $request_data, $form_location ) {
 

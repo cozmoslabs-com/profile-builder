@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Cozmoslabs_Plugin_Optin_WPPB {
 
@@ -22,7 +24,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
         self::$plugin_optin_status = get_option( self::$plugin_option_key, false );
         self::$plugin_optin_email  = get_option( self::$plugin_option_email_key, false );
-        
+
         add_action( 'admin_init', array( $this, 'redirect_to_plugin_optin_page' ) );
         add_action( 'admin_menu', array( $this, 'add_submenu_page_optin' ) );
         add_action( 'admin_init', array( $this, 'process_optin_actions' ) );
@@ -63,7 +65,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
             wp_safe_redirect( admin_url( 'admin.php?page=wppb-optin-page' ) );
             exit();
         }
-        
+
         return;
 
     }
@@ -82,6 +84,9 @@ class Cozmoslabs_Plugin_Optin_WPPB {
     public function process_optin_actions(){
 
         if( !isset( $_GET['page'] ) || $_GET['page'] != 'wppb-optin-page' || !isset( $_GET['_wpnonce'] ) )
+            return;
+
+        if( !current_user_can( 'manage_options' ) )
             return;
 
         if( wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'cozmos_enable_plugin_optin' ) ){
@@ -103,7 +108,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
             update_option( self::$plugin_option_key, 'yes' );
             update_option( self::$plugin_option_email_key, get_option( 'admin_email' ) );
-            
+
             $settings = get_option( 'wppb_toolbox_admin_settings', array() );
 
             if( empty( $settings ) )
@@ -350,7 +355,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
     }
 
     public static function add_request_metadata( $args ){
-        
+
         $settings                                = get_option( 'wppb_general_settings', false );
         $content_restriction_settings            = get_option( 'wppb_content_restriction_settings', false );
         $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );

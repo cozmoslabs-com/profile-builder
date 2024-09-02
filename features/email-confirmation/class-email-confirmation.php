@@ -1,4 +1,7 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
  /*
 Code taken from: Custom List Table Example (plugin)
 Author: Matt Van Andel
@@ -324,15 +327,18 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 
         /* handle order and orderby attr */
         if( !empty( $_REQUEST['orderby'] ) ){
+
             $orderby = sanitize_sql_orderby( $_REQUEST['orderby'] );
+
             if( $orderby == 'username' )
                 $orderby = 'user_login';
             elseif ( $orderby == 'email' )
                 $orderby = 'user_email';
-        }
-        else
+
+        } else
             $orderby = 'user_login';
-        if( !empty( $_REQUEST['order'] ) && $_REQUEST['order'] === 'desc' )
+
+        if( !empty( $_REQUEST['order'] ) && sanitize_text_field( $_REQUEST['order'] ) === 'desc' )
             $order = "DESC";
         else
             $order = 'ASC';
@@ -345,10 +351,10 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
         /* since version 2.0.7 for multisite we add a 'registered_for_blog_id' meta in the registration process
             so we can display only the users registered on that blog. Also for backwards compatibility we display the users that don't have that meta at all */
         if( is_multisite() ){
-            $where .= " AND ( meta NOT LIKE '%\"registered_for_blog_id\"%' OR meta LIKE '%\"registered_for_blog_id\";i:".get_current_blog_id()."%' )";
+            $where .= $wpdb->prepare( " AND ( meta NOT LIKE '%\"registered_for_blog_id\"%' OR meta LIKE '%s' )", '%\"registered_for_blog_id\";i:'.get_current_blog_id().'%' );
         }
 		
-		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->base_prefix."signups WHERE $where ORDER BY $orderby $order LIMIT $offset, $per_page");
+		$results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE $where ORDER BY $orderby $order LIMIT %d, %d", $offset, $per_page ) );
 
 		foreach ($results as $result){
             $tempArray = array('ID' => $result->user_email, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
@@ -361,7 +367,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
          * without filtering. We'll need this later, so you should always include it
          * in your own package classes.
          */
-        $total_items = $wpdb->get_var("SELECT COUNT(*) FROM ".$wpdb->base_prefix."signups WHERE $where");
+        $total_items = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM ".$wpdb->base_prefix."signups WHERE %s", $where ) );
         
         /**
          * REQUIRED. Now we need to define our column headers. This includes a complete

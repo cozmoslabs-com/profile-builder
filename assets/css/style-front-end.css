@@ -165,6 +165,8 @@
     margin-bottom: 0;
 }
 
+.wppb-user-forms .login-submit #wppb-submit:disabled,
+.wppb-user-forms .form-submit #wppb-recover-password-button:disabled,
 .wppb-user-forms .form-submit #register:disabled,
 .wppb-user-forms .form-submit #edit_profile:disabled {
     background: #414141;
@@ -193,13 +195,13 @@
 #wppb-login-wrap p,
 #select_user_to_edit_form p {
     overflow: hidden;
-    margin: 0;
-    padding-bottom: 14px;
+    margin: 0 0 14px 0;
+    padding: 0;
 }
 
 .wppb-user-forms ul li {
-    margin: 0;
-    padding-bottom: 14px;
+    margin: 0 0 14px 0;
+    padding: 0;
 }
 
 .wppb-user-forms ul li:after {
@@ -380,8 +382,7 @@ span.select2-container {
     width: 100%;
 }
 
-.wppb-form-field.wppb-checkbox-terms-and-conditions
-input[type="checkbox"].custom_field_toa {
+.wppb-form-field.wppb-checkbox-terms-and-conditions input[type="checkbox"].custom_field_toa {
     float: none;
     margin-right: 10px;
 }
@@ -973,14 +974,14 @@ li.wppb-facet-search {
 #wppb-recover-password-container .wppb-form-field.passw2 .wppb-toggle-pw {
     position: absolute;
     right: 4px;
-    top: 30px;
+    top: 50%;
+    transform: translateY(-50%);
     background: transparent !important;
     background-color: transparent !important;
     border: 1px solid transparent;
     box-shadow: none;
     padding: 0;
     margin: 0;
-    height: 44px;
     cursor: pointer;
     outline: none;
     display: flex;
@@ -993,7 +994,7 @@ li.wppb-facet-search {
 #wppb-login-wrap .login-password.pbpl-class button.wppb-toggle-pw,
 #wppb-recover-password-container .wppb-form-field.pbpl-class.passw1 .wppb-toggle-pw,
 #wppb-recover-password-container .wppb-form-field.pbpl-class.passw2 .wppb-toggle-pw {
-    top: 0;
+    /*top: 0;*/
 }
 
 .wppb-form-field.wppb-default-password button img,

@@ -35,6 +35,10 @@
         "is_editor": {
             "type": "boolean",
             "default": false
+        },
+        "ajax": {
+            "type": "boolean",
+            "default": false
         }
     },
     "example": {

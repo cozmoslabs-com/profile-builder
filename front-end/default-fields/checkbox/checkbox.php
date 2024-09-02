@@ -1,4 +1,7 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /* handle field output */
 function wppb_checkbox_handler( $output, $form_location, $field, $user_id, $field_check_errors, $request_data ){
 	if ( $field['field'] == 'Checkbox' ){

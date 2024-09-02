@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_shortcode( 'wppb-resend-activation', 'wppb_toolbox_resend_activation_url_handler' );
 function wppb_toolbox_resend_activation_url_handler() {

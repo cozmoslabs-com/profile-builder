@@ -99,8 +99,9 @@ add_action(
         } else {
             $atts = [
                 'block' => $attributes['is_editor'] ? ' block="true"' : '',
+                'ajax' => $attributes['ajax'] ? ' ajax="true"' : '',
             ];
-            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-recover-password' . $atts['block'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-recover-password' . $atts['block'] . $atts['ajax'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     },
     10,
@@ -115,9 +116,12 @@ add_action(
     function() {
         header( 'Content-Type: text/javascript' );
         ?>
-        ( function ( blocks, i18n, element, serverSideRender, blockEditor ) {
+        ( function ( blocks, i18n, element, serverSideRender, blockEditor, components ) {
             var { __ } = i18n;
             var el = element.createElement;
+        var PanelBody = components.PanelBody;
+        var ToggleControl = components.ToggleControl;
+        var InspectorControls = blockEditor.InspectorControls;
 
             blocks.registerBlockType( 'wppb/recover-password', {
                 icon:
@@ -137,9 +141,14 @@ add_action(
                         type: 'boolean',
                         default: true,
                     },
+                    ajax : {
+                    type: 'boolean',
+                    default: false,
+                    },
                 },
                 edit: function ( props ) {
-                    return el(
+                    return [
+                        el(
                             'div',
                             Object.assign( blockEditor.useBlockProps(), { key: 'wppb/recover-password/render' } ),
                             el( serverSideRender,
@@ -148,7 +157,33 @@ add_action(
                                     attributes: props.attributes,
                                 }
                             )
-                        );
+                        ),
+
+        <?php
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+        ?>
+                        el( InspectorControls, { key: 'wppb/recover-password/inspector' },
+                            el( PanelBody,
+                                {
+                                    title: __( 'Form Settings', 'profile-builder' ),
+                                    key: 'wppb/recover-password/inspector/form-settings'
+                                },
+                                el( ToggleControl,
+                                    {
+                                        label: __( 'AJAX Validation', 'profile-builder' ),
+                                        key: 'wppb/recover-password/inspector/form-settings/ajax',
+                                        help: __( 'Use AJAX to Validate the Password Recovery Form', 'profile-builder' ),
+                                        checked: props.attributes.ajax,
+                                        onChange: ( value ) => { props.setAttributes( { ajax: value } ); }
+                                    }
+                                )
+                            )
+                        ),
+        <?php
+        }
+        ?>
+
+                    ];
                 }
             } );
         } )(
@@ -156,7 +191,8 @@ add_action(
             window.wp.i18n,
             window.wp.element,
             window.wp.serverSideRender,
-            window.wp.blockEditor
+            window.wp.blockEditor,
+            window.wp.components
         );
         <?php
         exit;

@@ -1,3 +1,8 @@
+<?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; 
+?>
+
 <div class="wrap wppb-optin-page">
 
     <div class="wppb-optin-page__wrap">

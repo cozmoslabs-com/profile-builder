@@ -71,16 +71,16 @@ class WPPB_EditProfile extends ET_Builder_Module {
             }
         }
 
-		return array(
-			'form_name'           => array(
-				'label'           => esc_html__( 'Form', 'profile-builder' ),
-				'type'            => 'select',
-				'options'         => $edit_profile_forms,
+        $fields =  array(
+            'form_name'           => array(
+                'label'           => esc_html__( 'Form', 'profile-builder' ),
+                'type'            => 'select',
+                'options'         => $edit_profile_forms,
                 'default'         => 'default',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Select the desired Edit Profile form.', 'profile-builder' ),
-				'toggle_slug'     => 'main_content',
-			),
+                'option_category' => 'basic_option',
+                'description'     => esc_html__( 'Select the desired Edit Profile form.', 'profile-builder' ),
+                'toggle_slug'     => 'main_content',
+            ),
             'redirect_url'        => array(
                 'label'           => esc_html__( 'Redirect After Edit Profile', 'profile-builder' ),
                 'type'            => 'select',
@@ -93,7 +93,26 @@ class WPPB_EditProfile extends ET_Builder_Module {
                     'form_name'   => 'default',
                 ),
             ),
-		);
+        );
+
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $fields['toggle_ajax_validation'] = array(
+                'label'              => esc_html__( 'AJAX Validation', 'profile-builder' ),
+                'type'               => 'yes_no_button',
+                'options'            => array(
+                    'on'             => esc_html__( 'Yes', 'profile-builder'),
+                    'off'            => esc_html__( 'No', 'profile-builder'),
+                ),
+                'option_category'    => 'basic_option',
+                'description'        => esc_html__( 'Use AJAX to Validate the Edit Profile Form without reloading the page.', 'profile-builder' ),
+                'toggle_slug'        => 'main_content',
+                'show_if'            => array(
+                    'form_name'      => 'default',
+                ),
+            );
+        }
+
+        return $fields;
 	}
 
     public function render( $attrs, $content, $render_slug ) {
@@ -115,6 +134,7 @@ class WPPB_EditProfile extends ET_Builder_Module {
         $atts = [
             'form_name' => $form_name,
             'redirect_url' => is_array( $attrs ) && array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? esc_url( $attrs['redirect_url'] ) : '',
+            'ajax' => ( $form_name === 'unspecified' && is_array( $attrs ) &&  array_key_exists( 'toggle_ajax_validation', $attrs ) && $attrs['toggle_ajax_validation'] === 'on' )  ? 'true' : false,
         ];
         return '<div class="wppb-divi-front-end-container">' . wppb_front_end_profile_info( $atts ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }

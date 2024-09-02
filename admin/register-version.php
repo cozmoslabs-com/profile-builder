@@ -147,6 +147,10 @@ class WPPB_add_notices{
 	}
 
 	function dismiss_notification() {
+
+        if( empty( $_GET['_wpnonce'] ) || !wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'wppb_license_notice_dismiss' ) )
+            return;
+
 		global $current_user;
 
 		$user_id = $current_user->ID;
@@ -193,7 +197,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
         else
             $message = '<p>' . __( 'Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder') . '</p>';
 
-        new WPPB_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( $message, "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-expired' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-expired' target='_blank' class='button-primary'>", "</a>", "<a href='". esc_url( add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
+        new WPPB_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( $message, "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-expired' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-expired' target='_blank' class='button-primary'>", "</a>", "<a href='". esc_url( wp_nonce_url( add_query_arg( 'wppb_expired_dismiss_notification', '0' ), 'wppb_license_notice_dismiss' ) ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
     }
     
     
@@ -201,7 +205,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
     if( $wppb_serial_status != 'expired' && !empty( $license_details ) && !empty( $license_details->expires ) && $license_details->expires !== 'lifetime' ){
 
         if( ( !isset( $license_details->subscription_status ) || $license_details->subscription_status != 'active' ) && strtotime( $license_details->expires ) < strtotime( '+14 days' ) ){
-            new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-about-to-expire' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-about-to-expire' target='_blank' class='button-primary'>", "</a>", date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ), "<a href='". esc_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
+            new WPPB_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( '<p>' . __( 'Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder') . '</p>', "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-about-to-expire' target='_blank'>", "</a>", "<a href='https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_campaign=PBPro&utm_content=license-about-to-expire' target='_blank' class='button-primary'>", "</a>", date_i18n( get_option( 'date_format' ), strtotime( $license_details->expires ) ), "<a href='". esc_url( wp_nonce_url( add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ), 'wppb_license_notice_dismiss' ) )."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_license_status' );
         }
 
     }
@@ -214,7 +218,7 @@ if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ){
 
             $notification_instance = WPPB_Plugin_Notifications::get_instance();
             if( !$notification_instance->is_plugin_page() ) {//add the dismiss button only on other pages in admin
-                $activations_limit_message .= sprintf(__(' %1$sDismiss%2$s', 'profile-builder'), "<a class='dismiss-right' href='" . esc_url(add_query_arg('wppb_basic_activations_limit_dismiss_notification', '0')) . "'>", "</a>");
+                $activations_limit_message .= sprintf(__(' %1$sDismiss%2$s', 'profile-builder'), "<a class='dismiss-right' href='" . esc_url( wp_nonce_url( add_query_arg('wppb_basic_activations_limit_dismiss_notification', '0' ), 'wppb_license_notice_dismiss' ) ) . "'>", "</a>");
                 $force_show = false;
             } else {
                 $force_show = true;//sets the forceShow parameter of WPPB_add_notices to true so we don't take into consideration the dismiss user meta

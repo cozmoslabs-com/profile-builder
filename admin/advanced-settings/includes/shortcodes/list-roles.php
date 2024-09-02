@@ -1,4 +1,7 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 add_shortcode( 'wppb-list-roles', 'wppb_toolbox_list_roles_handler' );
 function wppb_toolbox_list_roles_handler($atts){
 

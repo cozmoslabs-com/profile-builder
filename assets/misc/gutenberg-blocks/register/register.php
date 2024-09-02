@@ -308,6 +308,7 @@ add_action(
                     'redirect_url' => $attributes['redirect_url'] !== '' ? ' redirect_url="' . esc_url( $attributes['redirect_url'] ) . '"' : '',
                     'logout_redirect_url' => $attributes['logout_redirect_url'] !== '' ? ' logout_redirect_url="' . esc_url( $attributes['logout_redirect_url'] ) . '"' : '',
                     'automatic_login' => $attributes['automatic_login'] ? ' automatic_login="yes"' : '',
+                    'ajax' => $attributes['ajax'] ? ' ajax="true"' : '',
                 ];
             } else {
                 $atts = [
@@ -316,9 +317,10 @@ add_action(
                     'redirect_url' => '',
                     'logout_redirect_url' => $attributes['logout_redirect_url'] !== '' ? ' logout_redirect_url="' . esc_url( $attributes['logout_redirect_url'] ) . '"' : '',
                     'automatic_login' => '',
+                    'ajax' => ' ajax="multiple-register-form"',
                 ];
             }
-            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-register' . $atts['role'] . $atts['form_name'] . $atts['redirect_url'] . $atts['logout_redirect_url'] . $atts['automatic_login'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-register' . $atts['role'] . $atts['form_name'] . $atts['redirect_url'] . $atts['logout_redirect_url'] . $atts['automatic_login'] . $atts['ajax'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     },
     10,
@@ -385,6 +387,10 @@ add_action(
                         default: ''
                     },
                     is_preview : {
+                        type: 'boolean',
+                        default: false,
+                    },
+                    ajax : {
                         type: 'boolean',
                         default: false,
                     },
@@ -498,6 +504,25 @@ add_action(
                                                 }
                                             ) :
                                             '',
+
+        <?php
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+        ?>
+                                        props.attributes.form_name == '' ?
+                                            el( ToggleControl,
+                                                {
+                                                    label: __( 'AJAX Validation' , 'profile-builder' ),
+                                                    key: 'wppb/register/inspector/form-settings/ajax',
+                                                    help: __( 'Use AJAX to Validate the Register Form' , 'profile-builder' ),
+                                                    checked: props.attributes.ajax,
+                                                    onChange: ( value ) => { props.setAttributes( { ajax: !props.attributes.ajax } ); }
+                                                }
+                                            ) :
+                                            '',
+        <?php
+        }
+        ?>
+
                                         props.attributes.form_name != '' ?
                                             el( Text,
                                                 {

@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_shortcode('user_meta', 'wppb_toolbox_usermeta_handler');
 function wppb_toolbox_usermeta_handler( $atts, $content=null){

@@ -1,7 +1,18 @@
 .wppb-user-forms .pms-field,
 .wppb-user-forms .wppb-form-field {
-    padding-bottom: 30px;
+    margin-bottom: 30px !important;
 }
+
+.wppb-form-field.wppb-default-password:not(.pbpl-class) button.wppb-toggle-pw,
+.wppb-form-field.wppb-default-repeat-password:not(.pbpl-class) button.wppb-toggle-pw,
+#wppb-login-wrap .login-password:not(.pbpl-class) button.wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.passw1:not(.pbpl-class) .wppb-toggle-pw,
+#wppb-recover-password-container .wppb-form-field.passw2:not(.pbpl-class) .wppb-toggle-pw {
+    top: 31px; /* equal with the label's height + margin-bottom */
+    height: 44px; /* equal with the height of the input */
+    transform: none;
+}
+
 
 .wppb-user-forms .wppb-form-field.wppb-subscription-plans .pms-group-memberships-field {
     flex-direction: column;

@@ -48,13 +48,28 @@ class PB_Elementor_Recover_Password_Widget extends PB_Elementor_Widget {
 			)
 		);
 
-		$this->add_control(
-			'pb_recovery_no_controls_text',
-			array(
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-                'raw'  => __( 'There are no available controls for the Password Recovery form', 'profile-builder' ),
-			)
-		);
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $this->add_control(
+                'pb_ajax',
+                array(
+                    'label'        => __( 'AJAX Validation', 'profile-builder' ),
+                    'type'         => \Elementor\Controls_Manager::SWITCHER,
+                    'label_on'     => __( 'Yes', 'profile-builder' ),
+                    'label_off'    => __( 'No', 'profile-builder' ),
+                    'return_value' => 'true',
+                    'default'      => 'false',
+                )
+            );
+        }
+        else {
+            $this->add_control(
+                'pb_recovery_no_controls_text',
+                array(
+                    'type' => \Elementor\Controls_Manager::RAW_HTML,
+                    'raw'  => __( 'There are no available controls for the Password Recovery form', 'profile-builder' ),
+                )
+            );
+        }
 
 		$this->end_controls_section();
 

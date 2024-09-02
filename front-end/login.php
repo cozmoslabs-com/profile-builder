@@ -511,7 +511,32 @@ function wppb_front_end_login( $atts ){
 	global $wppb_login_shortcode;
 	$wppb_login_shortcode = true;
 
-    extract( shortcode_atts( array( 'display' => true, 'redirect' => '', 'redirect_url' => '', 'logout_redirect_url' => wppb_curpageurl(), 'register_url' => '', 'lostpassword_url' => '', 'redirect_priority' => 'normal', 'show_2fa_field' => '', 'block' => false ), $atts ) );
+	$atts = shortcode_atts( array(
+		'display'             => true,
+		'redirect'            => '',
+		'redirect_url'        => '',
+		'logout_redirect_url' => wppb_curpageurl(),
+		'redirect_priority'   => 'normal',
+		'register_url'        => '',
+		'lostpassword_url'    => '',
+		'show_2fa_field'      => '',
+		'block'               => false,
+		'ajax'               => false,
+	), $atts, 'wppb-login' );
+
+	$display             = $atts['display'];
+	$redirect            = $atts['redirect'];
+	$redirect_url        = $atts['redirect_url'];
+	$logout_redirect_url = $atts['logout_redirect_url'];
+	$redirect_priority   = $atts['redirect_priority'];
+	$register_url        = $atts['register_url'];
+	$lostpassword_url    = $atts['lostpassword_url'];
+	$show_2fa_field      = $atts['show_2fa_field'];
+	$block               = $atts['block'];
+	$ajax                = $atts['ajax'];
+
+    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $ajax === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
+        wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
 
 	$wppb_generalSettings = get_option('wppb_general_settings');
 

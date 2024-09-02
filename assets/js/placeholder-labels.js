@@ -5,17 +5,27 @@
  *
  */
 jQuery( document ).ready( function() {
+
+    // add placeholder to Login Form Fields
+    loginFieldPlaceholder();
+
+    // add placeholder to the 2FA Field
+    loginAuthPlaceholder();
+
+});
+
+/**
+ * Add Placeholder for Login Form Fields
+ *
+ */
+function loginFieldPlaceholder () {
     jQuery(".login-username input, .login-password input").each( function ( index, elem ) {
         var element_id = jQuery( elem ).attr( 'id' );
         if( element_id && ( label = jQuery( elem ).parents( '#wppb-login-wrap' ).find( 'label[for=' + element_id + ']' ) ).length === 1 ) {
             jQuery( elem ).attr( 'placeholder', jQuery( label ).text() );
         }
     });
-
-    // add placeholder to the 2FA Field
-    loginAuthPlaceholder();
-
-});
+}
 
 /**
  * Add Placeholder for 2FA Field on Login Form

@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 /* the avatar field relies on the upload field  */
 
 /* handle field output */

@@ -15,7 +15,7 @@ function wppb_render_blocks( $block_content, $block ) {
 
     // Map the block content restriction settings to the wppb-restrict shortcode parameters
     $atts = array(
-            'user_roles'    => is_array( $block_attrs ) && array_key_exists( 'selected_user_roles', $block_attrs ) ? $block_attrs['selected_user_roles'] : array(),
+            'user_roles'    => is_array( $block_attrs ) && array_key_exists( 'user_roles', $block_attrs ) ? implode( ',', $block_attrs['user_roles'] ) : '',
             'display_to'    => $block_attrs['display_to'],
             'message'       => $block_attrs['display_to'] === 'not_logged_in'
                 ? ( $block_attrs['enable_message_logged_out'] ? $block_attrs['message_logged_out'] : '' )

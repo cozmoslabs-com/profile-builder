@@ -200,6 +200,9 @@ function wppb_dashboard_page_content() {
 function wppb_get_dashboard_stats(){
     check_admin_referer( 'wppb_dashboard_get_stats' );
 
+    if( !current_user_can( 'manage_options' ) )
+        die();
+
     if( empty( $_POST['interval'] ) )
         return;
 

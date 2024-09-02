@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function wppb_toolbox_rehook_email_confirmation_page() {
 	remove_action( 'admin_menu', 'wppb_add_ec_submenu_page' );
 

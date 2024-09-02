@@ -19,6 +19,10 @@
         "is_preview": {
             "type": "boolean",
             "default": false
+        },
+        "ajax": {
+            "type": "boolean",
+            "default": false
         }
     },
     "example": {

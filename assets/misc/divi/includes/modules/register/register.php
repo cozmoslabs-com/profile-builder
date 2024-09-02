@@ -80,16 +80,16 @@ class WPPB_Register extends ET_Builder_Module {
             $user_roles [$key] = $role['name'];
         }
 
-		return array(
-			'form_name'              => array(
-				'label'              => esc_html__( 'Form', 'profile-builder' ),
-				'type'               => 'select',
-				'options'            => $registration_forms,
+        $fields =  array(
+            'form_name'              => array(
+                'label'              => esc_html__( 'Form', 'profile-builder' ),
+                'type'               => 'select',
+                'options'            => $registration_forms,
                 'default'            => 'default',
-				'option_category'    => 'basic_option',
-				'description'        => esc_html__( 'Select the desired Registration form.', 'profile-builder' ),
-				'toggle_slug'        => 'main_content',
-			),
+                'option_category'    => 'basic_option',
+                'description'        => esc_html__( 'Select the desired Registration form.', 'profile-builder' ),
+                'toggle_slug'        => 'main_content',
+            ),
             'role'                   => array(
                 'label'              => esc_html__( 'Assigned Role', 'profile-builder' ),
                 'type'               => 'select',
@@ -137,7 +137,26 @@ class WPPB_Register extends ET_Builder_Module {
                 'description'        => esc_html__( 'Select a page for an After Logout Redirect.', 'profile-builder' ),
                 'toggle_slug'        => 'main_content',
             ),
-		);
+        );
+
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $fields['toggle_ajax_validation'] = array(
+                'label'              => esc_html__( 'AJAX Validation', 'profile-builder' ),
+                'type'               => 'yes_no_button',
+                'options'            => array(
+                    'on'             => esc_html__( 'Yes', 'profile-builder'),
+                    'off'            => esc_html__( 'No', 'profile-builder'),
+                ),
+                'option_category'    => 'basic_option',
+                'description'        => esc_html__( 'Use AJAX to Validate the Register Form without reloading the page.', 'profile-builder' ),
+                'toggle_slug'        => 'main_content',
+                'show_if'            => array(
+                    'form_name'      => 'default',
+                ),
+            );
+        }
+
+        return $fields;
 	}
 
     public function render( $attrs, $content, $render_slug ) {
@@ -162,6 +181,7 @@ class WPPB_Register extends ET_Builder_Module {
                 'form_name'           => '',
                 'redirect_url'        => array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? esc_url( $attrs['redirect_url'] ) : '',
                 'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? esc_url( $attrs['logout_redirect_url'] ) : '',
+                'ajax'                => array_key_exists( 'toggle_ajax_validation', $attrs ) && $attrs['toggle_ajax_validation'] === 'on'  ? 'true' : false,
                 'automatic_login'     => array_key_exists( 'toggle_automatic_login', $attrs ) && $attrs['toggle_automatic_login'] ? 'yes' : '',
 
             ];
@@ -171,6 +191,7 @@ class WPPB_Register extends ET_Builder_Module {
                 'form_name'           => $form_name,
                 'redirect_url'        => '',
                 'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? esc_url( $attrs['logout_redirect_url'] ) : '',
+                'ajax'                => false,
                 'automatic_login'     => '',
 
             ];

@@ -1,5 +1,9 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
+<?php
+$this->set_existing_user_pages();
+?>
+
 <h3><?php esc_html_e( 'Quick Setup Wizard', 'profile-builder' ); ?></h3>
 <p class="cozmoslabs-description"><?php esc_html_e( 'Ready to welcome your new users?', 'profile-builder' ); ?></p>
 

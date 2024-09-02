@@ -257,7 +257,13 @@ function wppb_front_end_password_recovery( $atts ){
     $password_email_sent = false;
     $password_changed_success = false;
 
-    extract( shortcode_atts( array( 'block' => false ), $atts ) );
+    $atts = shortcode_atts( array(
+        'block' => false,
+        'ajax' => false,
+    ), $atts, 'wppb-recover-password' );
+
+    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $atts['ajax'] === 'true'  && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
+        wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
 
     $output = '<div class="wppb_holder" id="wppb-recover-password-container">';
 
@@ -273,7 +279,7 @@ function wppb_front_end_password_recovery( $atts ){
         $is_elementor_edit_mode_or_divi_ajax = true;
     }
 
-    if( is_user_logged_in() && !( $is_elementor_edit_mode_or_divi_ajax || $block ) ) {
+    if( is_user_logged_in() && !( $is_elementor_edit_mode_or_divi_ajax || $atts['block'] ) ) {
         return apply_filters('wppb_recover_password_already_logged_in', __('You are already logged in. You can change your password on the edit profile form.', 'profile-builder'));
     }
 

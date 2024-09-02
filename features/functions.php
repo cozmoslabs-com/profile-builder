@@ -1389,7 +1389,7 @@ function wppb_get_redirect_url( $redirect_priority, $redirect_type, $redirect_ur
 	}
 
 	if( ! empty( $redirect_url ) ) {
-		$redirect_url = ( wppb_check_missing_http( $redirect_url ) ? 'http://'. $redirect_url : $redirect_url );
+		$redirect_url = ( wppb_check_missing_http( $redirect_url ) ? wppb_add_missing_http( $redirect_url ) : $redirect_url );
 	}
 
 	return $redirect_url;
@@ -1413,12 +1413,12 @@ function wppb_build_redirect( $redirect_url, $redirect_delay, $redirect_type = N
 	$redirect_message = '';
 
 	if( ! empty( $redirect_url ) ) {
-		$redirect_url = ( wppb_check_missing_http( $redirect_url ) ? 'http://'. $redirect_url : $redirect_url );
+		$redirect_url = ( wppb_check_missing_http( $redirect_url ) ? wppb_add_missing_http( $redirect_url ) : $redirect_url );
 
 		if( $redirect_delay == 0 ) {
 			$redirect_message = '<meta http-equiv="Refresh" content="'. $redirect_delay .';url='. $redirect_url .'" />';
 		} else {
-			$redirect_url_href = apply_filters( 'wppb_redirect_url', '<a href="'. $redirect_url .'">'. __( 'here', 'profile-builder' ) .'</a>', $redirect_url, $redirect_type, $form_args );
+			$redirect_url_href = apply_filters( 'wppb_redirect_url', '<a href="'. esc_url( $redirect_url ) .'">'. __( 'here', 'profile-builder' ) .'</a>', $redirect_url, $redirect_type, $form_args );
 			$redirect_message = apply_filters( 'wppb_redirect_message_before_returning', '<p class="redirect_message">'. sprintf( wp_slash( __( 'You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s', 'profile-builder' ) ), $redirect_delay, $redirect_url_href, '<meta http-equiv="Refresh" content="'. $redirect_delay .';url='. $redirect_url .'" />' ) .'</p>', $redirect_url, $redirect_delay, $redirect_url_href, $redirect_type, $form_args );
 		}
 	}

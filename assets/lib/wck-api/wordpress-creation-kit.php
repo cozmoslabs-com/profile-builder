@@ -597,7 +597,7 @@ class Wordpress_Creation_Kit_PB{
 
 					if( !is_array( $group_option ) )
                     	$select_options[] = $group_option;
-						
+
                 }
             }
 
@@ -841,7 +841,7 @@ class Wordpress_Creation_Kit_PB{
 			$values = $this->wck_sanitize_associative_array( $_POST['values'] ); //phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- we sanitize with our own function
 		else
 			$values = array();
-		
+
 		// Security checks
 		if( true !== ( $error = self::wck_verify_user_capabilities( $this->args['context'], $meta, $id ) ) ) {
 			header( 'Content-type: application/json' );
@@ -984,6 +984,10 @@ class Wordpress_Creation_Kit_PB{
 	/* ajax to refresh the meta content | or used in other function to return the */
 	/* this is used in Repeater Fields as an ajax action so we have to keep it dual purpose */
 	function wck_refresh_list( $meta = '', $id = '' ){
+
+		if( !current_user_can( 'manage_options' ) )
+			die();
+
 		if( isset( $_POST['meta'] ) )
 			$meta = sanitize_text_field( $_POST['meta'] );
 
@@ -1037,6 +1041,10 @@ class Wordpress_Creation_Kit_PB{
 	/* ajax to show the update form */
 	function wck_show_update_form(){
 		check_ajax_referer( "wck-edit-entry" );
+
+		if( !current_user_can( 'manage_options' ) )
+			die();
+
 		$meta = isset(  $_POST['meta'] ) ? sanitize_text_field( $_POST['meta'] ) : '';
 		$id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : '';
 		$element_id = isset( $_POST['element_id'] ) ? absint( $_POST['element_id'] ) : '';
@@ -1378,7 +1386,7 @@ class Wordpress_Creation_Kit_PB{
 					$value_attr = $values[$i];
 				else
 					$value_attr = $option;
-				
+
 				if( !empty( $option['disabled'] ) && $option['disabled'] == true ){
 					$disabled = ' disabled';
 				}
@@ -1618,7 +1626,7 @@ class WCK_Page_Creator_PB{
 	 */
 	function wck_settings_page_add_meta_boxes() {
         global $post;
-		
+
 		if( empty( $post ) || empty( $post->ID ) )
 			do_action( 'wck_add_meta_boxes', $this->hookname, $post );
 		else

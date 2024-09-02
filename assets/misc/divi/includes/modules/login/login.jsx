@@ -14,6 +14,7 @@ class Login extends AjaxComponent {
       oldProps.lostpassword_url !== newProps.lostpassword_url ||
       oldProps.redirect_url !== newProps.redirect_url ||
       oldProps.logout_redirect_url !== newProps.logout_redirect_url ||
+      oldProps.toggle_ajax_validation !== newProps.toggle_ajax_validation ||
       oldProps.toggle_auth_field !== newProps.toggle_auth_field
     );
   }
@@ -27,6 +28,7 @@ class Login extends AjaxComponent {
     formData.append("lostpassword_url", props.lostpassword_url);
     formData.append("redirect_url", props.redirect_url);
     formData.append("logout_redirect_url", props.logout_redirect_url);
+    formData.append("toggle_ajax_validation", props.toggle_ajax_validation);
     formData.append("toggle_auth_field", props.toggle_auth_field);
 
     return formData;

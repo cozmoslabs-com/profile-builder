@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( !current_user_can( 'manage_options' ) )
     add_filter( 'wppb_email_confirmation_on_user_email_change', '__return_true' );

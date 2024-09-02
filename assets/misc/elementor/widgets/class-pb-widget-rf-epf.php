@@ -188,6 +188,23 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
             );
         }
 
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $this->add_control(
+                'pb_ajax',
+                array(
+                    'label'        => __( 'AJAX Validation', 'profile-builder' ),
+                    'type'         => \Elementor\Controls_Manager::SWITCHER,
+                    'label_on'     => __( 'Yes', 'profile-builder' ),
+                    'label_off'    => __( 'No', 'profile-builder' ),
+                    'return_value' => 'true',
+                    'default'      => 'false',
+                    'condition'    => [
+                        'pb_form_name' => '',
+                    ],
+                )
+            );
+        }
+
         foreach ( $edit_form_links as $form_slug => $edit_form_link ){
             foreach ($form_fields[$form_slug] as $key_1 => $form_field) {
                 if ($form_slug === 'default') {

@@ -84,6 +84,20 @@ class PB_Elementor_Login_Widget extends PB_Elementor_Widget {
             );
         }
 
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $this->add_control(
+                'pb_ajax',
+                array(
+                    'label'        => __( 'AJAX Validation', 'profile-builder' ),
+                    'type'         => \Elementor\Controls_Manager::SWITCHER,
+                    'label_on'     => __( 'Yes', 'profile-builder' ),
+                    'label_off'    => __( 'No', 'profile-builder' ),
+                    'return_value' => 'true',
+                    'default'      => 'false',
+                )
+            );
+        }
+
         $this->end_controls_section();
 
         $this->start_controls_section(

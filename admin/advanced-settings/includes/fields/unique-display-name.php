@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function wppb_toolbox_unique_display_name_edit_profile( $message, $field, $request_data, $form_location ) {
 

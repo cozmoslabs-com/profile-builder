@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /*
 Description: Enables editing of labels from Profile Builder.
@@ -100,7 +102,7 @@ function _wppb_le_output_str2( $str ) {
 
 /* scan pble labels on Rescan button click */
 function wppb_le_rescan() {
-	
+
 	if( isset( $_POST['rescan'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_rescan_labels' ) ) {
         wppb_le_scan_labels( sanitize_text_field( $_POST['wppb_nonce'] ) );
 	}
@@ -385,6 +387,9 @@ add_action("wp_ajax_pble_delete_all_fields", 'wppb_le_delete_all_fields_callback
 function wppb_le_delete_all_fields_callback(){
 	check_ajax_referer( "pble-delete-all-entries" );
 
+	if( !current_user_can( 'manage_options' ) )
+		die();
+
 	if( ! empty( $_POST['meta'] ) )
 		$meta_name = sanitize_text_field( $_POST['meta'] );
 	else
@@ -425,7 +430,7 @@ function wppb_le_import() {
 /* export class arguments and call */
 add_action( 'admin_init', 'wppb_le_export' );
 function wppb_le_export() {
-	if( isset( $_POST['pble-export'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_export_labels' ) ) {
+	if( isset( $_POST['pble-export'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_export_labels' ) && current_user_can( 'manage_options' ) ) {
 		$check_export = get_option( 'pble', 'not_set' );
 		if( empty( $check_export ) || $check_export === 'not_set' ) {
 			echo '<div id="message" class="error"><p>' . esc_html__('No labels edited, nothing to export!', 'profile-builder') . '</p></div>';

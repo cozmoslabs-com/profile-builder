@@ -56,6 +56,9 @@ class Profile_Builder_Form_Creator{
 
 		$this->wppb_retrieve_custom_settings();
 
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && isset( $this->args['ajax'] ) && $this->args['ajax'] === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
+            wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
+
         // NOTE: for Multisite, the capability we check against is `remove_users` because `edit_users` is on the do not allow on multisite list for current_user_can()
         // current_user_can( 'edit_users' ) will only return true on a Multisite for Super Administrator Users
         if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) )
@@ -130,6 +133,7 @@ class Profile_Builder_Form_Creator{
             $this->args['redirect_activated'] = ( isset( $page_settings[0]['redirect'] ) ? $page_settings[0]['redirect'] : $this->args['redirect_activated'] );
             $this->args['redirect_url'] = ( ! empty( $page_settings[0]['url'] ) && $this->args['redirect_activated'] == 'Yes' && $this->args['redirect_priority'] != 'top' ? $page_settings[0]['url'] : $this->args['redirect_url'] );
             $this->args['redirect_delay'] = ( isset( $page_settings[0]['display-messages'] ) && $this->args['redirect_activated'] == 'Yes' ? $page_settings[0]['display-messages'] : $this->args['redirect_delay'] );
+            $this->args['ajax'] = ( ( isset( $page_settings[0]['ajax'] ) && !empty( $page_settings[0]['ajax'] ) ) ? $page_settings[0]['ajax'] : $this->args['ajax'] );
 		}
 
 		// the 'automatic_login' shortcode parameter overwrites all other settings
@@ -773,7 +777,7 @@ class Profile_Builder_Form_Creator{
                         <?php
 						foreach( $users as $user ){
 							?>
-							<option value="<?php echo  esc_url_raw( add_query_arg( array( 'edit_user' => $user->ID ) ) ); ?>" <?php selected( $selected, $user->ID ); ?>>
+							<option value="<?php echo esc_url( add_query_arg( array( 'edit_user' => $user->ID ) ) ); ?>" <?php selected( $selected, $user->ID ); ?>>
 								<?php echo esc_html( apply_filters( 'wppb_edit_other_users_display_name', $user->display_name, $user ) ); ?>
 							</option>
 							<?php

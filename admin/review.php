@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class WPPB_Review_Request {
 
@@ -96,14 +98,14 @@ class WPPB_Review_Request {
                             </div>
 
                             <div>
-                                <a href="<?php echo esc_url( add_query_arg(array($this->query_arg => $this->notificationId)) ) ?>"
+                                <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( $this->query_arg => $this->notificationId ) ), 'wppb_review_notice_dismiss' ) ) ?>"
                                    style="width: 150px; height: 30px;" class="button-secondary">
 		                            <?php esc_html_e('No, thanks.', 'profile-builder'); ?>
                                 </a>
                             </div>
                         </div>
 
-                        <a href="<?php echo esc_url( add_query_arg(array($this->query_arg => $this->notificationId)) ) ?>"
+                        <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( $this->query_arg => $this->notificationId ) ), 'wppb_review_notice_dismiss' ) ) ?>"
                            type="button" class="notice-dismiss" style="text-decoration: none;">
                             <span class="screen-reader-text">
                                 <?php esc_html_e('Dismiss this notice.', 'profile-builder'); ?>
@@ -119,6 +121,10 @@ class WPPB_Review_Request {
 
     // Function that saves the notification dismissal to the user meta
     public function dismiss_notification() {
+
+        if( empty( $_GET['_wpnonce'] ) || !wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'wppb_review_notice_dismiss' ) )
+            return;
+
         global $current_user;
 
         $user_id = $current_user->ID;

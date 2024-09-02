@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 $redirect_url = wppb_toolbox_get_settings( 'fields', 'redirect-if-empty-required-url' );
 
 if ( !empty( $redirect_url ) )
@@ -22,7 +25,7 @@ function wppb_toolbox_redirect_if_empty_required() {
 
 			if ( $field['required'] == 'Yes' && !empty( $field['meta-name'] ) && $field['field'] != 'Checkbox (Terms and Conditions)' ){
 
-                if( $field['meta-name'] == 'map' )
+                if( $field['meta-name'] == 'map' && function_exists( 'wppb_get_user_map_markers' ) )
                     $value = wppb_get_user_map_markers( $user_id, $field['meta-name'] );
                 else 
                     $value = get_user_meta( $user_id, $field['meta-name'], true );

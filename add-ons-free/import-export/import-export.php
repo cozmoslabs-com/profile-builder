@@ -1,4 +1,7 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /*
 Description: Adds a PB subpage where you can Import and Export settings of Profile Builder.
 */

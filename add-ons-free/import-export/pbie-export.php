@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /* include export class */
 require_once 'inc/class-pbie-export.php';
@@ -8,7 +10,7 @@ add_action( 'admin_init', 'wppb_pbie_export_our_json' );
 
 /* export class arguments and call */
 function wppb_pbie_export_our_json() {
-	if( isset( $_POST['cozmos-export'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_export_settings' ) ) {
+	if( isset( $_POST['cozmos-export'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_export_settings' ) && current_user_can( 'manage_options' ) ) {
 		/* get Profile Builder version */
 		$versions = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited', 'Profile Builder Dev' );
 

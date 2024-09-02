@@ -16,7 +16,7 @@ class WPPB_Setup_Wizard {
             add_filter( 'wppb_output_dashboard_setup_wizard', array( $this, 'setup_wizard' ) );
             add_action( 'admin_init', array( $this, 'redirect_to_setup' ) );
             add_action( 'admin_init', array( $this, 'save_data' ) );
-            add_action( 'admin_init', array( $this, 'set_existing_user_pages' ) );
+            //add_action( 'admin_init', array( $this, 'set_existing_user_pages' ) );
             add_action( 'wp_ajax_dismiss_setup_wizard_newsletter_subscribe', array( $this, 'dismiss_setup_wizard_newsletter_subscribe' ) );
         }
     }
@@ -63,7 +63,7 @@ class WPPB_Setup_Wizard {
             return;
 
         $this->general_settings  = get_option( 'wppb_general_settings', array() );
-        $this->user_pages  = get_option( 'wppb_user_pages', array() );;
+        $this->user_pages  = get_option( 'wppb_user_pages', array() );
 
         $default_steps = $this->get_default_steps();
 
@@ -82,6 +82,9 @@ class WPPB_Setup_Wizard {
             return;
 
         check_admin_referer( 'wppb-setup-wizard-nonce', 'wppb_setup_wizard_nonce' );
+
+        if( !current_user_can( 'manage_options' ) )
+            return;
 
         $default_steps = $this->get_default_steps();
 
@@ -286,7 +289,8 @@ class WPPB_Setup_Wizard {
     }
 
     public function set_existing_user_pages() {
-        if( empty( $_GET['subpage'] ) || $_GET['subpage'] != 'wppb-setup' )
+
+        if( !current_user_can( 'manage_options' ) )
             return;
 
         $user_pages = get_option( 'wppb_user_pages', array() );
@@ -328,6 +332,9 @@ class WPPB_Setup_Wizard {
 
         if ( !empty( $user_pages ) )
             update_option( 'wppb_user_pages', $user_pages );
+
+        $this->user_pages = get_option( 'wppb_user_pages', array() );
+
     }
 
     public static function get_progress_steps() {
@@ -531,14 +538,17 @@ class WPPB_Setup_Wizard {
         return false;
     }
 
-
     public function dismiss_setup_wizard_newsletter_subscribe() {
+
+        check_ajax_referer( 'dismiss_setup_wizard_newsletter_subscribe', 'wppb_nonce' );
+
         $user_id = get_current_user_id();
 
         if( !empty( $user_id ) )
             update_user_meta( $user_id, 'wppb_setup_wizard_newsletter', 1 );
 
         wp_die();
+
     }
 
 }

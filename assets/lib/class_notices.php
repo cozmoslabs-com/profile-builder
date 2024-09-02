@@ -48,6 +48,10 @@ class WPPB_Add_General_Notices{
     }
 
     function dismiss_notification() {
+
+        if( empty( $_GET['_wpnonce'] ) || !wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'wppb_general_notice_dismiss' ) )
+            return;
+
         global $current_user;
 
         $user_id = $current_user->ID;
@@ -59,6 +63,7 @@ class WPPB_Add_General_Notices{
             add_user_meta( $user_id, $this->notificationId.'_dismiss_notification', 'true', true );
 
         do_action( $this->notificationId.'_after_notification_dismissed', $current_user );
+
     }
 }
 
@@ -79,8 +84,13 @@ Class WPPB_Plugin_Notifications {
 
     function dismiss_admin_notifications() {
         if( ! empty( $_GET[$this->prefix.'_dismiss_admin_notification'] ) ) {
+
+            if( empty( $_GET['_wpnonce'] ) || !wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'wppb_plugin_notice_dismiss' ) )
+                return;
+
             $notifications = self::get_instance();
             $notifications->dismiss_notification( sanitize_text_field( $_GET[$this->prefix.'_dismiss_admin_notification'] ) );
+
         }
 
     }

@@ -29,10 +29,10 @@
             <div class="wppb-setup-newsletter__success">
                 <?php esc_html_e( 'Please check your email to confirm the subscription.', 'profile-builder' ) ?>
             </div>
+
+            <input type="hidden" id="wppb_nonce" name="wppb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'dismiss_setup_wizard_newsletter_subscribe' ) ); ?>" />
         </div>
     <?php endif; ?>
-
-
 
     <?php $this->output_progress_steps(); ?>
 

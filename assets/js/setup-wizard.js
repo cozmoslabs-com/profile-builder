@@ -52,7 +52,8 @@ jQuery( document ).ready(function(){
                         jQuery( '.wppb-setup-newsletter__success' ).show()
 
                         var data = new FormData()
-                        data.append( 'action', 'dismiss_setup_wizard_newsletter_subscribe' )
+                            data.append( 'action', 'dismiss_setup_wizard_newsletter_subscribe' )
+                            data.append( 'wppb_nonce', jQuery( '.wppb-setup-newsletter #wppb_nonce' ).val() )
 
                         jQuery.ajax({
                             url        : ajaxurl,

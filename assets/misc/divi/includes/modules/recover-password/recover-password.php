@@ -30,14 +30,34 @@ class WPPB_RecoverPassword extends ET_Builder_Module {
 	}
 
 	public function get_fields() {
-		return array();
+        $fields = array();
+
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $fields['toggle_ajax_validation'] = array(
+                'label'              => esc_html__( 'AJAX Validation', 'profile-builder' ),
+                'type'               => 'yes_no_button',
+                'options'            => array(
+                    'on'             => esc_html__( 'Yes', 'profile-builder'),
+                    'off'            => esc_html__( 'No', 'profile-builder'),
+                ),
+                'option_category'    => 'basic_option',
+                'description'        => esc_html__( 'Use AJAX to Validate the Recover Password Form without reloading the page.', 'profile-builder' ),
+                'toggle_slug'        => 'main_content',
+            );
+        }
+
+        return $fields;
 	}
 
     public function render( $attrs, $content, $render_slug ) {
 
         include_once( WPPB_PLUGIN_DIR.'/front-end/recover.php' );
 
-        return '<div class="wppb-divi-front-end-container">' . wppb_front_end_password_recovery( [] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        $atts = [
+            'ajax' => ( is_array( $attrs ) && array_key_exists( 'toggle_ajax_validation', $attrs ) ) && $attrs['toggle_ajax_validation'] === 'on'  ? 'true' : false,
+        ];
+
+        return '<div class="wppb-divi-front-end-container">' . wppb_front_end_password_recovery( $atts ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 }
 

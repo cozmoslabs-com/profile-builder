@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 $wppb_general_settings = get_option( 'wppb_general_settings' );
 
 if ( !empty( $wppb_general_settings ) && isset( $wppb_general_settings['emailConfirmation'] ) && $wppb_general_settings['emailConfirmation'] == 'yes' )

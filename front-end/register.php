@@ -184,9 +184,18 @@ function wppb_activate_signup_autologin_redirect_url( $user_id, $redirect_url, $
 
 //function to display the registration page
 function wppb_front_end_register( $atts ){
-	extract( shortcode_atts( array( 'role' => get_option( 'default_role' ), 'form_name' => 'unspecified', 'redirect_url' => '', 'logout_redirect_url' => '', 'automatic_login' => '', 'redirect_priority' => 'normal' ), $atts, 'wppb-register' ) );
-	
-    $form = new Profile_Builder_Form_Creator( array( 'form_type' => 'register', 'form_name' => $form_name, 'role' => ( is_object( get_role( $role ) ) ? $role : get_option( 'default_role' ) ) , 'redirect_url' => $redirect_url, 'logout_redirect_url' => $logout_redirect_url, 'automatic_login' => $automatic_login, 'redirect_priority' => $redirect_priority ) );
+
+	$atts = shortcode_atts( array(
+		'role'                => get_option( 'default_role' ),
+		'form_name'           => 'unspecified',
+		'redirect_url'        => '',
+		'logout_redirect_url' => '',
+		'automatic_login'     => '',
+		'redirect_priority'   => 'normal',
+        'ajax'                => false
+	), $atts, 'wppb-register' );
+
+    $form = new Profile_Builder_Form_Creator( array( 'form_type' => 'register', 'form_name' => $atts['form_name'], 'role' => ( is_object( get_role( $atts['role'] ) ) ? $atts['role'] : get_option( 'default_role' ) ) , 'redirect_url' => $atts['redirect_url'], 'logout_redirect_url' => $atts['logout_redirect_url'], 'automatic_login' => $atts['automatic_login'], 'redirect_priority' => $atts['redirect_priority'], 'ajax' => $atts['ajax'] ) );
 
     return $form;
 }

@@ -47,9 +47,9 @@
     margin: 0 5px;
 }
 
-.wppb-user-forms #wppb-loginform .login-username input[type="text"],
-.wppb-user-forms #wppb-loginform .login-password input[type="password"],
-.wppb-user-forms #wppb-loginform .login-auth input[type="text"],
+.wppb-user-forms #wppb-loginform .login-username.pbpl-class input[type="text"],
+.wppb-user-forms #wppb-loginform .login-password.pbpl-class input[type="password"],
+.wppb-user-forms #wppb-loginform .login-auth.pbpl-class input[type="text"],
 .wppb-form-field.pbpl-class input[type="text"],
 .wppb-form-field.pbpl-class input[type="email"],
 .wppb-form-field.pbpl-class input[type="url"],
@@ -61,9 +61,10 @@
 .wppb-form-field.pbpl-class .wppb-checkboxes,
 .wppb-form-field.pbpl-class .wppb-radios,
 .wppb-form-field.wppb-wysiwyg.pbpl-class .wp-editor-wrap,
-#wppb-login-wrap.pbpl-class .login-username input,
-#wppb-login-wrap.pbpl-class .login-password input,
-#wppb-recover-password ul li.wppb-form-field input {
+#wppb-login-wrap .login-username.pbpl-class input,
+#wppb-login-wrap .login-password.pbpl-class input,
+#wppb-recover-password ul li.wppb-form-field input
+{
     width: 100%;
 }
 

@@ -14,7 +14,8 @@ class Register extends AjaxComponent {
       oldProps.role !== newProps.role ||
       oldProps.toggle_automatic_login !== newProps.toggle_automatic_login ||
       oldProps.redirect_url !== newProps.redirect_url ||
-      oldProps.logout_redirect_url !== newProps.logout_redirect_url
+      oldProps.logout_redirect_url !== newProps.logout_redirect_url ||
+      oldProps.toggle_ajax_validation !== newProps.toggle_ajax_validation
     );
   }
 
@@ -27,6 +28,7 @@ class Register extends AjaxComponent {
     formData.append("role", props.role);
     formData.append("redirect_url", props.redirect_url);
     formData.append("logout_redirect_url", props.logout_redirect_url);
+    formData.append("toggle_ajax_validation", props.toggle_ajax_validation);
     formData.append("toggle_automatic_login", props.toggle_automatic_login);
 
     return formData;

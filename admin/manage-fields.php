@@ -1604,7 +1604,7 @@ function wppb_get_user_map_markers( $user_id, $meta_name ) {
 
     $meta_name_underlined = $meta_name . '_';
 
-    $results = $wpdb->get_results( "SELECT meta_value, meta_key FROM {$wpdb->usermeta} WHERE user_id={$user_id} AND meta_key LIKE '%{$meta_name_underlined}%'", ARRAY_N );
+    $results = $wpdb->get_results( $wpdb->prepare( "SELECT meta_value, meta_key FROM {$wpdb->usermeta} WHERE user_id = %d AND meta_key LIKE '%s'", $user_id, '%' . $meta_name_underlined . '%' ), ARRAY_N );
 
 	$markers = array();
 	$i = 0;

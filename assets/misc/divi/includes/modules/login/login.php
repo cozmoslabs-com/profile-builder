@@ -119,6 +119,20 @@ class WPPB_Login extends ET_Builder_Module {
             ),
         );
 
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $fields['toggle_ajax_validation'] = array(
+                'label'              => esc_html__( 'AJAX Validation', 'profile-builder' ),
+                'type'               => 'yes_no_button',
+                'options'            => array(
+                    'on'             => esc_html__( 'Yes', 'profile-builder'),
+                    'off'            => esc_html__( 'No', 'profile-builder'),
+                ),
+                'option_category'    => 'basic_option',
+                'description'        => esc_html__( 'Use AJAX to Validate the Login Form without reloading the page.', 'profile-builder' ),
+                'toggle_slug'        => 'main_content',
+            );
+        }
+
         $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
         if( isset( $wppb_two_factor_authentication_settings['enabled'] ) && $wppb_two_factor_authentication_settings['enabled'] === 'yes' ) {
             $fields ['toggle_auth_field'] = array(
@@ -150,6 +164,7 @@ class WPPB_Login extends ET_Builder_Module {
             'lostpassword_url'    => array_key_exists( 'lostpassword_url', $attrs ) && $attrs['lostpassword_url'] !== '' ? esc_attr( $attrs['lostpassword_url'] ) : '',
             'redirect_url'        => array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? esc_url( $attrs['redirect_url'] ) : '',
             'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? esc_url( $attrs['logout_redirect_url'] ) : '',
+            'ajax'                => array_key_exists( 'toggle_ajax_validation', $attrs ) && $attrs['toggle_ajax_validation'] === 'on'  ? 'true' : false,
             'auth_field'          => array_key_exists( 'toggle_auth_field', $attrs ) && $attrs['toggle_auth_field'] === 'on' ? 'yes' : '',
         ];
 
