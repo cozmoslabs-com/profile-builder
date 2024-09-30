@@ -22,6 +22,8 @@ Elevate your user experience and boost sign-ups with beautiful GDPR-compliant re
 
 [Free Demo](https://pb-demo.cozmoslabs.com/#topmenu) | [Compare Free vs Pro](https://www.cozmoslabs.com/wordpress-profile-builder/) | [Documentation](https://www.cozmoslabs.com/docs/profile-builder/)
 
+https://www.youtube.com/watch?v=dZQaS5bk7zY&start=0&autoplay=1
+
 == Professionally Designed Login and Registration Forms ==
 
 Personalize your website by incorporating front-end user login and user registration forms, providing users with a convenient way of signing up or accessing their profiles. 
@@ -88,6 +90,7 @@ The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/#pricing/
 
 * Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select, Taxonomy Select)
 * Support for Conditional Fields
+* Use AJAX for form processing
 * Front-end User Listing (create fully customizable member directories, sorting included)
 * Create Multiple User Listings
 * [Custom Redirects](https://www.cozmoslabs.com/add-ons/custom-redirects/)
