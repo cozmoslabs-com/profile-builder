@@ -367,7 +367,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
          * without filtering. We'll need this later, so you should always include it
          * in your own package classes.
          */
-        $total_items = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM ".$wpdb->base_prefix."signups WHERE %s", $where ) );
+        $total_items = $wpdb->get_var( "SELECT COUNT(*) FROM ".$wpdb->base_prefix."signups WHERE $where" );
         
         /**
          * REQUIRED. Now we need to define our column headers. This includes a complete

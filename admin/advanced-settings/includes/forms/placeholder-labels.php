@@ -106,11 +106,11 @@ function wppb_pbpl_add_meta_boxes() {
     if( $pbpl_pb_moduleSettings != 'not_found' ) {
 
         if( $pbpl_pb_moduleSettings['wppb_multipleRegistrationForms'] == 'show' ) {
-            add_meta_box( 'pbpl-rf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-rf-cpt', 'normal', 'low' );
+            add_meta_box( 'pbpl-rf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-rf-cpt', 'side', 'low' );
         }
 
         if( $pbpl_pb_moduleSettings['wppb_multipleEditProfileForms'] == 'show' ) {
-            add_meta_box( 'pbpl-epf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-epf-cpt', 'normal', 'low' );
+            add_meta_box( 'pbpl-epf-side', __( 'Placeholder Labels', 'profile-builder' ), 'wppb_pbpl_meta_box_content', 'wppb-epf-cpt', 'side', 'low' );
         }
 
     }

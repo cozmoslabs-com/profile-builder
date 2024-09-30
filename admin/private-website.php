@@ -137,6 +137,13 @@ function wppb_private_website_content() {
                     <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Allow these paths to be accessed even if you are not logged in (supports wildcard at the end of the path). For example to exclude https://example.com/some/path/ you can either use the rule /some/path/ or /some/* Enter each rule on it\'s own line', 'profile-builder' ); ?></p>
                 </div>
 
+                <div class="cozmoslabs-form-field-wrapper">
+                    <label class="cozmoslabs-form-field-label" for="private-website-allowed-query-strings"><?php esc_html_e('Allowed Query Strings', 'profile-builder'); ?></label>
+                    <textarea id="private-website-allowed-query-strings" class="wppb-textarea" name="wppb_private_website_settings[allowed_query_strings]"><?php echo ( ( $wppb_private_website_settings != 'not_found' && !empty( $wppb_private_website_settings['allowed_query_strings'] ) ) ? esc_textarea( $wppb_private_website_settings['allowed_query_strings'] ) : '' ); ?></textarea>
+
+                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Allow paths containing these query strings to be accessible to logged out users. For example, you can add s to exclude a search request: https://example.com/?s=search', 'profile-builder' ); ?></p>
+                </div>
+
                 <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
                     <label class="cozmoslabs-form-field-label" for="private-website-menu-hide"><?php esc_html_e('Hide all Menus', 'profile-builder'); ?></label>
 

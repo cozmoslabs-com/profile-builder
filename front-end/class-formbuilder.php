@@ -686,6 +686,8 @@ class Profile_Builder_Form_Creator{
                 $userdata = wp_unslash( $userdata );
             }
 
+            $userdata['form_name'] = $this->args['form_name'];
+
             wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $this->args['login_after_register'], $userdata );
         }else{
 			if( ! isset( $userdata['role'] ) ) {

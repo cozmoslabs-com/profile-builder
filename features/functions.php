@@ -1520,6 +1520,21 @@ function wppb_private_website_functionality(){
                     }
                 }
 
+                if( isset( $wppb_private_website_settings['allowed_query_strings'] ) && !empty( $wppb_private_website_settings['allowed_query_strings'] ) ){
+	                $allowed_query_strings = explode( "\r\n", $wppb_private_website_settings['allowed_query_strings'] );
+	                $parsed_url_parameters = wp_parse_url( wppb_curpageurl() );
+
+	                if( !empty( $parsed_url_parameters['query'] ) ) {
+		                parse_str( $parsed_url_parameters['query'], $query_params );
+
+		                foreach ( $allowed_query_strings as $allowed_query ) {
+			                if ( array_key_exists( $allowed_query, $query_params ) ) {
+				                return;
+			                }
+		                }
+	                }
+                }
+
 				if( isset( $wppb_private_website_settings['allowed_pages'] ) )
 					$allowed_pages = $wppb_private_website_settings['allowed_pages'];
 				else{

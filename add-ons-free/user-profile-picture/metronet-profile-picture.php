@@ -478,8 +478,13 @@ class User_Profile_Picture {
         $thumb_html .= '</a>';
 
         // Save user meta and update thumbnail.
-        update_user_option( $user_id, 'metronet_image_id', 0 );
-        delete_post_meta( $post_id, '_thumbnail_id' );
+        $metronet_post_id = get_user_option( 'metronet_post_id', $user_id );
+
+        if( !empty( $metronet_post_id ) && absint( $metronet_post_id ) == $post_id ){
+            update_user_option( $user_id, 'metronet_image_id', 0 );
+            delete_post_meta( $post_id, '_thumbnail_id' );
+        }
+
         wp_send_json(
             array(
                 'thumb_html'          => $thumb_html,

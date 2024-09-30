@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.6
-Stable tag: 3.12.3
+Stable tag: 3.12.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -202,8 +202,17 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.4 =
+Feature: Added option to exclude restricted posts from default queries. Go to Settings -> Content Restriction to enable this functionality
+Feature: Added possibility to exclude an URL from the Private Website functionality through a query string
+Fix: Security issue with the remove thumbnail ajax function from the User Profile Picture add-on. Thanks to the Plugin Vulnerabilities team
+Fix: Pagination not working for the Users with unconfirmed email addresses page
+Fix: Issue with Upload Fields not working correctly when used inside a Repeater Field
+Misc: Add current form name to Email Confirmation registrations which are saved for later use
+Misc: Small form settings page changes
+
 = 3.12.3 =
-* Fix: Security issues
+* Fix: Security issues. Thanks to the Plugin Vulnerabilities team
 * Fix: Issue with Gutenberg Content Restriction not retrieving the saved user roles correctly
 * Fix: Conflict with LearnPress plugin when saving the Email Customizer settings page
 * Misc: Display fixes for the Show Password toggle

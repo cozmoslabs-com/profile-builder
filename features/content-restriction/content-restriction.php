@@ -158,6 +158,19 @@ function wppb_content_restriction_content() {
                     <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo esc_html__( 'Show a portion of the restricted post to logged-out users or users that are not allowed to see it.', 'profile-builder' ); ?></p>
                 </div>
 
+                <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                    <label class="cozmoslabs-form-field-label" for="excludeRestrictedPosts"><?php esc_html_e( 'Exclude Restricted Posts from Queries', 'profile-builder' ); ?></label>
+
+                    <div class="cozmoslabs-toggle-container">
+                        <input type="checkbox" name="wppb_content_restriction_settings[excludePosts]" id="excludeRestrictedPosts" value="yes" <?php echo ( isset( $wppb_content_restriction_settings['excludePosts'] ) && $wppb_content_restriction_settings['excludePosts'] == 'yes' ) ? 'checked' : ''; ?> >
+                        <label class="cozmoslabs-toggle-track" for="excludeRestrictedPosts"></label>
+                    </div>
+
+                    <div class="cozmoslabs-toggle-description">
+                        <label for="excludeRestrictedPosts" class="cozmoslabs-description"><?php esc_html_e( 'Activate this option to exclude the restricted posts from default WordPress and WooCommerce queries.', 'profile-builder' ); ?></label>
+                    </div>
+                </div>
+
                 <?php do_action( 'wppb_extra_content_restriction_settings', $wppb_content_restriction_settings ); ?>
 
             </div>

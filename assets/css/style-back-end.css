@@ -2027,43 +2027,6 @@ div.wppb-notice .button-primary {
     display: none;
 }
 
-/* AddNew/Edit Register & Edit Profile Forms */
-.post-type-wppb-epf-cpt #normal-sortables,
-.post-type-wppb-rf-cpt #normal-sortables {
-    display: flex;
-    flex-direction: column;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #wppb-epf-settings-args,
-.post-type-wppb-rf-cpt #normal-sortables #wppb-rf-settings-args {
-    order: 2;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #wppb-epf-fields,
-.post-type-wppb-rf-cpt #normal-sortables #wppb-rf-fields {
-    order: 6;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #wppb-epf-side,
-.post-type-wppb-rf-cpt #normal-sortables #wppb-rf-side {
-    order: 1;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #wppb-sc-epf-side,
-.post-type-wppb-rf-cpt #normal-sortables #wppb-sc-rf-side {
-    order: 4;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #pbpl-epf-side,
-.post-type-wppb-rf-cpt #normal-sortables #pbpl-rf-side {
-    order: 3;
-}
-
-.post-type-wppb-epf-cpt #normal-sortables #wppb-msf-side,
-.post-type-wppb-rf-cpt #normal-sortables #wppb-msf-side {
-    order: 5;
-}
-
 #wppb_rf_page_settings .row-url,
 #wppb_rf_page_settings .row-display-messages,
 .update_container_wppb_rf_page_settings.redirect_ .row-url,
