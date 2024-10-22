@@ -2163,7 +2163,7 @@ div.wppb-notice .button-primary {
 }
 
 #basic-info-recommended-plugins #wppb-recommended-translate-press .cozmoslabs-basic-info-recommended-img a {
-    background: #009ad8;
+    background: #006C9B;
 }
 
 #basic-info-recommended-plugins #wppb-recommended-wp-webhooks .cozmoslabs-basic-info-recommended-img a {
@@ -2182,6 +2182,10 @@ div.wppb-notice .button-primary {
 #basic-info-recommended-plugins .cozmoslabs-basic-info-recommended-info > .button-secondary {
     width: 120px;
     margin-top: 10px;
+}
+
+#basic-info-recommended-plugins #wppb-recommended-translate-press .cozmoslabs-basic-info-recommended-img img {
+    width: 75%;
 }
 
 .cozmoslabs-version-notice {

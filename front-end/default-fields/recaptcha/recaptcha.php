@@ -56,12 +56,16 @@ function wppb_recaptcha_get_html ( $pubkey, $form_name='' ){
 
     // extra class needed for Invisible reCAPTCHA html
     $invisible_class = '';
+    $v3_field_html = '';
     if ( isset($field['recaptcha-type']) && ($field['recaptcha-type'] == 'invisible') ) {
         $invisible_class = 'wppb-invisible-recaptcha';
+    } elseif ( isset($field['recaptcha-type']) && ($field['recaptcha-type'] == 'v3') ) {
+        $invisible_class = 'wppb-v3-recaptcha';
+        $v3_field_html = '<input type="hidden" name="g-recaptcha-response" class="g-recaptcha-response wppb-v3-recaptcha">';
     }
 
     // reCAPTCHA html for all forms and we make sure we have a unique id for v2
-    return '<div id="wppb-recaptcha-element-'.$form_name.$wppb_recaptcha_forms.'" class="wppb-recaptcha-element '.$invisible_class.'"></div>';
+    return '<div id="wppb-recaptcha-element-'.$form_name.$wppb_recaptcha_forms.'" class="wppb-recaptcha-element '.$invisible_class.'">'.$v3_field_html.'</div>';
 }
 
 
@@ -104,36 +108,100 @@ function wppb_recaptcha_script_footer(){
 
     /*for invisible recaptcha we have extra parameters and the selector is different. v2 is initialized on the id of the div
     that must be unique and invisible is on the submit button of the forms that have the div */
-    if( $field['recaptcha-type'] === 'invisible' ) {
-        $callback_conditions = 'jQuery("input[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest("form") )';
+    if ( $field['recaptcha-type'] === 'invisible' ) {
+        $callback_conditions  = 'jQuery("input[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest("form") )';
         $invisible_parameters = '"callback" : wppbInvisibleRecaptchaOnSubmit,"size": "invisible"';
-    }else {
-        $callback_conditions = 'jQuery(".wppb-recaptcha-element")';
+    } elseif ( $field['recaptcha-type'] === 'v3' ) {
+        $callback_conditions  = 'jQuery( jQuery( ".wppb-recaptcha-element" ).closest("form") )';
+        $invisible_parameters = '';
+    } else {
+        $callback_conditions  = 'jQuery(".wppb-recaptcha-element")';
         $invisible_parameters = '';
     }
-    //the section below is properly escaped or the variables contain static strings
-    // phpcs:disable
-    echo '
-    <script>
-        var wppbRecaptchaCallback = function() {
-            if( typeof window.wppbRecaptchaCallbackExecuted == "undefined" ){//see if we executed this before
-                '.$callback_conditions.'.each(function(){
-                    recID = grecaptcha.render( jQuery(this).attr("id"), {
-                        "sitekey" : "' . $pubkey . '",
-                        "error-callback": wppbRecaptchaInitializationError,
-                        '.$invisible_parameters.'
-                     });
-                });
-                window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
-            }
-        };
 
-        /* the callback function for when the captcha does not load propperly, maybe network problem or wrong keys  */
-        function wppbRecaptchaInitializationError(){
-            window.wppbRecaptchaInitError = true;
+    if( $field['recaptcha-type'] === 'v3' ) {
+
+        //the section below is properly escaped or the variables contain static strings
+        // phpcs:disable
+        echo '
+        <script>
+            var wppbRecaptchaCallback = function() {
+                if( typeof window.wppbRecaptchaCallbackExecuted == "undefined" ){//see if we executed this before
+
+                    '.$callback_conditions.'.each(function() {
+                    
+                        let currentForm = this;
+                        
+                        this.addEventListener("submit", function (event){
+                            event.preventDefault();
+                            grecaptcha.ready(function() {
+                                grecaptcha.execute("' . $pubkey . '", {action: "submit"}).then(function(token) {
+                                
+                                    let recaptchaResponse = jQuery(currentForm).find(".wppb-v3-recaptcha.g-recaptcha-response");
+                                    jQuery(recaptchaResponse).val(token); // Set the recaptcha response
+                                    
+                                    if( token === false ){
+                                        return wppbRecaptchaInitializationError();
+                                    }
+                                    
+                                    var submitForm = true
+                            
+                                    /* dont submit form if PMS gateway is Stripe */
+                                    if( jQuery(".pms_pay_gate[type=radio]").length > 0 ){
+                                        jQuery(".pms_pay_gate").each( function(){
+                                            if( jQuery(this).is(":checked") && !jQuery(this).is(":disabled") && ( jQuery(this).val() == "stripe_connect" || jQuery(this).val() == "stripe_intents" || jQuery(this).val() == "stripe" ) )
+                                                submitForm = false
+                                        })
+                                    } else if( jQuery(".pms_pay_gate[type=hidden]").length > 0 ) {
+                            
+                                        if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" ) )
+                                            submitForm = false
+                                    }
+                            
+                                    if( submitForm ){
+                                        var form = recaptchaResponse.closest("form");
+                                        form.submit();
+                                    } else {
+                                        jQuery(document).trigger( "wppb_v3_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", recaptchaResponse.closest("form") ) )
+                                    }
+                                });
+                            });
+                        });
+                    });
+                    window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
+                }
+            };
+    
+            /* the callback function for when the captcha does not load propperly, maybe network problem or wrong keys  */
+            function wppbRecaptchaInitializationError(){
+                window.wppbRecaptchaInitError = true;
         ';
 
-    if( $field['recaptcha-type'] === 'invisible' ) {
+    } else {
+        //the section below is properly escaped or the variables contain static strings
+        // phpcs:disable
+        echo '
+        <script>
+            var wppbRecaptchaCallback = function() {
+                if( typeof window.wppbRecaptchaCallbackExecuted == "undefined" ){//see if we executed this before
+                    ' . $callback_conditions . '.each(function(){
+                        recID = grecaptcha.render( jQuery(this).attr("id"), {
+                            "sitekey" : "' . $pubkey . '",
+                            "error-callback": wppbRecaptchaInitializationError,
+                            ' . $invisible_parameters . '
+                         });
+                    });
+                    window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
+                }
+            };
+    
+            /* the callback function for when the captcha does not load propperly, maybe network problem or wrong keys  */
+            function wppbRecaptchaInitializationError(){
+                window.wppbRecaptchaInitError = true;
+            ';
+    }
+
+    if ( $field['recaptcha-type'] === 'invisible' ) {
         echo '
             /* make sure that if the invisible recaptcha did not load properly ( network error or wrong keys ) we can still submit the form */
             jQuery("input[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest("form") ).on("click", function(e){
@@ -144,7 +212,7 @@ function wppb_recaptcha_script_footer(){
 
     echo '
             //add a captcha field so we do not just let the form submit if we do not have a captcha response
-            jQuery( ".wppb-recaptcha-element" ).after(\''. wp_nonce_field( 'wppb_recaptcha_init_error', 'wppb_recaptcha_load_error', false, false ) .'\');
+            jQuery( ".wppb-recaptcha-element" ).after(\'' . wp_nonce_field( 'wppb_recaptcha_init_error', 'wppb_recaptcha_load_error', false, false ) . '\');
         }
 
         /* compatibility with other plugins that may include recaptcha with an onload callback. if their script loads first then our callback will not execute so call it explicitly  */
@@ -153,7 +221,7 @@ function wppb_recaptcha_script_footer(){
         });
     </script>';
     // phpcs:enable
-    if( $field['recaptcha-type'] === 'invisible' ) {
+    if ( $field['recaptcha-type'] === 'invisible' ) {
         echo '<script>
             /* success callback for invisible recaptcha. it submits the form that contains the right token response */
             function wppbInvisibleRecaptchaOnSubmit(token){
@@ -196,12 +264,36 @@ function wppb_recaptcha_script_footer(){
 
     $source = apply_filters( 'wppb_recaptcha_custom_field_source', 'www.google.com' );
 
-    echo '<script src="https://'. esc_attr( $source ) .'/recaptcha/api.js?onload=wppbRecaptchaCallback&render=explicit'.esc_attr( $lang ).'" async defer></script>';
+    if( $field['recaptcha-type'] === 'v3' ) {
+        echo '<script src="https://'. esc_attr( $source ) .'/recaptcha/api.js?render='.esc_attr( $pubkey ).'" async defer></script>';
+    } else  {
+        echo '<script src="https://'. esc_attr( $source ) .'/recaptcha/api.js?onload=wppbRecaptchaCallback&render=explicit'.esc_attr( $lang ).'" async defer></script>';
+    }
+
 }
 add_action('wp_footer', 'wppb_recaptcha_script_footer', 9999);
 add_action('login_footer', 'wppb_recaptcha_script_footer');
 add_action('register_form', 'wppb_recaptcha_script_footer');
 add_action('lost_password', 'wppb_recaptcha_script_footer');
+
+
+/**
+ * Print style
+ *
+ */
+function print_style() {
+    echo '<style type="text/css"> 
+         /* Hide reCAPTCHA V3 badge */
+        .grecaptcha-badge {
+        
+            visibility: hidden !important;
+        
+        }
+    </style>';
+}
+
+add_action( 'wp_footer', 'print_style' );
+add_action( 'login_footer', 'print_style' );
 
 
 /**
@@ -513,7 +605,7 @@ add_action( 'login_form', 'wppb_display_recaptcha_wp_login_form' );
 //Show reCAPTCHA error on Login form (both default and PB one)
 function wppb_recaptcha_login_wp_error_message($user){
     //make sure you're on a Login form (WP or PB)
-    if ( isset( $_POST['wp-submit'] ) && !is_wp_error($user) && !isset( $_POST['pms_login'] ) ) {
+    if ( isset( $_POST['log'] ) && !is_wp_error($user) && !isset( $_POST['pms_login'] ) ) {
 
         $field = wppb_get_recaptcha_field();
         if ( !empty($field) ){
@@ -660,4 +752,10 @@ function wppb_recaptcha_set_default_values() {
         }
         update_option('wppb_manage_fields', $manage_fields);
     }
+}
+
+if ( function_exists('is_plugin_active') && is_plugin_active( 'paid-member-subscriptions/index.php' ) && version_compare( PMS_VERSION, '2.12.9', '<' ) ){
+    new WPPB_Add_General_Notices('wppb_pms_recaptcha_version_compatibility_alert',
+        __('reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. Please update Paid Member Subscriptions to a newer version to avoid any issues.', 'profile-builder'),
+        'wppb-notice notice notice-warning');
 }

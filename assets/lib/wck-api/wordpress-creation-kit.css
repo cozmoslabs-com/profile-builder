@@ -106,6 +106,13 @@ body.post-type-wppb-ul-cpt #poststuff {
     body.post-type-wppb-ul-cpt #poststuff {
         max-width: 1200px;
     }
+
+    body.post-type-wppb-epf-cpt #wpbody-content > .wrap,
+    body.post-type-wppb-rf-cpt #wpbody-content > .wrap,
+    body.post-type-wppb-ul-cpt #wpbody-content > .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -113,6 +120,13 @@ body.post-type-wppb-ul-cpt #poststuff {
     body.post-type-wppb-rf-cpt #poststuff,
     body.post-type-wppb-ul-cpt #poststuff {
         max-width: 1500px;
+    }
+
+    body.post-type-wppb-epf-cpt #wpbody-content > .wrap,
+    body.post-type-wppb-rf-cpt #wpbody-content > .wrap,
+    body.post-type-wppb-ul-cpt #wpbody-content > .wrap {
+        max-width: 1500px;
+        margin: 0 auto;
     }
 }
 

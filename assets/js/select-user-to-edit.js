@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-    if (jQuery('#select_user_to_edit_form').length > 0)
+    if ( jQuery('#select_user_to_edit_form').length > 0 )
         wppb_select_user_to_edit_initialize();
 
 })

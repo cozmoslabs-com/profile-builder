@@ -4,6 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function wppb_toolbox_check_email_domain( $message, $field, $request_data, $form_location ) {
 
+    if( empty( $request_data['email'] ) )
+        return $message;
+
     $type = wppb_toolbox_get_settings( 'forms', 'restricted-email-domains-type' );
 
     if ( $type == false ) return $message;

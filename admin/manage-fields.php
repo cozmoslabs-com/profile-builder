@@ -266,7 +266,7 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profile-builder' ), 'description' => __( 'Enter a detailed description of the terms of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'options', 'title' => __( 'Options', 'profile-builder' ), 'description' => __( "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes", 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'labels', 'title' => __( 'Labels', 'profile-builder' ), 'description' => __( "Enter a comma separated list of labels<br/>Visible for the user", 'profile-builder' ) ),
-        array( 'type' => 'select', 'slug' => 'recaptcha-type', 'title' => __( 'reCAPTCHA Type', 'profile-builder' ), 'options' => array('%reCAPTCHA V2%v2', '%Invisible reCAPTCHA%invisible'), 'default' => 'v2', 'description' => __( 'Choose the <a href="https://developers.google.com/recaptcha/docs/versions" target="_blank">type of reCAPTCHA</a> you wish to add to this site.<br/>Please note that the Invisible reCAPTCHA is a type of reCAPTCHA v2.', 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'recaptcha-type', 'title' => __( 'reCAPTCHA Type', 'profile-builder' ), 'options' => array('%reCAPTCHA V2 Checkbox%v2', '%reCAPTCHA V2 Invisible%invisible', '%reCAPTCHA V3%v3'), 'default' => 'v2', 'description' => __( 'Choose the <a href="https://developers.google.com/recaptcha/docs/versions" target="_blank">type of reCAPTCHA</a> you wish to add to this site.<br/>Please note that the Invisible reCAPTCHA is a type of reCAPTCHA v2.', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Site Key', 'profile-builder' ), 'description' => __( 'The site key from Google, <a href="https://www.google.com/recaptcha/admin/create" target="_blank">https://www.google.com/recaptcha/admin/create</a>', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Secret Key', 'profile-builder' ), 'description' => __( 'The secret key from Google, <a href="https://www.google.com/recaptcha/admin/create" target="_blank">https://www.google.com/recaptcha/admin/create</a>', 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'captcha-pb-forms', 'title' => __( 'Display on PB forms', 'profile-builder' ), 'options' => array( '%'.__('PB Login','profile-builder').'%'.'pb_login', '%'.__('PB Register','profile-builder').'%'.'pb_register', '%'.__('PB Recover Password','profile-builder').'%'.'pb_recover_password' ), 'default' => 'pb_register', 'description' => __( "Select on which Profile Builder forms to display reCAPTCHA", 'profile-builder' ) ),
@@ -377,17 +377,23 @@ function wppb_populate_manage_fields(){
 	/* this is redundant but it should have a very low impact and for comfort we leave it here as well  */
     wppb_prepopulate_fields();
 
-    // create the info side meta-box
-    $args = array(
-        'metabox_id' 	=> 'manage-fields-info',
-        'metabox_title' => __( 'Form Shortcodes', 'profile-builder' ),
-        'post_type' 	=> 'manage-fields',
-        'meta_name' 	=> 'wppb_manage_fields_info',
-        'meta_array' 	=> '',
-        'context'		=> 'option',
-        'mb_context'    => 'side'
-    );
-    new Wordpress_Creation_Kit_PB( $args );
+
+    // skip this meta-box for the Repeater Field -> Edit Field Group view
+    if ( !isset( $_GET['wppb_rpf_repeater_meta_name'] ) ) {
+
+        // create the info side meta-box
+        $args = array(
+            'metabox_id' 	=> 'manage-fields-info',
+            'metabox_title' => __( 'Form Shortcodes', 'profile-builder' ),
+            'post_type' 	=> 'manage-fields',
+            'meta_name' 	=> 'wppb_manage_fields_info',
+            'meta_array' 	=> '',
+            'context'		=> 'option',
+            'mb_context'    => 'side'
+        );
+        new Wordpress_Creation_Kit_PB( $args );
+
+    }
 }
 add_action( 'admin_init', 'wppb_populate_manage_fields', 1 );
 
