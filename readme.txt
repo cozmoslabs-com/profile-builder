@@ -202,6 +202,13 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.6 =
+* Fix: Security issue regarding the refresh function of the Divi admin builder interface module
+* Fix: A notice that could appear in some cases
+* Fix: Divi Userlisting module issue where the selected meta_key wasn't being displayed correctly in the front-end
+* Misc: Improve search functionality for the Labels Edit strings selector
+* Misc: Added a JS filter over the Select2 field arguments: wppb_select2_initialize_arguments
+
 = 3.12.5 =
 * Feature: Added support for reCaptcha v3
 * Misc: Remove some unnecessary calls when looking to enqueue the Select Users to Edit dropdown
