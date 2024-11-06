@@ -3,16 +3,16 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.12.5
+ * Version: 3.12.6
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * WC requires at least: 3.0.0
- * WC tested up to: 9.4
- * Elementor tested up to: 3.24.7
- * Elementor Pro tested up to: 3.24.7
+ * WC tested up to: 9.3
+ * Elementor tested up to: 3.25.4
+ * Elementor Pro tested up to: 3.25.4
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -130,6 +130,10 @@ function wppb_plugin_init() {
         if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/form-designs.php' ) ) {
             include_once(WPPB_PAID_PLUGIN_DIR . '/features/form-designs/form-designs.php');
         }
+
+	    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/color-switcher.php' ) ) {
+		    include_once( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/color-switcher.php' );
+	    }
 
         if ( wppb_conditional_fields_exists() ) {
             include_once(WPPB_PAID_PLUGIN_DIR . '/features/conditional-fields/conditional-fields.php');
@@ -424,7 +428,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.12.5' );
+define('PROFILE_BUILDER_VERSION', '3.12.6' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

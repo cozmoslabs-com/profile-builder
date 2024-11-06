@@ -2,13 +2,160 @@
 
 <?php
     $settings = get_option( 'wppb_toolbox_forms_settings' );
+
+    $active_design = wppb_get_active_form_design();
+
+    $wppb_notifications_background_color_success_default = '#DCEDC8';
+    $wppb_notifications_background_color_error_default = '#FFCDD2';
+    $wppb_notifications_background_color_warning_default = '#FFF9C4';
+    $wppb_notifications_background_color_note_default = '#D6F5FF';
+    $wppb_notifications_background_color_default = '#F9F9F9';
+
+    if( $active_design === 'form-style-1') {
+	    $wppb_primary_color_default = '#1079F3';
+	    $wppb_secondary_color_default = '#2D8BF9';
+	    $wppb_button_text_color_default = '#FFFFFF';
+	    $wppb_label_size_default = '16';
+	    $wppb_label_color_default = '#6E7A86';
+	    $wppb_notifications_text_color_default = '#090A0B';
+	    $wppb_notifications_border_color_success_default = '#689F38';
+	    $wppb_notifications_border_color_error_default = '#C62828';
+	    $wppb_notifications_border_color_warning_default = '#F9A825';
+	    $wppb_notifications_border_color_note_default = '#00A0D2';
+    }
+    elseif( $active_design === 'form-style-2') {
+	    $wppb_primary_color_default = '#558B2F';
+	    $wppb_secondary_color_default = '#4A8124';
+	    $wppb_button_text_color_default = '#FFFFFF';
+	    $wppb_label_size_default = '16';
+	    $wppb_label_color_default = '#6E7A86';
+	    $wppb_notifications_text_color_default = '#6E7A86';
+	    $wppb_notifications_border_color_success_default = '#558B2F';
+	    $wppb_notifications_border_color_error_default = '#C62828';
+	    $wppb_notifications_border_color_warning_default = '#F9A825';
+	    $wppb_notifications_border_color_note_default = '#00A0D2';
+    }
+    elseif( $active_design === 'form-style-3') {
+	    $wppb_primary_color_default = '#554FE6';
+	    $wppb_secondary_color_default = '#443ECF';
+	    $wppb_button_text_color_default = '#FFFFFF';
+	    $wppb_label_size_default = '16';
+	    $wppb_label_color_default = '#6E7A86';
+	    $wppb_notifications_text_color_default = '#6E7A86';
+	    $wppb_notifications_border_color_success_default = '#689F38';
+	    $wppb_notifications_border_color_error_default = '#C62828';
+	    $wppb_notifications_border_color_warning_default = '#F9A825';
+	    $wppb_notifications_border_color_note_default = '#00A0D2';
+    }
+    else {
+	    $wppb_primary_color_default = '';
+	    $wppb_secondary_color_default = '';
+	    $wppb_button_text_color_default = '';
+	    $wppb_label_size_default = '';
+	    $wppb_label_color_default = '';
+	    $wppb_notifications_text_color_default = '';
+	    $wppb_notifications_border_color_success_default = '';
+	    $wppb_notifications_border_color_error_default = '';
+	    $wppb_notifications_border_color_warning_default = '';
+	    $wppb_notifications_border_color_note_default = '';
+    }
+
+
 ?>
 
 <form method="post" action="options.php">
 
     <?php settings_fields( 'wppb_toolbox_forms_settings' ); ?>
+<!--	--><?php //$wppb_toolbox_forms_settings = get_option( 'wppb_toolbox_forms_settings' ); ?>
+<!--	<pre>--><?php // var_dump($wppb_toolbox_forms_settings); ?><!--</pre>-->
 
     <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-no-title-section">
+        <?php if( $active_design !== 'form-style-default' ): ?>
+            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch color-switcher" data-active-design="<?php echo esc_attr( $active_design ); ?>">
+                <label class="cozmoslabs-form-field-label" for="wppb-color-switcher"><?php esc_html_e('Color Switcher', 'profile-builder'); ?></label>
+
+                <div class="cozmoslabs-toggle-container">
+                    <input type="checkbox" id="wppb-color-switcher" name="wppb_toolbox_forms_settings[color-switcher]"<?php echo ( ( isset( $settings['color-switcher'] ) &&  $settings['color-switcher'] == 'yes' && $active_design !== 'form-style-default' ) ? ' checked' : '' ); ?> value="yes">
+                    <label class="cozmoslabs-toggle-track" for="wppb-color-switcher"></label>
+                </div>
+
+                <div class="cozmoslabs-toggle-description">
+                    <label for="wppb-color-switcher" class="cozmoslabs-description"><?php esc_html_e( 'Enable this option to change the colors of the forms.', 'profile-builder' ); ?></label>
+                </div>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Primary Color', 'profile-builder' ); ?></label>
+                <input type="color" id ="wppb-primary-color" name="wppb_toolbox_forms_settings[primary-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['primary-color'] ) &&  !empty( $settings['primary-color'] ) ) ? esc_attr( $settings['primary-color'] ) : esc_attr( $wppb_primary_color_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Secondary Color', 'profile-builder' ); ?></label>
+                <input type="color" id ="wppb-secondary-color" name="wppb_toolbox_forms_settings[secondary-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['secondary-color'] ) &&  !empty( $settings['secondary-color'] ) ) ? esc_attr( $settings['secondary-color'] ) : esc_attr( $wppb_secondary_color_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Button Text Color', 'profile-builder' ); ?></label>
+                <input type="color" id ="wppb-button-text-color" name="wppb_toolbox_forms_settings[button-text-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['button-text-color'] ) &&  !empty( $settings['button-text-color'] ) ) ? esc_attr( $settings['button-text-color'] ) : esc_attr( $wppb_button_text_color_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Label Size', 'profile-builder' ); ?></label>
+                <input type="text" id ="wppb-label-size" name="wppb_toolbox_forms_settings[label-size]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['label-size'] ) &&  !empty( $settings['label-size'] ) ) ? esc_attr( $settings['label-size'] ) : esc_attr( $wppb_label_size_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Label Color', 'profile-builder' ); ?></label>
+                <input type="color" id ="wppb-label-color" name="wppb_toolbox_forms_settings[label-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['label-color'] ) &&  !empty( $settings['label-color'] ) ) ? esc_attr( $settings['label-color'] ) : esc_attr( $wppb_label_color_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Notification Text Color', 'profile-builder' ); ?></label>
+                <input type="color" id ="wppb-notifications-text-color" name="wppb_toolbox_forms_settings[notifications-text-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-text-color'] ) &&  !empty( $settings['notifications-text-color'] ) ) ? esc_attr( $settings['notifications-text-color'] ) : esc_attr( $wppb_notifications_text_color_default ) ); ?>"/>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section" id="wppb-notifications-background-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Notification Background Color', 'profile-builder' ); ?></label><br>
+                <input type="color" id ="wppb-notifications-background-color" name="wppb_toolbox_forms_settings[notifications-background-color]" class="custom_field_colorpicker wppb-other-style-fields" value="<?php echo ( ( isset( $settings['notifications-background-color'] ) &&  !empty( $settings['notifications-background-color'] ) ) ? esc_attr( $settings['notifications-background-color'] ) : esc_attr( $wppb_notifications_background_color_default ) ); ?>"/>
+                <div class="cozmoslabs-form-field-wrapper wppb-form-style-1-fields">
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Success', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-notifications-background-color-success" name="wppb_toolbox_forms_settings[notifications-background-color-success]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-background-color-success'] ) &&  !empty( $settings['notifications-background-color-success'] ) ) ? esc_attr( $settings['notifications-background-color-success'] ) : esc_attr( $wppb_notifications_background_color_success_default ) ); ?>"/>
+
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Error', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-notifications-background-color-error" name="wppb_toolbox_forms_settings[notifications-background-color-error]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-background-color-error'] ) &&  !empty( $settings['notifications-background-color-error'] ) ) ? esc_attr( $settings['notifications-background-color-error'] ) : esc_attr( $wppb_notifications_background_color_error_default ) ); ?>"/>
+
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Warning', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-notifications-background-color-warning" name="wppb_toolbox_forms_settings[notifications-background-color-warning]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-background-color-warning'] ) &&  !empty( $settings['notifications-background-color-warning'] ) ) ? esc_attr( $settings['notifications-background-color-warning'] ) : esc_attr( $wppb_notifications_background_color_warning_default ) ); ?>"/>
+
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Note', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-notifications-background-color-note" name="wppb_toolbox_forms_settings[notifications-background-color-note]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-background-color-note'] ) &&  !empty( $settings['notifications-background-color-note'] ) ) ? esc_attr( $settings['notifications-background-color-note'] ) : esc_attr( $wppb_notifications_background_color_note_default ) ); ?>"/>
+                </div>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section" id="wppb-notifications-border-section">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Notification Border Color', 'profile-builder' ); ?></label><br>
+                <div class="cozmoslabs-form-field-wrapper">
+                    <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Success', 'profile-builder' ); ?></label>
+                    <input type="color" id ="wppb-notifications-border-color-success" name="wppb_toolbox_forms_settings[notifications-border-color-success]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-border-color-success'] ) &&  !empty( $settings['notifications-border-color-success'] ) ) ? esc_attr( $settings['notifications-border-color-success'] ) : esc_attr( $wppb_notifications_border_color_success_default ) ); ?>"/>
+
+                    <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Error', 'profile-builder' ); ?></label>
+                    <input type="color" id ="wppb-notifications-border-color-error" name="wppb_toolbox_forms_settings[notifications-border-color-error]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-border-color-error'] ) &&  !empty( $settings['notifications-border-color-error'] ) ) ? esc_attr( $settings['notifications-border-color-error'] ) : esc_attr( $wppb_notifications_border_color_error_default ) ); ?>"/>
+
+                    <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Warning', 'profile-builder' ); ?></label>
+                    <input type="color" id ="wppb-notifications-border-color-warning" name="wppb_toolbox_forms_settings[notifications-border-color-warning]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-border-color-warning'] ) &&  !empty( $settings['notifications-border-color-warning'] ) ) ? esc_attr( $settings['notifications-border-color-warning'] ) : esc_attr( $wppb_notifications_border_color_warning_default ) ); ?>"/>
+
+                    <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Note', 'profile-builder' ); ?></label>
+                    <input type="color" id ="wppb-notifications-border-color-note" name="wppb_toolbox_forms_settings[notifications-border-color-note]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-border-color-note'] ) &&  !empty( $settings['notifications-border-color-note'] ) ) ? esc_attr( $settings['notifications-border-color-note'] ) : esc_attr( $wppb_notifications_border_color_note_default ) ); ?>"/>
+                </div>
+            </div>
+
+            <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section">
+                <button type="button" class="button reset button-secondary" id="reset-">
+	                <?php esc_html_e( 'Reset Data', 'profile-builder' ); ?>
+                </button>
+            </div>
+        <?php endif; ?>
+
         <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
             <input type="hidden" name="wppb_toolbox_forms_settings[placeholder-labels]" value="">
 
@@ -345,3 +492,40 @@
     </div>
 
 </form>
+
+<?php if( $active_design !== 'form-style-default' ): ?>
+    <div id="modal-reset" class="wppb-ul-color-switcher-reset-modal" title="Reset Colors">
+        <form method="post" id="reset-content-data-colors">
+            <input type="hidden" value="color_switcher_reset_data" name="action">
+            <div class="wppb-reset-modal-content">
+                <p class="wppb-options-message"><?php esc_html_e('Select which settings you want to reset:', 'profile-builder'); ?></p>
+                <div class="wppb-reset-options">
+                    <div class="wppb-options-wrapper cozmoslabs-checkbox-list" id="color-options">
+                        <label for="wppb-settings-primary-color"><input type="checkbox" name="reset_primary_color" id="wppb-settings-primary-color" value="<?php echo esc_attr( $wppb_primary_color_default ) ?>"><?php esc_html_e('Primary Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-secondary-color"><input type="checkbox" name="reset_secondary_color" id="wppb-settings-secondary-color" value="<?php echo esc_attr( $wppb_secondary_color_default ) ?>"><?php esc_html_e('Secondary Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-button-text-color"><input type="checkbox" name="reset_button_text_color" id="wppb-settings-button-text-color" value="<?php echo esc_attr( $wppb_button_text_color_default ) ?>"><?php esc_html_e('Button Text Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-label-size"><input type="checkbox" name="reset_label_size" id="wppb-settings-label-size" value="<?php echo esc_attr( $wppb_label_size_default ) ?>"><?php esc_html_e('Label Size', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-label-color"><input type="checkbox" name="reset_label_color" id="wppb-settings-label-color" value="<?php echo esc_attr( $wppb_label_color_default ) ?>"><?php esc_html_e('Label Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-notifications-text-color"><input type="checkbox" name="reset_notifications_text_color" id="wppb-settings-notifications-text-color" value="<?php echo esc_attr( $wppb_notifications_text_color_default ) ?>"><?php esc_html_e('Notification Text Color', 'profile-builder'); ?></label>
+                        <label class="wppb-form-style-1-fields" for="wppb-settings-notifications-background-color-success"><input type="checkbox" name="reset_notifications_background_color_success" id="wppb-settings-notifications-background-color-success" value="<?php echo esc_attr( $wppb_notifications_background_color_success_default ) ?>"><?php esc_html_e('Notification Background Color - Success', 'profile-builder'); ?></label>
+                        <label class="wppb-form-style-1-fields" for="wppb-settings-notifications-background-color-error"><input type="checkbox" name="reset_notifications_background_color_error" id="wppb-settings-notifications-background-color-error" value="<?php echo esc_attr( $wppb_notifications_background_color_error_default ) ?>"><?php esc_html_e('Notification Background Color - Error', 'profile-builder'); ?></label>
+                        <label class="wppb-form-style-1-fields" for="wppb-settings-notifications-background-color-warning"><input type="checkbox" name="reset_notifications_background_color_warning" id="wppb-settings-notifications-background-color-warning" value="<?php echo esc_attr( $wppb_notifications_background_color_warning_default ) ?>"><?php esc_html_e('Notification Background Color - Warning', 'profile-builder'); ?></label>
+                        <label class="wppb-form-style-1-fields" for="wppb-settings-notifications-background-color-note"><input type="checkbox" name="reset_notifications_background_color_note" id="wppb-settings-notifications-background-color-note" value="<?php echo esc_attr( $wppb_notifications_background_color_note_default ) ?>"><?php esc_html_e('Notification Background Color - Note', 'profile-builder'); ?></label>
+                        <label class="wppb-other-style-fields" for="wppb-settings-notifications-background-color"><input type="checkbox" name="reset_notifications_background_color" id="wppb-settings-notifications-background-color" value="<?php echo esc_attr( $wppb_notifications_background_color_default ) ?>"><?php esc_html_e('Notification Background Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-notifications-border-color-success"><input type="checkbox" name="reset_notifications_border_color_success" id="wppb-settings-notifications-border-color-success" value="<?php echo esc_attr( $wppb_notifications_border_color_success_default ) ?>"><?php esc_html_e('Notification Border Color - Success', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-notifications-border-color-error"><input type="checkbox" name="reset_notifications_border_color_error" id="wppb-settings-notifications-border-color-error" value="<?php echo esc_attr( $wppb_notifications_border_color_error_default ) ?>"><?php esc_html_e('Notification Border Color - Error', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-notifications-border-color-warning"><input type="checkbox" name="reset_notifications_border_color_warning" id="wppb-settings-notifications-border-color-warning" value="<?php echo esc_attr( $wppb_notifications_border_color_warning_default ) ?>"><?php esc_html_e('Notification Border Color - Warning', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-notifications-border-color-note"><input type="checkbox" name="reset_notifications_border_color_note" id="wppb-settings-notifications-border-color-note" value="<?php echo esc_attr( $wppb_notifications_border_color_note_default ) ?>"><?php esc_html_e('Notification Border Color - Note', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-all-colors"><input type="checkbox" name="reset_all_colors" id="wppb-settings-all-colors" value="all"><?php esc_html_e('Reset All Color Settings', 'profile-builder'); ?></label>
+                    </div>
+                </div>
+                <div class="wppb-reset-buttons">
+                    <button type="button" class="button cancel-reset" value="modal-reset" ><?php esc_html_e('Cancel', 'profile-builder'); ?></button>
+                    <button type="submit" class="button button-primary confirm-reset">
+                        <?php esc_html_e('Confirm', 'profile-builder') ?>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+<?php endif; ?>

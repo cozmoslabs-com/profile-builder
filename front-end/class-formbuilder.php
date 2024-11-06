@@ -107,10 +107,10 @@ class Profile_Builder_Form_Creator{
 
 	function wppb_retrieve_custom_settings(){
 		$this->args['login_after_register'] = apply_filters( 'wppb_automatically_login_after_register', 'No' );
-		$this->args['redirect_activated'] = apply_filters( 'wppb_redirect_default_setting', '-' );
-		$this->args['redirect_url'] = apply_filters( 'wppb_redirect_default_location', ( $this->args['redirect_url'] != '' ) ? $this->args['redirect_url'] : '' );
-		$this->args['logout_redirect_url'] = apply_filters( 'wppb_logout_redirect_default_location', ( $this->args['logout_redirect_url'] != '' ) ? $this->args['logout_redirect_url'] : '' );
-		$this->args['redirect_delay'] = apply_filters( 'wppb_redirect_default_duration', 3 );
+		$this->args['redirect_activated']   = apply_filters( 'wppb_redirect_default_setting', '-' );
+		$this->args['redirect_url']         = apply_filters( 'wppb_redirect_default_location', ( $this->args['redirect_url'] != '' ) ? $this->args['redirect_url'] : '' );
+		$this->args['logout_redirect_url']  = apply_filters( 'wppb_logout_redirect_default_location', ( $this->args['logout_redirect_url'] != '' ) ? $this->args['logout_redirect_url'] : '' );
+		$this->args['redirect_delay']       = apply_filters( 'wppb_redirect_default_duration', 3 );
 
         $wppb_general_settings = get_option( 'wppb_general_settings' );
         $this->args['login_after_register'] = ( isset( $wppb_general_settings['automaticallyLogIn'] ) ? $wppb_general_settings['automaticallyLogIn'] : $this->args['login_after_register'] );
@@ -128,12 +128,14 @@ class Profile_Builder_Form_Creator{
                     $selected_role = $page_settings[0]['set-role'];
             }
 
-            $this->args['role'] = ( isset( $selected_role ) ? $selected_role : $this->args['role'] );
+            $this->args['role']                 = ( isset( $selected_role ) ? $selected_role : $this->args['role'] );
             $this->args['login_after_register'] = ( isset( $page_settings[0]['automatically-log-in'] ) ? $page_settings[0]['automatically-log-in'] : $this->args['login_after_register'] );
-            $this->args['redirect_activated'] = ( isset( $page_settings[0]['redirect'] ) ? $page_settings[0]['redirect'] : $this->args['redirect_activated'] );
-            $this->args['redirect_url'] = ( ! empty( $page_settings[0]['url'] ) && $this->args['redirect_activated'] == 'Yes' && $this->args['redirect_priority'] != 'top' ? $page_settings[0]['url'] : $this->args['redirect_url'] );
-            $this->args['redirect_delay'] = ( isset( $page_settings[0]['display-messages'] ) && $this->args['redirect_activated'] == 'Yes' ? $page_settings[0]['display-messages'] : $this->args['redirect_delay'] );
-            $this->args['ajax'] = ( ( isset( $page_settings[0]['ajax'] ) && !empty( $page_settings[0]['ajax'] ) ) ? $page_settings[0]['ajax'] : $this->args['ajax'] );
+            $this->args['redirect_activated']   = ( isset( $page_settings[0]['redirect'] ) ? $page_settings[0]['redirect'] : $this->args['redirect_activated'] );
+            $this->args['redirect_url']         = ( ! empty( $page_settings[0]['url'] ) && $this->args['redirect_activated'] == 'Yes' && $this->args['redirect_priority'] != 'top' ? $page_settings[0]['url'] : $this->args['redirect_url'] );
+            $this->args['redirect_delay']       = ( isset( $page_settings[0]['display-messages'] ) && $this->args['redirect_activated'] == 'Yes' ? $page_settings[0]['display-messages'] : $this->args['redirect_delay'] );
+            
+            if( isset( $page_settings[0]['ajax'] ) && !empty( $page_settings[0]['ajax'] ) )
+                $this->args['ajax'] = $page_settings[0]['ajax'];
 		}
 
 		// the 'automatic_login' shortcode parameter overwrites all other settings

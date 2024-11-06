@@ -170,17 +170,17 @@ class WPPB_Register extends ET_Builder_Module {
 
         $form_name = 'unspecified';
         if ( array_key_exists( 'form_name', $attrs ) ) {
-            $form_name = $attrs['form_name'];
+            $form_name = sanitize_text_field($attrs['form_name']);
             if ( $form_name === 'default' ) {
                 $form_name = 'unspecified';
             }
         }
         if ( !$form_name || $form_name === 'unspecified' ) {
             $atts = [
-                'role'                => array_key_exists( 'role', $attrs ) && $attrs['role'] !== '' ? esc_attr( $attrs['role'] ) : '',
+                'role'                => array_key_exists( 'role', $attrs ) && $attrs['role'] !== '' ? sanitize_text_field( $attrs['role'] ) : '',
                 'form_name'           => '',
-                'redirect_url'        => array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? esc_url( $attrs['redirect_url'] ) : '',
-                'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? esc_url( $attrs['logout_redirect_url'] ) : '',
+                'redirect_url'        => array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? pb_divi_parse_url( $attrs['redirect_url'] ) : '',
+                'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? pb_divi_parse_url( $attrs['logout_redirect_url'] ) : '',
                 'ajax'                => array_key_exists( 'toggle_ajax_validation', $attrs ) && $attrs['toggle_ajax_validation'] === 'on'  ? 'true' : false,
                 'automatic_login'     => array_key_exists( 'toggle_automatic_login', $attrs ) && $attrs['toggle_automatic_login'] ? 'yes' : '',
 
@@ -190,7 +190,7 @@ class WPPB_Register extends ET_Builder_Module {
                 'role'                => '',
                 'form_name'           => $form_name,
                 'redirect_url'        => '',
-                'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? esc_url( $attrs['logout_redirect_url'] ) : '',
+                'logout_redirect_url' => array_key_exists( 'logout_redirect_url', $attrs ) && $attrs['logout_redirect_url'] !== '' ? pb_divi_parse_url( $attrs['logout_redirect_url'] ) : '',
                 'ajax'                => false,
                 'automatic_login'     => '',
 

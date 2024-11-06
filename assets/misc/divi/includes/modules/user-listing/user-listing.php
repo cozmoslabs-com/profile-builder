@@ -133,13 +133,13 @@ class WPPB_UserListing extends ET_Builder_Module {
         include_once( WPPB_PAID_PLUGIN_DIR.'/add-ons/user-listing/userlisting.php' );
 
         $atts = [
-            'name'       => $attrs['userlisting_name'],
-            'single'     => array_key_exists( 'toggle_single', $attrs ) && $attrs['toggle_single'] === 'on',
-            'id'         => array_key_exists( 'single_id', $attrs ) ? $attrs['single_id'] : '',
-            'field_name' => array_key_exists( 'field_name', $attrs ) && $attrs['field_name'] !== 'default' ? $attrs['field_name'] : '',
-            'meta_value' => array_key_exists( 'meta_value', $attrs ) && $attrs['field_name'] !== 'default' ? $attrs['meta_value'] : '',
-            'include'    => array_key_exists( 'include_id', $attrs ) ? $attrs['include_id'] : '',
-            'exclude'    => array_key_exists( 'exclude_id', $attrs ) ? $attrs['exclude_id'] : '',
+            'name'       => sanitize_text_field($attrs['userlisting_name']),
+            '0'          => array_key_exists( 'toggle_single', $attrs ) && $attrs['toggle_single'] === 'on' ? 'single'             : '',
+            'id'         => array_key_exists( 'single_id', $attrs ) ? absint($attrs['single_id']) : '',
+            'meta_key'   => array_key_exists( 'meta_key', $attrs ) && $attrs['meta_key'] !== 'default'  ? sanitize_text_field($attrs['meta_key']) : '',
+            'meta_value' => array_key_exists( 'meta_value', $attrs ) && $attrs['meta_value'] !== 'default'  ? sanitize_text_field($attrs['meta_value']) : '',
+            'include'    => array_key_exists( 'include_id', $attrs ) ? pb_divi_parse_ids($attrs['include_id']) : '',
+            'exclude'    => array_key_exists( 'exclude_id', $attrs ) ? pb_divi_parse_ids($attrs['exclude_id']) : '',
         ];
         return '<div class="wppb-divi-front-end-container">' . wppb_user_listing_shortcode( $atts ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }

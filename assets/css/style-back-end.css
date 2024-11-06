@@ -1843,8 +1843,14 @@ div.wppb-notice .notice-dismiss {
 div.wppb-serial-notification .button-primary,
 div.wppb-notice .button-primary {
     height: 30px;
-    min-width: 100px;
+    /* min-width: 100px; */
     margin-left: 10px
+}
+
+div.wppb-notice .button-primary,
+div.pms-notice .button-primary,
+div.wppb-serial-notification .button-primary {
+    min-width: auto !important;
 }
 
 
@@ -3308,4 +3314,13 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
 
 .admin_page_wppb-optin-page .notice {
     display: none !important;
+}
+
+
+.wppb-bf-notice-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 0px;
+    gap: 8px;
 }

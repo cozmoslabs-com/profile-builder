@@ -40,10 +40,14 @@ function wppb_divi_initialize_extension() {
 
 }
 
-add_action( 'wp_ajax_nopriv_wppb_divi_extension_ajax', 'wppb_divi_extension_ajax' );
 add_action( 'wp_ajax_wppb_divi_extension_ajax', 'wppb_divi_extension_ajax' );
 
 function wppb_divi_extension_ajax() {
+    check_ajax_referer( 'pb_divi_render_form', 'pb_nonce' );
+
+    if( !current_user_can( 'manage_options' ) )
+        die();
+
 
     if ( is_array( $_POST ) && array_key_exists( 'form_type', $_POST ) && $_POST['form_type'] !== '' ) {
         $output = '';
@@ -55,17 +59,20 @@ function wppb_divi_extension_ajax() {
 
                 $form_name = 'unspecified';
                 if ( array_key_exists('form_name', $_POST)) {
-                    $form_name = $_POST['form_name'];
+                    $form_name = sanitize_text_field($_POST['form_name']);
                     if ($form_name === 'default') {
                         $form_name = 'unspecified';
                     }
                 }
+
+                $atts['role1'] = pb_divi_parse_role( $_POST['role'] );
+
                 if (!$form_name || $form_name === 'unspecified') {
                     $atts = [
-                        'role'                => array_key_exists('role', $_POST)                                                                     ? esc_attr($_POST['role'])               : '',
+                        'role'                => array_key_exists('role', $_POST)                                                                     ? sanitize_text_field($_POST['role'])               : '',
                         'form_name'           => '',
-                        'redirect_url'        => array_key_exists('redirect_url', $_POST)           && $_POST['redirect_url']           !== 'default' ? esc_url($_POST['redirect_url'])        : '',
-                        'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST)    && $_POST['logout_redirect_url']    !== 'default' ? esc_url($_POST['logout_redirect_url']) : '',
+                        'redirect_url'        => array_key_exists('redirect_url', $_POST)           && $_POST['redirect_url']           !== 'default' ? pb_divi_parse_url($_POST['redirect_url'])        : '',
+                        'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST)    && $_POST['logout_redirect_url']    !== 'default' ? pb_divi_parse_url($_POST['logout_redirect_url']) : '',
                         'automatic_login'     => array_key_exists('toggle_automatic_login', $_POST) && $_POST['toggle_automatic_login']               ? 'yes'                                  : '',
                     ];
                 } else {
@@ -73,7 +80,7 @@ function wppb_divi_extension_ajax() {
                         'role'                => '',
                         'form_name'           => $form_name,
                         'redirect_url'        => '',
-                        'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST) && $_POST['logout_redirect_url'] !== 'default' ? esc_url($_POST['logout_redirect_url']) : '',
+                        'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST) && $_POST['logout_redirect_url'] !== 'default' ? pb_divi_parse_url($_POST['logout_redirect_url']) : '',
                         'automatic_login'     => '',
                     ];
                 }
@@ -91,7 +98,7 @@ function wppb_divi_extension_ajax() {
 
                 $form_name = 'unspecified';
                 if ( array_key_exists('form_name', $_POST)) {
-                    $form_name = $_POST['form_name'];
+                    $form_name = sanitize_text_field($_POST['form_name']);
                     if ($form_name === 'default') {
                         $form_name = 'unspecified';
                     }
@@ -99,7 +106,7 @@ function wppb_divi_extension_ajax() {
 
                 $atts = [
                     'form_name'    => $form_name,
-                    'redirect_url' => array_key_exists('redirect_url', $_POST) && $_POST['redirect_url'] !== 'default' ? esc_url($_POST['redirect_url']) : '',
+                    'redirect_url' => array_key_exists('redirect_url', $_POST) && $_POST['redirect_url'] !== 'default' ? pb_divi_parse_url($_POST['redirect_url']) : '',
                 ];
 
                 $output =
@@ -113,10 +120,10 @@ function wppb_divi_extension_ajax() {
                 include_once(WPPB_PLUGIN_DIR . '/front-end/login.php');
 
                 $atts = [
-                    'register_url'        => array_key_exists('register_url', $_POST)        && $_POST['register_url']        !== 'default' ? esc_url($_POST['register_url'])        : '',
-                    'lostpassword_url'    => array_key_exists('lostpassword_url', $_POST)    && $_POST['lostpassword_url']    !== 'default' ? esc_url($_POST['lostpassword_url'])    : '',
-                    'redirect_url'        => array_key_exists('redirect_url', $_POST)        && $_POST['redirect_url']        !== 'default' ? esc_url($_POST['redirect_url'])        : '',
-                    'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST) && $_POST['logout_redirect_url'] !== 'default' ? esc_url($_POST['logout_redirect_url']) : '',
+                    'register_url'        => array_key_exists('register_url', $_POST)        && $_POST['register_url']        !== 'default' ? pb_divi_parse_url($_POST['register_url'])        : '',
+                    'lostpassword_url'    => array_key_exists('lostpassword_url', $_POST)    && $_POST['lostpassword_url']    !== 'default' ? pb_divi_parse_url($_POST['lostpassword_url'])    : '',
+                    'redirect_url'        => array_key_exists('redirect_url', $_POST)        && $_POST['redirect_url']        !== 'default' ? pb_divi_parse_url($_POST['redirect_url'])        : '',
+                    'logout_redirect_url' => array_key_exists('logout_redirect_url', $_POST) && $_POST['logout_redirect_url'] !== 'default' ? pb_divi_parse_url($_POST['logout_redirect_url']) : '',
                     'show_2fa_field'      => array_key_exists('toggle_auth_field', $_POST)   && $_POST['toggle_auth_field']   === 'on'      ? 'yes'                                  : '',
                     'block'               => 'true',
                 ];
@@ -147,13 +154,13 @@ function wppb_divi_extension_ajax() {
                     include_once( WPPB_PAID_PLUGIN_DIR.'/add-ons/user-listing/userlisting.php' );
 
                     $atts = [
-                        'name'       => array_key_exists('userlisting_name', $_POST) ?  esc_attr($_POST['userlisting_name'])   :   '',
-                        'meta_value' => array_key_exists('field_name', $_POST) && array_key_exists('meta_value', $_POST) && $_POST['field_name'] !== 'default' ? ( $_POST['meta_value'] !== 'undefined' ? $_POST['meta_value'] : '' ) : '',
-                        'single'     => array_key_exists('single', $_POST) && $_POST['single'] === 'on',
-                        'id'         => array_key_exists('id', $_POST)         && $_POST['id']         !== 'undefined' ? esc_attr($_POST['id'])         : '',
-                        'meta_key'   => array_key_exists('field_name', $_POST) && $_POST['field_name'] !== 'default'   ? esc_attr($_POST['field_name']) : '',
-                        'include'    => array_key_exists('include', $_POST)    && $_POST['include']    !== 'undefined' ? esc_attr($_POST['include'])    : '',
-                        'exclude'    => array_key_exists('exclude', $_POST)    && $_POST['exclude']    !== 'undefined' ? esc_attr($_POST['exclude'])    : '',
+                        'name'       => array_key_exists('userlisting_name', $_POST) ?  sanitize_text_field($_POST['userlisting_name'])                            : '',
+                        'meta_value' => array_key_exists('field_name', $_POST) && array_key_exists('meta_value', $_POST) && $_POST['field_name'] !== 'default' ? ( $_POST['meta_value'] !== 'undefined' ? sanitize_text_field($_POST['meta_value']) : '' ) : '',
+                        '0'          => array_key_exists('single', $_POST) && $_POST['single'] === 'on'                ? 'single'                                  : '',
+                        'id'         => array_key_exists('id', $_POST)         && $_POST['id']         !== 'undefined' ? absint($_POST['id'])                      : '',
+                        'meta_key'   => array_key_exists('field_name', $_POST) && $_POST['field_name'] !== 'default'   ? sanitize_text_field($_POST['field_name']) : '',
+                        'include'    => array_key_exists('include', $_POST)    && $_POST['include']    !== 'undefined' ? pb_divi_parse_ids($_POST['include'])      : '',
+                        'exclude'    => array_key_exists('exclude', $_POST)    && $_POST['exclude']    !== 'undefined' ? pb_divi_parse_ids($_POST['exclude'])      : '',
                     ];
 
                     if ( $atts['name'] === '' || $atts['name'] === 'default' ) {
@@ -253,8 +260,10 @@ function wppb_divi_extension_ajax() {
         }
 
         echo json_encode( $output );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        wp_die();
+        die();
     }
+
+    die();
 }
 
 $wppb_generalSettings = get_option( 'wppb_general_settings', 'not_found' );
@@ -493,6 +502,49 @@ function wppb_divi_content_restriction_get_fields_list ( $fields_list = array() 
         ),
     );
     return $fields_list;
+}
+
+function pb_divi_parse_role( $role ){
+
+    $roles = explode( ',', $roles );
+
+    if( empty( $roles ) )
+        return '';
+
+    $result = '';
+
+    foreach( $roles as $role ){
+        $result .= absint( $role ) . ',';
+    }
+
+    return rtrim( $result, ',' );
+
+}
+
+function pb_divi_parse_ids( $attrs ){
+
+    $attrs = explode( ',', $attrs );
+
+    if( empty( $attrs ) )
+        return '';
+
+    $result = '';
+
+    foreach( $attrs as $attr ){
+        $result .= absint( $attr ) . ',';
+    }
+
+    return rtrim( $result, ',' );
+
+}
+
+function pb_divi_parse_url( $redirect_url ){
+
+    if( $redirect_url === esc_url_raw( $redirect_url ) )
+        return esc_url_raw( $redirect_url );
+
+    return '';
+
 }
 
 endif;

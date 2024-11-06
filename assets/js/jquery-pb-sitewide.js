@@ -227,6 +227,13 @@ jQuery( function() {
                 jQuery('#wppb-toolbox-redirect-if-empty-required-url').hide();
         });
 
+        jQuery('#wppb-color-switcher').on('click', function () {
+            if (jQuery(this).prop('checked'))
+                jQuery('.wppb-color-switcher-section').css('display','flex');
+            else
+                jQuery('.wppb-color-switcher-section').hide();
+        });
+
 
         if (jQuery('.wppb-toolbox-switch').prop('checked'))
             jQuery('.wppb-toolbox-accordion').css('display','flex');
@@ -236,6 +243,22 @@ jQuery( function() {
 
         if (jQuery('#toolbox-redirect-if-empty-required').prop('checked'))
             jQuery('#wppb-toolbox-redirect-if-empty-required-url').css('display','flex');
+
+        if (jQuery('#wppb-color-switcher').prop('checked'))
+            jQuery('.wppb-color-switcher-section').css('display','flex');
+        else
+            jQuery('.wppb-color-switcher-section').hide();
+
+        // Color Switcher - Notifications Background
+        var activeDesign = jQuery('.color-switcher').data('active-design');
+
+        if ( activeDesign === 'form-style-1' ) {
+            jQuery('.wppb-form-style-1-fields').show();
+            jQuery('.wppb-other-style-fields').hide();
+        } else {
+            jQuery('.wppb-form-style-1-fields').hide();
+            jQuery('.wppb-other-style-fields').show();
+        }
     }
 });
 

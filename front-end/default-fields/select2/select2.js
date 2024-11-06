@@ -7,7 +7,7 @@
 function wppb_select2_initialize() {
     jQuery ( '.custom_field_select2' ).each( function(){
         var selectElement = jQuery( this );
-        var arguments = selectElement.attr('data-wppb-select2-arguments');
+        var arguments = wp.hooks.applyFilters( 'wppb_select2_initialize_arguments', arguments, selectElement );
         arguments = JSON.parse( arguments );
         selectElement.select2( arguments ).on('select2:open', function(){
             // compatibility with Divi Overlay

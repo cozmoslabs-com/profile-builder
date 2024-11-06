@@ -126,14 +126,14 @@ class WPPB_EditProfile extends ET_Builder_Module {
 
         $form_name = 'unspecified';
         if ( is_array( $attrs ) && array_key_exists( 'form_name', $attrs ) ) {
-            $form_name = $attrs['form_name'];
+            $form_name = sanitize_text_field($attrs['form_name']);
             if ( $form_name === 'default' ) {
                 $form_name = 'unspecified';
             }
         }
         $atts = [
             'form_name' => $form_name,
-            'redirect_url' => is_array( $attrs ) && array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? esc_url( $attrs['redirect_url'] ) : '',
+            'redirect_url' => is_array( $attrs ) && array_key_exists( 'redirect_url', $attrs ) && $attrs['redirect_url'] !== '' ? pb_divi_parse_url( $attrs['redirect_url'] ) : '',
             'ajax' => ( $form_name === 'unspecified' && is_array( $attrs ) &&  array_key_exists( 'toggle_ajax_validation', $attrs ) && $attrs['toggle_ajax_validation'] === 'on' )  ? 'true' : false,
         ];
         return '<div class="wppb-divi-front-end-container">' . wppb_front_end_profile_info( $atts ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

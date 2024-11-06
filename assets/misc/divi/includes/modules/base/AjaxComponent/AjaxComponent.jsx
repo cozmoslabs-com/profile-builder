@@ -48,6 +48,8 @@ class AjaxComponent extends Component {
   _reload(props) {
     var formData = this._reloadFormData(props);
 
+    formData.append( "pb_nonce" , window.ProfileBuilderDiviExtensionBuilderData.nonces.pb_divi_render_form_nonce );
+
     $.ajax({
       url: window.et_fb_options.ajaxurl,
       type: "POST",

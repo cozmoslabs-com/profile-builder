@@ -73,7 +73,7 @@ Class WPPB_Plugin_Notifications {
     private static $_instance = null;
     private $prefix = 'wppb';
     private $menu_slug = 'profile-builder';
-    public $pluginPages = array( 'profile-builder-', 'manage-fields', 'wppb-', 'admin-email-customizer', 'user-email-customizer' );
+    public $pluginPages = array( 'profile-builder-', 'manage-fields', 'wppb-', 'admin-email-customizer', 'user-email-customizer', 'pb-labels-edit', 'profile-user-profile-picture', 'pbie-import-export' );
 
     protected function __construct() {
         add_action( 'admin_init', array( $this, 'dismiss_admin_notifications' ), 200 );
@@ -124,11 +124,6 @@ Class WPPB_Plugin_Notifications {
     /* handle other plugin notifications on our plugin pages */
     function remove_other_plugin_notices(){
 
-        //remove all notifications from start page
-        if( isset( $_GET['page'] ) && ( $_GET['page'] == 'profile-builder-dashboard' || $_GET['page'] == 'profile-builder-basic-info' || $_GET['page'] == 'profile-builder-pms-promo' || ( $_GET['page'] == 'profile-builder-add-ons' && !isset( $_GET['cl_add_ons_listing_success'] ) ) ) ) {//on addons page we use notices to display success mesage so we can't remove it in that case
-            remove_all_actions('admin_notices');
-        }
-
         /* remove all other plugin notifications except our own from the rest of the PB pages */
         if( $this->is_plugin_page() ) {
             global $wp_filter;
@@ -173,7 +168,7 @@ Class WPPB_Plugin_Notifications {
      *
      *
      */
-    public function add_notification( $notification_id = '', $notification_message = '', $notification_class = 'update-nag', $count_in_menu = true, $count_in_submenu = array() ) {
+    public function add_notification( $notification_id = '', $notification_message = '', $notification_class = 'update-nag', $count_in_menu = true, $count_in_submenu = array(), $show_in_all_backend = false ) {
 
         if( empty( $notification_id ) )
             return;
@@ -194,8 +189,7 @@ Class WPPB_Plugin_Notifications {
             'count_in_submenu' => $count_in_submenu
         );
 
-
-        if( $this->is_plugin_page() ) {
+		if( $this->is_plugin_page() || $show_in_all_backend == true ) {
             new WPPB_Add_General_Notices( $notification_id, $notification_message, $notification_class );
         }
 
