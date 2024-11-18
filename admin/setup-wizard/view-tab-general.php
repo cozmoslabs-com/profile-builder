@@ -15,6 +15,8 @@
                 <?php esc_html_e( 'Choose a style that better suits your website.', 'profile-builder' ); ?>
                 <br>
                 <?php esc_html_e( 'The default style is there to let you customize the CSS and in general will receive the look and feel from your own themes styling. ', 'profile-builder' ); ?>
+                <br>
+                <?php esc_html_e( 'The extra styles can be customized to your liking through extra settings. ', 'profile-builder' ); ?>
             </p>
             <?php
         }

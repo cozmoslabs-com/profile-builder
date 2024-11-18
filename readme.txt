@@ -3,8 +3,8 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 6.6
-Stable tag: 3.12.6
+Tested up to: 6.7
+Stable tag: 3.12.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,7 @@ You can use the following shortcode list or available plugin blocks to quickly d
 * Invisible reCAPTCHA support for both Profile Builder forms as well as default WordPress forms
 * **Private Website**: setup a [WordPress private site](https://www.cozmoslabs.com/132715-wordpress-private-site/) that is visible only to members or logged in users
 * **GDPR**: collect users consent about the data you collect about them under the new [GDPR law](https://www.cozmoslabs.com/docs/profile-builder-2/how-to-make-profile-builder-forms-gdpr-compliant/) requirements
+* **Form Designs**: enable beautiful designs for your forms fully customizable by you
 
 **PROFILE BUILDER PRO**
 
@@ -202,6 +203,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.7 =
+* Fix: Error appearing on the Advanced Settings -> Forms tab
+* Misc: Add support to the automatically generate password feature to work in the User Approval Email
+* Misc: Allow admins to select user roles directly for content restriction without first checking the logged in checkbox
+* Misc: Small visual changes to the Setup Wizard
+
 = 3.12.6 =
 * Fix: Security issue regarding the refresh function of the Divi admin builder interface module
 * Fix: A notice that could appear in some cases

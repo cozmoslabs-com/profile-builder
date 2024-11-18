@@ -379,6 +379,10 @@
     width: 200px;
 }
 
+.wppb-setup-newsletter__form input:focus, .wppb-setup-newsletter__form input:active {
+    color: black;
+}
+
 .wppb-setup-newsletter__form {
     position: relative;
 }

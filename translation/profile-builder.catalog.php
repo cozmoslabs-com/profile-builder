@@ -15,6 +15,8 @@
 <?php __("Easy to edit templates for listing your users as well as creating single user pages.", "profile-builder"); ?>
 <?php __("Custom Redirects", "profile-builder"); ?>
 <?php __("Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login, lost password and registration forms.", "profile-builder"); ?>
+<?php __("File Restriction", "profile-builder"); ?>
+<?php __("Protect your Media Library by restricting direct links to media files according to user roles.", "profile-builder"); ?>
 <?php __("Repeater Fields", "profile-builder"); ?>
 <?php __("The Repeater Field Module makes it really easy to add repeater front-end fields or groups of fields to your user profile. Integration with both the Email Customizer and User Listing modules, makes creating advanced user profiles possible.", "profile-builder"); ?>
 <?php __("BuddyPress", "profile-builder"); ?>
@@ -44,6 +46,8 @@
 <?php __("Allow users to subscribe to your MailPoet lists directly from the Register and Edit Profile forms.", "profile-builder"); ?>
 <?php __("Free Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available in all versions of Profile Builder", "profile-builder"); ?>
+<?php __("User Profile Picture", "profile-builder"); ?>
+<?php __("Set or remove a custom profile image for a user using the standard WordPress media upload tool.", "profile-builder"); ?>
 <?php __("Import and Export", "profile-builder"); ?>
 <?php __("With the help of this add-on you will be able to export all Profile Builder Settings data to a .json. You can then use this file as a back-up or you can import this data on another instance of Profile Builder.", "profile-builder"); ?>
 <?php __("Custom CSS Classes on Fields", "profile-builder"); ?>
@@ -328,6 +332,8 @@
 <?php __("Whether the currency symbol should be displayed after the currency name in the select option.", "profile-builder"); ?>
 <?php __("Show Post Type", "profile-builder"); ?>
 <?php __("Posts from what post type will be displayed in the select.", "profile-builder"); ?>
+<?php __("Show Taxonomy Term", "profile-builder"); ?>
+<?php __("Terms from taxonomies", "profile-builder"); ?>
 <?php __("Allowable Values", "profile-builder"); ?>
 <?php __("Enter a comma separated list of possible values. Upon registration if the value provided by the user does not match one of these values, the user will not be registered.", "profile-builder"); ?>
 <?php __("Error Message", "profile-builder"); ?>
@@ -846,6 +852,8 @@
 <?php __("Allow these pages to be accessed even if you are not logged in", "profile-builder"); ?>
 <?php __("Allowed Paths", "profile-builder"); ?>
 <?php __("Allow these paths to be accessed even if you are not logged in (supports wildcard at the end of the path). For example to exclude https://example.com/some/path/ you can either use the rule /some/path/ or /some/* Enter each rule on it's own line", "profile-builder"); ?>
+<?php __("Allowed Query Strings", "profile-builder"); ?>
+<?php __("Allow paths containing these query strings to be accessible to logged out users. For example, you can add s to exclude a search request: https://example.com/?s=search", "profile-builder"); ?>
 <?php __("Hide all Menus", "profile-builder"); ?>
 <?php __("Hide all menu items if you are not logged in. We recommend \"<a href=\"%s\" target=\"_blank\">Custom Profile Menus</a>\" addon if you need different menu items for logged in / logged out users.", "profile-builder"); ?>
 <?php __("Disable REST-API", "profile-builder"); ?>
@@ -882,6 +890,8 @@
 <?php __("Very Weak", "profile-builder"); ?>
 <?php __("Minimum length of %d characters.", "profile-builder"); ?>
 <?php __("The password must have a minimum strength of %s", "profile-builder"); ?>
+<?php __("Show password", "profile-builder"); ?>
+<?php __("Hide password", "profile-builder"); ?>
 <?php __("This field is required", "profile-builder"); ?>
 <?php __("Please enter a (valid) reCAPTCHA value", "profile-builder"); ?>
 <?php __("Incorrect phone number", "profile-builder"); ?>
@@ -1044,6 +1054,8 @@
 <?php __("Allowed time to display any success messages (in seconds)", "profile-builder"); ?>
 <?php __("URL", "profile-builder"); ?>
 <?php __("Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com", "profile-builder"); ?>
+<?php __("Ajax Validation", "profile-builder"); ?>
+<?php __("Use AJAX to validate this form without reloading the page", "profile-builder"); ?>
 <?php __("After Profile Update...", "profile-builder"); ?>
 <?php __("Add New Field to the List", "profile-builder"); ?>
 <?php __("Choose one of the supported fields you manage <a href=\"%s\">here</a>", "profile-builder"); ?>
@@ -1271,6 +1283,7 @@
 <?php __('This field is visible only in the following locations: %1$s', 'profile-builder' ); ?>
 <?php __("Get file", "profile-builder"); ?>
 <?php __("You do not have the capabilities necessary to edit this field.", "profile-builder"); ?>
+<?php __('The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s.', 'profile-builder' ); ?>
 <?php __("MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!", "profile-builder"); ?>
 <?php __("Step", "profile-builder"); ?>
 <?php __("Title for Tab", "profile-builder"); ?>
@@ -1436,6 +1449,34 @@
 <?php __("No labels edited, nothing to export!", "profile-builder"); ?>
 <?php __("Specify the maximum number of characters a user can type in this field", "profile-builder"); ?>
 <?php __("The entered character number is not numerical\n", "profile-builder"); ?>
+<?php __("Your options have been saved.", "profile-builder"); ?>
+<?php __("Welcome to User Profile Picture!", "profile-builder"); ?>
+<?php __("Gutenberg Blocks", "profile-builder"); ?>
+<?php __("Disable Gutenberg Blocks", "profile-builder"); ?>
+<?php __("Select this option if you do not want User Profile Picture to show up in Gutenberg or do not plan on using the blocks.", "profile-builder"); ?>
+<?php __("Disable Image Sizes?", "profile-builder"); ?>
+<?php __("Disable Image Sizes", "profile-builder"); ?>
+<?php __("Select this option to disable the four image sizes User Profile Picture Creates.", "profile-builder"); ?>
+<?php __("Save Options", "profile-builder"); ?>
+<?php __("Upload or Change Profile Picture", "profile-builder"); ?>
+<?php __("Click to Edit", "profile-builder"); ?>
+<?php __("Remove profile image", "profile-builder"); ?>
+<?php __("Crop Thumbnail", "profile-builder"); ?>
+<?php __("Profile Image", "profile-builder"); ?>
+<?php __("Override Avatar?", "profile-builder"); ?>
+<?php __("Set Profile Image", "profile-builder"); ?>
+<?php __("Remove Profile Image", "profile-builder"); ?>
+<?php __("User not found.", "profile-builder"); ?>
+<?php __("You must be able to upload files.", "profile-builder"); ?>
+<?php __("You must have a role of editor or above to set a new profile image.", "profile-builder"); ?>
+<?php __("User not owner.", "profile-builder"); ?>
+<?php __("Profile picture not found.", "profile-builder"); ?>
+<?php __("Author", "profile-builder"); ?>
+<?php __("Latest Posts", "profile-builder"); ?>
+<?php __("Author Information", "profile-builder"); ?>
+<?php __("View Posts", "profile-builder"); ?>
+<?php __("View Website", "profile-builder"); ?>
+<?php __("View all posts by", "profile-builder"); ?>
 <?php __("Toolbox", "profile-builder"); ?>
 <?php __("The email address you are trying to register with is not allowed on this website.", "profile-builder"); ?>
 <?php __("Your submission contains banned words.", "profile-builder"); ?>
@@ -1470,6 +1511,7 @@
 <?php __("Customize the way your users interact with the website!", "profile-builder"); ?>
 <?php __('%3$sYou can now beautify your forms using pre-made templates. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ); ?>
 <?php __("The default style is there to let you customize the CSS and in general will receive the look and feel from your own themes styling. ", "profile-builder"); ?>
+<?php __("The extra styles can be customized to your liking through extra settings. ", "profile-builder"); ?>
 <?php __("Optimize the login and registration flow for your members!", "profile-builder"); ?>
 <?php __("Automatically log users in after registration", "profile-builder"); ?>
 <?php __("You can modify each role individually in the settings", "profile-builder"); ?>
@@ -1587,6 +1629,8 @@
 <?php __("Show the first %s words of the post's content", "profile-builder"); ?>
 <?php __("Show the content before the \"more\" tag", "profile-builder"); ?>
 <?php __("Show a portion of the restricted post to logged-out users or users that are not allowed to see it.", "profile-builder"); ?>
+<?php __("Exclude Restricted Posts from Queries", "profile-builder"); ?>
+<?php __("Activate this option to exclude the restricted posts from default WordPress and WooCommerce queries.", "profile-builder"); ?>
 <?php __("Message for logged-out users", "profile-builder"); ?>
 <?php __("Message for logged-in users", "profile-builder"); ?>
 <?php __("Message for WooCommerce Restricted Product Purchase", "profile-builder"); ?>
@@ -1681,7 +1725,7 @@
 <?php __("<h3>Hi {{username}},</h3>\n<p>This notice confirms that your email was changed on {{site_name}}.</p>\n<p>If you did not change your email, please contact the Site Administrator at %s</p>\n<p>This email has been sent to {{user_email}}</p>\n<p>Regards,<br>\nAll at {{site_name}}<br>\n<a href=\"{{site_url}}\">{{site_url}}</a></p>", "profile-builder"); ?>
 <?php __("[{{site_name}}] Notice of Email Change", "profile-builder"); ?>
 <?php __("Changed Email Address Notification", "profile-builder"); ?>
-<?php __('To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \Enable Placeholder Labels\ Option in %3$sAdvanced Settings%4$s.', 'profile-builder' ); ?>
+<?php __('To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \Enable Placeholder Labels\ Option in %3$sAdvanced Settings%4$s. On this page, you can also customize the form colors using the \Color Switcher\ setting.', 'profile-builder' ); ?>
 <?php __("Address Line 2", "profile-builder"); ?>
 <?php __("Address Line 1", "profile-builder"); ?>
 <?php __("ERROR!", "profile-builder"); ?>
@@ -1882,6 +1926,45 @@
 <?php __("Email address", "profile-builder"); ?>
 <?php __("fullname", "profile-builder"); ?>
 <?php __("Extra options", "profile-builder"); ?>
+<?php __("Files Restriction", "profile-builder"); ?>
+<?php __("Web Server", "profile-builder"); ?>
+<?php __("Protect ALL File Types", "profile-builder"); ?>
+<?php __("Protect every file type from your Media Library.", "profile-builder"); ?>
+<?php __('This option can cause performance issues, enable at your own risk. %1$sLearn more%2$s', 'profile-builder' ); ?>
+<?php __("Protected File Types", "profile-builder"); ?>
+<?php __("Select the type of files within the WordPress Upload directory that you want to protect.", "profile-builder"); ?>
+<?php __("Nginx Configuration", "profile-builder"); ?>
+<?php __("Nginx directive copied!", "profile-builder"); ?>
+<?php __("This Nginx include directive needs to be added into the Nginx configuration file on your server, for the File Restriction feature to work correctly. After the directive was inserted, the Nginx web-server also needs to be restarted.", "profile-builder"); ?>
+<?php __("NOTE: If the restriction settings are changed, the Nginx web server needs to be restarted for the new rules to take effect.", "profile-builder"); ?>
+<?php __("Apache Configuration", "profile-builder"); ?>
+<?php __("Apache directive copied!", "profile-builder"); ?>
+<?php __("It appears that the .htaccess file in your WordPress root directory is not writable.", "profile-builder"); ?>
+<?php __("This means that WordPress is unable to automatically update the file with necessary rules or changes.", "profile-builder"); ?>
+<?php __("To fix this issue follow the steps bellow.", "profile-builder"); ?>
+<?php __('%1$sNOTE:%2$s The %3$s filter hook is preventing File Restriction rules from being written to the %4$s file!', 'profile-builder' ); ?>
+<?php __("Check File Permissions:", "profile-builder"); ?>
+<?php __("Using FTP/SFTP:", "profile-builder"); ?>
+<?php __("Connect to your server using an FTP/SFTP client.", "profile-builder"); ?>
+<?php __("Navigate to the root directory of your WordPress installation (where the .htaccess file is located).", "profile-builder"); ?>
+<?php __("Right-click on the .htaccess file and select \"File Permissions\" or \"Properties.\"", "profile-builder"); ?>
+<?php __("Ensure the file permissions are set to 644 or 664. This allows the file to be readable and writable by the owner, and readable by the group and others.", "profile-builder"); ?>
+<?php __("Using Hosting Control Panel:", "profile-builder"); ?>
+<?php __("Log in to your hosting control panel (e.g., cPanel, Plesk).", "profile-builder"); ?>
+<?php __("Open the File Manager and navigate to the root directory of your WordPress installation.", "profile-builder"); ?>
+<?php __("Find the .htaccess file and check its permissions. Set them to 644 or 664 if necessary.", "profile-builder"); ?>
+<?php __("Manually Edit .htaccess:", "profile-builder"); ?>
+<?php __("The .htaccess file is located in the root directory of your WordPress installation.", "profile-builder"); ?>
+<?php __("Use a text editor to open the .htaccess file. Ensure you back up the file before making changes.", "profile-builder"); ?>
+<?php __("Include the directive provided above.", "profile-builder"); ?>
+<?php __("If you are unsure about making these changes or if the issue persists, please contact the support team of your hosting provider for assistance.", "profile-builder"); ?>
+<?php __("Restrict Uploaded Files", "profile-builder"); ?>
+<?php __("Restrict uploaded files to logged-in users.", "profile-builder"); ?>
+<?php __("Enabling this option, the uploaded files will be restricted to logged-in users only.", "profile-builder"); ?>
+<?php __("Restricted Upload Fields", "profile-builder"); ?>
+<?php __("Selecting any Upload Fields, restrictions will apply to files uploaded through those fields only.", "profile-builder"); ?>
+<?php __("Restrict Files to User Roles", "profile-builder"); ?>
+<?php __("Selecting any User Roles will restrict the uploaded files to those roles only.", "profile-builder"); ?>
 <?php __("MailChimp Integration", "profile-builder"); ?>
 <?php __("MailChimp List", "profile-builder"); ?>
 <?php __("We couldn't find any lists", "profile-builder"); ?>
@@ -1952,6 +2035,7 @@
 <?php __("Please select a .json file to import!", "profile-builder"); ?>
 <?php __("Import successfully!", "profile-builder"); ?>
 <?php __("Page will refresh in 3 seconds...", "profile-builder"); ?>
+<?php __("Author Details", "profile-builder"); ?>
 <?php __("Add Entry", "profile-builder"); ?>
 <?php __("Delete this item", "profile-builder"); ?>
 <?php __("Please enter a value for the required field ", "profile-builder"); ?>
@@ -1979,6 +2063,7 @@
 <?php __("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder"); ?>
 <?php __("To use reCAPTCHA you must get an API public key from:", "profile-builder"); ?>
 <?php __("Click the BACK button on your browser, and try again.", "profile-builder"); ?>
+<?php __("reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. Please update Paid Member Subscriptions to a newer version to avoid any issues.", "profile-builder"); ?>
 <?php __("Files must be smaller than ", "profile-builder"); ?>
 <?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
 <?php __("An error occurred, please try again later.", "profile-builder"); ?>
@@ -2009,6 +2094,8 @@
 <?php __("Replace labels with placeholders", "profile-builder"); ?>
 <?php __("Select an option", "profile-builder"); ?>
 <?php __("Resend activation email", "profile-builder"); ?>
+<?php __("No sign-up was made with that email!", "profile-builder"); ?>
+<?php __("Activation email sent!", "profile-builder"); ?>
 <?php __("Admin Approval List", "profile-builder"); ?>
 <?php __("Allow users with \"delete_users\" capability to view the Admin Approval list.", "profile-builder"); ?>
 <?php __("By enabling this option, you will allow users that have the \"delete_users\" capability to access and use the Admin Approval list.", "profile-builder"); ?>
@@ -2077,6 +2164,20 @@
 <?php __("Update Database Entries", "profile-builder"); ?>
 <?php __("Update database entries when changing meta key.", "profile-builder"); ?>
 <?php __("Enabling this option, when changing the meta key of a field, existing entries from the database will be updated as well.", "profile-builder"); ?>
+<?php __("Color Switcher", "profile-builder"); ?>
+<?php __("Enable this option to change the colors of the forms.", "profile-builder"); ?>
+<?php __("Primary Color", "profile-builder"); ?>
+<?php __("Secondary Color", "profile-builder"); ?>
+<?php __("Button Text Color", "profile-builder"); ?>
+<?php __("Label Size", "profile-builder"); ?>
+<?php __("Label Color", "profile-builder"); ?>
+<?php __("Notification Text Color", "profile-builder"); ?>
+<?php __("Notification Background Color", "profile-builder"); ?>
+<?php __("Success", "profile-builder"); ?>
+<?php __("Error", "profile-builder"); ?>
+<?php __("Warning", "profile-builder"); ?>
+<?php __("Note", "profile-builder"); ?>
+<?php __("Notification Border Color", "profile-builder"); ?>
 <?php __("Replace Labels with Placeholders in Profile Builder forms.", "profile-builder"); ?>
 <?php __("Email Domains Registering", "profile-builder"); ?>
 <?php __("By enabling this option you can allow or deny email domains from registering.", "profile-builder"); ?>
@@ -2133,6 +2234,15 @@
 <?php __("Conditional Fields Ajax", "profile-builder"); ?>
 <?php __("Use Ajax on conditional fields.", "profile-builder"); ?>
 <?php __("For large conditional forms. Enable option for improved page performance.", "profile-builder"); ?>
+<?php __("Notification Background Color - Success", "profile-builder"); ?>
+<?php __("Notification Background Color - Error", "profile-builder"); ?>
+<?php __("Notification Background Color - Warning", "profile-builder"); ?>
+<?php __("Notification Background Color - Note", "profile-builder"); ?>
+<?php __("Notification Border Color - Success", "profile-builder"); ?>
+<?php __("Notification Border Color - Error", "profile-builder"); ?>
+<?php __("Notification Border Color - Warning", "profile-builder"); ?>
+<?php __("Notification Border Color - Note", "profile-builder"); ?>
+<?php __("Reset All Color Settings", "profile-builder"); ?>
 <?php __("Compare Shortcode", "profile-builder"); ?>
 <?php __("Enable Compare shortcode.", "profile-builder"); ?>
 <?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
@@ -2177,6 +2287,7 @@
 <?php __("Radius", "profile-builder"); ?>
 <?php __("Form Settings", "profile-builder"); ?>
 <?php __("Show Authenticator Code Field", "profile-builder"); ?>
+<?php __("AJAX Validation", "profile-builder"); ?>
 <?php __("Redirects", "profile-builder"); ?>
 <?php __("Form", "profile-builder"); ?>
 <?php __("Assigned Role", "profile-builder"); ?>

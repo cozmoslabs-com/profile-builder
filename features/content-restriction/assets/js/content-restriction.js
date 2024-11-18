@@ -36,25 +36,4 @@ jQuery( function(){
             jQuery( '.wppb-meta-box-field-wrapper-custom-messages' ).removeClass( 'wppb-content-restriction-enabled' );
     } );
 
-
-    /* Disable / Enable the user roles from the "Display for" field if the "Logged in Users" option is checked or not */
-    jQuery( document ).on( 'click', 'input[name="wppb-content-restrict-user-status"]', function() {
-        wppb_disable_enable_user_roles( jQuery( this ) );
-    } );
-
-    jQuery( 'input[name="wppb-content-restrict-user-status"]' ).each( function() {
-        wppb_disable_enable_user_roles( jQuery( this ) );
-    } );
-
-
-    function wppb_disable_enable_user_roles( $element ) {
-        $wrapper = $element.closest( '.wppb-meta-box-field-wrapper' );
-
-        if( $element.is( ':checked' ) ) {
-            $wrapper.find( 'input[name="wppb-content-restrict-user-role[]"]' ).attr( 'disabled', false );
-        } else {
-            $wrapper.find( 'input[name="wppb-content-restrict-user-role[]"]' ).attr( 'disabled', true );
-        }
-    }
-
 } );

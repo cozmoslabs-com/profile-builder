@@ -30,6 +30,7 @@ function wppb_toolbox_send_credentials($requestdata, $form){
 
 add_filter( 'wppb_build_userdata', 'wppb_toolbox_generate_password', 20, 2 );
 function wppb_toolbox_generate_password( $userdata, $global_request ) {
+
 	if ( $global_request['action'] == 'register' ) {
 		$userdata['user_pass'] = wp_generate_password();
 
@@ -60,4 +61,25 @@ function wppb_toolbox_ec_generate_password( $content, $email, $password, $user_m
     $content = str_replace( __( 'Your selected password at signup', 'profile-builder' ), $password, $content );
 
     return $content;
+}
+
+// Replace Password in User Approved Email
+add_filter( 'wppb_new_user_status_message_approved', 'wppb_toolbox_admin_approval_generate_password', 20, 5 );
+function wppb_toolbox_admin_approval_generate_password( $content, $user_info, $status, $user_message_from, $context ){
+
+    if( empty( $user_info->user_email ) )
+        return $content;
+
+    $user = get_user_by( 'email', $user_info->user_email );
+
+    if ( $user === false ) return $content;
+
+    $password = wp_generate_password();
+
+    wp_set_password( $password, $user->ID );
+
+    $content = str_replace( __( 'Your selected password at signup', 'profile-builder' ), $password, $content );
+
+    return $content;
+
 }

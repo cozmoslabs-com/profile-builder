@@ -3,7 +3,11 @@
 <?php
     $settings = get_option( 'wppb_toolbox_forms_settings' );
 
-    $active_design = wppb_get_active_form_design();
+    if( function_exists( 'wppb_get_active_form_design' ) ){
+        $active_design = wppb_get_active_form_design();
+    } else {
+        $active_design = 'free';
+    }
 
     $wppb_notifications_background_color_success_default = '#DCEDC8';
     $wppb_notifications_background_color_error_default = '#FFCDD2';
@@ -70,7 +74,7 @@
 <!--	<pre>--><?php // var_dump($wppb_toolbox_forms_settings); ?><!--</pre>-->
 
     <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-no-title-section">
-        <?php if( $active_design !== 'form-style-default' ): ?>
+        <?php if( $active_design !== 'form-style-default' && $active_design != 'free' ): ?>
             <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch color-switcher" data-active-design="<?php echo esc_attr( $active_design ); ?>">
                 <label class="cozmoslabs-form-field-label" for="wppb-color-switcher"><?php esc_html_e('Color Switcher', 'profile-builder'); ?></label>
 

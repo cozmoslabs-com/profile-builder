@@ -40,7 +40,7 @@ class WPPB_Add_General_Notices{
         if ( current_user_can( 'manage_options' ) ){
             // Check that the user hasn't already clicked to ignore the message
             if ( ! get_user_meta($user_id, $this->notificationId.'_dismiss_notification' ) ) {
-                echo wp_kses_post( apply_filters($this->notificationId.'_notification_message','<div class="'. $this->notificationClass .'" >'.$this->notificationMessage.'</div>', $this->notificationMessage) );
+                echo wp_kses_post( apply_filters($this->notificationId.'_notification_message','<div class="'. $this->notificationClass .'" style="position:relative">'.$this->notificationMessage.'</div>', $this->notificationMessage) );
             }
             do_action( $this->notificationId.'_notification_displayed', $current_user, $pagenow );
         }

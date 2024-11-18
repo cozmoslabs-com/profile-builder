@@ -294,7 +294,7 @@ function wppb_bf_show_shared_promotion(){
 function wppb_bf_promotion_is_active(){
     
     $black_friday = array(
-        'start_date' => '11/28/2024 00:00',
+        'start_date' => '11/25/2024 00:00',
         'end_date'   => '12/03/2024 23:59',
     );
 
@@ -334,7 +334,7 @@ if( wppb_bf_show_promotion() ){
             $message .= '<p style="font-size: 110%;margin-top:0px;margin-bottom: 0px;padding:0px;">This is a <strong>limited-time offer</strong>, so don\'t miss out on our <strong>only sale of the year</strong>. <br><a class="button-primary" style="margin-top:6px;margin-left: 0px !important;" href="https://www.cozmoslabs.com/black-friday/?utm_source=pb-settings&utm_medium=clientsite&utm_campaign=BF-2024" target="_blank">Get Deal</a></p></div>';
         }
 
-        $message .= '</div><a href="' . add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+        $message .= '</div><a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
         $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info' );
 
@@ -352,7 +352,7 @@ if( wppb_bf_show_promotion() ){
             else
                 $message .= '<p style="padding-right:30px;font-size: 110%;"><strong>Upgrade to Profile Builder & Paid Member Subscriptions PRO this Black Friday!</strong> Don\'t miss our only sale of the year. <a href="https://www.cozmoslabs.com/black-friday/?utm_source=wpdashboard&utm_medium=clientsite&utm_campaign=BF-2024" target="_blank">Learn more</a></p>';
             
-            $message .= '<a href="' . add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+            $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
     
             $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false, array(), true );
     
@@ -367,7 +367,7 @@ if( wppb_bf_show_promotion() ){
             else
                 $message .= '<p style="padding-right:30px;font-size: 110%;"><strong>Upgrade to Profile Builder PRO this Black Friday!</strong> Don\'t miss our only sale of the year. <a href="https://www.cozmoslabs.com/black-friday/?utm_source=wpdashboard&utm_medium=clientsite&utm_campaign=BF-2024" target="_blank">Learn more</a></p>';
             
-            $message .= '<a href="' . add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+            $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
     
             $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false, array(), true );
 
