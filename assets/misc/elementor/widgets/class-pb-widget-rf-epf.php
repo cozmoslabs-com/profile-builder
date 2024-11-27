@@ -226,7 +226,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                 'pb_form_'.$form_slug.'_edit_link' ,
                 array(
                     'type'     => \Elementor\Controls_Manager::RAW_HTML,
-                    'raw'      => sprintf( __( 'Edit the Settings for this form %1$shere%2$s' , 'profile-builder' ), '<a href="'.esc_url( $edit_form_link ).'" target="_blank">', '</a>'),
+                    'raw'      => sprintf( __( 'Edit the Settings for this form %1$shere%2$s' , 'profile-builder' ), '<a href="'. ( $edit_form_link ? esc_url( $edit_form_link )  : '').'" target="_blank">', '</a>'),
                     'condition'=> [
                         'pb_form_name' => [ '-'.$form_slug ],
                     ],

@@ -373,15 +373,15 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: admin/admin-functions.php:388
+#: admin/admin-functions.php:389
 msgid "You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:386
+#: admin/admin-functions.php:387
 msgid "You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:396, admin/register-version.php:370, admin/register-version.php:355, admin/register-version.php:337, admin/review.php:111, add-ons-advanced/file-restriction/index.php:120
+#: admin/admin-functions.php:397, admin/register-version.php:370, admin/register-version.php:355, admin/register-version.php:337, admin/review.php:111, add-ons-advanced/file-restriction/index.php:120
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -3117,13 +3117,13 @@ msgstr ""
 msgid "Zimbabwe Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:1386
+#: admin/manage-fields.php:1400
 msgid ""
 "That field is already added in this form\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1379, admin/manage-fields.php:1193
+#: admin/manage-fields.php:1393, admin/manage-fields.php:1193
 msgid ""
 "You must select a field\n"
 ""
@@ -3201,67 +3201,73 @@ msgid ""
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1317, admin/manage-fields.php:1328
+#: admin/manage-fields.php:1321, admin/manage-fields.php:1335
 msgid ""
 "That meta-name is already in use\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1309
+#: admin/manage-fields.php:1312
 msgid ""
 "That meta-name can't be used, please choose another\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1339
+#: admin/manage-fields.php:1353
+msgid ""
+"The meta-name cannot contain spaces.\n"
+""
+msgstr ""
+
+#: admin/manage-fields.php:1349
 msgid ""
 "The meta-name can only contain lowercase letters, numbers, _ , - and no spaces.\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1363
+#: admin/manage-fields.php:1377
 msgid ""
 "The following option did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1359
+#: admin/manage-fields.php:1373
 msgid ""
 "The following option(s) did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1370
+#: admin/manage-fields.php:1384
 msgid ""
 "Please select at least one user role\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1438
+#: admin/manage-fields.php:1452
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1438, features/functions.php:1120, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:381, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:905, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1452, features/functions.php:1120, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:381, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:905, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1438, features/functions.php:1113, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:213, features/roles-editor/roles-editor.php:943, features/roles-editor/roles-editor.php:932, features/roles-editor/roles-editor.php:923, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1452, features/functions.php:1113, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:213, features/roles-editor/roles-editor.php:943, features/roles-editor/roles-editor.php:932, features/roles-editor/roles-editor.php:923, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
-#: admin/manage-fields.php:1453
+#: admin/manage-fields.php:1467
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr ""
 
-#: admin/manage-fields.php:1468
+#: admin/manage-fields.php:1482
 msgid "With Profile Builder Pro you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms add-on."
 msgstr ""
 
-#: admin/manage-fields.php:1466
+#: admin/manage-fields.php:1480
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1567
+#: admin/manage-fields.php:1581
 msgid "Search Location"
 msgstr ""
 
@@ -5585,10 +5591,6 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/billing-fields.php:292
-msgid "Ship to a different address?"
-msgstr ""
-
 #: add-ons-advanced/woocommerce/index.php:816
 msgid "WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!"
 msgstr ""
@@ -5675,6 +5677,10 @@ msgstr ""
 
 #: add-ons-advanced/woocommerce/index.php:700, add-ons-advanced/woocommerce/woocommerce-activator.php:32
 msgid "Shipping Address"
+msgstr ""
+
+#: add-ons-advanced/woocommerce/shipping-fields.php:148
+msgid "Ship to a different address?"
 msgstr ""
 
 #: add-ons-advanced/woocommerce/woo-checkout-field-support.php:86
@@ -7028,27 +7034,27 @@ msgstr ""
 msgid "To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \"Enable Placeholder Labels\" Option in %3$sAdvanced Settings%4$s. On this page, you can also customize the form colors using the \"Color Switcher\" setting."
 msgstr ""
 
-#: features/form-designs/form-designs.php:188, features/form-designs/form-designs.php:196
+#: features/form-designs/form-designs.php:190, features/form-designs/form-designs.php:198
 msgid "Address Line 2"
 msgstr ""
 
-#: features/form-designs/form-designs.php:191, features/form-designs/form-designs.php:199
+#: features/form-designs/form-designs.php:193, features/form-designs/form-designs.php:201
 msgid "Address Line 1"
 msgstr ""
 
-#: features/form-designs/form-designs.php:314, features/form-designs/form-designs.php:315
+#: features/form-designs/form-designs.php:316, features/form-designs/form-designs.php:317
 msgid "ERROR!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:316
+#: features/form-designs/form-designs.php:318
 msgid "SUCCESS!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:317, features/form-designs/form-designs.php:318, features/form-designs/form-designs.php:404
+#: features/form-designs/form-designs.php:319, features/form-designs/form-designs.php:320, features/form-designs/form-designs.php:406
 msgid "NOTE!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:319, features/form-designs/form-designs.php:320, features/form-designs/form-designs.php:321
+#: features/form-designs/form-designs.php:321, features/form-designs/form-designs.php:322, features/form-designs/form-designs.php:323
 msgid "WARNING!"
 msgstr ""
 
@@ -7537,11 +7543,11 @@ msgstr ""
 msgid "Only Me"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:226, add-ons-advanced/buddypress/includes/mustache-vars.php:331
+#: add-ons-advanced/buddypress/includes/field-visibility.php:226, add-ons-advanced/buddypress/includes/mustache-vars.php:348
 msgid "All Members"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:230, add-ons-advanced/buddypress/includes/mustache-vars.php:335
+#: add-ons-advanced/buddypress/includes/field-visibility.php:230, add-ons-advanced/buddypress/includes/mustache-vars.php:352
 msgid "My Friends"
 msgstr ""
 
@@ -7585,7 +7591,7 @@ msgstr ""
 msgid "BuddyPress Cover Photo"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:19, add-ons-advanced/buddypress/includes/mustache-vars.php:31, add-ons-advanced/buddypress/includes/mustache-vars.php:258
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:19, add-ons-advanced/buddypress/includes/mustache-vars.php:31, add-ons-advanced/buddypress/includes/mustache-vars.php:275
 msgid "BuddyPress Last Active"
 msgstr ""
 
@@ -7601,31 +7607,31 @@ msgstr ""
 msgid "Never active"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:241
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:258
 msgid "Last Active"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:274
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:291
 msgid "My BuddyPress Friends Tab"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:375
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:392
 msgid "BuddyPress field visibility syntax"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:395
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:412
 msgid "Are you sure you want to reset this template?"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:395
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:412
 msgid "Reset to Default BuddyPress User Listing Templates"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:396
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:413
 msgid "<b>Note:</b> This action is not reversible. All modifications to this template will be lost!"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/mustache-vars.php:410
+#: add-ons-advanced/buddypress/includes/mustache-vars.php:427
 msgid "Reset template"
 msgstr ""
 
@@ -8491,19 +8497,19 @@ msgstr ""
 msgid "Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:109, admin/advanced-settings/includes/forms/placeholder-labels.php:113, admin/advanced-settings/includes/views/view-forms.php:166
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:110, admin/advanced-settings/includes/forms/placeholder-labels.php:114, admin/advanced-settings/includes/views/view-forms.php:166
 msgid "Placeholder Labels"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:134
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:135
 msgid "Enable Placeholders"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:142
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:143
 msgid "Replace labels with placeholders"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:262
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:263
 msgid "Select an option"
 msgstr ""
 

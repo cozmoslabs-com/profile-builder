@@ -68,6 +68,7 @@ function wppb_pbpl_extra_attribute( $extra_attribute, $field, $form_location ) {
         'Number',
         'Validation',
         'Email',
+        'Input (Hidden)',
     );
 
     if( ! empty ( $field ) && in_array( $field['field'], $extra_attr_only_for ) ) {

@@ -128,7 +128,7 @@ add_action( 'admin_notices', 'wppb_le_rescan_success_message' );
  * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
  */
 function wppb_le_text_strings( $translated_text, $text, $domain ) {
-	if( is_admin() )
+	if( is_admin() && ( !isset( $_POST ) || !isset( $_POST['wppb_msf_ajax_nonce'] ) ) )
 		return $translated_text;
 
 	$edited_labels = get_option( 'pble' );

@@ -790,6 +790,7 @@
 <?php __("The meta-name cannot end with a space\n", "profile-builder"); ?>
 <?php __("That meta-name is already in use\n", "profile-builder"); ?>
 <?php __("That meta-name can't be used, please choose another\n", "profile-builder"); ?>
+<?php __("The meta-name cannot contain spaces.\n", "profile-builder"); ?>
 <?php __("The meta-name can only contain lowercase letters, numbers, _ , - and no spaces.\n", "profile-builder"); ?>
 <?php __("The following option did not coincide with the ones in the options list: %s\n", "profile-builder"); ?>
 <?php __("The following option(s) did not coincide with the ones in the options list: %s\n", "profile-builder"); ?>
@@ -1378,7 +1379,6 @@
 <?php __("State / County", "profile-builder"); ?>
 <?php __("Postcode / Zip", "profile-builder"); ?>
 <?php __("Email Address", "profile-builder"); ?>
-<?php __("Ship to a different address?", "profile-builder"); ?>
 <?php __("WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!", "profile-builder"); ?>
 <?php __("Address line 2", "profile-builder"); ?>
 <?php __("Billing Fields", "profile-builder"); ?>
@@ -1401,6 +1401,7 @@
 <?php __("Shipping ", "profile-builder"); ?>
 <?php __("Billing Address", "profile-builder"); ?>
 <?php __("Shipping Address", "profile-builder"); ?>
+<?php __("Ship to a different address?", "profile-builder"); ?>
 <?php __("Display on WooCommerce Checkout", "profile-builder"); ?>
 <?php __("Whether the field should be added to the WooCommerce checkout form or not", "profile-builder"); ?>
 <?php __("Displays customer billing fields in front-end. ", "profile-builder"); ?>

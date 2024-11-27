@@ -1264,82 +1264,96 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		}
 		// END check for the correct the date-format
 
-		//check for empty meta-name and duplicate meta-name
-		if ( $posted_values['overwrite-existing'] == 'No' ){
-            $skip_check_for_fields = wppb_return_unique_field_list(true);
-            $skip_check_for_fields = apply_filters ( 'wppb_skip_check_for_fields', $skip_check_for_fields );
 
-			if ( !in_array( trim( $posted_values['field'] ), $skip_check_for_fields ) ){
-				$reserved_meta_name_list = wppb_get_reserved_meta_name_list( $all_fields, $posted_values );
+        $skip_check_for_fields = wppb_return_unique_field_list(true);
+        $skip_check_for_fields = apply_filters ( 'wppb_skip_check_for_fields', $skip_check_for_fields );
 
-                //check to see if meta-name is empty
-                $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'HTML', 'GDPR Delete Button' );
+        // check for empty, reserved and/or duplicate meta-name
+        if ( !in_array( trim( $posted_values['field'] ), $skip_check_for_fields ) ) {
+            $reserved_meta_name_list = wppb_get_reserved_meta_name_list( $all_fields, $posted_values );
 
-                if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
-                    $message .= __( "The meta-name cannot be empty\n", 'profile-builder' );
-                }
+            //check to see if meta-name is empty
+            $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'HTML', 'GDPR Delete Button' );
 
-                //check if the meta-name starts or ends with a space
-                if ( strpos( $posted_values['meta-name'], " " ) === 0 ) {
-                    $message .= __( "The meta-name cannot begin with a space\n", 'profile-builder' );
-                }
-                if ( strpos( $posted_values['meta-name'], " " ) === strlen( $posted_values['meta-name'] ) - 1 ) {
-                    $message .= __( "The meta-name cannot end with a space\n", 'profile-builder' );
-                }
+            if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
+                $message .= __( "The meta-name cannot be empty\n", 'profile-builder' );
+            }
 
-                // meta names that are reserved and cannot be used as part of other meta names
-                $reserved_meta_name_list_strict = apply_filters( 'wppb_unique_meta_name_list_strict', array( 'map' ) );
-                // skip meta name check for these fields
-                $skip_unique_meta_name_list_check = apply_filters( 'wppb_skip_unique_meta_name_list_check', array( 'Map', 'Honeypot' ) );
+            //check if the meta-name starts or ends with a space
+            if ( strpos( $posted_values['meta-name'], " " ) === 0 ) {
+                $message .= __( "The meta-name cannot begin with a space\n", 'profile-builder' );
+            }
+            if ( strpos( $posted_values['meta-name'], " " ) === strlen( $posted_values['meta-name'] ) - 1 ) {
+                $message .= __( "The meta-name cannot end with a space\n", 'profile-builder' );
+            }
 
-				// if the desired meta name is in the restricted list or if one of the meta names in the strictly
-                // restricted list is part of it display an error message
-                $is_reserved_meta_name = false;
-                $trimmed_meta_name = trim( $posted_values['meta-name'] );
-                if ( !in_array( $posted_values['field'], $skip_unique_meta_name_list_check ) ) {
-                    foreach ($reserved_meta_name_list as $reserved_meta_name) {
-                        if (in_array($trimmed_meta_name, $reserved_meta_name_list) ||
-                            (strpos($trimmed_meta_name, $reserved_meta_name) !== false && in_array($reserved_meta_name, $reserved_meta_name_list_strict))) {
-                            $is_reserved_meta_name = true;
-                            break;
-                        }
+            // meta names that are reserved and cannot be used as part of other meta names
+            $reserved_meta_name_list_strict = apply_filters( 'wppb_unique_meta_name_list_strict', array( 'map' ) );
+            // skip meta name check for these fields
+            $skip_unique_meta_name_list_check = apply_filters( 'wppb_skip_unique_meta_name_list_check', array( 'Map', 'Honeypot' ) );
+
+            // if the desired meta name is in the restricted list or if one of the meta names in the strictly
+            // restricted list is part of it display an error message
+            $is_reserved_meta_name = false;
+            $trimmed_meta_name = trim( $posted_values['meta-name'] );
+
+            if ( !in_array( $posted_values['field'], $skip_unique_meta_name_list_check ) ) {
+                foreach ( $reserved_meta_name_list as $reserved_meta_name ) {
+
+                    if ( in_array( $trimmed_meta_name, $reserved_meta_name_list ) || ( strpos( $trimmed_meta_name, $reserved_meta_name ) !== false && in_array( $reserved_meta_name, $reserved_meta_name_list_strict ) ) ) {
+                        $is_reserved_meta_name = true;
+                        break;
                     }
+
                 }
-				if ( $is_reserved_meta_name )
-					$message .= __( "That meta-name can't be used, please choose another\n", 'profile-builder' );
+            }
 
-				else{
-					$found_in_custom_fields = false;
+            if ( $is_reserved_meta_name ) {
+                $message .= __( "That meta-name can't be used, please choose another\n", 'profile-builder' );
+            }
+            elseif ( $posted_values['overwrite-existing'] == 'No' ) {   // check for duplicate meta-name
+                $found_in_custom_fields = false;
 
-					if( $all_fields != 'not_set' )
-						foreach( $all_fields as $field ){
-							if ( $posted_values['meta-name'] != '' && ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] != $posted_values['id'] ) ){
-								$message .= __( "That meta-name is already in use\n", 'profile-builder' );
-								$found_in_custom_fields = true;
+                if( $all_fields != 'not_set' )
+                    foreach( $all_fields as $field ){
 
-							}elseif ( ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] == $posted_values['id'] ) )
-								$found_in_custom_fields = true;
-						}
-
-					if ( $found_in_custom_fields === false ){
-                        if( $posted_values['meta-name'] != '' ) {
-                            $found_meta_name = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->usermeta WHERE meta_key = %s", $posted_values['meta-name']));
-                            if ($found_meta_name != null)
-                                $message .= __("That meta-name is already in use\n", 'profile-builder');
+                        if ( $posted_values['meta-name'] != '' && ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] != $posted_values['id'] ) ) {
+                            $message .= __( "That meta-name is already in use\n", 'profile-builder' );
+                            $found_in_custom_fields = true;
                         }
-					}
-				}
-			}
-		}
-		//END check duplicate meta-name
+                        elseif ( ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] == $posted_values['id'] ) )
+                            $found_in_custom_fields = true;
 
-		// check for correct meta name on upload field
+                    }
+
+                if ( $found_in_custom_fields === false ) {
+
+                    if( $posted_values['meta-name'] != '' ) {
+                        $found_meta_name = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->usermeta WHERE meta_key = %s", $posted_values['meta-name'] ) );
+
+                        if ( $found_meta_name != null )
+                            $message .= __( "That meta-name is already in use\n", 'profile-builder' );
+
+                    }
+
+                }
+
+            }
+
+        }
+        //END check for empty, reserved and/or duplicate meta-name
+
+		// check for correct meta name
 		if( $posted_values['field'] == 'Upload' ) {
 			if( ! empty( $posted_values['meta-name'] ) && preg_match( '/([^a-z\d_-])/', $posted_values['meta-name'] ) ) {
 				$message .= __( "The meta-name can only contain lowercase letters, numbers, _ , - and no spaces.\n", 'profile-builder' );
 			}
 		}
-		// END check for correct meta name on upload field
+        elseif ( ! empty( $posted_values['meta-name'] ) && preg_match( '/\s/', $posted_values['meta-name'] ) ) {
+            $message .= __( "The meta-name cannot contain spaces.\n", 'profile-builder' );
+        }
+
+        // END check for correct meta name
 
 		// check for valid default option (checkbox, select, radio)
 		if ( ( $posted_values['field'] == 'Checkbox' ) || ( $posted_values['field'] == 'Select (Multiple)' ) ) {
