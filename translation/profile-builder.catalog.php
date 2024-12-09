@@ -1355,6 +1355,7 @@
 <?php __("<strong>ERROR:</strong> You need to confirm your email address before you can log in.", "profile-builder"); ?>
 <?php __("Before you can access your account an administrator has to approve it. You will be notified via email.", "profile-builder"); ?>
 <?php __("<strong>ERROR:</strong> Your account has to be confirmed by an administrator before you can log in.", "profile-builder"); ?>
+<?php __("<strong>ERROR:</strong> An email address is required to proceed but was not provided by the selected platform.", "profile-builder"); ?>
 <?php __("You will be redirected in 5 seconds. If not, click %%.", "profile-builder"); ?>
 <?php __("<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first.", "profile-builder"); ?>
 <?php __("Wrong password!", "profile-builder"); ?>

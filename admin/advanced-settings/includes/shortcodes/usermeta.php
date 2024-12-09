@@ -63,5 +63,14 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 		return $atts['pre'] . $value . $atts['post'] ;
 	}
 
+	if( $atts['key'] === 'role' ){
+		$roles = !empty( $user->roles ) ? $user->roles : array();
+
+		if( !empty( $roles ) ){
+			$value_roles = implode( ', ', $roles );
+			return  $atts['pre'] . $value_roles . $atts['post'];
+		}
+	}
+
 	return;
 }

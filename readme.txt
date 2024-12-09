@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 3.12.8
+Stable tag: 3.12.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -203,6 +203,10 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.12.9 =
+* Fix: More fixes relating to the doing it wrong WordPress 6.7 notice
+* Misc: Allow the usermeta shortcode to display user roles. Use the `role` key to display them
+
 = 3.12.8 =
 * Fix: Make sure that the restricted meta name check always runs regardless of field settings
 * Fix: PHP Notice that started appearing with the WordPress 6.7 update

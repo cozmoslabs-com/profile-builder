@@ -10,11 +10,34 @@ if( !class_exists('WPPB_toolbox') ){
     class WPPB_Advanced_Settings {
 
         public $tabs;
+        public $tab_slugs;
         public $advanced_settings_dir;
         protected $active_tab = 'forms';
 
         public function __construct() {
 
+            $this->tab_slugs = array(
+                'forms',
+                'fields',
+                'userlisting',
+                'shortcodes',
+                'admin',
+            );
+
+            $this->advanced_settings_dir = plugin_dir_path( __FILE__ );
+
+            //$this->generate_settings();
+
+            add_action( 'admin_menu',            array( &$this, 'register_submenu_page' ) );
+            add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ), 9 );
+            add_action( 'admin_init',            array( &$this, 'register_settings' ) );
+
+            add_action( 'admin_init', array( $this, 'setup_tabs' ) );
+
+            $this->setup_functions();
+        }
+
+        public function setup_tabs(){
             $this->tabs = array(
                 'forms'       => __( 'Forms', 'profile-builder' ),
                 'fields'      => __( 'Fields', 'profile-builder' ),
@@ -22,16 +45,6 @@ if( !class_exists('WPPB_toolbox') ){
                 'shortcodes'  => __( 'Shortcodes', 'profile-builder' ),
                 'admin'       => __( 'Admin', 'profile-builder' ),
             );
-
-            $this->advanced_settings_dir = plugin_dir_path( __FILE__ );
-
-            $this->generate_settings();
-
-            add_action( 'admin_menu',            array( &$this, 'register_submenu_page' ) );
-            add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ), 9 );
-            add_action( 'admin_init',            array( &$this, 'register_settings' ) );
-
-            $this->setup_functions();
         }
 
         public function register_submenu_page() {
@@ -232,7 +245,7 @@ if( !class_exists('WPPB_toolbox') ){
         }
 
         private function setup_functions() {
-            foreach( $this->tabs as $slug => $label ) {
+            foreach( $this->tab_slugs as $slug ) {
                 $settings = get_option( 'wppb_toolbox_' . $slug . '_settings', array() );
 
                 if ( is_array( $settings ) ) {

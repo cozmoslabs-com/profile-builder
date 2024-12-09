@@ -317,7 +317,7 @@ msgstr ""
 msgid "Login is set to be done using the Email. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
 msgstr ""
 
-#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:928
+#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:933
 msgid "General Settings"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgstr ""
 msgid "Version %s"
 msgstr ""
 
-#: admin/basic-info.php:43, admin/general-settings.php:24, admin/advanced-settings/advanced-settings.php:22
+#: admin/basic-info.php:43, admin/general-settings.php:24, admin/advanced-settings/advanced-settings.php:45
 msgid "Shortcodes"
 msgstr ""
 
@@ -801,23 +801,23 @@ msgstr ""
 msgid "Private Website"
 msgstr ""
 
-#: admin/general-settings.php:14, admin/advanced-settings/advanced-settings.php:38, admin/advanced-settings/advanced-settings.php:56
+#: admin/general-settings.php:14, admin/advanced-settings/advanced-settings.php:51, admin/advanced-settings/advanced-settings.php:69
 msgid "Advanced Settings"
 msgstr ""
 
-#: admin/general-settings.php:18, admin/advanced-settings/advanced-settings.php:19
+#: admin/general-settings.php:18, admin/advanced-settings/advanced-settings.php:42
 msgid "Forms"
 msgstr ""
 
-#: admin/general-settings.php:19, admin/advanced-settings/advanced-settings.php:20
+#: admin/general-settings.php:19, admin/advanced-settings/advanced-settings.php:43
 msgid "Fields"
 msgstr ""
 
-#: admin/general-settings.php:22, admin/advanced-settings/advanced-settings.php:21
+#: admin/general-settings.php:22, admin/advanced-settings/advanced-settings.php:44
 msgid "Userlisting"
 msgstr ""
 
-#: admin/general-settings.php:25, admin/advanced-settings/advanced-settings.php:23
+#: admin/general-settings.php:25, admin/advanced-settings/advanced-settings.php:46
 msgid "Admin"
 msgstr ""
 
@@ -3267,7 +3267,7 @@ msgstr ""
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1581
+#: admin/manage-fields.php:1581, add-ons/user-listing/one-map-listing.php:563
 msgid "Search Location"
 msgstr ""
 
@@ -3663,7 +3663,7 @@ msgstr ""
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1421, add-ons-advanced/social-connect/index.php:427
+#: features/functions.php:1421, add-ons-advanced/social-connect/index.php:428
 msgid "here"
 msgstr ""
 
@@ -4388,7 +4388,7 @@ msgstr ""
 msgid "Please wait while the pins are loading..."
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:561
+#: add-ons/user-listing/one-map-listing.php:568
 msgid "The API Key was not provided."
 msgstr ""
 
@@ -5012,7 +5012,7 @@ msgstr ""
 msgid "Logged Out Users"
 msgstr ""
 
-#: add-ons-advanced/custom-profile-menus/index.php:263, add-ons-advanced/buddypress/includes/field-visibility.php:218
+#: add-ons-advanced/custom-profile-menus/index.php:263, add-ons-advanced/buddypress/includes/field-visibility.php:219
 msgid "Everyone"
 msgstr ""
 
@@ -5496,70 +5496,74 @@ msgid "<strong>ERROR:</strong> Your account has to be confirmed by an administra
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:426
+msgid "<strong>ERROR:</strong> An email address is required to proceed but was not provided by the selected platform."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:427
 msgid "You will be redirected in 5 seconds. If not, click %%."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:428
+#: add-ons-advanced/social-connect/index.php:429
 msgid "<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:429
+#: add-ons-advanced/social-connect/index.php:430
 msgid "Wrong password!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:430
+#: add-ons-advanced/social-connect/index.php:431
 msgid "Please enter a valid email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:431
+#: add-ons-advanced/social-connect/index.php:432
 msgid "You can only login on this form.<br>Register with your social account on the register form."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:432, admin/setup-wizard/view-tab-addons.php:93, admin/setup-wizard/view-tab-general.php:106, admin/setup-wizard/view-tab-user-pages.php:130
+#: add-ons-advanced/social-connect/index.php:433, admin/setup-wizard/view-tab-addons.php:93, admin/setup-wizard/view-tab-general.php:106, admin/setup-wizard/view-tab-user-pages.php:130
 msgid "Continue"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:433, add-ons-advanced/social-connect/index.php:454, add-ons-advanced/social-connect/index.php:470
+#: add-ons-advanced/social-connect/index.php:434, add-ons-advanced/social-connect/index.php:455, add-ons-advanced/social-connect/index.php:471
 msgid "Ok"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:443
+#: add-ons-advanced/social-connect/index.php:444
 msgid "To create a new account please confirm:"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:444
+#: add-ons-advanced/social-connect/index.php:445
 msgid "You must agree to the Terms And Conditions to create a new account."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:452, add-ons-advanced/social-connect/index.php:453
+#: add-ons-advanced/social-connect/index.php:453, add-ons-advanced/social-connect/index.php:454
 msgid "Please enter your Facebook email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:467
+#: add-ons-advanced/social-connect/index.php:468
 msgid "Waiting for Twitter..."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:468, add-ons-advanced/social-connect/index.php:469
+#: add-ons-advanced/social-connect/index.php:469, add-ons-advanced/social-connect/index.php:470
 msgid "Please enter your Twitter email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:777
+#: add-ons-advanced/social-connect/index.php:782
 msgid "Profile Builder not active!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:932
+#: add-ons-advanced/social-connect/index.php:937
 msgid "Application Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:936
+#: add-ons-advanced/social-connect/index.php:941
 msgid "Appearance Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1000
+#: add-ons-advanced/social-connect/index.php:1005
 msgid "Unlink"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1007
+#: add-ons-advanced/social-connect/index.php:1012
 msgid "Your account is linked with:"
 msgstr ""
 
@@ -5989,35 +5993,35 @@ msgstr ""
 msgid "View all posts by"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:38
+#: admin/advanced-settings/advanced-settings.php:51
 msgid "Toolbox"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:82
+#: admin/advanced-settings/advanced-settings.php:95
 msgid "The email address you are trying to register with is not allowed on this website."
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:90
+#: admin/advanced-settings/advanced-settings.php:103
 msgid "Your submission contains banned words."
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:205
+#: admin/advanced-settings/advanced-settings.php:218
 msgid "are"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:206
+#: admin/advanced-settings/advanced-settings.php:219
 msgid "have"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:202
+#: admin/advanced-settings/advanced-settings.php:215
 msgid "is"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:203
+#: admin/advanced-settings/advanced-settings.php:216
 msgid "has"
 msgstr ""
 
-#: admin/advanced-settings/advanced-settings.php:209
+#: admin/advanced-settings/advanced-settings.php:222
 msgid "%1$s of the emails provided in the Admin Emails field %2$s invalid and %3$s been removed from the list"
 msgstr ""
 
@@ -7523,31 +7527,31 @@ msgstr ""
 msgid "BuddyPress Allow Custom Visibility"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:121, add-ons-advanced/buddypress/includes/field-visibility.php:107
+#: add-ons-advanced/buddypress/includes/field-visibility.php:122, add-ons-advanced/buddypress/includes/field-visibility.php:108
 msgid "This field can be seen by: "
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:107
+#: add-ons-advanced/buddypress/includes/field-visibility.php:108
 msgid "Change"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:112
+#: add-ons-advanced/buddypress/includes/field-visibility.php:113
 msgid "Who can see this field?"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:117
+#: add-ons-advanced/buddypress/includes/field-visibility.php:118
 msgid "Close"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:222
+#: add-ons-advanced/buddypress/includes/field-visibility.php:223
 msgid "Only Me"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:226, add-ons-advanced/buddypress/includes/mustache-vars.php:348
+#: add-ons-advanced/buddypress/includes/field-visibility.php:227, add-ons-advanced/buddypress/includes/mustache-vars.php:348
 msgid "All Members"
 msgstr ""
 
-#: add-ons-advanced/buddypress/includes/field-visibility.php:230, add-ons-advanced/buddypress/includes/mustache-vars.php:352
+#: add-ons-advanced/buddypress/includes/field-visibility.php:231, add-ons-advanced/buddypress/includes/mustache-vars.php:352
 msgid "My Friends"
 msgstr ""
 
