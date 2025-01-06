@@ -95,8 +95,15 @@ add_action( 'wppb_backend_save_form_field', 'wppb_save_checkbox_value', 10, 4 );
 function wppb_process_checkbox_value( $field, $request_data ){
 	$checkbox_values = '';
 
-    if( isset( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) && is_array( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) )
+    if( isset( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) && is_array( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) ){
+
+		// sanitize values
+		foreach( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] as $key => $value ){
+			$request_data[ wppb_handle_meta_name( $field['meta-name'] ) ][$key] = sanitize_text_field( $value );
+		}
+
         $checkbox_values = implode( ',', $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] );
+	}
 
 	return trim( $checkbox_values, ',' );
 }

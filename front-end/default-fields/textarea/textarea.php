@@ -59,7 +59,7 @@ add_filter( 'wppb_admin_output_form_field_textarea', 'wppb_textarea_handler', 10
 function wppb_save_textarea_value( $field, $user_id, $request_data, $form_location ){
 	if( $field['field'] == 'Textarea' ){
 		if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) )
-			update_user_meta( $user_id, $field['meta-name'], $request_data[wppb_handle_meta_name( $field['meta-name'] )] );
+			update_user_meta( $user_id, $field['meta-name'], esc_textarea( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
 	}
 }
 add_action( 'wppb_save_form_field', 'wppb_save_textarea_value', 10, 4 );

@@ -658,6 +658,9 @@ class WPPB_Roles_Editor {
             $role_display_name = isset( $_POST['role_display_name'] ) ? sanitize_text_field( $_POST['role_display_name'] ) : '';
 
             add_role( $role_slug, $role_display_name, $capabilities );
+
+            do_action( 'wppb_user_role_added', $role_slug, $role_display_name, $capabilities );
+            
         }
 
         die( 'role_capabilities_updated' );

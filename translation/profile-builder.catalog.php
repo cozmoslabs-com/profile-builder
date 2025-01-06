@@ -2042,11 +2042,12 @@
 <?php __("Delete this item", "profile-builder"); ?>
 <?php __("Please enter a value for the required field ", "profile-builder"); ?>
 <?php __("This field is available in our paid plans.", "profile-builder"); ?>
+<?php __("A Map field must be created first.", "profile-builder"); ?>
 <?php __("Install the free Paid Member Subscriptions plugin to get access this field.", "profile-builder"); ?>
 <?php __("Profile Builder Forms", "profile-builder"); ?>
 <?php __("Remove", "profile-builder"); ?>
 <?php __("Yes, I'd like to create a new site", "profile-builder"); ?>
-<?php __("Your site url will look like this:<br>", "profile-builder"); ?>
+<?php __("Your site url will look like this: ", "profile-builder"); ?>
 <?php __("Site URL slug", "profile-builder"); ?>
 <?php __("Site Title", "profile-builder"); ?>
 <?php __("Privacy: I would like my site to appear in search engines, and in public listings around this network.", "profile-builder"); ?>
@@ -2065,7 +2066,7 @@
 <?php __("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder"); ?>
 <?php __("To use reCAPTCHA you must get an API public key from:", "profile-builder"); ?>
 <?php __("Click the BACK button on your browser, and try again.", "profile-builder"); ?>
-<?php __("reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. Please update Paid Member Subscriptions to a newer version to avoid any issues.", "profile-builder"); ?>
+<?php __("reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues.", "profile-builder"); ?>
 <?php __("Files must be smaller than ", "profile-builder"); ?>
 <?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
 <?php __("An error occurred, please try again later.", "profile-builder"); ?>

@@ -1422,6 +1422,8 @@ class Wordpress_Creation_Kit_PB{
 		if( !empty( $disabled ) ){
 			if( isset( $value_attr['field_name'] ) && $value_attr['field_name'] == 'Subscription Plans' )
 				$title = esc_attr( __( 'Install the free Paid Member Subscriptions plugin to get access this field.', 'profile-builder' ) );
+            elseif ( isset( $value_attr['field_name'] ) && $value_attr['field_name'] == 'Additional Map' )
+                $title = esc_attr( __( 'A Map field must be created first.', 'profile-builder' ) );
 			else
 				$title = esc_attr( __( 'This field is available in our paid plans.', 'profile-builder' ) );
 		}

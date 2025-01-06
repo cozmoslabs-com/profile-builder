@@ -359,5 +359,11 @@ abstract class PB_Elementor_Widget extends \Elementor\Widget_Base {
                 }
         }
     }
+
+    protected function is_dynamic_content(): bool {
+
+		return true;
+
+	}
 }
 

@@ -598,6 +598,20 @@ var fields 	=	{
 																		'meta_name_value'	: 'map'
 																	}
                                                                 },
+
+						'Additional Map':              	    	{	'show_rows'	:	[
+																						'.row-field-title',
+																						'.row-meta-name',
+																						'.row-description',
+																						'.row-map-default-lat',
+																						'.row-map-default-lng',
+																						'.row-map-default-zoom',
+																						'.row-map-height',
+																						'.row-required',
+																						'.row-overwrite-existing'
+																					]
+																},
+
 						'HTML':              					{	'show_rows'	:	[
 																						'.row-field-title',
 																						'.row-description',

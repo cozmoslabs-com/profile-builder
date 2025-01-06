@@ -74,7 +74,7 @@ function wppb_save_gdpr_value( $field, $user_id, $request_data, $form_location )
     if( $field['field'] == 'GDPR Checkbox' ){
         if ( $form_location == 'register' || $form_location == 'edit_profile' ){
             if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) )
-                update_user_meta( $user_id, $field['meta-name'], $request_data[wppb_handle_meta_name( $field['meta-name'] )] );
+                update_user_meta( $user_id, $field['meta-name'], sanitize_text_field( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
                 //save the time when the user agreed
                 update_user_meta( $user_id, 'gdpr_agreement_time', time() );
         }

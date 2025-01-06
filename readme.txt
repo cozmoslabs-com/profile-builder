@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 3.12.9
+Stable tag: 3.13.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -203,6 +203,15 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.0 =
+* Fix: Security issue relating to Unauthenticated Stored Cross-Site Scripting. Thanks to Brian Mungah for the report
+* Fix: Add compatibility with Elementor Element Cache to our Content Restriction integration and form widgets
+* Fix: A compatibility issue between the bypass EC on form feature and autologin
+* Fix: A situation where the autologin feature was not working when used in a form that was selling a Paid Member Subscriptions plan through the PayPal Express gateway
+* Misc: Run a custom action after an user role is added through the User Role Editor: wppb_user_role_added
+* Misc: Small changes to the Blog Detail field
+* Misc: Correct styling for a notice
+
 = 3.12.9 =
 * Fix: More fixes relating to the doing it wrong WordPress 6.7 notice
 * Misc: Allow the usermeta shortcode to display user roles. Use the `role` key to display them

@@ -86,7 +86,7 @@ add_filter( 'wppb_admin_output_form_field_select', 'wppb_select_handler', 10, 6 
 function wppb_save_select_value( $field, $user_id, $request_data, $form_location ){
 	if( $field['field'] == 'Select' ){
 		if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) )
-			update_user_meta( $user_id, $field['meta-name'], $request_data[wppb_handle_meta_name( $field['meta-name'] )] );
+			update_user_meta( $user_id, $field['meta-name'], sanitize_text_field( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
 	}
 }
 add_action( 'wppb_save_form_field', 'wppb_save_select_value', 10, 4 );

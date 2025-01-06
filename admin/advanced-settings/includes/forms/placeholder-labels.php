@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', 'wppb_pbpl_scripts_and_styles' );
 function wppb_pbpl_field_css_class( $field ) {
     $field = esc_attr( $field );
 
-    if( strpos( $field, 'wppb-subscription-plans' ) == false ) {
+    if( strpos( $field, 'wppb-subscription-plans' ) == false && strpos( $field, 'wppb-default-blog-details' ) == false ) {
         $field = $field . ' pbpl-class';
     }
 
@@ -203,6 +203,7 @@ add_action( 'wppb_form_args_before_output', 'wppb_pbpl_activate' );
  */
 function wppb_pbpl_add_filters() {
     add_filter( 'wppb_field_css_class', 'wppb_pbpl_field_css_class', 10, 1 );
+    add_filter( 'wppb_blog_details_field_css_class', 'wppb_pbpl_field_css_class', 10, 1 );
     add_filter( 'wppb_extra_attribute', 'wppb_pbpl_extra_attribute', 10, 3 );
     add_filter( 'wppb_woo_extra_attribute', 'wppb_pbpl_woo_extra_attribute', 10, 2 );
     add_filter( 'wppb_extra_select_option', 'wppb_pbpl_extra_select_option', 10, 3 );
@@ -306,6 +307,25 @@ function wppb_pbpl_resend_activation( $extra_attr, $input_title, $input_type ) {
 }
 add_filter( 'wppb_resend_activation_extra_attr', 'wppb_pbpl_resend_activation', 10, 3 );
 
+
+/**
+ * Add Placeholder to Blog Details Fields
+ *
+ */
+function wppb_pbpl_blog_details( $placeholder, $field_slug, $label ){
+
+    if( $field_slug !== 'default_field_blog_url' && $field_slug !== 'default_field_blog_title' )
+        return $placeholder;
+
+    return ' placeholder="'. esc_attr( $label ) . '" ';
+}
+add_filter( 'wppb_blog_details_field_placeholder', 'wppb_pbpl_blog_details', 10, 3 );
+
+
+/**
+ * Add Placeholder Labels classes
+ *
+ */
 function wppb_pbpl_add_resend_activation_classes( $classes, $field ) {
     $forms_settings = get_option( 'wppb_toolbox_forms_settings' );
 

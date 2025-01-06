@@ -214,8 +214,13 @@ class Profile_Builder_Form_Creator{
         }
 
         $wppb_general_settings = get_option( 'wppb_general_settings' );
+        $ec_bypass_forms = wppb_toolbox_get_settings( 'forms', 'ec-bypass' );
 
-        if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ) {
+        if ( is_array( $ec_bypass_forms ) && !empty( $_POST['form_name'] ) && in_array( sanitize_text_field( $_POST['form_name'] ), $ec_bypass_forms ) )
+            $should_bypass_ec = true;
+        else $should_bypass_ec = false;
+
+        if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) && !$should_bypass_ec ) {
             return $redirect_old;
         }
 
@@ -717,7 +722,14 @@ class Profile_Builder_Form_Creator{
         if( !empty( $form_fields ) ){
             foreach( $form_fields as $field ){
                 if( !empty( $field['meta-name'] ) ){
-                    $posted_value = ( !empty( $global_request[$field['meta-name']] )  ? $global_request[$field['meta-name']] : '' );
+
+                    if( in_array( $field['field'], array( 'URL' ) ) )
+                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? esc_url_raw( $global_request[ $field['meta-name'] ] ) : '' );
+                    else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) )
+                        $posted_value = ( !empty( $global_request[$field['meta-name']] )  ? esc_textarea( $global_request[ $field['meta-name'] ] ) : '' );
+                    else 
+                        $posted_value = ( !empty( $global_request[$field['meta-name']] )  ? sanitize_text_field( $global_request[ $field['meta-name'] ] ) : '' );
+                    
                     $meta[$field['meta-name']] = apply_filters( 'wppb_add_to_user_signup_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), $posted_value, $field, $global_request );
                 }
             }

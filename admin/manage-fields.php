@@ -121,6 +121,7 @@ function wppb_populate_manage_fields(){
         $manage_field_types['optgroups']['advanced']['options'][] = 'Colorpicker';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Validation';
         $manage_field_types['optgroups']['advanced']['options'][] = 'Map';
+        $manage_field_types['optgroups']['advanced']['options'][] = 'Additional Map';
 
 		$manage_field_types['optgroups']['other']['options'][] = 'Email';
 		$manage_field_types['optgroups']['other']['options'][] = 'URL';
@@ -165,6 +166,7 @@ function wppb_populate_manage_fields(){
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Colorpicker', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Validation', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Map', 'disabled' => true );
+        $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Additional Map', 'disabled' => true );
 
 		$manage_field_types['optgroups']['other']['options'][] = array( 'field_name' => 'WooCommerce Customer Billing Address', 'disabled' => true );
 		$manage_field_types['optgroups']['other']['options'][] = array( 'field_name' => 'WooCommerce Customer Shipping Address', 'disabled' => true );

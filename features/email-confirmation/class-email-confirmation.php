@@ -88,11 +88,11 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                     foreach( maybe_unserialize( $user_meta ) as $key => $value ){
                         if( $key != 'user_pass' ){
                             if ( is_array($value) ) $value = implode(',',$value);
-                            $user_meta_content .= $key.':'.$value.'<br/>';
+                            $user_meta_content .= wp_kses_post( $key ).':'.wp_kses_post( $value ).'<br/>';
                         }
                     }
                 }
-                return '<a href="#" data-email="'. $item['email'] .'" onclick="'. esc_attr( 'jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. addslashes( __("User Meta", "profile-builder" ) ) .'\', width: 500 }) ;return false;') .'">'. __( 'show', 'profile-builder' ) .'</a>';
+                return '<a href="#" data-email="'. esc_attr( $item['email'] ) .'" onclick="'. esc_attr( 'jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. addslashes( __("User Meta", "profile-builder" ) ) .'\', width: 500 }) ;return false;') .'">'. __( 'show', 'profile-builder' ) .'</a>';
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }

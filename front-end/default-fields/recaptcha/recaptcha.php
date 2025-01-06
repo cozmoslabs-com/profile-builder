@@ -755,7 +755,16 @@ function wppb_recaptcha_set_default_values() {
 }
 
 if ( function_exists('is_plugin_active') && is_plugin_active( 'paid-member-subscriptions/index.php' ) && version_compare( PMS_VERSION, '2.12.9', '<' ) ){
-    new WPPB_Add_General_Notices('wppb_pms_recaptcha_version_compatibility_alert',
-        __('reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. Please update Paid Member Subscriptions to a newer version to avoid any issues.', 'profile-builder'),
-        'wppb-notice notice notice-warning');
+
+    $notifications = WPPB_Plugin_Notifications::get_instance();
+
+    // this must be unique
+    $notification_id = 'wppb_pms_recaptcha_compatibility';
+
+    $notification_message = '<p>' . __( 'reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues.', 'profile-builder' ) . '</p>';
+    $notification_message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+
+    // add the notification  (we need to add the "notice is-dismissible" classes for the dismiss button to be correctly positioned)
+    $notifications->add_notification( $notification_id, $notification_message, 'wppb-notice notice notice-warning is-dismissible', false );
+
 }

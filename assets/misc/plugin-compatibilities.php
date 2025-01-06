@@ -459,3 +459,16 @@
         return $prevent_access;
 
     }
+
+    // This filter makes the PayPal Express confirmation form appear normally when automatic login is enabled for PB
+    add_filter( 'pms_paypal_express_enable_the_content_hook_for_confirmation_form', 'wppb_pms_maybe_enable_the_content_hook_for_paypal_express_confirmation_form' );
+    function wppb_pms_maybe_enable_the_content_hook_for_paypal_express_confirmation_form( $setting ){
+        
+        $wppb_general_settings = get_option( 'wppb_general_settings' );
+
+        if( isset( $wppb_general_settings['automaticallyLogIn'] ) && $wppb_general_settings['automaticallyLogIn'] == 'Yes' )
+            return true;
+
+        return $setting;
+
+    }

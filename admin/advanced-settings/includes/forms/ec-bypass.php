@@ -20,6 +20,6 @@ function wppb_toolbox_force_enable_send_credentials_via_email( $send_credentials
     if ( in_array( $form_args['form_name'], $forms ) )
         return 'no';
 
-    return $email_confirmation;
+    return $send_credentials;
 
 }
