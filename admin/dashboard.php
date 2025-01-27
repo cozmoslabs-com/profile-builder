@@ -45,10 +45,10 @@ function wppb_dashboard_page_content() {
                     <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Totals', 'profile-builder' ); ?></h4>
 
                     <select name="wppb_dashboard_stats_select" id="wppb-dashboard-stats-select">
-                        <option value="30days" selected>30 days</option>
-                        <option value="this_month">This Month</option>
-                        <option value="last_month">Last Month</option>
-                        <option value="this_year">This Year</option>
+                        <option value="30days" selected><?php esc_html_e( '30 days', 'profile-builder' ); ?></option>
+                        <option value="this_month"><?php esc_html_e( 'This Month', 'profile-builder' ); ?></option>
+                        <option value="last_month"><?php esc_html_e( 'Last Month', 'profile-builder' ); ?></option>
+                        <option value="this_year"><?php esc_html_e( 'This Year', 'profile-builder' ); ?></option>
                     </select>
 
                     <input type="hidden" id="wppb-dashboard-stats-select__nonce" value="<?php echo esc_html( wp_create_nonce( 'wppb_dashboard_get_stats' ) ); ?>" />
@@ -103,23 +103,24 @@ function wppb_dashboard_page_content() {
 
             <?php if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) ) : ?>
                 <div class="postbox cozmoslabs-form-subsection-wrapper">
-                    <h4 class="cozmoslabs-subsection-title"> Have a question? Not sure how to proceed?<span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
+                    <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Have a question? Not sure how to proceed?', 'profile-builder' ); ?><span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
 
-                    <p><strong><span class="dashicons dashicons-plus" style="color: #0F15B0;"></span> Open a new ticket over at</strong>
+                    <p><strong><span class="dashicons dashicons-plus" style="color: #0F15B0;"></span><?php esc_html_e( ' Open a new ticket over at', 'profile-builder' ); ?></strong>
 
                     <br>
 
                     <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" style="display:block;padding-left:24px;margin-top:4px;">https://wordpress.org/support/plugin/profile-builder/</a></p>
 
-                    <p><strong><span class="dashicons dashicons-welcome-write-blog" style="color: #0F15B0;"></span> Describe your problem:</strong></p>
+                    <p><strong><span class="dashicons dashicons-welcome-write-blog" style="color: #0F15B0;"></span><?php esc_html_e( ' Describe your problem:', 'profile-builder' ); ?></strong></p>
 
                     <ul style="padding-left:24px;">
-                        <li>What you tried to do</li><li>What you expected to happen</li>
-                        <li>What actually happened</li>
-                        <li>Screenshots help. Use a service like <a href="https://snipboard.io/">snipboard.io</a> and share the link.</li>
+                        <li><?php esc_html_e( 'What you tried to do', 'profile-builder' ); ?></li>
+                        <li><?php esc_html_e( 'What you expected to happen', 'profile-builder' ); ?></li>
+                        <li><?php esc_html_e( 'What actually happened', 'profile-builder' ); ?></li>
+                        <li><?php printf( esc_html__( 'Screenshots help. Use a service like %1s snipboard.io %2s and share the link.', 'profile-builder' ), '<a href="https://snipboard.io/">', '</a>' ); ?></li>
                     </ul>
 
-                    <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span>Get help from our team </strong></p>
+                    <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span><?php esc_html_e( 'Get help from our team', 'profile-builder' ); ?></strong></p>
 
                 </div>
             <?php endif; ?>
@@ -140,47 +141,47 @@ function wppb_dashboard_page_content() {
                 <div class="wppb-dashboard-shortcodes">
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
-                            <div class="label">Register</div>
-                            <p>Add registration forms where users can sign-up and enter their initial details.</p>
+                            <div class="label"><?php esc_html_e( 'Register', 'profile-builder' ); ?></div>
+                            <p><?php esc_html_e( 'Add registration forms where users can sign-up and enter their initial details.', 'profile-builder' ); ?></p>
                         </div>
 
                         <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-register]
                         </div>
-                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'><?php esc_html_e( 'Shortcode copied', 'profile-builder' ); ?></span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
-                            <div class="label">Login</div>
-                            <p>Allow members to login.</p>
+                            <div class="label"><?php esc_html_e( 'Login', 'profile-builder' ); ?></div>
+                            <p><?php esc_html_e( 'Allow members to login.', 'profile-builder' ); ?></p>
                         </div>
 
                         <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-login]
                         </div>
-                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'><?php esc_html_e( 'Shortcode copied', 'profile-builder' ); ?></span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
-                            <div class="label">Edit Profile</div>
-                            <p>Allow members to edit their account information.</p>
+                            <div class="label"><?php esc_html_e( 'Edit Profile', 'profile-builder' ); ?></div>
+                            <p><?php esc_html_e( 'Allow members to edit their account information.', 'profile-builder' ); ?></p>
                         </div>
 
                         <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-edit-profile]
                         </div>
-                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'><?php esc_html_e( 'Shortcode copied', 'profile-builder' ); ?></span>
                     </div>
                     <div class="wppb-dashboard-shortcodes__row">
                         <div class="wppb-dashboard-shortcodes__row__wrap">
-                            <div class="label">Restrict Content</div>
-                            <p>Restrict pieces of content on individual posts and pages based on user role.</p>
+                            <div class="label"><?php esc_html_e( 'Restrict Content', 'profile-builder' ); ?></div>
+                            <p><?php esc_html_e( 'Restrict pieces of content on individual posts and pages based on user role.', 'profile-builder' ); ?></p>
                         </div>
 
                         <div title='Click to copy' class="wppb-shortcode_copy-text wppb-dashboard-shortcodes__row__input">
                             [wppb-restrict user_roles="subscriber"]
                         </div>
-                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'>Shortcode copied</span>
+                        <span style='display: none; margin-left: 10px' class='wppb-copy-message'><?php esc_html_e( 'Shortcode copied', 'profile-builder' ); ?></span>
                     </div>
                 </div>
 

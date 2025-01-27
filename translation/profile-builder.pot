@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:409
+#: index.php:413
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:405
+#: index.php:409
 msgid "To enable updates, please enter your serial number on the %sSettings%s page. If you don't have a serial number, please see %sdetails & pricing%s."
 msgstr ""
 
@@ -117,12 +117,12 @@ msgstr ""
 msgid "Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s"
 msgstr ""
 
-#: admin/add-ons.php:104, add-ons-advanced/social-connect/index.php:209, add-ons-advanced/social-connect/index.php:210, add-ons-advanced/social-connect/index.php:319, add-ons-advanced/social-connect/index.php:323, admin/setup-wizard/view-tab-addons.php:39
+#: admin/add-ons.php:104, add-ons-advanced/social-connect/index.php:217, add-ons-advanced/social-connect/index.php:218, add-ons-advanced/social-connect/index.php:327, add-ons-advanced/social-connect/index.php:331, admin/setup-wizard/view-tab-addons.php:39
 msgid "Social Connect"
 msgstr ""
 
 #: admin/add-ons.php:105, admin/setup-wizard/view-tab-addons.php:42
-msgid "Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter."
+msgid "Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X."
 msgstr ""
 
 #: admin/add-ons.php:112, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:80
@@ -237,7 +237,7 @@ msgstr ""
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:223, add-ons-free/labels-edit/labels-edit.php:200, add-ons-free/labels-edit/labels-edit.php:201
+#: admin/add-ons.php:223, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
 msgid "Labels Edit"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Login is set to be done using the Email. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
 msgstr ""
 
-#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:933
+#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:942
 msgid "General Settings"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Add Field"
 msgstr ""
 
-#: admin/admin-functions.php:212, admin/general-settings.php:114, admin/general-settings.php:114, add-ons-advanced/social-connect/index.php:264, add-ons-free/user-profile-picture/metronet-profile-picture.php:825
+#: admin/admin-functions.php:212, admin/general-settings.php:114, admin/general-settings.php:114, add-ons-advanced/social-connect/index.php:272, add-ons-free/user-profile-picture/metronet-profile-picture.php:825
 msgid "Settings"
 msgstr ""
 
@@ -381,7 +381,7 @@ msgstr ""
 msgid "You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:397, admin/register-version.php:370, admin/register-version.php:355, admin/register-version.php:337, admin/review.php:111, add-ons-advanced/file-restriction/index.php:125, front-end/default-fields/recaptcha/recaptcha.php:765
+#: admin/admin-functions.php:397, admin/register-version.php:370, admin/register-version.php:355, admin/register-version.php:337, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, front-end/default-fields/recaptcha/recaptcha.php:765
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -697,6 +697,22 @@ msgstr ""
 msgid "Totals"
 msgstr ""
 
+#: admin/dashboard.php:48
+msgid "30 days"
+msgstr ""
+
+#: admin/dashboard.php:49
+msgid "This Month"
+msgstr ""
+
+#: admin/dashboard.php:50
+msgid "Last Month"
+msgstr ""
+
+#: admin/dashboard.php:51
+msgid "This Year"
+msgstr ""
+
 #: admin/dashboard.php:82
 msgid "Recent Registrations"
 msgstr ""
@@ -709,31 +725,99 @@ msgstr ""
 msgid "View All Users"
 msgstr ""
 
-#: admin/dashboard.php:128
+#: admin/dashboard.php:106
+msgid "Have a question? Not sure how to proceed?"
+msgstr ""
+
+#: admin/dashboard.php:108
+msgid " Open a new ticket over at"
+msgstr ""
+
+#: admin/dashboard.php:114
+msgid " Describe your problem:"
+msgstr ""
+
+#: admin/dashboard.php:117
+msgid "What you tried to do"
+msgstr ""
+
+#: admin/dashboard.php:118
+msgid "What you expected to happen"
+msgstr ""
+
+#: admin/dashboard.php:119
+msgid "What actually happened"
+msgstr ""
+
+#: admin/dashboard.php:120
+msgid "Screenshots help. Use a service like %1s snipboard.io %2s and share the link."
+msgstr ""
+
+#: admin/dashboard.php:123
+msgid "Get help from our team"
+msgstr ""
+
+#: admin/dashboard.php:129
 msgid "Setup Progress Review"
 msgstr ""
 
-#: admin/dashboard.php:132
+#: admin/dashboard.php:133
 msgid "Open the Setup Wizard"
 msgstr ""
 
-#: admin/dashboard.php:136
+#: admin/dashboard.php:137
 msgid "Useful shortcodes for setup"
 msgstr ""
 
-#: admin/dashboard.php:138
+#: admin/dashboard.php:139
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:187
+#: admin/dashboard.php:144, front-end/class-formbuilder.php:493, front-end/login.php:634, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+msgid "Register"
+msgstr ""
+
+#: admin/dashboard.php:145
+msgid "Add registration forms where users can sign-up and enter their initial details."
+msgstr ""
+
+#: admin/dashboard.php:151, admin/dashboard.php:162, admin/dashboard.php:173, admin/dashboard.php:184
+msgid "Shortcode copied"
+msgstr ""
+
+#: admin/dashboard.php:155, add-ons-advanced/custom-profile-menus/index.php:63, add-ons-advanced/custom-profile-menus/index.php:177, add-ons-advanced/custom-profile-menus/index.php:299, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:15, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:63, admin/setup-wizard/view-tab-user-pages.php:63, features/login-widget/login-widget.php:61, assets/misc/elementor/widgets/class-pb-widget-l.php:26
+msgid "Login"
+msgstr ""
+
+#: admin/dashboard.php:156
+msgid "Allow members to login."
+msgstr ""
+
+#: admin/dashboard.php:166, add-ons-advanced/custom-profile-menus/index.php:302, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:70, admin/setup-wizard/view-tab-user-pages.php:87, assets/misc/elementor/widgets/class-pb-widget-epf.php:32
+msgid "Edit Profile"
+msgstr ""
+
+#: admin/dashboard.php:167
+msgid "Allow members to edit their account information."
+msgstr ""
+
+#: admin/dashboard.php:177, admin/pms-cross-promotion.php:84
+msgid "Restrict Content"
+msgstr ""
+
+#: admin/dashboard.php:178
+msgid "Restrict pieces of content on individual posts and pages based on user role."
+msgstr ""
+
+#: admin/dashboard.php:188
 msgid "Learn more about shortcodes"
 msgstr ""
 
-#: admin/dashboard.php:287, features/admin-approval/class-admin-approval.php:478, features/email-confirmation/class-email-confirmation.php:473
+#: admin/dashboard.php:288, features/admin-approval/class-admin-approval.php:478, features/email-confirmation/class-email-confirmation.php:473
 msgid "All Users"
 msgstr ""
 
-#: admin/dashboard.php:288
+#: admin/dashboard.php:289
 msgid "New Registered Users"
 msgstr ""
 
@@ -901,11 +985,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:411, front-end/login.php:350, front-end/login.php:364, front-end/login.php:581, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:933, add-ons/user-listing/userlisting.php:2627, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
+#: admin/general-settings.php:303, admin/manage-fields.php:411, front-end/login.php:350, front-end/login.php:364, front-end/login.php:583, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:933, add-ons/user-listing/userlisting.php:2627, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:576, front-end/recover.php:115, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:939, add-ons/user-listing/userlisting.php:2628, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:578, front-end/recover.php:115, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:939, add-ons/user-listing/userlisting.php:2628, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -1161,7 +1245,7 @@ msgstr ""
 msgid "Use Simple Upload"
 msgstr ""
 
-#: admin/manage-fields.php:264, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:2674, add-ons/user-listing/userlisting.php:2686, add-ons-advanced/social-connect/index.php:416, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
+#: admin/manage-fields.php:264, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:2674, add-ons/user-listing/userlisting.php:2686, add-ons-advanced/social-connect/index.php:425, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
 msgid "Yes"
 msgstr ""
 
@@ -1209,7 +1293,7 @@ msgstr ""
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:381
+#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:382
 msgid "Labels"
 msgstr ""
 
@@ -3247,7 +3331,7 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1454, features/functions.php:1120, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:381, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:908, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1454, features/functions.php:1120, features/functions.php:1127, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:908, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
@@ -3267,7 +3351,7 @@ msgstr ""
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1583, add-ons/user-listing/one-map-listing.php:567
+#: admin/manage-fields.php:1583, add-ons/user-listing/one-map-listing.php:568
 msgid "Search Location"
 msgstr ""
 
@@ -3297,10 +3381,6 @@ msgstr ""
 
 #: admin/pms-cross-promotion.php:83
 msgid "Paid & Free Subscriptions"
-msgstr ""
-
-#: admin/pms-cross-promotion.php:84
-msgid "Restrict Content"
 msgstr ""
 
 #: admin/pms-cross-promotion.php:85
@@ -3623,7 +3703,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:848, front-end/recover.php:409, front-end/default-fields/password/password.php:59
+#: features/functions.php:848, front-end/recover.php:411, front-end/default-fields/password/password.php:64
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -3663,7 +3743,7 @@ msgstr ""
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1421, add-ons-advanced/social-connect/index.php:428
+#: features/functions.php:1421, add-ons-advanced/social-connect/index.php:437
 msgid "here"
 msgstr ""
 
@@ -3687,95 +3767,95 @@ msgstr ""
 msgid "User Meta"
 msgstr ""
 
-#: front-end/class-formbuilder.php:149
+#: front-end/class-formbuilder.php:61, front-end/login.php:540, front-end/recover.php:267
+msgid "Processing..."
+msgstr ""
+
+#: front-end/class-formbuilder.php:152
 msgid "The role of the created user set to the default role. Only an administrator can register a user with the role assigned to this form."
 msgstr ""
 
-#: front-end/class-formbuilder.php:201
+#: front-end/class-formbuilder.php:204
 msgid "You must be logged in to edit your profile."
 msgstr ""
 
-#: front-end/class-formbuilder.php:195
+#: front-end/class-formbuilder.php:198
 msgid "You are currently logged in as %1s. You don't need another account. %2s"
 msgstr ""
 
-#: front-end/class-formbuilder.php:195
+#: front-end/class-formbuilder.php:198
 msgid "Log out of this account."
 msgstr ""
 
-#: front-end/class-formbuilder.php:195, add-ons-advanced/custom-profile-menus/index.php:63, add-ons-advanced/custom-profile-menus/index.php:64, add-ons-advanced/custom-profile-menus/index.php:185, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:18
+#: front-end/class-formbuilder.php:198, add-ons-advanced/custom-profile-menus/index.php:63, add-ons-advanced/custom-profile-menus/index.php:64, add-ons-advanced/custom-profile-menus/index.php:185, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:18
 msgid "Logout"
 msgstr ""
 
-#: front-end/class-formbuilder.php:175
+#: front-end/class-formbuilder.php:178
 msgid "Users cannot currently register themselves, but you can manually create users here."
 msgstr ""
 
-#: front-end/class-formbuilder.php:175, front-end/class-formbuilder.php:172
+#: front-end/class-formbuilder.php:178, front-end/class-formbuilder.php:175
 msgid "This message is only visible by administrators"
 msgstr ""
 
-#: front-end/class-formbuilder.php:172
+#: front-end/class-formbuilder.php:175
 msgid "Users can register themselves or you can manually create users here."
 msgstr ""
 
-#: front-end/class-formbuilder.php:162
+#: front-end/class-formbuilder.php:165
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:319, front-end/login.php:690, assets/lib/wck-api/wordpress-creation-kit.php:821
+#: front-end/class-formbuilder.php:322, front-end/login.php:692, assets/lib/wck-api/wordpress-creation-kit.php:821
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: front-end/class-formbuilder.php:432
+#: front-end/class-formbuilder.php:435
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: front-end/class-formbuilder.php:418
+#: front-end/class-formbuilder.php:421
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:382, front-end/class-formbuilder.php:389
+#: front-end/class-formbuilder.php:385, front-end/class-formbuilder.php:392
 msgid "The account %1s has been successfully created!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:385, front-end/class-formbuilder.php:395
+#: front-end/class-formbuilder.php:388, front-end/class-formbuilder.php:398
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: front-end/class-formbuilder.php:391
+#: front-end/class-formbuilder.php:394
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:493
+#: front-end/class-formbuilder.php:496
 msgid "Update"
 msgstr ""
 
-#: front-end/class-formbuilder.php:490
+#: front-end/class-formbuilder.php:493
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:490, front-end/login.php:632, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
-msgid "Register"
-msgstr ""
-
-#: front-end/class-formbuilder.php:575
+#: front-end/class-formbuilder.php:578
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:808
+#: front-end/class-formbuilder.php:817
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:790
+#: front-end/class-formbuilder.php:799
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:792
+#: front-end/class-formbuilder.php:801
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:845
+#: front-end/class-formbuilder.php:854
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -3848,7 +3928,7 @@ msgstr ""
 msgid "Password Lost and Found."
 msgstr ""
 
-#: front-end/login.php:453, front-end/login.php:638
+#: front-end/login.php:453, front-end/login.php:640
 msgid "Lost your password?"
 msgstr ""
 
@@ -3856,19 +3936,19 @@ msgstr ""
 msgid "Both fields are empty."
 msgstr ""
 
-#: front-end/login.php:677, front-end/logout.php:45
+#: front-end/login.php:679, front-end/logout.php:45
 msgid "Log out of this account"
 msgstr ""
 
-#: front-end/login.php:677, front-end/logout.php:30
+#: front-end/login.php:679, front-end/logout.php:30
 msgid "Log out &raquo;"
 msgstr ""
 
-#: front-end/login.php:678
+#: front-end/login.php:680
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:586, front-end/recover.php:119
+#: front-end/login.php:588, front-end/recover.php:119
 msgid "Username or Email"
 msgstr ""
 
@@ -3920,63 +4000,63 @@ msgstr ""
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
 msgstr ""
 
-#: front-end/recover.php:283
+#: front-end/recover.php:285
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:467
+#: front-end/recover.php:469
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:377
+#: front-end/recover.php:379
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:387
+#: front-end/recover.php:389
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:394, front-end/recover.php:494
+#: front-end/recover.php:396, front-end/recover.php:496
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:399
+#: front-end/recover.php:401
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:405, front-end/default-fields/password/password.php:55
+#: front-end/recover.php:407, front-end/default-fields/password/password.php:60
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:416
+#: front-end/recover.php:418
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:311
+#: front-end/recover.php:313
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:311
+#: front-end/recover.php:313
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:354
+#: front-end/recover.php:356
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:354
+#: front-end/recover.php:356
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:324
+#: front-end/recover.php:326
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:338, front-end/recover.php:494, features/two-factor-authentication/class-two-factor-authentication.php:487
+#: front-end/recover.php:340, front-end/recover.php:496, features/two-factor-authentication/class-two-factor-authentication.php:487
 msgid "ERROR:"
 msgstr ""
 
-#: front-end/recover.php:338
+#: front-end/recover.php:340
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
@@ -4260,7 +4340,7 @@ msgstr ""
 msgid "Redirect"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons-advanced/social-connect/index.php:417, assets/misc/elementor/widgets/class-pb-widget-l.php:80, assets/misc/elementor/widgets/class-pb-widget-l.php:94, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:181, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:198, assets/misc/elementor/widgets/class-pb-widget-rp.php:58, assets/misc/elementor/widgets/class-pb-widget-ul.php:120
+#: add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons-advanced/social-connect/index.php:426, assets/misc/elementor/widgets/class-pb-widget-l.php:80, assets/misc/elementor/widgets/class-pb-widget-l.php:94, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:181, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:198, assets/misc/elementor/widgets/class-pb-widget-rp.php:58, assets/misc/elementor/widgets/class-pb-widget-ul.php:120
 msgid "No"
 msgstr ""
 
@@ -4320,7 +4400,7 @@ msgstr ""
 msgid "Delete all items"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:381, add-ons-free/labels-edit/labels-edit.php:381
+#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:382, add-ons-free/labels-edit/labels-edit.php:382
 msgid "Delete all"
 msgstr ""
 
@@ -4388,7 +4468,7 @@ msgstr ""
 msgid "Please wait while the pins are loading..."
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:572
+#: add-ons/user-listing/one-map-listing.php:573
 msgid "The API Key was not provided."
 msgstr ""
 
@@ -4868,7 +4948,7 @@ msgstr ""
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3763
+#: add-ons/user-listing/userlisting.php:3765
 msgid "No results found!"
 msgstr ""
 
@@ -4952,10 +5032,6 @@ msgstr ""
 msgid "Profile Builder Avatar field is disabled to allow use of BuddyPress Avatar."
 msgstr ""
 
-#: add-ons-advanced/custom-profile-menus/index.php:63, add-ons-advanced/custom-profile-menus/index.php:177, add-ons-advanced/custom-profile-menus/index.php:299, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:15, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:63, admin/setup-wizard/view-tab-user-pages.php:63, features/login-widget/login-widget.php:61, assets/misc/elementor/widgets/class-pb-widget-l.php:26
-msgid "Login"
-msgstr ""
-
 #: add-ons-advanced/custom-profile-menus/index.php:65
 msgid "Login - iFrame"
 msgstr ""
@@ -5022,10 +5098,6 @@ msgstr ""
 
 #: add-ons-advanced/custom-profile-menus/index.php:271
 msgid "Works only if Display Mode: Logged In Users is selected"
-msgstr ""
-
-#: add-ons-advanced/custom-profile-menus/index.php:302, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:70, admin/setup-wizard/view-tab-user-pages.php:87, assets/misc/elementor/widgets/class-pb-widget-epf.php:32
-msgid "Edit Profile"
 msgstr ""
 
 #: add-ons-advanced/custom-profile-menus/index.php:311
@@ -5207,11 +5279,11 @@ msgstr ""
 msgid "Get file"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:565
+#: add-ons-advanced/field-visibility/index.php:567
 msgid "You do not have the capabilities necessary to edit this field."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/index.php:115
+#: add-ons-advanced/file-restriction/index.php:146
 msgid "The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s."
 msgstr ""
 
@@ -5299,271 +5371,271 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:229
+#: add-ons-advanced/social-connect/index.php:237
 msgid "Display on the Following Forms"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:230
+#: add-ons-advanced/social-connect/index.php:238
 msgid "Disable Social Registration on Login forms"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:230
+#: add-ons-advanced/social-connect/index.php:238
 msgid "Allow only login with Social Connect on Profile Builder Login Form.<br>Social Connect will still automatically register users on other forms."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:231
+#: add-ons-advanced/social-connect/index.php:239
 msgid "Facebook Login"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:232
+#: add-ons-advanced/social-connect/index.php:240
 msgid "Facebook App ID"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:233
+#: add-ons-advanced/social-connect/index.php:241
 msgid "Google Login"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:234
+#: add-ons-advanced/social-connect/index.php:242
 msgid "Google Client ID"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:235
+#: add-ons-advanced/social-connect/index.php:243
 msgid "Google Client Name"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:236
-msgid "Twitter Login"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:237
-msgid "Twitter API Key"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:238
-msgid "Twitter API Secret"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:239
-msgid "LinkedIn Login"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:240
-msgid "LinkedIn Client ID"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:241
-msgid "LinkedIn Client Secret"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:242
-msgid "Buttons Order"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:242
-msgid "Drag and drop the dots to re-order."
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:243
-msgid "Buttons Re-Order"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:243
-msgid "Save the buttons order from the buttons order checkboxes"
-msgstr ""
-
 #: add-ons-advanced/social-connect/index.php:244
-msgid "Buttons Location"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:244
-msgid "Display social buttons before or after the forms fields."
+msgid "X Login"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:245
-msgid "Buttons Style"
+msgid "X API Key"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:246
-msgid "Google Sign In Button"
+msgid "X API Secret"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:247
-msgid "Login/Register Form Heading"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:247, add-ons-advanced/social-connect/index.php:248
-msgid "Empty field will remove the heading."
+msgid "LinkedIn Login"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:248
-msgid "Edit Profile Form Heading"
+msgid "LinkedIn Client ID"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:249
-msgid "Facebook Button Text (Login/Register)"
+msgid "LinkedIn Client Secret"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:250
-msgid "Google Button Text (Login/Register)"
+msgid "Buttons Order"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:250
+msgid "Drag and drop the dots to re-order."
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:251
-msgid "Twitter Button Text (Login/Register)"
+msgid "Buttons Re-Order"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:251
+msgid "Save the buttons order from the buttons order checkboxes"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:252
-msgid "LinkedIn Button Text (Login/Register)"
+msgid "Buttons Location"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:252
+msgid "Display social buttons before or after the forms fields."
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:253
-msgid "Facebook Button Text (Edit Profile)"
+msgid "Buttons Style"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:254
-msgid "Google Button Text (Edit Profile)"
+msgid "Google Sign In Button"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:255
-msgid "Twitter Button Text (Edit Profile)"
+msgid "Login/Register Form Heading"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:255, add-ons-advanced/social-connect/index.php:256
+msgid "Empty field will remove the heading."
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:256
-msgid "LinkedIn Button Text (Edit Profile)"
+msgid "Edit Profile Form Heading"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:257
-msgid "Unlink Accounts (Edit Profile)"
-msgstr ""
-
-#: add-ons-advanced/social-connect/index.php:257
-msgid "This option will display linked social platforms to users accounts and will allow to easily unlink them in Edit Profile page."
+msgid "Facebook Button Text (Login/Register)"
 msgstr ""
 
 #: add-ons-advanced/social-connect/index.php:258
+msgid "Google Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:259
+msgid "X Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:260
+msgid "LinkedIn Button Text (Login/Register)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:261
+msgid "Facebook Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:262
+msgid "Google Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:263
+msgid "X Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:264
+msgid "LinkedIn Button Text (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:265
+msgid "Unlink Accounts (Edit Profile)"
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:265
+msgid "This option will display linked social platforms to users accounts and will allow to easily unlink them in Edit Profile page."
+msgstr ""
+
+#: add-ons-advanced/social-connect/index.php:266
 msgid "Default Social Connect CSS"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:278
+#: add-ons-advanced/social-connect/index.php:286
 msgid "Help"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:349
+#: add-ons-advanced/social-connect/index.php:357
 msgid "Social Connect Buttons"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:357
+#: add-ons-advanced/social-connect/index.php:365
 msgid "Display Social Connect Buttons"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:403
+#: add-ons-advanced/social-connect/index.php:411
 msgid "You have successfully unlinked %% from your account."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:415
+#: add-ons-advanced/social-connect/index.php:424
 msgid "An account with this email address already exists.<br> Do you want to connect it?"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:418
+#: add-ons-advanced/social-connect/index.php:427
 msgid "Please enter your website account password"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:419
+#: add-ons-advanced/social-connect/index.php:428
 msgid "Please enter a new email"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:420
+#: add-ons-advanced/social-connect/index.php:429
 msgid "You have successfully linked your account to %%."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:421, add-ons-advanced/social-connect/twitter/twitter.php:114
+#: add-ons-advanced/social-connect/index.php:430, add-ons-advanced/social-connect/twitter/twitter.php:114
 msgid "Something went wrong. Please try again later!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:422
+#: add-ons-advanced/social-connect/index.php:431
 msgid "Before you can access your account you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:423
+#: add-ons-advanced/social-connect/index.php:432
 msgid "<strong>ERROR:</strong> You need to confirm your email address before you can log in."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:424
+#: add-ons-advanced/social-connect/index.php:433
 msgid "Before you can access your account an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:425, features/admin-approval/admin-approval.php:196
+#: add-ons-advanced/social-connect/index.php:434, features/admin-approval/admin-approval.php:196
 msgid "<strong>ERROR:</strong> Your account has to be confirmed by an administrator before you can log in."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:426
+#: add-ons-advanced/social-connect/index.php:435
 msgid "<strong>ERROR:</strong> An email address is required to proceed but was not provided by the selected platform."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:427
+#: add-ons-advanced/social-connect/index.php:436
 msgid "You will be redirected in 5 seconds. If not, click %%."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:429
+#: add-ons-advanced/social-connect/index.php:438
 msgid "<strong>You can only login with social accounts, not register!</strong><br>Please link your social account to an existing user account first."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:430
+#: add-ons-advanced/social-connect/index.php:439
 msgid "Wrong password!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:431
+#: add-ons-advanced/social-connect/index.php:440
 msgid "Please enter a valid email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:432
+#: add-ons-advanced/social-connect/index.php:441
 msgid "You can only login on this form.<br>Register with your social account on the register form."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:433, admin/setup-wizard/view-tab-addons.php:93, admin/setup-wizard/view-tab-general.php:106, admin/setup-wizard/view-tab-user-pages.php:130
+#: add-ons-advanced/social-connect/index.php:442, admin/setup-wizard/view-tab-addons.php:93, admin/setup-wizard/view-tab-general.php:106, admin/setup-wizard/view-tab-user-pages.php:130
 msgid "Continue"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:434, add-ons-advanced/social-connect/index.php:455, add-ons-advanced/social-connect/index.php:471
+#: add-ons-advanced/social-connect/index.php:443, add-ons-advanced/social-connect/index.php:464, add-ons-advanced/social-connect/index.php:480
 msgid "Ok"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:444
+#: add-ons-advanced/social-connect/index.php:453
 msgid "To create a new account please confirm:"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:445
+#: add-ons-advanced/social-connect/index.php:454
 msgid "You must agree to the Terms And Conditions to create a new account."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:453, add-ons-advanced/social-connect/index.php:454
+#: add-ons-advanced/social-connect/index.php:462, add-ons-advanced/social-connect/index.php:463
 msgid "Please enter your Facebook email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:468
-msgid "Waiting for Twitter..."
+#: add-ons-advanced/social-connect/index.php:477
+msgid "Waiting for X..."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:469, add-ons-advanced/social-connect/index.php:470
-msgid "Please enter your Twitter email!"
+#: add-ons-advanced/social-connect/index.php:478, add-ons-advanced/social-connect/index.php:479
+msgid "Please enter your X email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:782
+#: add-ons-advanced/social-connect/index.php:791
 msgid "Profile Builder not active!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:937
+#: add-ons-advanced/social-connect/index.php:946
 msgid "Application Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:941
+#: add-ons-advanced/social-connect/index.php:950
 msgid "Appearance Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1005
+#: add-ons-advanced/social-connect/index.php:1014
 msgid "Unlink"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1012
+#: add-ons-advanced/social-connect/index.php:1021
 msgid "Your account is linked with:"
 msgstr ""
 
@@ -5735,11 +5807,11 @@ msgstr ""
 msgid "Add a class to a field. Should not contain dots(.) and for multiple classes separate by space."
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:331
+#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:332
 msgid "Import"
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:343
+#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:344
 msgid "Export"
 msgstr ""
 
@@ -5767,7 +5839,7 @@ msgstr ""
 msgid "This allows you to easily import the configuration from another site."
 msgstr ""
 
-#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:326
+#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:327
 msgid "JSON File"
 msgstr ""
 
@@ -5783,91 +5855,91 @@ msgstr ""
 msgid "Import Profile Builder options from the JSON file selected above."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:119
+#: add-ons-free/labels-edit/labels-edit.php:120
 msgid " labels scanned."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:219
+#: add-ons-free/labels-edit/labels-edit.php:220
 msgid "Label to Edit"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:219
+#: add-ons-free/labels-edit/labels-edit.php:220
 msgid "Here you will see the default label so you can copy it."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:220
+#: add-ons-free/labels-edit/labels-edit.php:221
 msgid "New Label"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:226
+#: add-ons-free/labels-edit/labels-edit.php:227
 msgid "Edit Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:242
+#: add-ons-free/labels-edit/labels-edit.php:243
 msgid "Rescan Lables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:262
+#: add-ons-free/labels-edit/labels-edit.php:263
 msgid "Rescan all Profile Builder labels."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:271
+#: add-ons-free/labels-edit/labels-edit.php:272
 msgid "Informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:284
+#: add-ons-free/labels-edit/labels-edit.php:285
 msgid "Variables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:288
+#: add-ons-free/labels-edit/labels-edit.php:289
 msgid "Place them like in the default string!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:291
+#: add-ons-free/labels-edit/labels-edit.php:292
 msgid "Example"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:293
+#: add-ons-free/labels-edit/labels-edit.php:294
 msgid "Old Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:294
+#: add-ons-free/labels-edit/labels-edit.php:295
 msgid "New Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:298
+#: add-ons-free/labels-edit/labels-edit.php:299
 msgid "Read more detailed informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:306
+#: add-ons-free/labels-edit/labels-edit.php:307
 msgid "Import and Export Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:320
+#: add-ons-free/labels-edit/labels-edit.php:321
 msgid "Import Labels from a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:331
+#: add-ons-free/labels-edit/labels-edit.php:332
 msgid "This will overwrite all your old edited labels!\nAre you sure you want to continue?"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:332
+#: add-ons-free/labels-edit/labels-edit.php:333
 msgid "Easily import the labels from another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:338
+#: add-ons-free/labels-edit/labels-edit.php:339
 msgid "Export Labels as a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:344
+#: add-ons-free/labels-edit/labels-edit.php:345
 msgid "Easily import the labels into another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:370
+#: add-ons-free/labels-edit/labels-edit.php:371
 msgid "You must select a label to edit!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:436
+#: add-ons-free/labels-edit/labels-edit.php:437
 msgid "No labels edited, nothing to export!"
 msgstr ""
 
@@ -6397,7 +6469,7 @@ msgstr ""
 msgid "Conditional Rules"
 msgstr ""
 
-#: features/conditional-fields/conditional-fields.php:603
+#: features/conditional-fields/conditional-fields.php:642
 msgid "This field has conditional logic enabled."
 msgstr ""
 
@@ -7038,27 +7110,27 @@ msgstr ""
 msgid "To display the %1$sForm Labels%2$s as depicted in the Preview images, activate the \"Enable Placeholder Labels\" Option in %3$sAdvanced Settings%4$s. On this page, you can also customize the form colors using the \"Color Switcher\" setting."
 msgstr ""
 
-#: features/form-designs/form-designs.php:205, features/form-designs/form-designs.php:213
+#: features/form-designs/form-designs.php:207, features/form-designs/form-designs.php:215
 msgid "Address Line 2"
 msgstr ""
 
-#: features/form-designs/form-designs.php:208, features/form-designs/form-designs.php:216
+#: features/form-designs/form-designs.php:210, features/form-designs/form-designs.php:218
 msgid "Address Line 1"
 msgstr ""
 
-#: features/form-designs/form-designs.php:331, features/form-designs/form-designs.php:332
+#: features/form-designs/form-designs.php:333, features/form-designs/form-designs.php:334
 msgid "ERROR!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:333
+#: features/form-designs/form-designs.php:335
 msgid "SUCCESS!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:334, features/form-designs/form-designs.php:335, features/form-designs/form-designs.php:421
+#: features/form-designs/form-designs.php:336, features/form-designs/form-designs.php:337, features/form-designs/form-designs.php:423
 msgid "NOTE!"
 msgstr ""
 
-#: features/form-designs/form-designs.php:336, features/form-designs/form-designs.php:337, features/form-designs/form-designs.php:338
+#: features/form-designs/form-designs.php:338, features/form-designs/form-designs.php:339, features/form-designs/form-designs.php:340
 msgid "WARNING!"
 msgstr ""
 
@@ -7853,151 +7925,167 @@ msgstr ""
 msgid "Web Server"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:54
-msgid "Protect ALL File Types"
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:52
+msgid "Auto Detect"
+msgstr ""
+
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:57
+msgid "Apache"
 msgstr ""
 
 #: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:62
-msgid "Protect every file type from your Media Library."
-msgstr ""
-
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:65
-msgid "This option can cause performance issues, enable at your own risk. %1$sLearn more%2$s"
+msgid "Nginx"
 msgstr ""
 
 #: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:70
+msgid "Detected Web Server"
+msgstr ""
+
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:78
+msgid "Protect ALL File Types"
+msgstr ""
+
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:86
+msgid "Protect every file type from your Media Library."
+msgstr ""
+
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:89
+msgid "This option can cause performance issues, enable at your own risk. %1$sLearn more%2$s"
+msgstr ""
+
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:94
 msgid "Protected File Types"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:91
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:114
 msgid "Select the type of files within the WordPress Upload directory that you want to protect."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:99
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:122
 msgid "Nginx Configuration"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:106
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:129
 msgid "Nginx directive copied!"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:110
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:133
 msgid "This Nginx include directive needs to be added into the Nginx configuration file on your server, for the File Restriction feature to work correctly. After the directive was inserted, the Nginx web-server also needs to be restarted."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:114
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:137
 msgid "NOTE: If the restriction settings are changed, the Nginx web server needs to be restarted for the new rules to take effect."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:131
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:154
 msgid "Apache Configuration"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:137
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:160
 msgid "Apache directive copied!"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:141
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:164
 msgid "It appears that the .htaccess file in your WordPress root directory is not writable."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:143
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:166
 msgid "This means that WordPress is unable to automatically update the file with necessary rules or changes."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:145
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:168
 msgid "To fix this issue follow the steps bellow."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:150
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:173
 msgid "%1$sNOTE:%2$s The %3$s filter hook is preventing File Restriction rules from being written to the %4$s file!"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:157
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:180
 msgid "Check File Permissions:"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:159
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:182
 msgid "Using FTP/SFTP:"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:161
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:184
 msgid "Connect to your server using an FTP/SFTP client."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:162
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:185
 msgid "Navigate to the root directory of your WordPress installation (where the .htaccess file is located)."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:163
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:186
 msgid "Right-click on the .htaccess file and select \"File Permissions\" or \"Properties.\""
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:164
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:187
 msgid "Ensure the file permissions are set to 644 or 664. This allows the file to be readable and writable by the owner, and readable by the group and others."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:167
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:190
 msgid "Using Hosting Control Panel:"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:169
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:192
 msgid "Log in to your hosting control panel (e.g., cPanel, Plesk)."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:170
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:193
 msgid "Open the File Manager and navigate to the root directory of your WordPress installation."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:171
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:194
 msgid "Find the .htaccess file and check its permissions. Set them to 644 or 664 if necessary."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:176
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:199
 msgid "Manually Edit .htaccess:"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:178
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:201
 msgid "The .htaccess file is located in the root directory of your WordPress installation."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:179
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:202
 msgid "Use a text editor to open the .htaccess file. Ensure you back up the file before making changes."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:180
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:203
 msgid "Include the directive provided above."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:186
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:209
 msgid "If you are unsure about making these changes or if the issue persists, please contact the support team of your hosting provider for assistance."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:476
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:503
 msgid "Restrict Uploaded Files"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:484
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:511
 msgid "Restrict uploaded files to logged-in users."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:487
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:514
 msgid "Enabling this option, the uploaded files will be restricted to logged-in users only."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:492
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:519
 msgid "Restricted Upload Fields"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:510
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:537
 msgid "Selecting any Upload Fields, restrictions will apply to files uploaded through those fields only."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:515
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:542
 msgid "Restrict Files to User Roles"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:538
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:565
 msgid "Selecting any User Roles will restrict the uploaded files to those roles only."
 msgstr ""
 

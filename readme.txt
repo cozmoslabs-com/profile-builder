@@ -1,10 +1,10 @@
 === User Profile Builder - Beautiful User Registration Forms, User Profiles & User Role Editor ===
 Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: user registration, user profile, registration, profile, user registration form, user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
+Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 3.13.0
+Stable tag: 3.13.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -203,6 +203,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.1 =
+* Fix: Disabled autocomplete for the password field on the Edit Profile form
+* Fix: Increase specificity for some Elementor Styling rules so they can overwrite Form Designs
+* Misc: Localize the text on the Dashboard page
+* Misc: Added a filter to process the textarea field value just like before allowing HTML to be saved: wppb_form_field_textarea_escape_on_save
+* Misc: Properly prefix the recaptcha v3 styles function
+* Misc: Make sure Color Switcher settings disappear when Pro is disabled
+
 = 3.13.0 =
 * Fix: Security issue relating to Unauthenticated Stored Cross-Site Scripting. Thanks to Brian Mungah for the report
 * Fix: Add compatibility with Elementor Element Cache to our Content Restriction integration and form widgets

@@ -52,8 +52,14 @@ add_filter( 'wppb_check_form_field_default-biographical-info', 'wppb_check_descr
 /* handle field save */
 function wppb_userdata_add_description( $userdata, $global_request, $form_args ){
     if( wppb_field_exists_in_form( 'Default - Biographical Info', $form_args ) ) {
-        if ( isset( $global_request['description'] ) )
-            $userdata['description'] = apply_filters( 'pre_user_description', esc_textarea( trim( $global_request['description'] ) ) );
+        if ( isset( $global_request['description'] ) ){
+			$meta_value = trim( $global_request['description'] );
+
+			if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+				$meta_value = esc_textarea( $meta_value );
+
+            $userdata['description'] = apply_filters( 'pre_user_description', $meta_value );
+		}
     }
 	return $userdata;
 }

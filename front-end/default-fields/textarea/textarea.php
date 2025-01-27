@@ -58,8 +58,14 @@ add_filter( 'wppb_admin_output_form_field_textarea', 'wppb_textarea_handler', 10
 /* handle field save */
 function wppb_save_textarea_value( $field, $user_id, $request_data, $form_location ){
 	if( $field['field'] == 'Textarea' ){
-		if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) )
-			update_user_meta( $user_id, $field['meta-name'], esc_textarea( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
+		if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ){
+			$meta_value = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
+
+			if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+				$meta_value = esc_textarea( $meta_value );
+
+			update_user_meta( $user_id, $field['meta-name'], $meta_value );
+		}
 	}
 }
 add_action( 'wppb_save_form_field', 'wppb_save_textarea_value', 10, 4 );

@@ -56,8 +56,11 @@ class Profile_Builder_Form_Creator{
 
 		$this->wppb_retrieve_custom_settings();
 
-        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && isset( $this->args['ajax'] ) && $this->args['ajax'] === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
-            wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
+        if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && isset( $this->args['ajax'] ) && $this->args['ajax'] === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
+            wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
+            wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __( 'Processing...', 'profile-builder' ) ) );
+            wp_enqueue_editor();
+        }
 
         // NOTE: for Multisite, the capability we check against is `remove_users` because `edit_users` is on the do not allow on multisite list for current_user_can()
         // current_user_can( 'edit_users' ) will only return true on a Multisite for Super Administrator Users
@@ -725,12 +728,18 @@ class Profile_Builder_Form_Creator{
 
                     if( in_array( $field['field'], array( 'URL' ) ) )
                         $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? esc_url_raw( $global_request[ $field['meta-name'] ] ) : '' );
-                    else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) )
-                        $posted_value = ( !empty( $global_request[$field['meta-name']] )  ? esc_textarea( $global_request[ $field['meta-name'] ] ) : '' );
-                    else 
-                        $posted_value = ( !empty( $global_request[$field['meta-name']] )  ? sanitize_text_field( $global_request[ $field['meta-name'] ] ) : '' );
+                    else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) ){
+                        $meta_value = $global_request[ $field['meta-name'] ];
+
+                        if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+                            $meta_value = esc_textarea( $meta_value );
+
+                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? $meta_value : '' );
+                    } else 
+                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? sanitize_text_field( $global_request[ $field['meta-name'] ] ) : '' );
                     
                     $meta[$field['meta-name']] = apply_filters( 'wppb_add_to_user_signup_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), $posted_value, $field, $global_request );
+                    
                 }
             }
         }

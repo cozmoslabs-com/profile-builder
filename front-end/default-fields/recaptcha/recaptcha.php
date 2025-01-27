@@ -281,7 +281,7 @@ add_action('lost_password', 'wppb_recaptcha_script_footer');
  * Print style
  *
  */
-function print_style() {
+function wppb_recaptcha_print_style() {
     echo '<style type="text/css"> 
          /* Hide reCAPTCHA V3 badge */
         .grecaptcha-badge {
@@ -292,8 +292,8 @@ function print_style() {
     </style>';
 }
 
-add_action( 'wp_footer', 'print_style' );
-add_action( 'login_footer', 'print_style' );
+add_action( 'wp_footer', 'wppb_recaptcha_print_style' );
+add_action( 'login_footer', 'wppb_recaptcha_print_style' );
 
 
 /**

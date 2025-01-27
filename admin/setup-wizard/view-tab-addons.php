@@ -39,7 +39,7 @@
                 'name' => esc_html__( 'Social Connect', 'profile-builder' ),
                 'slug' => 'social-connect',
                 'image' => 'pb-add-on-social-connect-logo.png',
-                'description' => esc_html__( 'Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter.', 'profile-builder' ),
+                'description' => esc_html__( 'Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X.', 'profile-builder' ),
                 'notice' => esc_html__( 'Available in the Basic and Pro versions', 'profile-builder' ),
             ),
         );

@@ -497,7 +497,7 @@
 
 </form>
 
-<?php if( $active_design !== 'form-style-default' ): ?>
+<?php if( $active_design !== 'form-style-default' && $active_design != 'free' ): ?>
     <div id="modal-reset" class="wppb-ul-color-switcher-reset-modal" title="Reset Colors">
         <form method="post" id="reset-content-data-colors">
             <input type="hidden" value="color_switcher_reset_data" name="action">

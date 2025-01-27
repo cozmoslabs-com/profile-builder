@@ -535,8 +535,10 @@ function wppb_front_end_login( $atts ){
 	$block               = $atts['block'];
 	$ajax                = $atts['ajax'];
 
-    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $ajax === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
-        wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
+    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $ajax === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
+        wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
+        wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __('Processing...', 'profile-builder') ) );
+    }
 
 	$wppb_generalSettings = get_option('wppb_general_settings');
 

@@ -16,9 +16,14 @@ function wppb_password_handler( $output, $form_location, $field, $user_id, $fiel
 
 		$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
 
+        $autocomplete = 'off';
+
+        if( $form_location == 'edit_profile' )
+            $autocomplete = 'new-password';
+
         $output = '
 			<label for="passw1">' . $item_title.$error_mark . '</label>
-			<input class="text-input '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="passw1" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70, $field ) .'" type="password" id="passw1" value="" autocomplete="off" '. $extra_attr .'/>';
+			<input class="text-input '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="passw1" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70, $field ) .'" type="password" id="passw1" value="" autocomplete="'. esc_attr( $autocomplete ) .'" '. $extra_attr .'/>';
 
         /* add the HTML for the visibility toggle */
         $output .= wppb_password_visibility_toggle_html();

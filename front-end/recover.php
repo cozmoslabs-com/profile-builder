@@ -262,8 +262,10 @@ function wppb_front_end_password_recovery( $atts ){
         'ajax' => false,
     ), $atts, 'wppb-recover-password' );
 
-    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $atts['ajax'] === 'true'  && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) )
-        wp_enqueue_script('wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array('jquery'), PROFILE_BUILDER_VERSION, true);
+    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $atts['ajax'] === 'true'  && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
+        wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
+        wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __('Processing...', 'profile-builder') ) );
+    }
 
     $output = '<div class="wppb_holder" id="wppb-recover-password-container">';
 

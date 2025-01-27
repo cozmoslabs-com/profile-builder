@@ -25,7 +25,7 @@
 <?php __("These Add-ons are available with the Basic, Pro and Agency license", "profile-builder"); ?>
 <?php __("Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s", "profile-builder"); ?>
 <?php __("Social Connect", "profile-builder"); ?>
-<?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter.", "profile-builder"); ?>
+<?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X.", "profile-builder"); ?>
 <?php __("WooCommerce Sync", "profile-builder"); ?>
 <?php __("Syncs Profile Builder with WooCommerce, allowing you to manage the user Shipping and Billing fields from WooCommerce with Profile Builder.", "profile-builder"); ?>
 <?php __("Multi Step Forms", "profile-builder"); ?>
@@ -169,13 +169,34 @@
 <?php __("Dashboard", "profile-builder"); ?>
 <?php __("Setup Wizard", "profile-builder"); ?>
 <?php __("Totals", "profile-builder"); ?>
+<?php __("30 days", "profile-builder"); ?>
+<?php __("This Month", "profile-builder"); ?>
+<?php __("Last Month", "profile-builder"); ?>
+<?php __("This Year", "profile-builder"); ?>
 <?php __("Recent Registrations", "profile-builder"); ?>
 <?php __("%1s registered as a %2s role", "profile-builder"); ?>
 <?php __("View All Users", "profile-builder"); ?>
+<?php __("Have a question? Not sure how to proceed?", "profile-builder"); ?>
+<?php __(" Open a new ticket over at", "profile-builder"); ?>
+<?php __(" Describe your problem:", "profile-builder"); ?>
+<?php __("What you tried to do", "profile-builder"); ?>
+<?php __("What you expected to happen", "profile-builder"); ?>
+<?php __("What actually happened", "profile-builder"); ?>
+<?php __("Screenshots help. Use a service like %1s snipboard.io %2s and share the link.", "profile-builder"); ?>
+<?php __("Get help from our team", "profile-builder"); ?>
 <?php __("Setup Progress Review", "profile-builder"); ?>
 <?php __("Open the Setup Wizard", "profile-builder"); ?>
 <?php __("Useful shortcodes for setup", "profile-builder"); ?>
 <?php __("Use these shortcodes to quickly setup and customize your membership website.", "profile-builder"); ?>
+<?php __("Register", "profile-builder"); ?>
+<?php __("Add registration forms where users can sign-up and enter their initial details.", "profile-builder"); ?>
+<?php __("Shortcode copied", "profile-builder"); ?>
+<?php __("Login", "profile-builder"); ?>
+<?php __("Allow members to login.", "profile-builder"); ?>
+<?php __("Edit Profile", "profile-builder"); ?>
+<?php __("Allow members to edit their account information.", "profile-builder"); ?>
+<?php __("Restrict Content", "profile-builder"); ?>
+<?php __("Restrict pieces of content on individual posts and pages based on user role.", "profile-builder"); ?>
 <?php __("Learn more about shortcodes", "profile-builder"); ?>
 <?php __("All Users", "profile-builder"); ?>
 <?php __("New Registered Users", "profile-builder"); ?>
@@ -809,7 +830,6 @@
 <?php __("With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to sign up for paid accounts.", "profile-builder"); ?>
 <?php __("Other features of Paid Member Subscriptions are:", "profile-builder"); ?>
 <?php __("Paid & Free Subscriptions", "profile-builder"); ?>
-<?php __("Restrict Content", "profile-builder"); ?>
 <?php __("Member Management", "profile-builder"); ?>
 <?php __("Email Templates", "profile-builder"); ?>
 <?php __("Account Management", "profile-builder"); ?>
@@ -906,6 +926,7 @@
 <?php __("You are not currently logged in.", "profile-builder"); ?>
 <?php __("Profile Builder", "profile-builder"); ?>
 <?php __("User Meta", "profile-builder"); ?>
+<?php __("Processing...", "profile-builder"); ?>
 <?php __("The role of the created user set to the default role. Only an administrator can register a user with the role assigned to this form.", "profile-builder"); ?>
 <?php __("You must be logged in to edit your profile.", "profile-builder"); ?>
 <?php __("You are currently logged in as %1s. You don't need another account. %2s", "profile-builder"); ?>
@@ -923,7 +944,6 @@
 <?php __("Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", "profile-builder"); ?>
 <?php __("Update", "profile-builder"); ?>
 <?php __("Add User", "profile-builder"); ?>
-<?php __("Register", "profile-builder"); ?>
 <?php __("Send these credentials via email.", "profile-builder"); ?>
 <?php __("There are no other users to edit", "profile-builder"); ?>
 <?php __("User to edit:", "profile-builder"); ?>
@@ -1222,7 +1242,6 @@
 <?php __("Biographical Info:", "profile-builder"); ?>
 <?php __("BuddyPress needs to be installed and activated for Profile Builder - BuddyPress Integration Add-on to work as expected!", "profile-builder"); ?>
 <?php __("Profile Builder Avatar field is disabled to allow use of BuddyPress Avatar.", "profile-builder"); ?>
-<?php __("Login", "profile-builder"); ?>
 <?php __("Login - iFrame", "profile-builder"); ?>
 <?php __("Edit Profile - iFrame", "profile-builder"); ?>
 <?php __("Register - iFrame", "profile-builder"); ?>
@@ -1240,7 +1259,6 @@
 <?php __("Everyone", "profile-builder"); ?>
 <?php __("Restrict menu item to a minimum role", "profile-builder"); ?>
 <?php __("Works only if Display Mode: Logged In Users is selected", "profile-builder"); ?>
-<?php __("Edit Profile", "profile-builder"); ?>
 <?php __("iFrame Title", "profile-builder"); ?>
 <?php __("iFrame Size", "profile-builder"); ?>
 <?php __("Height (px)", "profile-builder"); ?>
@@ -1314,9 +1332,9 @@
 <?php __("Google Login", "profile-builder"); ?>
 <?php __("Google Client ID", "profile-builder"); ?>
 <?php __("Google Client Name", "profile-builder"); ?>
-<?php __("Twitter Login", "profile-builder"); ?>
-<?php __("Twitter API Key", "profile-builder"); ?>
-<?php __("Twitter API Secret", "profile-builder"); ?>
+<?php __("X Login", "profile-builder"); ?>
+<?php __("X API Key", "profile-builder"); ?>
+<?php __("X API Secret", "profile-builder"); ?>
 <?php __("LinkedIn Login", "profile-builder"); ?>
 <?php __("LinkedIn Client ID", "profile-builder"); ?>
 <?php __("LinkedIn Client Secret", "profile-builder"); ?>
@@ -1333,11 +1351,11 @@
 <?php __("Edit Profile Form Heading", "profile-builder"); ?>
 <?php __("Facebook Button Text (Login/Register)", "profile-builder"); ?>
 <?php __("Google Button Text (Login/Register)", "profile-builder"); ?>
-<?php __("Twitter Button Text (Login/Register)", "profile-builder"); ?>
+<?php __("X Button Text (Login/Register)", "profile-builder"); ?>
 <?php __("LinkedIn Button Text (Login/Register)", "profile-builder"); ?>
 <?php __("Facebook Button Text (Edit Profile)", "profile-builder"); ?>
 <?php __("Google Button Text (Edit Profile)", "profile-builder"); ?>
-<?php __("Twitter Button Text (Edit Profile)", "profile-builder"); ?>
+<?php __("X Button Text (Edit Profile)", "profile-builder"); ?>
 <?php __("LinkedIn Button Text (Edit Profile)", "profile-builder"); ?>
 <?php __("Unlink Accounts (Edit Profile)", "profile-builder"); ?>
 <?php __("This option will display linked social platforms to users accounts and will allow to easily unlink them in Edit Profile page.", "profile-builder"); ?>
@@ -1366,8 +1384,8 @@
 <?php __("To create a new account please confirm:", "profile-builder"); ?>
 <?php __("You must agree to the Terms And Conditions to create a new account.", "profile-builder"); ?>
 <?php __("Please enter your Facebook email!", "profile-builder"); ?>
-<?php __("Waiting for Twitter...", "profile-builder"); ?>
-<?php __("Please enter your Twitter email!", "profile-builder"); ?>
+<?php __("Waiting for X...", "profile-builder"); ?>
+<?php __("Please enter your X email!", "profile-builder"); ?>
 <?php __("Profile Builder not active!", "profile-builder"); ?>
 <?php __("Application Settings", "profile-builder"); ?>
 <?php __("Appearance Settings", "profile-builder"); ?>
@@ -1930,6 +1948,10 @@
 <?php __("Extra options", "profile-builder"); ?>
 <?php __("Files Restriction", "profile-builder"); ?>
 <?php __("Web Server", "profile-builder"); ?>
+<?php __("Auto Detect", "profile-builder"); ?>
+<?php __("Apache", "profile-builder"); ?>
+<?php __("Nginx", "profile-builder"); ?>
+<?php __("Detected Web Server", "profile-builder"); ?>
 <?php __("Protect ALL File Types", "profile-builder"); ?>
 <?php __("Protect every file type from your Media Library.", "profile-builder"); ?>
 <?php __('This option can cause performance issues, enable at your own risk. %1$sLearn more%2$s', 'profile-builder' ); ?>

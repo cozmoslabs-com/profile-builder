@@ -102,7 +102,7 @@ function wppb_add_ons_content() {
         array(  'slug' => 'social-connect',
                 'type' => 'add-on',
                 'name' => __( 'Social Connect', 'profile-builder' ),
-                'description' => __( 'Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or Twitter.', 'profile-builder' ),
+                'description' => __( 'Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X.', 'profile-builder' ),
                 'icon' => 'pb-add-on-social-connect-logo.png',
                 'doc_url' => 'http://www.cozmoslabs.com/docs/profile-builder/add-ons/social-connect/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
                 'download_url' => 'https://www.cozmoslabs.com/add-ons/social-connect/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree'

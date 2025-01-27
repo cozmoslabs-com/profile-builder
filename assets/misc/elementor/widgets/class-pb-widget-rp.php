@@ -89,12 +89,12 @@ class PB_Elementor_Recover_Password_Widget extends PB_Elementor_Widget {
         // User Login Style tab
         if( !$this->is_placeholder_labels_active() ) {
             $sections['label'] = [
-                'selector' => '.wppb-username-email label',
+                'selector' => '#wppb-recover-password .wppb-username-email label',
                 'section_name' => 'Label',
             ];
         }
         $sections['input'] = [
-            'selector' => '.wppb-username-email input',
+            'selector' => '#wppb-recover-password .wppb-username-email input',
             'section_name' => 'Input',
         ];
         $this->add_styling_control_group(
@@ -116,7 +116,7 @@ class PB_Elementor_Recover_Password_Widget extends PB_Elementor_Widget {
                     'pb_recover_password_recaptcha',
                     [
                         'label' => [
-                            'selector' => '.wppb-form-field.wppb-recaptcha label',
+                            'selector' => '#wppb-recover-password .wppb-form-field.wppb-recaptcha label',
                             'section_name' => 'Label',
                         ]
                     ]
@@ -131,7 +131,7 @@ class PB_Elementor_Recover_Password_Widget extends PB_Elementor_Widget {
             'pb_recover_password_button',
             [
                 'input' => [
-                    'selector' => '.form-submit input#wppb-recover-password-button',
+                    'selector' => '#wppb-recover-password .form-submit input#wppb-recover-password-button',
                     'section_name' => 'Input',
                 ]
             ]

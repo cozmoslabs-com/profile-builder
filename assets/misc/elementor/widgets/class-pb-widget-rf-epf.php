@@ -382,7 +382,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                 'pb_register_' . $form_slug . '_register_button',
                 [
                     'register_button' => [
-                        'selector' => '.wppb-register-user .submit.button',
+                        'selector' => '.wppb-register-user #register.submit.button',
                         'section_name' => 'Register Button',
                     ]
                 ]
@@ -394,7 +394,7 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
                 'pb_edit_profile_'.$form_slug.'_update_button',
                 [
                     'update_button' => [
-                        'selector'     => '.wppb-edit-user .submit.button',
+                        'selector'     => '.wppb-edit-user #edit_profile.submit.button',
                         'section_name' => 'Update Button',
                     ]
                 ]
