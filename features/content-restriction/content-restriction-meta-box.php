@@ -235,15 +235,12 @@ function wppb_content_restriction_save_data( $post_id ) {
         update_post_meta( $post_id, 'wppb-content-restrict-type', sanitize_text_field( $_POST['wppb-content-restrict-type'] ) );
     }
 
-    if( isset( $_POST['wppb-content-restrict-user-status'] ) && $_POST['wppb-content-restrict-user-status'] === 'loggedin' ) {
-        delete_post_meta( $post_id, 'wppb-content-restrict-user-role' );
-
-        if( isset( $_POST['wppb-content-restrict-user-role'] ) && is_array( $_POST['wppb-content-restrict-user-role'] ) ) {
-            $user_role_ids = array_map( 'sanitize_text_field', $_POST['wppb-content-restrict-user-role'] );
-            foreach( $user_role_ids as $user_role_id ) {
-                if( ! empty( $user_role_id ) ) {
-                    add_post_meta( $post_id, 'wppb-content-restrict-user-role',  $user_role_id );
-                }
+    delete_post_meta( $post_id, 'wppb-content-restrict-user-role' );
+    if( isset( $_POST['wppb-content-restrict-user-role'] ) && is_array( $_POST['wppb-content-restrict-user-role'] ) ) {
+        $user_role_ids = array_map( 'sanitize_text_field', $_POST['wppb-content-restrict-user-role'] );
+        foreach( $user_role_ids as $user_role_id ) {
+            if( ! empty( $user_role_id ) ) {
+                add_post_meta( $post_id, 'wppb-content-restrict-user-role',  $user_role_id );
             }
         }
     }

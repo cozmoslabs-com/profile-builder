@@ -15,7 +15,7 @@
 <?php __("Easy to edit templates for listing your users as well as creating single user pages.", "profile-builder"); ?>
 <?php __("Custom Redirects", "profile-builder"); ?>
 <?php __("Redirect users after login, after they first register or when they try to access the default WordPress dashboard, login, lost password and registration forms.", "profile-builder"); ?>
-<?php __("File Restriction", "profile-builder"); ?>
+<?php __("Files Restriction", "profile-builder"); ?>
 <?php __("Protect your Media Library by restricting direct links to media files according to user roles.", "profile-builder"); ?>
 <?php __("Repeater Fields", "profile-builder"); ?>
 <?php __("The Repeater Field Module makes it really easy to add repeater front-end fields or groups of fields to your user profile. Integration with both the Email Customizer and User Listing modules, makes creating advanced user profiles possible.", "profile-builder"); ?>
@@ -1310,6 +1310,8 @@
 <?php __("Publish the form to edit tabs title.", "profile-builder"); ?>
 <?php __("Publish the form before adding Break Points!", "profile-builder"); ?>
 <?php __("Request in process, please wait a few seconds before a new one!", "profile-builder"); ?>
+<?php __("Add form Break Point (for Multi-Step Forms)", "profile-builder"); ?>
+<?php __("Remove form Break Point (for Multi-Step Forms)", "profile-builder"); ?>
 <?php __("Multi-Step Forms", "profile-builder"); ?>
 <?php __("Pagination and Tabs", "profile-builder"); ?>
 <?php __("To enable MSF you must add Break Points.", "profile-builder"); ?>
@@ -1946,7 +1948,6 @@
 <?php __("Email address", "profile-builder"); ?>
 <?php __("fullname", "profile-builder"); ?>
 <?php __("Extra options", "profile-builder"); ?>
-<?php __("Files Restriction", "profile-builder"); ?>
 <?php __("Web Server", "profile-builder"); ?>
 <?php __("Auto Detect", "profile-builder"); ?>
 <?php __("Apache", "profile-builder"); ?>

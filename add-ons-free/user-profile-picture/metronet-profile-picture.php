@@ -58,7 +58,7 @@ class User_Profile_Picture {
      */
     public function __construct() {
 
-        load_plugin_textdomain( 'profile-builder', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+//        load_plugin_textdomain( 'profile-builder', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
         $this->plugin_path = plugin_basename( __FILE__ );
         $this->plugin_url  = rtrim( plugin_dir_url( __FILE__ ), '/' );
@@ -619,7 +619,7 @@ class User_Profile_Picture {
         $user_id = $user->ID;
 
         // Get the post the user is attached to.
-        $size = $args['size'];
+        $size = apply_filters( 'wppb_user_profile_picture_avatar_size', $args['size'], $user_id );
 
         $profile_post_id = absint( get_user_option( 'metronet_post_id', $user_id ) );
         if ( 0 === $profile_post_id ) {
@@ -836,7 +836,7 @@ class User_Profile_Picture {
      * Adds an upload form to the user profile page and outputs profile image if there is one
      */
     public function insert_upload_form() {
-        if ( ! current_user_can( 'upload_files' ) ) {
+        if ( ! ( current_user_can( 'upload_files' ) && current_user_can( 'edit_published_posts' ) ) ) {
             return; // Users must be author or greater.
         }
 
@@ -1101,11 +1101,11 @@ class User_Profile_Picture {
          *
          * @param string User role for users
          */
-        $capabilities = apply_filters( 'mpp_gutenberg_user_role', 'authors' );
+        $capabilities = apply_filters( 'mpp_gutenberg_capabilities', array( 'upload_files', 'edit_published_posts' ) );
         $user_query   = new WP_User_Query(
             array(
-                'who'     => $capabilities,
-                'orderby' => 'display_name',
+                'capability__in' => is_array( $capabilities ) ? $capabilities : array(),
+                'orderby'        => 'display_name',
             )
         );
         $user_results = $user_query->get_results();

@@ -3,7 +3,7 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.13.1
+ * Version: 3.13.2
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
@@ -11,8 +11,8 @@
  * License: GPL2
  * WC requires at least: 3.0.0
  * WC tested up to: 9.6
- * Elementor tested up to: 3.27.1
- * Elementor Pro tested up to: 3.27.1
+ * Elementor tested up to: 3.27.3
+ * Elementor Pro tested up to: 3.27.3
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -213,12 +213,6 @@ function wppb_plugin_init() {
         if ( version_compare( $wp_version, "5.0.0", ">=" ) ) {
             if( file_exists( WPPB_PLUGIN_DIR . 'assets/misc/gutenberg/enqueue-block-editor-assets.php' ) )
                 include_once WPPB_PLUGIN_DIR . 'assets/misc/gutenberg/enqueue-block-editor-assets.php';
-        }
-
-        //Blocks
-        if ( version_compare( $wp_version, "5.0.0", ">=" ) ) {
-            if( file_exists( WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/manage-blocks.php' ) )
-                include_once WPPB_PLUGIN_DIR . '/assets/misc/gutenberg-blocks/manage-blocks.php';
         }
 
         //Block Content Restriction
@@ -432,7 +426,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.13.1' );
+define('PROFILE_BUILDER_VERSION', '3.13.2' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));

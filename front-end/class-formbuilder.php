@@ -79,6 +79,9 @@ class Profile_Builder_Form_Creator{
     static function wppb_get_form_id_from_form_name( $form_name, $form_type ){
         global $wpdb;
 
+        if( empty( $form_name ) || empty( $form_type ) )
+            return null;
+
         if( $form_type == 'edit_profile' ){
             $post_type = 'wppb-epf-cpt';
         }elseif( $form_type == 'register' ){

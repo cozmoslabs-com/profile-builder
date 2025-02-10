@@ -114,7 +114,7 @@ function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location
         if ( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] == 'yes' && ( !isset( $field[ 'woocommerce-checkout-field' ] ) || $field[ 'woocommerce-checkout-field' ] !== 'Yes' ) ) {
             //Save data in the case the simple upload field is used
             $field_name = 'simple_upload_' . wppb_handle_meta_name( $field[ 'meta-name' ] );
-            if( isset( $_FILES[ $field_name ] ) ) {
+            if( isset( $_FILES[ $field_name ] ) || ( isset( $request_data[ 'pay_gate' ] ) && in_array( $request_data['pay_gate'], array( 'stripe_connect', 'paypal_connect' ) ) ) ){
                 if ( !( isset( $field[ 'conditional-logic-enabled' ] ) && $field[ 'conditional-logic-enabled' ] == 'yes' && !isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ) ){
                     if ( isset( $_FILES[ $field_name ][ 'size' ] ) && $_FILES[ $field_name ][ 'size' ] == 0 ){
                         if ( isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ){

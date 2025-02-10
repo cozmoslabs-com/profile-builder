@@ -159,8 +159,7 @@ function wppb_recaptcha_script_footer(){
                                     }
                             
                                     if( submitForm ){
-                                        var form = recaptchaResponse.closest("form");
-                                        form.submit();
+                                        currentForm.submit();
                                     } else {
                                         jQuery(document).trigger( "wppb_v3_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", recaptchaResponse.closest("form") ) )
                                     }

@@ -788,4 +788,48 @@ if( function_exists( 'wc_get_page_id' ) ) {
 
 		 return $query_args;
 	 }
+
+	 // Exclude restricted posts from Elementor
+	 add_filter( 'elementor/query/query_args', 'wppb_exclude_posts_from_elementor' );
+	 function wppb_exclude_posts_from_elementor( $query_args ) {
+
+		 // check if the form is being displayed in the Elementor editor
+		 $is_elementor_edit_mode = false;
+		 if( class_exists ( '\Elementor\Plugin' ) ){
+			 $is_elementor_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
+		 }
+
+		 if ( !$is_elementor_edit_mode && !is_admin() && function_exists( 'wppb_content_restriction_is_post_restricted' ) ) {
+			 $args = $query_args;
+			 $args['suppress_filters'] = true;
+			 $args['fields']           = 'ids';
+
+			 if( !empty( $query_args['paged'] ) ){
+
+				 $args['paged'] = round( $args['paged'] / 2 );
+
+				 if( !empty( $args['posts_per_page'] ) )
+					 $args['posts_per_page'] = $args['posts_per_page'] * 2;
+				 else
+					 $args['posts_per_page'] = get_option( 'posts_per_page' ) * 2;
+
+			 }
+
+			 if( is_search() )
+				 $args['post_type'] = 'any';
+
+			 $restricted_posts = get_posts( $args );
+
+			 $restricted_ids = array_filter( $restricted_posts, 'wppb_content_restriction_is_post_restricted' );
+
+			 if ( ! empty( $restricted_ids ) ) {
+				 if ( isset( $query_args['post__not_in'] ) && is_array( $query_args['post__not_in'] ) ) {
+					 $query_args['post__not_in'] = array_merge( $query_args['post__not_in'], $restricted_ids );
+				 } else {
+					 $query_args['post__not_in'] = $restricted_ids;
+				 }
+			 }
+		 }
+		 return $query_args;
+	 }
  }

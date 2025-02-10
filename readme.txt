@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 3.13.1
+Stable tag: 3.13.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -203,6 +203,18 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.2 =
+* Fix: Correctly save Content Restriction metabox selected user roles, even if the logged in users option is not selected
+* Fix: An issue that in some cases was causing the form not to be submitted after reCaptcha was verified
+* Fix: More fixes for the translation loaded too early messages that started appearing with WordPress 6.7
+* Fix: UPP now only shows the image uploader to users that can actually upload avatars
+* Fix: Usage of deprecated functionality inside UPP
+* Fix: Add compatibility for the Simple Upload functionality when the Stripe Paid Member Subscriptions gateway is being used in the form
+* Misc: Reworked Gutenberg Blocks for forms
+* Misc: Added compatibility with the Elementor Loop Grid widget when removing restricted posts from queries
+* Misc: Fix a notice that could appear in some cases
+* Misc: Added a filter that can be used to adjust the avatar size from User Profile Picture: wppb_user_profile_picture_avatar_size
+
 = 3.13.1 =
 * Fix: Disabled autocomplete for the password field on the Edit Profile form
 * Fix: Increase specificity for some Elementor Styling rules so they can overwrite Form Designs

@@ -71,7 +71,7 @@ function wppb_add_ons_content() {
         ),
         array(  'slug' => 'wppb_fileRestriction',
             'type' => 'add-on',
-            'name' => __( 'File Restriction', 'profile-builder' ),
+            'name' => __( 'Files Restriction', 'profile-builder' ),
             'description' => __( 'Protect your Media Library by restricting direct links to media files according to user roles.', 'profile-builder' ),
             'icon' => 'pb-add-on-file-restriction-logo.png',
             'doc_url' => 'https://www.cozmoslabs.com/add-ons/files-restriction/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
@@ -372,28 +372,24 @@ function wppb_activate_or_deactivate_add_on( $slug, $action ){
     //the free addons part
     $wppb_free_add_ons_settings = get_option( 'wppb_free_add_ons_settings', array() );
     if ( !empty( $wppb_free_add_ons_settings ) ){
-        foreach( $wppb_free_add_ons_settings as $add_on_slug => $status ){
-            if( $slug == $add_on_slug ){
-                if( $action == 'show' )
-                    $wppb_free_add_ons_settings[$add_on_slug] = true;
-                elseif( $action == 'hide' )
-                    $wppb_free_add_ons_settings[$add_on_slug] = false;
-            }
-        }
+
+        if( $action == 'show' )
+            $wppb_free_add_ons_settings[$slug] = true;
+        elseif( $action == 'hide' )
+            $wppb_free_add_ons_settings[$slug] = false;
+
     }
     update_option( 'wppb_free_add_ons_settings', $wppb_free_add_ons_settings );
 
     //the advanced addons part
     $wppb_advanced_add_ons_settings = get_option( 'wppb_advanced_add_ons_settings', array() );
     if ( !empty( $wppb_advanced_add_ons_settings ) ){
-        foreach( $wppb_advanced_add_ons_settings as $add_on_slug => $status ){
-            if( $slug == $add_on_slug ){
-                if( $action == 'show' )
-                    $wppb_advanced_add_ons_settings[$add_on_slug] = true;
-                elseif( $action == 'hide' )
-                    $wppb_advanced_add_ons_settings[$add_on_slug] = false;
-            }
-        }
+
+        if( $action == 'show' )
+            $wppb_advanced_add_ons_settings[$slug] = true;
+        elseif( $action == 'hide' )
+            $wppb_advanced_add_ons_settings[$slug] = false;
+
     }
     update_option( 'wppb_advanced_add_ons_settings', $wppb_advanced_add_ons_settings );
 }
@@ -401,10 +397,13 @@ function wppb_activate_or_deactivate_add_on( $slug, $action ){
 /**
  * Add a notice on the add-ons page if the save was successful
  */
-if ( isset($_GET['cl_add_ons_listing_success']) ){
-    if( class_exists('WPPB_Add_General_Notices') ) {
-        new WPPB_Add_General_Notices('cl_add_ons_listing_success',
-            sprintf(__('%1$sAdd-ons settings saved successfully%2$s', 'profile-builder'), "<p>", "</p>"),
-            'updated notice is-dismissible');
+add_action('init', function()
+{
+    if ( isset($_GET['cl_add_ons_listing_success']) ){
+        if( class_exists('WPPB_Add_General_Notices') ) {
+            new WPPB_Add_General_Notices('cl_add_ons_listing_success',
+                sprintf(__('%1$sAdd-ons settings saved successfully%2$s', 'profile-builder'), "<p>", "</p>"),
+                'updated notice is-dismissible');
+        }
     }
-}
+});
