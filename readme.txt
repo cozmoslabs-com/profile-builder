@@ -4,7 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 3.13.2
+Stable tag: 3.13.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -203,6 +203,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.3 =
+* Fix: Issue with styling getting broken on the website generated with the latest update
+
 = 3.13.2 =
 * Fix: Correctly save Content Restriction metabox selected user roles, even if the logged in users option is not selected
 * Fix: An issue that in some cases was causing the form not to be submitted after reCaptcha was verified
