@@ -4,6 +4,7 @@ Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
 Tested up to: 6.7
+Requires PHP: 7.4
 Stable tag: 3.13.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
