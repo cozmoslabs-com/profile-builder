@@ -875,6 +875,15 @@ function wppb_initialize_live_select( container_name ){
 			wppb_hide_all( container_name );
 		}
 	});
+
+	// Show the score threshold field only when reCAPTCHA v3 is selected
+	jQuery( document ).on( 'change', container_name + ' ' + '.mb-list-entry-fields #recaptcha-type', function () {
+		if ( jQuery( this ).val() === 'v3' ){
+			jQuery( container_name + ' ' + '.row-score-threshold' ).show()
+		} else {
+			jQuery( container_name + ' ' + '.row-score-threshold' ).hide()
+		}
+	} );
 }
 
 
@@ -908,6 +917,16 @@ jQuery(function(){
 
     wppb_enable_select2('#wppb_manage_fields');
 
+	// Show the score threshold field only when reCAPTCHA v3 is selected
+	jQuery('html').on('wpbFormMetaLoaded', function(e, elem) {
+		jQuery('.row-score-threshold input').each(function() {
+			if ( jQuery(this).closest('.mb-list-entry-fields').find(".row-recaptcha-type :selected").val() === 'v3' ){
+				jQuery(this).closest('.row-score-threshold').show();
+			} else {
+				jQuery(this).closest('.row-score-threshold').hide();
+			}
+		});
+	});
 });
 
 // Custom functionality for sorting options (see the Map POIs attributes).

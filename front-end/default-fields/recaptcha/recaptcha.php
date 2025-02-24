@@ -310,7 +310,7 @@ class wppb_ReCaptchaResponse {
  * @param string $response
  * @return wppb_ReCaptchaResponse
  */
-function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response ){
+function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response, $score_threshold = 0.5 ) {
 
     if ( $remoteip == null || $remoteip == '' )
         echo '<span class="error">'. esc_html__("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder") .'</span><br/><br/>';
@@ -340,17 +340,23 @@ function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response ){
 
     $answers = json_decode($getResponse, true);
     $recaptchaResponse = new wppb_ReCaptchaResponse();
+
     if (trim($answers ['success']) == true) {
-        $recaptchaResponse->is_valid = true;
+        if ( array_key_exists( 'score', $answers ) ) {
+            $recaptchaResponse->is_valid = ($answers['score'] >= $score_threshold);
+        } else {
+            $recaptchaResponse->is_valid = true;
+        }
     } else {
         $recaptchaResponse->is_valid = false;
     }
+
     return $recaptchaResponse;
 
 }
 
 /* the function to display error message on the registration page */
-function wppb_validate_captcha_response( $publickey, $privatekey ){
+function wppb_validate_captcha_response( $publickey, $privatekey, $score_threshold = 0.5 ){
     if (isset($_POST['g-recaptcha-response'])){
         $recaptcha_response_field = sanitize_textarea_field( $_POST['g-recaptcha-response'] );
     }
@@ -358,7 +364,7 @@ function wppb_validate_captcha_response( $publickey, $privatekey ){
         $recaptcha_response_field = '';
     }
     if( isset( $_SERVER["REMOTE_ADDR"] ) )
-        $resp = wppb_recaptcha_check_answer($privatekey, sanitize_text_field( $_SERVER["REMOTE_ADDR"] ), $recaptcha_response_field );
+        $resp = wppb_recaptcha_check_answer($privatekey, sanitize_text_field( $_SERVER["REMOTE_ADDR"] ), $recaptcha_response_field, $score_threshold );
 
     if ( !empty( $_POST ) && isset( $resp ) )
         return ( ( !$resp->is_valid ) ? false : true );
@@ -610,7 +616,7 @@ function wppb_recaptcha_login_wp_error_message($user){
         if ( !empty($field) ){
             global $wppb_recaptcha_response;
 
-            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), trim( $field['score-threshold'] ) );
 
             //reCAPTCHA error for displaying on the PB login form
             if ( isset($_POST['wppb_login']) && ($_POST['wppb_login'] == true) ) {
@@ -767,3 +773,15 @@ if ( function_exists('is_plugin_active') && is_plugin_active( 'paid-member-subsc
     $notifications->add_notification( $notification_id, $notification_message, 'wppb-notice notice notice-warning is-dismissible', false );
 
 }
+
+// Make sure the reCAPTCHA field score threshold is set correctly
+function wppb_check_recaptcha_fields_settings( $values ) {
+    if( isset( $values['field'] ) && $values['field'] == 'reCAPTCHA' ) {
+        if ( empty( $values['score-threshold'] ) || $values['score-threshold'] < 0 || $values['score-threshold'] > 1 ) {
+            $values['score-threshold'] = 0.5;
+        }
+    }
+
+    return $values;
+}
+add_action( 'wck_update_meta_filter_values_wppb_manage_fields', 'wppb_check_recaptcha_fields_settings' );

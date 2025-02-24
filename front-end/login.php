@@ -196,6 +196,11 @@ function wppb_login_form( $args = array() ) {
 			' . $login_form_bottom . '
 		</form>';
 
+	// Remove whitespace if login_username_input_type is set to email
+	if ( $args['login_username_input_type'] == 'email' ) {
+		$form .= '<script>jQuery(document).ready(function($) { $("input[name=\"log\"]").on("keyup", function() { $(this).val( $.trim($(this).val()) ); }); });</script>';
+	}
+
 	if ( $args['echo'] )
 		echo $form; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* escaped above */
 	else

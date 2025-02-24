@@ -139,7 +139,7 @@ class WPPB_Setup_Wizard {
             // Form Design
             if ( isset( $_POST['wppb_general_settings'] ) && !empty( $_POST['wppb_general_settings']['formsDesign'] ) )
                 $general_settings['formsDesign'] = sanitize_text_field( $_POST['wppb_general_settings']['formsDesign'] );
-            else $general_settings['formsDesign'] = 'default';
+            else $general_settings['formsDesign'] = 'form-style-default';
 
             // Automatically Log-in
             if( isset( $_POST['automaticallyLogIn'] ) )

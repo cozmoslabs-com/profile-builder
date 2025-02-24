@@ -204,6 +204,12 @@
     padding: 0;
 }
 
+.wppb-user-forms ul li.wppb-recaptcha:not(.wppb-field-error):has(.wppb-invisible-recaptcha, .wppb-v3-recaptcha) {
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
+
 .wppb-user-forms ul li:after {
     content: "";
     clear: both;

@@ -326,6 +326,8 @@
 <?php __("The site key from Google, <a href=\"https://www.google.com/recaptcha/admin/create\" target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>", "profile-builder"); ?>
 <?php __("Secret Key", "profile-builder"); ?>
 <?php __("The secret key from Google, <a href=\"https://www.google.com/recaptcha/admin/create\" target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>", "profile-builder"); ?>
+<?php __("Score Threshold", "profile-builder"); ?>
+<?php __("The required score threshold: 1.0 is very likely a good interaction, 0.0 is very likely a bot<br/>If not specified, defaults to 0.5", "profile-builder"); ?>
 <?php __("Display on PB forms", "profile-builder"); ?>
 <?php __("PB Login", "profile-builder"); ?>
 <?php __("PB Register", "profile-builder"); ?>

@@ -791,6 +791,15 @@ class Profile_Builder_Form_Creator{
 
         $users = get_users( apply_filters( 'wppb_edit_other_users_dropdown_query_args', $query_args, $form_name ) );
 
+        if ( apply_filters( 'wppb_edit_other_users_dropdown_user_list_excludes_admin_approval', false ) &&
+            wppb_get_admin_approval_option_value() === 'yes' ) {
+            foreach ( $users as $key => $user ) {
+                if ( wp_get_object_terms( $user->ID, 'user_status' ) ) {
+                    unset( $users[ $key ] );
+                }
+            }
+        }
+
         if( !empty( $users ) ) {
 
             /* turn it in a select2 */
