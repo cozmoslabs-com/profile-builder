@@ -172,13 +172,14 @@ function wppb_login_form( $args = array() ) {
 			</p>
 			<p class="wppb-form-field login-password'. apply_filters( 'wppb_login_field_extra_css_class', '', $args['id_password']) .'">
 				<label for="' . esc_attr( $args['id_password'] ) . '">' . esc_html( $args['label_password'] ) . '</label>
-				<input type="password" name="pwd" id="' . esc_attr( $args['id_password'] ) . '" class="input" value="" size="20" '. apply_filters( 'wppb_login_password_extra_attributes', '' ) .'/>';
-
-    /* add the HTML for the visibility toggle */
-    $form .= wppb_password_visibility_toggle_html();
+				<span class="wppb-password-field-container">
+				    <input type="password" name="pwd" id="' . esc_attr( $args['id_password'] ) . '" class="input" value="" size="20" '. apply_filters( 'wppb_login_password_extra_attributes', '' ) .'/>
+				    '. wppb_password_visibility_toggle_html() .' <!-- add the HTML for the visibility toggle -->
+				</span>
+            </p>';
 
     $form .='
-			</p>
+			
 			' . $login_form_middle . '
 			' . ( $args['remember'] ? '<p class="wppb-form-field login-remember"><input name="rememberme" type="checkbox" id="' . esc_attr( $args['id_remember'] ) . '" value="forever"' . ( $args['value_remember'] ? ' checked="checked"' : '' ) . ' /><label for="' . esc_attr( $args['id_remember'] ) . '">' . esc_html( $args['label_remember'] ) . '</label></p>' : '' ) . '
 			<p class="login-submit">
@@ -198,7 +199,7 @@ function wppb_login_form( $args = array() ) {
 
 	// Remove whitespace if login_username_input_type is set to email
 	if ( $args['login_username_input_type'] == 'email' ) {
-		$form .= '<script>jQuery(document).ready(function($) { $("input[name=\"log\"]").on("keyup", function() { $(this).val( $.trim($(this).val()) ); }); });</script>';
+		$form .= '<script>window.onload = function() { jQuery(document).ready(function($) { $("input[name=\"log\"]").on("keyup", function() { $(this).val( $.trim($(this).val()) ); }); }); }</script>';
 	}
 
 	if ( $args['echo'] )

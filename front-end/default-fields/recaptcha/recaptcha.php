@@ -420,7 +420,7 @@ function wppb_check_recaptcha_value( $message, $field, $request_data, $form_loca
             so do not verify it again or it will fail  */
             global $wppb_recaptcha_response;
             if (!isset($wppb_recaptcha_response)){
-                $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+                $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
             }
             if ( (  $wppb_recaptcha_response == false ) && ( $field['required'] == 'Yes' ) ){
                 return wppb_required_field_error($field["field-title"]);
@@ -484,7 +484,7 @@ function wppb_recaptcha_change_recover_password_message_no($messageNo) {
             if (!empty($field)) {
 
                 global $wppb_recaptcha_response;
-                if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+                if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
                 if ( isset($field['captcha-pb-forms']) && (strpos($field['captcha-pb-forms'], 'pb_recover_password') !== false) ) {
 
@@ -504,7 +504,7 @@ function wppb_recaptcha_recover_password_displayed_message1( $message ) {
 
     if ( !empty($field) ){
         global $wppb_recaptcha_response;
-        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
         if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_recover_password' ) !== false ) && ( $wppb_recaptcha_response == false )) {
 
@@ -530,7 +530,7 @@ function wppb_recaptcha_recover_password_sent_message_1($message) {
 
             if (!empty($field)) {
                 global $wppb_recaptcha_response;
-                if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+                if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
                 if ( isset($field['captcha-pb-forms']) && ( strpos($field['captcha-pb-forms'], 'pb_recover_password') !== false ) && ( $wppb_recaptcha_response == false ) ){
                     $message = 'wppb_recaptcha_error';
@@ -616,7 +616,7 @@ function wppb_recaptcha_login_wp_error_message($user){
         if ( !empty($field) ){
             global $wppb_recaptcha_response;
 
-            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), trim( $field['score-threshold'] ) );
+            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
             //reCAPTCHA error for displaying on the PB login form
             if ( isset($_POST['wppb_login']) && ($_POST['wppb_login'] == true) ) {
@@ -684,7 +684,7 @@ function wppb_verify_recaptcha_default_wp_recover_password(){
     $field = wppb_get_recaptcha_field();
     if ( !empty($field) ){
         global $wppb_recaptcha_response;
-        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
     // If reCAPTCHA not entered or incorrect reCAPTCHA answer
         if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
@@ -732,7 +732,7 @@ function wppb_verify_recaptcha_default_wp_register( $errors ){
     $field = wppb_get_recaptcha_field();
     if ( !empty($field) ){
         global $wppb_recaptcha_response;
-        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ) );
+        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
         // If reCAPTCHA not entered or incorrect reCAPTCHA answer
         if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {

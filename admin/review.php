@@ -99,7 +99,7 @@ class WPPB_Review_Request {
 
                             <div>
                                 <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( $this->query_arg => $this->notificationId ) ), 'wppb_review_notice_dismiss' ) ) ?>"
-                                   style="width: 150px; height: 30px;" class="button-secondary">
+                                   class="button-secondary">
 		                            <?php esc_html_e('No, thanks.', 'profile-builder'); ?>
                                 </a>
                             </div>

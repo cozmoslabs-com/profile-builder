@@ -53,7 +53,6 @@
 .wppb-form-field.pbpl-class input[type="text"],
 .wppb-form-field.pbpl-class input[type="email"],
 .wppb-form-field.pbpl-class input[type="url"],
-.wppb-form-field.pbpl-class input[type="password"],
 .wppb-form-field.pbpl-class input[type="search"],
 .wppb-form-field.pbpl-class input[type="number"],
 .wppb-form-field.pbpl-class select,
@@ -62,7 +61,7 @@
 .wppb-form-field.pbpl-class .wppb-radios,
 .wppb-form-field.wppb-wysiwyg.pbpl-class .wp-editor-wrap,
 #wppb-login-wrap .login-username.pbpl-class input,
-#wppb-login-wrap .login-password.pbpl-class input,
+.wppb-form-field.pbpl-class .wppb-password-field-container,
 #wppb-recover-password ul li.wppb-form-field input
 {
     width: 100%;

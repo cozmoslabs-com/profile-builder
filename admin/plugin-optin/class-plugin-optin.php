@@ -630,7 +630,7 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
         $this->metadata['custom']['content_restriction'] = $this->generate_content_restriction_data();
 
         // add-ons data
-        $this->metadata['add-ons'] = $this->generate_addon_settings();
+        $this->metadata['addons'] = $this->generate_addon_settings();
 
         // custom fields data
         $this->metadata['custom']['custom-fields'] = $this->generate_custom_fields_data();
@@ -703,7 +703,8 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
 
             if( !empty( $option ) ){
                 foreach( $option as $slug => $value ){
-                    if( $value == true || $value == 'show' ){
+                    
+                    if( ( is_bool( $value ) && $value == true ) || $value == 'show' ){
                         $slug = str_replace( 'wppb_', '', $slug );
 
                         if( isset( $name_normalization[$slug] ) )
@@ -718,6 +719,9 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
         // Email Customizer was moved to a free add-on at some point, remove it from the array if we find it
         if( isset( $add_ons['emailCustomizer'] ) )
             unset( $add_ons['emailCustomizer'] );
+
+        if( isset( $add_ons['emailCustomizerAdmin'] ) )
+            unset( $add_ons['emailCustomizerAdmin'] );
 
         // Add content restriction integrations as active add-ons if they have restrictions
         if( !empty( $this->metadata['custom']['content_restriction'] ) ) {
@@ -910,98 +914,98 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
         ];
 
         // Count post/page/cpt restrictions
-        // global $wpdb;
-        // $restriction_data['post_restrictions'] = $wpdb->get_var(
-        //     "SELECT COUNT(DISTINCT a.post_id) 
-        //     FROM {$wpdb->postmeta} a
-        //     INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
-        //     WHERE b.post_type != 'revision'
-        //     AND ( ( a.meta_key = 'wppb-content-restrict-user-status' AND a.meta_value = 'loggedin' )
-        //     OR ( a.meta_key = 'wppb-content-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 500"
-        // );
+        global $wpdb;
+        $restriction_data['post_restrictions'] = $wpdb->get_var(
+            "SELECT COUNT(DISTINCT a.post_id) 
+            FROM {$wpdb->postmeta} a
+            INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
+            WHERE b.post_type != 'revision'
+            AND ( ( a.meta_key = 'wppb-content-restrict-user-status' AND a.meta_value = 'loggedin' )
+            OR ( a.meta_key = 'wppb-content-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 100"
+        );
         
 
-        // // Count Elementor widget restrictions if Elementor is active
-        // if( did_action( 'elementor/loaded' ) ) {
+        // Count Elementor widget restrictions if Elementor is active
+        if( did_action( 'elementor/loaded' ) ) {
 
-        //     /**
-        //      * Searching for:
-        //      * 
-        //      * "wppb_restriction_loggedin_users":"yes"
-        //      * "wppb_restriction_loggedout_users":"yes"
-        //      * "wppb_restriction_user_roles":["
-        //      */
-        //     $elementor_posts = $wpdb->get_results(
-        //         "SELECT a.post_id, a.meta_value 
-        //         FROM {$wpdb->postmeta} a
-        //         INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID
-        //         WHERE b.post_type != 'revision'
-        //         AND a.meta_key = '_elementor_data' 
-        //         AND ( a.meta_value LIKE '%\"wppb_restriction_loggedin_users\":\"yes\"%'
-        //         OR a.meta_value LIKE '%\"wppb_restriction_loggedout_users\":\"yes\"%'
-        //         OR a.meta_value LIKE '%\"wppb_restriction_user_roles\":[\"%') LIMIT 500"
-        //     );
+            /**
+             * Searching for:
+             * 
+             * "wppb_restriction_loggedin_users":"yes"
+             * "wppb_restriction_loggedout_users":"yes"
+             * "wppb_restriction_user_roles":["
+             */
+            $elementor_posts = $wpdb->get_results(
+                "SELECT a.post_id, a.meta_value 
+                FROM {$wpdb->postmeta} a
+                INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID
+                WHERE b.post_type != 'revision'
+                AND a.meta_key = '_elementor_data' 
+                AND ( a.meta_value LIKE '%\"wppb_restriction_loggedin_users\":\"yes\"%'
+                OR a.meta_value LIKE '%\"wppb_restriction_loggedout_users\":\"yes\"%'
+                OR a.meta_value LIKE '%\"wppb_restriction_user_roles\":[\"%') LIMIT 100"
+            );
 
-        //     if( !empty( $elementor_posts ) )
-        //         $restriction_data['elementor_restrictions'] = count($elementor_posts);
+            if( !empty( $elementor_posts ) )
+                $restriction_data['elementor_restrictions'] = count($elementor_posts);
 
-        // }
+        }
 
-        // // Check if Divi is active (either theme or plugin)
-        // if( defined( 'ET_BUILDER_VERSION' ) ) {
-        //     // Count Divi builder restrictions
-        //     $divi_posts = $wpdb->get_results(
-        //         "SELECT ID 
-        //         FROM {$wpdb->posts}
-        //         WHERE post_type != 'revision'
-        //         AND post_content LIKE '%wppb_display_to=\"logged_in\"%'
-        //         OR post_content LIKE '%wppb_display_to=\"not_logged_in\"%' LIMIT 500"
-        //     );
+        // Check if Divi is active (either theme or plugin)
+        if( defined( 'ET_BUILDER_VERSION' ) ) {
+            // Count Divi builder restrictions
+            $divi_posts = $wpdb->get_results(
+                "SELECT ID 
+                FROM {$wpdb->posts}
+                WHERE post_type != 'revision'
+                AND post_content LIKE '%wppb_display_to=\"logged_in\"%'
+                OR post_content LIKE '%wppb_display_to=\"not_logged_in\"%' LIMIT 100"
+            );
 
-        //     if( !empty( $divi_posts ) )
-        //         $restriction_data['divi_restrictions'] = count($divi_posts);
+            if( !empty( $divi_posts ) )
+                $restriction_data['divi_restrictions'] = count($divi_posts);
 
-        // }
+        }
 
-        // // Check if Gutenberg is available
-        // if( version_compare( get_bloginfo( 'version' ), '5.0', '>=' ) ) {
-        //     // Count Gutenberg restrictions
-        //     $gutenberg_posts = $wpdb->get_results(
-        //         "SELECT ID 
-        //         FROM {$wpdb->posts}
-        //         WHERE post_type != 'revision'
-        //         AND ( post_content LIKE '%\"display_to\":\"\",\"enable_message_logged_in\"%'
-        //         OR post_content LIKE '%\"display_to\":\"not_logged_in\",\"enable_message_logged_in\"%'
-        //         OR post_content LIKE '%\"wppbContentRestriction\":{\"user_roles\":[\"%' ) LIMIT 500"
-        //     );
+        // Check if Gutenberg is available
+        if( version_compare( get_bloginfo( 'version' ), '5.0', '>=' ) ) {
+            // Count Gutenberg restrictions
+            $gutenberg_posts = $wpdb->get_results(
+                "SELECT ID 
+                FROM {$wpdb->posts}
+                WHERE post_type != 'revision'
+                AND ( post_content LIKE '%\"display_to\":\"\",\"enable_message_logged_in\"%'
+                OR post_content LIKE '%\"display_to\":\"not_logged_in\",\"enable_message_logged_in\"%'
+                OR post_content LIKE '%\"wppbContentRestriction\":{\"user_roles\":[\"%' ) LIMIT 100"
+            );
 
-        //     if( !empty( $gutenberg_posts ) )
-        //         $restriction_data['blocks_restrictions'] = count($gutenberg_posts);
+            if( !empty( $gutenberg_posts ) )
+                $restriction_data['blocks_restrictions'] = count($gutenberg_posts);
 
-        // }
+        }
 
-        // // Count WooCommerce restrictions if WooCommerce is active
-        // if( class_exists( 'WooCommerce' ) ) {
-        //     // Count view restrictions
-        //     $restriction_data['woocommerce_restrictions']['view'] = $wpdb->get_var(
-        //         "SELECT COUNT(DISTINCT a.post_id) 
-        //         FROM {$wpdb->postmeta} a
-        //         INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
-        //         WHERE b.post_type = 'product'
-        //         AND ( ( a.meta_key = 'wppb-content-restrict-user-status' AND a.meta_value = 'loggedin' )
-        //         OR ( a.meta_key = 'wppb-content-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 500"
-        //     );
+        // Count WooCommerce restrictions if WooCommerce is active
+        if( class_exists( 'WooCommerce' ) ) {
+            // Count view restrictions
+            $restriction_data['woocommerce_restrictions']['view'] = $wpdb->get_var(
+                "SELECT COUNT(DISTINCT a.post_id) 
+                FROM {$wpdb->postmeta} a
+                INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
+                WHERE b.post_type = 'product'
+                AND ( ( a.meta_key = 'wppb-content-restrict-user-status' AND a.meta_value = 'loggedin' )
+                OR ( a.meta_key = 'wppb-content-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 100"
+            );
 
-        //     // Count purchase restrictions
-        //     $restriction_data['woocommerce_restrictions']['purchase'] = $wpdb->get_var(
-        //         "SELECT COUNT(DISTINCT a.post_id) 
-        //         FROM {$wpdb->postmeta} a
-        //         INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
-        //         WHERE b.post_type = 'product'
-        //         AND ( ( a.meta_key = 'wppb-purchase-restrict-user-status' AND a.meta_value = 'loggedin' )
-        //         OR ( a.meta_key = 'wppb-purchase-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 500"
-        //     );
-        // }
+            // Count purchase restrictions
+            $restriction_data['woocommerce_restrictions']['purchase'] = $wpdb->get_var(
+                "SELECT COUNT(DISTINCT a.post_id) 
+                FROM {$wpdb->postmeta} a
+                INNER JOIN {$wpdb->posts} b ON a.post_id = b.ID 
+                WHERE b.post_type = 'product'
+                AND ( ( a.meta_key = 'wppb-purchase-restrict-user-status' AND a.meta_value = 'loggedin' )
+                OR ( a.meta_key = 'wppb-purchase-restrict-user-role' AND a.meta_value IS NOT NULL ) ) LIMIT 100"
+            );
+        }
 
         return $restriction_data;
 

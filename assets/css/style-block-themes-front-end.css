@@ -3,17 +3,6 @@
     margin-bottom: 30px !important;
 }
 
-.wppb-form-field.wppb-default-password:not(.pbpl-class) button.wppb-toggle-pw,
-.wppb-form-field.wppb-default-repeat-password:not(.pbpl-class) button.wppb-toggle-pw,
-#wppb-login-wrap .login-password:not(.pbpl-class) button.wppb-toggle-pw,
-#wppb-recover-password-container .wppb-form-field.passw1:not(.pbpl-class) .wppb-toggle-pw,
-#wppb-recover-password-container .wppb-form-field.passw2:not(.pbpl-class) .wppb-toggle-pw {
-    top: 31px; /* equal with the label's height + margin-bottom */
-    height: 44px; /* equal with the height of the input */
-    transform: none;
-}
-
-
 .wppb-user-forms .wppb-form-field.wppb-subscription-plans .pms-group-memberships-field {
     flex-direction: column;
 }
@@ -44,13 +33,14 @@
     float: none !important;
 }
 
+.wppb-form-field .wppb-password-field-container,
 .wppb-form-field input[type="text"]:not(.pms_pwyw_pricing),
 .wppb-form-field input[type="number"],
 .wppb-form-field input[type="email"],
 .wppb-form-field input[type="url"],
 .wppb-form-field input[type="password"],
 .wppb-form-field input[type="search"],
-.wppb-form-field select,
+.wppb-form-field select:not(#pms-currency-switcher),
 .wppb-form-field textarea,
 .wppb-user-forms .wppb-wysiwyg .wp-editor-wrap,
 .wppb-checkboxes,
@@ -171,7 +161,7 @@
 .wppb-user-forms .wppb-form-field:not(.wppb-select-multiple) select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: #fff url('data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6l5 5 5-5 2 1-7 7-7-7 2-1z" fill="rgba(136,136,136,1)"/></svg>') no-repeat right 5px top 55%;
+    background: #fff url('data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6l5 5 5-5 2 1-7 7-7-7 2-1z" fill="rgba(136,136,136,1)"/></svg>') no-repeat right 5px top 55% !important;
 }
 
 .wppb-user-forms .select2-container--open .select2-selection,

@@ -875,12 +875,14 @@ function wppb_password_strength_check(){
         if( !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
             ?>
             <script type="text/javascript">
-                function check_pass_strength() {
-                    var pass1 = jQuery('#passw1').val(), pass2 = jQuery('#passw2').val(), strength;
+                function check_pass_strength(form) {
+                    var pass1 = jQuery(form).find('#passw1').val(),
+                        pass2 = jQuery(form).find('#passw2').val(),
+                        strength;
 
-                    jQuery('#pass-strength-result').removeClass('short bad good strong');
-                    if ( ! pass1 ) {
-                        jQuery('#pass-strength-result').html( pwsL10n.empty );
+                    jQuery(form).find('#pass-strength-result').removeClass('short bad good strong');
+                    if (!pass1) {
+                        jQuery(form).find('#pass-strength-result').html(pwsL10n.empty);
                         return;
                     }
             <?php
@@ -899,33 +901,35 @@ function wppb_password_strength_check(){
             ?>
                     switch ( strength ) {
                         case 2:
-                            jQuery('#pass-strength-result').addClass('bad').html( pwsL10n.bad );
-                            jQuery('#wppb_password_strength').val('bad');
+                            jQuery(form).find('#pass-strength-result').addClass('bad').html( pwsL10n.bad );
+                            jQuery(form).find('#wppb_password_strength').val('bad');
                             break;
                         case 3:
-                            jQuery('#pass-strength-result').addClass('good').html( pwsL10n.good );
-                            jQuery('#wppb_password_strength').val('good');
+                            jQuery(form).find('#pass-strength-result').addClass('good').html( pwsL10n.good );
+                            jQuery(form).find('#wppb_password_strength').val('good');
                             break;
                         case 4:
-                            jQuery('#pass-strength-result').addClass('strong').html( pwsL10n.strong );
-                            jQuery('#wppb_password_strength').val('strong');
+                            jQuery(form).find('#pass-strength-result').addClass('strong').html( pwsL10n.strong );
+                            jQuery(form).find('#wppb_password_strength').val('strong');
                             break;
                         case 5:
-                            jQuery('#pass-strength-result').addClass('short').html( pwsL10n.mismatch );
-                            jQuery('#wppb_password_strength').val('short');
+                            jQuery(form).find('#pass-strength-result').addClass('short').html( pwsL10n.mismatch );
+                            jQuery(form).find('#wppb_password_strength').val('short');
                             break;
                         default:
-                            jQuery('#pass-strength-result').addClass('short').html( pwsL10n['short'] );
-                            jQuery('#wppb_password_strength').val('short');
+                            jQuery(form).find('#pass-strength-result').addClass('short').html( pwsL10n['short'] );
+                            jQuery(form).find('#wppb_password_strength').val('short');
                     }
                 }
                 jQuery( document ).ready( function() {
                     // Binding to trigger checkPasswordStrength
-                    jQuery('#passw1').val('').on( 'keyup', check_pass_strength );
-                    jQuery('#passw1').val('').on( 'change', check_pass_strength );
-                    jQuery('#passw2').val('').on( 'keyup', check_pass_strength );
-                    jQuery('#passw2').val('').on( 'change', check_pass_strength );
-                    jQuery('#pass-strength-result').show();
+                    jQuery('.wppb-user-forms').each(function() {
+                        var form = this;
+                        jQuery(form).find('#passw1, #passw2').val('').on('keyup change', function() {
+                            check_pass_strength(form);
+                        });
+                        jQuery(form).find('#pass-strength-result').show();
+                    });
                 });
             </script>
         <?php

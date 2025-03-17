@@ -116,10 +116,13 @@ function wppb_handle_email_confirmation_cases() {
 				die( esc_html__( "There was an error performing that action!", "profile-builder" ) );
 
 			elseif ( $todo == 'delete' ){
-				$sql_result = $wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
+
+				if( !empty( $results[0]->user_login ) && !empty( $results[0]->user_email ) ){
+					$sql_result = $wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
+				}
+
 				if ( $sql_result )
 					die( 'ok' );
-
 				else
 					die( esc_html__( "The selected user couldn't be deleted", "profile-builder" ) );
 
@@ -592,13 +595,17 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 		$adminApproval_mailAdmin = 0;
 
 		if( $wppb_generalSettings != 'not_found' && ! empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
-			foreach( $user_data->roles as $role ) {
-				if( in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
-					if( ! current_user_can( 'delete_users' ) ) {
-						$adminApproval_mailAdmin = 1;
+
+			if( !empty( $user_data->roles ) ) {
+				foreach( $user_data->roles as $role ) {
+					if( in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+						if( ! current_user_can( 'delete_users' ) ) {
+							$adminApproval_mailAdmin = 1;
+						}
 					}
 				}
 			}
+
 		} else {
 			if( ! current_user_can( 'delete_users' ) ) {
 				$adminApproval_mailAdmin = 1;

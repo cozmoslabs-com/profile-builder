@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.13.4
+Stable tag: 3.13.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,17 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.5 =
+* Fix: Issue with Password Visibility toggle not being placed correctly in all cases
+* Fix: Allow the password strength meter to work if multiple forms using it are placed on the same page
+* Fix: Some notices coming from the score threshold options added for reCaptcha v3
+* Fix: Translation notice coming from the plugin
+* Fix: Some notices that were thrown from the Email Customizer functionality in some cases
+* Misc: Added a custom filter that can be used to add extra validations to the password reset process: wppb_recover_password_extra_validation
+* Misc: Delayed loading of a random script until jQuery is loaded
+* Misc: Fixed a display issue on front-end forms with block themes for the Paid Member Subscriptions currency switcher select
+* Misc: Small adjustments to back-end pages
+
 = 3.13.4 =
 * Feature: Added score threshold option to the reCaptcha v3 integration
 * Misc: Added a filter that can be used to remove unapproved users from the front-end admin Edit Other Users dropdown: wppb_edit_other_users_dropdown_user_list_excludes_admin_approval

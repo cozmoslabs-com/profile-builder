@@ -336,4 +336,5 @@ function wppb_pbpl_add_resend_activation_classes( $classes, $field ) {
 }
 add_filter( 'wppb_resend_activation_extra_css_class', 'wppb_pbpl_add_resend_activation_classes', 20, 2);
 add_filter( 'wppb_login_field_extra_css_class', 'wppb_pbpl_add_resend_activation_classes', 20, 2);
+add_filter( 'wppb_recover_field_extra_css_class', 'wppb_pbpl_add_resend_activation_classes', 20, 2);
 

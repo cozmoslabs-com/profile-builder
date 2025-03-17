@@ -228,11 +228,8 @@
     margin-left: 0;
 }
 
-.wppb-form-field.wppb-default-password,
-.wppb-form-field.wppb-default-repeat-password,
-#wppb-login-wrap .login-password,
-#wppb-recover-password-container .wppb-form-field.passw1,
-#wppb-recover-password-container .wppb-form-field.passw2 {
+.wppb-form-field .wppb-password-field-container {
+    display: block;
     position: relative;
 }
 
@@ -249,14 +246,13 @@
 .wppb-form-field input[type="number"],
 .wppb-form-field input[type="email"],
 .wppb-form-field input[type="url"],
-.wppb-form-field input[type="password"],
 .wppb-form-field input[type="search"],
 .wppb-form-field select,
 .wppb-form-field textarea,
+.wppb-form-field .wppb-password-field-container,
 .wppb-checkboxes,
 .wppb-radios,
 #wppb-login-wrap .login-username input,
-#wppb-login-wrap .login-password input,
 #wppb-login-wrap .login-auth input {
     width: 69.9%;
     float: left;
@@ -273,7 +269,7 @@
 
 #wppb-login-wrap .login-remember label {
     padding-left: 8px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     cursor: pointer;
 }
 
@@ -300,7 +296,7 @@ input#send_credentials_via_email {
     width: auto;
 }
 
-.wppb-form-field > span {
+.wppb-form-field > span:not(.wppb-password-field-container) {
     display: block;
     clear: both;
     margin-left: 30%;
