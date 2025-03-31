@@ -105,6 +105,23 @@
                 <label for="toolbox-plugin-optin" class="cozmoslabs-description"><?php esc_html_e( 'Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.', 'profile-builder' ); ?></label>
             </div>
         </div>
+
+        <!-- Only show cleanup button if cleanup hasn't been completed -->
+        <?php if( !get_option( 'wppb_postmeta_cleanup_completed' ) ) : ?>
+            <div class="cozmoslabs-form-field-wrapper">
+                <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Cleanup Postmeta' , 'profile-builder' ) ?></label>
+
+                <button class="button button-secondary wppb-cleanup-postmeta" data-nonce="<?php echo esc_attr( wp_create_nonce( 'wppb_cleanup_postmeta' ) ); ?>">
+                    <?php esc_html_e( 'Cleanup Postmeta', 'profile-builder' ); ?>
+                </button>
+
+                <p class="cozmoslabs-description cozmoslabs-description-align-right">
+                    <?php esc_html_e( 'Use this option to clean up the postmeta table from data that was added unnecessarily. This tool should be used only once so it will disappear after it is used.', 'profile-builder' ); ?>
+                </p>
+            </div>
+        <?php endif; ?>
+
+
     </div>
 
     <input type="hidden" name="wppb_toolbox_current_tab" value="admin" />

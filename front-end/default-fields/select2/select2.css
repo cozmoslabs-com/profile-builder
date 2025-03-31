@@ -9,6 +9,11 @@
     width: 69.9% !important;
 }
 
+.select2-container--open input.select2-search__field {
+    outline: none;
+    padding: 5px 10px;
+}
+
 @media screen and (max-width: 400px){
     .wppb-select2 span.select2-container{
         clear: none;

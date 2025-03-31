@@ -64,8 +64,14 @@ function wppb_recaptcha_get_html ( $pubkey, $form_name='' ){
         $v3_field_html = '<input type="hidden" name="g-recaptcha-response" class="g-recaptcha-response wppb-v3-recaptcha">';
     }
 
+    $output = '<div id="wppb-recaptcha-element-'.$form_name.$wppb_recaptcha_forms.'" class="wppb-recaptcha-element '.$invisible_class.'">'.$v3_field_html.'</div>';
+
+    if ( isset($field['recaptcha-type']) && ($field['recaptcha-type'] == 'v3') ) {
+        $output .= '<input type="hidden" name="wppb-recaptcha-v3" value="1">';
+    }
+
     // reCAPTCHA html for all forms and we make sure we have a unique id for v2
-    return '<div id="wppb-recaptcha-element-'.$form_name.$wppb_recaptcha_forms.'" class="wppb-recaptcha-element '.$invisible_class.'">'.$v3_field_html.'</div>';
+    return $output;
 }
 
 
@@ -129,47 +135,64 @@ function wppb_recaptcha_script_footer(){
                 if( typeof window.wppbRecaptchaCallbackExecuted == "undefined" ){//see if we executed this before
 
                     '.$callback_conditions.'.each(function() {
-                    
-                        let currentForm = this;
-                        
-                        this.addEventListener("submit", function (event){
-                            event.preventDefault();
-                            grecaptcha.ready(function() {
-                                grecaptcha.execute("' . $pubkey . '", {action: "submit"}).then(function(token) {
-                                
-                                    let recaptchaResponse = jQuery(currentForm).find(".wppb-v3-recaptcha.g-recaptcha-response");
-                                    jQuery(recaptchaResponse).val(token); // Set the recaptcha response
-                                    
-                                    if( token === false ){
-                                        return wppbRecaptchaInitializationError();
-                                    }
-                                    
-                                    var submitForm = true
-                            
-                                    /* dont submit form if PMS gateway is Stripe */
-                                    if( jQuery(".pms_pay_gate[type=radio]").length > 0 ){
-                                        jQuery(".pms_pay_gate").each( function(){
-                                            if( jQuery(this).is(":checked") && !jQuery(this).is(":disabled") && ( jQuery(this).val() == "stripe_connect" || jQuery(this).val() == "stripe_intents" || jQuery(this).val() == "stripe" ) )
-                                                submitForm = false
-                                        })
-                                    } else if( jQuery(".pms_pay_gate[type=hidden]").length > 0 ) {
-                            
-                                        if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" ) )
-                                            submitForm = false
-                                    }
-                            
-                                    if( submitForm ){
-                                        currentForm.submit();
-                                    } else {
-                                        jQuery(document).trigger( "wppb_v3_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", recaptchaResponse.closest("form") ) )
-                                    }
-                                });
-                            });
-                        });
+                        this.addEventListener("submit", wppbInitializeRecaptchaV3 );
                     });
                     window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
                 }
             };
+
+            function wppbInitializeRecaptchaV3( event = null, current_form = null ){
+
+                if( event ){
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                let currentForm = this
+
+                if( current_form != null && current_form && current_form[0] ){
+                    currentForm = current_form[0]
+                }
+
+                return new Promise((resolve) => {
+
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute("' . $pubkey . '", {action: "submit"}).then(function(token) {
+                        
+                            let recaptchaResponse = jQuery(currentForm).find(".wppb-v3-recaptcha.g-recaptcha-response");
+                            jQuery(recaptchaResponse).val(token); // Set the recaptcha response
+                            
+                            if( token === false ){
+                                return wppbRecaptchaInitializationError();
+                            }
+                            
+                            var submitForm = true
+                    
+                            /* dont submit form if PMS gateway is Stripe */
+                            if( jQuery(".pms_pay_gate[type=radio]").length > 0 ){
+                                jQuery(".pms_pay_gate").each( function(){
+                                    if( jQuery(this).is(":checked") && !jQuery(this).is(":disabled") && ( jQuery(this).val() == "stripe_connect" || jQuery(this).val() == "stripe_intents" || jQuery(this).val() == "stripe" || jQuery(this).val() == "paypal_connect" ) )
+                                        submitForm = false
+                                })
+                            } else if( jQuery(".pms_pay_gate[type=hidden]").length > 0 ) {
+                    
+                                if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" || jQuery(".pms_pay_gate[type=hidden]").val() == "paypal_connect" ) )
+                                    submitForm = false
+                            }
+                    
+                            if( submitForm ){
+                                currentForm.submit();
+                            } else {
+                                jQuery(document).trigger( "wppb_v3_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", recaptchaResponse.closest("form") ) )
+                            }
+
+                            resolve( token );
+
+                        });
+                    });
+
+                });
+            }
     
             /* the callback function for when the captcha does not load propperly, maybe network problem or wrong keys  */
             function wppbRecaptchaInitializationError(){
@@ -184,11 +207,14 @@ function wppb_recaptcha_script_footer(){
             var wppbRecaptchaCallback = function() {
                 if( typeof window.wppbRecaptchaCallbackExecuted == "undefined" ){//see if we executed this before
                     ' . $callback_conditions . '.each(function(){
-                        recID = grecaptcha.render( jQuery(this).attr("id"), {
-                            "sitekey" : "' . $pubkey . '",
-                            "error-callback": wppbRecaptchaInitializationError,
-                            ' . $invisible_parameters . '
-                         });
+                        recID = grecaptcha.render( 
+                            jQuery(this).attr("id"), 
+                            {
+                                "sitekey" : "' . $pubkey . '",
+                                "error-callback": wppbRecaptchaInitializationError,
+                                ' . $invisible_parameters . '
+                            }
+                        );
                     });
                     window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
                 }
@@ -234,12 +260,12 @@ function wppb_recaptcha_script_footer(){
                 /* dont submit form if PMS gateway is Stripe */
                 if( jQuery(".pms_pay_gate[type=radio]").length > 0 ){
                     jQuery(".pms_pay_gate").each( function(){
-                        if( jQuery(this).is(":checked") && !jQuery(this).is(":disabled") && ( jQuery(this).val() == "stripe_connect" || jQuery(this).val() == "stripe_intents" || jQuery(this).val() == "stripe" ) )
+                        if( jQuery(this).is(":checked") && !jQuery(this).is(":disabled") && ( jQuery(this).val() == "stripe_connect" || jQuery(this).val() == "stripe_intents" || jQuery(this).val() == "stripe" || jQuery(this).val() == "paypal_connect" ) )
                             submitForm = false
                     })
                 } else if( jQuery(".pms_pay_gate[type=hidden]").length > 0 ) {
 
-                    if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" ) )
+                    if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" || jQuery(".pms_pay_gate[type=hidden]").val() == "paypal_connect" ) )
                         submitForm = false
 
                 }
@@ -249,6 +275,8 @@ function wppb_recaptcha_script_footer(){
                     form.submit();
                 } else {
                     jQuery(document).trigger( "wppb_invisible_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", elem.closest("form") ) )
+
+                    return true;
                 }
             }
         </script>';
@@ -359,15 +387,49 @@ function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response, $score_th
 function wppb_validate_captcha_response( $publickey, $privatekey, $score_threshold = 0.5 ){
     if (isset($_POST['g-recaptcha-response'])){
         $recaptcha_response_field = sanitize_textarea_field( $_POST['g-recaptcha-response'] );
-    }
-    else {
+    } else {
         $recaptcha_response_field = '';
     }
-    if( isset( $_SERVER["REMOTE_ADDR"] ) )
-        $resp = wppb_recaptcha_check_answer($privatekey, sanitize_text_field( $_SERVER["REMOTE_ADDR"] ), $recaptcha_response_field, $score_threshold );
 
-    if ( !empty( $_POST ) && isset( $resp ) )
-        return ( ( !$resp->is_valid ) ? false : true );
+    $already_validated = false;
+    $saved = get_option( 'wppb_recaptcha_validations', array() );
+
+    if( isset( $saved[ $recaptcha_response_field ] ) && $saved[ $recaptcha_response_field ] == true ){
+        $already_validated = true;
+
+        if( !wp_doing_ajax() ){
+            unset( $saved[ $recaptcha_response_field ] );
+
+            update_option( 'wppb_recaptcha_validations', $saved, false );
+        }
+    }
+    
+    if( !$already_validated ){
+
+        if( isset( $_SERVER["REMOTE_ADDR"] ) ){
+            $resp = wppb_recaptcha_check_answer($privatekey, sanitize_text_field( $_SERVER["REMOTE_ADDR"] ), $recaptcha_response_field, $score_threshold );
+
+            if( isset( $resp ) ){
+                $already_validated = ( ( !$resp->is_valid ) ? false : true );
+            }
+        }
+
+    }
+
+    // Save valid results when they are being triggered from an ajax request
+    if( wp_doing_ajax() && isset( $_POST['action'] ) && $_POST['action'] == 'pms_validate_checkout' ){
+
+        $saved = get_option( 'wppb_recaptcha_validations', array() );
+
+        if( $already_validated === true )
+            $saved[ $recaptcha_response_field ] = true;
+
+        update_option( 'wppb_recaptcha_validations', $saved, false );
+
+    }
+
+    return $already_validated;
+
 }
 
 /* the function to add reCAPTCHA to the registration form of PB */
@@ -415,7 +477,6 @@ add_filter( 'wppb_output_form_field_recaptcha', 'wppb_recaptcha_handler', 10, 6 
 function wppb_check_recaptcha_value( $message, $field, $request_data, $form_location ){
     if( $field['field'] == 'reCAPTCHA' ){
         if ( ( $form_location == 'register' ) && ( isset($field['captcha-pb-forms']) ) && (strpos($field['captcha-pb-forms'],'pb_register') !== false) ) {
-
             /* theme my login plugin executes the register_errors hook on the frontend on all pages so on our register forms we might have already a recaptcha response
             so do not verify it again or it will fail  */
             global $wppb_recaptcha_response;

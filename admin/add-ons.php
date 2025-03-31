@@ -135,7 +135,7 @@ function wppb_add_ons_content() {
                 'type' => 'add-on',
                 'name' => __( 'bbPress', 'profile-builder' ),
                 'description' => __( 'This add-on allows you to integrate Profile Builder with the popular forums plugin, bbPress.', 'profile-builder' ),
-                'icon' => 'pb-add-on-bbpress-logo.jpg',
+                'icon' => 'pb-add-on-bbpress-logo.png',
                 'doc_url' => 'https://www.cozmoslabs.com/docs/profile-builder/add-ons/bbpress/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
                 'download_url' => 'https://www.cozmoslabs.com/add-ons/bbpress/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree',
         ),

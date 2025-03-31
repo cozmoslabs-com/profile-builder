@@ -36,18 +36,18 @@
         }
 
         // CHECK FOR REDIRECT
-        $redirect_url = wppb_get_redirect_url( $atts['redirect_priority'], 'after_logout', $atts['redirect_url'], $current_user );
+        $redirect_url = wppb_get_redirect_url( $atts['redirect_priority'], 'after_logout', esc_url_raw( $atts['redirect_url'] ), $current_user );
         $redirect_url = apply_filters( 'wppb_after_logout_redirect_url', $redirect_url );
 
         if( isset( $atts['url_only'] ) && $atts['url_only'] == 'yes' )
             return wp_logout_url( $redirect_url );
 
-        $logout_link = '<a href="' . wp_logout_url( $redirect_url ) . '" class="wppb-logout-url" title="' . __( 'Log out of this account', 'profile-builder' ) . '">' . $atts['link_text'] . '</a>';
+        $logout_link = '<a href="' . esc_url( wp_logout_url( $redirect_url ) ) . '" class="wppb-logout-url" title="' . esc_attr__( 'Log out of this account', 'profile-builder' ) . '">' . esc_html( $atts['link_text'] ) . '</a>';
 
         $meta_tags = apply_filters( 'wppb_front_end_logout_meta_tags', array( '{{meta_user_name}}', '{{meta_first_name}}', '{{meta_last_name}}', '{{meta_display_name}}' ) );
         $meta_tags_values = apply_filters( 'wppb_front_end_logout_meta_tags_values', array( $current_user->user_login, $current_user->first_name, $current_user->last_name, $current_user->display_name ) );
 
         $text = apply_filters( 'wppb_front_end_logout_text', str_replace( $meta_tags, $meta_tags_values, $atts['text'] ), $current_user );
 
-        return apply_filters( 'wppb_logout_message', '<p class="wppb-front-end-logout"><span>' . $text . '</span>' . $logout_link . '</p>');
+        return apply_filters( 'wppb_logout_message', '<p class="wppb-front-end-logout"><span>' . esc_html( $text ) . '</span>' . $logout_link . '</p>' );
     }

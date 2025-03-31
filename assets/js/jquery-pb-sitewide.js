@@ -728,3 +728,77 @@ jQuery(document).ready(function() {
 
     })
 });
+
+
+/**
+ * Handle extra post meta cleanup
+ *
+ * - wppb_sc_rf_epf_active
+ * - wppb-content-restrict-message-purchasing_restricted
+ * - wppb-ul-active-theme
+ * - wppb-ul-default-single-user-template
+ * - wppb-ul-default-all-user-template
+ *
+ */
+jQuery(document).ready(function() {
+    jQuery('.wppb-cleanup-postmeta').click(function (e) {
+        e.preventDefault();
+
+        let $button      = jQuery(this);
+        let originalText = $button.text();
+
+        $button.prop('disabled', true).text('Cleaning...');
+
+        // Function to handle cleanup process
+        function processCleanup(step = 1) {
+            jQuery.post( ajaxurl, {
+                action: 'wppb_cleanup_postmeta',
+                nonce : $button.data('nonce'),
+                step  : step
+            }, function( response ) {
+                if( response.success ) {
+                    if( response.data.step === 'done' ) {
+
+                        $button.text('Cleanup Complete!');
+
+                        // If cleanup is complete, hide the button after showing completion message
+                        if( response.data.hide_button ) {
+                            setTimeout(function() {
+                                let wrapper = jQuery($button).closest('.cozmoslabs-form-field-wrapper')
+
+                                wrapper.fadeOut(400, function() {
+                                    jQuery(this).remove();
+                                });
+                            }, 2000);
+                        } else {
+                            setTimeout(function() {
+                                $button.text(originalText).prop('disabled', false);
+                            }, 2000);
+                        }
+
+                    } else {
+                        processCleanup(response.data.step);
+                    }
+                } else {
+                    $button.text('Error occurred').prop('disabled', false);
+                    setTimeout(function() {
+                        $button.text(originalText);
+                    }, 2000);
+                }
+            }).fail(function() {
+                $button.text('Error occurred').prop('disabled', false);
+                setTimeout(function() {
+                    $button.text(originalText);
+                }, 2000);
+            });
+        }
+
+        // Start the cleanup process
+        processCleanup();
+
+    })
+});
+
+
+
+

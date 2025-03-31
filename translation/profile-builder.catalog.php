@@ -2143,6 +2143,8 @@
 <?php __("Disable the ability to select multiple Roles for a user.", "profile-builder"); ?>
 <?php __("Marketing Optin", "profile-builder"); ?>
 <?php __("Opt in to our security and feature updates notifications, and non-sensitive diagnostic tracking.", "profile-builder"); ?>
+<?php __("Cleanup Postmeta", "profile-builder"); ?>
+<?php __("Use this option to clean up the postmeta table from data that was added unnecessarily. This tool should be used only once so it will disappear after it is used.", "profile-builder"); ?>
 <?php __("Auto Generate Password", "profile-builder"); ?>
 <?php __("Automatically generate password for users.", "profile-builder"); ?>
 <?php __("By enabling this option, the password will be automatically generated and emailed to the user.", "profile-builder"); ?>

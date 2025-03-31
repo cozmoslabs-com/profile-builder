@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.13.5
+Stable tag: 3.13.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.6 =
+* Fix: Security issue with the link_text parameter of the wppb-logout shortcode. Thanks to yudha and the Wordfence team
+* Fix: Do not save postmeta entries for unrelated custom post types
+* Fix: For the Select2 and Select2 multiple fields
+* Misc: Added a button on the Advanced Settings -> Admin page that will clear some unnecessary post meta keys that were added to unrelated Profile Builder custom post types. This option will disappear once used
+* Misc: Updated add-on icons
+* Misc: reCaptcha compatibility with a future Paid Member Subscriptions update
+
 = 3.13.5 =
 * Fix: Issue with Password Visibility toggle not being placed correctly in all cases
 * Fix: Allow the password strength meter to work if multiple forms using it are placed on the same page

@@ -9,9 +9,9 @@ function wppb_toolbox_resend_activation_url_handler() {
     $output .= '
         <li class="wppb-form-field'. apply_filters( 'wppb_resend_activation_extra_css_class', '', 'resend_activation_email') .'">
         <label for="username_email" style="padding-right: 30px;">'.__( 'Email', 'profile-builder' ).'</label>
-        <input  class="text-input" name="email" type="text" id="username_email" value="" '. apply_filters( 'wppb_resend_activation_extra_attr', '', __( 'Email', 'profile-builder' ), 'text' ) .'/>
+        <input  class="text-input" name="email" type="text" id="username_email" value="" '. esc_attr( apply_filters( 'wppb_resend_activation_extra_attr', '', __( 'Email', 'profile-builder' ), 'text' ) ) .'/>
         <div style="padding-top: 20px;">
-            <input name="resend_activation" type="submit" id="wppbc-resend-activation-button" class="submit button" value="'. $button_name . '" />
+            <input name="resend_activation" type="submit" id="wppbc-resend-activation-button" class="submit button" value="'. esc_attr( $button_name ) . '" />
             <input name="action" type="hidden" id="action" value="wppbc_resend_activation" />
     		<input type="hidden" name="wppb_nonce" value="'. esc_attr( wp_create_nonce( 'wppbc_resend_activation' ) ) . '" />
         </div>
