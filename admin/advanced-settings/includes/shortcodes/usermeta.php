@@ -32,7 +32,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 		$atts['wpautop'] = '';
 	}
 
-	if( in_array( $atts['key'], array( 'user_pass', 'user_activation_key' ) ) )
+	if( isset( $atts['key'] ) && in_array( $atts['key'], array( 'user_pass', 'user_activation_key' ) ) )
 		return;
 
 	$user = new WP_User( $user_id );

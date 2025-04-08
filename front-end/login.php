@@ -129,6 +129,7 @@ function wppb_login_form( $args = array() ) {
 		'value_username'            => '',
 		// Set 'value_remember' to true to default the "Remember me" checkbox to checked.
 		'value_remember'            => false,
+		'is_ajax_form'              => false,
 	);
 
 	/**
@@ -164,7 +165,7 @@ function wppb_login_form( $args = array() ) {
     }
 
 	$form = '
-		<form name="' . $args['form_id'] . '" id="' . $args['form_id'] . '" action="'. esc_url( wppb_curpageurl() ) .'" method="post">
+		<form name="' . $args['form_id'] . '" id="' . $args['form_id'] . '"' . ($args['is_ajax_form'] ? ' class="wppb-ajax-form"' : '') . ' action="'. esc_url( wppb_curpageurl() ) .'" method="post">
 			' . $login_form_top . '
 			<p class="wppb-form-field login-username'. apply_filters( 'wppb_login_field_extra_css_class', '', $args['id_username']) .'">
 				<label for="' . esc_attr( $args['id_username'] ) . '">' . esc_html( $args['label_username'] ) . '</label>
@@ -527,7 +528,7 @@ function wppb_front_end_login( $atts ){
 		'lostpassword_url'    => '',
 		'show_2fa_field'      => '',
 		'block'               => false,
-		'ajax'               => false,
+		'ajax'                => false,
 	), $atts, 'wppb-login' );
 
 	$display             = $atts['display'];
@@ -541,9 +542,11 @@ function wppb_front_end_login( $atts ){
 	$block               = $atts['block'];
 	$ajax                = $atts['ajax'];
 
+    $is_ajax_form = false;
     if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $ajax === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
         wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
         wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __('Processing...', 'profile-builder') ) );
+        $is_ajax_form = true;
     }
 
 	$wppb_generalSettings = get_option('wppb_general_settings');
@@ -560,7 +563,7 @@ function wppb_front_end_login( $atts ){
 
 	if( !is_user_logged_in() || $is_elementor_edit_mode_or_divi_ajax || $block === 'true' ){
 		// set up the form arguments
-		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit' );
+		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit', 'is_ajax_form' => $is_ajax_form );
 
 		// maybe set up the redirect argument
 		if( ! empty( $redirect ) ) {

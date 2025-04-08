@@ -99,6 +99,14 @@ function wppb_add_ons_content() {
     $pb_addons_listing->section_header_free = array( 'title' => __( 'Basic Add-ons', 'profile-builder' ), 'description' => sprintf( __( 'Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ) );
     $pb_addons_listing->section_versions = array( 'Profile Builder Pro', 'Profile Builder Hobbyist', 'Profile Builder Basic', 'Profile Builder Agency', 'Profile Builder Unlimited' );
     $pb_addons_listing->items = array(
+        array(  'slug' => 'form-fields-in-columns',
+            'type'         => 'add-on',
+            'name'         => __( 'Form Fields in Columns', 'profile-builder' ),
+            'description'  => __( 'Extends the functionality of Profile Builder by adding the possibility to organize fields in columns.', 'profile-builder' ),
+            'icon'         => 'pb-add-on-form-fields-in-columns-logo.png',
+            'doc_url'      => 'https://www.cozmoslabs.com/docs/profile-builder/add-ons/form-fields-in-columns/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
+            'download_url' => 'https://www.cozmoslabs.com/add-ons/form-fields-in-columns/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree',
+        ),
         array(  'slug' => 'social-connect',
                 'type' => 'add-on',
                 'name' => __( 'Social Connect', 'profile-builder' ),
@@ -178,7 +186,7 @@ function wppb_add_ons_content() {
                 'icon' => 'pb-add-on-mailpoet-logo.png',
                 'doc_url' => 'https://www.cozmoslabs.com/docs/profile-builder/add-ons/mailpoet/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBDocs',
                 'download_url' => 'https://www.cozmoslabs.com/add-ons/mailpoet/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree',
-        ),
+        )
     );
     $pb_addons_listing->add_section();
 

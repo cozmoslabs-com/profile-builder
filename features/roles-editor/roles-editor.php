@@ -56,6 +56,11 @@ class WPPB_Roles_Editor {
 	    add_action( 'load-profile.php', array( $this, 'actions_on_user_new' ) );
 	    add_action( 'load-profile.php', array( $this, 'actions_on_user_edit' ) );
 
+        // Intercept account activation on multisites
+        if ( is_multisite() ) {
+            // Add the user to the blog
+            add_action( 'add_user_to_blog', array( $this, 'ms_add_user_to_blog' ), 10, 3 );
+        }
     }
 
     function submenu_page(){
@@ -564,7 +569,7 @@ class WPPB_Roles_Editor {
                     <input type="text" id="wppb-role-slug" value="<?php echo $current_screen->action == 'add' ? '' : esc_attr( $role_slug ) ?>" <?php echo $current_screen->action == 'add' ? '' : 'disabled'; ?>>
                 </span>
             </div>
-        <?php
+            <?php
         }
 
     }
@@ -1099,8 +1104,15 @@ class WPPB_Roles_Editor {
 
         add_action( 'user_new_form', array( $this, 'roles_field_user_new' ) );
 
-        add_action( 'user_register', array( $this, 'roles_update_user_new' ) );
+        if ( is_multisite() ) {
+            // Set up the wp-signups for new users that will receive confirmation emails
+            add_filter( 'signup_user_meta', array( $this, 'ms_signup_user_meta' ) );
 
+            // Intercept the invite for existing users that will receive confirmation emails
+            add_action( 'invite_user', array( $this, 'ms_invite_user' ), 10, 3 );
+        } else {
+            add_action( 'user_register', array( $this, 'roles_update_user_new' ) );
+        }
     }
 
     // Add actions on Edit User back-end page
@@ -1177,8 +1189,7 @@ class WPPB_Roles_Editor {
                 </td>
             </tr>
         </table>
-
-    <?php
+        <?php
     }
 
     function roles_update_user_edit( $user_id, $old_user_data ) {
@@ -1241,6 +1252,115 @@ class WPPB_Roles_Editor {
 
     }
 
+    // Add the user roles to the signup meta for new users that will receive confirmation emails
+    public function ms_signup_user_meta( $meta ) {
+        if ( ! current_user_can( 'promote_users' ) ) {
+            return;
+        }
+
+        if ( ! isset( $_POST['wppb_re_new_user_roles_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_re_new_user_roles_nonce'] ), 'new_user_roles' ) ) {
+            return;
+        }
+
+        if ( ! empty( $_POST['wppb_re_user_roles'] ) ) {
+            $new_roles = array_map( array( $this, 'sanitize_role' ), $_POST['wppb_re_user_roles'] );// phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+            $meta['wppb_re_user_roles'] = array();
+
+            foreach ( $new_roles as $new_role ) {
+                $meta['wppb_re_user_roles'][] = $new_role;
+            }
+
+            // Having a single role is required to set up the user signup.
+            // Any extra roles will be added when the account is activated.
+            if ( empty( $_REQUEST['role'] ) || ! $meta['new_role'] && isset( $meta['wppb_re_user_roles'][0] ) ) {
+                $meta['new_role'] = $meta['wppb_re_user_roles'][0];
+            }
+        }
+
+        return $meta;
+    }
+
+    // Add the user roles to the usermeta for existing users that will receive confirmation emails
+    public function ms_invite_user( $user_id, $role, $newuser_key ) {
+        if ( ! current_user_can( 'promote_users' ) || ! current_user_can( 'edit_user', $user_id ) ) {
+            return;
+        }
+
+        if ( ! isset( $_POST['wppb_re_new_user_roles_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_re_new_user_roles_nonce'] ), 'new_user_roles' ) ) {
+            return;
+        }
+
+        if ( ! empty( $_POST['wppb_re_user_roles'] ) ) {
+            update_user_meta($user_id, 'wppb_subsite_' . get_current_blog_id() . '_user_roles', array_map( array( $this, 'sanitize_role' ), $_POST['wppb_re_user_roles'] ));// phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        }
+    }
+
+    // Add the extra roles to the user when they are added to the blog
+    public function ms_add_user_to_blog( $user_id, $role, $blog_id ) {
+
+        $user = new \WP_User( $user_id );
+
+        if ( empty( $_POST['wppb_re_user_roles'] ) ) {
+
+            // Add New User - Confirmation Email
+
+            global $wpdb;
+            $key    = $wpdb->get_var( $wpdb->prepare( "SELECT activation_key FROM {$wpdb->signups} WHERE user_login = %s", $user->data->user_login ) );
+            if ( $key ) {
+                $signup = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key ) );
+                if ( $signup ) {
+                    $meta = maybe_unserialize( $signup->meta );
+                    $this->update_roles( $user, $meta['wppb_re_user_roles'] );
+                    return;
+                }
+            }
+
+            // Add Existing User - Confirmation Email
+
+            $meta_key = 'wppb_subsite_' . get_current_blog_id() . '_user_roles';
+            $roles = get_user_meta( $user_id, $meta_key, true );
+            delete_user_meta( $user_id, $meta_key );
+            $this->update_roles( $user, $roles );
+            return;
+        }
+
+        // Add New User & Add Existing User - Skip Confirmation Email
+        // In these cases the user role data can be found in $_POST['wppb_re_user_roles']
+
+        if ( ! current_user_can( 'promote_users' ) || ! current_user_can( 'edit_user', $user_id ) ) {
+            return;
+        }
+
+        if ( ! isset( $_POST['wppb_re_new_user_roles_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_re_new_user_roles_nonce'] ), 'new_user_roles' ) ) {
+            return;
+        }
+
+        $this->roles_update_user_new_and_edit( $user );
+    }
+
+    function update_roles( $user, $roles ) {
+        if ( !empty( $roles ) ) {
+            $old_roles = (array) $user->roles;
+
+            $new_roles = array_map( array( $this, 'sanitize_role' ), $roles );
+
+            foreach ( $new_roles as $new_role ) {
+                // Add the missing roles.
+                if ( ! in_array( $new_role, (array) $user->roles ) ) {
+                    $user->add_role( $new_role );
+                }
+            }
+
+            foreach ( $old_roles as $old_role ) {
+                // Remove the extra roles.
+                if ( ! in_array( $old_role, $new_roles ) ) {
+                    $user->remove_role( $old_role );
+                }
+            }
+        }
+    }
+
     function scripts_and_styles_actions( $location ) {
 
         // Enqueue jQuery on both Add User and Edit User back-end pages
@@ -1269,6 +1389,70 @@ class WPPB_Roles_Editor {
     // Print scripts on Add User back-end page
     function print_scripts_user_new() {
 
+        if ( ! is_multisite() ) {
+            ?>
+            <script>
+                jQuery( document ).ready( function() {
+                    // Remove WordPress default Role Select
+                    var roles_dropdown = jQuery( 'select#role' );
+                    roles_dropdown.closest( 'tr' ).remove();
+                } );
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                jQuery( document ).ready( function() {
+                    wppb_multisite_re_checkboxes( 'select#adduser-role' );
+                    wppb_multisite_re_checkboxes( 'select#role' );
+
+                    function wppb_multisite_re_checkboxes( selector ) {
+                        var roles_dropdown_new = jQuery( selector );
+
+                        if  ( roles_dropdown_new.length ) {
+                            // Hide WordPress default Role Select
+                            roles_dropdown_new.closest('tr').hide();
+
+                            var checkboxes_new = roles_dropdown_new.closest('form').find('input[name="wppb_re_user_roles[]"]');
+                            var selectedCheckboxes_new = checkboxes_new.filter(':checked');
+
+                            // At least one role must be selected
+                            if (selectedCheckboxes_new.length === 1) {
+                                selectedCheckboxes_new.prop('disabled', true);
+                            }
+
+                            // Detect selected checkboxes on change
+                            checkboxes_new.on('change', function() {
+                                selectedCheckboxes_new = checkboxes_new.filter(':checked');
+
+                                if (selectedCheckboxes_new.length === 1) {
+                                    selectedCheckboxes_new.prop('disabled', true);
+                                } else {
+                                    checkboxes_new.prop('disabled', false);
+                                }
+
+                                // Select a role in the hidden default dropdown
+                                selectedCheckboxes_new.each(function() {
+                                    var selectedRoleNew = jQuery(this).val();
+                                    roles_dropdown_new.find('option').each(function() {
+                                        if (jQuery(this).val() === selectedRoleNew) {
+                                            jQuery(this).prop('selected', true);
+                                            //return false; // Break the loop after selecting the first match
+                                        }
+                                    });
+                                });
+                            });
+                        }
+                    }
+                } );
+            </script>
+            <?php
+        }
+    }
+
+    // Print scripts on Add Existing User back-end page
+    function print_scripts_user_existing() {
+
         ?>
         <script>
             jQuery( document ).ready( function() {
@@ -1278,7 +1462,7 @@ class WPPB_Roles_Editor {
             } );
         </script>
 
-    <?php
+        <?php
     }
 
     // Print scripts on Edit User back-end page
@@ -1294,7 +1478,7 @@ class WPPB_Roles_Editor {
             );
         </script>
 
-    <?php
+        <?php
     }
 
     // Print scripts on Edit User back-end page
@@ -1308,7 +1492,7 @@ class WPPB_Roles_Editor {
             }
         </style>
 
-    <?php
+        <?php
     }
 
 }

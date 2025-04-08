@@ -1,5 +1,5 @@
 .wppb-user-forms .pms-field,
-.wppb-user-forms .wppb-form-field {
+.wppb-user-forms .wppb-form-field:not(.wppb-recaptcha) {
     margin-bottom: 30px !important;
 }
 

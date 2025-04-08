@@ -33,7 +33,7 @@ function wppb_email_handler( $output, $form_location, $field, $user_id, $field_c
 
         if( $form_location == 'edit_profile' && is_user_logged_in() ) {
             if ( $email_input_status == 'enabled' ) {
-                $output .= '<span class="wppb-description-delimiter">' . __('If you change this, we will send you an email at your new address to confirm it. <br /><strong>The new address will not become active until confirmed.</strong>', 'profile-builder') . '</span>';
+                $output .= '<span class="wppb-description-delimiter">' . __('If you change this, we will send you an email at your new address to confirm it.', 'profile-builder') . '<br><strong>' . __('The new address will not become active until confirmed.', 'profile-builder') . '</strong></span>';
             }
             else if ( $email_input_status == 'disabled' ) {
                 $current_url = wppb_curpageurl();

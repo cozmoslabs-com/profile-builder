@@ -332,6 +332,9 @@ jQuery(document).ready( function () {
     // multi-step forms
     jQuery('.wp-admin.profile-builder_page_manage-fields #wppb-msf-side .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/multi-step-forms/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
 
+    // form fields in columns
+    jQuery('.wp-admin.profile-builder_page_manage-fields #wppb-ffc-side .inside').prepend('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/form-fields-in-columns/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>');
+
     // labels edit
     jQuery('.wp-admin.profile-builder_page_pb-labels-edit .wrap h2.cozmoslabs-page-title').append('<a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/labels-edit/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help" style="margin-left: 5px"></a>');
 });
@@ -456,12 +459,9 @@ jQuery(document).ready(function() {
 /**
  * Reposition the Update/Publish button/section on scroll in Admin Dashboard --> PB CPTs
  */
-jQuery( function() {
-    // delay the repositioning to allow the admin notices to be displayed
+jQuery(window).on('load', function () {
     if(jQuery('body').is('[class*="post-type-wppb"]') && jQuery('#side-sortables #submitdiv').length > 0 )
-        setTimeout(function() {
-            wppbRepositionUpdateButton();
-        }, 1000);
+        wppbRepositionUpdateButton();
 });
 
 function wppbRepositionUpdateButton() {
@@ -516,9 +516,8 @@ function wppbRepositionUpdateButton() {
  *
  * */
 
-jQuery( document ).ready(setTimeout(function () {
-    let smallMediumScreen  = window.matchMedia("(max-width: 1401px)"),
-        largeScreen  = window.matchMedia("(min-width: 1402px)"),
+jQuery(window).on('load', function () {
+    let largeScreen  = window.matchMedia("(min-width: 1402px)"),
         pageBody = jQuery('body');
 
     if (pageBody.is('[class*="profile-builder_page"], [class*="admin_page_profile-builder"]')) {
@@ -532,8 +531,7 @@ jQuery( document ).ready(setTimeout(function () {
             else wppbRepositionPagePublishButton();
         });
     }
-
-}, 1000));
+});
 
 
 /**

@@ -265,7 +265,7 @@ function wppb_content_restriction_shortcode( $atts, $content = null ) {
 
     // Message to replace the content of checks do not match
     if( ! empty( $args['message'] ) ) {
-        $message = '<span class="wppb-shortcode-restriction-message">' . $args['message'] . '</span>';
+        $message = '<span class="wppb-shortcode-restriction-message">' . wp_kses_post( $args['message'] ) . '</span>';
     } else {
         $type = ( is_user_logged_in() ? 'logged_in' : 'logged_out' );
         $message = '<span class="wppb-content-restriction-message">' . wpautop( wppb_get_restriction_content_message( $type ) ) . '</span>';

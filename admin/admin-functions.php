@@ -373,33 +373,63 @@ function wppb_get_reserved_meta_name_list( $all_fields, $posted_values ){
  * Function that adds an admin notification about the PB Form Design Styles
  *
  */
-function wppb_form_design_new_styles_notification() {
+// function wppb_form_design_new_styles_notification() {
 
-    if( current_user_can( 'manage_options' ) )
+//     if( current_user_can( 'manage_options' ) )
+//         return;
+
+//     /* initiate the plugin notifications class */
+//     $notifications = WPPB_Plugin_Notifications::get_instance();
+//     /* this must be unique */
+//     $notification_id = 'wppb_form_design_new_styles';
+
+//     if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) )
+//         $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ), '<strong>', '</strong>', '<a href="'. get_site_url() .'/wp-admin/admin.php?page=profile-builder-general-settings#wppb-form_desings">', '</a>') . '</p>';
+//     else
+//         $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ), '<strong>', '</strong>', '<a href="'. get_site_url() .'/wp-admin/admin.php?page=profile-builder-general-settings#wppb-form_desings">', '</a>') . '</p>';
+
+//     $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' )) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
+//     $ul_icon = ( !empty($ul_icon_url)) ? '<img src="'. $ul_icon_url .'" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder - Form Designs">' : '';
+
+//     $message = $ul_icon;
+//     $message .= '<h3 style="margin-bottom: 0;">Profile Builder PRO - Form Designs</h3>';
+//     $message .= $notification_message;
+//     $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+
+//     $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false );
+// }
+// add_action( 'admin_init', 'wppb_form_design_new_styles_notification' );
+
+function wppb_in_ffc_admin_notification() {
+
+    if( !current_user_can( 'manage_options' ) )
         return;
 
     /* initiate the plugin notifications class */
     $notifications = WPPB_Plugin_Notifications::get_instance();
     /* this must be unique */
-    $notification_id = 'wppb_form_design_new_styles';
+    $notification_id = 'wppb_ffc_notification';
 
-    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) )
-        $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ), '<strong>', '</strong>', '<a href="'. get_site_url() .'/wp-admin/admin.php?page=profile-builder-general-settings#wppb-form_desings">', '</a>') . '</p>';
-    else
-        $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ), '<strong>', '</strong>', '<a href="'. get_site_url() .'/wp-admin/admin.php?page=profile-builder-general-settings#wppb-form_desings">', '</a>') . '</p>';
+    $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users.', 'profile-builder' ), '<strong>', '</strong>') . '</p>';
+    $extra_message = sprintf( __( 'Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-add-ons' ) . '">', '</a>');
 
-    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' )) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
-    $ul_icon = ( !empty($ul_icon_url)) ? '<img src="'. $ul_icon_url .'" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder - Form Designs">' : '';
+    if( !defined( 'WPPB_PAID_PLUGIN_DIR' ) )
+        $extra_message .= sprintf( __( ' Don\'t have a license? %sBuy one now%s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=ffc_notification&utm_campaign=PBFree#pricing" target="_blank">', '</a>');
+
+    $notification_message .= '<p style="font-size: 15px; margin-top:4px; padding-left: 77px;">' . $extra_message . '</p>';
+
+    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/add-ons/pb-add-on-form-fields-in-columns-logo.png' )) ? WPPB_PLUGIN_URL . 'assets/images/add-ons/pb-add-on-form-fields-in-columns-logo.png' : '';
+    $ul_icon = ( !empty( $ul_icon_url ) ) ? '<img src="'. $ul_icon_url .'" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder - Form Fields in Columns">' : '';
 
     $message = $ul_icon;
-    $message .= '<h3 style="margin-bottom: 0;">Profile Builder PRO - Form Designs</h3>';
+    $message .= '<h3 style="margin-bottom: 0;">Profile Builder - New Add-on</h3>';
     $message .= $notification_message;
     $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
     $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false );
-}
-add_action( 'admin_init', 'wppb_form_design_new_styles_notification' );
 
+}
+add_action( 'admin_init', 'wppb_in_ffc_admin_notification' );
 
 /**
  * Get the Profile Builder Page or Post slug

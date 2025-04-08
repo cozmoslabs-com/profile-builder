@@ -1421,6 +1421,7 @@ body[class*="profile-builder_page_"] a:not(.button-secondary, .button-primary, .
 .wp-admin.post-type-wppb-ul-cpt #wppb-single-ul-templates .inside .wppb-docs-link,
 .wp-admin.post-type-wppb-ul-cpt #wppb-ul-templates .inside .wppb-docs-link,
 .wp-admin.profile-builder_page_manage-fields #wppb-msf-side .wppb-docs-link,
+.wp-admin.profile-builder_page_manage-fields #wppb-ffc-side .wppb-docs-link,
 .wp-admin.profile-builder_page_custom-redirects .wck-post-box .wppb-docs-link,
 .wp-admin.post-type-wppb-ul-cpt #wppb-ul-themes-settings .inside .wppb-docs-link,
 .wp-admin.post-type-wppb-ul-cpt .wck-add-form .wppb-docs-link {

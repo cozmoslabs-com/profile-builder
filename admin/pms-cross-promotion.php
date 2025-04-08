@@ -126,8 +126,8 @@ function wppb_pms_cross_promo() {
                     <span id="wppb-add-on-activated-message-text" class="wppb-add-on-user-messages"><?php echo esc_html__( 'Plugin has been activated', 'profile-builder' ) ?></span>
                     <span id="wppb-add-on-activated-error-button-text" class="wppb-add-on-user-messages"><?php echo esc_html__( 'Retry Install', 'profile-builder' ) ?></span>
 
-                    <span id="wppb-add-on-is-active-message-text" class="wppb-add-on-user-messages"><?php echo sprintf(wp_kses_post(__('Plugin is %1$s active %2$s', 'profile-builder')), '<strong>', '</strong>'); ?></span>
-                    <span id="wppb-add-on-is-active-message-text" class="wppb-add-on-user-messages"><?php echo sprintf(wp_kses_post(__('Plugin is %1$s inactive %2$s', 'profile-builder')), '<strong>', '</strong>'); ?></span>
+                    <span id="wppb-add-on-is-active-message-text" class="wppb-add-on-user-messages"><?php echo sprintf( wp_kses_post( __('Plugin is %1$s active %2$s', 'profile-builder') ), '<strong>', '</strong>' ); ?></span>
+                    <span id="wppb-add-on-is-active-message-text" class="wppb-add-on-user-messages"><?php echo sprintf( wp_kses_post( __('Plugin is %1$s inactive %2$s', 'profile-builder') ), '<strong>', '</strong>' ); ?></span>
 
                     <span id="wppb-add-on-deactivate-button-text" class="wppb-add-on-user-messages"><?php echo esc_html__( 'Deactivate', 'profile-builder' ) ?></span>
                     <span id="wppb-add-on-deactivated-message-text" class="wppb-add-on-user-messages"><?php echo esc_html__( 'Plugin has been deactivated.', 'profile-builder' ) ?></span>

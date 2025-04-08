@@ -55,7 +55,7 @@ function wppb_activate_signup( $key ) {
     /* the password is in hashed form in the signup table so we will add it later */
     $password = '';
 
-    $user_id = username_exists( $user_login );
+	$user_id = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? email_exists( $user_login ) : username_exists( $user_login ) );
 
 	if ( empty( $signup ) )
 		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error">'.__( 'Invalid activation key!', 'profile-builder' ).'</p>');

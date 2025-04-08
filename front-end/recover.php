@@ -47,9 +47,9 @@ function wppb_retrieve_activation_key( $requested_user_login ){
  * @param array $post_data $_POST
  *
  */
-function wppb_create_recover_password_form( $user, $post_data ){
+function wppb_create_recover_password_form( $user, $post_data, $is_ajax_form = false ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
 		<ul>
 	<?php
 
@@ -108,9 +108,9 @@ function wppb_create_recover_password_form( $user, $post_data ){
  * @param array $post_data $_POST
  *
  */
- function wppb_create_generate_password_form( $post_data ){
+ function wppb_create_generate_password_form( $post_data, $is_ajax_form = false ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
 	<?php
 	$wppb_generalSettings = get_option( 'wppb_general_settings' );
 
@@ -266,9 +266,11 @@ function wppb_front_end_password_recovery( $atts ){
         'ajax' => false,
     ), $atts, 'wppb-recover-password' );
 
+    $is_ajax_form = false;
     if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && $atts['ajax'] === 'true'  && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
         wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
         wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __('Processing...', 'profile-builder') ) );
+        $is_ajax_form = true;
     }
 
     $output = '<div class="wppb_holder" id="wppb-recover-password-container">';
@@ -498,7 +500,7 @@ function wppb_front_end_password_recovery( $atts ){
             if( !is_wp_error( $user ) ){
 
                 ob_start();
-                    wppb_create_recover_password_form( $user, $_POST );
+                    wppb_create_recover_password_form( $user, $_POST, $is_ajax_form );
                     $output .= ob_get_contents();
                 ob_end_clean();
             }
@@ -508,7 +510,7 @@ function wppb_front_end_password_recovery( $atts ){
 
         } elseif ( !$password_changed_success && !$password_email_sent ) {
 			ob_start();
-			wppb_create_generate_password_form($_POST);
+			wppb_create_generate_password_form($_POST, $is_ajax_form);
 			$output .= ob_get_contents();
 			ob_end_clean();
 		}
@@ -516,7 +518,7 @@ function wppb_front_end_password_recovery( $atts ){
     } else {
         if( !$password_email_sent ) {
             ob_start();
-            wppb_create_generate_password_form($_POST);
+            wppb_create_generate_password_form($_POST, $is_ajax_form);
             $output .= ob_get_contents();
             ob_end_clean();
         }

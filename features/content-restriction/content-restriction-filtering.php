@@ -44,7 +44,7 @@ function wppb_content_restriction_filter_content( $content, $post = null ) {
     if( empty( $user_status ) && empty( $post_user_roles ) ) {
 		$wppb_show_content = true;
         return $content;
-    } else if( $user_status == 'loggedin' ) {
+    } else if( $user_status == 'loggedin' || !empty( $post_user_roles ) ) {
         if( is_user_logged_in() ) {
             if( ! empty( $post_user_roles ) ) {
                 $user_data = get_userdata( $user_ID );
@@ -96,7 +96,7 @@ function wppb_check_content_restriction_on_post_id( $post_id ){
 
     if( empty( $user_status ) && empty( $post_user_roles ) ) {
         return false;
-    } else if( $user_status == 'loggedin' ) {
+    } else if( $user_status == 'loggedin' || !empty( $post_user_roles ) ) {
         if( is_user_logged_in() ) {
             if( ! empty( $post_user_roles ) ) {
                 $user_data = get_userdata( $user_ID );

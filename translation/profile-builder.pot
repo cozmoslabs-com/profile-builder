@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-31 08:18+0000\n"
+"POT-Creation-Date: 2025-04-08 07:59+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:407
+#: index.php:415
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:403
+#: index.php:411
 msgid "To enable updates, please enter your serial number on the %sSettings%s page. If you don't have a serial number, please see %sdetails & pricing%s."
 msgstr ""
 
@@ -118,199 +118,207 @@ msgstr ""
 msgid "Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s"
 msgstr ""
 
-#: admin/add-ons.php:104, add-ons-advanced/social-connect/index.php:217, add-ons-advanced/social-connect/index.php:218, add-ons-advanced/social-connect/index.php:327, add-ons-advanced/social-connect/index.php:331, admin/setup-wizard/view-tab-addons.php:39
+#: admin/add-ons.php:104, add-ons-advanced/form-fields-in-columns/index.php:74, add-ons-advanced/form-fields-in-columns/index.php:78
+msgid "Form Fields in Columns"
+msgstr ""
+
+#: admin/add-ons.php:105
+msgid "Extends the functionality of Profile Builder by adding the possibility to organize fields in columns."
+msgstr ""
+
+#: admin/add-ons.php:112, add-ons-advanced/social-connect/index.php:217, add-ons-advanced/social-connect/index.php:218, add-ons-advanced/social-connect/index.php:327, add-ons-advanced/social-connect/index.php:331, admin/setup-wizard/view-tab-addons.php:39
 msgid "Social Connect"
 msgstr ""
 
-#: admin/add-ons.php:105, admin/setup-wizard/view-tab-addons.php:42
+#: admin/add-ons.php:113, admin/setup-wizard/view-tab-addons.php:42
 msgid "Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X."
 msgstr ""
 
-#: admin/add-ons.php:112, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:80
+#: admin/add-ons.php:120, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:26, add-ons-advanced/woocommerce/woosync-page.php:80
 msgid "WooCommerce Sync"
 msgstr ""
 
-#: admin/add-ons.php:113
+#: admin/add-ons.php:121
 msgid "Syncs Profile Builder with WooCommerce, allowing you to manage the user Shipping and Billing fields from WooCommerce with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:120, admin/setup-wizard/view-tab-addons.php:32
+#: admin/add-ons.php:128, admin/setup-wizard/view-tab-addons.php:32
 msgid "Multi Step Forms"
 msgstr ""
 
-#: admin/add-ons.php:121, admin/setup-wizard/view-tab-addons.php:35
+#: admin/add-ons.php:129, admin/setup-wizard/view-tab-addons.php:35
 msgid "Extends the functionality of Profile Builder by adding the possibility of having multi-page registration and edit-profile forms."
 msgstr ""
 
-#: admin/add-ons.php:128, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:13, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:13
+#: admin/add-ons.php:136, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:13, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:13
 msgid "MailChimp"
 msgstr ""
 
-#: admin/add-ons.php:129
+#: admin/add-ons.php:137
 msgid "Easily associate MailChimp list fields with Profile Builder fields and set advanced settings for each list."
 msgstr ""
 
-#: admin/add-ons.php:136, add-ons-advanced/bbpress/bbpress-page.php:26, add-ons-advanced/bbpress/bbpress-page.php:26
+#: admin/add-ons.php:144, add-ons-advanced/bbpress/bbpress-page.php:26, add-ons-advanced/bbpress/bbpress-page.php:26
 msgid "bbPress"
 msgstr ""
 
-#: admin/add-ons.php:137
+#: admin/add-ons.php:145
 msgid "This add-on allows you to integrate Profile Builder with the popular forums plugin, bbPress."
 msgstr ""
 
-#: admin/add-ons.php:144, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:13, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:13, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:97, add-ons-advanced/campaign-monitor/admin/manage-fields.php:48
+#: admin/add-ons.php:152, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:13, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:13, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:97, add-ons-advanced/campaign-monitor/admin/manage-fields.php:48
 msgid "Campaign Monitor"
 msgstr ""
 
-#: admin/add-ons.php:145
+#: admin/add-ons.php:153
 msgid "Easily associate Campaign Monitor client list fields with Profile Builder fields. Use Profile Builder Campaign Monitor Widget to add more subscribers to your lists."
 msgstr ""
 
-#: admin/add-ons.php:152
+#: admin/add-ons.php:160
 msgid "Field Visibility"
 msgstr ""
 
-#: admin/add-ons.php:153
+#: admin/add-ons.php:161
 msgid "Extends the functionality of Profile Builder by allowing you to change visibility options for the extra fields."
 msgstr ""
 
-#: admin/add-ons.php:160, add-ons-advanced/edit-profile-approved-by-admin/index.php:169
+#: admin/add-ons.php:168, add-ons-advanced/edit-profile-approved-by-admin/index.php:169
 msgid "Edit Profile Approved by Admin"
 msgstr ""
 
-#: admin/add-ons.php:161
+#: admin/add-ons.php:169
 msgid "Extends the functionality of Profile Builder by allowing administrators to approve profile changes made by users on individual fields."
 msgstr ""
 
-#: admin/add-ons.php:168
+#: admin/add-ons.php:176
 msgid "Custom Profile Menus"
 msgstr ""
 
-#: admin/add-ons.php:169
+#: admin/add-ons.php:177
 msgid "Add custom menu items like Login/Logout or just Logout button and Login/Register/Edit Profile in iFrame Popup."
 msgstr ""
 
-#: admin/add-ons.php:176
+#: admin/add-ons.php:184
 msgid "MailPoet"
 msgstr ""
 
-#: admin/add-ons.php:177
+#: admin/add-ons.php:185
 msgid "Allow users to subscribe to your MailPoet lists directly from the Register and Edit Profile forms."
 msgstr ""
 
-#: admin/add-ons.php:186
+#: admin/add-ons.php:194
 msgid "Free Add-ons"
 msgstr ""
 
-#: admin/add-ons.php:186
+#: admin/add-ons.php:194
 msgid "These Add-ons are available in all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:191, add-ons-free/user-profile-picture/metronet-profile-picture.php:132, add-ons-free/user-profile-picture/metronet-profile-picture.php:146, add-ons-free/user-profile-picture/metronet-profile-picture.php:146, add-ons-free/user-profile-picture/metronet-profile-picture.php:161, add-ons-free/user-profile-picture/metronet-profile-picture.php:162, add-ons-free/user-profile-picture/metronet-profile-picture.php:151, add-ons-free/user-profile-picture/metronet-profile-picture.php:152, add-ons-free/user-profile-picture/metronet-profile-picture.php:230
+#: admin/add-ons.php:199, add-ons-free/user-profile-picture/metronet-profile-picture.php:132, add-ons-free/user-profile-picture/metronet-profile-picture.php:146, add-ons-free/user-profile-picture/metronet-profile-picture.php:146, add-ons-free/user-profile-picture/metronet-profile-picture.php:161, add-ons-free/user-profile-picture/metronet-profile-picture.php:162, add-ons-free/user-profile-picture/metronet-profile-picture.php:151, add-ons-free/user-profile-picture/metronet-profile-picture.php:152, add-ons-free/user-profile-picture/metronet-profile-picture.php:230
 msgid "User Profile Picture"
 msgstr ""
 
-#: admin/add-ons.php:192
+#: admin/add-ons.php:200
 msgid "Set or remove a custom profile image for a user using the standard WordPress media upload tool."
 msgstr ""
 
-#: admin/add-ons.php:199, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:57
+#: admin/add-ons.php:207, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:57
 msgid "Import and Export"
 msgstr ""
 
-#: admin/add-ons.php:200
+#: admin/add-ons.php:208
 msgid "With the help of this add-on you will be able to export all Profile Builder Settings data to a .json. You can then use this file as a back-up or you can import this data on another instance of Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:207
+#: admin/add-ons.php:215
 msgid "Custom CSS Classes on Fields"
 msgstr ""
 
-#: admin/add-ons.php:208
+#: admin/add-ons.php:216
 msgid "This add-on extends the functionality of Profile Builder by allowing you to add custom css classes for fields."
 msgstr ""
 
-#: admin/add-ons.php:215, add-ons-free/maximum-character-length/maximum-character-length.php:31
+#: admin/add-ons.php:223, add-ons-free/maximum-character-length/maximum-character-length.php:31
 msgid "Maximum Character Length"
 msgstr ""
 
-#: admin/add-ons.php:216
+#: admin/add-ons.php:224
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:223, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
+#: admin/add-ons.php:231, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
 msgid "Labels Edit"
 msgstr ""
 
-#: admin/add-ons.php:224
+#: admin/add-ons.php:232
 msgid "This add-on extends the functionality of our plugin and let us easily edit all Profile Builder labels."
 msgstr ""
 
-#: admin/add-ons.php:231
+#: admin/add-ons.php:239
 msgid "GDPR Communication Preferences"
 msgstr ""
 
-#: admin/add-ons.php:232
+#: admin/add-ons.php:240
 msgid "This add-on plugin adds a GDPR Communication preferences field to Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:243, admin/basic-info.php:248
+#: admin/add-ons.php:251, admin/basic-info.php:248
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/add-ons.php:243
+#: admin/add-ons.php:251
 msgid "These plugins are compatible with all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:248
+#: admin/add-ons.php:256
 msgid "TranslatePress"
 msgstr ""
 
-#: admin/add-ons.php:249
+#: admin/add-ons.php:257
 msgid "Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders."
 msgstr ""
 
-#: admin/add-ons.php:256, admin/pms-cross-promotion.php:67
+#: admin/add-ons.php:264, admin/pms-cross-promotion.php:67
 msgid "Paid Member Subscriptions"
 msgstr ""
 
-#: admin/add-ons.php:257
+#: admin/add-ons.php:265
 msgid "Accept user payments, create subscription plans and restrict content on your membership site."
 msgstr ""
 
-#: admin/add-ons.php:265
+#: admin/add-ons.php:273
 msgid "WP Webhooks Automations"
 msgstr ""
 
-#: admin/add-ons.php:266
+#: admin/add-ons.php:274
 msgid "Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together."
 msgstr ""
 
-#: admin/add-ons.php:273
+#: admin/add-ons.php:281
 msgid "Client Portal"
 msgstr ""
 
-#: admin/add-ons.php:274
+#: admin/add-ons.php:282
 msgid "Create private pages for your website users that only an administrator can edit."
 msgstr ""
 
-#: admin/add-ons.php:281
+#: admin/add-ons.php:289
 msgid "Custom Login Page Templates"
 msgstr ""
 
-#: admin/add-ons.php:282
+#: admin/add-ons.php:290
 msgid "Customizes the default WordPress Login Page with different templates, logo and background uploads and also adds support for custom CSS."
 msgstr ""
 
-#: admin/add-ons.php:289
+#: admin/add-ons.php:297
 msgid "Passwordless Login"
 msgstr ""
 
-#: admin/add-ons.php:290
+#: admin/add-ons.php:298
 msgid "WordPress Passwordless Login is a plugin that allows your users to login without a password."
 msgstr ""
 
-#: admin/add-ons.php:405
+#: admin/add-ons.php:413
 msgid "%1$sAdd-ons settings saved successfully%2$s"
 msgstr ""
 
@@ -374,15 +382,19 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: admin/admin-functions.php:389
-msgid "You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s."
+#: admin/admin-functions.php:413
+msgid "New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users."
 msgstr ""
 
-#: admin/admin-functions.php:387
-msgid "You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s."
+#: admin/admin-functions.php:414
+msgid "Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on."
 msgstr ""
 
-#: admin/admin-functions.php:397, admin/register-version.php:304, admin/register-version.php:289, admin/register-version.php:271, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, front-end/default-fields/recaptcha/recaptcha.php:831
+#: admin/admin-functions.php:417
+msgid " Don't have a license? %sBuy one now%s."
+msgstr ""
+
+#: admin/admin-functions.php:427, admin/register-version.php:304, admin/register-version.php:289, admin/register-version.php:271, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, front-end/default-fields/recaptcha/recaptcha.php:846
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -518,7 +530,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:138, admin/general-settings.php:396, features/roles-editor/roles-editor.php:64, features/roles-editor/roles-editor.php:65, features/roles-editor/roles-editor.php:278, features/roles-editor/roles-editor.php:279, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:291
+#: admin/basic-info.php:138, admin/general-settings.php:396, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:283, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:289, features/roles-editor/roles-editor.php:296
 msgid "Roles Editor"
 msgstr ""
 
@@ -774,7 +786,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:144, front-end/class-formbuilder.php:496, front-end/login.php:640, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:144, front-end/class-formbuilder.php:496, front-end/login.php:643, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -986,11 +998,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:356, front-end/login.php:370, front-end/login.php:589, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:937, add-ons/user-listing/userlisting.php:2728, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
+#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:937, add-ons/user-listing/userlisting.php:2728, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:584, front-end/recover.php:119, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:943, add-ons/user-listing/userlisting.php:2729, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:587, front-end/recover.php:119, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:943, add-ons/user-listing/userlisting.php:2729, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -3340,11 +3352,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1124, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:908, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1455, features/functions.php:1124, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1117, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:213, features/roles-editor/roles-editor.php:946, features/roles-editor/roles-editor.php:935, features/roles-editor/roles-editor.php:926, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1455, features/functions.php:1117, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3712,7 +3724,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:848, front-end/recover.php:415, front-end/default-fields/password/password.php:64
+#: features/functions.php:848, front-end/recover.php:417, front-end/default-fields/password/password.php:64
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -3728,7 +3740,7 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1060, front-end/default-fields/recaptcha/recaptcha.php:696, front-end/default-fields/recaptcha/recaptcha.php:687, front-end/default-fields/recaptcha/recaptcha.php:752, front-end/default-fields/recaptcha/recaptcha.php:800
+#: features/functions.php:1060, front-end/default-fields/recaptcha/recaptcha.php:711, front-end/default-fields/recaptcha/recaptcha.php:702, front-end/default-fields/recaptcha/recaptcha.php:767, front-end/default-fields/recaptcha/recaptcha.php:815
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
@@ -3736,7 +3748,7 @@ msgstr ""
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1110, add-ons/user-listing/userlisting.php:3056, features/roles-editor/roles-editor.php:214, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:435, admin/advanced-settings/includes/views/view-forms.php:527
+#: features/functions.php:1110, add-ons/user-listing/userlisting.php:3056, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:435, admin/advanced-settings/includes/views/view-forms.php:527
 msgid "Cancel"
 msgstr ""
 
@@ -3776,7 +3788,7 @@ msgstr ""
 msgid "User Meta"
 msgstr ""
 
-#: front-end/class-formbuilder.php:61, front-end/login.php:546, front-end/recover.php:271
+#: front-end/class-formbuilder.php:61, front-end/login.php:548, front-end/recover.php:272
 msgid "Processing..."
 msgstr ""
 
@@ -3816,7 +3828,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:325, front-end/login.php:698, assets/lib/wck-api/wordpress-creation-kit.php:821
+#: front-end/class-formbuilder.php:325, front-end/login.php:701, assets/lib/wck-api/wordpress-creation-kit.php:821
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -3885,79 +3897,79 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: front-end/login.php:297
+#: front-end/login.php:298
 msgid "SUCCESS: "
 msgstr ""
 
-#: front-end/login.php:297
+#: front-end/login.php:298
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:335, front-end/login.php:427, front-end/login.php:465, front-end/recover.php:18
+#: front-end/login.php:336, front-end/login.php:428, front-end/login.php:466, front-end/recover.php:18
 msgid "ERROR: "
 msgstr ""
 
-#: front-end/login.php:335
+#: front-end/login.php:336
 msgid "You need to confirm your Email Address before logging in! </br>To resend the Confirmation Email  %1$sclick here%2$s."
 msgstr ""
 
-#: front-end/login.php:431
+#: front-end/login.php:432
 msgid "The password field is empty."
 msgstr ""
 
-#: front-end/login.php:435
+#: front-end/login.php:436
 msgid "The password you entered is incorrect."
 msgstr ""
 
-#: front-end/login.php:444
+#: front-end/login.php:445
 msgid "The username field is empty"
 msgstr ""
 
-#: front-end/login.php:442
+#: front-end/login.php:443
 msgid "The username/email field is empty"
 msgstr ""
 
-#: front-end/login.php:440
+#: front-end/login.php:441
 msgid "The email field is empty."
 msgstr ""
 
-#: front-end/login.php:453
+#: front-end/login.php:454
 msgid "Invalid username."
 msgstr ""
 
-#: front-end/login.php:451
+#: front-end/login.php:452
 msgid "Invalid username or email."
 msgstr ""
 
-#: front-end/login.php:449
+#: front-end/login.php:450
 msgid "Invalid email."
 msgstr ""
 
-#: front-end/login.php:459
+#: front-end/login.php:460
 msgid "Password Lost and Found."
 msgstr ""
 
-#: front-end/login.php:459, front-end/login.php:646
+#: front-end/login.php:460, front-end/login.php:649
 msgid "Lost your password?"
 msgstr ""
 
-#: front-end/login.php:465
+#: front-end/login.php:466
 msgid "Both fields are empty."
 msgstr ""
 
-#: front-end/login.php:685, front-end/logout.php:45
+#: front-end/login.php:688, front-end/logout.php:45
 msgid "Log out of this account"
 msgstr ""
 
-#: front-end/login.php:685, front-end/logout.php:30
+#: front-end/login.php:688, front-end/logout.php:30
 msgid "Log out &raquo;"
 msgstr ""
 
-#: front-end/login.php:686
+#: front-end/login.php:689
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:594, front-end/recover.php:123
+#: front-end/login.php:597, front-end/recover.php:123
 msgid "Username or Email"
 msgstr ""
 
@@ -4009,63 +4021,63 @@ msgstr ""
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
 msgstr ""
 
-#: front-end/recover.php:289
+#: front-end/recover.php:291
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:479
+#: front-end/recover.php:481
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:383
+#: front-end/recover.php:385
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:393
+#: front-end/recover.php:395
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:400, front-end/recover.php:506
+#: front-end/recover.php:402, front-end/recover.php:508
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:405
+#: front-end/recover.php:407
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:411, front-end/default-fields/password/password.php:60
+#: front-end/recover.php:413, front-end/default-fields/password/password.php:60
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:428
+#: front-end/recover.php:430
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:317
+#: front-end/recover.php:319
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:317
+#: front-end/recover.php:319
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:360
+#: front-end/recover.php:362
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:360
+#: front-end/recover.php:362
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:330
+#: front-end/recover.php:332
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:344, front-end/recover.php:506, features/two-factor-authentication/class-two-factor-authentication.php:487
+#: front-end/recover.php:346, front-end/recover.php:508, features/two-factor-authentication/class-two-factor-authentication.php:487
 msgid "ERROR:"
 msgstr ""
 
-#: front-end/recover.php:344
+#: front-end/recover.php:346
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
@@ -4445,7 +4457,7 @@ msgstr ""
 msgid "No Registration Forms found in trash"
 msgstr ""
 
-#: add-ons/multiple-forms/register-forms.php:222, features/roles-editor/roles-editor.php:204
+#: add-ons/multiple-forms/register-forms.php:222, features/roles-editor/roles-editor.php:209
 msgid "Default Role"
 msgstr ""
 
@@ -4521,11 +4533,11 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:183, add-ons/user-listing/userlisting.php:355, add-ons/user-listing/userlisting.php:979, add-ons/user-listing/userlisting.php:2739, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:289
+#: add-ons/user-listing/userlisting.php:183, add-ons/user-listing/userlisting.php:355, add-ons/user-listing/userlisting.php:979, add-ons/user-listing/userlisting.php:2739, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:294
 msgid "Role"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:184, features/roles-editor/roles-editor.php:399, features/roles-editor/roles-editor.php:563
+#: add-ons/user-listing/userlisting.php:184, features/roles-editor/roles-editor.php:404, features/roles-editor/roles-editor.php:568
 msgid "Role Slug"
 msgstr ""
 
@@ -4605,7 +4617,7 @@ msgstr ""
 msgid "Firstname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:356, add-ons/user-listing/userlisting.php:964, features/roles-editor/roles-editor.php:484
+#: add-ons/user-listing/userlisting.php:356, add-ons/user-listing/userlisting.php:964, features/roles-editor/roles-editor.php:489
 msgid "Posts"
 msgstr ""
 
@@ -5296,6 +5308,70 @@ msgstr ""
 msgid "The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s."
 msgstr ""
 
+#: add-ons-advanced/form-fields-in-columns/index.php:18, add-ons-advanced/multi-step-forms/index.php:44, add-ons-advanced/multi-step-forms/index.php:211
+msgid "Publish the form before adding Break Points!"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:19, add-ons-advanced/multi-step-forms/index.php:45
+msgid "Request in process, please wait a few seconds before a new one!"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:20
+msgid "Set column start"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:21
+msgid "Set column end"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:22
+msgid "Unset column start"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:23
+msgid "Unset column end"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:64
+msgid "Please remove or close unpaired breakpoints."
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:155
+msgid "Publish the form before adding Interval Break Points! - Form Fields in Columns"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:160
+msgid "Begin by placing Start and End break points on your fields. Use the option below to disable the columns without removing the breakpoints."
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:165
+msgid "Enable"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:107
+msgid "Form Fields in Columns options updated."
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:114, add-ons-advanced/multi-step-forms/index.php:144
+msgid "Enable on Forms"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:117, add-ons-advanced/multi-step-forms/index.php:147
+msgid "PB Default Register Form"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:126, add-ons-advanced/multi-step-forms/index.php:156
+msgid "PB Default Edit Profile Form"
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:134
+msgid "Enable or Disable Form Fields in Columns on default Register and Edit Profile forms."
+msgstr ""
+
+#: add-ons-advanced/form-fields-in-columns/index.php:139
+msgid "Update Form Fields in Columns"
+msgstr ""
+
 #: add-ons-advanced/mailpoet-integration/index.php:109
 msgid "MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!"
 msgstr ""
@@ -5314,14 +5390,6 @@ msgstr ""
 
 #: add-ons-advanced/multi-step-forms/index.php:43
 msgid "Publish the form to edit tabs title."
-msgstr ""
-
-#: add-ons-advanced/multi-step-forms/index.php:44, add-ons-advanced/multi-step-forms/index.php:211
-msgid "Publish the form before adding Break Points!"
-msgstr ""
-
-#: add-ons-advanced/multi-step-forms/index.php:45
-msgid "Request in process, please wait a few seconds before a new one!"
 msgstr ""
 
 #: add-ons-advanced/multi-step-forms/index.php:46
@@ -5358,18 +5426,6 @@ msgstr ""
 
 #: add-ons-advanced/multi-step-forms/index.php:137
 msgid "Multi-Step Forms options updated."
-msgstr ""
-
-#: add-ons-advanced/multi-step-forms/index.php:144
-msgid "Enable on Forms"
-msgstr ""
-
-#: add-ons-advanced/multi-step-forms/index.php:147
-msgid "PB Default Register Form"
-msgstr ""
-
-#: add-ons-advanced/multi-step-forms/index.php:156
-msgid "PB Default Edit Profile Form"
 msgstr ""
 
 #: add-ons-advanced/multi-step-forms/index.php:164
@@ -7175,214 +7231,214 @@ msgstr ""
 msgid "Password Recovery page URL (optional):"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:205
+#: features/roles-editor/roles-editor.php:210
 msgid "Your Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:206
+#: features/roles-editor/roles-editor.php:211
 msgid "Role name is required."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:207
+#: features/roles-editor/roles-editor.php:212
 msgid "No capabilities found."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:208
+#: features/roles-editor/roles-editor.php:213
 msgid "Select capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:209
+#: features/roles-editor/roles-editor.php:214
 msgid "Delete Permanently"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:210
+#: features/roles-editor/roles-editor.php:215
 msgid ""
 "This will permanently delete the capability from your site and from every user role.\n"
 "\n"
 "It can't be undone!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:211
+#: features/roles-editor/roles-editor.php:216
 msgid "This capability is not saved until you click Update!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:212
+#: features/roles-editor/roles-editor.php:217
 msgid "This capability is not saved until you click Publish!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:215, features/roles-editor/roles-editor.php:465
+#: features/roles-editor/roles-editor.php:220, features/roles-editor/roles-editor.php:470
 msgid "Add New Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:216
+#: features/roles-editor/roles-editor.php:221
 msgid "Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:217
+#: features/roles-editor/roles-editor.php:222
 msgid "You can't delete this capability from your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:280, features/roles-editor/roles-editor.php:281
+#: features/roles-editor/roles-editor.php:285, features/roles-editor/roles-editor.php:286
 msgid "Add New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:282
+#: features/roles-editor/roles-editor.php:287
 msgid "Edit Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:283
+#: features/roles-editor/roles-editor.php:288
 msgid "New Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:285
+#: features/roles-editor/roles-editor.php:290
 msgid "View Role"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:286
+#: features/roles-editor/roles-editor.php:291
 msgid "Search the Roles Editor"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:287
+#: features/roles-editor/roles-editor.php:292
 msgid "No roles found"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:288
+#: features/roles-editor/roles-editor.php:293
 msgid "No roles found in trash"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:317
+#: features/roles-editor/roles-editor.php:322
 msgid "Enter role name here"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:330, features/roles-editor/roles-editor.php:333
+#: features/roles-editor/roles-editor.php:335, features/roles-editor/roles-editor.php:338
 msgid "Role updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:331
+#: features/roles-editor/roles-editor.php:336
 msgid "Custom field updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:332
+#: features/roles-editor/roles-editor.php:337
 msgid "Custom field deleted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:334
+#: features/roles-editor/roles-editor.php:339
 msgid "Role restored to revision from %s"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:335
+#: features/roles-editor/roles-editor.php:340
 msgid "Role created."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:336
+#: features/roles-editor/roles-editor.php:341
 msgid "Role saved."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:337
+#: features/roles-editor/roles-editor.php:342
 msgid "Role submitted."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:338
+#: features/roles-editor/roles-editor.php:343
 msgid "Role scheduled for: <strong>%1$s</strong>"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:338
+#: features/roles-editor/roles-editor.php:343
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:339
+#: features/roles-editor/roles-editor.php:344
 msgid "Role draft updated."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:398
+#: features/roles-editor/roles-editor.php:403
 msgid "Role Name"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:400, features/roles-editor/roles-editor.php:557
+#: features/roles-editor/roles-editor.php:405, features/roles-editor/roles-editor.php:562
 msgid "Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:401, features/roles-editor/roles-editor.php:508, features/roles-editor/roles-editor.php:552
+#: features/roles-editor/roles-editor.php:406, features/roles-editor/roles-editor.php:513, features/roles-editor/roles-editor.php:557
 msgid "Users"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:447
+#: features/roles-editor/roles-editor.php:452
 msgid "Edit Role Capabilities"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:458
+#: features/roles-editor/roles-editor.php:463
 msgid "Add a new capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:461
+#: features/roles-editor/roles-editor.php:466
 msgid "Add Capability"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:468
+#: features/roles-editor/roles-editor.php:473
 msgid "Please select an existing capability or add a new one!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:469
+#: features/roles-editor/roles-editor.php:474
 msgid "You can't add a hidden capability!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:470
+#: features/roles-editor/roles-editor.php:475
 msgid "This capability already exists!"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:476
+#: features/roles-editor/roles-editor.php:481
 msgid "All"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:480
+#: features/roles-editor/roles-editor.php:485
 msgid "General"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:488
+#: features/roles-editor/roles-editor.php:493
 msgid "Pages"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:492
+#: features/roles-editor/roles-editor.php:497
 msgid "Media"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:496
+#: features/roles-editor/roles-editor.php:501
 msgid "Taxonomies"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:500
+#: features/roles-editor/roles-editor.php:505
 msgid "Appearance"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:504
+#: features/roles-editor/roles-editor.php:509
 msgid "Plugins"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:512
+#: features/roles-editor/roles-editor.php:517
 msgid "Custom"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:919
+#: features/roles-editor/roles-editor.php:924
 msgid "Clone"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:945
+#: features/roles-editor/roles-editor.php:950
 msgid "Are you sure?\nThis will permanently delete the role and cannot be undone!\nUsers assigned only on this role will be moved to the default role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:934
+#: features/roles-editor/roles-editor.php:939
 msgid "Change Default"
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:935
+#: features/roles-editor/roles-editor.php:940
 msgid "You can't delete the default role. Change it first."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:926
+#: features/roles-editor/roles-editor.php:931
 msgid "You can't delete your role."
 msgstr ""
 
-#: features/roles-editor/roles-editor.php:1162
+#: features/roles-editor/roles-editor.php:1174
 msgid "Edit User Roles"
 msgstr ""
 
@@ -8451,7 +8507,11 @@ msgid "Cancel request"
 msgstr ""
 
 #: front-end/default-fields/email/email.php:36
-msgid "If you change this, we will send you an email at your new address to confirm it. <br /><strong>The new address will not become active until confirmed.</strong>"
+msgid "If you change this, we will send you an email at your new address to confirm it."
+msgstr ""
+
+#: front-end/default-fields/email/email.php:36
+msgid "The new address will not become active until confirmed."
 msgstr ""
 
 #: front-end/default-fields/email/email.php:74, front-end/extra-fields/input-email/input-email.php:73
@@ -8490,19 +8550,19 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:344
+#: front-end/default-fields/recaptcha/recaptcha.php:359
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:455
+#: front-end/default-fields/recaptcha/recaptcha.php:470
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:752
+#: front-end/default-fields/recaptcha/recaptcha.php:767
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:830
+#: front-end/default-fields/recaptcha/recaptcha.php:845
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 

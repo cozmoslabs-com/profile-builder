@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.13.6
+Stable tag: 3.13.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.7 =
+* Enhancement: Added multisite compatibility to the Multiple User Roles functionality
+* Fix: XSS issue with the message parameter of the wppb-restrict shortcode. Thanks to yudha and the Wordfence team
+* Fix: A notice that could be triggered from the usermeta shortcode in some cases
+* Fix: Issue with Content Restriction metabox not applying rules correctly if logged in users was not checked
+* Misc: Correctly localize confirm email message
+* Misc: Correct $user_id parameter on the `wppb_register_activate_user_error_message2` filter when Login With Email Only was enabled
+
 = 3.13.6 =
 * Fix: Security issue with the link_text parameter of the wppb-logout shortcode. Thanks to yudha and the Wordfence team
 * Fix: Do not save postmeta entries for unrelated custom post types

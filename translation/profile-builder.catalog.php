@@ -24,6 +24,8 @@
 <?php __("Basic Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available with the Basic, Pro and Agency license", "profile-builder"); ?>
 <?php __("Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s", "profile-builder"); ?>
+<?php __("Form Fields in Columns", "profile-builder"); ?>
+<?php __("Extends the functionality of Profile Builder by adding the possibility to organize fields in columns.", "profile-builder"); ?>
 <?php __("Social Connect", "profile-builder"); ?>
 <?php __("Easily configure and enable social login on your website. Users can login with social platforms like Facebook, Google or X.", "profile-builder"); ?>
 <?php __("WooCommerce Sync", "profile-builder"); ?>
@@ -88,8 +90,9 @@
 <?php __("Settings", "profile-builder"); ?>
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
-<?php __('You can now beautify your Forms using %1$sForm Styles%2$s. Have a look at the new Styles in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
-<?php __('You can now beautify your Forms using new %1$sForm Styles%2$s by selecting and activating the one you like in %3$sProfile Builder -> Settings%4$s.', 'profile-builder' ); ?>
+<?php __('New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users.', 'profile-builder' ); ?>
+<?php __('Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ); ?>
+<?php __(" Don't have a license? %sBuy one now%s.", "profile-builder"); ?>
 <?php __("Dismiss this notice.", "profile-builder"); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
@@ -1305,13 +1308,27 @@
 <?php __("Get file", "profile-builder"); ?>
 <?php __("You do not have the capabilities necessary to edit this field.", "profile-builder"); ?>
 <?php __('The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s.', 'profile-builder' ); ?>
+<?php __("Publish the form before adding Break Points!", "profile-builder"); ?>
+<?php __("Request in process, please wait a few seconds before a new one!", "profile-builder"); ?>
+<?php __("Set column start", "profile-builder"); ?>
+<?php __("Set column end", "profile-builder"); ?>
+<?php __("Unset column start", "profile-builder"); ?>
+<?php __("Unset column end", "profile-builder"); ?>
+<?php __("Please remove or close unpaired breakpoints.", "profile-builder"); ?>
+<?php __("Publish the form before adding Interval Break Points! - Form Fields in Columns", "profile-builder"); ?>
+<?php __("Begin by placing Start and End break points on your fields. Use the option below to disable the columns without removing the breakpoints.", "profile-builder"); ?>
+<?php __("Enable", "profile-builder"); ?>
+<?php __("Form Fields in Columns options updated.", "profile-builder"); ?>
+<?php __("Enable on Forms", "profile-builder"); ?>
+<?php __("PB Default Register Form", "profile-builder"); ?>
+<?php __("PB Default Edit Profile Form", "profile-builder"); ?>
+<?php __("Enable or Disable Form Fields in Columns on default Register and Edit Profile forms.", "profile-builder"); ?>
+<?php __("Update Form Fields in Columns", "profile-builder"); ?>
 <?php __("MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!", "profile-builder"); ?>
 <?php __("Step", "profile-builder"); ?>
 <?php __("Title for Tab", "profile-builder"); ?>
 <?php __("Add Break Points to edit tabs title.", "profile-builder"); ?>
 <?php __("Publish the form to edit tabs title.", "profile-builder"); ?>
-<?php __("Publish the form before adding Break Points!", "profile-builder"); ?>
-<?php __("Request in process, please wait a few seconds before a new one!", "profile-builder"); ?>
 <?php __("Add form Break Point (for Multi-Step Forms)", "profile-builder"); ?>
 <?php __("Remove form Break Point (for Multi-Step Forms)", "profile-builder"); ?>
 <?php __("Multi-Step Forms", "profile-builder"); ?>
@@ -1321,9 +1338,6 @@
 <?php __("Enable Tabs", "profile-builder"); ?>
 <?php __("Edit Tabs Title", "profile-builder"); ?>
 <?php __("Multi-Step Forms options updated.", "profile-builder"); ?>
-<?php __("Enable on Forms", "profile-builder"); ?>
-<?php __("PB Default Register Form", "profile-builder"); ?>
-<?php __("PB Default Edit Profile Form", "profile-builder"); ?>
 <?php __("To enable it on Multiple Registration and Edit-Profile Forms add Break Points in each form page.", "profile-builder"); ?>
 <?php __("Update Multi-Step", "profile-builder"); ?>
 <?php __("Next", "profile-builder"); ?>
@@ -2078,7 +2092,8 @@
 <?php __("Privacy: I would like my site to appear in search engines, and in public listings around this network.", "profile-builder"); ?>
 <?php __("There is a pending change request of your email to: %s", "profile-builder"); ?>
 <?php __("Cancel request", "profile-builder"); ?>
-<?php __("If you change this, we will send you an email at your new address to confirm it. <br /><strong>The new address will not become active until confirmed.</strong>", "profile-builder"); ?>
+<?php __("If you change this, we will send you an email at your new address to confirm it.", "profile-builder"); ?>
+<?php __("The new address will not become active until confirmed.", "profile-builder"); ?>
 <?php __("You must enter a valid email address.", "profile-builder"); ?>
 <?php __("This email is already reserved to be used soon.", "profile-builder"); ?>
 <?php __("Please try a different one!", "profile-builder"); ?>
