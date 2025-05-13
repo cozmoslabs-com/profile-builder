@@ -1,6 +1,6 @@
 .wppb-user-forms .pms-field,
 .wppb-user-forms .wppb-form-field:not(.wppb-recaptcha) {
-    margin-bottom: 30px !important;
+    margin-bottom: 16px;
 }
 
 .wppb-user-forms .wppb-form-field.wppb-subscription-plans .pms-group-memberships-field {
@@ -136,8 +136,7 @@
     margin-top: 5px;
 }
 
-.wppb-user-forms .select2-selection:not(.select2-selection--multiple) .select2-selection__rendered,
-#select_user_to_edit_form .select2-selection .select2-selection__rendered {
+.wppb-user-forms .select2-selection:not(.select2-selection--multiple) .select2-selection__rendered {
     line-height: 44px;
     color: #666;
 }
@@ -173,6 +172,16 @@
 .wppb-user-forms .select2-selection .select2-selection__arrow,
 #select_user_to_edit_form .select2-selection .select2-selection__arrow {
     display: none;
+}
+
+#select_user_to_edit_form .select2-container {
+    margin-left: 0px;
+}
+
+#select_user_to_edit_form .select2-selection__rendered {
+    padding: 0;
+    padding-top: 7px;
+    font-size: 85%;
 }
 
 /* textarea */
@@ -292,4 +301,9 @@ div.wppb-sc-buttons-container {
 .wppb-user-forms a.button:hover,
 .wppb-user-forms a.button:focus {
     background-color: #444444;
+}
+
+.wppb-form-field input:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #666;
 }

@@ -22,7 +22,6 @@ class Cozmoslabs_Plugin_Optin_WPPB {
             wp_schedule_event( time(), 'weekly', 'cozmos_wppb_plugin_optin_sync' );
 
         add_action( 'cozmos_wppb_plugin_optin_sync', array( 'Cozmoslabs_Plugin_Optin_WPPB', 'sync_data' ) );
-        //add_action( 'admin_init', array( 'Cozmoslabs_Plugin_Optin_WPPB', 'sync_data' ) );
 
         self::$plugin_optin_status = get_option( self::$plugin_option_key, false );
         self::$plugin_optin_email  = get_option( self::$plugin_option_email_key, false );
@@ -581,6 +580,7 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
             'wppb_user_emailc_reset_success_email_subject',
             'wppb_user_pages',
             'wppb_version',
+            'wppb_recaptcha_validations',
         ];
 
         $this->blacklisted_option_names = [

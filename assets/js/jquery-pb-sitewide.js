@@ -453,6 +453,11 @@ jQuery(document).ready(function() {
         rolesSelector.toggle();
     });
 
+    // Upgrade notice in PB Free Version
+    jQuery('input#wppb-2fa-enable').click(function (e) {
+        jQuery('#wppb-2fa-upgrade-notice').toggle();
+    });
+
 });
 
 

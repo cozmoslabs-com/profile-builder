@@ -39,12 +39,22 @@ function wppb_content_restriction_filter_content( $content, $post = null ) {
     if ( isset( $post ) && isset( $post->ID ) ) {
         $user_status = get_post_meta($post->ID, 'wppb-content-restrict-user-status', true);
         $post_user_roles = get_post_meta($post->ID, 'wppb-content-restrict-user-role');
+
+        /**
+         * Filter for disabling/enabling User Role based content restriction for Logged-Out users.
+         * By default, restrictions apply even if logged in users is not selected. 
+         * If this filter is set to false, restrictions will apply only if the logged in users option is selected alongside user roles.
+         *
+         * @param bool $user_roles_without_logged_in_option -> Defaults to TRUE.
+         *
+         */
+        $user_roles_without_logged_in_option = apply_filters( 'wppb_content_restriction_enable_user_roles_without_logged_in_option', true );
     }
 
     if( empty( $user_status ) && empty( $post_user_roles ) ) {
 		$wppb_show_content = true;
         return $content;
-    } else if( $user_status == 'loggedin' || !empty( $post_user_roles ) ) {
+    } else if( $user_status == 'loggedin' || ( $user_roles_without_logged_in_option && !empty( $post_user_roles ) ) ) {
         if( is_user_logged_in() ) {
             if( ! empty( $post_user_roles ) ) {
                 $user_data = get_userdata( $user_ID );
@@ -94,9 +104,19 @@ function wppb_check_content_restriction_on_post_id( $post_id ){
     $user_status        = get_post_meta( $post_id, 'wppb-content-restrict-user-status', true );
     $post_user_roles    = get_post_meta( $post_id, 'wppb-content-restrict-user-role' );
 
+    /**
+     * Filter for disabling/enabling User Role based content restriction for Logged-Out users.
+     * By default, restrictions apply even if logged in users is not selected. 
+     * If this filter is set to false, restrictions will apply only if the logged in users option is selected alongside user roles.
+     *
+     * @param bool $user_roles_without_logged_in_option -> Defaults to TRUE.
+     *
+     */
+    $user_roles_without_logged_in_option = apply_filters( 'wppb_content_restriction_enable_user_roles_without_logged_in_option', true );
+
     if( empty( $user_status ) && empty( $post_user_roles ) ) {
         return false;
-    } else if( $user_status == 'loggedin' || !empty( $post_user_roles ) ) {
+    } else if( $user_status == 'loggedin' || ( $user_roles_without_logged_in_option && !empty( $post_user_roles ) ) ) {
         if( is_user_logged_in() ) {
             if( ! empty( $post_user_roles ) ) {
                 $user_data = get_userdata( $user_ID );

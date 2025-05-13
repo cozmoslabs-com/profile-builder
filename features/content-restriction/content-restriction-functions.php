@@ -304,7 +304,27 @@ function wppb_content_restriction_shortcode( $atts, $content = null ) {
 				}
 			}
 		}
-		elseif( ! empty( $args['user_roles'] ) ) {
+        elseif ( $args['display_to'] == 'not_role' ){
+            if( ! empty( $args['user_roles'] ) ){
+                $user_roles = array_map( 'trim', explode( ',', $args['user_roles'] ) );
+                $user_data = get_userdata( get_current_user_id() );
+
+                if( ! empty( $user_data->roles ) ){
+                    $common_user_roles = array_intersect( $user_roles, $user_data->roles );
+
+                    if( ! empty( $common_user_roles ) ) {
+                        return $message;
+                    } else {
+                        return do_shortcode( $content );
+                    }
+                }
+            }
+            else{
+                return $message;
+            }
+
+        }
+		elseif( ! empty( $args['user_roles'] ) && ( $args['display_to'] != 'not_role' || !isset( $args['display_to'] ) ) ) {
 				$user_roles = array_map( 'trim', explode( ',', $args['user_roles'] ) );
 				$user_data = get_userdata( get_current_user_id() );
 

@@ -15,16 +15,16 @@
 }
 
 /* hide labels when Placeholder Labels option is active */
-#wppb-recover-password ul li.wppb-form-field label,
-.wppb-user-forms #wppb-loginform .login-username label,
-.wppb-user-forms #wppb-loginform .login-password label,
-.wppb-user-forms #wppb-loginform .wppb-recaptcha label,
-.wppb-form-field.pbpl-class label,
-.pms-field.pbpl-class:not(form[id^="pms"] .pms-field) label {
-    text-indent: -99999px;
-    position: absolute;
-    left: -99999px;
-}
+/*#wppb-recover-password ul li.wppb-form-field label,*/
+/*.wppb-user-forms #wppb-loginform .login-username label,*/
+/*.wppb-user-forms #wppb-loginform .login-password label,*/
+/*.wppb-user-forms #wppb-loginform .wppb-recaptcha label,*/
+/*.wppb-form-field.pbpl-class label,*/
+/*.pms-field.pbpl-class:not(form[id^="pms"] .pms-field) label {*/
+/*    text-indent: -99999px;*/
+/*    position: absolute;*/
+/*    left: -99999px;*/
+/*}*/
 
 .wppb-form-field.pbpl-class .wppb-radios li label,
 .wppb-form-field.wppb-radio.pbpl-class label,

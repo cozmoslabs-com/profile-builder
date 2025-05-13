@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.13.7
+Stable tag: 3.13.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,15 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.8 =
+* Enhancement: Added an option to the content restriction shortcode to display some content only to users that do not have certain roles: [wppb-restrict display_to="not_role" user_roles="subscriber"]Content[/wppb-restrict]
+* Enhancement: Added `All User Roles` and `All User Roles except Admin` options to the admin bar settings to make it easier to disable globally
+* Enhancement: Show a message to users when the [wppb-register] shortcode does not work because it is placed on a page that was not created by an Administrator
+* Fix: Removed CSS that was hiding Login and Password Recovery form labels unnecessarily in the block editor
+* Misc: Added a filter to revert to the previous content restriction functionality where the restriction rules would not apply if the logged in users box is not checked as well. Set the filter to false to revert to the previous functionality: wppb_content_restriction_enable_user_roles_without_logged_in_option
+* Misc: Compatibility changes with OceanWP theme
+* Misc: Block themes - adjusted bottom margin of fields
+
 = 3.13.7 =
 * Enhancement: Added multisite compatibility to the Multiple User Roles functionality
 * Fix: XSS issue with the message parameter of the wppb-restrict shortcode. Thanks to yudha and the Wordfence team

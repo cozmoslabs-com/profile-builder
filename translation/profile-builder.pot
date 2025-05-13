@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-08 07:59+0000\n"
+"POT-Creation-Date: 2025-05-13 10:42+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -346,15 +346,15 @@ msgstr ""
 msgid "Very weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:330, features/functions.php:823, features/functions.php:847
+#: admin/admin-functions.php:139, admin/general-settings.php:330, features/functions.php:822, features/functions.php:846
 msgid "Weak"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:331, features/functions.php:823, features/functions.php:847
+#: admin/admin-functions.php:139, admin/general-settings.php:331, features/functions.php:822, features/functions.php:846
 msgid "Medium"
 msgstr ""
 
-#: admin/admin-functions.php:139, admin/general-settings.php:332, features/functions.php:823, features/functions.php:847
+#: admin/admin-functions.php:139, admin/general-settings.php:332, features/functions.php:822, features/functions.php:846
 msgid "Strong"
 msgstr ""
 
@@ -530,7 +530,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:138, admin/general-settings.php:396, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:283, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:289, features/roles-editor/roles-editor.php:296
+#: admin/basic-info.php:138, admin/general-settings.php:400, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:283, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:289, features/roles-editor/roles-editor.php:296
 msgid "Roles Editor"
 msgstr ""
 
@@ -998,11 +998,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:937, add-ons/user-listing/userlisting.php:2728, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
+#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:116, add-ons/user-listing/userlisting.php:353, add-ons/user-listing/userlisting.php:937, add-ons/user-listing/userlisting.php:2779, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:104
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:587, front-end/recover.php:119, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:943, add-ons/user-listing/userlisting.php:2729, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:587, front-end/recover.php:119, add-ons/user-listing/userlisting.php:122, add-ons/user-listing/userlisting.php:943, add-ons/user-listing/userlisting.php:2780, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -1054,119 +1054,127 @@ msgstr ""
 msgid "Hide Admin Bar for User Roles"
 msgstr ""
 
-#: admin/general-settings.php:388
+#: admin/general-settings.php:380
+msgid "All User Roles"
+msgstr ""
+
+#: admin/general-settings.php:381
+msgid "All User Roles Except Admin"
+msgstr ""
+
+#: admin/general-settings.php:392
 msgid "Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for."
 msgstr ""
 
-#: admin/general-settings.php:404
+#: admin/general-settings.php:408
 msgid "Easily create new custom user roles or customize any existing user role capabilities."
 msgstr ""
 
-#: admin/general-settings.php:407
+#: admin/general-settings.php:411
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:462, admin/general-settings.php:423, features/two-factor-authentication/class-two-factor-authentication.php:90, features/two-factor-authentication/class-two-factor-authentication.php:148
+#: admin/general-settings.php:466, admin/general-settings.php:427, features/two-factor-authentication/class-two-factor-authentication.php:90, features/two-factor-authentication/class-two-factor-authentication.php:148
 msgid "Two-Factor Authentication"
 msgstr ""
 
-#: admin/general-settings.php:470, admin/general-settings.php:431
+#: admin/general-settings.php:474, admin/general-settings.php:435
 msgid "Enable the Google Authenticator functionality."
 msgstr ""
 
-#: admin/general-settings.php:474
+#: admin/general-settings.php:478
 msgid "Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions."
 msgstr ""
 
-#: admin/general-settings.php:443
+#: admin/general-settings.php:447
 msgid "Enable Authenticator For"
 msgstr ""
 
-#: admin/general-settings.php:447
+#: admin/general-settings.php:451
 msgid "ALL ROLES"
 msgstr ""
 
-#: admin/general-settings.php:455
+#: admin/general-settings.php:459
 msgid "\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles."
 msgstr ""
 
-#: admin/general-settings.php:482
+#: admin/general-settings.php:486
 msgid "Load CSS"
 msgstr ""
 
-#: admin/general-settings.php:489
+#: admin/general-settings.php:493
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:502, admin/private-website.php:176, features/content-restriction/content-restriction.php:205, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:492, admin/advanced-settings/includes/views/view-shortcodes.php:97, admin/advanced-settings/includes/views/view-userlisting.php:67
+#: admin/general-settings.php:506, admin/private-website.php:176, features/content-restriction/content-restriction.php:205, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:262, admin/advanced-settings/includes/views/view-forms.php:492, admin/advanced-settings/includes/views/view-shortcodes.php:97, admin/advanced-settings/includes/views/view-userlisting.php:67
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:505, admin/private-website.php:178, features/functions.php:1103, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:207, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
+#: admin/general-settings.php:509, admin/private-website.php:178, features/functions.php:1102, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:207, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:434, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:69
 msgid "Save Changes"
 msgstr ""
 
-#: admin/general-settings.php:627
+#: admin/general-settings.php:631
 msgid "Available in the Pro versions of the plugin"
 msgstr ""
 
-#: admin/general-settings.php:676
+#: admin/general-settings.php:680
 msgid "You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
-#: admin/general-settings.php:698
+#: admin/general-settings.php:702
 msgid "Register Website"
 msgstr ""
 
-#: admin/general-settings.php:705
+#: admin/general-settings.php:709
 msgid "License key"
 msgstr ""
 
-#: admin/general-settings.php:722
+#: admin/general-settings.php:726
 msgid "Activate License"
 msgstr ""
 
-#: admin/general-settings.php:713
+#: admin/general-settings.php:717
 msgid "Deactivate License"
 msgstr ""
 
-#: admin/general-settings.php:718
+#: admin/general-settings.php:722
 msgid "Your license is invalid"
 msgstr ""
 
-#: admin/general-settings.php:716
+#: admin/general-settings.php:720
 msgid "Active on this site"
 msgstr ""
 
-#: admin/general-settings.php:745
+#: admin/general-settings.php:749
 msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
 msgstr ""
 
-#: admin/general-settings.php:746
+#: admin/general-settings.php:750
 msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
 msgstr ""
 
-#: admin/general-settings.php:740
+#: admin/general-settings.php:744
 msgid "Your %s license has reached its activation limit."
 msgstr ""
 
-#: admin/general-settings.php:741
+#: admin/general-settings.php:745
 msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
 msgstr ""
 
-#: admin/general-settings.php:735
+#: admin/general-settings.php:739
 msgid "Your %s license has expired."
 msgstr ""
 
-#: admin/general-settings.php:736
+#: admin/general-settings.php:740
 msgid "Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
-#: admin/general-settings.php:730
+#: admin/general-settings.php:734
 msgid "Your %s license is about to expire on %s"
 msgstr ""
 
-#: admin/general-settings.php:731
+#: admin/general-settings.php:735
 msgid "Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support."
 msgstr ""
 
@@ -1258,7 +1266,7 @@ msgstr ""
 msgid "Use Simple Upload"
 msgstr ""
 
-#: admin/manage-fields.php:264, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:2775, add-ons/user-listing/userlisting.php:2787, add-ons-advanced/social-connect/index.php:429, features/admin-approval/admin-approval.php:323, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
+#: admin/manage-fields.php:264, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:2826, add-ons/user-listing/userlisting.php:2838, add-ons-advanced/social-connect/index.php:429, features/admin-approval/admin-approval.php:323, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
 msgid "Yes"
 msgstr ""
 
@@ -1698,7 +1706,7 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: admin/manage-fields.php:415, add-ons/user-listing/userlisting.php:976, add-ons/user-listing/userlisting.php:2737
+#: admin/manage-fields.php:415, add-ons/user-listing/userlisting.php:976, add-ons/user-listing/userlisting.php:2788
 msgid "Nickname"
 msgstr ""
 
@@ -1714,7 +1722,7 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-#: admin/manage-fields.php:419, add-ons/user-listing/userlisting.php:126, add-ons/user-listing/userlisting.php:958, add-ons/user-listing/userlisting.php:2731, add-ons-free/user-profile-picture/metronet-profile-picture.php:1686, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
+#: admin/manage-fields.php:419, add-ons/user-listing/userlisting.php:126, add-ons/user-listing/userlisting.php:958, add-ons/user-listing/userlisting.php:2782, add-ons-free/user-profile-picture/metronet-profile-picture.php:1686, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
 msgid "Website"
 msgstr ""
 
@@ -1734,7 +1742,7 @@ msgstr ""
 msgid "About Yourself"
 msgstr ""
 
-#: admin/manage-fields.php:429, add-ons/user-listing/userlisting.php:131, add-ons/user-listing/userlisting.php:961, add-ons/user-listing/userlisting.php:2732
+#: admin/manage-fields.php:429, add-ons/user-listing/userlisting.php:131, add-ons/user-listing/userlisting.php:961, add-ons/user-listing/userlisting.php:2783
 msgid "Biographical Info"
 msgstr ""
 
@@ -3352,11 +3360,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1124, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
+#: admin/manage-fields.php:1455, features/functions.php:1123, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:577
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1117, features/functions.php:1131, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1455, features/functions.php:1116, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:476, assets/lib/wck-api/wordpress-creation-kit.php:578, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3424,7 +3432,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3018, features/two-factor-authentication/class-two-factor-authentication.php:150, features/two-factor-authentication/class-two-factor-authentication.php:256
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3069, features/two-factor-authentication/class-two-factor-authentication.php:150, features/two-factor-authentication/class-two-factor-authentication.php:256
 msgid "Activate"
 msgstr ""
 
@@ -3700,91 +3708,91 @@ msgstr ""
 msgid "Follow these steps to start registering users on your website. %1s out of %2s complete."
 msgstr ""
 
-#: features/functions.php:373
+#: features/functions.php:372
 msgid "GDPR Checkbox"
 msgstr ""
 
-#: features/functions.php:373
+#: features/functions.php:372
 msgid "I allow the website to collect and store the data I submit through this form."
 msgstr ""
 
-#: features/functions.php:373
+#: features/functions.php:372
 msgid "Honeypot"
 msgstr ""
 
-#: features/functions.php:797
+#: features/functions.php:796
 msgid "Strength indicator"
 msgstr ""
 
-#: features/functions.php:823, features/functions.php:847
+#: features/functions.php:822, features/functions.php:846
 msgid "Very Weak"
 msgstr ""
 
-#: features/functions.php:837
+#: features/functions.php:836
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:848, front-end/recover.php:417, front-end/default-fields/password/password.php:64
+#: features/functions.php:847, front-end/recover.php:417, front-end/default-fields/password/password.php:64
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: features/functions.php:947, features/functions.php:1007
+#: features/functions.php:946, features/functions.php:1006
 msgid "Show password"
 msgstr ""
 
-#: features/functions.php:1002
+#: features/functions.php:1001
 msgid "Hide password"
 msgstr ""
 
-#: features/functions.php:1022
+#: features/functions.php:1021
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1060, front-end/default-fields/recaptcha/recaptcha.php:711, front-end/default-fields/recaptcha/recaptcha.php:702, front-end/default-fields/recaptcha/recaptcha.php:767, front-end/default-fields/recaptcha/recaptcha.php:815
+#: features/functions.php:1059, front-end/default-fields/recaptcha/recaptcha.php:711, front-end/default-fields/recaptcha/recaptcha.php:702, front-end/default-fields/recaptcha/recaptcha.php:767, front-end/default-fields/recaptcha/recaptcha.php:815
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1067
+#: features/functions.php:1066
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1110, add-ons/user-listing/userlisting.php:3056, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:435, admin/advanced-settings/includes/views/view-forms.php:527
+#: features/functions.php:1109, add-ons/user-listing/userlisting.php:3107, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:435, admin/advanced-settings/includes/views/view-forms.php:527
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1131, assets/lib/wck-api/wordpress-creation-kit.php:476
+#: features/functions.php:1130, assets/lib/wck-api/wordpress-creation-kit.php:476
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1321
+#: features/functions.php:1320
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1334
+#: features/functions.php:1333
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1425, add-ons-advanced/social-connect/index.php:441
+#: features/functions.php:1424, add-ons-advanced/social-connect/index.php:441
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1426
+#: features/functions.php:1425
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1625
+#: features/functions.php:1624
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1675
+#: features/functions.php:1674
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1712
+#: features/functions.php:1711
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1730, features/email-confirmation/class-email-confirmation.php:95, features/email-confirmation/class-email-confirmation.php:174
+#: features/functions.php:1729, features/email-confirmation/class-email-confirmation.php:95, features/email-confirmation/class-email-confirmation.php:174
 msgid "User Meta"
 msgstr ""
 
@@ -4113,6 +4121,10 @@ msgstr ""
 msgid "Could not create user!"
 msgstr ""
 
+#: front-end/register.php:225
+msgid "Only an administrator can create pages with the register shortcode."
+msgstr ""
+
 #: add-ons/custom-redirects/custom_redirects_admin.php:52, assets/misc/elementor/widgets/class-pb-widget-l.php:114
 msgid "After Login"
 msgstr ""
@@ -4145,7 +4157,7 @@ msgstr ""
 msgid "Dashboard (redirect users from accessing the dashboard)"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:63, add-ons/user-listing/userlisting.php:182, add-ons/user-listing/userlisting.php:2730
+#: add-ons/custom-redirects/custom_redirects_admin.php:63, add-ons/user-listing/userlisting.php:182, add-ons/user-listing/userlisting.php:2781
 msgid "User ID"
 msgstr ""
 
@@ -4333,11 +4345,11 @@ msgstr ""
 msgid "No Edit-profile Forms found in trash"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:138, add-ons/multiple-forms/register-forms.php:141, add-ons/user-listing/userlisting.php:2609
+#: add-ons/multiple-forms/edit-profile-forms.php:138, add-ons/multiple-forms/register-forms.php:141, add-ons/user-listing/userlisting.php:2648
 msgid "Shortcode"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:158, add-ons/multiple-forms/register-forms.php:162, add-ons/user-listing/userlisting.php:2630
+#: add-ons/multiple-forms/edit-profile-forms.php:158, add-ons/multiple-forms/register-forms.php:162, add-ons/user-listing/userlisting.php:2669
 msgid "(no title)"
 msgstr ""
 
@@ -4349,11 +4361,11 @@ msgstr ""
 msgid "<span style=\"color: #e76054;\">NOTE:</span> Changing the form title also changes the shortcode!"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:179, add-ons/multiple-forms/register-forms.php:182, add-ons/user-listing/userlisting.php:2651
+#: add-ons/multiple-forms/edit-profile-forms.php:179, add-ons/multiple-forms/register-forms.php:182, add-ons/user-listing/userlisting.php:2690
 msgid "The shortcode will be available after you publish this form."
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:190, add-ons/multiple-forms/register-forms.php:193, add-ons/user-listing/userlisting.php:2693
+#: add-ons/multiple-forms/edit-profile-forms.php:190, add-ons/multiple-forms/register-forms.php:193, add-ons/user-listing/userlisting.php:2732
 msgid "Form Shortcode"
 msgstr ""
 
@@ -4533,7 +4545,7 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:183, add-ons/user-listing/userlisting.php:355, add-ons/user-listing/userlisting.php:979, add-ons/user-listing/userlisting.php:2739, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:294
+#: add-ons/user-listing/userlisting.php:183, add-ons/user-listing/userlisting.php:355, add-ons/user-listing/userlisting.php:979, add-ons/user-listing/userlisting.php:2790, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:294
 msgid "Role"
 msgstr ""
 
@@ -4541,11 +4553,11 @@ msgstr ""
 msgid "Role Slug"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:185, add-ons/user-listing/userlisting.php:2733
+#: add-ons/user-listing/userlisting.php:185, add-ons/user-listing/userlisting.php:2784
 msgid "Registration Date"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:186, add-ons/user-listing/userlisting.php:2738
+#: add-ons/user-listing/userlisting.php:186, add-ons/user-listing/userlisting.php:2789
 msgid "Number of Posts"
 msgstr ""
 
@@ -4573,7 +4585,7 @@ msgstr ""
 msgid "Search all Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:237, add-ons/user-listing/userlisting.php:2830
+#: add-ons/user-listing/userlisting.php:237, add-ons/user-listing/userlisting.php:2881
 msgid "Faceted Menus"
 msgstr ""
 
@@ -4601,11 +4613,11 @@ msgstr ""
 msgid "Go Back Link"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:323, add-ons/user-listing/userlisting.php:3048
+#: add-ons/user-listing/userlisting.php:323, add-ons/user-listing/userlisting.php:3099
 msgid "All-userlisting Template"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:326, add-ons/user-listing/userlisting.php:3049
+#: add-ons/user-listing/userlisting.php:326, add-ons/user-listing/userlisting.php:3100
 msgid "Single-userlisting Template"
 msgstr ""
 
@@ -4613,7 +4625,7 @@ msgstr ""
 msgid "Avatar"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:354, add-ons/user-listing/userlisting.php:2734, features/admin-approval/class-admin-approval.php:178
+#: add-ons/user-listing/userlisting.php:354, add-ons/user-listing/userlisting.php:2785, features/admin-approval/class-admin-approval.php:178
 msgid "Firstname"
 msgstr ""
 
@@ -4641,19 +4653,19 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:973, add-ons/user-listing/userlisting.php:2745
+#: add-ons/user-listing/userlisting.php:973, add-ons/user-listing/userlisting.php:2796
 msgid "Jabber"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:970, add-ons/user-listing/userlisting.php:2744
+#: add-ons/user-listing/userlisting.php:970, add-ons/user-listing/userlisting.php:2795
 msgid "Yim"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:967, add-ons/user-listing/userlisting.php:2743
+#: add-ons/user-listing/userlisting.php:967, add-ons/user-listing/userlisting.php:2794
 msgid "Aim"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:955, add-ons/user-listing/userlisting.php:2736
+#: add-ons/user-listing/userlisting.php:955, add-ons/user-listing/userlisting.php:2787
 msgid "Display Name"
 msgstr ""
 
@@ -4661,315 +4673,315 @@ msgstr ""
 msgid "First/Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1276, add-ons/user-listing/userlisting.php:1801, add-ons/user-listing/userlisting.php:2410, add-ons/user-listing/userlisting.php:3711
+#: add-ons/user-listing/userlisting.php:1279, add-ons/user-listing/userlisting.php:1809, add-ons/user-listing/userlisting.php:2449, add-ons/user-listing/userlisting.php:3762
 msgid "Search Users by All Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1578
+#: add-ons/user-listing/userlisting.php:1586
 msgid "Click here to see more information about this user."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1575
+#: add-ons/user-listing/userlisting.php:1583
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1575, add-ons/user-listing/userlisting.php:1575
+#: add-ons/user-listing/userlisting.php:1583, add-ons/user-listing/userlisting.php:1583
 msgid "More..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1623, front-end/extra-fields/map/map.php:15
+#: add-ons/user-listing/userlisting.php:1631, front-end/extra-fields/map/map.php:15
 msgid "Remove Marker"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1605
+#: add-ons/user-listing/userlisting.php:1613
 msgid "View Map"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1758, add-ons/user-listing/userlisting.php:1755
+#: add-ons/user-listing/userlisting.php:1766, add-ons/user-listing/userlisting.php:1763
 msgid "Click here to go back"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1755, add-ons/user-listing/userlisting.php:1755
+#: add-ons/user-listing/userlisting.php:1763, add-ons/user-listing/userlisting.php:1763
 msgid "Back"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1820
+#: add-ons/user-listing/userlisting.php:1828
 msgid "You don't have any pagination settings on this userlisting!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1788
+#: add-ons/user-listing/userlisting.php:1796
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1789
+#: add-ons/user-listing/userlisting.php:1797
 msgid "&laquo; Prev"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1790
+#: add-ons/user-listing/userlisting.php:1798
 msgid "Next &raquo; "
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1791
+#: add-ons/user-listing/userlisting.php:1799
 msgid "Last &raquo;&raquo;"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1869
+#: add-ons/user-listing/userlisting.php:1877
 msgid "Show All"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1870
+#: add-ons/user-listing/userlisting.php:1878
 msgid "Hide"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1951, admin/advanced-settings/includes/views/view-fields.php:70
+#: add-ons/user-listing/userlisting.php:1959, admin/advanced-settings/includes/views/view-fields.php:70
 msgid "Choose..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1990
+#: add-ons/user-listing/userlisting.php:1998
 msgid "Choose or type in an option..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2117
+#: add-ons/user-listing/userlisting.php:2125
 msgid "No options available"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2272
+#: add-ons/user-listing/userlisting.php:2311
 msgid "Remove All Filters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2448
+#: add-ons/user-listing/userlisting.php:2487
 msgid "Search"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2449
+#: add-ons/user-listing/userlisting.php:2488
 msgid "Clear Results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2654
+#: add-ons/user-listing/userlisting.php:2693
 msgid "Use this shortcode on the page you want the form to be displayed:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2657
+#: add-ons/user-listing/userlisting.php:2696
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2662, add-ons/user-listing/userlisting.php:2667
+#: add-ons/user-listing/userlisting.php:2701, add-ons/user-listing/userlisting.php:2706
 msgid "Extra shortcode parameters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2664
+#: add-ons/user-listing/userlisting.php:2703
 msgid "View all extra shortcode parameters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2670
+#: add-ons/user-listing/userlisting.php:2709
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2671
+#: add-ons/user-listing/userlisting.php:2710
 msgid "Example:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2673
+#: add-ons/user-listing/userlisting.php:2712
 msgid "Remember though, that the field-value combination must exist in the database."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2679
+#: add-ons/user-listing/userlisting.php:2718
 msgid "displays only the users that you specified the user_id for"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2685
+#: add-ons/user-listing/userlisting.php:2724
 msgid "displays all users except the ones you specified the user_id for"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2735, features/admin-approval/class-admin-approval.php:179
+#: add-ons/user-listing/userlisting.php:2786, features/admin-approval/class-admin-approval.php:179
 msgid "Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2760
+#: add-ons/user-listing/userlisting.php:2811
 msgid "Random (very slow on large databases > 10K user)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2763
+#: add-ons/user-listing/userlisting.php:2814
 msgid "Ascending"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2764
+#: add-ons/user-listing/userlisting.php:2815
 msgid "Descending"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2769, add-ons/user-listing/userlisting.php:2781
+#: add-ons/user-listing/userlisting.php:2820, add-ons/user-listing/userlisting.php:2832
 msgid "Roles to Display"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2769, add-ons/user-listing/userlisting.php:2781
+#: add-ons/user-listing/userlisting.php:2820, add-ons/user-listing/userlisting.php:2832
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2770, add-ons/user-listing/userlisting.php:2782
+#: add-ons/user-listing/userlisting.php:2821, add-ons/user-listing/userlisting.php:2833
 msgid "Number of Users/Page"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2770, add-ons/user-listing/userlisting.php:2782
+#: add-ons/user-listing/userlisting.php:2821, add-ons/user-listing/userlisting.php:2833
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2771, add-ons/user-listing/userlisting.php:2783
+#: add-ons/user-listing/userlisting.php:2822, add-ons/user-listing/userlisting.php:2834
 msgid "Default Sorting Criteria"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2771, add-ons/user-listing/userlisting.php:2783
+#: add-ons/user-listing/userlisting.php:2822, add-ons/user-listing/userlisting.php:2834
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2772, add-ons/user-listing/userlisting.php:2784
+#: add-ons/user-listing/userlisting.php:2823, add-ons/user-listing/userlisting.php:2835
 msgid "Default Sorting Order"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2772, add-ons/user-listing/userlisting.php:2784
+#: add-ons/user-listing/userlisting.php:2823, add-ons/user-listing/userlisting.php:2835
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2773, add-ons/user-listing/userlisting.php:2785
+#: add-ons/user-listing/userlisting.php:2824, add-ons/user-listing/userlisting.php:2836
 msgid "Avatar Size (All-userlisting)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2773, add-ons/user-listing/userlisting.php:2785
+#: add-ons/user-listing/userlisting.php:2824, add-ons/user-listing/userlisting.php:2836
 msgid "Set the avatar size on the all-userlisting only"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2774, add-ons/user-listing/userlisting.php:2786
+#: add-ons/user-listing/userlisting.php:2825, add-ons/user-listing/userlisting.php:2837
 msgid "Avatar Size (Single-userlisting)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2774, add-ons/user-listing/userlisting.php:2786
+#: add-ons/user-listing/userlisting.php:2825, add-ons/user-listing/userlisting.php:2837
 msgid "Set the avatar size on the single-userlisting only"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2775, add-ons/user-listing/userlisting.php:2787
+#: add-ons/user-listing/userlisting.php:2826, add-ons/user-listing/userlisting.php:2838
 msgid "Visible only to logged in users?"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2775, add-ons/user-listing/userlisting.php:2787
+#: add-ons/user-listing/userlisting.php:2826, add-ons/user-listing/userlisting.php:2838
 msgid "The userlisting will be visible only for logged in users"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2776, add-ons/user-listing/userlisting.php:2788
+#: add-ons/user-listing/userlisting.php:2827, add-ons/user-listing/userlisting.php:2839
 msgid "Visible to following Roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2776, add-ons/user-listing/userlisting.php:2788
+#: add-ons/user-listing/userlisting.php:2827, add-ons/user-listing/userlisting.php:2839
 msgid "The userlisting will only be visible to the following roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2795
+#: add-ons/user-listing/userlisting.php:2846
 msgid "Userlisting Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2820
+#: add-ons/user-listing/userlisting.php:2871
 msgid "Label"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2820
+#: add-ons/user-listing/userlisting.php:2871
 msgid "Choose the facet name that appears on the frontend"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2821
+#: add-ons/user-listing/userlisting.php:2872
 msgid "Facet Type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2821
+#: add-ons/user-listing/userlisting.php:2872
 msgid "Choose the facet menu type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2822
+#: add-ons/user-listing/userlisting.php:2873
 msgid "Facet Meta"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2822
+#: add-ons/user-listing/userlisting.php:2873
 msgid "Choose the meta field for the facet menu. If you want to use a repeater meta or a meta outisde Profile Builder just type the value and press enter."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2823
+#: add-ons/user-listing/userlisting.php:2874
 msgid "Behaviour"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2823
+#: add-ons/user-listing/userlisting.php:2874
 msgid "Narrow the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2823
+#: add-ons/user-listing/userlisting.php:2874
 msgid "Expand the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2823
+#: add-ons/user-listing/userlisting.php:2874
 msgid "Choose how multiple selections affect the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2824
+#: add-ons/user-listing/userlisting.php:2875
 msgid "Visible choices"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2824
+#: add-ons/user-listing/userlisting.php:2875
 msgid "Show a toggle link after this many choices. Leave blank for all"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2849
+#: add-ons/user-listing/userlisting.php:2900
 msgid "Search Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2849
+#: add-ons/user-listing/userlisting.php:2900
 msgid "Choose the fields in which the Search Field will look in"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2854
+#: add-ons/user-listing/userlisting.php:2905
 msgid "Search Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2870
+#: add-ons/user-listing/userlisting.php:2921
 msgid "Themes: add style to your user listing section"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3001
+#: add-ons/user-listing/userlisting.php:3052
 msgid "Preview"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3025, admin/advanced-settings/includes/views/view-forms.php:158
+#: add-ons/user-listing/userlisting.php:3076, admin/advanced-settings/includes/views/view-forms.php:158
 msgid "Reset Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3039
+#: add-ons/user-listing/userlisting.php:3090
 msgid "Reset %s Theme Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3040
+#: add-ons/user-listing/userlisting.php:3091
 msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3044, admin/advanced-settings/includes/views/view-forms.php:505
+#: add-ons/user-listing/userlisting.php:3095, admin/advanced-settings/includes/views/view-forms.php:505
 msgid "Select which settings you want to reset:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3047
+#: add-ons/user-listing/userlisting.php:3098
 msgid "User-Listing Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3050
+#: add-ons/user-listing/userlisting.php:3101
 msgid "All Theme Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3063, admin/advanced-settings/includes/views/view-forms.php:529
+#: add-ons/user-listing/userlisting.php:3114, admin/advanced-settings/includes/views/view-forms.php:529
 msgid "Confirm"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3687
+#: add-ons/user-listing/userlisting.php:3738
 msgid "You need to activate the Userlisting feature from within the \"Add-ons\" page!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3687
+#: add-ons/user-listing/userlisting.php:3738
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3864
+#: add-ons/user-listing/userlisting.php:3915
 msgid "No results found!"
 msgstr ""
 
@@ -6610,15 +6622,15 @@ msgstr ""
 msgid "Select Template"
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:223
+#: features/content-restriction/content-restriction-filtering.php:243
 msgid "&hellip;"
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:305
+#: features/content-restriction/content-restriction-filtering.php:325
 msgid "You must be logged in to view the comments."
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:303
+#: features/content-restriction/content-restriction-filtering.php:323
 msgid "Comments are restricted for your user role."
 msgstr ""
 

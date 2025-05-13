@@ -258,6 +258,10 @@
     float: left;
 }
 
+.wp-theme-oceanwp .wppb-form-field input[type="number"]{
+    max-width: 100% !important;
+}
+
 #wppb-login-wrap .login-remember {
     display: flex;
     align-items: center;
@@ -281,6 +285,11 @@
 .wppb-user-forms .wppb-wysiwyg .wp-editor-wrap .wp-editor-tabs * {
     box-sizing: content-box !important;
 }
+
+ .wp-theme-oceanwp .woocommerce .wppb-user-forms .wppb-wysiwyg .wp-editor-wrap .wp-editor-tabs *{
+     width: auto !important;
+     padding: 3px 8px 4px !important;
+ }
 
 .wppb-user-forms .wp-editor-wrap input {
     float: none;
@@ -991,12 +1000,15 @@ li.wppb-facet-search {
     justify-content: center;
 }
 
-.wppb-form-field.pbpl-class.wppb-default-password button.wppb-toggle-pw,
-.wppb-form-field.pbpl-class.wppb-default-repeat-password button.wppb-toggle-pw,
-#wppb-login-wrap .login-password.pbpl-class button.wppb-toggle-pw,
-#wppb-recover-password-container .wppb-form-field.pbpl-class.passw1 .wppb-toggle-pw,
-#wppb-recover-password-container .wppb-form-field.pbpl-class.passw2 .wppb-toggle-pw {
-    /*top: 0;*/
+.wp-theme-oceanwp .wppb-form-field.wppb-default-password button.wppb-toggle-pw,
+.wp-theme-oceanwp .wppb-form-field.wppb-default-repeat-password button.wppb-toggle-pw{
+    width: auto !important;
+}
+
+#wppb-loginform .login-password .show-password-input,
+.woocommerce .wppb-default-repeat-password .show-password-input,
+.woocommerce .wppb-default-password .show-password-input {
+    display: none !important;
 }
 
 .wppb-form-field.wppb-default-password button img,

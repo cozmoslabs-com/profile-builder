@@ -96,16 +96,15 @@ function wppb_show_admin_bar($content){
 
     if ( $general_settings != 'not_found' && $current_user->ID && !empty( $selected_roles ) )
         foreach ( $current_user->roles as $role_key ) {
-			if( $role_key == 'administrator' && current_user_can( 'manage_options' ) )
+			if( $role_key == 'administrator' && current_user_can( 'manage_options' ) && !in_array( 'allUserRoles', $selected_roles ) )
 				break;
             else if ( empty( $GLOBALS['wp_roles']->roles[$role_key] ) )
                 continue;
 
             $role = $GLOBALS['wp_roles']->roles[$role_key];
 
-            if ( !empty( $selected_roles ) && in_array( $role['name'], $selected_roles ) && $show === null )
+            if ( !empty( $selected_roles ) && ( in_array( $role['name'], $selected_roles ) || in_array( 'allUserRoles', $selected_roles ) || in_array( 'allUserRolesExceptAdmin', $selected_roles ) ) && $show === null )
                 $show = false;
-
         }
     return $show === null ? $content : $show;
 }

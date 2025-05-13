@@ -216,16 +216,18 @@ function wppbc_disable_admin_approval_for_user_role( $user_id ) {
 /* authors and contributors shouldn't be allowed to create pages with the register shortcode in them */
 add_filter( 'the_content', 'wppb_maybe_remove_register_shortcode' );
 function wppb_maybe_remove_register_shortcode( $content ){
-    if ( has_shortcode( $content, 'wppb-register' ) ){
-        $author_id = get_the_author_meta( 'ID' );
-        if( !empty( $author_id ) ){
-            if( !user_can( $author_id, 'edit_others_posts' ) ) {
-                remove_shortcode('wppb-register');
-            }
-        }
-    }
+	if ( has_shortcode( $content, 'wppb-register' ) ){
+		$author_id = get_the_author_meta( 'ID' );
+		if( !empty( $author_id ) ){
+			if( !user_can( $author_id, 'edit_others_posts' ) ) {
+				remove_shortcode('wppb-register');
 
-    return $content;
+				$content = str_replace('[wppb-register]', __( 'Only an administrator can create pages with the register shortcode.', 'profile-builder' ), $content);
+			}
+		}
+	}
+
+	return $content;
 }
 
 /* custom redirect after registration on wp default register form */

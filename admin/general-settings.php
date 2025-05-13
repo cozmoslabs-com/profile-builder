@@ -377,11 +377,15 @@ function wppb_general_settings_content() {
 						$general_settings = get_option( 'wppb_general_settings' );
 						$selected_roles = isset($general_settings['hide_admin_bar_for']) ? $general_settings['hide_admin_bar_for'] : '';
 
+                        echo '<option value="allUserRoles"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRoles', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles',  'profile-builder' ) . '</option>';
+                        echo '<option value="allUserRolesExceptAdmin"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRolesExceptAdmin', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles Except Admin',  'profile-builder' ) . '</option>';
+                        
 						foreach ( $wp_roles->roles as $role ) {
 							$key = $role['name'];
 
 							echo '<option value="'.esc_attr( $key ).'"' . ( ( !empty( $selected_roles )  && in_array( $key, $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html( translate_user_role( $key ) ) . '</option>';
 						}
+                        
 						?>
                     </select>
 

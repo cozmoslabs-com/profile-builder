@@ -258,6 +258,8 @@
 <?php __("Select the page which contains the \"[wppb-recover-password]\" shortcode.", "profile-builder"); ?>
 <?php __("Other features", "profile-builder"); ?>
 <?php __("Hide Admin Bar for User Roles", "profile-builder"); ?>
+<?php __("All User Roles", "profile-builder"); ?>
+<?php __("All User Roles Except Admin", "profile-builder"); ?>
 <?php __("Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.", "profile-builder"); ?>
 <?php __("Easily create new custom user roles or customize any existing user role capabilities.", "profile-builder"); ?>
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
@@ -1012,6 +1014,7 @@
 <?php __("Before you can access your account, an administrator needs to approve it. You will be notified via email.", "profile-builder"); ?>
 <?php __("This username is already activated!", "profile-builder"); ?>
 <?php __("Could not create user!", "profile-builder"); ?>
+<?php __("Only an administrator can create pages with the register shortcode.", "profile-builder"); ?>
 <?php __("After Login", "profile-builder"); ?>
 <?php __("After Logout", "profile-builder"); ?>
 <?php __("After Registration", "profile-builder"); ?>
