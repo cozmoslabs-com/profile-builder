@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.13.8
+Stable tag: 3.13.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.13.9 =
+* Fix: Security issue regarding Authenticated Stored Cross Site Scripting via user_meta and compare shortcodes. Thanks to Muhammad Yudha and the Wordfence team
+* Fix: Security issue regarding Content Spoofing with paid version active. Thanks to Truong Huu Phuc and the Patchstack team
+* Fix: When a user tries to access restricted content and is sent to a Profile Builder login form, after a successful login he should now return to the restricted content. This new behaviour can be disabled using a filter: wppb_add_redirect_to_param
+* Fix: Improve behaviour of floating submit button on settings pages
+* Fix: The `Redirect on empty required field option` is now taking into account Conditional Logic rules
+* Misc: Added unique index to the signups table we create on single sites when the Email Confirmation functionality is used
+
 = 3.13.8 =
 * Enhancement: Added an option to the content restriction shortcode to display some content only to users that do not have certain roles: [wppb-restrict display_to="not_role" user_roles="subscriber"]Content[/wppb-restrict]
 * Enhancement: Added `All User Roles` and `All User Roles except Admin` options to the admin bar settings to make it easier to disable globally

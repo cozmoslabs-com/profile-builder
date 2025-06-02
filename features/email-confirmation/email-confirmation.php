@@ -19,6 +19,7 @@ function wppb_signup_schema( $oldVal, $newVal ){
 
 		$sql = "
 			CREATE TABLE $tableName (
+				signup_id bigint(20) NOT NULL AUTO_INCREMENT,
 				domain varchar(191) NOT NULL default '',
 				path varchar(100) NOT NULL default '',
 				title longtext NOT NULL,
@@ -29,6 +30,7 @@ function wppb_signup_schema( $oldVal, $newVal ){
 				active tinyint(1) NOT NULL default '0',
 				activation_key varchar(50) NOT NULL default '',
 				meta longtext,
+				PRIMARY KEY (signup_id),
 				KEY activation_key (activation_key),
 				KEY domain (domain)
 			) $charset_collate;";
@@ -39,6 +41,65 @@ function wppb_signup_schema( $oldVal, $newVal ){
 }
 add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 );
 
+// Function to update existing signups table to add primary key
+function wppb_update_signup_table_schema() {
+	// Check if we've already updated the table
+	$table_updated = get_option('wppb_signups_table_updated', 'no');
+	if ($table_updated === 'yes') {
+		return; // Table has already been updated, no need to run again
+	}
+
+	global $wpdb;
+	$tableName = $wpdb->prefix.'signups';
+
+	// Check if the table exists
+	$table_exists = $wpdb->get_var("SHOW TABLES LIKE '$tableName'");
+	if (!$table_exists) {
+		return; // Table doesn't exist, nothing to update
+	}
+
+	// Check if email confirmation is enabled
+	$wppb_general_settings = get_option( 'wppb_general_settings', 'not_found' );
+	if( $wppb_general_settings == 'not_found' || empty($wppb_general_settings['emailConfirmation']) || $wppb_general_settings['emailConfirmation'] != 'yes' ) {
+		return; // Email confirmation is not enabled, no need to update the table
+	}
+
+    // Check if the signup_id column exists
+    $column_exists = $wpdb->get_results("SHOW COLUMNS FROM $tableName LIKE 'signup_id'");
+    if (empty($column_exists)) {
+        // Column doesn't exist, add it with PRIMARY KEY in a single operation
+        $result = $wpdb->query("ALTER TABLE $tableName ADD COLUMN signup_id bigint(20) NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (signup_id)");
+
+        // Successfully updated the table
+        if ($result !== false) {
+            update_option('wppb_signups_table_updated', 'yes');
+        }
+    } else {
+        // Column exists, check if it's a primary key
+        $primary_key = $wpdb->get_results("SHOW KEYS FROM $tableName WHERE Key_name = 'PRIMARY'");
+        if (empty($primary_key)) {
+            // No primary key, add it
+            $result = $wpdb->query("ALTER TABLE $tableName ADD PRIMARY KEY (signup_id)");
+
+            // Successfully updated the table
+            if ($result !== false) {
+                update_option('wppb_signups_table_updated', 'yes');
+            }
+        } else {
+            // Table already has primary key, mark as updated
+            update_option('wppb_signups_table_updated', 'yes');
+        }
+    }
+}
+
+// Run the update function only when the plugin is activated
+function wppb_run_signup_table_update_on_activation() {
+	// Delete the option to force the update to run again on activation
+	delete_option('wppb_signups_table_updated');
+	// Run the update function
+	wppb_update_signup_table_schema();
+}
+register_activation_hook(__FILE__, 'wppb_run_signup_table_update_on_activation');
 
 //function to add new tab in the default WP userlisting with all the users who didn't confirm their account yet
 function wppb_add_pending_users_header_script(){

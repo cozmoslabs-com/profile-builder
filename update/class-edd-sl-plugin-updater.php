@@ -621,7 +621,7 @@ class WPPB_Plugin_Updater {
     }
 
     public function admin_activation_notices() {
-        if ( isset( $_GET['wppb_sl_activation'] ) && ! empty( $_GET['message'] ) ) {
+        if ( isset( $_GET['wppb_sl_activation'] ) && ! empty( $_GET['message'] ) && isset( $_GET['wppb_license_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_GET['wppb_license_nonce'] ), 'wppb_license_display_message' ) ) {
 
             switch( $_GET['wppb_sl_activation'] ) {
                 case 'false':
@@ -731,7 +731,7 @@ class WPPB_Plugin_Updater {
             // Check if anything passed on a message constituting a failure
             if ( ! empty( $message ) ) {
                 $message = implode( "<br/>", array_unique($message) );//if we got the same message for multiple addons show just one, and add a br in case we show multiple messages
-                $redirect = add_query_arg( array( 'wppb_sl_activation' => 'false', 'message' => urlencode( $message ) ), $this->license_page_url() );
+                $redirect = add_query_arg( array( 'wppb_sl_activation' => 'false', 'message' => urlencode( $message ) ), wp_nonce_url( $this->license_page_url(), 'wppb_license_display_message', 'wppb_license_nonce' ) );
 
                 $this->update_option( 'wppb_license_status', isset( $license_data->error ) ? $license_data->error : $license_data->license );
 
@@ -742,7 +742,7 @@ class WPPB_Plugin_Updater {
             // $license_data->license will be either "valid" or "invalid"
             $this->update_option( 'wppb_license_status', isset( $license_data->error ) ? $license_data->error : $license_data->license );
 
-            wp_redirect( add_query_arg( array( 'wppb_sl_activation' => 'true', 'message' => urlencode( __( 'You have successfully activated your license.', 'profile-builder' ) ) ), $this->license_page_url() ) );
+            wp_redirect( add_query_arg( array( 'wppb_sl_activation' => 'true', 'message' => urlencode( __( 'You have successfully activated your license.', 'profile-builder' ) ) ), wp_nonce_url( $this->license_page_url(), 'wppb_license_display_message', 'wppb_license_nonce' ) ) );
             exit();
         }
     }
@@ -828,7 +828,7 @@ class WPPB_Plugin_Updater {
                 else
                     $message = __( 'An error occurred, please try again.', 'profile-builder' );
 
-                wp_redirect( add_query_arg( array( 'wppb_sl_activation' => 'false', 'message' => urlencode( $message ) ), $this->license_page_url() ) );
+                wp_redirect( add_query_arg( array( 'wppb_sl_activation' => 'false', 'message' => urlencode( $message ) ), wp_nonce_url( $this->license_page_url(), 'wppb_license_display_message', 'wppb_license_nonce' ) ) );
                 exit();
             }
 

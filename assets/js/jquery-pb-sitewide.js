@@ -462,185 +462,147 @@ jQuery(document).ready(function() {
 
 
 /**
- * Reposition the Update/Publish button/section on scroll in Admin Dashboard --> PB CPTs
+ * Handle Admin Dashboard Publish Box/Button position
+ *
  */
 jQuery(window).on('load', function () {
-    if(jQuery('body').is('[class*="post-type-wppb"]') && jQuery('#side-sortables #submitdiv').length > 0 )
-        wppbRepositionUpdateButton();
-});
+    handlePublishBoxPosition();
 
-function wppbRepositionUpdateButton() {
-    let elementOffset = jQuery('#side-sortables').offset().top,
-        mobileScreen  = window.matchMedia("(max-width: 1401px)"),
-        breakPoint = 0,
-        formWidth = '';
-
-    if (mobileScreen.matches)
-        breakPoint = elementOffset + 115; // 115px buttons container height
-    else breakPoint = elementOffset - 32; // 32px admin bar height
-
-    jQuery(window).on('scroll', function() {
-        if ( jQuery(window).scrollTop() >= (breakPoint) ) {
-            jQuery('#side-sortables').addClass('cozmoslabs-publish-metabox-fixed');
-
-            if (mobileScreen.matches) {
-                formWidth = jQuery('#poststuff').outerWidth();
-                jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
-                    'width': formWidth + 'px',
-                });
-            }
-        }
-        else {
-            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
-                'width': 'unset',
-            });
-
-            jQuery('#side-sortables').removeClass('cozmoslabs-publish-metabox-fixed');
-        }
-    });
-
+    // Reset the scroll event on manual window resize to keep the Publish button scrollable without refreshing
     jQuery(window).on('resize', function() {
-        if (mobileScreen.matches) {
-            formWidth = jQuery('#poststuff').outerWidth();
 
-            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
-                'width': formWidth + 'px',
-            });
-        }
-        else {
-            jQuery('.cozmoslabs-publish-metabox-fixed #publishing-action').css({
-                'width': 'unset',
-            });
-        }
+        // clear existing scroll events
+        jQuery(window).off('scroll');
+
+        handlePublishBoxPosition();
     });
-}
-
-
-/**
- * Reposition the Publish Box/Button in Admin Dashboard --> Custom Pages
- *
- * */
-
-jQuery(window).on('load', function () {
-    let largeScreen  = window.matchMedia("(min-width: 1402px)"),
-        pageBody = jQuery('body');
-
-    if (pageBody.is('[class*="profile-builder_page"], [class*="admin_page_profile-builder"]')) {
-        if (largeScreen.matches)
-            wppbRepositionPagePublishBox();
-        else wppbRepositionPagePublishButton();
-
-        jQuery(window).on('scroll resize', function() {
-            if (largeScreen.matches)
-                wppbRepositionPagePublishBox();
-            else wppbRepositionPagePublishButton();
-        });
-    }
 });
 
 
 /**
- *  Reposition Publish Box (large screens)
+ * Reposition the Publish Box/Button in Admin Dashboard
+ * - PMS CPTs
+ * - Custom Pages
+ *
+ */
+function handlePublishBoxPosition() {
+    let largeScreen  = window.matchMedia("(min-width: 1402px)"),
+        settingsContainer =  jQuery('#wppb-register-version'),
+        buttonContainer = jQuery('.cozmoslabs-submit');
+
+    if ( settingsContainer.length === 0 ){
+        settingsContainer = jQuery( '.cozmoslabs-settings' );
+    }
+
+    // determine if we are on a PMS Custom Page or CPT
+    if ( settingsContainer.length === 0 ) {
+        settingsContainer = jQuery('#poststuff');
+        buttonContainer = jQuery('#submitdiv');
+    }
+
+    if ( settingsContainer.length > 0 && buttonContainer.length > 0 ) {
+
+        if ( largeScreen.matches )
+            wppbRepositionPublishMetaBox( settingsContainer, buttonContainer );
+        else wppbRepositionPublishButton( buttonContainer );
+
+    }
+}
+
+/**
+ *  Reposition Publish Meta-Box
+ * - PMS CPTs
+ * - Custom Pages
+ *
+ *  - works on large screens
  *
  * */
-function wppbRepositionPagePublishBox() {
-    let topBox = jQuery('.cozmoslabs-wrap .cozmoslabs-nav-tab-wrapper'),
-        buttonWrapper = jQuery('.cozmoslabs-wrap div.submit, #side-sortables #page-save-metabox');
+function wppbRepositionPublishMetaBox( settingsContainer, buttonContainer ) {
 
-    if ( topBox.length > 0 && buttonWrapper.length > 0 ) {
+    buttonContainer.removeClass('cozmoslabs-publish-button-fixed');
 
-        let cozmoslabsWrapper = jQuery('.cozmoslabs-wrap');
-
-        cozmoslabsWrapper.removeClass('cozmoslabs-publish-button-fixed');
-        cozmoslabsWrapper.addClass('cozmoslabs-publish-box-fixed');
-
-        let bannerHeight = jQuery('.cozmoslabs-banner').outerHeight(),
-            topBoxOffsetTop = topBox.offset().top;
-
-        let cozmoslabsWrapperWidth = cozmoslabsWrapper.outerWidth();
-
-        if (cozmoslabsWrapperWidth < 1200)
-            cozmoslabsWrapper.css({
-                'margin': '30px 10px',
-            });
+    if ( buttonContainer.length > 0 ) {
 
         // set initial position
-        wppbSetPagePublishBoxPosition();
+        wppbSetPublishMetaBoxPosition();
 
-        // position the Publish Box
-        function wppbSetPagePublishBoxPosition() {
-            let distanceToTop = wppbCalculateDistanceToTop(topBox);
+        // reposition on scroll
+        jQuery(window).scroll(function () {
+            wppbSetPublishMetaBoxPosition();
+        });
 
-            if (distanceToTop < 50) {
-                let buttonOffsetLeft = buttonWrapper.offset().left;
+    }
 
-                buttonWrapper.css({
-                    'position': 'fixed',
-                    'top': '50px',
-                    'left': buttonOffsetLeft,
-                    'box-shadow': '0 3px 10px 0 #aaa',
-                });
-            } else {
-                buttonWrapper.css({
-                    'position': 'absolute',
-                    'left': 'auto',
-                    'box-shadow': 'none',
-                });
+    /**
+     * Position the Publish Meta-Box
+     */
+    function wppbSetPublishMetaBoxPosition() {
 
-                if ( buttonWrapper.hasClass('submit') ) {
-                    buttonWrapper.css({
-                        'top': topBoxOffsetTop - bannerHeight - 62 + 'px', // 32px is the admin bar height + 30px cozmoslabs-wrap margin top
-                    });
-                } else {
-                    buttonWrapper.css({
-                        'top': 0,
-                    });
-                }
+        if ( wppbCalculateDistanceToTop( settingsContainer ) < 50 ) {
+            buttonContainer.addClass('cozmoslabs-publish-metabox-fixed');
 
-            }
+            buttonContainer.css({
+                'left'   : settingsContainer.offset().left + settingsContainer.outerWidth() + 'px'
+            });
+        } else {
+
+            buttonContainer.removeClass('cozmoslabs-publish-metabox-fixed');
+
+            buttonContainer.css({
+                'left'   : 'unset'
+            });
         }
+
     }
 
 }
 
-
-
 /**
- *  Reposition Publish Button (small/medium screens)
+ *  Reposition Publish Button
+ *  - PMS CPTs
+ *  - Custom Pages
+ *
+ *  - works on small/medium screens
  *
  * */
-function wppbRepositionPagePublishButton() {
-    let buttonWrapper = jQuery('.cozmoslabs-wrap div.submit, #side-sortables #page-save-metabox'),
-        button = jQuery('.cozmoslabs-wrap div.submit input[type="submit"], .cozmoslabs-wrap #page-save-metabox input[type="submit"]'),
-        cozmoslabsWrapper = jQuery('.cozmoslabs-wrap');
+function wppbRepositionPublishButton( buttonContainer ) {
 
-    if ( buttonWrapper.length > 0 ) {
-        cozmoslabsWrapper.removeClass('cozmoslabs-publish-box-fixed');
+    buttonContainer.removeClass('cozmoslabs-publish-metabox-fixed');
+
+    if ( buttonContainer.length > 0 ) {
 
         // set initial position
-        wppbSetPagePublishButtonPosition();
-    }
+        wppbSetPublishButtonPosition();
 
-    // position the Publish Button
-    function wppbSetPagePublishButtonPosition() {
-        buttonWrapper.css({
-            'position': 'unset',
+        // reposition on scroll
+        jQuery(window).on('scroll', function() {
+            wppbSetPublishButtonPosition();
         });
 
-        if (wppbElementInViewport(buttonWrapper)) {
-            cozmoslabsWrapper.removeClass('cozmoslabs-publish-button-fixed');
+    }
+
+    /**
+     * Position the Publish Button
+     */
+    function wppbSetPublishButtonPosition() {
+
+        let button = buttonContainer.find('input[type="submit"]');
+
+        if ( wppbElementInViewport( buttonContainer ) ) {
+            buttonContainer.removeClass('cozmoslabs-publish-button-fixed');
 
             button.css({
-                'max-width': 'unset',
-                'margin-left': 'unset',
-            });
-        } else  {
-            cozmoslabsWrapper.addClass('cozmoslabs-publish-button-fixed');
+               'max-width': 'unset',
+               'left': 'unset',
+           });
+        }
+        else {
+            buttonContainer.addClass('cozmoslabs-publish-button-fixed');
 
             button.css({
-                'max-width': buttonWrapper.outerWidth() + 'px',
-                'margin-left': '-10px',
-            });
+               'max-width': buttonContainer.outerWidth() + 'px',
+               'left': buttonContainer.offset().left + 'px',
+           });
         }
     }
 }

@@ -31,6 +31,9 @@ function wppb_dashboard_page_content() {
 
     <div class="wrap cozmoslabs-wrap cozmoslabs-wrap--big">
 
+        <h1></h1>
+        <!-- WordPress Notices are added after the h1 tag -->
+
         <div class="cozmoslabs-page-header">
             <div class="cozmoslabs-section-title">
                 <h3 class="cozmoslabs-page-title"><?php esc_html_e( 'Dashboard', 'profile-builder' ); ?></h3>

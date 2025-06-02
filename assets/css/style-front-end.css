@@ -233,6 +233,10 @@
     position: relative;
 }
 
+.wppb-form-field .wppb-password-field-container input[type="password"] {
+    width: 100%;
+}
+
 .wppb-form-field label,
 #wppb-login-wrap .login-username label,
 #wppb-login-wrap .login-password label,

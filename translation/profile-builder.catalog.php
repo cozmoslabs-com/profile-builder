@@ -1202,19 +1202,34 @@
 <?php __("The userlisting will be visible only for logged in users", "profile-builder"); ?>
 <?php __("Visible to following Roles", "profile-builder"); ?>
 <?php __("The userlisting will only be visible to the following roles", "profile-builder"); ?>
+<?php __("Relation for Custom Fields Queries", "profile-builder"); ?>
+<?php __("The relation between multiple fields being added to the meta query", "profile-builder"); ?>
 <?php __("Userlisting Settings", "profile-builder"); ?>
+<?php __("Key", "profile-builder"); ?>
+<?php __("Choose the meta name for the desired field<br/>You can select from the options in the drop-down or type in a different one", "profile-builder"); ?>
+<?php __("Value", "profile-builder"); ?>
+<?php __("Input the field value", "profile-builder"); ?>
+<?php __("Compare", "profile-builder"); ?>
+<?php __("Choose the operator", "profile-builder"); ?>
+<?php __("Type", "profile-builder"); ?>
+<?php __("Choose the custom field type", "profile-builder"); ?>
+<?php __("Custom Field Queries", "profile-builder"); ?>
 <?php __("Label", "profile-builder"); ?>
 <?php __("Choose the facet name that appears on the frontend", "profile-builder"); ?>
 <?php __("Facet Type", "profile-builder"); ?>
 <?php __("Choose the facet menu type", "profile-builder"); ?>
 <?php __("Facet Meta", "profile-builder"); ?>
-<?php __("Choose the meta field for the facet menu. If you want to use a repeater meta or a meta outisde Profile Builder just type the value and press enter.", "profile-builder"); ?>
+<?php __("Choose the meta field for the facet menu. If you want to use a repeater meta or a meta outside Profile Builder just type the value and press enter.", "profile-builder"); ?>
 <?php __("Behaviour", "profile-builder"); ?>
 <?php __("Narrow the results", "profile-builder"); ?>
 <?php __("Expand the results", "profile-builder"); ?>
 <?php __("Choose how multiple selections affect the results", "profile-builder"); ?>
 <?php __("Visible choices", "profile-builder"); ?>
 <?php __("Show a toggle link after this many choices. Leave blank for all", "profile-builder"); ?>
+<?php __("User Login", "profile-builder"); ?>
+<?php __("User Email", "profile-builder"); ?>
+<?php __("User Display Name", "profile-builder"); ?>
+<?php __("User Website", "profile-builder"); ?>
 <?php __("Search Fields", "profile-builder"); ?>
 <?php __("Choose the fields in which the Search Field will look in", "profile-builder"); ?>
 <?php __("Search Settings", "profile-builder"); ?>
@@ -1491,11 +1506,9 @@
 <?php __("Specify the maximum number of characters a user can type in this field", "profile-builder"); ?>
 <?php __("The entered character number is not numerical\n", "profile-builder"); ?>
 <?php __("Your options have been saved.", "profile-builder"); ?>
-<?php __("Welcome to User Profile Picture!", "profile-builder"); ?>
-<?php __("Gutenberg Blocks", "profile-builder"); ?>
+<?php __("Profile Picture Settings", "profile-builder"); ?>
 <?php __("Disable Gutenberg Blocks", "profile-builder"); ?>
 <?php __("Select this option if you do not want User Profile Picture to show up in Gutenberg or do not plan on using the blocks.", "profile-builder"); ?>
-<?php __("Disable Image Sizes?", "profile-builder"); ?>
 <?php __("Disable Image Sizes", "profile-builder"); ?>
 <?php __("Select this option to disable the four image sizes User Profile Picture Creates.", "profile-builder"); ?>
 <?php __("Save Options", "profile-builder"); ?>

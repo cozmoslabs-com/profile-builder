@@ -176,9 +176,17 @@ function wppb_content_restriction_post_redirect() {
         return;
     }
 
-    // Pass the correct referer URL forward
-    $redirect_url = add_query_arg( array( 'wppb_referer_url' => urlencode( wppb_curpageurl() ) ), wppb_add_missing_http( $redirect_url ) );
+    // Allow filtering whether to add the 'redirect_to' parameter
+    $add_redirect_to = apply_filters( 'wppb_add_redirect_to_param', true, $current_url );
 
+    // Build the query arguments
+    $query_args = array( 'wppb_referer_url' => urlencode( wppb_curpageurl() ) );
+
+    if ( $add_redirect_to ) {
+        $query_args['redirect_to'] = $current_url;
+    }
+    // Pass the correct referer URL forward
+        $redirect_url = add_query_arg( $query_args, wppb_add_missing_http( $redirect_url ) );
     // Redirect
     nocache_headers();
     wp_redirect( apply_filters( 'wppb_restricted_post_redirect_url', $redirect_url ) );

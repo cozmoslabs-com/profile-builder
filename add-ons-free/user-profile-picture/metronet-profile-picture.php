@@ -224,32 +224,61 @@ class User_Profile_Picture {
         // Get options and defaults.
         $options = $this->get_options();
         ?>
-        <div class="wrap">
+
+        <div class="wrap wppb-wrap cozmoslabs-wrap">
+
+            <h1></h1>
+            <!-- WordPress Notices are added after the first h1/h2 tag inside the .wrap div -->
+
             <form action="" method="POST">
                 <?php wp_nonce_field( 'save_mpp_options' ); ?>
-                <h1><svg id="Layer_1" width="30" height="30" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753.53 979.74"><title>upp</title><path d="M806.37,185.9c0,40.27-30.49,72.9-68.11,72.9s-68.17-32.63-68.17-72.9S700.62,113,738.26,113,806.37,145.64,806.37,185.9Z" transform="translate(-123.47 -11)" fill="#4063ad"/><path d="M330.36,183.8c0,40.27-30.49,72.9-68.12,72.9s-68.17-32.63-68.17-72.9,30.52-72.87,68.17-72.87S330.36,143.56,330.36,183.8Z" transform="translate(-123.47 -11)" fill="#a34d9c"/><path d="M331.3,888.13V698.21H329c-31.64,0-57.28-27.45-57.28-61.29V336.5a118.37,118.37,0,0,1,5.43-34.79H179.84c-31.94,0-56.37,31.57-56.37,56.34V601.46h48.32V888.13Z" transform="translate(-123.47 -11)" fill="#a34d9c"/><path d="M388.59,636.92V990.74H611.88V636.92H671.5V336.5c0-30.63-27.64-69.57-69.6-69.57H398.56c-39.44,0-69.61,38.94-69.61,69.57V636.92Z" transform="translate(-123.47 -11)" fill="#f4831f"/><path d="M584.3,101c0,49.69-37.63,90-84,90S416.12,150.67,416.12,101s37.66-90,84.14-90S584.3,51.27,584.3,101Z" transform="translate(-123.47 -11)" fill="#f4831f"/><path d="M820.61,303.79H724.08a121.69,121.69,0,0,1,4.7,32.71V636.92c0,33.84-25.64,61.29-57.28,61.29h-2.33v192H828.7V603.54H877V360.16C877,335.36,854.62,303.79,820.61,303.79Z" transform="translate(-123.47 -11)" fill="#4063ad"/></svg> <?php esc_html_e( 'User Profile Picture', 'profile-builder' ); ?></h1>
-                <p><?php esc_html_e( 'Welcome to User Profile Picture!', 'profile-builder' ); ?></p>
-                <table class="form-table">
-                    <tbody>
-                    <tr>
-                        <th scope="row"><?php esc_html_e( 'Gutenberg Blocks', 'profile-builder' ); ?></th>
-                        <td>
+
+                <div class="cozmoslabs-page-header">
+                    <div class="cozmoslabs-section-title">
+
+                        <h3 class="cozmoslabs-page-title">
+<!--                            <svg id="Layer_1" width="30" height="30" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753.53 979.74"><title>upp</title><path d="M806.37,185.9c0,40.27-30.49,72.9-68.11,72.9s-68.17-32.63-68.17-72.9S700.62,113,738.26,113,806.37,145.64,806.37,185.9Z" transform="translate(-123.47 -11)" fill="#4063ad"/><path d="M330.36,183.8c0,40.27-30.49,72.9-68.12,72.9s-68.17-32.63-68.17-72.9,30.52-72.87,68.17-72.87S330.36,143.56,330.36,183.8Z" transform="translate(-123.47 -11)" fill="#a34d9c"/><path d="M331.3,888.13V698.21H329c-31.64,0-57.28-27.45-57.28-61.29V336.5a118.37,118.37,0,0,1,5.43-34.79H179.84c-31.94,0-56.37,31.57-56.37,56.34V601.46h48.32V888.13Z" transform="translate(-123.47 -11)" fill="#a34d9c"/><path d="M388.59,636.92V990.74H611.88V636.92H671.5V336.5c0-30.63-27.64-69.57-69.6-69.57H398.56c-39.44,0-69.61,38.94-69.61,69.57V636.92Z" transform="translate(-123.47 -11)" fill="#f4831f"/><path d="M584.3,101c0,49.69-37.63,90-84,90S416.12,150.67,416.12,101s37.66-90,84.14-90S584.3,51.27,584.3,101Z" transform="translate(-123.47 -11)" fill="#f4831f"/><path d="M820.61,303.79H724.08a121.69,121.69,0,0,1,4.7,32.71V636.92c0,33.84-25.64,61.29-57.28,61.29h-2.33v192H828.7V603.54H877V360.16C877,335.36,854.62,303.79,820.61,303.79Z" transform="translate(-123.47 -11)" fill="#4063ad"/></svg>-->
+                            <?php esc_html_e( 'User Profile Picture', 'profile-builder' ); ?>
+                            <a href="https://www.cozmoslabs.com/docs/profile-builder/add-ons/user-profile-picture/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank" data-code="f223" class="wppb-docs-link dashicons dashicons-editor-help"></a>
+                        </h3>
+
+                    </div>
+                </div>
+
+                <div class="cozmoslabs-form-subsection-wrapper">
+                    <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Profile Picture Settings', 'profile-builder' ); ?></h4>
+
+                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                        <label class="cozmoslabs-form-field-label" for="mpp-load-gutenberg"><?php esc_html_e('Disable Gutenberg Blocks', 'profile-builder'); ?></label>
+
+                        <div class="cozmoslabs-toggle-container">
                             <input type="hidden" name="options['load_gutenberg']" value="on" />
-                            <input id="mpp-load-gutenberg" type="checkbox" value="off" name="options[load_gutenberg]" <?php checked( 'off', $options['load_gutenberg'] ); ?> /> <label for="mpp-load-gutenberg"><?php esc_html_e( 'Disable Gutenberg Blocks', 'profile-builder' ); ?></label>
-                            <p class="description"><?php esc_html_e( 'Select this option if you do not want User Profile Picture to show up in Gutenberg or do not plan on using the blocks.', 'profile-builder' ); ?></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e( 'Disable Image Sizes?', 'profile-builder' ); ?></th>
-                        <td>
+                            <input id="mpp-load-gutenberg" type="checkbox" value="off" name="options[load_gutenberg]" <?php checked( 'off', $options['load_gutenberg'] ); ?> />
+                            <label class="cozmoslabs-toggle-track" for="mpp-load-gutenberg"></label>
+                        </div>
+
+                        <div class="cozmoslabs-toggle-description">
+                            <label class="cozmoslabs-description" for="mpp-load-gutenberg"><?php esc_html_e( 'Select this option if you do not want User Profile Picture to show up in Gutenberg or do not plan on using the blocks.', 'profile-builder' ); ?></label>
+                        </div>
+                    </div>
+
+                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                        <label class="cozmoslabs-form-field-label" for="mpp-display-image-sizes"><?php esc_html_e('Disable Image Sizes', 'profile-builder'); ?></label>
+
+                        <div class="cozmoslabs-toggle-container">
                             <input type="hidden" name="options['disable_image_sizes']" value="off" />
-                            <input id="mpp-display-image-sizes" type="checkbox" value="on" name="options[disable_image_sizes]" <?php checked( 'on', $options['disable_image_sizes'] ); ?> /> <label for="mpp-display-image-sizes"><?php esc_html_e( 'Disable Image Sizes', 'profile-builder' ); ?></label>
-                            <p class="description"><?php esc_html_e( 'Select this option to disable the four image sizes User Profile Picture Creates.', 'profile-builder' ); ?></p>
-                        </td>
-                    </tr>
+                            <input id="mpp-display-image-sizes" type="checkbox" value="on" name="options[disable_image_sizes]" <?php checked( 'on', $options['disable_image_sizes'] ); ?> />
+                            <label class="cozmoslabs-toggle-track" for="mpp-display-image-sizes"></label>
+                        </div>
+
+                        <div class="cozmoslabs-toggle-description">
+                            <label class="cozmoslabs-description" for="mpp-display-image-sizes"><?php esc_html_e( 'Select this option to disable the four image sizes User Profile Picture Creates.', 'profile-builder' ); ?></label>
+                        </div>
+                    </div>
+
                     <?php
                     /**
-                     * Allow other plugins to run code after the user profile admin Table Row.
+                     * Allow other plugins to run code after the user profile admin "Profile Picture Settings" options.
                      *
                      * @since 2.3.0
                      *
@@ -257,11 +286,12 @@ class User_Profile_Picture {
                      */
                     do_action( 'mpp_user_profile_admin_settings_after_row', $options );
                     ?>
-                    </tbody>
-                </table>
+
+                </div>
+
                 <?php
                 /**
-                 * Allow other plugins to run code after the user profile admin Table.
+                 * Allow other plugins to run code after the user profile admin "Profile Picture Settings" section.
                  *
                  * @since 2.3.0
                  *
@@ -269,8 +299,10 @@ class User_Profile_Picture {
                  */
                 do_action( 'mpp_user_profile_admin_settings_after_table', $options );
                 ?>
+
                 <?php submit_button( __( 'Save Options', 'profile-builder' ) ); ?>
             </form>
+
         </div>
         <?php
     }

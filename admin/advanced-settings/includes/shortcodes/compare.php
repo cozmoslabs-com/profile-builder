@@ -46,7 +46,7 @@ function wppb_toolbox_compare_shortcode( $atts, $content ){
     );
 
 	if ( !array_key_exists($atts['operator'], $operators ) )
-		return '<p>The compare operator <strong style="padding:0 10px;">' . $atts["operator"] . '</strong> is not recognized. Please try: == , ===, !=, <, >, <=, >=';
+		return '<p>The compare operator <strong style="padding:0 10px;">' . esc_html( $atts["operator"] ) . '</strong> is not recognized. Please try: == , ===, !=, <, >, <=, >=';
 
 	$bool = $operators[$atts['operator']]($l, $r);
 

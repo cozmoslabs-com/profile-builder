@@ -10,7 +10,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 	if( isset( $atts['user_id'] ) ){
 
 		if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && ( current_user_can( 'remove_users' ) || current_user_can( 'manage_options' ) ) ) )
-			$user_id = $atts['user_id'];
+			$user_id = absint( $atts['user_id'] );
 		
 	}
 
@@ -42,7 +42,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 	if ( !array_key_exists( 'key', $atts ) ) return;
 
 	if( $atts['key'] == 'avatar' ){
-		return $atts['pre'] . get_avatar( $user->ID, $atts['size']) . $atts['post'] ;
+		return wp_kses_post( $atts['pre'] ) . get_avatar( $user->ID, $atts['size']) . wp_kses_post( $atts['post'] ) ;
 	}
 
     if( $atts['key'] === 'id' ){
@@ -59,8 +59,8 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 
 	}
 
-	if (!empty( $value )){
-		return $atts['pre'] . $value . $atts['post'] ;
+	if ( !empty( $value ) ){
+		return wp_kses_post( $atts['pre'] ) . esc_html( $value ) . wp_kses_post( $atts['post'] ) ;
 	}
 
 	if( $atts['key'] === 'role' ){
@@ -68,7 +68,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 
 		if( !empty( $roles ) ){
 			$value_roles = implode( ', ', $roles );
-			return  $atts['pre'] . $value_roles . $atts['post'];
+			return wp_kses_post( $atts['pre'] ) . esc_html( $value_roles ) . wp_kses_post( $atts['post'] );
 		}
 	}
 

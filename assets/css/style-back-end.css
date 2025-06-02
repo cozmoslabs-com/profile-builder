@@ -2323,20 +2323,29 @@ body.admin_page_profile-builder-pms-promo .cozmoslabs-form-subsection-wrapper > 
 /* Position Publish buttons container (CPTs & Custom Pages)
 /***********************************************************/
 
-body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-actions {
+/* Publish Box */
+body[class*="post-type-wppb-"] #major-publishing-actions {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 20px 10px;
+    gap: 10px;
 }
 
-body[class*="post-type-wppb-"] #side-sortables .submitbox #major-publishing-actions .button-primary {
-    min-width: 100px;
+body[class*="post-type-wppb-"] #major-publishing-actions #publishing-action {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-body.profile-builder_page_user-email-customizer .post-box-container.column-2.side,
-body.profile-builder_page_admin-email-customizer .post-box-container.column-2.side {
-    top: 0;
+body[class*="post-type-wppb-"] #major-publishing-actions #publishing-action .spinner {
+    position: absolute;
+    right: -40px;
+    top: 8px;
 }
 
 .cozmoslabs-wrap div.submit h3 {
@@ -2352,10 +2361,6 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
     width: unset;
 }
 
-.cozmoslabs-publish-button-fixed #page-save-metabox {
-    position: unset;
-}
-
 .cozmoslabs-wrap div.submit {
     border: 1px solid #CCCCCC;
     background: #f6f7f7;
@@ -2369,15 +2374,6 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
     padding: 0;
 }
 
-.cozmoslabs-wrap.cozmoslabs-publish-box-fixed #page-save-metabox,
-.cozmoslabs-wrap.cozmoslabs-publish-box-fixed div.submit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    width: 280px;
-}
-
 .cozmoslabs-wrap div.submit .cozmoslabs-publish-button-group {
     display: flex;
     flex-direction: row;
@@ -2388,33 +2384,17 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
     gap: 20px;
 }
 
-.cozmoslabs-wrap.cozmoslabs-publish-box-fixed div.submit .cozmoslabs-publish-button-group {
-    justify-content: space-evenly;
-    padding: 20px 0;
-    gap: 5px;
+body.profile-builder_page_user-email-customizer .cozmoslabs-settings-container div.cozmoslabs-submit,
+body.profile-builder_page_admin-email-customizer .cozmoslabs-settings-container div.cozmoslabs-submit {
+    position: unset;
 }
 
-/* Publish Button Position */
-.cozmoslabs-publish-button-fixed #page-save-metabox input[type="submit"],
-.cozmoslabs-publish-button-fixed div.submit input[type="submit"] {
-    position: fixed !important;
-    bottom: 5px;
-    z-index: 999;
-    width: 100% !important;
-    box-shadow: 0 3px 10px 0 #bbb;
-}
 
 /* Publish Box Position */
-.cozmoslabs-wrap.cozmoslabs-publish-button-fixed,
-.cozmoslabs-wrap.cozmoslabs-publish-box-fixed {
-    position: relative;
-}
-
 @media screen and (max-width: 1401px) {
-    body.profile-builder_page_user-email-customizer .metabox-holder .column-2,
-    body.profile-builder_page_admin-email-customizer .metabox-holder .column-2 {
-        position: unset;
-        display: inline-block;
+    body.profile-builder_page_user-email-customizer .cozmoslabs-settings-container div.cozmoslabs-submit,
+    body.profile-builder_page_admin-email-customizer .cozmoslabs-settings-container div.cozmoslabs-submit {
+        display: inline-block !important;
         width: 100%;
     }
 
@@ -2423,22 +2403,34 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
         padding: 20px 10px;
     }
 
-    .cozmoslabs-publish-metabox-fixed #publishing-action {
-        position: fixed !important;
-        bottom: 5px;
-        z-index: 999;
+    .cozmoslabs-publish-button-fixed {
+        display: block;
     }
 
-    .cozmoslabs-publish-metabox-fixed #publishing-action #publish {
+    .cozmoslabs-wrap .cozmoslabs-publish-button-fixed #page-save-metabox input[type="submit"] {
         width: 100%;
     }
 
-    .cozmoslabs-publish-metabox-fixed #publishing-action .spinner {
-        position: absolute;
-        left: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-        margin: 0;
+    .cozmoslabs-publish-button-fixed .cozmoslabs-publish-button-group {
+        padding: 0 !important;
+    }
+
+    .cozmoslabs-settings-container div.cozmoslabs-submit {
+        margin-top: 20px !important;
+    }
+
+    body[class*="post-type-wppb-"] #major-publishing-actions {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .cozmoslabs-publish-button-fixed input[type="submit"] {
+        position: fixed !important;
+        bottom: 5px;
+        z-index: 999;
+        width: 100%;
+        box-shadow: 0 3px 10px 0 #bbb;
     }
 
     body[class*="post-type-wppb-"] #wpbody-content {
@@ -2469,28 +2461,9 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
 }
 
 @media screen and (min-width: 1402px) {
-    .profile-builder_page_admin-email-customizer .cozmoslabs-wrap,
-    .profile-builder_page_user-email-customizer .cozmoslabs-wrap,
-    .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap,
-    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap,
-    .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap,
-    .profile-builder_page_profile-builder-general-settings .cozmoslabs-wrap {
-        padding-right: 300px;
-    }
 
-    .profile-builder_page_admin-email-customizer .cozmoslabs-wrap .error,
-    .profile-builder_page_admin-email-customizer .cozmoslabs-wrap .notice,
-    .profile-builder_page_user-email-customizer .cozmoslabs-wrap .error,
-    .profile-builder_page_user-email-customizer .cozmoslabs-wrap .notice,
-    .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap .error,
-    .profile-builder_page_profile-builder-toolbox-settings .cozmoslabs-wrap .notice,
-    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap .error,
-    .profile-builder_page_profile-builder-private-website .cozmoslabs-wrap .notice,
-    .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap .error,
-    .profile-builder_page_profile-builder-content_restriction .cozmoslabs-wrap .notice,
-    .profile-builder_page_profile-builder-general-settings .cozmoslabs-wrap .error,
-    .profile-builder_page_profile-builder-general-settings .cozmoslabs-wrap .notice {
-        margin-right: -300px;
+    .cozmoslabs-wrap #page-save-metabox {
+        margin: 0;
     }
 
     .cozmoslabs-wrap #page-save-metabox .inside {
@@ -2502,12 +2475,72 @@ body.profile-builder_page_admin-email-customizer .post-box-container.column-2.si
         gap: 5px;
     }
 
-    .cozmoslabs-publish-metabox-fixed #submitdiv {
+    .cozmoslabs-settings-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .cozmoslabs-settings-container .cozmoslabs-nav-sub-tab-wrapper {
+        flex-basis: 100%;
+    }
+
+    #wppb-register-version,
+    .cozmoslabs-settings-container .cozmoslabs-settings {
+        flex-basis: 100%;
+        max-width: calc( 100% - 300px );
+        box-sizing: border-box;
+    }
+
+    .cozmoslabs-settings-container div.cozmoslabs-submit {
+        flex-basis: 280px;
+        margin-left: 20px;
+    }
+
+    body.profile-builder_page_profile-builder-general-settings .cozmoslabs-settings-container {
+        position: relative;
+    }
+
+    body.profile-builder_page_profile-builder-general-settings .cozmoslabs-settings-container div.cozmoslabs-submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 280px;
+    }
+
+    .cozmoslabs-settings-container div.cozmoslabs-submit:not(.post-box-container) {
+        padding-bottom: 5px !important;
+    }
+
+    .cozmoslabs-publish-metabox-fixed {
+        display: block;
         position: fixed !important;
-        top: 50px;
+        top: 50px !important;
         z-index: 1;
         width: 280px;
-        box-shadow: 0 3px 10px 0 #aaa;
+        box-shadow: 0 3px 10px 0 #bbb;
+        margin-top: 0 !important;
+    }
+
+    .cozmoslabs-settings-container div.cozmoslabs-submit .cozmoslabs-publish-button-group {
+        justify-content: center;
+    }
+
+    body[class*="post-type-wppb-"] .cozmoslabs-publish-metabox-fixed {
+        left: unset !important;
+    }
+
+    #wppb-rf-side textarea,
+    #wppb-epf-side textarea {
+        min-height: 62px;
+    }
+
+    body.post-type-wppb-rf-cpt #side-sortables .cozmoslabs-form-field-label,
+    body.post-type-wppb-epf-cpt #side-sortables .cozmoslabs-form-field-label {
+        flex-basis: 150px;
+        flex-grow: 1;
     }
 
 }

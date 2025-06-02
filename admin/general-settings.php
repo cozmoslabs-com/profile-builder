@@ -153,147 +153,147 @@ function wppb_general_settings_content() {
 
         <?php wppb_load_necessary_scripts(); ?>
 
-		<?php if ( !is_multisite() && defined( 'WPPB_PAID_PLUGIN_DIR' ) && defined( 'PROFILE_BUILDER_PAID_VERSION' ) ) : ?>
-            <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
-                <?php wppb_add_register_version_form(); ?>
-            </div>
-        <?php endif; ?>
+        <div class="cozmoslabs-settings-container">
 
-		<form method="post" action="options.php#general-settings">
-		<?php $wppb_generalSettings = get_option( 'wppb_general_settings' ); ?>
-		<?php settings_fields( 'wppb_general_settings' ); ?>
-
-
-            <div class="cozmoslabs-form-subsection-wrapper" id="wppb-form_desings">
-                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Design & User Experience', 'profile-builder' ); ?></h4>
-                <p class="cozmoslabs-description" style="margin-bottom: 5px;"><?php esc_html_e( 'Choose a style that better suits your website.', 'profile-builder' ); ?></p>
-                <p class="cozmoslabs-description"><?php esc_html_e( 'The default style is there to let you customize the CSS and in general will receive the look and feel from your own theme’s styling.', 'profile-builder' ); ?></p>
-
-                <div class="cozmoslabs-form-field-wrapper">
-                    <?php
-                    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) ) {
-                         echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                    }
-                    elseif ( PROFILE_BUILDER == 'Profile Builder Free' ) {
-                        echo wppb_display_form_designs_preview(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                    }
-                    ?>
+            <?php if ( !is_multisite() && defined( 'WPPB_PAID_PLUGIN_DIR' ) && defined( 'PROFILE_BUILDER_PAID_VERSION' ) ) : ?>
+                <div class="cozmoslabs-form-subsection-wrapper" id="wppb-register-version">
+                    <?php wppb_add_register_version_form(); ?>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="cozmoslabs-form-subsection-wrapper">
-                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Optimize The login and Registration flow for your members', 'profile-builder' ); ?></h4>
+            <form method="post" action="options.php#general-settings">
+                <?php $wppb_generalSettings = get_option( 'wppb_general_settings' ); ?>
+                <?php settings_fields( 'wppb_general_settings' ); ?>
 
-                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                        <label class="cozmoslabs-form-field-label" for="wppb_settings_automatically_log_in"><?php esc_html_e('Automatically Log In', 'profile-builder'); ?></label>
+                <div class="cozmoslabs-settings">
 
-                        <div class="cozmoslabs-toggle-container">
-                            <input type="checkbox" name="wppb_general_settings[automaticallyLogIn]" id="wppb_settings_automatically_log_in" value="Yes" <?php echo (!empty($wppb_generalSettings['automaticallyLogIn']) && $wppb_generalSettings['automaticallyLogIn'] === 'Yes') ? 'checked' : ''; ?> >
-                            <label class="cozmoslabs-toggle-track" for="wppb_settings_automatically_log_in"></label>
-                        </div>
+                    <div class="cozmoslabs-form-subsection-wrapper" id="wppb-form_desings">
+                        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Design & User Experience', 'profile-builder' ); ?></h4>
+                        <p class="cozmoslabs-description" style="margin-bottom: 5px;"><?php esc_html_e( 'Choose a style that better suits your website.', 'profile-builder' ); ?></p>
+                        <p class="cozmoslabs-description"><?php esc_html_e( 'The default style is there to let you customize the CSS and in general will receive the look and feel from your own theme’s styling.', 'profile-builder' ); ?></p>
 
-                        <div class="cozmoslabs-toggle-description">
-                            <label for="wppb_settings_automatically_log_in" class="cozmoslabs-description"><?php esc_html_e( 'Enable to automatically log in new users after successful registration.', 'profile-builder' ); ?></label>
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <?php
+                            if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) ) {
+                                 echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            }
+                            elseif ( PROFILE_BUILDER == 'Profile Builder Free' ) {
+                                echo wppb_display_form_designs_preview(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            }
+                            ?>
                         </div>
                     </div>
 
-                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                        <label class="cozmoslabs-form-field-label" for="wppb_settings_email_confirmation"><?php esc_html_e('Email Confirmation', 'profile-builder'); ?></label>
-
-
-                        <div class="cozmoslabs-toggle-container">
-
-                            <input type="checkbox" name="wppb_general_settings[emailConfirmation]" id="wppb_settings_email_confirmation" value="yes" <?php echo (!empty($wppb_generalSettings['emailConfirmation']) && $wppb_generalSettings['emailConfirmation'] === 'yes') ? 'checked' : ''; ?> >
-                            <label class="cozmoslabs-toggle-track" for="wppb_settings_email_confirmation"></label>
-
-                        </div>
-                        <div class="cozmoslabs-toggle-description">
-                            <label for="wppb_settings_email_confirmation" class="cozmoslabs-description"><?php  esc_html_e( 'This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using "Custom Redirects" module.', 'profile-builder' ); ?></label>
-                        </div>
-
-                        <p class="cozmoslabs-description cozmoslabs-description-space-left" id="unconfirmed-user-emails"><?php  printf( esc_html__( 'You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=unconfirmed_emails">', '</a>' )?></p>
-                    </div>
-
-
-
-
-                    <div class="cozmoslabs-form-field-wrapper" id="wppb-settings-activation-page">
-                        <label class="cozmoslabs-form-field-label" for="wppb_settings_email_confirmation_page"><?php esc_html_e('Email Confirmation Page', 'profile-builder'); ?></label>
-
-                        <select name="wppb_general_settings[activationLandingPage]" class="wppb-select" id="wppb_settings_email_confirmation_page">
-                            <option value="" <?php if ( empty( $wppb_generalSettings['emailConfirmation'] ) ) echo 'selected'; ?>></option>
-                            <optgroup label="<?php esc_html_e( 'Existing Pages', 'profile-builder' ); ?>">
-                                <?php
-                                $pages = get_pages( apply_filters( 'wppb_page_args_filter', array( 'sort_order' => 'ASC', 'sort_column' => 'post_title', 'post_type' => 'page', 'post_status' => array( 'publish' ) ) ) );
-
-                                foreach ( $pages as $key => $value ){
-                                    echo '<option value="'.esc_attr( $value->ID ).'"';
-                                    if ( $wppb_generalSettings['activationLandingPage'] == $value->ID )
-                                        echo ' selected';
-
-                                    echo '>' . esc_html( $value->post_title ) . '</option>';
-                                }
-                                ?>
-                            </optgroup>
-                        </select>
-
-                        <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time.', 'profile-builder' ); ?></p>
-                    </div>
-
-                    <?php
-                    if ( PROFILE_BUILDER == 'Profile Builder Free' ) {
-                        ?>
+                    <div class="cozmoslabs-form-subsection-wrapper">
+                        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Optimize The login and Registration flow for your members', 'profile-builder' ); ?></h4>
 
                         <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                            <label class="cozmoslabs-form-field-label"><?php esc_html_e('Admin Approval', 'profile-builder'); ?></label>
-
-                            <p class="cozmoslabs-description cozmoslabs-description-align-right cozmoslabs-description-upsell">
-                                <?php echo esc_html__( 'You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI.', 'profile-builder' ); ?><br>
-                                <?php printf( esc_html__( 'Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=general-settings-link&utm_campaign=PBFree#pricing">', '</a>' )?>
-                            </p>
-                        </div>
-
-                    <?php } ?>
-
-
-                    <?php
-                    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/admin-approval/admin-approval.php' ) ){
-                        ?>
-
-                        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                            <label class="cozmoslabs-form-field-label" for="adminApprovalSelect"><?php esc_html_e('Admin Approval', 'profile-builder'); ?></label>
+                            <label class="cozmoslabs-form-field-label" for="wppb_settings_automatically_log_in"><?php esc_html_e('Automatically Log In', 'profile-builder'); ?></label>
 
                             <div class="cozmoslabs-toggle-container">
-                                <input type="checkbox" name="wppb_general_settings[adminApproval]" id="adminApprovalSelect" value="yes" <?php echo (!empty($wppb_generalSettings['adminApproval']) && $wppb_generalSettings['adminApproval'] === 'yes') ? 'checked' : ''; ?> >
-                                <label class="cozmoslabs-toggle-track" for="adminApprovalSelect"></label>
+                                <input type="checkbox" name="wppb_general_settings[automaticallyLogIn]" id="wppb_settings_automatically_log_in" value="Yes" <?php echo (!empty($wppb_generalSettings['automaticallyLogIn']) && $wppb_generalSettings['automaticallyLogIn'] === 'Yes') ? 'checked' : ''; ?> >
+                                <label class="cozmoslabs-toggle-track" for="wppb_settings_automatically_log_in"></label>
                             </div>
 
                             <div class="cozmoslabs-toggle-description">
-                                <label for="adminApprovalSelect" class="cozmoslabs-description wppb-aa-details"><?php esc_html_e( 'Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.', 'profile-builder' ); ?></label>
+                                <label for="wppb_settings_automatically_log_in" class="cozmoslabs-description"><?php esc_html_e( 'Enable to automatically log in new users after successful registration.', 'profile-builder' ); ?></label>
+                            </div>
+                        </div>
+
+                        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                            <label class="cozmoslabs-form-field-label" for="wppb_settings_email_confirmation"><?php esc_html_e('Email Confirmation', 'profile-builder'); ?></label>
+
+
+                            <div class="cozmoslabs-toggle-container">
+
+                                <input type="checkbox" name="wppb_general_settings[emailConfirmation]" id="wppb_settings_email_confirmation" value="yes" <?php echo (!empty($wppb_generalSettings['emailConfirmation']) && $wppb_generalSettings['emailConfirmation'] === 'yes') ? 'checked' : ''; ?> >
+                                <label class="cozmoslabs-toggle-track" for="wppb_settings_email_confirmation"></label>
+
+                            </div>
+                            <div class="cozmoslabs-toggle-description">
+                                <label for="wppb_settings_email_confirmation" class="cozmoslabs-description"><?php  esc_html_e( 'This works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using "Custom Redirects" module.', 'profile-builder' ); ?></label>
                             </div>
 
-                            <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-aa-user-list"><?php printf( esc_html__( 'You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=admin_approval&orderby=registered&order=desc">', '</a>' )?></p>
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left" id="unconfirmed-user-emails"><?php  printf( esc_html__( 'You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=unconfirmed_emails">', '</a>' )?></p>
                         </div>
 
-                        <div class="cozmoslabs-form-field-wrapper wppb-aa-user-list">
-                            <label class="cozmoslabs-form-field-label" for="adminApprovalOnUserRoleSelect"><?php esc_html_e('Admin Approval User Role', 'profile-builder'); ?></label>
+                        <div class="cozmoslabs-form-field-wrapper" id="wppb-settings-activation-page">
+                            <label class="cozmoslabs-form-field-label" for="wppb_settings_email_confirmation_page"><?php esc_html_e('Email Confirmation Page', 'profile-builder'); ?></label>
 
-                            <select name="wppb_general_settings[adminApprovalOnUserRole][]" class="wppb-select wppb-select2" multiple>
-                                <?php
-                                $wppb_userRoles = wppb_adminApproval_onUserRole();
+                            <select name="wppb_general_settings[activationLandingPage]" class="wppb-select" id="wppb_settings_email_confirmation_page">
+                                <option value="" <?php if ( empty( $wppb_generalSettings['emailConfirmation'] ) ) echo 'selected'; ?>></option>
+                                <optgroup label="<?php esc_html_e( 'Existing Pages', 'profile-builder' ); ?>">
+                                    <?php
+                                    $pages = get_pages( apply_filters( 'wppb_page_args_filter', array( 'sort_order' => 'ASC', 'sort_column' => 'post_title', 'post_type' => 'page', 'post_status' => array( 'publish' ) ) ) );
 
-                                if( ! empty( $wppb_userRoles ) ) {
-                                    foreach( $wppb_userRoles as $role => $role_name ) {
+                                    foreach ( $pages as $key => $value ){
+                                        echo '<option value="'.esc_attr( $value->ID ).'"';
+                                        if ( $wppb_generalSettings['activationLandingPage'] == $value->ID )
+                                            echo ' selected';
 
-                                        echo '<option value="' . esc_attr( $role )  . '"' . (( !empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) && in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) || empty( $wppb_generalSettings['adminApprovalOnUserRole']) ? ' selected' : '') . '>' . esc_html( $role_name ) . '</option>';
-
+                                        echo '>' . esc_html( $value->post_title ) . '</option>';
                                     }
-                                }
-                                ?>
+                                    ?>
+                                </optgroup>
                             </select>
+
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time.', 'profile-builder' ); ?></p>
                         </div>
 
-                    <?php } ?>
+                        <?php
+                        if ( PROFILE_BUILDER == 'Profile Builder Free' ) {
+                            ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <label class="cozmoslabs-form-field-label"><?php esc_html_e('Admin Approval', 'profile-builder'); ?></label>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-align-right cozmoslabs-description-upsell">
+                                    <?php echo esc_html__( 'You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI.', 'profile-builder' ); ?><br>
+                                    <?php printf( esc_html__( 'Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=general-settings-link&utm_campaign=PBFree#pricing">', '</a>' )?>
+                                </p>
+                            </div>
+
+                        <?php } ?>
+
+
+                        <?php
+                        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/admin-approval/admin-approval.php' ) ){
+                            ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <label class="cozmoslabs-form-field-label" for="adminApprovalSelect"><?php esc_html_e('Admin Approval', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_general_settings[adminApproval]" id="adminApprovalSelect" value="yes" <?php echo (!empty($wppb_generalSettings['adminApproval']) && $wppb_generalSettings['adminApproval'] === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="adminApprovalSelect"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="adminApprovalSelect" class="cozmoslabs-description wppb-aa-details"><?php esc_html_e( 'Each user that registers on the website will be given a Pending status and will need to be approved or unapproved by the admin before he/she can login.', 'profile-builder' ); ?></label>
+                                </div>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-aa-user-list"><?php printf( esc_html__( 'You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/users.php?page=admin_approval&orderby=registered&order=desc">', '</a>' )?></p>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper wppb-aa-user-list">
+                                <label class="cozmoslabs-form-field-label" for="adminApprovalOnUserRoleSelect"><?php esc_html_e('Admin Approval User Role', 'profile-builder'); ?></label>
+
+                                <select name="wppb_general_settings[adminApprovalOnUserRole][]" class="wppb-select wppb-select2" multiple>
+                                    <?php
+                                    $wppb_userRoles = wppb_adminApproval_onUserRole();
+
+                                    if( ! empty( $wppb_userRoles ) ) {
+                                        foreach( $wppb_userRoles as $role => $role_name ) {
+
+                                            echo '<option value="' . esc_attr( $role )  . '"' . (( !empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) && in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) || empty( $wppb_generalSettings['adminApprovalOnUserRole']) ? ' selected' : '') . '>' . esc_html( $role_name ) . '</option>';
+
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                        <?php } ?>
 
                         <div class="cozmoslabs-form-field-wrapper">
                             <label class="cozmoslabs-form-field-label" for="loginWithSelect"><?php esc_html_e( 'Allow Users to Log in With:', 'profile-builder' ); ?></label>
@@ -307,211 +307,213 @@ function wppb_general_settings_content() {
                             <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Choose what the user will be logging in with.', 'profile-builder' ); ?></p>
                         </div>
 
-
-            </div>
-
-            <div class="cozmoslabs-form-subsection-wrapper">
-                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Security', 'profile-builder' ); ?></h4>
-
-                <div class="cozmoslabs-form-field-wrapper">
-                    <label class="cozmoslabs-form-field-label" for="minimumPasswordLength"><?php esc_html_e( 'Minimum Password Length', 'profile-builder' ); ?></label>
-                    <input type="text" name="wppb_general_settings[minimum_password_length]" class="wppb-text" id="minimumPasswordLength" value="<?php if( !empty( $wppb_generalSettings['minimum_password_length'] ) ) echo esc_attr( $wppb_generalSettings['minimum_password_length'] ); ?>"/>
-
-                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enter the minimum characters the password should have. Leave empty for no minimum limit', 'profile-builder' ); ?></p>
-                </div>
-
-
-                <div class="cozmoslabs-form-field-wrapper">
-                    <label class="cozmoslabs-form-field-label" for="minimumPasswordStrength"><?php esc_html_e( 'Minimum Password Strength', 'profile-builder' ); ?></label>
-
-                    <select name="wppb_general_settings[minimum_password_strength]" class="wppb-select" id="minimumPasswordStrength">
-                        <option value=""><?php esc_html_e( 'Disabled', 'profile-builder' ); ?></option>
-                        <option value="short" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'short' ) echo 'selected'; ?>><?php esc_html_e( 'Very weak', 'profile-builder' ); ?></option>
-                        <option value="bad" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'bad' ) echo 'selected'; ?>><?php esc_html_e( 'Weak', 'profile-builder' ); ?></option>
-                        <option value="good" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'good' ) echo 'selected'; ?>><?php esc_html_e( 'Medium', 'profile-builder' ); ?></option>
-                        <option value="strong" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'strong' ) echo 'selected'; ?>><?php esc_html_e( 'Strong', 'profile-builder' ); ?></option>
-                    </select>
-
-                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'A stronger password strength will probably force the user to not reuse passwords from other websites.', 'profile-builder' ); ?></p>
-                </div>
-
-
-                <div class="cozmoslabs-form-field-wrapper">
-                    <label class="cozmoslabs-form-field-label" for="lostPasswordPage"><?php esc_html_e( 'Password Recovery Page', 'profile-builder' ); ?></label>
-
-                    <select name="wppb_general_settings[lost_password_page]" class="wppb-select" id="lostPasswordPage">
-                        <option value=""> <?php esc_html_e( 'None', 'profile-builder' ); ?></option>
-						<?php
-						$args = array(
-							'post_type' => 'page',
-							'post_status' => 'publish',
-							'numberposts' => -1,
-							'orderby' => 'name',
-							'order' => 'ASC'
-						);
-						$pages = get_posts( $args );
-
-						foreach ( $pages as $key => $value ){
-							echo '<option value="'.esc_attr( $value->guid ).'"';
-							if ( isset( $wppb_generalSettings['lost_password_page'] ) && $wppb_generalSettings['lost_password_page'] == $value->guid )
-								echo ' selected';
-
-							echo '>' . esc_html( $value->post_title ) . '</option>';
-						}
-						?>
-                    </select>
-
-                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Select the page which contains the "[wppb-recover-password]" shortcode.', 'profile-builder' ); ?></p>
-                </div>
-            </div>
-
-            <div class="cozmoslabs-form-subsection-wrapper">
-                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Other features', 'profile-builder' ); ?></h4>
-
-                <div class="cozmoslabs-form-field-wrapper">
-                    <label class="cozmoslabs-form-field-label" for="hideAdminBarFor"><?php esc_html_e( 'Hide Admin Bar for User Roles', 'profile-builder' ); ?></label>
-
-                    <select name="wppb_general_settings[hide_admin_bar_for][]" class="wppb-select wppb-select2" id="hideAdminBarFor" multiple>
-						<?php
-						global $wp_roles;
-						$general_settings = get_option( 'wppb_general_settings' );
-						$selected_roles = isset($general_settings['hide_admin_bar_for']) ? $general_settings['hide_admin_bar_for'] : '';
-
-                        echo '<option value="allUserRoles"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRoles', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles',  'profile-builder' ) . '</option>';
-                        echo '<option value="allUserRolesExceptAdmin"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRolesExceptAdmin', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles Except Admin',  'profile-builder' ) . '</option>';
-                        
-						foreach ( $wp_roles->roles as $role ) {
-							$key = $role['name'];
-
-							echo '<option value="'.esc_attr( $key ).'"' . ( ( !empty( $selected_roles )  && in_array( $key, $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html( translate_user_role( $key ) ) . '</option>';
-						}
-                        
-						?>
-                    </select>
-
-                    <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.', 'profile-builder' ); ?></p>
-                </div>
-
-				<?php
-				if( file_exists( WPPB_PLUGIN_DIR.'/features/roles-editor/roles-editor.php' ) ) {
-					?>
-
-                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                        <label class="cozmoslabs-form-field-label" for="rolesEditorSelect"><?php esc_html_e('Roles Editor', 'profile-builder'); ?></label>
-
-                        <div class="cozmoslabs-toggle-container">
-                            <input type="checkbox" name="wppb_general_settings[rolesEditor]" id="rolesEditorSelect" value="yes" <?php echo (!empty($wppb_generalSettings['rolesEditor']) && $wppb_generalSettings['rolesEditor'] === 'yes') ? 'checked' : ''; ?> >
-                            <label class="cozmoslabs-toggle-track" for="rolesEditorSelect"></label>
-                        </div>
-
-                        <div class="cozmoslabs-toggle-description">
-                            <label for="rolesEditorSelect" class="cozmoslabs-description wppb-roles-editor-details"><?php esc_html_e( 'Easily create new custom user roles or customize any existing user role capabilities.', 'profile-builder' ); ?></label>
-                        </div>
-
-                        <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-roles-editor-link"><?php printf( esc_html__( 'You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/edit.php?post_type=wppb-roles-editor">', '</a>' )?></p>
                     </div>
 
-				<?php } ?>
+                    <div class="cozmoslabs-form-subsection-wrapper">
+                        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Security', 'profile-builder' ); ?></h4>
 
-                <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <label class="cozmoslabs-form-field-label" for="minimumPasswordLength"><?php esc_html_e( 'Minimum Password Length', 'profile-builder' ); ?></label>
+                            <input type="text" name="wppb_general_settings[minimum_password_length]" class="wppb-text" id="minimumPasswordLength" value="<?php if( !empty( $wppb_generalSettings['minimum_password_length'] ) ) echo esc_attr( $wppb_generalSettings['minimum_password_length'] ); ?>"/>
 
-                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                        <?php
-                        $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
-
-                        $enabled = 'no';
-                        if ( !empty( $wppb_two_factor_authentication_settings['enabled'] ) )
-                            $enabled = $wppb_two_factor_authentication_settings['enabled'];
-                        ?>
-
-                        <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
-
-                        <div class="cozmoslabs-toggle-container">
-                            <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
-                            <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Enter the minimum characters the password should have. Leave empty for no minimum limit', 'profile-builder' ); ?></p>
                         </div>
 
-                        <div class="cozmoslabs-toggle-description">
-                            <label for="wppb-auth-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <label class="cozmoslabs-form-field-label" for="minimumPasswordStrength"><?php esc_html_e( 'Minimum Password Strength', 'profile-builder' ); ?></label>
+
+                            <select name="wppb_general_settings[minimum_password_strength]" class="wppb-select" id="minimumPasswordStrength">
+                                <option value=""><?php esc_html_e( 'Disabled', 'profile-builder' ); ?></option>
+                                <option value="short" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'short' ) echo 'selected'; ?>><?php esc_html_e( 'Very weak', 'profile-builder' ); ?></option>
+                                <option value="bad" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'bad' ) echo 'selected'; ?>><?php esc_html_e( 'Weak', 'profile-builder' ); ?></option>
+                                <option value="good" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'good' ) echo 'selected'; ?>><?php esc_html_e( 'Medium', 'profile-builder' ); ?></option>
+                                <option value="strong" <?php if ( !empty($wppb_generalSettings['minimum_password_strength']) && $wppb_generalSettings['minimum_password_strength'] == 'strong' ) echo 'selected'; ?>><?php esc_html_e( 'Strong', 'profile-builder' ); ?></option>
+                            </select>
+
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'A stronger password strength will probably force the user to not reuse passwords from other websites.', 'profile-builder' ); ?></p>
+                        </div>
+
+
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <label class="cozmoslabs-form-field-label" for="lostPasswordPage"><?php esc_html_e( 'Password Recovery Page', 'profile-builder' ); ?></label>
+
+                            <select name="wppb_general_settings[lost_password_page]" class="wppb-select" id="lostPasswordPage">
+                                <option value=""> <?php esc_html_e( 'None', 'profile-builder' ); ?></option>
+                                <?php
+                                $args = array(
+                                    'post_type' => 'page',
+                                    'post_status' => 'publish',
+                                    'numberposts' => -1,
+                                    'orderby' => 'name',
+                                    'order' => 'ASC'
+                                );
+                                $pages = get_posts( $args );
+
+                                foreach ( $pages as $key => $value ){
+                                    echo '<option value="'.esc_attr( $value->guid ).'"';
+                                    if ( isset( $wppb_generalSettings['lost_password_page'] ) && $wppb_generalSettings['lost_password_page'] == $value->guid )
+                                        echo ' selected';
+
+                                    echo '>' . esc_html( $value->post_title ) . '</option>';
+                                }
+                                ?>
+                            </select>
+
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Select the page which contains the "[wppb-recover-password]" shortcode.', 'profile-builder' ); ?></p>
                         </div>
                     </div>
 
-                    <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                    <div class="cozmoslabs-form-subsection-wrapper">
+                        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Other features', 'profile-builder' ); ?></h4>
+
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <label class="cozmoslabs-form-field-label" for="hideAdminBarFor"><?php esc_html_e( 'Hide Admin Bar for User Roles', 'profile-builder' ); ?></label>
+
+                            <select name="wppb_general_settings[hide_admin_bar_for][]" class="wppb-select wppb-select2" id="hideAdminBarFor" multiple>
+                                <?php
+                                global $wp_roles;
+                                $general_settings = get_option( 'wppb_general_settings' );
+                                $selected_roles = isset($general_settings['hide_admin_bar_for']) ? $general_settings['hide_admin_bar_for'] : '';
+
+                                echo '<option value="allUserRoles"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRoles', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles',  'profile-builder' ) . '</option>';
+                                echo '<option value="allUserRolesExceptAdmin"' . ( ( !empty( $selected_roles )  && in_array( 'allUserRolesExceptAdmin', $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html__( 'All User Roles Except Admin',  'profile-builder' ) . '</option>';
+
+                                foreach ( $wp_roles->roles as $role ) {
+                                    $key = $role['name'];
+
+                                    echo '<option value="'.esc_attr( $key ).'"' . ( ( !empty( $selected_roles )  && in_array( $key, $selected_roles ) ) ? ' selected' : '' ) . '>' . esc_html( translate_user_role( $key ) ) . '</option>';
+                                }
+
+                                ?>
+                            </select>
+
+                            <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.', 'profile-builder' ); ?></p>
+                        </div>
+
                         <?php
-                        $roles = get_editable_roles( );
-                        $network_roles = array( );
-                        if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
-                            $network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
-                        ?>
-
-                        <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
-
-                        <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
-                            <?php
-                            echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
-
-                            foreach ($roles as $role_key => $role) {
-                                echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
-                            }
+                        if( file_exists( WPPB_PLUGIN_DIR.'/features/roles-editor/roles-editor.php' ) ) {
                             ?>
-                        </select>
 
-                        <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <label class="cozmoslabs-form-field-label" for="rolesEditorSelect"><?php esc_html_e('Roles Editor', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_general_settings[rolesEditor]" id="rolesEditorSelect" value="yes" <?php echo (!empty($wppb_generalSettings['rolesEditor']) && $wppb_generalSettings['rolesEditor'] === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="rolesEditorSelect"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="rolesEditorSelect" class="cozmoslabs-description wppb-roles-editor-details"><?php esc_html_e( 'Easily create new custom user roles or customize any existing user role capabilities.', 'profile-builder' ); ?></label>
+                                </div>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left wppb-roles-editor-link"><?php printf( esc_html__( 'You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ), '<a href="'. esc_url( get_bloginfo( 'url' ) ).'/wp-admin/edit.php?post_type=wppb-roles-editor">', '</a>' )?></p>
+                            </div>
+
+                        <?php } ?>
+
+                        <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <?php
+                                $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
+
+                                $enabled = 'no';
+                                if ( !empty( $wppb_two_factor_authentication_settings['enabled'] ) )
+                                    $enabled = $wppb_two_factor_authentication_settings['enabled'];
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-auth-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+                                </div>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $roles = get_editable_roles( );
+                                $network_roles = array( );
+                                if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
+                                    $network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
+
+                                <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
+                                    <?php
+                                    echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
+
+                                    foreach ($roles as $role_key => $role) {
+                                        echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
+                                    }
+                                    ?>
+                                </select>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
+                            </div>
+
+                        <?php else : ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
+                                    <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+                                </div>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
+                                    <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
+                                </p>
+
+                            </div>
+
+                        <?php endif; ?>
+
+                        <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                            <label class="cozmoslabs-form-field-label" for="extraFieldsLayout"><?php esc_html_e('Load CSS', 'profile-builder'); ?></label>
+
+                            <div class="cozmoslabs-toggle-container">
+                                <input type="checkbox" id="extraFieldsLayout" name="wppb_general_settings[extraFieldsLayout]"<?php echo ( ( isset( $wppb_generalSettings['extraFieldsLayout'] ) && ( $wppb_generalSettings['extraFieldsLayout'] == 'default' ) ) ? ' checked' : '' ); ?> value="default">
+                                <label class="cozmoslabs-toggle-track" for="extraFieldsLayout"></label>
+                            </div>
+                            <div class="cozmoslabs-toggle-description">
+                                <label for="extraFieldsLayout" class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'/assets/css/style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+                            </div>
+                        </div>
+
                     </div>
 
-                <?php else : ?>
+                    <?php do_action( 'wppb_extra_general_settings', $wppb_generalSettings ); ?>
 
-                    <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                    <input type="hidden" name="action" value="update" />
 
-                        <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+                </div>
 
-                        <div class="cozmoslabs-toggle-container">
-                            <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
-                            <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
-                        </div>
-
-                        <div class="cozmoslabs-toggle-description">
-                            <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
-                        </div>
-
-                        <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
-                            <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
+                <div class="submit cozmoslabs-submit">
+                    <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
+                    <div class="cozmoslabs-publish-button-group">
+                        <p class="submit">
+                            <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'profile-builder' ); ?>" />
                         </p>
-
-                    </div>
-
-                <?php endif; ?>
-
-                <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                    <label class="cozmoslabs-form-field-label" for="extraFieldsLayout"><?php esc_html_e('Load CSS', 'profile-builder'); ?></label>
-
-                    <div class="cozmoslabs-toggle-container">
-                        <input type="checkbox" id="extraFieldsLayout" name="wppb_general_settings[extraFieldsLayout]"<?php echo ( ( isset( $wppb_generalSettings['extraFieldsLayout'] ) && ( $wppb_generalSettings['extraFieldsLayout'] == 'default' ) ) ? ' checked' : '' ); ?> value="default">
-                        <label class="cozmoslabs-toggle-track" for="extraFieldsLayout"></label>
-                    </div>
-                    <div class="cozmoslabs-toggle-description">
-                        <label for="extraFieldsLayout" class="cozmoslabs-description"><?php printf( esc_html__( 'You can find the default file here: %1$s', 'profile-builder' ), '<a href="'.dirname( plugin_dir_url( __FILE__ ) ).'/assets/css/style-front-end.css" target="_blank">'.dirname( dirname( plugin_basename( __FILE__ ) ) ).'/assets/css/style-front-end.css</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
                     </div>
                 </div>
 
-            </div>
+            </form>
 
-			<?php do_action( 'wppb_extra_general_settings', $wppb_generalSettings ); ?>
+        </div>
 
-
-
-		    <input type="hidden" name="action" value="update" />
-
-            <div class="submit">
-                <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Update Settings', 'profile-builder' ) ?></h3>
-                <div class="cozmoslabs-publish-button-group">
-                    <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'profile-builder' ); ?>" />
-                    </p>
-                </div>
-            </div>
-
-        </form>
     </div>
 
 <?php

@@ -1466,6 +1466,7 @@ class Wordpress_Creation_Kit_PB{
 
         $is_wysiwyg_field  = false;
         $is_textarea_field = false;
+        $is_query_compare  = false;
 
         if( !empty( $meta_name ) && !empty( $this->args['meta_array'] ) ){
 
@@ -1476,6 +1477,9 @@ class Wordpress_Creation_Kit_PB{
 
                 if( $field['slug'] === $meta_name && $field['type'] === 'textarea' )
                     $is_textarea_field = true;
+
+                if( $meta_name === 'query-compare' && $field['slug'] === $meta_name )
+                    $is_query_compare = true;
 
             }
 
@@ -1500,6 +1504,8 @@ class Wordpress_Creation_Kit_PB{
                 return wp_kses_post( $value );
             elseif( $is_textarea_field )
                 return wp_kses_post( $value );
+            elseif( $is_query_compare )
+                return in_array( $value, array( '=', '!=', '>', '>=', '<', '<=', 'LIKE', 'NOT LIKE', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN', 'EXISTS', 'NOT EXISTS' ), true ) ? $value : '=';
             else
                 return sanitize_text_field( $value );
         }
@@ -1705,8 +1711,10 @@ class WCK_Page_Creator_PB{
 
 				<?php do_action( 'wck_before_meta_boxes', $this->hookname ); ?>
 
-				<div class="metabox-holder">
-					<div class="wck-post-body <?php echo ( $this->hookname === 'profile-builder_page_user-email-customizer' || $this->hookname === 'profile-builder_page_admin-email-customizer' ) ? 'cozmoslabs-email-customizer-section' : '' ?>">
+				<?php $is_email_customizer_page = $this->hookname === 'profile-builder_page_user-email-customizer' || $this->hookname === 'profile-builder_page_admin-email-customizer'; ?>
+
+				<div class="metabox-holder <?php echo $is_email_customizer_page ? 'cozmoslabs-settings-container' : '' ?>">
+					<div class="wck-post-body <?php echo $is_email_customizer_page ? 'cozmoslabs-email-customizer-section cozmoslabs-settings' : '' ?>">
 						<div class="post-box-container column-1 normal">
 							<?php do_action( 'wck_before_column1_metabox_content', $this->hookname ); ?>
 							<?php do_meta_boxes( $this->hookname, 'normal', null ); ?>
@@ -1718,7 +1726,7 @@ class WCK_Page_Creator_PB{
 							<?php do_action( 'wck_after_column3_metabox_content', $this->hookname ); ?>
 						</div>
 					</div>
-                    <div class="post-box-container column-2 side"><?php do_meta_boxes( $this->hookname, 'side', null ); ?></div>
+                    <div class="post-box-container column-2 side <?php echo $is_email_customizer_page ? 'cozmoslabs-submit' : '' ?>"><?php do_meta_boxes( $this->hookname, 'side', null ); ?></div>
 
 				</div>
 

@@ -30,6 +30,9 @@ function wppb_basic_info_content() {
 ?>
 	<div class="wrap wppb-wrap wppb-info-wrap cozmoslabs-wrap">
 
+        <h1></h1>
+        <!-- WordPress Notices are added after the h1 tag -->
+
         <div class="cozmoslabs-page-header">
             <div>
                 <h1 class="cozmoslabs-page-title"><?php echo wp_kses_post( sprintf( __( '<strong>Profile Builder </strong> %s', 'profile-builder' ), esc_html( $version ) ) ); ?></h1>

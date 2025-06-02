@@ -451,7 +451,8 @@ function wppb_get_pb_page_post_slug() {
         'user-email-customizer',
         'admin-email-customizer',
         'manage-fields',
-        'custom-redirects'
+        'custom-redirects',
+        'profile-user-profile-picture'
     );
 
     if ( !empty( $post_type ) ) {
