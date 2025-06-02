@@ -3,7 +3,7 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 3.13.9
 License: GPLv2 or later
