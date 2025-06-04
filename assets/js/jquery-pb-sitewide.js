@@ -466,16 +466,23 @@ jQuery(document).ready(function() {
  *
  */
 jQuery(window).on('load', function () {
-    handlePublishBoxPosition();
 
-    // Reset the scroll event on manual window resize to keep the Publish button scrollable without refreshing
-    jQuery(window).on('resize', function() {
-
-        // clear existing scroll events
-        jQuery(window).off('scroll');
+    // limit Publish Box/Button positioning to Profile Builder Custom Pages and CPTs
+    if (jQuery('body').is('[class*="profile-builder_page"], [class*="admin_page_profile-builder"], [class*="post-type-wppb"]')) {
 
         handlePublishBoxPosition();
-    });
+
+        // Reset the scroll event on manual window resize to keep the Publish button scrollable without refreshing
+        jQuery(window).on('resize', function() {
+
+            // clear existing scroll events
+            jQuery(window).off('scroll');
+
+            handlePublishBoxPosition();
+        });
+
+    }
+
 });
 
 

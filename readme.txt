@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.13.9
+Stable tag: 3.14.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.0 =
+* Fix: Issue with the Submit button box positioning inside the Classic Editor
+
 = 3.13.9 =
 * Fix: Security issue regarding Authenticated Stored Cross Site Scripting via user_meta and compare shortcodes. Thanks to Muhammad Yudha and the Wordfence team
 * Fix: Security issue regarding Content Spoofing with paid version active. Thanks to Truong Huu Phuc and the Patchstack team
