@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.0
+Stable tag: 3.14.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,15 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.1 =
+* Fix: Make sure only valid Setup Wizard tabs can be loaded
+* Fix: Sorting indicator position for back-end tables
+* Fix: Allow WYSIWYG fields to output HTML through the usermeta shortcode
+* Fix: Add support for WPML translation for the input and textarea default value fields
+* Misc: Fix a random issue with some parameters in a string
+* Misc: Add success notice after email update when email confirmation is enabled
+* Misc: Password reset error message to take into account the Allow Users to Login with option
+
 = 3.14.0 =
 * Fix: Issue with the Submit button box positioning inside the Classic Editor
 
@@ -403,89 +412,5 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 * Misc: Improve description for the auto generate password feature
 * Misc: Fixed a notice appearing on back-end pages
 * Misc: Removed outdated translation files that were being shipped with the plugin
-
-= 3.10.9 =
-* Fix: A security issue regarding missing authorization when performing a 2FA settings change. Code was actually moved from the free version to paid. Thanks to Kodai Kubono from WordFence
-* Fix: A compatibility issue with the Solid Backups plugin
-* Fix: Notices coming from the Gutenberg Blocks Content Restriction functionality
-* Misc: Fix a notice appearing from the capitalize first and last names setting
-
-= 3.10.8 =
-* Fix: Security issue regarding the usermeta shortcode. Thanks to Francesco Carlucci
-* Fix: A case where Select2 was not working correctly
-* Fix: Issue with Restricted Words settings where you couldn't add new words in the input
-* Fix: Issue with Divi modules assets not loading
-* Fix: Issue with the Modify Default Redirect timer option not showing
-* Misc: Random changes to some settings descriptions
-* Misc: Fix console errors coming from select other users dropdown in a special case
-
-= 3.10.7 =
-* Feature: Added Divi Modules that can be used to create the pages with the plugin shortcodes
-* Fix: Compatibility issue with Elementor when setting display rules for templates
-* Fix: HPOS notification issue when a paid version of Profile Builder was active
-* Fix: An issue with the Group Details fields from Paid Member Subscriptions always being visible when the Profile Builder form was used
-* Misc: Changes to some metaboxes positioning in back-end
-* Misc: Added floating save button for certain settings pages
-* Misc: 2FA setting was being wrongly displayed in back-end for free version where it wasn't available
-* Misc: Added filters to pre-fill the input and hidden input fields: wppb_form_input_field_value and wppb_form_hidden_input_field_value
-
-= 3.10.6 =
-* Fix: Issue with Content Restriction and Gutenberg Blocks which was causing them to not load in back-end
-* Fix: WooCommerce HPOS issue where the plugin was detected as compatible only with Content Restriction active
-* Fix: Issue with Labels Edit metaboxes not being displayed correctly
-* Fix: Jquery issue when a block theme was activated
-* Misc: Some more settings styling changes and regrouping
-* Misc: Extend Custom CSS Classes on Fields functionality to some fields who were missing it
-* Misc: Fix a missing file warning when editing posts coming from the Select2 functionality
-* Misc: Added click to copy functionality for the shortcodes that are displayed in the back-end
-
-= 3.10.5 =
-* Fix: Issue with Email Customizer not loading
-* Fix: Compatibility issue with newer versions of WooCommerce where Avatar or Upload fields were not working
-* Fix: The Events Calendar compatibility issue with the Restrict Rest API option from our Private Website functionality
-* Fix: Deprecation notice with newer versions of PHP
-* Fix: Issue between password strength functionality and password management programs that can autofill the password field
-* Fix: Compatibility issue with Paid Member Subscriptions where some unwanted admin menu items were showing
-* Fix: The Admin Bar functionality will now always show the bar for admins if enabled even if they have additional user roles which might have it disabled
-* Misc: Setup Wizard styling tweaks
-* Misc: Dashboard page registered users widget is now correctly showing 0 values
-
-= 3.10.4 =
-* Fix: Compatibility issue with other plugins that was generated on our custom settings pages
-* Fix: Issue with older WordPress versions and some of our functionality
-* Fix: A security issue on the Paid Member Subscriptions cross promotion page
-* Fix: Issue where you couldn't see the popup to insert/edit a link the TinyMCE back-end editors
-* Misc: Fix a back-end description
-* Misc: Improve settings messages about licenses
-
-= 3.10.3 =
-* Fix: Fatal error introduced in last version
-* Misc: Small styling changes for Setup Wizard page
-
-= 3.10.2 =
-* Fix: An error triggering from the Setup Wizard in a case
-* Fix: Back-end compatibility error that was being triggered when the Breeze Cache plugin was active
-* Fix: For Gutenberg Content Restriction messages that weren't centered on the page
-* Fix: Some warnings and notices appearing on PHP 8.2
-* Fix: Declare WooCommerce HPOS compatibility
-* Misc: random fixes for the new back-end styles
-
-= 3.10.1 =
-* Feature: Added Onboarding Wizard for easier plugin setup
-* Feature: New main plugin page Dashboard which serves as a quick plugin overview
-* Fix: Parse shortcodes from the WooCommerce Content Restriction messages
-* Fix: Issue where the Email Change notification couldn't be customized through the Email Customizer
-* Fix: Random changes for the new settings pages
-
-= 3.10.0 =
-* Feature: Content Restriction for Gutenberg Blocks. You can now restrict any block based on user roles
-* Fix: A notice appearing from the Email Confirmation functionality in some cases
-* Fix: Random fixes for the new settings pages design
-* Fix: A notice coming from the Capitalize First Last Name advanced setting
-* Fix: Warning messages coming with PHP 8.2
-* Fix: Correctly save GDPR checkbox value when Email Confirmation is used
-* Misc: Disabling the auto scroll of forms had unintended effects, the option now only disables the auto scroll functionality
-* Misc: Add a filter over the Content Restriction metabox so it can be used to select for who and where to show it
-* Misc: Allow admins on multi-site to view the User to Edit field from Edit Profile forms if their user role has the `remove_users` capability
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

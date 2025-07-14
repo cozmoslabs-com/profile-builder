@@ -316,7 +316,18 @@ function wppb_front_end_password_recovery( $atts ){
                 }
             }
             else{
-                $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
+                if( !empty( $wppb_generalSettings['loginWith'] ) ){
+                    if( $wppb_generalSettings['loginWith'] == 'email' ){
+                        $warning = __( 'The email entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email.', 'profile-builder' );
+
+                    }
+                    else if( $wppb_generalSettings['loginWith'] == 'username' ) {
+                        $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
+                    }
+                    else{
+                        $warning = __( 'The email/username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email/username.', 'profile-builder' );
+                    }
+                }
                 $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
                 $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
             }

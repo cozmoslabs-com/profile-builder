@@ -1630,14 +1630,15 @@ body[class*="post-type-wppb-"] .wp-list-table td {
     vertical-align: middle;
 }
 
-body[class*="post-type-wppb-"] .wp-list-table th.sortable a {
+body[class*="post-type-wppb-"] .wp-list-table th.sortable a, body[class*="post-type-wppb-"] .wp-list-table th.sorted a {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 body[class*="post-type-wppb-"] .wp-list-table th.sortable a .sorting-indicator {
-    margin: 0;
+    margin-left: 2px;
+    margin-top: 3px;
 }
 
 

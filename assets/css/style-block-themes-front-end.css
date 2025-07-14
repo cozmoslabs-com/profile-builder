@@ -242,7 +242,7 @@ div.wppb-sc-buttons-container {
 /* buttons */
 .wppb-upload input[name^=simple_upload]::file-selector-button,
 .wppb-avatar input[name^=simple_upload]::file-selector-button,
-.wppb-user-forms input[type="submit"],
+.wppb-user-forms input[type="submit"]:not(.wppb-ul-search .wppb-search-button),
 .wppb-user-forms .wppb-epaa-admin-actions button,
 .wppb-user-forms a.button {
     display: inline-flex;
@@ -259,7 +259,7 @@ div.wppb-sc-buttons-container {
 
 .wppb-upload input[name^=simple_upload]::file-selector-button,
 .wppb-avatar input[name^=simple_upload]::file-selector-button,
-.wppb-user-forms input[type="submit"]:not(.wppb-delete-account),
+.wppb-user-forms input[type="submit"]:not(.wppb-delete-account, .wppb-ul-search .wppb-search-button),
 .wppb-user-forms .wppb-epaa-admin-actions button,
 .wppb-user-forms a.button {
     color: #FFFFFF !important;

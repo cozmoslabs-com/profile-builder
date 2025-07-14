@@ -148,17 +148,19 @@
 #wppb-search-fields {
     min-width: 250px;
     float: left;
-    margin-right: 20px;
+    width: 100%;
 }
 
 .wppb-user-forms .wppb-search-button {
-    margin-right: 10px;
     padding: 7px 20px;
     line-height: 24px;
 }
 
 .wppb-search-users-wrap {
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 .wppb-user-forms .extra_field_heading {
@@ -172,6 +174,38 @@
     background: #414141;
     opacity: 0.3;
     cursor: not-allowed;
+}
+
+.wppb-userlisting-container form.wppb-search-users {
+    margin-bottom: 20px;
+}
+
+.wppb-userlisting-container .wppb-ul-search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.wppb-userlisting-container .wppb-ul-search form.wppb-search-users {
+    flex-grow: 1;
+}
+
+.wppb-search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    position: relative;
+}
+
+.wppb-search-container .wppb-clear-results {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
 }
 
 
@@ -701,8 +735,7 @@ ul.wppb-faceted-list > li:first-child {
 }
 
 .wppb-userlisting-container .wppb-faceted-list li h5 {
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin: 5px 0;
 }
 
 ul.wppb-faceted-list label > * {

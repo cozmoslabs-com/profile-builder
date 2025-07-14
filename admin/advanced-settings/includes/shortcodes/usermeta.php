@@ -59,8 +59,25 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 
 	}
 
+	// Verify if key is a WYSIWYG field
+	$escape_value = true;
+	$manage_fields = get_option( 'wppb_manage_fields' );
+
+	if ( !empty( $manage_fields ) ){
+		foreach ( $manage_fields as $field ){
+			if ( $field['meta-name'] == $atts['key'] && $field['field'] == 'WYSIWYG' ){
+				$escape_value = false;
+				break;
+			}
+		}
+	}
+
+	if( $escape_value === true ){
+		$value = esc_html( $value );
+	}
+
 	if ( !empty( $value ) ){
-		return wp_kses_post( $atts['pre'] ) . esc_html( $value ) . wp_kses_post( $atts['post'] ) ;
+		return wp_kses_post( $atts['pre'] ) . $value . wp_kses_post( $atts['post'] ) ;
 	}
 
 	if( $atts['key'] === 'role' ){

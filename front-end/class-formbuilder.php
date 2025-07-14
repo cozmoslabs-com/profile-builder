@@ -385,14 +385,14 @@ class Profile_Builder_Form_Creator{
 
                         switch( $account_management_settings ) {
                             case 'ec-no_aa-no':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1\$s has been successfully created!", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
                                 break;
                             case 'ec-yes_aa-no':
                                 $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
                                 break;
                             case 'ec-no_aa-yes':
 								if( current_user_can( 'delete_users' ) ) {
-									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1\$s has been successfully created!", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
 								} else {
 									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profile-builder' ), $account_name ), $account_name ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
 								}

@@ -70,7 +70,15 @@ class WPPB_Setup_Wizard {
         reset( $default_steps );
 
         $this->steps = apply_filters( 'wppb_setup_wizard_steps', $default_steps );
-        $this->step  = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : key( $default_steps );
+
+        $step        = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : key( $default_steps );
+        $valid_steps = array_keys( $this->steps );
+
+        if ( !in_array( $step, $valid_steps ) ) {
+            $step = 'user-pages'; // default
+        }
+        
+        $this->step  = $step;
 
         include_once 'setup-wizard/view-page-setup-wizard.php';
 

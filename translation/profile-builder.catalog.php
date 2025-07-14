@@ -946,7 +946,7 @@
 <?php __("You are not allowed to do this.", "profile-builder"); ?>
 <?php __("There was an error in the submitted form", "profile-builder"); ?>
 <?php __("Your profile has been successfully updated!", "profile-builder"); ?>
-<?php __("The account %1s has been successfully created!", "profile-builder"); ?>
+<?php __('The account %1$s has been successfully created!', 'profile-builder' ); ?>
 <?php __("Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", "profile-builder"); ?>
 <?php __("Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", "profile-builder"); ?>
 <?php __("Update", "profile-builder"); ?>
@@ -999,8 +999,12 @@
 <?php __("The entered passwords don't match!", "profile-builder"); ?>
 <?php __("The password must have the minimum length of %s characters", "profile-builder"); ?>
 <?php __("Your password has been successfully changed!", "profile-builder"); ?>
+<?php __("The email/username entered wasn't found in the database!", "profile-builder"); ?>
+<?php __("Please check that you entered the correct email/username.", "profile-builder"); ?>
 <?php __("The username entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct username.", "profile-builder"); ?>
+<?php __("The email entered wasn't found in the database!", "profile-builder"); ?>
+<?php __("Please check that you entered the correct email.", "profile-builder"); ?>
 <?php __("The email address entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct email address.", "profile-builder"); ?>
 <?php __("Check your email for the confirmation link.", "profile-builder"); ?>
@@ -1172,7 +1176,6 @@
 <?php __("No options available", "profile-builder"); ?>
 <?php __("Remove All Filters", "profile-builder"); ?>
 <?php __("Search", "profile-builder"); ?>
-<?php __("Clear Results", "profile-builder"); ?>
 <?php __("Use this shortcode on the page you want the form to be displayed:", "profile-builder"); ?>
 <?php __("<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!", "profile-builder"); ?>
 <?php __("Extra shortcode parameters", "profile-builder"); ?>
@@ -2148,6 +2151,7 @@
 <?php __("This display name is already in use. Please choose another one.", "profile-builder"); ?>
 <?php __("Email address change request for %s", "profile-builder"); ?>
 <?php __('Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s', 'profile-builder' ); ?>
+<?php __("Your email address has been successfully updated!", "profile-builder"); ?>
 <?php __("Placeholder Labels", "profile-builder"); ?>
 <?php __("Enable Placeholders", "profile-builder"); ?>
 <?php __("Replace labels with placeholders", "profile-builder"); ?>
