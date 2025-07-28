@@ -368,7 +368,293 @@ function wppb_get_reserved_meta_name_list( $all_fields, $posted_values ){
     return apply_filters ( 'wppb_unique_meta_name_list', $unique_meta_name_list );
 }
 
+add_action('admin_head', 'wppb_maybe_remove_add_new_button_for_cpt' );
+function wppb_maybe_remove_add_new_button_for_cpt() {
 
+    global $pagenow;
+    
+    $target_slugs    = [ 'wppb-rf-cpt', 'wppb-epf-cpt', 'wppb-ul-cpt' ];
+    $current_slug    = '';
+    $pointer_content = '';
+
+    $correct_page = false;
+
+    if ( $pagenow === 'edit.php' && isset( $_GET['post_type'] ) && in_array( sanitize_text_field( $_GET['post_type'] ), $target_slugs ) ) {
+        $correct_page = true;
+        $current_slug = sanitize_text_field( $_GET['post_type'] );
+    } else if( $pagenow === 'post.php' && isset( $_GET['post'] ) ) {
+
+        $post_type = get_post_type( absint( $_GET['post'] ) );
+
+        if ( in_array( $post_type, $target_slugs ) ) {
+            $correct_page = true;
+            $current_slug = $post_type;
+        }
+
+    }
+    
+    if ( $correct_page ) {
+        $license_status = wppb_get_serial_number_status();
+
+        if( $current_slug === 'wppb-rf-cpt' ) {
+            if( $license_status == 'missing' ) {
+                $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new User Registration Forms.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+            } else {
+                $pointer_content .= '<p>' . sprintf( __( 'You need an active license to add new User Registration Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-registration-forms&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-registration-forms&utm_medium=client-site&utm_campaign=pb-multi-registration-addon#pricing" target="_blank">', '</a>' ) . '</p>';
+            }
+        } else if( $current_slug === 'wppb-epf-cpt' ) {
+            if( $license_status == 'missing' ) {
+                $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new Edit Profile Forms.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+            } else {
+                $pointer_content .= '<p>' . sprintf( __( 'You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-edit-profile-forms&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-edit-profile-forms&utm_medium=client-site&utm_campaign=pb-multi-edit-profile-addon#pricing" target="_blank">', '</a>' ) . '</p>';
+            }
+        } else if( $current_slug === 'wppb-ul-cpt' ) {
+            if( $license_status == 'missing' ) {
+                $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new User Listing.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+            } else {
+                $pointer_content .= '<p>' . sprintf( __( 'You need an active license to add a new User Listing. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-user-listing&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-user-listing&utm_medium=client-site&utm_campaign=pb-user-listing-addon#pricing" target="_blank">', '</a>' ) . '</p>';
+            }
+        }
+
+        if( $license_status !== 'valid' ) {
+            wp_enqueue_style('wp-pointer');
+            wp_enqueue_script('wp-pointer');
+
+            echo '
+            <script>
+                jQuery(document).ready(function($) {
+                    let button_text = $(".page-title-action").text();
+                    $(".page-title-action").remove();
+
+                    $(".wrap .wp-heading-inline").after(`<a class="page-title-action page-title-action-disabled" style="cursor:pointer;">${button_text}</a>`);
+
+                    $(".page-title-action-disabled").on("click", function(e) {
+                        e.preventDefault();
+
+                        let pointer_content = '. json_encode( $pointer_content ) .';
+
+                        jQuery( this ).pointer({
+                            content: pointer_content,
+                            position: { edge: "right", align: "middle" }
+                        }).pointer("open");
+                    });
+                });
+            </script>';
+        }
+
+    }
+    
+    // This shows the Add new button. Since the above action removes it completelty, we can just attempt to show it here
+    echo '<script>
+        jQuery(document).ready(function($) {
+            if( $(".page-title-action").length > 0 ) {
+                $(".page-title-action").css("display", "inline-flex");
+            }
+        });
+    </script>';
+
+    // Manage fields
+    if( isset( $_GET['page'] ) && $_GET['page'] === 'manage-fields' ) {
+        $license_status = wppb_get_serial_number_status();
+        $pointer_content_cl = '';
+        $pointer_content_fv = '';
+        $pointer_content_epaa = '';
+
+        if( $license_status == 'missing' ) {
+            $pointer_content_cl .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to use the Conditional Logic feature.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+            $pointer_content_fv .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to configure Field Visibility options.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+            $pointer_content_epaa .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to use the Edit Profile Updates Approved by Admin addon feature.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
+        } else {
+            $pointer_content_cl .= '<p>' . sprintf( __( 'You need an active license to configure the Conditional Logic feature. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-conditional-logic&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-conditional-logic&utm_medium=client-site&utm_campaign=pb-conditional-logic-settings#pricing" target="_blank">', '</a>' ) . '</p>';
+            $pointer_content_fv .= '<p>' . sprintf( __( 'You need an active license to configure Field Visibility options. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-field-visibility&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-field-visibility&utm_medium=client-site&utm_campaign=pb-field-visibility-settings#pricing" target="_blank">', '</a>' ) . '</p>';
+            $pointer_content_epaa .= '<p>' . sprintf( __( 'You need an active license to use the Edit Profile Updates Approved by Admin addon. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-epaa-add-ons&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-epaa-add-ons&utm_medium=client-site&utm_campaign=pb-epaa-add-ons-settings#pricing" target="_blank">', '</a>' ) . '</p>';
+        }        
+
+        if( $license_status != 'valid' ) {
+            wp_enqueue_style('wp-pointer');
+            wp_enqueue_script('wp-pointer');
+
+            echo '
+            <script>
+                jQuery(document).ready(function($) {
+
+                    $(document).on( "wpbFormMetaLoaded", function(e, meta) {
+
+                        wppb_manage_fields_license_invalid( e );
+
+                    });
+
+                    wppb_manage_fields_license_invalid();
+
+                    function wppb_manage_fields_license_invalid(){
+
+                        if( $(".row-conditional-logic-enabled").length > 0 ) {
+                        
+                            $(".row-conditional-logic").hide();
+
+                            $("#edit_form_conditional-logic-enabled_yes, label[for=conditional-logic-enabled_yes]").on("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+
+                                let pointer_content = '. json_encode( $pointer_content_cl ) .';
+                                let pointer_target  = jQuery( this ).parent( ".cozmoslabs-toggle-container" );
+
+                                if( e && e.currentTarget && jQuery( e.currentTarget ).hasClass( "cozmoslabs-form-field-label" ) ) {
+                                    pointer_target = jQuery( this );
+                                }
+
+                                pointer_target.pointer({
+                                    content: pointer_content,
+                                    position: { edge: "right", align: "middle" }
+                                }).pointer("open");
+                            });
+                        }
+
+                        if( $(".row-edit-profile-approved-by-admin").length > 0 ) {
+
+                            $("#edit_form_edit-profile-approved-by-admin_yes, label[for=edit-profile-approved-by-admin_yes]").on("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+
+                                let pointer_content = '. json_encode( $pointer_content_epaa ) .';
+                                let pointer_target  = jQuery( this ).parent( ".cozmoslabs-toggle-container" );
+
+                                if( e && e.currentTarget && jQuery( e.currentTarget ).hasClass( "cozmoslabs-form-field-label" ) ) {
+                                    pointer_target = jQuery( this );
+                                }
+
+                                pointer_target.pointer({
+                                    content: pointer_content,
+                                    position: { edge: "right", align: "middle" }
+                                }).pointer("open");
+                            });
+                        }
+
+                        if( $(".row-visibility").length > 0 ) {
+
+                            $("select#visibility").on("mousedown", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+
+                                let pointer_content = '. json_encode( $pointer_content_fv ) .';
+
+                                jQuery( this ).pointer({
+                                    content: pointer_content,
+                                    position: { edge: "right", align: "middle" }
+                                }).pointer("open");
+                            });
+
+                        }
+
+                        if( $(".row-user-role-visibility").length > 0 ) {
+
+                            $(".row-user-role-visibility .wck-checkboxes input").attr("disabled", true).css("pointer-events", "none");
+
+                            $(".row-user-role-visibility .wck-checkboxes").on("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+
+                                let pointer_content = '. json_encode( $pointer_content_fv ) .';
+
+                                jQuery( this ).pointer({
+                                    content: pointer_content,
+                                    position: { edge: "right", align: "middle" }
+                                }).pointer("open");
+                            });
+
+                        }
+
+                        if( $(".row-location-visibility").length > 0 ) {
+
+                            $(".row-location-visibility .wck-checkboxes input").attr("disabled", true).css("pointer-events", "none");
+
+                            $(".row-location-visibility .wck-checkboxes").on("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+
+                                let pointer_content = '. json_encode( $pointer_content_fv ) .';
+
+                                jQuery( this ).pointer({
+                                    content: pointer_content,
+                                    position: { edge: "right", align: "middle" }
+                                }).pointer("open");
+                            });
+
+                        }
+
+                    }
+
+                });
+            </script>';
+        }
+    }
+
+}
+
+function wppb_filter_own_post_creation( $data, $postarr ) {
+    if ( in_array( $data['post_type'], [ 'wppb-rf-cpt', 'wppb-epf-cpt', 'wppb-ul-cpt' ] ) && empty( $postarr['ID'] ) ) {
+
+        $license_status = wppb_get_serial_number_status();
+
+        if( $license_status != 'valid' ) {
+            wp_die( 'An active Profile Builder license is required to create new posts of this type.' );
+        }
+
+    }
+
+    return $data;
+}
+add_filter( 'wp_insert_post_data', 'wppb_filter_own_post_creation', 10, 2 );
+
+add_filter( 'wck_update_meta_filter_values_wppb_manage_fields', 'wppb_filter_extra_manage_fields_options', 10, 2 );
+function wppb_filter_extra_manage_fields_options( $values, $element_id ) {
+
+    $license_status = wppb_get_serial_number_status();
+
+    if( $license_status == 'valid' )
+        return $values;
+
+    if( !empty( $values['id'] ) ) {
+        $manage_fields = get_option( 'wppb_manage_fields', array() );
+        $existing_field = false;
+
+        if( !empty( $manage_fields ) ) {
+            foreach( $manage_fields as $field ) {
+                if( $field['id'] == $values['id'] ) {
+                    $existing_field = $field;
+                    break;
+                }
+            }
+        }
+
+        if( !empty( $existing_field ) ) {
+
+            $target_keys = [
+                'visibility',
+                'location-visibility',
+                'user-role-visibility',
+                'conditional-logic-enabled',
+                'edit-profile-approved-by-admin',
+            ];
+
+            foreach( $target_keys as $key ) {
+                if( !empty( $existing_field[$key] ) ) {
+                    $values[$key] = $existing_field[$key];
+                }
+            }
+
+        }
+
+    }
+
+    return $values;
+
+}
 /**
  * Function that adds an admin notification about the PB Form Design Styles
  *

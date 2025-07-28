@@ -652,7 +652,7 @@ class WPPB_Plugin_Updater {
             if( !current_user_can( 'manage_options' ) )
                 return;
 
-            if ( isset( $_POST['wppb_license_key'] ) && preg_match('/^[*]+$/', $_POST['wppb_license_key']) && strlen( $_POST['wppb_license_key'] ) > 5 ) { //phpcs:ignore
+            if ( isset( $_POST['wppb_license_key'] ) && preg_match('/[*]{3,}/', $_POST['wppb_license_key']) && strlen( $_POST['wppb_license_key'] ) > 5 ) { //phpcs:ignore
                 // pressed submit without altering the existing license key (containing only * as outputted by default)
                 // useful for Deactivating/Activating valid license back
                 $license = wppb_get_serial_number();

@@ -346,7 +346,6 @@ input#send_credentials_via_email {
 .wppb-form-field > span:not(.wppb-password-field-container) {
     display: block;
     clear: both;
-    margin-left: 30%;
     font-size: 80%;
     font-style: italic;
     word-break: break-word;

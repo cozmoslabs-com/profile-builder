@@ -27,13 +27,14 @@ add_action( 'admin_menu', 'wppb_register_add_ons_submenu_page', 28 );
  */
 function wppb_add_ons_content() {
     //initialize the object
-    $pb_addons_listing = new CL_Addons_List_Table();
-    $pb_addons_listing->images_folder = WPPB_PLUGIN_URL.'assets/images/add-ons/';
-    $pb_addons_listing->text_domain = 'profile-builder';
-    $pb_addons_listing->header = array( 'title' => __('Profile Builder Add-ons', 'profile-builder' ) );
-    $pb_addons_listing->current_version = PROFILE_BUILDER;
-    $pb_addons_listing->tooltip_header = __( 'Profile Builder Add-ons', 'profile-builder' );
-    $pb_addons_listing->tooltip_content = sprintf( __( 'You must first purchase this version to have access to the addon %1$shere%2$s', 'profile-builder' ), '<a target="_blank" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree#pricing">', '</a>' );
+    $pb_addons_listing                                   = new CL_Addons_List_Table();
+    $pb_addons_listing->images_folder                    = WPPB_PLUGIN_URL.'assets/images/add-ons/';
+    $pb_addons_listing->text_domain                      = 'profile-builder';
+    $pb_addons_listing->header                           = array( 'title' => __('Profile Builder Add-ons', 'profile-builder' ) );
+    $pb_addons_listing->current_version                  = PROFILE_BUILDER;
+    $pb_addons_listing->tooltip_header                   = __( 'Profile Builder Add-ons', 'profile-builder' );
+    $pb_addons_listing->tooltip_content                  = sprintf( __( 'You need an active license to have access to the addon. %1$sRenew%2$s or %3$spurchase a new one here%4$s.', 'profile-builder' ), '<a target="_blank" href="https://www.cozmoslabs.com/account/?utm_source=pb-addons&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a target="_blank" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-addons&utm_medium=client-site&utm_campaign=pb-expired-license#pricing">', '</a>' );
+    $pb_addons_listing->tooltip_content_license_inactive = sprintf( __( 'To activate this add-on, you must first %senter your license key%s.', 'profile-builder' ), '<a target="_blank" href="'.admin_url( 'admin.php?page=profile-builder-general-settings' ).'">', '</a>' );
 
 
     //Add Pro Section

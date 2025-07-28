@@ -769,7 +769,7 @@ class Wordpress_Creation_Kit_PB{
 		if( !empty( $values ) ){
 			foreach( $values as $key => $value ){
 				if( array_key_exists( $key, $required_fields ) && apply_filters( "wck_required_test_{$meta}_{$key}", empty( $value ), $value, $id ) ){
-					$required_message .= apply_filters( "wck_required_message_{$meta}_{$key}", __( "Please enter a value for the required field ", "profile-builder" ) . "$required_fields[$key] \n", $value );
+					$required_message .= apply_filters( "wck_required_message_{$meta}_{$key}", __( "Please enter a value for the required field ", "profile-builder" ) . "<strong>$required_fields[$key]</strong><br>", $value );
 					$required_fields_with_errors[] = $key;
 				}
 			}
@@ -852,6 +852,11 @@ class Wordpress_Creation_Kit_PB{
 
 		/* check required fields */
 		$errors = self::wck_test_required( $this->args['meta_array'], $meta, $values, $id );
+
+		if ( empty( $errors ) ) {
+			$errors = self::wck_maybe_add_extra_errors( $this->args['meta_array'], $meta, $values, $id );
+		}
+
 		if( $errors != '' ){
 			header( 'Content-type: application/json' );
 			die( json_encode( $errors ) );
@@ -1351,6 +1356,23 @@ class Wordpress_Creation_Kit_PB{
             echo '<script type="text/javascript">alert("'.  str_replace( '%0A', '\n', esc_js( urldecode( base64_decode( $_GET['wckerrormessages'] ) ) ) ) .'")</script>';//phpcs:ignore
         }
     }
+
+	static function wck_maybe_add_extra_errors( $meta_array, $meta, $values, $id ){
+
+		if( strpos( $meta, 'wppb_cr_' ) === false )
+			return '';
+
+		$license_status = wppb_get_serial_number_status();
+
+		if( $license_status == 'missing' ){
+			return array( 'error' => sprintf( __( 'Please %1$senter your license key%2$s first, to add new custom redirects.', 'profile-builder' ), '<a href="' . admin_url( 'admin.php?page=profile-builder-general-settings' ) . '">', '</a>' ) );
+		} else if( $license_status !== 'valid' ){
+			return array( 'error' => sprintf( __( 'You need an active license to add new custom redirects. <br>%1$sRenew%2$s or %3$spurchase a new one here%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-redirects&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-redirects&utm_medium=client-site&utm_campaign=pb-redirects-addon#pricing" target="_blank">', '</a>' ) );
+		}
+
+		return '';
+
+	}
 
 
 	/**

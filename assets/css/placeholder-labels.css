@@ -67,11 +67,6 @@
     width: 100%;
 }
 
-.wppb-form-field.pbpl-class .wppb-description-delimiter,
-.wppb-form-field.wppb-html.pbpl-class span.custom_field_html {
-    margin-left: auto;
-}
-
 .wppb-form-field.wppb-select2.pbpl-class span.select2.select2-container,
 .wppb-form-field.wppb-select-cpt.pbpl-class span.select2.select2-container,
 .wppb-form-field.wppb-select2-multiple.pbpl-class span.select2.select2-container {

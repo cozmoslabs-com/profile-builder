@@ -3,7 +3,8 @@
 <?php __("%s is also activated. You need to deactivate it before activating this version of the plugin.", "profile-builder"); ?>
 <?php __("Add-Ons", "profile-builder"); ?>
 <?php __("Profile Builder Add-ons", "profile-builder"); ?>
-<?php __('You must first purchase this version to have access to the addon %1$shere%2$s', 'profile-builder' ); ?>
+<?php __('You need an active license to have access to the addon. %1$sRenew%2$s or %3$spurchase a new one here%4$s.', 'profile-builder' ); ?>
+<?php __("To activate this add-on, you must first %senter your license key%s.", "profile-builder"); ?>
 <?php __("Pro Add-ons", "profile-builder"); ?>
 <?php __("These Add-ons are available with the Pro and Agency license", "profile-builder"); ?>
 <?php __("Get access to these Add-ons with a Pro or Agency license. %sBuy now%s", "profile-builder"); ?>
@@ -90,6 +91,18 @@
 <?php __("Settings", "profile-builder"); ?>
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
+<?php __('You need an active license to add a new User Listing. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to add new User Listing.', 'profile-builder' ); ?>
+<?php __('You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to add new Edit Profile Forms.', 'profile-builder' ); ?>
+<?php __('You need an active license to add new User Registration Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to add new User Registration Forms.', 'profile-builder' ); ?>
+<?php __('You need an active license to configure the Conditional Logic feature. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('You need an active license to configure Field Visibility options. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('You need an active license to use the Edit Profile Updates Approved by Admin addon. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to use the Conditional Logic feature.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to configure Field Visibility options.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to use the Edit Profile Updates Approved by Admin addon feature.', 'profile-builder' ); ?>
 <?php __('New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users.', 'profile-builder' ); ?>
 <?php __('Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ); ?>
 <?php __(" Don't have a license? %sBuy one now%s.", "profile-builder"); ?>
@@ -286,9 +299,9 @@
 <?php __("Your %s license has reached its activation limit.", "profile-builder"); ?>
 <?php __("%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more.", "profile-builder"); ?>
 <?php __("Your %s license has expired.", "profile-builder"); ?>
-<?php __('Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support.', 'profile-builder' ); ?>
+<?php __('Please %1$sRenew Your Licence%2$s  to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility.', 'profile-builder' ); ?>
 <?php __("Your %s license is about to expire on %s", "profile-builder"); ?>
-<?php __("Please %sRenew Your Licence%s to continue receiving access to product downloads, automatic updates and support.", "profile-builder"); ?>
+<?php __("Please %sRenew Your Licence%s to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility.", "profile-builder"); ?>
 <?php __("Form Fields", "profile-builder"); ?>
 <?php __("Manage Form Fields", "profile-builder"); ?>
 <?php __("Default", "profile-builder"); ?>
@@ -888,10 +901,10 @@
 <?php __("Disable the WordPress REST-API for non-logged in users when Private Website is enabled", "profile-builder"); ?>
 <?php __("Profile Builder Register", "profile-builder"); ?>
 <?php __("Register your version of Profile Builder", "profile-builder"); ?>
-<?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
-<?php __('Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s', 'profile-builder' ); ?>
-<?php __('Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>
-<?php __('Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
+<?php __('Your <strong>Profile Builder license has expired</strong>. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility. %3$sRenew now %4$s %5$sDismiss%6$s', 'profile-builder' ); ?>
+<?php __('Your <strong>Profile Builder license has expired</strong>. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility. %3$sRenew now %4$s', 'profile-builder' ); ?>
+<?php __('Your <strong>Profile Builder</strong> license is missing or invalid. <br/>Please %1$sRegister Your Copy%2$s to get access to premium features & addons, automatic updates and support. Need a license key? %3$sPurchase one now%4$s', 'profile-builder' ); ?>
+<?php __('Your <strong>Profile Builder license is about to expire on %5$s</strong>. <br/>Please %1$sRenew Your Licence%2$s to maintain access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility. %3$sRenew now %4$s %6$sDismiss%7$s', 'profile-builder' ); ?>
 <?php __("Your <strong>%s</strong> license has reached its activation limit.<br> Upgrade now for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more. <a class=\"button-primary\" href=\"%s\">Upgrade now</a>", "profile-builder"); ?>
 <?php __(' %1$sDismiss%2$s', 'profile-builder' ); ?>
 <?php __("Hello! Seems like you've been using Profile Builder to create front-end user forms. That's awesome!", "profile-builder"); ?>
@@ -2096,9 +2109,12 @@
 <?php __("Import successfully!", "profile-builder"); ?>
 <?php __("Page will refresh in 3 seconds...", "profile-builder"); ?>
 <?php __("Author Details", "profile-builder"); ?>
+<?php __("This add-on can not be activated back without a valid license. Are you sure you want to deactivate it?", "profile-builder"); ?>
 <?php __("Add Entry", "profile-builder"); ?>
 <?php __("Delete this item", "profile-builder"); ?>
 <?php __("Please enter a value for the required field ", "profile-builder"); ?>
+<?php __('You need an active license to add new custom redirects. <br>%1$sRenew%2$s or %3$spurchase a new one here%4$s.', 'profile-builder' ); ?>
+<?php __('Please %1$senter your license key%2$s first, to add new custom redirects.', 'profile-builder' ); ?>
 <?php __("This field is available in our paid plans.", "profile-builder"); ?>
 <?php __("A Map field must be created first.", "profile-builder"); ?>
 <?php __("Install the free Paid Member Subscriptions plugin to get access this field.", "profile-builder"); ?>

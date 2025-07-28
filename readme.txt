@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.1
+Stable tag: 3.14.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -204,6 +204,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.2 =
+* Enhancement: Improved back-end messages informing what features are available depending on license
+* Fix: Position of field descriptions on block themes
+* Fix: Adjusted sanitization for custom field values to not delete arrays
+* Fix: Issue with reCaptcha v3 not working in a scenario with the Gutenberg Block for register forms
+
 = 3.14.1 =
 * Fix: Make sure only valid Setup Wizard tabs can be loaded
 * Fix: Sorting indicator position for back-end tables

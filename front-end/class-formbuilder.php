@@ -475,7 +475,7 @@ class Profile_Builder_Form_Creator{
         $wppb_form_class .= $wppb_user_role_class;
 
         ?>
-        <form enctype="multipart/form-data" method="post" id="<?php echo esc_attr( apply_filters( 'wppb_form_id', $wppb_form_id, $this ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wppb_form_class', $wppb_form_class, $this ) ) . ($this->args['ajax'] ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( apply_filters( 'wppb_form_action', wppb_curpageurl(), $this->args ) ); ?>">
+        <form enctype="multipart/form-data" method="post" id="<?php echo esc_attr( apply_filters( 'wppb_form_id', $wppb_form_id, $this ) ); ?>" class="<?php echo esc_attr( apply_filters( 'wppb_form_class', $wppb_form_class, $this ) ) . ( $this->args['ajax'] == 'true' ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( apply_filters( 'wppb_form_action', wppb_curpageurl(), $this->args ) ); ?>">
 			<?php
             do_action( 'wppb_form_args_before_output', $this->args );
             $this->args = apply_filters( 'wppb_filter_form_args_before_output', $this->args );
@@ -728,21 +728,28 @@ class Profile_Builder_Form_Creator{
         if( !empty( $form_fields ) ){
             foreach( $form_fields as $field ){
                 if( !empty( $field['meta-name'] ) ){
+                    if( !empty( $global_request[$field['meta-name']] ) ){
 
-                    if( in_array( $field['field'], array( 'URL' ) ) )
-                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? esc_url_raw( $global_request[ $field['meta-name'] ] ) : '' );
-                    else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) ){
-                        $meta_value = $global_request[ $field['meta-name'] ];
+                        if( in_array( $field['field'], array( 'URL' ) ) )
+                            $posted_value = esc_url_raw( $global_request[ $field['meta-name'] ] );
+                        else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) ){
+                            $meta_value = $global_request[ $field['meta-name'] ];
 
-                        if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
-                            $meta_value = esc_textarea( $meta_value );
+                            if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+                                $meta_value = esc_textarea( $meta_value );
 
-                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? $meta_value : '' );
-                    } else 
-                        $posted_value = ( !empty( $global_request[$field['meta-name']] ) ? sanitize_text_field( $global_request[ $field['meta-name'] ] ) : '' );
-                    
+                            $posted_value = $meta_value;
+                        } else
+                            if ( is_array( $global_request[ $field['meta-name'] ] ) ) {
+                                $posted_value = array_map( 'sanitize_text_field', $global_request[ $field['meta-name'] ] );
+                            } else {
+                                $posted_value = sanitize_text_field( $global_request[ $field['meta-name'] ] );
+                            }
+                    } else
+                        $posted_value = '';
+
                     $meta[$field['meta-name']] = apply_filters( 'wppb_add_to_user_signup_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), $posted_value, $field, $global_request );
-                    
+
                 }
             }
         }

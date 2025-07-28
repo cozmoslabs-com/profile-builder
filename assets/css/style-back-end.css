@@ -1844,7 +1844,8 @@ div.wppb-notice .notice-dismiss {
 }
 
 div.wppb-serial-notification .button-primary,
-div.wppb-notice .button-primary {
+div.wppb-notice .button-primary,
+.pms-notice .button-primary {
     height: 30px;
     /* min-width: 100px; */
     margin-left: 10px
@@ -3359,4 +3360,8 @@ body.profile-builder_page_admin-email-customizer .cozmoslabs-settings-container 
     padding: 10px;
     padding-left: 0px;
     gap: 8px;
+}
+
+body[class*="post-type-wppb-"] .page-title-action {
+    display: none;
 }
