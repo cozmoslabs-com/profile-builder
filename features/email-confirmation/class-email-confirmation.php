@@ -251,7 +251,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                         $sql_result = $wpdb->query($wpdb->prepare("DELETE FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $user));
 
                         if (!$sql_result)
-                            $this->wppb_process_bulk_action_message(sprintf(__("%s couldn't be deleted", "profile-builder"), $result->user_login), get_bloginfo('url') . '/wp-admin/users.php?page=unconfirmed_emails');
+                            $this->wppb_process_bulk_action_message(sprintf(__("%s couldn't be deleted", "profile-builder"), $user), get_bloginfo('url') . '/wp-admin/users.php?page=unconfirmed_emails');
 
                     }
                 }

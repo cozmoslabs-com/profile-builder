@@ -579,6 +579,14 @@ function wppb_manual_activate_signup( $activation_key ) {
 
 			wppb_add_meta_to_user_on_activation( $user_id, '', $meta );
 
+			if( apply_filters( 'wppb_admin_email_confirmation_maybe_use_admin_approval', false ) ) {
+				// if admin approval is activated, then block the user until he gets approved
+				$wppb_generalSettings = get_option('wppb_general_settings');
+				if( wppb_get_admin_approval_option_value() === 'yes' ){
+					wppb_update_user_status_to_pending( $user_id, $wppb_generalSettings );
+				}
+			}
+
             /* copy the hashed password from signup meta to wp user table */
             if( !empty( $meta['user_pass'] ) ){
                 /* we might still have the base64 encoded password in signups and not the hash */

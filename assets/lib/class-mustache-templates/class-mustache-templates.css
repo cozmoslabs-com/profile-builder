@@ -282,13 +282,15 @@
 6.0 Other
 --------------------------------------------------------------*/
 /* show email toggle checkbox inline for User/Admin Email Customizers */
-.profile-builder_page_user-email-customizer .wck-post-body .postbox:not(#uec_common_settings) tr:nth-child(2), .profile-builder_page_admin-email-customizer .wck-post-body .postbox:not(:first-child) tr:nth-child(2) {
+.profile-builder_page_user-email-customizer .wck-post-body .postbox:not(#uec_common_settings) tr:nth-child(2),
+.profile-builder_page_admin-email-customizer .wck-post-body .postbox:not(#aec_common_settings) tr:nth-child(2) {
     text-align: left;
     width: 50%;
     display: inline-block;
 }
 
-.profile-builder_page_user-email-customizer .wck-post-body .postbox:not(#uec_common_settings) tr:nth-child(2) td, .profile-builder_page_admin-email-customizer .wck-post-body .postbox:not(:first-child) tr:nth-child(2) td {
+.profile-builder_page_user-email-customizer .wck-post-body .postbox:not(#uec_common_settings) tr:nth-child(2) td,
+.profile-builder_page_admin-email-customizer .wck-post-body .postbox:not(#aec_common_settings) tr:nth-child(2) td {
     float: right;
     padding-right: 20px;
 }

@@ -81,11 +81,11 @@ add_action(
 
         // Add pre-loaded data for my-namespace/my-block
         wp_add_inline_script('wppb-register-editor-script', 'window.wppbRegisterBlockConfig = ' . json_encode(array(
-                'wppb_paid' => defined( 'WPPB_PAID_PLUGIN_DIR' ),
+                'wppb_paid'                 => defined( 'WPPB_PAID_PLUGIN_DIR' ),
                 'registration_form_options' => $registration_form_options,
-                'role_options' => $role_options,
-                'button' => esc_url( admin_url( 'edit.php?post_type=wppb-rf-cpt' ) ),
-                'url_options' => $url_options,
+                'role_options'              => $role_options,
+                'button'                    => esc_url( admin_url( 'edit.php?post_type=wppb-rf-cpt' ) ),
+                'url_options'               => $url_options,
             )), 'before');
     }
 );
@@ -364,21 +364,21 @@ add_action(
             }
             if ( !$form_name || $form_name === '' ) {
                 $atts = [
-                    'role' => $attributes['role'] !== '' ? ' role="' . esc_attr( $attributes['role'] ) . '"' : '',
-                    'form_name' => '',
-                    'redirect_url' => $attributes['redirect_url'] !== '' ? ' redirect_url="' . esc_url( $attributes['redirect_url'] ) . '"' : '',
+                    'role'                => $attributes['role'] !== '' ? ' role="' . esc_attr( $attributes['role'] ) . '"' : '',
+                    'form_name'           => '',
+                    'redirect_url'        => $attributes['redirect_url'] !== '' ? ' redirect_url="' . esc_url( $attributes['redirect_url'] ) . '"' : '',
                     'logout_redirect_url' => $attributes['logout_redirect_url'] !== '' ? ' logout_redirect_url="' . esc_url( $attributes['logout_redirect_url'] ) . '"' : '',
-                    'automatic_login' => $attributes['automatic_login'] ? ' automatic_login="yes"' : '',
-                    'ajax' => $attributes['ajax'] ? ' ajax="true"' : '',
+                    'automatic_login'     => $attributes['automatic_login'] ? ' automatic_login="yes"' : '',
+                    'ajax'                => $attributes['ajax'] ? ' ajax="true"' : '',
                 ];
             } else {
                 $atts = [
-                    'role' => '',
-                    'form_name' => ' form_name="' . $form_name . '"',
-                    'redirect_url' => '',
+                    'role'                => '',
+                    'form_name'           => ' form_name="' . $form_name . '"',
+                    'redirect_url'        => '',
                     'logout_redirect_url' => $attributes['logout_redirect_url'] !== '' ? ' logout_redirect_url="' . esc_url( $attributes['logout_redirect_url'] ) . '"' : '',
-                    'automatic_login' => '',
-                    'ajax' => ' ajax="multiple-register-form"',
+                    'automatic_login'     => '',
+                    'ajax'                => ' ajax="multiple-register-form"',
                 ];
             }
             echo '<div class="wppb-block-container">' . do_shortcode( '[wppb-register' . $atts['role'] . $atts['form_name'] . $atts['redirect_url'] . $atts['logout_redirect_url'] . $atts['automatic_login'] . $atts['ajax'] . ' ]' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

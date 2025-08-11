@@ -309,10 +309,10 @@ function wppb_activate_account_check(){
 
 		if ( $activation_landing_page_id != 'not_set' ){
 			//an activation page was selected, but we still need to check if the current page doesn't already have the registration shortcode
-			if ( strpos( $post->post_content, '[wppb-register' ) === false )
+			if ( strpos( $post->post_content, '[wppb-register' ) === false && !has_block( 'wppb/register', $post->post_content ) )
 				add_filter( 'the_content', 'wppb_add_activation_message' );
 
-		}elseif ( strpos( $post->post_content, '[wppb-register' ) === false ){
+		}elseif ( strpos( $post->post_content, '[wppb-register' ) === false && !has_block( 'wppb/register', $post->post_content ) ){
 			//no activation page was selected, and the sent link pointed to the home url
             nocache_headers();
 			wp_redirect( apply_filters( 'wppb_activatate_account_redirect_url', WPPB_PLUGIN_URL.'assets/misc/fallback-page.php?activation_key='.urlencode( $activation_key ).'&site_name='.urlencode( get_bloginfo( 'name' ) ).'&message='.urlencode( $activation_message = wppb_activate_signup( $activation_key ) ), $activation_key, $activation_message ) );

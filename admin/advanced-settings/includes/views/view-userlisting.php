@@ -63,6 +63,22 @@
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'The number of users that share a particular value is shown for the Select and Checkbox facet types.', 'profile-builder' ); ?></p>
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option the counters will be hidden.', 'profile-builder' ); ?></p>
             </div>
+
+            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                <label class="cozmoslabs-form-field-label" for="toolbox-enable-map-poi-conditional-logic"><?php esc_html_e('Conditional Logic in Map POI Bubbles', 'profile-builder'); ?></label>
+
+                <div class="cozmoslabs-toggle-container">
+                    <input type="checkbox" id="toolbox-enable-map-poi-conditional-logic" name="wppb_toolbox_userlisting_settings[enable-map-poi-conditional-logic]"<?php echo ( ( isset( $settings['enable-map-poi-conditional-logic'] ) && ( $settings['enable-map-poi-conditional-logic'] == 'yes' ) ) ? ' checked' : '' ); ?> value="yes">
+                    <label class="cozmoslabs-toggle-track" for="toolbox-enable-map-poi-conditional-logic"></label>
+                </div>
+
+                <div class="cozmoslabs-toggle-description">
+                    <label for="toolbox-enable-map-poi-conditional-logic" class="cozmoslabs-description"><?php esc_html_e( 'Enable the functionality.', 'profile-builder' ); ?></label>
+                </div>
+
+                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'When enabled, the Map POI bubble will only display fields that are visible according to conditional logic.', 'profile-builder' ); ?></p>
+                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By default this option is disabled.', 'profile-builder' ); ?></p>
+            </div>
         </div>
 
         <div class="submit cozmoslabs-submit">

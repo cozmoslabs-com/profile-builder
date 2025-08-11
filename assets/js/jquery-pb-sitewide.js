@@ -772,5 +772,30 @@ jQuery(document).ready(function() {
 });
 
 
+/**
+ * Prevent Email Customizer meta-boxes from being moved into the side section
+ *
+ */
+jQuery(function () {
+
+    if ( pagenow !== 'profile-builder_page_user-email-customizer' && pagenow !== 'profile-builder_page_admin-email-customizer' )
+        return;
+
+    function handleDownArrows() {
+
+        // reset all down arrows
+        jQuery('.cozmoslabs-email-customizer-section .meta-box-sortables .postbox button.handle-order-lower').attr('aria-disabled', 'false');
+
+        // disable the last down arrow in the main area
+        jQuery('.cozmoslabs-email-customizer-section #advanced-sortables .postbox:last-of-type button.handle-order-lower').attr('aria-disabled', 'true');
+
+    }
+
+    handleDownArrows();
+
+    // handle down arrows after meta-boxes order change
+    jQuery('.handle-order-lower, .handle-order-higher').on('click', handleDownArrows);
+
+});
 
 

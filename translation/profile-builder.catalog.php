@@ -1,5 +1,6 @@
+<?php __('To enable updates, you need an active license. %1$sRenew%2$s or %3$spurchase a new license%4$s.', 'profile-builder' ); ?>
 <?php __("To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew.", "profile-builder"); ?>
-<?php __("To enable updates, please enter your serial number on the %sSettings%s page. If you don't have a serial number, please see %sdetails & pricing%s.", "profile-builder"); ?>
+<?php __("To enable updates, please enter your license key on the %sSettings%s page. If you don't have a license key, you can %sbuy one now%s.", "profile-builder"); ?>
 <?php __("%s is also activated. You need to deactivate it before activating this version of the plugin.", "profile-builder"); ?>
 <?php __("Add-Ons", "profile-builder"); ?>
 <?php __("Profile Builder Add-ons", "profile-builder"); ?>
@@ -97,7 +98,7 @@
 <?php __('Please %1$senter your license key%2$s first, to add new Edit Profile Forms.', 'profile-builder' ); ?>
 <?php __('You need an active license to add new User Registration Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to add new User Registration Forms.', 'profile-builder' ); ?>
-<?php __('You need an active license to configure the Conditional Logic feature. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
+<?php __('You need an active license to configure the Condi  tional Logic feature. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('You need an active license to configure Field Visibility options. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('You need an active license to use the Edit Profile Updates Approved by Admin addon. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to use the Conditional Logic feature.', 'profile-builder' ); ?>
@@ -1381,9 +1382,11 @@
 <?php __("Allow only login with Social Connect on Profile Builder Login Form.<br>Social Connect will still automatically register users on other forms.", "profile-builder"); ?>
 <?php __("Facebook Login", "profile-builder"); ?>
 <?php __("Facebook App ID", "profile-builder"); ?>
+<?php __("Google Login (Legacy)", "profile-builder"); ?>
+<?php __("Google Client ID (Legacy)", "profile-builder"); ?>
+<?php __("Google Client Name (Legacy)", "profile-builder"); ?>
 <?php __("Google Login", "profile-builder"); ?>
 <?php __("Google Client ID", "profile-builder"); ?>
-<?php __("Google Client Name", "profile-builder"); ?>
 <?php __("X Login", "profile-builder"); ?>
 <?php __("X API Key", "profile-builder"); ?>
 <?php __("X API Secret", "profile-builder"); ?>
@@ -1443,6 +1446,9 @@
 <?php __("Appearance Settings", "profile-builder"); ?>
 <?php __("Unlink", "profile-builder"); ?>
 <?php __("Your account is linked with:", "profile-builder"); ?>
+<?php __("The current integration with %s is deprecated and will be removed in the future. Please migrate to the new %s integration.", "profile-builder"); ?>
+<?php __("To switch, go to %sProfile Builder -> Social Connect%s -> Application Settings -> enable the Google App and add your new credentials.", "profile-builder"); ?>
+<?php __("Learn More", "profile-builder"); ?>
 <?php __("Country", "profile-builder"); ?>
 <?php __("Company Name", "profile-builder"); ?>
 <?php __("Address", "profile-builder"); ?>
@@ -1475,6 +1481,7 @@
 <?php __("Ship to a different address?", "profile-builder"); ?>
 <?php __("Display on WooCommerce Checkout", "profile-builder"); ?>
 <?php __("Whether the field should be added to the WooCommerce checkout form or not", "profile-builder"); ?>
+<?php __("%s exceeds the maximum character length of %d characters.", "profile-builder"); ?>
 <?php __("Displays customer billing fields in front-end. ", "profile-builder"); ?>
 <?php __("Displays customer shipping fields in front-end. ", "profile-builder"); ?>
 <?php __("WooCommerce My Account page Forms", "profile-builder"); ?>
@@ -2354,6 +2361,10 @@
 <?php __("Remove repetition counts from Faceted Menus.", "profile-builder"); ?>
 <?php __("The number of users that share a particular value is shown for the Select and Checkbox facet types.", "profile-builder"); ?>
 <?php __("By enabling this option the counters will be hidden.", "profile-builder"); ?>
+<?php __("Conditional Logic in Map POI Bubbles", "profile-builder"); ?>
+<?php __("Enable the functionality.", "profile-builder"); ?>
+<?php __("When enabled, the Map POI bubble will only display fields that are visible according to conditional logic.", "profile-builder"); ?>
+<?php __("By default this option is disabled.", "profile-builder"); ?>
 <?php __("Enable ", "profile-builder"); ?>
 <?php __("You can add the information for the %s after you add an entry", "profile-builder"); ?>
 <?php __("Select or type in an option", "profile-builder"); ?>

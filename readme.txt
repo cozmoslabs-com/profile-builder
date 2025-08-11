@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.2
+Stable tag: 3.14.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,10 +134,11 @@ For more functionality check out [Profile Builder Add-ons page](https://www.cozm
 * [Campaign Monitor](https://www.cozmoslabs.com/add-ons/campaign-monitor/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allow users to subscribe to your Campaign Monitor lists directly from the Register or Edit Profile forms
 * [MailPoet](https://www.cozmoslabs.com/add-ons/mailpoet/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allow users to subscribe to your MailPoet lists directly from the Register and Edit Profile forms
 * [bbPress](https://www.cozmoslabs.com/add-ons/bbpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allows you to integrate Profile Builder with the popular forums plugin, bbPress.
-* [BuddyPress](https://www.cozmoslabs.com/add-ons/buddypress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - allows extending BuddyPress user profiles with Profile Builder user fields.
-
-== The Ultimate Membership Bundle ==
-Combine user registration, memberships, and recurring revenue in one powerful plugin bundle called the [Ultimate Membership Bundle](https://www.cozmoslabs.com/ultimate-membership-bundle/).
+* [BuddyPress](https://www.cozmoslabs.
+    3[|||                          5.1%]   7[||                           3.2%]  11[||||                         8.5%]  15[||                           3.9%]  ││   ├── feeds-mysql-user
+  Mem[|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||8.69G/15.0G] Tasks: 224, 1512 thr, 255 kthr; 1 running                                      ││   ├── feeds-phpmyadmin
+  Swp[|||                                                          25.9M/16.0G] Load average: 0.85 0.55 0.57                                                   ││   ├── ocs
+s, and recurring revenue in one powerful plugin bundle called the [Ultimate Membership Bundle](https://www.cozmoslabs.com/ultimate-membership-bundle/).
 
 Get access to [Profile Builder Pro](https://www.cozmoslabs.com/wordpress-profile-builder/) and [Paid Member Subscriptions Pro](https://www.cozmoslabs.com/wordpress-paid-member-subscriptions/) together. These two plugins are designed to work perfectly together, offering you a powerful toolkit for managing and expanding your user base while generating revenue through paid memberships and recurring revenue.
 
@@ -204,6 +205,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.3 =
+* Fix: Issue with the email confirmation user activated hook executed twice when the register form was inserted using Blocks
+* Misc: Don't allow moving the Email Confirmation content boxes to the metaboxes sidebar
+* Misc: Fix a notice that could appear when bulk deleting unconfirmed email users
+* Misc: Added a filter that can be used to still place the user in Admin Approval, if Email Confirmation is also enabled and the admin confirms the email: wppb_admin_email_confirmation_maybe_use_admin_approval
+
 = 3.14.2 =
 * Enhancement: Improved back-end messages informing what features are available depending on license
 * Fix: Position of field descriptions on block themes
