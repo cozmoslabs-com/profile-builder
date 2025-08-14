@@ -175,7 +175,7 @@ class CL_Addons_List_Table extends WP_List_Table {
             $action_url = esc_url( wp_nonce_url( add_query_arg( 'cl_add_ons', $item['slug'], $base_url ), 'cl_add_ons_action' ) );
 
             //if we don't have a valid license we can't activate the add-on and throw a confirmation dialog
-            if ( $license_status !== 'valid' ) {
+            if ( $license_status !== 'valid' && ( !isset( $item['version'] ) || $item['version'] != 'free' ) ) {
 
                 if( $this->is_add_on_active( $item['slug'] ) ) {
                     $onclick    = 'onclick="return confirm(\'' . esc_js( __( 'This add-on can not be activated back without a valid license. Are you sure you want to deactivate it?', 'profile-builder' ) ) . '\')"';

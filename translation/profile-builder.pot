@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-11 09:18+0000\n"
+"POT-Creation-Date: 2025-08-14 05:47+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -230,103 +230,103 @@ msgstr ""
 msgid "Set or remove a custom profile image for a user using the standard WordPress media upload tool."
 msgstr ""
 
-#: admin/add-ons.php:208, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:57
+#: admin/add-ons.php:209, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:17, add-ons-free/import-export/import-export.php:57
 msgid "Import and Export"
 msgstr ""
 
-#: admin/add-ons.php:209
+#: admin/add-ons.php:210
 msgid "With the help of this add-on you will be able to export all Profile Builder Settings data to a .json. You can then use this file as a back-up or you can import this data on another instance of Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:216
+#: admin/add-ons.php:218
 msgid "Custom CSS Classes on Fields"
 msgstr ""
 
-#: admin/add-ons.php:217
+#: admin/add-ons.php:219
 msgid "This add-on extends the functionality of Profile Builder by allowing you to add custom css classes for fields."
 msgstr ""
 
-#: admin/add-ons.php:224, add-ons-free/maximum-character-length/maximum-character-length.php:31
+#: admin/add-ons.php:227, add-ons-free/maximum-character-length/maximum-character-length.php:31
 msgid "Maximum Character Length"
 msgstr ""
 
-#: admin/add-ons.php:225
+#: admin/add-ons.php:228
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:232, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
+#: admin/add-ons.php:236, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
 msgid "Labels Edit"
 msgstr ""
 
-#: admin/add-ons.php:233
+#: admin/add-ons.php:237
 msgid "This add-on extends the functionality of our plugin and let us easily edit all Profile Builder labels."
 msgstr ""
 
-#: admin/add-ons.php:240
+#: admin/add-ons.php:245
 msgid "GDPR Communication Preferences"
 msgstr ""
 
-#: admin/add-ons.php:241
+#: admin/add-ons.php:246
 msgid "This add-on plugin adds a GDPR Communication preferences field to Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:252, admin/basic-info.php:251
+#: admin/add-ons.php:258, admin/basic-info.php:251
 msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/add-ons.php:252
+#: admin/add-ons.php:258
 msgid "These plugins are compatible with all versions of Profile Builder"
 msgstr ""
 
-#: admin/add-ons.php:257
+#: admin/add-ons.php:263
 msgid "TranslatePress"
 msgstr ""
 
-#: admin/add-ons.php:258
+#: admin/add-ons.php:264
 msgid "Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders."
 msgstr ""
 
-#: admin/add-ons.php:265, admin/pms-cross-promotion.php:67
+#: admin/add-ons.php:271, admin/pms-cross-promotion.php:67
 msgid "Paid Member Subscriptions"
 msgstr ""
 
-#: admin/add-ons.php:266
+#: admin/add-ons.php:272
 msgid "Accept user payments, create subscription plans and restrict content on your membership site."
 msgstr ""
 
-#: admin/add-ons.php:274
+#: admin/add-ons.php:280
 msgid "WP Webhooks Automations"
 msgstr ""
 
-#: admin/add-ons.php:275
+#: admin/add-ons.php:281
 msgid "Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together."
 msgstr ""
 
-#: admin/add-ons.php:282
+#: admin/add-ons.php:288
 msgid "Client Portal"
 msgstr ""
 
-#: admin/add-ons.php:283
+#: admin/add-ons.php:289
 msgid "Create private pages for your website users that only an administrator can edit."
 msgstr ""
 
-#: admin/add-ons.php:290
+#: admin/add-ons.php:296
 msgid "Custom Login Page Templates"
 msgstr ""
 
-#: admin/add-ons.php:291
+#: admin/add-ons.php:297
 msgid "Customizes the default WordPress Login Page with different templates, logo and background uploads and also adds support for custom CSS."
 msgstr ""
 
-#: admin/add-ons.php:298
+#: admin/add-ons.php:304
 msgid "Passwordless Login"
 msgstr ""
 
-#: admin/add-ons.php:299
+#: admin/add-ons.php:305
 msgid "WordPress Passwordless Login is a plugin that allows your users to login without a password."
 msgstr ""
 
-#: admin/add-ons.php:414
+#: admin/add-ons.php:420
 msgid "%1$sAdd-ons settings saved successfully%2$s"
 msgstr ""
 
@@ -8566,11 +8566,11 @@ msgstr ""
 msgid "required"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:80
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:78
 msgid "Date"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:80
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:78
 msgid "Preference"
 msgstr ""
 
