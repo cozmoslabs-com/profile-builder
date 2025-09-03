@@ -454,7 +454,8 @@ function wppb_recaptcha_handler ( $output, $form_location, $field, $user_id, $fi
         $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'], true );
 
         wppb_recaptcha_set_default_values();
-        if ( ($form_location == 'register') && ( isset($field['captcha-pb-forms']) ) && (strpos($field['captcha-pb-forms'],'pb_register') !== false) ) {
+
+        if ( ($form_location == 'register') && ( isset($field['captcha-pb-forms']) ) && ( strpos($field['captcha-pb-forms'],'pb_register') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) ) {
             $error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );
 
             global $wppb_recaptcha_present;
@@ -491,7 +492,7 @@ add_filter( 'wppb_output_form_field_recaptcha', 'wppb_recaptcha_handler', 10, 6 
 /* handle reCAPTCHA field validation on PB Register form */
 function wppb_check_recaptcha_value( $message, $field, $request_data, $form_location ){
     if( $field['field'] == 'reCAPTCHA' ){
-        if ( ( $form_location == 'register' ) && ( isset($field['captcha-pb-forms']) ) && (strpos($field['captcha-pb-forms'],'pb_register') !== false) ) {
+        if ( ( $form_location == 'register' ) && ( isset($field['captcha-pb-forms']) ) && ( strpos($field['captcha-pb-forms'],'pb_register') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) ) {
             /* theme my login plugin executes the register_errors hook on the frontend on all pages so on our register forms we might have already a recaptcha response
             so do not verify it again or it will fail  */
             global $wppb_recaptcha_response;
@@ -530,7 +531,7 @@ function wppb_display_recaptcha_recover_password( $output ){
         $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
         // check where reCAPTCHA should display and add reCAPTCHA html
-        if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_recover_password' ) !== false ) ) {
+        if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_recover_password' ) !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) ) {
 
             global $wppb_recaptcha_present;
             $wppb_recaptcha_present = true;
@@ -631,7 +632,7 @@ function wppb_display_recaptcha_login_form($form_part, $args) {
         $item_title = apply_filters('wppb_login_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true));
         $item_description = wppb_icl_t('plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true);
 
-        if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_login' ) !== false ) ) { // check where reCAPTCHA should display and add reCAPTCHA html
+        if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_login' ) !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) ) { // check where reCAPTCHA should display and add reCAPTCHA html
 
             global $wppb_recaptcha_present;
             $wppb_recaptcha_present = true;
@@ -698,7 +699,7 @@ function wppb_recaptcha_login_wp_error_message($user){
             if ( isset($_POST['wppb_login']) && ($_POST['wppb_login'] == true) ) {
 
                 // it's a PB login form, check if we have a reCAPTCHA on it and display error if not valid
-                if ((isset($field['captcha-pb-forms'])) && (strpos($field['captcha-pb-forms'], 'pb_login') !== false) && ($wppb_recaptcha_response == false)) {
+                if ((isset($field['captcha-pb-forms'])) && (strpos($field['captcha-pb-forms'], 'pb_login') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) && ($wppb_recaptcha_response == false)) {
                     $user = new WP_Error('wppb_recaptcha_error', __('Please enter a (valid) reCAPTCHA value', 'profile-builder'));
                     remove_filter( 'authenticate', 'wp_authenticate_username_password',  20, 3 );
                     remove_filter( 'authenticate', 'wp_authenticate_email_password',     20, 3 );
@@ -861,3 +862,86 @@ function wppb_check_recaptcha_fields_settings( $values ) {
     return $values;
 }
 add_action( 'wck_update_meta_filter_values_wppb_manage_fields', 'wppb_check_recaptcha_fields_settings' );
+
+function wppb_maybe_enable_recaptcha_v3_on_form( $recaptcha_field ){
+
+    // Static cache to avoid repeated calculations
+    static $cache = array();
+
+    // Early validation checks
+    if( empty( $recaptcha_field ) || empty( $recaptcha_field['captcha-pb-forms'] ) )
+        return false;
+
+    $post_id = get_the_ID();
+    $post    = get_post( $post_id );
+
+    // Check if post is set, if not return false
+    if( empty( $post ) || empty( $post->post_content ) )
+        return false;
+
+    // Create cache key based on post ID and captcha forms configuration
+    $cache_key = md5( $post_id . serialize( $recaptcha_field['captcha-pb-forms'] ) );
+
+    // Return cached result if available
+    if( isset( $cache[ $cache_key ] ) )
+        return $cache[ $cache_key ];
+
+    $wppb_recaptcha_v3 = false;
+
+    // Define form configurations for loop processing
+    $form_configs = array(
+        'pb_register' => array(
+            'shortcode_pattern' => '[wppb-register',
+            'block_name'        => 'wppb/register',
+            'other_forms'       => array(
+                array( 'shortcode' => '[wppb-login', 'block' => 'wppb/login', 'form_type' => 'pb_login' ),
+                array( 'shortcode' => '[wppb-recover-password', 'block' => 'wppb/recover-password', 'form_type' => 'pb_recover_password' )
+            )
+        ),
+        'pb_login' => array(
+            'shortcode_pattern' => '[wppb-login',
+            'block_name'        => 'wppb/login',
+            'other_forms'       => array(
+                array( 'shortcode' => '[wppb-register', 'block' => 'wppb/register', 'form_type' => 'pb_register' ),
+                array( 'shortcode' => '[wppb-recover-password', 'block' => 'wppb/recover-password', 'form_type' => 'pb_recover_password' )
+            )
+        ),
+        'pb_recover_password' => array(
+            'shortcode_pattern' => '[wppb-recover-password',
+            'block_name'        => 'wppb/recover-password',
+            'other_forms'       => array(
+                array( 'shortcode' => '[wppb-register', 'block' => 'wppb/register', 'form_type' => 'pb_register' ),
+                array( 'shortcode' => '[wppb-login', 'block' => 'wppb/login', 'form_type' => 'pb_login' )
+            )
+        )
+    );
+
+    // Process each form type using loop
+    foreach( $form_configs as $form_type => $config ) {
+        // Skip if this form type is already enabled in captcha-pb-forms
+        if( strpos( $recaptcha_field['captcha-pb-forms'], $form_type ) !== false )
+            continue;
+
+        // Check if current form type exists on the page
+        $current_form_exists = ( strpos( $post->post_content, $config['shortcode_pattern'] ) !== false || has_block( $config['block_name'] ) );
+        
+        if( $current_form_exists ) {
+            // Check if any other enabled form types also exist on the page
+            foreach( $config['other_forms'] as $other_form ) {
+                $other_form_exists = ( strpos( $post->post_content, $other_form['shortcode'] ) !== false || has_block( $other_form['block'] ) );
+                $other_form_enabled = ( strpos( $recaptcha_field['captcha-pb-forms'], $other_form['form_type'] ) !== false );
+                
+                if( $other_form_exists && $other_form_enabled ) {
+                    $wppb_recaptcha_v3 = true;
+                    break 2; // Break out of both loops since we found a match
+                }
+            }
+        }
+    }
+
+    // Cache the result
+    $cache[ $cache_key ] = $wppb_recaptcha_v3;
+
+    return $wppb_recaptcha_v3;
+
+}

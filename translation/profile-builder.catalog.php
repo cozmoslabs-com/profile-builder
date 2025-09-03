@@ -1150,6 +1150,8 @@
 <?php __("Search all Fields", "profile-builder"); ?>
 <?php __("Faceted Menus", "profile-builder"); ?>
 <?php __("User Count", "profile-builder"); ?>
+<?php __("Download All Users CSV", "profile-builder"); ?>
+<?php __("Download Current Page CSV", "profile-builder"); ?>
 <?php __("Map of listed users", "profile-builder"); ?>
 <?php __("User Fields Tags", "profile-builder"); ?>
 <?php __("Sort Tags", "profile-builder"); ?>
@@ -1164,6 +1166,23 @@
 <?php __("More", "profile-builder"); ?>
 <?php __("You do not have permission to view this user list.", "profile-builder"); ?>
 <?php __("You do not have the required user role to view this user list.", "profile-builder"); ?>
+<?php __("Users", "profile-builder"); ?>
+<?php __("Filters", "profile-builder"); ?>
+<?php __("Sign-up date", "profile-builder"); ?>
+<?php __("View Profile", "profile-builder"); ?>
+<?php __("View", "profile-builder"); ?>
+<?php __("About", "profile-builder"); ?>
+<?php __("Contact Details", "profile-builder"); ?>
+<?php __("Online Profiles", "profile-builder"); ?>
+<?php __("Facebook", "profile-builder"); ?>
+<?php __("LinkedIn", "profile-builder"); ?>
+<?php __("Instagram", "profile-builder"); ?>
+<?php __("View all posts", "profile-builder"); ?>
+<?php __("NickName", "profile-builder"); ?>
+<?php __("Occupation", "profile-builder"); ?>
+<?php __("Employment", "profile-builder"); ?>
+<?php __("Basic info", "profile-builder"); ?>
+<?php __("User Info", "profile-builder"); ?>
 <?php __("User not found", "profile-builder"); ?>
 <?php __("Jabber", "profile-builder"); ?>
 <?php __("Yim", "profile-builder"); ?>
@@ -1250,6 +1269,11 @@
 <?php __("Search Fields", "profile-builder"); ?>
 <?php __("Choose the fields in which the Search Field will look in", "profile-builder"); ?>
 <?php __("Search Settings", "profile-builder"); ?>
+<?php __("CSV Download Role Restrictions", "profile-builder"); ?>
+<?php __("Select which user roles can see the \"Download All Users CSV\" and \"Download Current Page CSV\" buttons in userlistings<br/>If not specified, defaults to all existing roles", "profile-builder"); ?>
+<?php __("CSV Export Fields", "profile-builder"); ?>
+<?php __("Select which user fields to include in the CSV export<br/>If no fields are selected, all fields will be included<br/>Only fields present in your userlisting template are shown", "profile-builder"); ?>
+<?php __("CSV Download Settings", "profile-builder"); ?>
 <?php __("Themes: add style to your user listing section", "profile-builder"); ?>
 <?php __("Preview", "profile-builder"); ?>
 <?php __("Reset Data", "profile-builder"); ?>
@@ -1262,6 +1286,10 @@
 <?php __("You need to activate the Userlisting feature from within the \"Add-ons\" page!", "profile-builder"); ?>
 <?php __("You can find it in the Profile Builder menu.", "profile-builder"); ?>
 <?php __("No results found!", "profile-builder"); ?>
+<?php __("Security check failed.", "profile-builder"); ?>
+<?php __("You do not have permission to download CSV files.", "profile-builder"); ?>
+<?php __("Userlisting not found.", "profile-builder"); ?>
+<?php __("No data to export.", "profile-builder"); ?>
 <?php __("bbPress Integration", "profile-builder"); ?>
 <?php __("bbPress Profile and Forms", "profile-builder"); ?>
 <?php __("Single User-listing", "profile-builder"); ?>
@@ -1846,7 +1874,6 @@
 <?php __("Role draft updated.", "profile-builder"); ?>
 <?php __("Role Name", "profile-builder"); ?>
 <?php __("Capabilities", "profile-builder"); ?>
-<?php __("Users", "profile-builder"); ?>
 <?php __("Edit Role Capabilities", "profile-builder"); ?>
 <?php __("Add a new capability", "profile-builder"); ?>
 <?php __("Add Capability", "profile-builder"); ?>

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.4
+Stable tag: 3.14.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.5 =
+* Fix: Change field ids for the login form in order to fix ID conflict when both the login and register forms are placed on the same page
+* Fix: Issue with reCaptcha v3 and AJAX on Forms where if 2 forms where placed on a single page and one of them didn't have reCaptcha v3 active, the other form couldn't be submitted anymore
+* Fix: Issue with not being able to activate add-ons on multisite environments
+* Misc: Fix a display issue with the Select User to Edit dropdown in front-end
+
 = 3.14.4 =
 * Fix: Security issue regarding Authenticated Stored Cross-Site Scripting coming from the GDPR Communication Preferences add-on. Thanks to Alex and the Wordfence team
 * Fix: Allow the activation of free add-ons without a license

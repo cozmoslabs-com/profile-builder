@@ -222,6 +222,10 @@
     padding-right: 0;
 }
 
+#select_user_to_edit_form .wppb-form-field {
+    max-width: 900px;
+}
+
 .wppb-user-forms ul li {
     list-style: none;
 }
@@ -271,7 +275,7 @@
     width: 100%;
 }
 
-.wppb-form-field label,
+.wppb-form-field:not(#select_user_to_edit_form .wppb-form-field) label,
 #wppb-login-wrap .login-username label,
 #wppb-login-wrap .login-password label,
 #wppb-login-wrap .login-auth label {

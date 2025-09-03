@@ -52,7 +52,14 @@ function wppb_register_your_version_content() {
  */
 function wppb_get_serial_number(){
 
-    $license = get_option( 'wppb_license_key', false );
+    if( is_multisite() ){
+        $license = get_site_option( 'wppb_license_key', false );
+
+        if( empty( $license ) )
+            $license = get_option( 'wppb_license_key', false );
+    }
+    else
+        $license = get_option( 'wppb_license_key', false );
 
     // try to grab the license from the old options if it's not available
     if( empty( $license ) ){
@@ -82,7 +89,12 @@ function wppb_get_serial_number(){
  * Retrieve license key status
  */
 function wppb_get_serial_number_status(){
-    return get_option( 'wppb_license_status' );
+
+    if( is_multisite() )
+        return get_site_option( 'wppb_license_status' );
+    else
+        return get_option( 'wppb_license_status' );
+
 }
 
 /**

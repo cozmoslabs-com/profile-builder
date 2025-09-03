@@ -54,18 +54,18 @@ $meta = get_post_meta( $post->ID, 'rmscontent', true );
 class Wordpress_Creation_Kit_PB{
 
 	private $defaults = array(
-							'metabox_id' => '',
-							'metabox_title' => 'Meta Box',
-							'post_type' => 'post',
-							'meta_name' => '',
-							'meta_array' => array(),
-							'page_template' => '',
-							'post_id' => '',
-							'single' => false,
+							'metabox_id'         => '',
+							'metabox_title'      => 'Meta Box',
+							'post_type'          => 'post',
+							'meta_name'          => '',
+							'meta_array'         => array(),
+							'page_template'      => '',
+							'post_id'            => '',
+							'single'             => false,
 							'unserialize_fields' => false,
-							'sortable' => true,
-							'context' => 'post_meta',
-                            'mb_context' => 'normal'
+							'sortable'           => true,
+							'context'            => 'post_meta',
+							'mb_context'         => 'normal'
 						);
 	private $args;
 
@@ -119,9 +119,17 @@ class Wordpress_Creation_Kit_PB{
 
 		if( $this->args['context'] == 'post_meta' ){
 			if( $this->args['post_id'] == '' && $this->args['page_template'] == '' ){
-				add_meta_box($this->args['metabox_id'], $this->args['metabox_title'], array( &$this, 'wck_content' ), $this->args['post_type'], $this->args['mb_context'], 'high',  array( 'meta_name' => $this->args['meta_name'], 'meta_array' => $this->args['meta_array']) );
+
+                $priority = 'high';
+
+				if( !empty( $this->args['meta_name'] ) && in_array( $this->args['meta_name'], array( 'wppb_ul_settings_query', 'wppb_ul_csv_download_settings' ) ) ){
+                    $priority = 'low';
+                }
+
+				add_meta_box($this->args['metabox_id'], $this->args['metabox_title'], array( &$this, 'wck_content' ), $this->args['post_type'], $this->args['mb_context'], $priority,  array( 'meta_name' => $this->args['meta_name'], 'meta_array' => $this->args['meta_array']) );
 				/* add class to meta box */
 				add_filter( "postbox_classes_".$this->args['post_type']."_".$this->args['metabox_id'], array( &$this, 'wck_add_metabox_classes' ) );
+
 			}
 			else{
 				if( !empty( $_GET['post'] ) )

@@ -537,15 +537,34 @@ class WPPB_Plugin_Updater {
     }
 
     protected function get_option( $license_key_option ){
-        return get_option( $license_key_option );
+
+        if( is_multisite() ){
+
+            $license = get_site_option( $license_key_option );
+
+            // fall back to old settings option in case this is empty
+            if( empty( $license ) )
+                $license = get_option( $license_key_option );
+
+            return $license;
+
+        } else
+            return get_option( $license_key_option );
+
     }
 
     protected function delete_option( $license_key_option ){
-        delete_option( $license_key_option );
+        if( is_multisite() )
+            delete_site_option( $license_key_option );
+        else
+            delete_option( $license_key_option );
     }
 
     protected function update_option( $license_key_option, $value ){
-        update_option( $license_key_option, $value );
+        if( is_multisite() )
+            update_site_option( $license_key_option, $value );
+        else
+            update_option( $license_key_option, $value );
     }
 
     protected function license_page_url( ){
