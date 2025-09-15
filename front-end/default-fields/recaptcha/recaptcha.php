@@ -541,11 +541,11 @@ function wppb_display_recaptcha_recover_password( $output ){
                 if (!empty($item_description))
                     $recaptcha_output .= '<span class="wppb-description-delimiter">' . $item_description . '</span>';
 
-                $output = str_replace('</ul>', '<li class="wppb-form-field wppb-recaptcha">' . $recaptcha_output . '</li>' . '</ul>', $output);
+                $output = str_replace('</ul>', '<li class="wppb-form-field wppb-recaptcha wppb-recaptcha-'. $field['recaptcha-type'] .'">' . $recaptcha_output . '</li>' . '</ul>', $output);
             }
             else {
                 // output Invisible reCAPTCHA html
-                $output = str_replace('</ul>', '<li class="wppb-form-field wppb-recaptcha">' . wppb_recaptcha_get_html($publickey, 'pb_recover_password') . '</li>' . '</ul>', $output);
+                $output = str_replace('</ul>', '<li class="wppb-form-field wppb-recaptcha wppb-recaptcha-'. $field['recaptcha-type'] .'">' . wppb_recaptcha_get_html($publickey, 'pb_recover_password') . '</li>' . '</ul>', $output);
             }
         }
     }
@@ -642,11 +642,12 @@ function wppb_display_recaptcha_login_form($form_part, $args) {
                 if (!empty($item_description))
                     $recaptcha_output .= '<span class="wppb-description-delimiter">' . $item_description . '</span>';
 
-                $form_part .= '<div class="wppb-form-field wppb-recaptcha">' . $recaptcha_output . '</div>';
+                $form_part .= '<div class="wppb-form-field wppb-recaptcha wppb-recaptcha-'. $field['recaptcha-type'] .'">' . $recaptcha_output . '</div>';
             }
             else {
                 //output Invisible reCAPTCHA html
-                $form_part .= wppb_recaptcha_get_html(trim($field['public-key']), 'pb_login');
+//                $form_part .= wppb_recaptcha_get_html(trim($field['public-key']), 'pb_login');
+                $form_part .= '<div class="wppb-form-field wppb-recaptcha wppb-recaptcha-'. $field['recaptcha-type'] .'">' . wppb_recaptcha_get_html(trim($field['public-key']), 'pb_login') . '</div>';
             }
         }
     }
@@ -720,6 +721,22 @@ function wppb_recaptcha_login_wp_error_message($user){
     return $user;
 }
 add_filter('authenticate','wppb_recaptcha_login_wp_error_message', 9);
+
+/**
+ * Add a reCAPTCHA type–specific CSS class to the Register form field
+ *
+ * @param $classes - existing field classes
+ * @param $field   - field data
+ * @return mixed|string
+ */
+function wppb_register_form_recaptcha_type_class( $classes, $field ){
+
+    if ( isset( $field['field'] ) && $field['field'] == 'reCAPTCHA' && ! empty( $field['recaptcha-type'] ) )
+        $classes .= ' wppb-recaptcha-' . $field['recaptcha-type'];
+
+    return $classes;
+}
+add_filter( 'wppb_field_css_class', 'wppb_register_form_recaptcha_type_class', 20, 2);
 
 // Display reCAPTCHA html on default WP Recover Password form
 function wppb_display_recaptcha_default_wp_recover_password() {

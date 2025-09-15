@@ -109,7 +109,7 @@
             </div>
 
             <!-- Only show cleanup button if cleanup hasn't been completed -->
-            <?php if( !get_option( 'wppb_postmeta_cleanup_completed' ) ) : ?>
+            <?php if( !get_option( 'wppb_postmeta_cleanup_completed_v2' ) ) : ?>
                 <div class="cozmoslabs-form-field-wrapper">
                     <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Cleanup Postmeta' , 'profile-builder' ) ?></label>
 

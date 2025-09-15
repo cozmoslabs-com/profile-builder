@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.5
+Stable tag: 3.14.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.6 =
+* Fix: Front-end styles fixes for different cases
+* Fix: Issue with the Content Restriction functionality breaking WooCommerce products with variations from being added to cart
+* Fix: Conflict with the Porto Theme functionality plugin when the Email Customizer page was saved
+* Fix: Simple upload field duplicating files when Email Confirmation is enabled
+* Misc: The Labels Edit add-on is now able to also change gettext strings with context
+* Misc: Added a tool that can be used to cleanup postmeta of unnecessarily added entries from the Labels Edit add-on. Go to Settings -> Advanced Settings -> Admin to use it
+
 = 3.14.5 =
 * Fix: Change field ids for the login form in order to fix ID conflict when both the login and register forms are placed on the same page
 * Fix: Issue with reCaptcha v3 and AJAX on Forms where if 2 forms where placed on a single page and one of them didn't have reCaptcha v3 active, the other form couldn't be submitted anymore

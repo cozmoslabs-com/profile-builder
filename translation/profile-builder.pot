@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-03 08:02+0000\n"
+"POT-Creation-Date: 2025-09-15 11:18+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:236, add-ons-free/labels-edit/labels-edit.php:201, add-ons-free/labels-edit/labels-edit.php:202
+#: admin/add-ons.php:236, add-ons-free/labels-edit/labels-edit.php:257, add-ons-free/labels-edit/labels-edit.php:258
 msgid "Labels Edit"
 msgstr ""
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid " Don't have a license? %sBuy one now%s."
 msgstr ""
 
-#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:847
+#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:864
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -1370,7 +1370,7 @@ msgstr ""
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:382
+#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:438
 msgid "Labels"
 msgstr ""
 
@@ -3416,7 +3416,7 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1123, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:382, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
+#: admin/manage-fields.php:1455, features/functions.php:1123, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:438, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
 msgid "Edit"
 msgstr ""
 
@@ -3804,7 +3804,7 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1059, front-end/default-fields/recaptcha/recaptcha.php:712, front-end/default-fields/recaptcha/recaptcha.php:703, front-end/default-fields/recaptcha/recaptcha.php:768, front-end/default-fields/recaptcha/recaptcha.php:816
+#: features/functions.php:1059, front-end/default-fields/recaptcha/recaptcha.php:713, front-end/default-fields/recaptcha/recaptcha.php:704, front-end/default-fields/recaptcha/recaptcha.php:785, front-end/default-fields/recaptcha/recaptcha.php:833
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
@@ -4505,7 +4505,7 @@ msgstr ""
 msgid "Delete all items"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:382, add-ons-free/labels-edit/labels-edit.php:382
+#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:438, add-ons-free/labels-edit/labels-edit.php:438
 msgid "Delete all"
 msgstr ""
 
@@ -6156,11 +6156,11 @@ msgstr ""
 msgid "Add a class to a field. Should not contain dots(.) and for multiple classes separate by space."
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:332
+#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:388
 msgid "Import"
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:344
+#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:400
 msgid "Export"
 msgstr ""
 
@@ -6188,7 +6188,7 @@ msgstr ""
 msgid "This allows you to easily import the configuration from another site."
 msgstr ""
 
-#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:327
+#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:383
 msgid "JSON File"
 msgstr ""
 
@@ -6208,87 +6208,87 @@ msgstr ""
 msgid " labels scanned."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:220
+#: add-ons-free/labels-edit/labels-edit.php:276
 msgid "Label to Edit"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:220
+#: add-ons-free/labels-edit/labels-edit.php:276
 msgid "Here you will see the default label so you can copy it."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:221
+#: add-ons-free/labels-edit/labels-edit.php:277
 msgid "New Label"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:227
+#: add-ons-free/labels-edit/labels-edit.php:283
 msgid "Edit Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:243
+#: add-ons-free/labels-edit/labels-edit.php:299
 msgid "Rescan Lables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:263
+#: add-ons-free/labels-edit/labels-edit.php:319
 msgid "Rescan all Profile Builder labels."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:272
+#: add-ons-free/labels-edit/labels-edit.php:328
 msgid "Informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:285
+#: add-ons-free/labels-edit/labels-edit.php:341
 msgid "Variables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:289
+#: add-ons-free/labels-edit/labels-edit.php:345
 msgid "Place them like in the default string!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:292
+#: add-ons-free/labels-edit/labels-edit.php:348
 msgid "Example"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:294
+#: add-ons-free/labels-edit/labels-edit.php:350
 msgid "Old Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:295
+#: add-ons-free/labels-edit/labels-edit.php:351
 msgid "New Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:299
+#: add-ons-free/labels-edit/labels-edit.php:355
 msgid "Read more detailed informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:307
+#: add-ons-free/labels-edit/labels-edit.php:363
 msgid "Import and Export Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:321
+#: add-ons-free/labels-edit/labels-edit.php:377
 msgid "Import Labels from a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:332
+#: add-ons-free/labels-edit/labels-edit.php:388
 msgid "This will overwrite all your old edited labels!\nAre you sure you want to continue?"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:333
+#: add-ons-free/labels-edit/labels-edit.php:389
 msgid "Easily import the labels from another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:339
+#: add-ons-free/labels-edit/labels-edit.php:395
 msgid "Export Labels as a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:345
+#: add-ons-free/labels-edit/labels-edit.php:401
 msgid "Easily import the labels into another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:371
+#: add-ons-free/labels-edit/labels-edit.php:427
 msgid "You must select a label to edit!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:437
+#: add-ons-free/labels-edit/labels-edit.php:493
 msgid "No labels edited, nothing to export!"
 msgstr ""
 
@@ -8834,11 +8834,11 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:768
+#: front-end/default-fields/recaptcha/recaptcha.php:785
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:846
+#: front-end/default-fields/recaptcha/recaptcha.php:863
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 
@@ -8958,7 +8958,7 @@ msgstr ""
 msgid "Replace labels with placeholders"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:264
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:272
 msgid "Select an option"
 msgstr ""
 

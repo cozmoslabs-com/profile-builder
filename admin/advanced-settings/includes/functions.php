@@ -66,7 +66,7 @@ function wppb_cleanup_postmeta() {
 
     } else if ( $step === 2 ) {
 
-        // Third query - UserListing themes meta
+        // Second query - UserListing themes meta
         $query = $wpdb->prepare( "DELETE FROM {$wpdb->postmeta}
                                  WHERE post_id IN (
                                      SELECT ID FROM {$wpdb->posts}
@@ -84,8 +84,31 @@ function wppb_cleanup_postmeta() {
 
         if ( $rows_affected === 0 ) {
 
-            // Save completion flag as non-autoloaded option
-            add_option( 'wppb_postmeta_cleanup_completed', true, '', 'no' ); // TODO: uncomment this
+            // Move to next step when no more rows to delete
+            wp_send_json_success( array( 'step' => 3 ) );
+
+        }
+
+    } else if ( $step === 3 ) {
+
+        // Third query - Placeholder Labels meta
+        $query = $wpdb->prepare( "DELETE FROM {$wpdb->postmeta}
+                                 WHERE meta_key = %s
+                                 AND meta_value = %s
+                                 LIMIT %d",
+                                    'pbpl-active',
+                                    'no',
+                                $batch_size );
+
+        $rows_affected = $wpdb->query( $query );
+
+        if ( $rows_affected === 0 ) {
+
+            // Save the new completion flag as non-autoloaded option
+            add_option( 'wppb_postmeta_cleanup_completed_v2', true, '', 'no' );
+
+            // Remove the old completion flag
+            delete_option( 'wppb_postmeta_cleanup_completed' );
 
             // All done
             wp_send_json_success( array(

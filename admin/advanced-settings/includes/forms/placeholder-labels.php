@@ -144,6 +144,8 @@ function wppb_pbpl_meta_box_content( $post ) {
         </div>
     </div>
     <?php
+
+    wp_nonce_field( 'wppb-pbpl-post-'. $post->ID .'-options-verify', 'wppb_pbpl_save_post_options', false );
 }
 
 
@@ -153,15 +155,21 @@ function wppb_pbpl_meta_box_content( $post ) {
  * @since v.2.0
  *
  */
-function wppb_pbpl_save_meta_box_option() {
-    global $post;
+function wppb_pbpl_save_meta_box_option( $post_id ) {
 
-    if( isset( $_POST['pbpl-active'] ) ) {
-        $pbpl_select_value = sanitize_text_field( $_POST['pbpl-active'] );
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return;
 
-        update_post_meta( $post->ID, 'pbpl-active', $pbpl_select_value );
-    }
-    elseif ( !empty( $post->ID ) )  update_post_meta( $post->ID, 'pbpl-active', 'no' );
+    if( ! current_user_can( 'edit_post', $post_id ) )
+        return;
+
+    if( ! isset( $_POST['wppb_pbpl_save_post_options'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_pbpl_save_post_options'] ), 'wppb-pbpl-post-'. $post_id .'-options-verify' ) )
+        return;
+
+    if( isset( $_POST['pbpl-active'] ) && $_POST['pbpl-active'] == 'yes' )
+        update_post_meta( $post_id, 'pbpl-active', 'yes' );
+    else delete_post_meta( $post_id, 'pbpl-active' );
+
 }
 add_action( 'save_post', 'wppb_pbpl_save_meta_box_option' );
 
@@ -180,7 +188,7 @@ function wppb_pbpl_activate( $form ) {
         if( ! empty( $form['ID'] ) ) {
             $pbpl_saved_value = get_post_meta( $form['ID'], 'pbpl-active', true );
 
-            if( $pbpl_saved_value == 'no' ) {
+            if( $pbpl_saved_value != 'yes' ) {
                 return;
             } else {
                 wppb_pbpl_add_filters();

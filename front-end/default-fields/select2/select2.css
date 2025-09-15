@@ -1,12 +1,9 @@
 /* Select 2 Field */
-.wppb-select2 span.select2-container{
-    clear: none;
-    width: 69.9% !important;
-}
 
-.wppb-select2-multiple span.select2-container{
-    clear: none;
+.wppb-select2 span.select2-container,
+.wppb-select2-multiple span.select2-container {
     width: 69.9% !important;
+    float: left;
 }
 
 .select2-container--open input.select2-search__field {
@@ -14,13 +11,9 @@
     padding: 5px 10px;
 }
 
-@media screen and (max-width: 400px){
-    .wppb-select2 span.select2-container{
-        clear: none;
-        width: 100% !important;
-    }
-    .wppb-select2-multiple span.select2-container{
-        clear: none;
+@media screen and (max-width: 500px){
+    .wppb-select2 span.select2-container,
+    .wppb-select2-multiple span.select2-container {
         width: 100% !important;
     }
 }

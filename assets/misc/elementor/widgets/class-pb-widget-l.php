@@ -138,7 +138,7 @@ class PB_Elementor_Login_Widget extends PB_Elementor_Widget {
             ];
         }
         $sections['input'] = [
-            'selector' => '#wppb-login-wrap .login-username input#user_login',
+            'selector' => '#wppb-login-wrap .login-username input#wppb_user_login',
             'section_name' => 'Input',
         ];
         $this->add_styling_control_group(
@@ -157,7 +157,7 @@ class PB_Elementor_Login_Widget extends PB_Elementor_Widget {
             ];
         }
         $sections['input'] = [
-            'selector' => '#wppb-login-wrap .login-password input#user_pass',
+            'selector' => '#wppb-login-wrap .login-password input#wppb_user_pass',
             'section_name' => 'Input',
         ];
         $this->add_styling_control_group(

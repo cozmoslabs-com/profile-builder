@@ -213,7 +213,7 @@
 3.0 Alignments
 --------------------------------------------------------------*/
 
-.wppb-user-forms ul {
+.wppb-user-forms > ul {
     max-width: 900px;
     list-style: none;
     margin-left: 0;
@@ -228,6 +228,8 @@
 
 .wppb-user-forms ul li {
     list-style: none;
+    margin: 0 0 14px 0;
+    padding: 0;
 }
 
 #wppb-login-wrap p,
@@ -237,12 +239,7 @@
     padding: 0;
 }
 
-.wppb-user-forms ul li {
-    margin: 0 0 14px 0;
-    padding: 0;
-}
-
-.wppb-user-forms ul li.wppb-recaptcha:not(.wppb-field-error):has(.wppb-invisible-recaptcha, .wppb-v3-recaptcha) {
+.wppb-user-forms .wppb-recaptcha:not(.wppb-field-error, .wppb-recaptcha-v2) {
     margin: 0;
     padding: 0;
     height: 0;
@@ -263,7 +260,8 @@
 }
 
 .wppb-user-forms .wppb-form-field > ul {
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .wppb-form-field .wppb-password-field-container {
@@ -275,7 +273,8 @@
     width: 100%;
 }
 
-.wppb-form-field:not(#select_user_to_edit_form .wppb-form-field) label,
+.wppb-form-field:not(#select_user_to_edit_form .wppb-form-field, .wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-subscription-plans) label:not(.wppb-checkboxes label, .wppb-radios label),
+#pms-subscription-plans-discount label,
 #wppb-login-wrap .login-username label,
 #wppb-login-wrap .login-password label,
 #wppb-login-wrap .login-auth label {
@@ -298,6 +297,11 @@
 #wppb-login-wrap .login-auth input {
     width: 69.9%;
     float: left;
+}
+
+
+.wppb-form-field.wppb-select-multiple select {
+    height: auto;
 }
 
 .wp-theme-oceanwp .wppb-form-field input[type="number"]{
@@ -925,14 +929,14 @@ li.wppb-facet-search {
 --------------------------------------------------------------*/
 
 @media screen and (max-width: 500px) {
-    .wppb-form-field label,
+    .wppb-form-field:not(#select_user_to_edit_form .wppb-form-field, .wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-subscription-plans) label:not(.wppb-checkboxes label, .wppb-radios label),
     #wppb-login-wrap .login-username label,
     #wppb-login-wrap .login-password label,
     #wppb-login-wrap .login-auth label,
     ul.wppb-profile li label {
-        width: 100%;
+        width: 100% !important;
         display: block;
-        float: none;
+        float: none !important;
     }
 
     .wppb-form-field input[type="text"],
@@ -943,14 +947,16 @@ li.wppb-facet-search {
     .wppb-form-field input[type="search"],
     .wppb-form-field select,
     .wppb-form-field textarea,
+    .wppb-form-field .wp-editor-wrap,
+    .wppb-form-field .wppb-password-field-container,
     .wppb-checkboxes,
     .wppb-radios,
     #wppb-login-wrap .login-username input,
     #wppb-login-wrap .login-password input,
     #wppb-login-wrap .login-auth input,
     ul.wppb-profile li span {
-        width: 100%;
-        float: left;
+        width: 100% !important;
+        float: none !important;
     }
 
     .wppb-form-field > span {
@@ -1063,11 +1069,6 @@ li.wppb-facet-search {
 /*--------------------------------------------------------------
 9.0 Profile Builder Subscription Plans Field
 --------------------------------------------------------------*/
-
-.wppb-form-field.wppb-subscription-plans label {
-    width: 100%;
-    float: none;
-}
 
 .wppb-form-field.wppb-subscription-plans input {
     display: inline-block;

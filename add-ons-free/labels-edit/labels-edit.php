@@ -132,6 +132,9 @@ function wppb_le_text_strings( $translated_text, $text, $domain ) {
 	if( is_admin() && ( !isset( $_POST ) || !isset( $_POST['wppb_msf_ajax_nonce'] ) ) )
 		return $translated_text;
 
+    if( $domain != 'profile-builder' )
+        return $translated_text;
+
 	$edited_labels = get_option( 'pble' );
 
 	if( empty( $edited_labels ) || $edited_labels === 'not_set' ) {
@@ -149,6 +152,31 @@ function wppb_le_text_strings( $translated_text, $text, $domain ) {
 	return $translated_text;
 }
 add_filter( 'gettext', 'wppb_le_text_strings', 8, 3 );
+
+function wppb_le_text_strings_with_context( $translated_text, $text, $context, $domain ) {
+	if( is_admin() && ( !isset( $_POST ) || !isset( $_POST['wppb_msf_ajax_nonce'] ) ) )
+		return $translated_text;
+
+    if( $domain != 'profile-builder' )
+        return $translated_text;
+
+	$edited_labels = get_option( 'pble' );
+
+	if( empty( $edited_labels ) || $edited_labels === 'not_set' ) {
+		return $translated_text;
+	}
+
+	if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
+		foreach( $edited_labels as $inner_array ) {
+			if( $text === $inner_array['pble-label'] || $text === htmlentities($inner_array['pble-label']) ) {
+				$translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
+			}
+		}
+	}
+
+	return $translated_text;
+}
+add_filter( 'gettext_with_context', 'wppb_le_text_strings_with_context', 8, 4 );
 
 function wppb_le_ngettext_strings( $translated_text, $single, $plural, $number, $domain ){
 	if( is_admin() )
@@ -177,6 +205,34 @@ function wppb_le_ngettext_strings( $translated_text, $single, $plural, $number, 
     return $translated_text;
 }
 add_filter( 'ngettext', 'wppb_le_text_strings', 8, 5 );
+
+function wppb_le_ngettext_strings_with_context( $translated_text, $single, $plural, $number, $context, $domain ){
+	if( is_admin() )
+		return $translated_text;
+
+    if( $domain != 'profile-builder' )
+        return $translated_text;
+
+    $edited_labels = get_option( 'pble' );
+
+    if( empty( $edited_labels ) || $edited_labels === 'not_set' ) {
+        return $translated_text;
+    }
+
+    if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
+        foreach( $edited_labels as $inner_array ) {
+            if( $single === $inner_array['pble-label'] ) {
+                $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
+            }
+            if( $plural === $inner_array['pble-label'] ) {
+                $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
+            }
+        }
+    }
+
+    return $translated_text;
+}
+add_filter( 'ngettext_with_context', 'wppb_le_ngettext_strings_with_context', 8, 6 );
 
 
 function wppb_le_remove_gettext_filter( $screen ) {

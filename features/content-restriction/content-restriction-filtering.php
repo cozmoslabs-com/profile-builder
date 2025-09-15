@@ -625,19 +625,25 @@ if( function_exists( 'wc_get_page_id' ) ) {
      */
     function wppb_woo_product_is_purchasable( $purchasable, $product ){
 
-        // if the product is view-restricted or purchase-restricted it cannot be purchased
+        // if the product is a variation, we need to grab the parent product before checking if it is purchasable
+        if( $product->is_type( array( 'variation' ) ) ){
+            $product = wc_get_product( $product->get_parent_id() );
+        }
+
         if ( wppb_content_restriction_is_post_restricted( $product->get_id() ) || !wppb_woo_is_product_purchasable( $product ) )
             $purchasable = false;
 
         // double-check for variations; if parent is not purchasable, then neither should be the variation
-        if ( $purchasable && $product->is_type( array( 'variation' ) ) ) {
+        // NOTE: This was removed because it doesn't make sense for varations. We need to check if the product that we receive is a variation and go directly
+        // to the parent product to check settings
+        // if ( $purchasable && $product->is_type( array( 'variation' ) ) ) {
 
-            $parent = wc_get_product( $product->get_parent_id() );
+        //     $parent = wc_get_product( $product->get_parent_id() );
 
-            if( !empty( $parent ) && is_object( $parent ) )
-                $purchasable = $parent->is_purchasable();
+        //     if( !empty( $parent ) && is_object( $parent ) )
+        //         $purchasable = $parent->is_purchasable();
 
-        }
+        // }
 
         return $purchasable;
 

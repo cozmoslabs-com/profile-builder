@@ -68,6 +68,7 @@
 }
 
 .wppb-form-field.wppb-select2.pbpl-class span.select2.select2-container,
+.wppb-form-field.wppb-select-taxonomy.pbpl-class span.select2.select2-container,
 .wppb-form-field.wppb-select-cpt.pbpl-class span.select2.select2-container,
 .wppb-form-field.wppb-select2-multiple.pbpl-class span.select2.select2-container {
     width: 100% !important;
