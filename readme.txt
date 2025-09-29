@@ -15,13 +15,13 @@ Powerful user profile plugin to create front-end user registration forms, login 
 
 **[Profile Builder](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) is the all in one user profile and user registration plugin for WordPress.**
 
-Elegant and reliable user registration and [user profile plugin](https://www.cozmoslabs.com/154636-best-wordpress-user-profile-plugins-compared/) for creating front-end user registration, login and edit profile forms with custom fields.
+Elegant and reliable user registration and [user profile plugin](https://www.cozmoslabs.com/best-wordpress-user-profile-plugins-compared/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) for creating front-end user registration, login and edit profile forms with custom fields.
 
 It also lets you **restrict content** based on user role or logged in status and manage user roles and capabilities using the built in **Role Editor**.
 
 Elevate your user experience and boost sign-ups with beautiful GDPR-compliant registration and login forms, customized user profiles, and all the user management tools you need in one robust solution.
 
-[Free Demo](https://pb-demo.cozmoslabs.com/#topmenu) | [Compare Free vs Pro](https://www.cozmoslabs.com/wordpress-profile-builder/) | [Documentation](https://www.cozmoslabs.com/docs/profile-builder/)
+[Free Demo](https://pb-demo.cozmoslabs.com/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree#topmenu) | [Compare Free vs Pro](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) | [Documentation](https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 
 https://www.youtube.com/watch?v=dZQaS5bk7zY&start=0&autoplay=1
 
@@ -29,15 +29,15 @@ https://www.youtube.com/watch?v=dZQaS5bk7zY&start=0&autoplay=1
 
 Personalize your website by incorporating front-end user login and user registration forms, providing users with a convenient way of signing up or accessing their profiles. 
 This is ideal for:
-* [Online Communities](https://www.cozmoslabs.com/256613-best-wordpress-community-plugins/) & Associations
+* [Online Communities](https://www.cozmoslabs.com/best-wordpress-community-plugins/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) & Associations
 * Online Courses
 * News and Resource Websites
 
 == Modern and Elegant User Profiles, Listings, and Directories ==
 
 From creating user profiles and a member directory to listing job offers or your community services, Profile Builder gives you the tools you need to monitor your users, control how and where they log in, as well as implement security measures to protect all those involved. This is ideal for: 
-* [Business Directory](https://www.cozmoslabs.com/660412-wordpress-business-directory-plugin/)
-* [Member Directory](https://www.cozmoslabs.com/515090-wordpress-user-listing-2/)
+* [Business Directory](https://www.cozmoslabs.com/wordpress-business-directory-plugin/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
+* [Member Directory](https://www.cozmoslabs.com/wordpress-user-listing-2/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree/)
 * Job Boards
 * Consultancy Services
 
@@ -45,8 +45,8 @@ From creating user profiles and a member directory to listing job offers or your
 
 Take control of user access throughout your website, define users’ viewing permissions, and regulate their ability to purchase your products. You can do this based on user role or logged-in status, and you can also manage user roles and capabilities using the built-in role editor. This is ideal for:
 * Private Websites
-* [Private Content](https://www.cozmoslabs.com/387767-wordpress-password-protect-post-content/)
-* [Private WooCommerce Stores](https://www.cozmoslabs.com/418232-woocommerce-private-store/)
+* [Private Content](https://www.cozmoslabs.com/wordpress-password-protect-post-content/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
+* [Private WooCommerce Stores](https://www.cozmoslabs.com/woocommerce-private-store/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 * Members-Only WooCommerce Stores
 
 
@@ -64,43 +64,43 @@ You can use the following shortcode list or available plugin blocks to quickly d
 
 * drag & drop to reorder user profile fields
 * add Avatar Upload field for users to manage their avatar on your website
-* enable **Email Confirmation** (on registration users will receive a notification to [confirm their email address](https://www.cozmoslabs.com/14722-wordpress-email-confirmation/))
+* enable **Email Confirmation** (on registration users will receive a notification to [confirm their email address](https://www.cozmoslabs.com/wordpress-email-confirmation/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree))
 * Email Customizer - Personalize all emails sent to your users or admins; customize default WordPress registration email
 * choose between login with **only Username, Email** or **both**
-* enforce [WordPress password requirements](https://www.cozmoslabs.com/28998-wordpress-minimum-password-length-strength/) by setting up a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
+* enforce [WordPress password requirements](https://www.cozmoslabs.com/wordpress-minimum-password-length-strength/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) by setting up a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
 * assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument for the register form)
-* [redirect users](https://www.cozmoslabs.com/46469-redirect-users-after-login-registration-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) after login, register and edit-profile using redirect_url shortcode argument ( e.g **[wppb-login redirect_url="www.example.com"]** )
+* [redirect users](https://www.cozmoslabs.com/redirect-users-after-login-registration-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) after login, register and edit-profile using redirect_url shortcode argument ( e.g **[wppb-login redirect_url="www.example.com"]** )
 * add register and lost password links below the login form (using **[wppb-login register_url="www.example.com" lostpassword_url="www.example.com"]** shortcode arguments)
 * customizable user login widget
 * add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin
 * **Admin Bar Settings**: choose which user roles view the admin bar in the front-end
 * extended functionality available via [Add-ons](https://www.cozmoslabs.com/profile-builder-add-ons/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
-* **Roles Editor**: add, edit, remove or clone [user roles](https://www.cozmoslabs.com/90914-how-to-create-custom-wordpress-user-roles-with-profile-builder/) and capabilities
-* [reCAPTCHA support](https://www.cozmoslabs.com/40120-adding-recaptcha-wordpress-register-login-lost-password-forms-profile-builder/) for Profile Builder and Wordpress default forms
+* **Roles Editor**: add, edit, remove or clone [user roles](https://www.cozmoslabs.com/how-to-create-custom-wordpress-user-roles-with-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) and capabilities
+* [reCAPTCHA support](https://www.cozmoslabs.com/adding-recaptcha-wordpress-register-login-lost-password-forms-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) for Profile Builder and Wordpress default forms
 * **User Role Select** field on register and edit profile forms
-* **Content Restriction**: [restrict content](https://www.cozmoslabs.com/105571-restrict-content-user-role-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) based on current users role or logged in status
+* **Content Restriction**: [restrict content](https://www.cozmoslabs.com/restrict-content-user-role-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) based on current users role or logged in status
 * Restrict WooCommerce shop page and products
 * Restrict Gutenberg blocks
 * Invisible reCAPTCHA support for both Profile Builder forms as well as default WordPress forms
-* **Private Website**: setup a [WordPress private site](https://www.cozmoslabs.com/132715-wordpress-private-site/) that is visible only to members or logged in users
-* **GDPR**: collect users consent about the data you collect about them under the new [GDPR law](https://www.cozmoslabs.com/docs/profile-builder-2/how-to-make-profile-builder-forms-gdpr-compliant/) requirements
+* **Private Website**: setup a [WordPress private site](https://www.cozmoslabs.com/wordpress-private-site/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) that is visible only to members or logged in users
+* **GDPR**: collect users consent about the data you collect about them under the new [GDPR law](https://www.cozmoslabs.com/docs/profile-builder/how-to-make-profile-builder-forms-gdpr-compliant/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) requirements
 * **Form Designs**: enable beautiful designs for your forms fully customizable by you
 
 **PROFILE BUILDER PRO**
 
-The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/#pricing/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) has the following extra features:
+The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree#pricing) has the following extra features:
 
 * Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select, Taxonomy Select)
 * Support for Conditional Fields
 * Use AJAX for form processing
 * Front-end User Listing (create fully customizable member directories, sorting included)
 * Create Multiple User Listings
-* [Custom Redirects](https://www.cozmoslabs.com/add-ons/custom-redirects/)
+* [Custom Redirects](https://www.cozmoslabs.com/add-ons/custom-redirects/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 * Multiple Registration Forms (set up [multiple registration forms](https://www.cozmoslabs.com/add-ons/multiple-registration-forms/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) with different profile fields for certain user roles)
-* [Multiple Edit Profile Forms](https://www.cozmoslabs.com/add-ons/multiple-registration-forms/)
-* [Repeater Fields](https://www.cozmoslabs.com/add-ons/repeater-fields/) - add repeater fields or groups of fields to your user profile
-* Admin Approval ([approve new users from dashboard or via email](https://www.cozmoslabs.com/112321-approve-users-from-admin-email-using-profile-builder/))
-* Create a [Map of Users Locations](https://www.cozmoslabs.com/160142-add-users-map-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
+* [Multiple Edit Profile Forms](https://www.cozmoslabs.com/add-ons/multiple-edit-profile-forms/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
+* [Repeater Fields](https://www.cozmoslabs.com/add-ons/repeater-fields/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - add repeater fields or groups of fields to your user profile
+* Admin Approval ([approve new users from dashboard or via email](https://www.cozmoslabs.com/approve-users-from-admin-email-using-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree))
+* Create a [Map of Users Locations](https://www.cozmoslabs.com/add-users-map-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 * 17 Premium Add-ons (e.g. custom redirects, user listing, multiple registration forms etc.)
 * Access to Premium Support and Documentation
 * 1 Year of Plugin Updates, New Features and Priority Support
@@ -139,9 +139,9 @@ For more functionality check out [Profile Builder Add-ons page](https://www.cozm
 
 == The Ultimate Membership Bundle ==
 
-Combine user registration, memberships, and recurring revenue in one powerful plugin bundle called the [Ultimate Membership Bundle](https://www.cozmoslabs.com/ultimate-membership-bundle/).
+Combine user registration, memberships, and recurring revenue in one powerful plugin bundle called the [Ultimate Membership Bundle](https://www.cozmoslabs.com/ultimate-membership-bundle/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree).
 
-Get access to [Profile Builder Pro](https://www.cozmoslabs.com/wordpress-profile-builder/) and [Paid Member Subscriptions Pro](https://www.cozmoslabs.com/wordpress-paid-member-subscriptions/) together. These two plugins are designed to work perfectly together, offering you a powerful toolkit for managing and expanding your user base while generating revenue through paid memberships and recurring revenue.
+Get access to [Profile Builder Pro](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) and [Paid Member Subscriptions Pro](https://www.cozmoslabs.com/wordpress-paid-member-subscriptions/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) together. These two plugins are designed to work perfectly together, offering you a powerful toolkit for managing and expanding your user base while generating revenue through paid memberships and recurring revenue.
 
 = Documentation =
 Please visit the [documentation page](https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) for this plugin
@@ -152,7 +152,7 @@ For more details visit our [website](https://www.cozmoslabs.com/wordpress-profil
 = Profile Builder in your Language =
 We're focusing on translating Profile Builder in as many languages as we can. So far, the translations for 17 languages are almost complete, but we still need help on a lot of other languages, so please join us at [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/profile-builder)
 You will be able to download all the [available language packs](https://translate.wordpress.org/projects/wp-plugins/profile-builder) as well as help us translate Profile Builder in your language.
-For more information please visit [cozmoslabs.com](https://www.cozmoslabs.com/docs/profile-builder-2/translate-profile-builder/)
+For more information please visit [cozmoslabs.com](https://www.cozmoslabs.com/docs/profile-builder/translate-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
 
 NOTE:
 This plugin adds/removes user fields in the front-end. Both default and extra profile fields will be visible in the back-end as well.
@@ -184,7 +184,7 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 
 = I can’t find a question similar to my issue; Where can I find support? =
 
-	For more information please check out the [documentation section](https://www.cozmoslabs.com/docs/profile-builder/) from Profile Builder - front-end user registration plugin.
+	For more information please check out the [documentation section](https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) from Profile Builder - front-end user registration plugin.
 
 == Screenshots ==
 1. User Registration Form Style preview
@@ -385,64 +385,5 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 * Fix: A notification regarding the resend email confirmation feature
 * Fix: Localize resend email confirmation shortcode messages
 * Misc: Added alt text for password visibility toggle
-
-= 3.11.9 =
-* Fix: Security issue in regards to email validation. Thanks to John Castro from WPScan
-* Fix: Isssue with Admin Approval email not sending when a form was bypassing the Email Confirmation feature
-* Fix: Select2 container position when the form is placed in an Elementor popup
-
-= 3.11.8 =
-* Fix: Security issue for CVE-2024-6366. Thanks to Michel Prunet
-* Fix: Change GDPR field type to button
-* Misc: Don't show the Register Version settings area on multisite for now
-
-= 3.11.7 =
-* Misc: Improvements for free users on Dashboard page
-* Misc: Make a couple of changes to the settings pages
-
-= 3.11.6 =
-* Fix: Incompatibility issue between Private Website and the password protect functionality from WordPress
-* Misc: Random improvements to back-end pages
-
-= 3.11.5 =
-* Fix: Issue with the update database meta keys functionality not working
-* Fix: Compatibility issue between Elementor and Password Visibility toggle
-* Misc: Added support for administrators to assign multiple user roles to their own account through the User Roles feature
-
-= 3.11.4 =
-* Fix: Compatiblity issue with Elementor templates when displaying success messages
-* Fix: PHP 8 notice coming from a functionality
-* Misc: Fix admin menu styling when viewing the Private page
-
-= 3.11.3 =
-* Fix: Security misconfiguration issue with the allow/deny domains option. Thanks to Ananda Dhakal
-* Fix: Issue with display of Select2 fields in back-end
-* Fix: Notice appearing in some cases relating to Gutenberg blocks
-* Fix: Issue with login when the username has an email format
-* Fix: Invisible reCaptcha compatibility with the Stripe gateway from Paid Member Subscriptions
-* Misc: Random adjustments for back-end pages
-
-= 3.11.2 =
-* Fix: Exclude the register only terms and conditions field from the Redirect if Empty Required field functionality
-* Fix: Issue with password reset links when the username contained spaces
-* Fix: Issue with the Automatically Generate Passwords functionality not working when language was different than English
-* Fix: Private Website redirect preventing logins when the force login url parameter was present
-* Misc: Improvements to honeypot field
-* Misc: Change plugin icon from admin menu
-* Misc: Random changes for back-end pages design
-* Misc: Updated form styles preview images
-
-= 3.11.1 =
-* Fix: Javascript error triggering from the Elementor Pro integration
-* Fix: A potential notice appearing in a case
-* Misc: Use role name instead of slug for Dashboard page Recent Registrations feed
-
-= 3.11.0 =
-* Feature: Added Content Restriction options for Divi Builder modules
-* Fix: Issue with Unique Display Name not working correctly
-* Misc: Added plugin marketing optin process
-* Misc: Improve description for the auto generate password feature
-* Misc: Fixed a notice appearing on back-end pages
-* Misc: Removed outdated translation files that were being shipped with the plugin
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.
