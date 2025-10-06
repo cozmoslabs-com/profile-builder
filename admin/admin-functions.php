@@ -782,17 +782,17 @@ add_action( 'in_admin_header', 'wppb_insert_page_banner' );
  */
 function wppb_output_page_banner( $page_name ) {
 
-    $upgrade_button = '<a class="cozmoslabs-banner-link cozmoslabs-upgrade-link" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=upgrade-link&utm_campaign=PBFree#pricing" target="_blank">
+    $upgrade_button = '<a class="cozmoslabs-banner-link cozmoslabs-upgrade-link" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-settings&utm_medium=client-site&utm_campaign=pb-header-upsell#pricing" target="_blank">
                          <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/upgrade-link-icon.svg" alt="">
                          Upgrade to PRO
                        </a>';
 
-    $upgrade_button_basic = '<a class="cozmoslabs-banner-link cozmoslabs-upgrade-link" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=upgrade-link&utm_campaign=PBBasic#pricing" target="_blank">
+    $upgrade_button_basic = '<a class="cozmoslabs-banner-link cozmoslabs-upgrade-link" href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-settings&utm_medium=client-site&utm_campaign=pb-header-upsell#pricing" target="_blank">
                        <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/upgrade-link-icon.svg" alt="">
                        Upgrade to PRO
                      </a>';
 
-    $support_url = 'https://www.cozmoslabs.com/support/?utm_source=wpbackend&utm_medium=pb-support&utm_campaign=PBSupport';
+    $support_url = 'https://www.cozmoslabs.com/support/?utm_source=pb-settings&utm_medium=client-site&utm_campaign=pb-header-upsell';
 
     if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) )
         $support_url = 'https://wordpress.org/support/plugin/profile-builder/';
@@ -808,7 +808,7 @@ function wppb_output_page_banner( $page_name ) {
                            Support
                        </a>
 
-                       <a class="cozmoslabs-banner-link cozmoslabs-documentation-link" href="https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wpbackend&utm_medium=pb-documentation&utm_campaign=PBDocs" target="_blank">
+                       <a class="cozmoslabs-banner-link cozmoslabs-documentation-link" href="https://www.cozmoslabs.com/docs/profile-builder/?utm_source=pb-settings&utm_medium=client-site&utm_campaign=pb-header-upsell" target="_blank">
                            <img src="'. esc_url(WPPB_PLUGIN_URL) . 'assets/images/docs-link-icon.svg" alt="">
                            Documentation
                        </a>';

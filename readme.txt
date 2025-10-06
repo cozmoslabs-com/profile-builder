@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.6
+Stable tag: 3.14.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.7 =
+* Fix: A notice being thrown from the Edit Profile Elementor widget in some cases
+* Fix: Password visibility toggle not working correctly
+* Fix: Set autoload to no for some back-end only options
+* Misc: Use Gutenberg Blocks instead of shortcodes when plugin pages are created automatically through the Setup Wizard
+
 = 3.14.6 =
 * Fix: Front-end styles fixes for different cases
 * Fix: Issue with the Content Restriction functionality breaking WooCommerce products with variations from being added to cart

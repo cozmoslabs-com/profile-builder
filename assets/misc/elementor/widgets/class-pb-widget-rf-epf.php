@@ -934,9 +934,9 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
             $message= "";
         }
 
-        if ( $is_elementor_edit_mode && $output->args !== null ) {
+        if ( $is_elementor_edit_mode && ( isset( $output->args ) && $output->args !== null ) ) {
 
-            if( defined( 'WPPB_PAID_PLUGIN_URL' ) ){
+            if( defined( 'WPPB_PAID_PLUGIN_URL' ) && isset( $output->args['form_fields'] ) ){
                 //add the scripts for various fields
                 foreach ( $output->args['form_fields'] as $form_field ){
                     switch ( $form_field['field'] ){

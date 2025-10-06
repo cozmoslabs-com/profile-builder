@@ -433,7 +433,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, each time a user logins, the date and time will be saved in the database under the "last_login_date" meta name.', 'profile-builder' ); ?></p>
-                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo wp_kses_post( __( 'You can <a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/#Manage_existing_custom_fields_with_Profile_Builder" target="_blank">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.', 'profile-builder' ) ); ?></p>
+                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo wp_kses_post( __( 'You can <a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-login#Manage_existing_custom_fields_with_Profile_Builder" target="_blank">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.', 'profile-builder' ) ); ?></p>
             </div>
 
             <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
@@ -449,7 +449,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'By enabling this option, each time a user modifies his profile the date and time will be saved in the database under the "last_profile_update_date" meta name.', 'profile-builder' ); ?></p>
-                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo wp_kses_post( __( 'You can <a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/#Manage_existing_custom_fields_with_Profile_Builder" target="_blank">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.', 'profile-builder' ) ); ?></p>
+                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php echo wp_kses_post( __( 'You can <a href="https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-profile-update#Manage_existing_custom_fields_with_Profile_Builder" target="_blank">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.', 'profile-builder' ) ); ?></p>
             </div>
 
             <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">

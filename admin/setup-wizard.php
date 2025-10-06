@@ -108,31 +108,35 @@ class WPPB_Setup_Wizard {
 
                 $pages = array(
                     'register' => array(
-                        'title'   => 'Register',
-                        'option'  => 'register_page',
-                        'content' => '[wppb-register]',
+                        'title'         => 'Register',
+                        'option'        => 'register_page',
+                        'content'       => '[wppb-register]',
+                        'block_content' => '<!-- wp:wppb/register /-->',
                     ),
                     'login' => array(
-                        'title'   => 'Login',
-                        'option'  => 'login_page',
-                        'content' => '[wppb-login]',
+                        'title'         => 'Login',
+                        'option'        => 'login_page',
+                        'content'       => '[wppb-login]',
+                        'block_content' => '<!-- wp:wppb/login /-->',
                     ),
                     'edit_profile' => array(
-                        'title'   => 'Edit Profile',
-                        'option'  => 'edit_profile_page',
-                        'content' => '[wppb-edit-profile]',
+                        'title'         => 'Edit Profile',
+                        'option'        => 'edit_profile_page',
+                        'content'       => '[wppb-edit-profile]',
+                        'block_content' => '<!-- wp:wppb/edit-profile /-->',
                     ),
                     'reset_password' => array(
-                        'title'   => 'Password Reset',
-                        'option'  => 'lost_password_page',
-                        'content' => '[wppb-recover-password]',
+                        'title'         => 'Password Reset',
+                        'option'        => 'lost_password_page',
+                        'content'       => '[wppb-recover-password]',
+                        'block_content' => '<!-- wp:wppb/recover-password /-->',
                     ),
                 );
 
 
                 foreach( $_POST['wppb_user_pages'] as $page_slug => $value ) { /* phpcs:ignore  WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */
                     if( $value == 1 ){
-                        $this->create_page( $pages[$page_slug]['option'], $pages[$page_slug]['title'], $pages[$page_slug]['content'] );
+                        $this->create_page( $pages[$page_slug]['option'], $pages[$page_slug]['title'], $pages[$page_slug]['content'], $pages[$page_slug]['block_content'] );
                     }
                 }
 
@@ -236,7 +240,7 @@ class WPPB_Setup_Wizard {
             }
         }
 
-        update_option( 'wppb_setup_wizard_steps', $steps_completion );
+        update_option( 'wppb_setup_wizard_steps', $steps_completion, false );
 
         // redirect to the next step at the end
         wp_safe_redirect( esc_url_raw( $this->get_next_step_link() ) );
@@ -264,18 +268,37 @@ class WPPB_Setup_Wizard {
         return add_query_arg( 'step', $keys[$step_index + 1] );
     }
 
-    private function create_page( $option, $title, $content = '' ) {
+    /**
+     * Check if Gutenberg block editor is available and active
+     * 
+     * @return bool
+     */
+    private function is_gutenberg_available() {
+        // use_block_editor_for_post_type() checks if block editor is available (WP 5.0+),
+        // respects Classic Editor plugin settings, and any filters
+        return function_exists( 'use_block_editor_for_post_type' ) && use_block_editor_for_post_type( 'page' );
+    }
+
+    private function create_page( $option, $title, $content = '', $block_content = '' ) {
         if( empty( $this->user_pages ) )
             $this->user_pages = get_option( 'wppb_user_pages', array() );
 
-        //try to find an existing page with the shortcode
+        //try to find an existing page with the shortcode or block
         if( empty( $this->user_pages[$option] ) || $this->user_pages[$option] == '-1' ) {
 
             if( !empty( $content ) ){
                 global $wpdb;
 
+                // Clean shortcode for searching (remove wp:shortcode wrapper if present)
                 $shortcode = str_replace( array( '<!-- wp:shortcode -->', '<!-- /wp:shortcode -->' ), '', $content );
+                
+                // Search for existing page with shortcode
                 $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $shortcode . '%' ) );
+
+                // If no shortcode page found, and we have block content, search for block
+                if( empty( $existing_page ) && !empty( $block_content ) ) {
+                    $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $wpdb->esc_like( $block_content ) . '%' ) );
+                }
 
                 if( !empty( $existing_page ) ) {
                     $this->user_pages[$option] = $existing_page;
@@ -284,15 +307,21 @@ class WPPB_Setup_Wizard {
                 }
             }
 
+            // Determine which content to use: blocks if available, otherwise shortcodes
+            $page_content = $content;
+            if( $this->is_gutenberg_available() && !empty( $block_content ) ) {
+                $page_content = $block_content;
+            }
+
             $page = array(
                 'post_type'    => 'page',
                 'post_status'  => 'publish',
                 'post_title'   => $title,
-                'post_content' => $content
+                'post_content' => $page_content
             );
 
             $page_id = wp_insert_post( $page );
-            $this->general_settings[$option] = $page_id;
+            $this->user_pages[$option] = $page_id;
         }
     }
 
@@ -305,32 +334,42 @@ class WPPB_Setup_Wizard {
 
         $pages = array(
             'register' => array(
-                'title'   => 'Register',
-                'option'  => 'register_page',
-                'content' => '[wppb-register]',
+                'title'         => 'Register',
+                'option'        => 'register_page',
+                'content'       => '[wppb-register]',
+                'block_content' => '<!-- wp:wppb/register /-->',
             ),
             'login' => array(
-                'title'   => 'Login',
-                'option'  => 'login_page',
-                'content' => '[wppb-login]',
+                'title'         => 'Login',
+                'option'        => 'login_page',
+                'content'       => '[wppb-login]',
+                'block_content' => '<!-- wp:wppb/login /-->',
             ),
             'edit_profile' => array(
-                'title'   => 'Edit Profile',
-                'option'  => 'edit_profile_page',
-                'content' => '[wppb-edit-profile]',
+                'title'         => 'Edit Profile',
+                'option'        => 'edit_profile_page',
+                'content'       => '[wppb-edit-profile]',
+                'block_content' => '<!-- wp:wppb/edit-profile /-->',
             ),
             'reset_password' => array(
-                'title'   => 'Password Reset',
-                'option'  => 'lost_password_page',
-                'content' => '[wppb-recover-password]',
+                'title'         => 'Password Reset',
+                'option'        => 'lost_password_page',
+                'content'       => '[wppb-recover-password]',
+                'block_content' => '<!-- wp:wppb/recover-password /-->',
             ),
         );
 
         global $wpdb;
         foreach ( $pages as $page ) {
             if( empty( $user_pages[$page['option']] ) && !empty( $page['content'] ) ){
+                // Search for shortcode-based pages
                 $shortcode = str_replace( array( '<!-- wp:shortcode -->', '<!-- /wp:shortcode -->' ), '', $page['content'] );
                 $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $shortcode . '%' ) );
+
+                // If no shortcode page found, search for block-based pages
+                if( empty( $existing_page ) && !empty( $page['block_content'] ) ) {
+                    $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $wpdb->esc_like( $page['block_content'] ) . '%' ) );
+                }
 
                 if( !empty( $existing_page ) ) {
                     $user_pages[$page['option']] = $existing_page;
@@ -402,7 +441,7 @@ class WPPB_Setup_Wizard {
         if( !isset( $steps_completion['extra_user_roles'] ) && self::website_has_extra_user_roles() )
             $steps_completion['extra_user_roles'] = 1;
 
-        update_option( 'wppb_setup_wizard_steps', $steps_completion );
+        update_option( 'wppb_setup_wizard_steps', $steps_completion, false );
 
         $current_step = is_array( $steps_completion ) ? count( $steps_completion ) : 0;
         $total_steps  = count( $steps );
@@ -437,10 +476,20 @@ class WPPB_Setup_Wizard {
     public static function website_has_plugin_pages() {
         global $wpdb;
 
-        $shortcodes = array( '[wppb-register]', '[wppb-login]', '[wppb-edit-profile]', '[wppb-recover-password]' );
+        // Check for both shortcode and block-based pages
+        $search_patterns = array(
+            '[wppb-register]',
+            '[wppb-login]',
+            '[wppb-edit-profile]',
+            '[wppb-recover-password]',
+            '<!-- wp:wppb/register',
+            '<!-- wp:wppb/login',
+            '<!-- wp:wppb/edit-profile',
+            '<!-- wp:wppb/recover-password',
+        );
 
-        foreach ( $shortcodes as $shortcode ) {
-            $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $shortcode . '%' ) );
+        foreach ( $search_patterns as $pattern ) {
+            $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $wpdb->esc_like( $pattern ) . '%' ) );
 
             if( !empty( $existing_page ) )
                 return true;

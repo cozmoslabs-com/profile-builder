@@ -23,7 +23,7 @@
         elseif ( PROFILE_BUILDER == 'Profile Builder Free' ) {
             echo wppb_display_form_designs_preview(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-            printf( esc_html__( '%3$sYou can now beautify your forms using pre-made templates. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=setup-wizard-form-designs&utm_campaign=PBFree#pricing" target="_blank">', '</a>', '<p class="wppb-setup-form-styles__upsell">', '</p>' );
+            printf( esc_html__( '%3$sYou can now beautify your forms using pre-made templates. Enable Form Designs by upgrading to %1$sBasic or PRO versions%2$s.%4$s', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-setup-wizard&utm_medium=client-site&utm_campaign=pb-form-design-templates#pricing" target="_blank">', '</a>', '<p class="wppb-setup-form-styles__upsell">', '</p>' );
         }
         ?>
     </div>

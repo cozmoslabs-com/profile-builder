@@ -22,7 +22,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
+                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-compare-shortcode" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
                 </p>
             </div>
 
@@ -39,7 +39,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
+                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-usermeta-shortcode " target="_blank">this url</a>.', 'profile-builder' ) ); ?>
                 </p>
             </div>
 
@@ -56,7 +56,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
+                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-resend-activation-shortcode" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
                 </p>
             </div>
 
@@ -73,7 +73,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
+                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-format-date-shortcode" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
                 </p>
             </div>
 
@@ -90,7 +90,7 @@
                 </div>
 
                 <p class="cozmoslabs-description cozmoslabs-description-space-left">
-                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs/#Shortcodes_List" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
+                    <?php echo wp_kses_post( __( 'You can read more info about this shortcode by following <a href="https://www.cozmoslabs.com/docs/profile-builder/general-settings/advanced-settings/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-list-roles-shortcode/#Shortcodes" target="_blank">this url</a>.', 'profile-builder' ) ); ?>
                 </p>
             </div>
         </div>

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-15 11:18+0000\n"
+"POT-Creation-Date: 2025-10-06 08:13+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -291,42 +291,42 @@ msgid "Paid Member Subscriptions"
 msgstr ""
 
 #: admin/add-ons.php:272
-msgid "Accept user payments, create subscription plans and restrict content on your membership site."
+msgid "Unlock the Subscriptions Field in Profile Builder and offer paid memberships for your site. With Paid Member Subscriptions your registration forms will allow your users to sign up for paid accounts."
 msgstr ""
 
-#: admin/add-ons.php:280
+#: admin/add-ons.php:279
 msgid "WP Webhooks Automations"
 msgstr ""
 
-#: admin/add-ons.php:281
-msgid "Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together."
+#: admin/add-ons.php:280
+msgid "Easily create powerful no-code automations that connect Profile Builder actions, like sign-ups or edits to a user's profile, to actions from other plugins, sites, and apps."
 msgstr ""
 
-#: admin/add-ons.php:288
+#: admin/add-ons.php:287
 msgid "Client Portal"
 msgstr ""
 
-#: admin/add-ons.php:289
+#: admin/add-ons.php:288
 msgid "Create private pages for your website users that only an administrator can edit."
 msgstr ""
 
-#: admin/add-ons.php:296
+#: admin/add-ons.php:295
 msgid "Custom Login Page Templates"
 msgstr ""
 
-#: admin/add-ons.php:297
+#: admin/add-ons.php:296
 msgid "Customizes the default WordPress Login Page with different templates, logo and background uploads and also adds support for custom CSS."
 msgstr ""
 
-#: admin/add-ons.php:304
+#: admin/add-ons.php:303
 msgid "Passwordless Login"
 msgstr ""
 
-#: admin/add-ons.php:305
+#: admin/add-ons.php:304
 msgid "WordPress Passwordless Login is a plugin that allows your users to login without a password."
 msgstr ""
 
-#: admin/add-ons.php:420
+#: admin/add-ons.php:419
 msgid "%1$sAdd-ons settings saved successfully%2$s"
 msgstr ""
 
@@ -751,7 +751,7 @@ msgid "Create no-code automations and workflows on your WordPress site."
 msgstr ""
 
 #: admin/basic-info.php:296
-msgid "Integrates with Profile Builder or Paid Member Subscriptions, depending on which plugin it's for."
+msgid "Integrates with both Profile Builder and Paid Member Subscriptions."
 msgstr ""
 
 #: admin/dashboard.php:11, admin/dashboard.php:39
@@ -3732,35 +3732,35 @@ msgstr ""
 msgid "Ready!"
 msgstr ""
 
-#: admin/setup-wizard.php:351
+#: admin/setup-wizard.php:390
 msgid "Create user pages for registration, login, edit profile and password reset."
 msgstr ""
 
-#: admin/setup-wizard.php:355
+#: admin/setup-wizard.php:394
 msgid "Choose a design and optimize the login and registration flow for your users."
 msgstr ""
 
-#: admin/setup-wizard.php:359
+#: admin/setup-wizard.php:398
 msgid "Learn about and enable addons for extra functionality."
 msgstr ""
 
-#: admin/setup-wizard.php:363
+#: admin/setup-wizard.php:402
 msgid "Add extra fields to the registration and edit profile forms."
 msgstr ""
 
-#: admin/setup-wizard.php:367
+#: admin/setup-wizard.php:406
 msgid "Restrict your content based on the user role."
 msgstr ""
 
-#: admin/setup-wizard.php:371
+#: admin/setup-wizard.php:410
 msgid "Create new user roles with the Role Editor."
 msgstr ""
 
-#: admin/setup-wizard.php:413
+#: admin/setup-wizard.php:452
 msgid "Progress Review"
 msgstr ""
 
-#: admin/setup-wizard.php:414
+#: admin/setup-wizard.php:453
 msgid "Follow these steps to start registering users on your website. %1s out of %2s complete."
 msgstr ""
 
@@ -6802,15 +6802,15 @@ msgstr ""
 msgid "Number of items per page:"
 msgstr ""
 
-#: features/conditional-fields/conditional-fields.php:88
+#: features/conditional-fields/conditional-fields.php:89
 msgid "Conditional Logic"
 msgstr ""
 
-#: features/conditional-fields/conditional-fields.php:89
+#: features/conditional-fields/conditional-fields.php:90
 msgid "Conditional Rules"
 msgstr ""
 
-#: features/conditional-fields/conditional-fields.php:645
+#: features/conditional-fields/conditional-fields.php:801
 msgid "This field has conditional logic enabled."
 msgstr ""
 
@@ -9494,8 +9494,8 @@ msgstr ""
 msgid "By enabling this option, each time a user logins, the date and time will be saved in the database under the \"last_login_date\" meta name."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:436, admin/advanced-settings/includes/views/view-forms.php:452
-msgid "You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms."
+#: admin/advanced-settings/includes/views/view-forms.php:436
+msgid "You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-login#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-forms.php:440
@@ -9508,6 +9508,10 @@ msgstr ""
 
 #: admin/advanced-settings/includes/views/view-forms.php:451
 msgid "By enabling this option, each time a user modifies his profile the date and time will be saved in the database under the \"last_profile_update_date\" meta name."
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:452
+msgid "You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-profile-update#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-forms.php:456
@@ -9579,7 +9583,7 @@ msgid "Enable Compare shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:25
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-compare-shortcode\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:30
@@ -9591,7 +9595,7 @@ msgid "Enable Usermeta shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:42
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-usermeta-shortcode \" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:47
@@ -9603,7 +9607,7 @@ msgid "Enable Resend Activation Email shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:59
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-resend-activation-shortcode\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:64
@@ -9615,7 +9619,7 @@ msgid "Enable Format Date shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:76
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-format-date-shortcode\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:81
@@ -9627,7 +9631,7 @@ msgid "Enable List Roles shortcode."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-shortcodes.php:93
-msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs/#Shortcodes_List\" target=\"_blank\">this url</a>."
+msgid "You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/general-settings/advanced-settings/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-list-roles-shortcode/#Shortcodes\" target=\"_blank\">this url</a>."
 msgstr ""
 
 #: admin/advanced-settings/includes/views/view-userlisting.php:13

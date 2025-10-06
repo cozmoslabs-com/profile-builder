@@ -67,9 +67,9 @@
 <?php __("TranslatePress", "profile-builder"); ?>
 <?php __("Translate your Profile Builder forms with a WordPress translation plugin that anyone can use. It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.", "profile-builder"); ?>
 <?php __("Paid Member Subscriptions", "profile-builder"); ?>
-<?php __("Accept user payments, create subscription plans and restrict content on your membership site.", "profile-builder"); ?>
+<?php __("Unlock the Subscriptions Field in Profile Builder and offer paid memberships for your site. With Paid Member Subscriptions your registration forms will allow your users to sign up for paid accounts.", "profile-builder"); ?>
 <?php __("WP Webhooks Automations", "profile-builder"); ?>
-<?php __("Easily create powerful no-code automations that connect your WordPress plugins, sites and apps together.", "profile-builder"); ?>
+<?php __("Easily create powerful no-code automations that connect Profile Builder actions, like sign-ups or edits to a user's profile, to actions from other plugins, sites, and apps.", "profile-builder"); ?>
 <?php __("Client Portal", "profile-builder"); ?>
 <?php __("Create private pages for your website users that only an administrator can edit.", "profile-builder"); ?>
 <?php __("Custom Login Page Templates", "profile-builder"); ?>
@@ -182,7 +182,7 @@
 <?php __("It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.", "profile-builder"); ?>
 <?php __("Save time and money using automations", "profile-builder"); ?>
 <?php __("Create no-code automations and workflows on your WordPress site.", "profile-builder"); ?>
-<?php __("Integrates with Profile Builder or Paid Member Subscriptions, depending on which plugin it's for.", "profile-builder"); ?>
+<?php __("Integrates with both Profile Builder and Paid Member Subscriptions.", "profile-builder"); ?>
 <?php __("Dashboard", "profile-builder"); ?>
 <?php __("Setup Wizard", "profile-builder"); ?>
 <?php __("Totals", "profile-builder"); ?>
@@ -2339,10 +2339,11 @@
 <?php __("Last Login Usermeta", "profile-builder"); ?>
 <?php __("Save \"Last Login\" date in usermeta.", "profile-builder"); ?>
 <?php __("By enabling this option, each time a user logins, the date and time will be saved in the database under the \"last_login_date\" meta name.", "profile-builder"); ?>
-<?php __("You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.", "profile-builder"); ?>
+<?php __("You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-login#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.", "profile-builder"); ?>
 <?php __("Last Profile Update Usermeta", "profile-builder"); ?>
 <?php __("Save \"Last Profile Update\" date in usermeta.", "profile-builder"); ?>
 <?php __("By enabling this option, each time a user modifies his profile the date and time will be saved in the database under the \"last_profile_update_date\" meta name.", "profile-builder"); ?>
+<?php __("You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-profile-update#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms.", "profile-builder"); ?>
 <?php __("Disable Automatic Scrolling", "profile-builder"); ?>
 <?php __("Disable automatic scrolling after submit.", "profile-builder"); ?>
 <?php __("By default, after each form submission the page will automatically scroll to the form message. By enabling this option, automatic scrolling will be disabled.", "profile-builder"); ?>
@@ -2360,19 +2361,19 @@
 <?php __("Reset All Color Settings", "profile-builder"); ?>
 <?php __("Compare Shortcode", "profile-builder"); ?>
 <?php __("Enable Compare shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/compare-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-compare-shortcode\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Usermeta Shortcode", "profile-builder"); ?>
 <?php __("Enable Usermeta shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/display-user-meta/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-usermeta-shortcode \" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Resend Activation Email Shortcode", "profile-builder"); ?>
 <?php __("Enable Resend Activation Email shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/resend-confirmation-email/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-resend-activation-shortcode\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Format Date Shortcode", "profile-builder"); ?>
 <?php __("Enable Format Date shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/developers-knowledge-base/shortcodes/format-date-shortcode/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-format-date-shortcode\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("List Roles shortcode", "profile-builder"); ?>
 <?php __("Enable List Roles shortcode.", "profile-builder"); ?>
-<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=advanced-settings-shortcodes&utm_campaign=PBDocs/#Shortcodes_List\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
+<?php __("You can read more info about this shortcode by following <a href=\"https://www.cozmoslabs.com/docs/profile-builder/general-settings/advanced-settings/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-list-roles-shortcode/#Shortcodes\" target=\"_blank\">this url</a>.", "profile-builder"); ?>
 <?php __("Search Box Placeholder", "profile-builder"); ?>
 <?php __("This refers to the placeholder text from the \"{{{extra_search_all_fields}}}\" tag.", "profile-builder"); ?>
 <?php __("Default text is \"Search Users by All Fields\", use this option to change it to something else. Leave empty if you do not want to change it.", "profile-builder"); ?>

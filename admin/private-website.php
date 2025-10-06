@@ -157,7 +157,7 @@ function wppb_private_website_content() {
                             </div>
 
                             <div class="cozmoslabs-toggle-description">
-                                <label for="private-website-menu-hide" class="cozmoslabs-description"><?php wp_kses_post( printf( __( 'Hide all menu items if you are not logged in. We recommend "<a href="%s" target="_blank">Custom Profile Menus</a>" addon if you need different menu items for logged in / logged out users.', 'profile-builder' ), 'https://www.cozmoslabs.com/add-ons/custom-profile-menus/' ) )    //phpcs:ignore; ?></label>
+                                <label for="private-website-menu-hide" class="cozmoslabs-description"><?php wp_kses_post( printf( __( 'Hide all menu items if you are not logged in. We recommend "<a href="%s" target="_blank">Custom Profile Menus</a>" addon if you need different menu items for logged in / logged out users.', 'profile-builder' ), 'https://www.cozmoslabs.com/add-ons/custom-profile-menus/?utm_source=pb-private-website-settings&utm_medium=client-site&utm_campaign=pb-hide-all-menus' ) )    //phpcs:ignore; ?></label>
                             </div>
                         </div>
 

@@ -269,7 +269,7 @@
     position: relative;
 }
 
-.wppb-form-field .wppb-password-field-container input[type="password"] {
+.wppb-form-field .wppb-password-field-container input[type="password"], .wppb-form-field .wppb-password-field-container input[type="text"] {
     width: 100%;
 }
 

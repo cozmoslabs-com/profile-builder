@@ -778,7 +778,7 @@ class WPPB_Roles_Editor {
                 'custom'        => $custom_capabilities
             );
 
-            update_option( 'wppb_roles_editor_capabilities', $capabilities );
+            update_option( 'wppb_roles_editor_capabilities', $capabilities, false );
         } else {
             $custom_capabilities = $this->get_all_capabilities();
             $custom_capabilities = $this->remove_old_labels( $custom_capabilities );
@@ -800,7 +800,7 @@ class WPPB_Roles_Editor {
             if( ! empty( $custom_capabilities ) ) {
                 $capabilities['custom']['capabilities'] = array_merge( $capabilities['custom']['capabilities'], $custom_capabilities );
 
-                update_option( 'wppb_roles_editor_capabilities', $capabilities );
+                update_option( 'wppb_roles_editor_capabilities', $capabilities, false );
             }
         }
 
@@ -870,13 +870,13 @@ class WPPB_Roles_Editor {
                 $role->remove_cap(sanitize_text_field($_POST['capability']));
             }
 
-            $capabilities = get_option('wppb_roles_editor_capabilities', 'not_set');
+            $capabilities = get_option( 'wppb_roles_editor_capabilities', 'not_set' );
 
             if ($capabilities != 'not_set' && ($key = array_search(sanitize_text_field($_POST['capability']), $capabilities['custom']['capabilities'])) !== false) {
                 unset($capabilities['custom']['capabilities'][$key]);
                 $capabilities['custom']['capabilities'] = array_values($capabilities['custom']['capabilities']);
 
-                update_option('wppb_roles_editor_capabilities', $capabilities);
+                update_option( 'wppb_roles_editor_capabilities', $capabilities, false );
             }
         }
 

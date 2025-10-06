@@ -85,7 +85,7 @@
         </p>
     <?php else: ?>
         <p class="wppb-setup-form-styles__upsell" style="padding-top: 14px; padding-bottom: 14px; font-size: 110%;">
-            <?php printf( esc_html__( 'Get access to 20+ add-ons with a %sPro%s license. %sBuy Now%s', 'profile-builder' ), '<strong>', '</strong>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=setup-wizard-addons&utm_campaign=PBFree#pricing" target="_blank">', '</a>' ); ?>
+            <?php printf( esc_html__( 'Get access to 20+ add-ons with a %sPro%s license. %sBuy Now%s', 'profile-builder' ), '<strong>', '</strong>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-setup-wizard&utm_medium=client-site&utm_campaign=pb-pro-addons-upsell#pricing" target="_blank">', '</a>' ); ?>
         </p>
     <?php endif; ?>
 

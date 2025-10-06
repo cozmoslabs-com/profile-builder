@@ -249,7 +249,7 @@ function wppb_general_settings_content() {
 
                                 <p class="cozmoslabs-description cozmoslabs-description-align-right cozmoslabs-description-upsell">
                                     <?php echo esc_html__( 'You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI.', 'profile-builder' ); ?><br>
-                                    <?php printf( esc_html__( 'Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=general-settings-link&utm_campaign=PBFree#pricing">', '</a>' )?>
+                                    <?php printf( esc_html__( 'Enable Admin Approval by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ),'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-general-settings&utm_medium=client-site&utm_campaign=pb-admin-approval#pricing">', '</a>' )?>
                                 </p>
                             </div>
 
@@ -679,7 +679,7 @@ function wppb_display_form_designs_preview() {
 
     $output .= '</div>';
 
-    $output .= '<p class="cozmoslabs-description cozmoslabs-description-upsell">'. sprintf( esc_html__( 'You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-form-designs&utm_campaign=PBFree#pricing" target="_blank">', '</a>', '<strong>', '</strong>' ) .'</p>';
+    $output .= '<p class="cozmoslabs-description cozmoslabs-description-upsell">'. sprintf( esc_html__( 'You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-general-settings&utm_medium=client-site&utm_campaign=pb-form-design-templates#pricing" target="_blank">', '</a>', '<strong>', '</strong>' ) .'</p>';
 
     return $output;
 }

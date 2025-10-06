@@ -106,7 +106,7 @@ function wppb_basic_info_content() {
                         <?php esc_html_e( 'Admin Approval', 'profile-builder' ); ?>
 
                         <?php if ($version == 'Free'){ ?>
-                            <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                            <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-admin-approval#pricing" target="_blank">', '</a>' );?></span>
                         <?php } ?>
                     </label>
                     <p class="cozmoslabs-description cozmoslabs-description-align-right"><?php esc_html_e( 'You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI.', 'profile-builder' ); ?></p>
@@ -156,13 +156,13 @@ function wppb_basic_info_content() {
                 <?php esc_html_e( 'Customize Your Forms The Way You Want', 'profile-builder' ); ?>
 
                 <?php if ($version == 'Free'){ ?>
-                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s BASIC & PRO %2$s versions', 'profile-builder' ) ,'<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-extra-fields#pricing" target="_blank">', '</a>' );?></span>
                 <?php } ?>
             </h2>
             <p class="cozmoslabs-description"><?php esc_html_e( 'With Extra Profile Fields you can create the exact Registration Form your project needs.', 'profile-builder' ); ?></p>
 
             <?php if ($version == 'Free'){ ?>
-                <a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extrafields&utm_campaign=PBFree#pricing" target="_blank" class="button button-primary wppb-button-free"><?php esc_html_e( 'Extra Profile Fields are available in Basic or PRO versions', 'profile-builder' ); ?></a>
+                <a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-extra-fields#pricing" target="_blank" class="button button-primary wppb-button-free"><?php esc_html_e( 'Extra Profile Fields are available in Basic or PRO versions', 'profile-builder' ); ?></a>
             <?php } else {?>
                 <a href="admin.php?page=manage-fields" class="button button-secondary"><?php esc_html_e( 'Get started with extra fields', 'profile-builder' ); ?></a>
             <?php } ?>
@@ -196,7 +196,7 @@ function wppb_basic_info_content() {
                 <?php esc_html_e( 'Powerful Add-ons', 'profile-builder' );?>
 
                 <?php if ($version == 'Free'){ ?>
-                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s PRO %2$s version', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extranotes&utm_campaign=PB'.esc_attr( $version ).'#pricing" target="_blank">', '</a>' );?></span>
+                    <span class="cozmoslabs-version-notice cozmoslabs-description-upsell"><?php printf( esc_html__( 'Only available in %1$s PRO %2$s version', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-pro-addons-upsell#pricing" target="_blank">', '</a>' );?></span>
                 <?php } ?>
             </h2>
             <p class="cozmoslabs-description"><?php esc_html_e( 'Everything you will need to manage your users is probably already available using the Pro Add-ons.', 'profile-builder' ); ?></p>
@@ -205,7 +205,7 @@ function wppb_basic_info_content() {
                 <a href="admin.php?page=profile-builder-add-ons" class="button button-secondary"><?php esc_html_e( 'Enable your add-ons', 'profile-builder' ); ?></a>
             <?php endif; ?>
             <?php if ($version == 'Free'){ ?>
-                <a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-add-ons&utm_campaign=PBFree#pricing" target="_blank" class="button button-primary wppb-button-free"><?php esc_html_e( 'Find out more about PRO Modules', 'profile-builder' ); ?></a>
+                <a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-pro-addons-upsell#pricing" target="_blank" class="button button-primary wppb-button-free"><?php esc_html_e( 'Find out more about PRO Modules', 'profile-builder' ); ?></a>
             <?php }?>
 
             <div id="basic-info-addons-list">
@@ -252,7 +252,7 @@ function wppb_basic_info_content() {
 
             <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-pms">
                 <div class="cozmoslabs-basic-info-recommended-img">
-                    <a href="https://wordpress.org/plugins/paid-member-subscriptions/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-pms-cross-promotion.png', __FILE__ ) ); ?>" alt="paid member subscriptions"/></a>
+                    <a href="<?php echo esc_url( admin_url( 'page=profile-builder-pms-promo' ) ); ?>" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-pms-cross-promotion.png', __FILE__ ) ); ?>" alt="paid member subscriptions"/></a>
                 </div>
 
                 <div class="cozmoslabs-basic-info-recommended-info">
@@ -262,13 +262,13 @@ function wppb_basic_info_content() {
 
                     <p class="cozmoslabs-description"><?php esc_html_e( 'One of the most requested features in Profile Builder was for users to be able to pay for an account.', 'profile-builder' ); ?></p>
                     <p class="cozmoslabs-description"><?php esc_html_e( 'Now that is possible using the free WordPress plugin - ', 'profile-builder' ); ?> <a href="https://wordpress.org/plugins/paid-member-subscriptions/" target="_blank">Paid Member Subscriptions</a></p>
-                    <a href="https://wordpress.org/plugins/paid-member-subscriptions/" class="button button-secondary" target="_blank">Find out how</a>
+                    <a href="<?php echo esc_url( admin_url( 'page=profile-builder-pms-promo' ) ); ?>" class="button button-secondary" target="_blank">Find out how</a>
                 </div>
             </div>
 
             <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-translate-press">
                 <div class="cozmoslabs-basic-info-recommended-img">
-                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-trp-cross-promotion.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
+                    <a href="https://translatepress.com/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-tp-upsell" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/pb-trp-cross-promotion.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
                 </div>
 
                 <div class="cozmoslabs-basic-info-recommended-info">
@@ -278,13 +278,13 @@ function wppb_basic_info_content() {
 
                     <p class="cozmoslabs-description"><?php esc_html_e( 'Translate your Profile Builder forms with a WordPress translation plugin that anyone can use.', 'profile-builder' ); ?></p>
                     <p class="cozmoslabs-description"><?php esc_html_e( 'It offers a simpler way to translate WordPress sites, with full support for WooCommerce and site builders.', 'profile-builder' ); ?></p>
-                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" class="button button-secondary" target="_blank">Find out how</a>
+                    <a href="https://translatepress.com/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-tp-upsell" class="button button-secondary" target="_blank">Find out how</a>
                 </div>
             </div>
 
             <div class="cozmoslabs-basic-info-recommended" id="wppb-recommended-wp-webhooks">
                 <div class="cozmoslabs-basic-info-recommended-img">
-                    <a href="https://wordpress.org/plugins/translatepress-multilingual/" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/wp-webhooks-banner.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
+                    <a href="https://wp-webhooks.com/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-wpwh-upsell" target="_blank"><img src="<?php echo esc_url( plugins_url( '../assets/images/wp-webhooks-banner.svg', __FILE__ ) ); ?>" alt="TranslatePress Logo"/></a>
                 </div>
 
                 <div class="cozmoslabs-basic-info-recommended-info">
@@ -293,8 +293,8 @@ function wppb_basic_info_content() {
                     </div>
 
                     <p class="cozmoslabs-description"><?php esc_html_e( 'Create no-code automations and workflows on your WordPress site.', 'profile-builder' ); ?></p>
-                    <p class="cozmoslabs-description"><?php esc_html_e( 'Integrates with Profile Builder or Paid Member Subscriptions, depending on which plugin it\'s for.', 'profile-builder' ); ?></p>
-                    <a href="https://www.wp-webhooks.com/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBPro" class="button button-secondary" target="_blank">Find out how</a>
+                    <p class="cozmoslabs-description"><?php esc_html_e( 'Integrates with both Profile Builder and Paid Member Subscriptions.', 'profile-builder' ); ?></p>
+                    <a href="https://wp-webhooks.com/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-wpwh-upsell" class="button button-secondary" target="_blank">Find out how</a>
                 </div>
             </div>
 

@@ -188,7 +188,7 @@ function wppb_dashboard_page_content() {
                     </div>
                 </div>
 
-                <a class="button button-secondary" href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=wpbackend&utm_medium=pb-shortcodes-dashboard&utm_campaign=PBDocs" target="_blank"><?php esc_html_e( 'Learn more about shortcodes', 'profile-builder' ); ?></a>
+                <a class="button button-secondary" href="https://www.cozmoslabs.com/docs/profile-builder/shortcodes/?utm_source=pb-dashboard&utm_medium=client-site&utm_campaign=pb-shortcodes" target="_blank"><?php esc_html_e( 'Learn more about shortcodes', 'profile-builder' ); ?></a>
             </div>
         </div>
 

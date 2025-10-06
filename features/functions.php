@@ -986,7 +986,7 @@ function wppb_enqueue_password_visibility_toggle() {
             function wppb_password_visibility_toggle() {
                 var target_form_id = "#" + jQuery(this).closest('form').attr("id") + " ";
 
-                var password_inputs = [ ".login-password input#user_pass", "input#passw1", "input#passw2" ]
+                var password_inputs = [ ".login-password input#wppb_user_pass", "input#passw1", "input#passw2" ]
 
                 for ( var password_input of password_inputs ){
                     var input = jQuery( target_form_id + password_input );
