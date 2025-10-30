@@ -935,6 +935,7 @@
 <?php __("Show password", "profile-builder"); ?>
 <?php __("Hide password", "profile-builder"); ?>
 <?php __("This field is required", "profile-builder"); ?>
+<?php __("reCaptcha could not be verified. Please try again.", "profile-builder"); ?>
 <?php __("Please enter a (valid) reCAPTCHA value", "profile-builder"); ?>
 <?php __("Incorrect phone number", "profile-builder"); ?>
 <?php __("Cancel", "profile-builder"); ?>
@@ -1041,13 +1042,25 @@
 <?php __("After Password Change Request", "profile-builder"); ?>
 <?php __("After Successful Password Reset", "profile-builder"); ?>
 <?php __("Dashboard (redirect users from accessing the dashboard)", "profile-builder"); ?>
+<?php __("PMS: Subscription Activated", "profile-builder"); ?>
+<?php __("PMS: Subscription Cancelled", "profile-builder"); ?>
+<?php __("PMS: Subscription Abandoned", "profile-builder"); ?>
+<?php __("PMS: Subscription Renewed", "profile-builder"); ?>
+<?php __("PMS: Subscription Upgraded", "profile-builder"); ?>
+<?php __("PMS: Subscription Downgraded", "profile-builder"); ?>
+<?php __("PMS: Subscription Changed", "profile-builder"); ?>
+<?php __("PMS: Login with Active Subscription", "profile-builder"); ?>
+<?php __("PMS: Login with Expired Subscription", "profile-builder"); ?>
+<?php __("PMS: Login with Cancelled Subscription", "profile-builder"); ?>
+<?php __("PMS: Login with Pending Subscription", "profile-builder"); ?>
+<?php __("PMS: Login with No Subscription", "profile-builder"); ?>
 <?php __("User ID", "profile-builder"); ?>
+<?php __("Can contain the following dynamic tags: {{homeurl}}, {{siteurl}}, {{user_id}}, {{user_nicename}}, {{http_referer}}, and more.", "profile-builder"); ?>
 <?php __("User ID or Username", "profile-builder"); ?>
 <?php __("User ID / Username", "profile-builder"); ?>
 <?php __("Please select and enter the ID or username of your user.", "profile-builder"); ?>
 <?php __("Redirect Type", "profile-builder"); ?>
 <?php __("Redirect URL", "profile-builder"); ?>
-<?php __("Can contain the following dynamic tags:{{homeurl}}, {{siteurl}}, {{user_id}}, {{user_nicename}}, {{http_referer}}", "profile-builder"); ?>
 <?php __("Individual User Redirects", "profile-builder"); ?>
 <?php __("... Choose", "profile-builder"); ?>
 <?php __("User Role", "profile-builder"); ?>
@@ -1060,23 +1073,54 @@
 <?php __("Author Archive ( http://sitename.com/author/admin )", "profile-builder"); ?>
 <?php __("Default WordPress Forms and Pages", "profile-builder"); ?>
 <?php __("How does this work?", "profile-builder"); ?>
+<?php __("...Choose", "profile-builder"); ?>
+<?php __("Any Plan", "profile-builder"); ?>
+<?php __("Subscription Plan", "profile-builder"); ?>
+<?php __("Select a subscription plan.", "profile-builder"); ?>
+<?php __("Subscription Plan based Redirects", "profile-builder"); ?>
 <?php __("<pre>User ID / Username</pre><pre>Redirect</pre><pre>URL</pre>", "profile-builder"); ?>
 <?php __("<pre>User Role</pre><pre>Redirect</pre><pre>URL</pre>", "profile-builder"); ?>
 <?php __("<pre>Redirect</pre><pre>URL</pre>", "profile-builder"); ?>
+<?php __("<pre>Subscription Plan</pre><pre>Redirect</pre><pre>URL</pre>", "profile-builder"); ?>
 <?php __("These redirects happen after a successful action, like registration or after a successful login.", "profile-builder"); ?>
 <?php __("Which redirect happens depends on the following priority", "profile-builder"); ?>
 <?php __("Multiple Registration and Edit Profile form settings Redirects", "profile-builder"); ?>
 <?php __("Individual redirects defined in shortcodes; <strong><em>redirect_priority=\"top\"</em></strong> parameter can be added in any shortcode, then that shortcode redirect will have priority over all other redirects.", "profile-builder"); ?>
 <?php __("Redirect Default WordPress forms and pages", "profile-builder"); ?>
 <?php __("With these you can redirect various WordPress forms and pages to pages created with profile builder.", "profile-builder"); ?>
+<?php __("These redirects work with the Paid Member Subscriptions plugin. They allow you to redirect users based on the subscription plan they select during registration or checkout.", "profile-builder"); ?>
+<?php __("Any Plan option:", "profile-builder"); ?>
+<?php __("Select 'Any Plan' to create a redirect that triggers for any subscription plan, regardless of which specific plan the user has.", "profile-builder"); ?>
+<?php __("PMS Subscription Status Redirects", "profile-builder"); ?>
+<?php __("These redirects are triggered automatically when a user's subscription status changes or when they login. They work with all redirect types (Individual User, User Role, Global).", "profile-builder"); ?>
+<?php __("Status Change Redirects:", "profile-builder"); ?>
+<?php __("When a pending subscription becomes active", "profile-builder"); ?>
+<?php __("When a subscription is cancelled", "profile-builder"); ?>
+<?php __("When a subscription is abandoned", "profile-builder"); ?>
+<?php __("When an expired or cancelled subscription is renewed", "profile-builder"); ?>
+<?php __("When a subscription is upgraded", "profile-builder"); ?>
+<?php __("When a subscription is downgraded", "profile-builder"); ?>
+<?php __("When a subscription is changed", "profile-builder"); ?>
+<?php __("Login Status Redirects:", "profile-builder"); ?>
+<?php __("When a user with an active subscription logs in", "profile-builder"); ?>
+<?php __("When a user with an expired subscription logs in", "profile-builder"); ?>
+<?php __("When a user with a cancelled subscription logs in", "profile-builder"); ?>
+<?php __("When a user with a pending subscription logs in", "profile-builder"); ?>
+<?php __("When a user with no subscription logs in", "profile-builder"); ?>
 <?php __("Available tags for dynamic URLs", "profile-builder"); ?>
 <?php __("You use the following tags in your URLs to redirect users to various pages.", "profile-builder"); ?>
+<?php __("Standard Tags:", "profile-builder"); ?>
 <?php __("generates a url of the current website homepage.", "profile-builder"); ?>
 <?php __("in WordPress the <a target='_blank' href='https://codex.wordpress.org/Function_Reference/site_url'>site url</a> can be different then the home url", "profile-builder"); ?>
 <?php __("the ID of the user", "profile-builder"); ?>
 <?php __("the URL sanitized version of the username, the user nicename can be safely used in URLs since it can't contain special characters or spaces.", "profile-builder"); ?>
 <?php __("the URL of the previously visited page", "profile-builder"); ?>
 <?php __("the default URL set by WordPress after login", "profile-builder"); ?>
+<?php __("PMS Subscription Tags:", "profile-builder"); ?>
+<?php __("the name of the user's subscription plan", "profile-builder"); ?>
+<?php __("the ID of the user's subscription plan", "profile-builder"); ?>
+<?php __("the current status of the subscription (active, expired, cancelled, etc.)", "profile-builder"); ?>
+<?php __("the price of the subscription plan", "profile-builder"); ?>
 <?php __("You can't add duplicate redirects!", "profile-builder"); ?>
 <?php __("Edit-profile Form", "profile-builder"); ?>
 <?php __("Add New", "profile-builder"); ?>
@@ -1642,6 +1686,8 @@
 <?php __("Password reset", "profile-builder"); ?>
 <?php __("A simple form where users can reset their password in case they forgot it.", "profile-builder"); ?>
 <?php __("Your account has to be confirmed by an administrator before you can log in.", "profile-builder"); ?>
+<?php __("pending", "profile-builder"); ?>
+<?php __("unapproved", "profile-builder"); ?>
 <?php __("Do you want to", "profile-builder"); ?>
 <?php __("Your session has expired! Please refresh the page and try again.", "profile-builder"); ?>
 <?php __("You either don't have permission for that action or there was an error!", "profile-builder"); ?>
@@ -1652,7 +1698,6 @@
 <?php __("Users successfully unapproved!", "profile-builder"); ?>
 <?php __("Users successfully approved!", "profile-builder"); ?>
 <?php __('Your account on %1$s has been unapproved!', 'profile-builder' ); ?>
-<?php __("unapproved", "profile-builder"); ?>
 <?php __('An administrator has just unapproved your account on %1$s (%2$s).', 'profile-builder' ); ?>
 <?php __('Your account on %1$s has been approved!', 'profile-builder' ); ?>
 <?php __("approved", "profile-builder"); ?>
@@ -2197,7 +2242,6 @@
 <?php __('Value must be greater than or equal to %1$s', 'profile-builder' ); ?>
 <?php __('Value must be less than or equal to %1$s', 'profile-builder' ); ?>
 <?php __("Required phone number format: ", "profile-builder"); ?>
-<?php __("...Choose", "profile-builder"); ?>
 <?php __("This display name is already in use. Please choose another one.", "profile-builder"); ?>
 <?php __("Email address change request for %s", "profile-builder"); ?>
 <?php __('Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s', 'profile-builder' ); ?>

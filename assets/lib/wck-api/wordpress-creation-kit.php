@@ -1058,8 +1058,8 @@ class Wordpress_Creation_Kit_PB{
 		if( !current_user_can( 'manage_options' ) )
 			die();
 
-		$meta = isset(  $_POST['meta'] ) ? sanitize_text_field( $_POST['meta'] ) : '';
-		$id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : '';
+		$meta       = isset(  $_POST['meta'] ) ? sanitize_text_field( $_POST['meta'] ) : '';
+		$id         = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : '';
 		$element_id = isset( $_POST['element_id'] ) ? absint( $_POST['element_id'] ) : '';
 
         do_action( "wck_before_adding_form_{$meta}", $id, $element_id );
@@ -1460,13 +1460,11 @@ class Wordpress_Creation_Kit_PB{
 
 		if( isset( $value_attr['field_name'] ) ) {
         	$optionOutput = '<option value=""  '. esc_attr( $disabled ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
-        }
-		else if ( is_array( $current_value ) ) {
-            $is_selected = in_array( $value_attr, $current_value ) ? 'selected="selected" ' : '';
+        } else if ( is_array( $current_value ) ) {
+            $is_selected = in_array( $value_attr, $current_value ) ? 'selected="selected" ' : '';      
             $optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. $is_selected . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
-        }
-		else
-        	$optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. selected( $value_attr, $current_value, false ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
+        } else
+        	$optionOutput = '<option value="'. esc_attr( $value_attr ) .'"  '. selected( strip_tags( $value_attr ), $current_value, false ) . ( !empty( $disabled ) ? ' title="'. $title .'"'  : '' ) . ' >'. esc_html( $label ) .'</option>';
 
         return $optionOutput;
     }

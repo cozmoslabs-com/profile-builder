@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-06 08:13+0000\n"
+"POT-Creation-Date: 2025-10-30 08:49+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Using this addon you can limit the maximum number of characters a user can type in a field added and managed with Profile Builder."
 msgstr ""
 
-#: admin/add-ons.php:236, add-ons-free/labels-edit/labels-edit.php:257, add-ons-free/labels-edit/labels-edit.php:258
+#: admin/add-ons.php:236, add-ons-free/labels-edit/labels-edit.php:247, add-ons-free/labels-edit/labels-edit.php:248
 msgid "Labels Edit"
 msgstr ""
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid " Don't have a license? %sBuy one now%s."
 msgstr ""
 
-#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:864
+#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:884
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -1054,7 +1054,7 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:64, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2897, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
+#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2897, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
 msgid "Username"
 msgstr ""
 
@@ -1166,7 +1166,7 @@ msgstr ""
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:508, admin/private-website.php:184, features/functions.php:1102, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
+#: admin/general-settings.php:508, admin/private-website.php:184, features/functions.php:1109, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
 msgid "Save Changes"
 msgstr ""
 
@@ -1286,7 +1286,7 @@ msgstr ""
 msgid "Meta-name"
 msgstr ""
 
-#: admin/manage-fields.php:260, add-ons/custom-redirects/custom_redirects_admin.php:73, add-ons/custom-redirects/custom_redirects_admin.php:103, add-ons/custom-redirects/custom_redirects_admin.php:122, add-ons/custom-redirects/custom_redirects_admin.php:147, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274, add-ons/user-listing/userlisting.php:1059, assets/misc/elementor/widgets/class-pb-widget-ul.php:182
+#: admin/manage-fields.php:260, add-ons/custom-redirects/custom_redirects_admin.php:95, add-ons/custom-redirects/custom_redirects_admin.php:125, add-ons/custom-redirects/custom_redirects_admin.php:144, add-ons/custom-redirects/custom_redirects_admin.php:169, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274, add-ons/user-listing/userlisting.php:1059, assets/misc/elementor/widgets/class-pb-widget-ul.php:182
 msgid "ID"
 msgstr ""
 
@@ -1370,7 +1370,7 @@ msgstr ""
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:438
+#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:428
 msgid "Labels"
 msgstr ""
 
@@ -3416,11 +3416,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1123, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:438, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
+#: admin/manage-fields.php:1455, features/functions.php:1130, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:244, add-ons/custom-redirects/custom_redirects_admin.php:258, add-ons/custom-redirects/custom_redirects_admin.php:272, add-ons/custom-redirects/custom_redirects_admin.php:286, add-ons/custom-redirects/custom_redirects_admin.php:298, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1455, features/functions.php:1116, features/functions.php:1130, add-ons/custom-redirects/custom_redirects_admin.php:187, add-ons/custom-redirects/custom_redirects_admin.php:201, add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1455, features/functions.php:1123, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:244, add-ons/custom-redirects/custom_redirects_admin.php:258, add-ons/custom-redirects/custom_redirects_admin.php:272, add-ons/custom-redirects/custom_redirects_admin.php:286, add-ons/custom-redirects/custom_redirects_admin.php:298, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -3620,7 +3620,7 @@ msgstr ""
 msgid "Redirects to this page if not logged in. We recommend this page contains the [wppb-login] shortcode."
 msgstr ""
 
-#: admin/private-website.php:113, add-ons/custom-redirects/custom_redirects_admin.php:263
+#: admin/private-website.php:113, add-ons/custom-redirects/custom_redirects_admin.php:335
 msgid "You can force access to wp-login.php so you don't get locked out of the site by accessing the link:"
 msgstr ""
 
@@ -3804,51 +3804,55 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1059, front-end/default-fields/recaptcha/recaptcha.php:713, front-end/default-fields/recaptcha/recaptcha.php:704, front-end/default-fields/recaptcha/recaptcha.php:785, front-end/default-fields/recaptcha/recaptcha.php:833
+#: features/functions.php:1065, front-end/default-fields/recaptcha/recaptcha.php:701, front-end/default-fields/recaptcha/recaptcha.php:791, front-end/default-fields/recaptcha/recaptcha.php:845
+msgid "reCaptcha could not be verified. Please try again."
+msgstr ""
+
+#: features/functions.php:1063, front-end/default-fields/recaptcha/recaptcha.php:704, front-end/default-fields/recaptcha/recaptcha.php:794, front-end/default-fields/recaptcha/recaptcha.php:848
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1066
+#: features/functions.php:1073
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1109, add-ons/user-listing/userlisting.php:3334, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:529
+#: features/functions.php:1116, add-ons/user-listing/userlisting.php:3334, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:529
 msgid "Cancel"
 msgstr ""
 
-#: features/functions.php:1130, assets/lib/wck-api/wordpress-creation-kit.php:484
+#: features/functions.php:1137, assets/lib/wck-api/wordpress-creation-kit.php:484
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1320
+#: features/functions.php:1327
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1333
+#: features/functions.php:1340
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1424, add-ons-advanced/social-connect/index.php:451
+#: features/functions.php:1431, add-ons-advanced/social-connect/index.php:451
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1425
+#: features/functions.php:1432
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1624
+#: features/functions.php:1631
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1674
+#: features/functions.php:1681
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1711
+#: features/functions.php:1718
 msgid "Profile Builder"
 msgstr ""
 
-#: features/functions.php:1729, features/email-confirmation/class-email-confirmation.php:95, features/email-confirmation/class-email-confirmation.php:174
+#: features/functions.php:1736, features/email-confirmation/class-email-confirmation.php:95, features/email-confirmation/class-email-confirmation.php:174
 msgid "User Meta"
 msgstr ""
 
@@ -4229,151 +4233,323 @@ msgstr ""
 msgid "Dashboard (redirect users from accessing the dashboard)"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:63, add-ons/user-listing/userlisting.php:185, add-ons/user-listing/userlisting.php:2899
-msgid "User ID"
+#: add-ons/custom-redirects/custom_redirects_admin.php:65
+msgid "PMS: Subscription Activated"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:66
+msgid "PMS: Subscription Cancelled"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:67
+msgid "PMS: Subscription Abandoned"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:68
+msgid "PMS: Subscription Renewed"
 msgstr ""
 
 #: add-ons/custom-redirects/custom_redirects_admin.php:69
+msgid "PMS: Subscription Upgraded"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:70
+msgid "PMS: Subscription Downgraded"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:71
+msgid "PMS: Subscription Changed"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:72
+msgid "PMS: Login with Active Subscription"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:73
+msgid "PMS: Login with Expired Subscription"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:74
+msgid "PMS: Login with Cancelled Subscription"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:75
+msgid "PMS: Login with Pending Subscription"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:76
+msgid "PMS: Login with No Subscription"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:82, add-ons/user-listing/userlisting.php:185, add-ons/user-listing/userlisting.php:2899
+msgid "User ID"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:87
+msgid "Can contain the following dynamic tags: {{homeurl}}, {{siteurl}}, {{user_id}}, {{user_nicename}}, {{http_referer}}, and more."
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:91
 msgid "User ID or Username"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:70
+#: add-ons/custom-redirects/custom_redirects_admin.php:92
 msgid "User ID / Username"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:70
+#: add-ons/custom-redirects/custom_redirects_admin.php:92
 msgid "Please select and enter the ID or username of your user."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:71, add-ons/custom-redirects/custom_redirects_admin.php:101, add-ons/custom-redirects/custom_redirects_admin.php:120, add-ons/custom-redirects/custom_redirects_admin.php:139
+#: add-ons/custom-redirects/custom_redirects_admin.php:93, add-ons/custom-redirects/custom_redirects_admin.php:123, add-ons/custom-redirects/custom_redirects_admin.php:142, add-ons/custom-redirects/custom_redirects_admin.php:161, add-ons/custom-redirects/custom_redirects_admin.php:213
 msgid "Redirect Type"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:72, add-ons/custom-redirects/custom_redirects_admin.php:102, add-ons/custom-redirects/custom_redirects_admin.php:121, add-ons/custom-redirects/custom_redirects_admin.php:146, features/content-restriction/content-restriction.php:136
+#: add-ons/custom-redirects/custom_redirects_admin.php:94, add-ons/custom-redirects/custom_redirects_admin.php:124, add-ons/custom-redirects/custom_redirects_admin.php:143, add-ons/custom-redirects/custom_redirects_admin.php:168, add-ons/custom-redirects/custom_redirects_admin.php:214, features/content-restriction/content-restriction.php:136
 msgid "Redirect URL"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:72, add-ons/custom-redirects/custom_redirects_admin.php:102, add-ons/custom-redirects/custom_redirects_admin.php:121, add-ons/custom-redirects/custom_redirects_admin.php:146
-msgid "Can contain the following dynamic tags:{{homeurl}}, {{siteurl}}, {{user_id}}, {{user_nicename}}, {{http_referer}}"
-msgstr ""
-
-#: add-ons/custom-redirects/custom_redirects_admin.php:79, add-ons/custom-redirects/custom_redirects_admin.php:251
+#: add-ons/custom-redirects/custom_redirects_admin.php:101, add-ons/custom-redirects/custom_redirects_admin.php:320
 msgid "Individual User Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:92
+#: add-ons/custom-redirects/custom_redirects_admin.php:114
 msgid "... Choose"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:100, features/email-customizer/email-customizer.php:33
+#: add-ons/custom-redirects/custom_redirects_admin.php:122, features/email-customizer/email-customizer.php:33
 msgid "User Role"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:100
+#: add-ons/custom-redirects/custom_redirects_admin.php:122
 msgid "Select a user role."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:109, add-ons/custom-redirects/custom_redirects_admin.php:252
+#: add-ons/custom-redirects/custom_redirects_admin.php:131, add-ons/custom-redirects/custom_redirects_admin.php:321
 msgid "User Role based Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:128, add-ons/custom-redirects/custom_redirects_admin.php:253
+#: add-ons/custom-redirects/custom_redirects_admin.php:150, add-ons/custom-redirects/custom_redirects_admin.php:325
 msgid "Global Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:141
+#: add-ons/custom-redirects/custom_redirects_admin.php:163
 msgid "Login ( wp-login.php )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:142
+#: add-ons/custom-redirects/custom_redirects_admin.php:164
 msgid "Register ( wp-login.php?action=register )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:143
+#: add-ons/custom-redirects/custom_redirects_admin.php:165
 msgid "Lost Password ( wp-login.php?action=lostpassword )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:144
+#: add-ons/custom-redirects/custom_redirects_admin.php:166
 msgid "Author Archive ( http://sitename.com/author/admin )"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:153
+#: add-ons/custom-redirects/custom_redirects_admin.php:175
 msgid "Default WordPress Forms and Pages"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:165
+#: add-ons/custom-redirects/custom_redirects_admin.php:187
 msgid "How does this work?"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:187
-msgid "<pre>User ID / Username</pre><pre>Redirect</pre><pre>URL</pre>"
+#: add-ons/custom-redirects/custom_redirects_admin.php:201, front-end/extra-fields/select-cpt/select-cpt.php:70, front-end/extra-fields/select-cpt/select-cpt.php:46, front-end/extra-fields/select-taxonomy/select-taxonomy.php:71, front-end/extra-fields/select-taxonomy/select-taxonomy.php:47, assets/lib/wck-api/fields/country select.php:14, assets/lib/wck-api/fields/cpt select.php:17, assets/lib/wck-api/fields/select.php:14, assets/lib/wck-api/fields/user select.php:15
+msgid "...Choose"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:201
-msgid "<pre>User Role</pre><pre>Redirect</pre><pre>URL</pre>"
+#: add-ons/custom-redirects/custom_redirects_admin.php:202
+msgid "Any Plan"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:215, add-ons/custom-redirects/custom_redirects_admin.php:229
-msgid "<pre>Redirect</pre><pre>URL</pre>"
+#: add-ons/custom-redirects/custom_redirects_admin.php:212
+msgid "Subscription Plan"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:212
+msgid "Select a subscription plan."
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:221, add-ons/custom-redirects/custom_redirects_admin.php:323, add-ons/custom-redirects/custom_redirects_admin.php:341
+msgid "Subscription Plan based Redirects"
 msgstr ""
 
 #: add-ons/custom-redirects/custom_redirects_admin.php:244
+msgid "<pre>User ID / Username</pre><pre>Redirect</pre><pre>URL</pre>"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:258
+msgid "<pre>User Role</pre><pre>Redirect</pre><pre>URL</pre>"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:272, add-ons/custom-redirects/custom_redirects_admin.php:286
+msgid "<pre>Redirect</pre><pre>URL</pre>"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:298
+msgid "<pre>Subscription Plan</pre><pre>Redirect</pre><pre>URL</pre>"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:313
 msgid "These redirects happen after a successful action, like registration or after a successful login."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:247
+#: add-ons/custom-redirects/custom_redirects_admin.php:316
 msgid "Which redirect happens depends on the following priority"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:250
+#: add-ons/custom-redirects/custom_redirects_admin.php:319
 msgid "Multiple Registration and Edit Profile form settings Redirects"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:254
+#: add-ons/custom-redirects/custom_redirects_admin.php:326
 msgid "Individual redirects defined in shortcodes; <strong><em>redirect_priority=\"top\"</em></strong> parameter can be added in any shortcode, then that shortcode redirect will have priority over all other redirects."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:260
+#: add-ons/custom-redirects/custom_redirects_admin.php:332
 msgid "Redirect Default WordPress forms and pages"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:262
+#: add-ons/custom-redirects/custom_redirects_admin.php:334
 msgid "With these you can redirect various WordPress forms and pages to pages created with profile builder."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:268
+#: add-ons/custom-redirects/custom_redirects_admin.php:343
+msgid "These redirects work with the Paid Member Subscriptions plugin. They allow you to redirect users based on the subscription plan they select during registration or checkout."
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:344
+msgid "Any Plan option:"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:344
+msgid "Select 'Any Plan' to create a redirect that triggers for any subscription plan, regardless of which specific plan the user has."
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:349
+msgid "PMS Subscription Status Redirects"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:351
+msgid "These redirects are triggered automatically when a user's subscription status changes or when they login. They work with all redirect types (Individual User, User Role, Global)."
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:353
+msgid "Status Change Redirects:"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:355
+msgid "When a pending subscription becomes active"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:356
+msgid "When a subscription is cancelled"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:357
+msgid "When a subscription is abandoned"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:358
+msgid "When an expired or cancelled subscription is renewed"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:359
+msgid "When a subscription is upgraded"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:360
+msgid "When a subscription is downgraded"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:361
+msgid "When a subscription is changed"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:364
+msgid "Login Status Redirects:"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:366
+msgid "When a user with an active subscription logs in"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:367
+msgid "When a user with an expired subscription logs in"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:368
+msgid "When a user with a cancelled subscription logs in"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:369
+msgid "When a user with a pending subscription logs in"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:370
+msgid "When a user with no subscription logs in"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:377
 msgid "Available tags for dynamic URLs"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:270
+#: add-ons/custom-redirects/custom_redirects_admin.php:379
 msgid "You use the following tags in your URLs to redirect users to various pages."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:272
+#: add-ons/custom-redirects/custom_redirects_admin.php:380
+msgid "Standard Tags:"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:382
 msgid "generates a url of the current website homepage."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:273
+#: add-ons/custom-redirects/custom_redirects_admin.php:383
 msgid "in WordPress the <a target='_blank' href='https://codex.wordpress.org/Function_Reference/site_url'>site url</a> can be different then the home url"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:274
+#: add-ons/custom-redirects/custom_redirects_admin.php:384
 msgid "the ID of the user"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:275
+#: add-ons/custom-redirects/custom_redirects_admin.php:385
 msgid "the URL sanitized version of the username, the user nicename can be safely used in URLs since it can't contain special characters or spaces."
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:276
+#: add-ons/custom-redirects/custom_redirects_admin.php:386
 msgid "the URL of the previously visited page"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:277
+#: add-ons/custom-redirects/custom_redirects_admin.php:387
 msgid "the default URL set by WordPress after login"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:374, add-ons/custom-redirects/custom_redirects_admin.php:368, add-ons/custom-redirects/custom_redirects_admin.php:362
+#: add-ons/custom-redirects/custom_redirects_admin.php:391
+msgid "PMS Subscription Tags:"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:393
+msgid "the name of the user's subscription plan"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:394
+msgid "the ID of the user's subscription plan"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:395
+msgid "the current status of the subscription (active, expired, cancelled, etc.)"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:396
+msgid "the price of the subscription plan"
+msgstr ""
+
+#: add-ons/custom-redirects/custom_redirects_admin.php:505, add-ons/custom-redirects/custom_redirects_admin.php:499, add-ons/custom-redirects/custom_redirects_admin.php:493
 msgid "You can't add duplicate redirects!"
 msgstr ""
 
@@ -4505,7 +4681,7 @@ msgstr ""
 msgid "Delete all items"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:438, add-ons-free/labels-edit/labels-edit.php:438
+#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:428, add-ons-free/labels-edit/labels-edit.php:428
 msgid "Delete all"
 msgstr ""
 
@@ -6156,11 +6332,11 @@ msgstr ""
 msgid "Add a class to a field. Should not contain dots(.) and for multiple classes separate by space."
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:388
+#: add-ons-free/import-export/import-export.php:31, add-ons-free/import-export/pbie-import.php:49, add-ons-free/labels-edit/labels-edit.php:378
 msgid "Import"
 msgstr ""
 
-#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:400
+#: add-ons-free/import-export/import-export.php:32, add-ons-free/import-export/pbie-export.php:130, add-ons-free/labels-edit/labels-edit.php:390
 msgid "Export"
 msgstr ""
 
@@ -6188,7 +6364,7 @@ msgstr ""
 msgid "This allows you to easily import the configuration from another site."
 msgstr ""
 
-#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:383
+#: add-ons-free/import-export/pbie-import.php:43, add-ons-free/labels-edit/labels-edit.php:373
 msgid "JSON File"
 msgstr ""
 
@@ -6208,87 +6384,87 @@ msgstr ""
 msgid " labels scanned."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:276
+#: add-ons-free/labels-edit/labels-edit.php:266
 msgid "Label to Edit"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:276
+#: add-ons-free/labels-edit/labels-edit.php:266
 msgid "Here you will see the default label so you can copy it."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:277
+#: add-ons-free/labels-edit/labels-edit.php:267
 msgid "New Label"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:283
+#: add-ons-free/labels-edit/labels-edit.php:273
 msgid "Edit Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:299
+#: add-ons-free/labels-edit/labels-edit.php:289
 msgid "Rescan Lables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:319
+#: add-ons-free/labels-edit/labels-edit.php:309
 msgid "Rescan all Profile Builder labels."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:328
+#: add-ons-free/labels-edit/labels-edit.php:318
 msgid "Informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:341
+#: add-ons-free/labels-edit/labels-edit.php:331
 msgid "Variables"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:345
+#: add-ons-free/labels-edit/labels-edit.php:335
 msgid "Place them like in the default string!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:348
+#: add-ons-free/labels-edit/labels-edit.php:338
 msgid "Example"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:350
+#: add-ons-free/labels-edit/labels-edit.php:340
 msgid "Old Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:351
+#: add-ons-free/labels-edit/labels-edit.php:341
 msgid "New Label: "
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:355
+#: add-ons-free/labels-edit/labels-edit.php:345
 msgid "Read more detailed informations"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:363
+#: add-ons-free/labels-edit/labels-edit.php:353
 msgid "Import and Export Labels"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:377
+#: add-ons-free/labels-edit/labels-edit.php:367
 msgid "Import Labels from a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:388
+#: add-ons-free/labels-edit/labels-edit.php:378
 msgid "This will overwrite all your old edited labels!\nAre you sure you want to continue?"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:389
+#: add-ons-free/labels-edit/labels-edit.php:379
 msgid "Easily import the labels from another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:395
+#: add-ons-free/labels-edit/labels-edit.php:385
 msgid "Export Labels as a .json file."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:401
+#: add-ons-free/labels-edit/labels-edit.php:391
 msgid "Easily import the labels into another site."
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:427
+#: add-ons-free/labels-edit/labels-edit.php:417
 msgid "You must select a label to edit!"
 msgstr ""
 
-#: add-ons-free/labels-edit/labels-edit.php:493
+#: add-ons-free/labels-edit/labels-edit.php:483
 msgid "No labels edited, nothing to export!"
 msgstr ""
 
@@ -6646,6 +6822,14 @@ msgstr ""
 msgid "Your account has to be confirmed by an administrator before you can log in."
 msgstr ""
 
+#: features/admin-approval/admin-approval.php:27
+msgid "pending"
+msgstr ""
+
+#: features/admin-approval/admin-approval.php:27, features/admin-approval/admin-approval.php:175, features/admin-approval/admin-approval.php:178
+msgid "unapproved"
+msgstr ""
+
 #: features/admin-approval/admin-approval.php:41, features/email-confirmation/email-confirmation.php:121
 msgid "Do you want to"
 msgstr ""
@@ -6684,10 +6868,6 @@ msgstr ""
 
 #: features/admin-approval/admin-approval.php:174
 msgid "Your account on %1$s has been unapproved!"
-msgstr ""
-
-#: features/admin-approval/admin-approval.php:175, features/admin-approval/admin-approval.php:178
-msgid "unapproved"
 msgstr ""
 
 #: features/admin-approval/admin-approval.php:177
@@ -8834,11 +9014,11 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:785
+#: front-end/default-fields/recaptcha/recaptcha.php:799
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:863
+#: front-end/default-fields/recaptcha/recaptcha.php:883
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 
@@ -8924,10 +9104,6 @@ msgstr ""
 
 #: front-end/extra-fields/phone/phone.php:25
 msgid "Required phone number format: "
-msgstr ""
-
-#: front-end/extra-fields/select-cpt/select-cpt.php:70, front-end/extra-fields/select-cpt/select-cpt.php:46, front-end/extra-fields/select-taxonomy/select-taxonomy.php:71, front-end/extra-fields/select-taxonomy/select-taxonomy.php:47, assets/lib/wck-api/fields/country select.php:14, assets/lib/wck-api/fields/cpt select.php:17, assets/lib/wck-api/fields/select.php:14, assets/lib/wck-api/fields/user select.php:15
-msgid "...Choose"
 msgstr ""
 
 #: admin/advanced-settings/includes/fields/unique-display-name.php:20

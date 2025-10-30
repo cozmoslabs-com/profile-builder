@@ -129,9 +129,6 @@ add_action( 'admin_notices', 'wppb_le_rescan_success_message' );
  * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
  */
 function wppb_le_text_strings( $translated_text, $text, $domain ) {
-	if( is_admin() && ( !isset( $_POST ) || !isset( $_POST['wppb_msf_ajax_nonce'] ) ) )
-		return $translated_text;
-
     if( $domain != 'profile-builder' )
         return $translated_text;
 
@@ -143,9 +140,11 @@ function wppb_le_text_strings( $translated_text, $text, $domain ) {
 
 	if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
 		foreach( $edited_labels as $inner_array ) {
-			if( $text === $inner_array['pble-label'] || $text === htmlentities($inner_array['pble-label']) ) {
-				$translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
-			}
+            if( !empty( $text ) ) {
+                if( strip_tags( $text ) === $inner_array['pble-label'] || strip_tags( $text ) === htmlentities($inner_array['pble-label']) ) {
+                    $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
+                }
+            }
 		}
 	}
 
@@ -154,9 +153,6 @@ function wppb_le_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'wppb_le_text_strings', 8, 3 );
 
 function wppb_le_text_strings_with_context( $translated_text, $text, $context, $domain ) {
-	if( is_admin() && ( !isset( $_POST ) || !isset( $_POST['wppb_msf_ajax_nonce'] ) ) )
-		return $translated_text;
-
     if( $domain != 'profile-builder' )
         return $translated_text;
 
@@ -168,7 +164,7 @@ function wppb_le_text_strings_with_context( $translated_text, $text, $context, $
 
 	if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
 		foreach( $edited_labels as $inner_array ) {
-			if( $text === $inner_array['pble-label'] || $text === htmlentities($inner_array['pble-label']) ) {
+			if( strip_tags( $text ) === $inner_array['pble-label'] || strip_tags( $text ) === htmlentities($inner_array['pble-label']) ) {
 				$translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
 			}
 		}
@@ -179,9 +175,6 @@ function wppb_le_text_strings_with_context( $translated_text, $text, $context, $
 add_filter( 'gettext_with_context', 'wppb_le_text_strings_with_context', 8, 4 );
 
 function wppb_le_ngettext_strings( $translated_text, $single, $plural, $number, $domain ){
-	if( is_admin() )
-		return $translated_text;
-
     if( $domain != 'profile-builder' )
         return $translated_text;
 
@@ -193,10 +186,10 @@ function wppb_le_ngettext_strings( $translated_text, $single, $plural, $number, 
 
     if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
         foreach( $edited_labels as $inner_array ) {
-            if( $single === $inner_array['pble-label'] ) {
+            if( strip_tags( $single ) === $inner_array['pble-label'] ) {
                 $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
             }
-            if( $plural === $inner_array['pble-label'] ) {
+            if( strip_tags( $plural ) === $inner_array['pble-label'] ) {
                 $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
             }
         }
@@ -207,9 +200,6 @@ function wppb_le_ngettext_strings( $translated_text, $single, $plural, $number, 
 add_filter( 'ngettext', 'wppb_le_text_strings', 8, 5 );
 
 function wppb_le_ngettext_strings_with_context( $translated_text, $single, $plural, $number, $context, $domain ){
-	if( is_admin() )
-		return $translated_text;
-
     if( $domain != 'profile-builder' )
         return $translated_text;
 
@@ -221,10 +211,10 @@ function wppb_le_ngettext_strings_with_context( $translated_text, $single, $plur
 
     if( is_array( $edited_labels ) && ! empty( $edited_labels ) ) {
         foreach( $edited_labels as $inner_array ) {
-            if( $single === $inner_array['pble-label'] ) {
+            if( strip_tags( $single ) === $inner_array['pble-label'] ) {
                 $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
             }
-            if( $plural === $inner_array['pble-label'] ) {
+            if( strip_tags( $plural ) === $inner_array['pble-label'] ) {
                 $translated_text = wp_kses_post( $inner_array['pble-newlabel'] );
             }
         }

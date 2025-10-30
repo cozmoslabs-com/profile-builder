@@ -275,6 +275,7 @@
 
 .wppb-form-field:not(#select_user_to_edit_form .wppb-form-field, .wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-subscription-plans) label:not(.wppb-checkboxes label, .wppb-radios label),
 #pms-subscription-plans-discount label,
+.pms-invite-code-name-field label,
 #wppb-login-wrap .login-username label,
 #wppb-login-wrap .login-password label,
 #wppb-login-wrap .login-auth label {

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.14.7
+Stable tag: 3.14.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.14.8 =
+* Enhancement: Add automatic updates support for paid versions
+* Fix: Added support to Labels Edit to change back-end strings
+* Fix: Issue with Labels Edit not being able to select the correct option in the label to edit dropdown when trying to edit labels with HTML in them
+* Fix: Issue with Labels Edit not being able to edit some labels that contained certain HTML
+* Misc: Changed validation failed message for Invisible and reCaptcha v3 message
+* Misc: Fix a notice coming from the usermeta shortcode
+
 = 3.14.7 =
 * Fix: A notice being thrown from the Edit Profile Elementor widget in some cases
 * Fix: Password visibility toggle not working correctly

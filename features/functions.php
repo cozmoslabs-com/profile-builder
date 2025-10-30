@@ -1056,7 +1056,14 @@ function wppb_get_field_by_id_or_meta( $id_or_meta ){
 
 /* Function for displaying reCAPTCHA error on Login and Recover Password forms */
 function wppb_recaptcha_field_error($field_title='') {
-    $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('Please enter a (valid) reCAPTCHA value','profile-builder') , $field_title);
+
+    $recaptcha_field = wppb_get_recaptcha_field();
+
+    if( $recaptcha_field['recaptcha-type'] === 'v2' ) {
+        $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('Please enter a (valid) reCAPTCHA value','profile-builder') , $field_title);
+    } else {
+        $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('reCaptcha could not be verified. Please try again.','profile-builder') , $field_title);
+    }
 
     return $recaptcha_error;
 

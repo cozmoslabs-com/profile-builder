@@ -511,11 +511,13 @@ add_filter( 'wppb_check_form_field_recaptcha', 'wppb_check_recaptcha_value', 10,
 // Get the reCAPTCHA field information
 function wppb_get_recaptcha_field(){
     $wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
-    $field = '';
+    $field = array();
     if ( $wppb_manage_fields != 'not_found' ) {
         foreach ($wppb_manage_fields as $value) {
-            if ($value['field'] == 'reCAPTCHA')
+            if ($value['field'] == 'reCAPTCHA'){
                 $field = $value;
+                break;
+            }
         }
     }
     return $field;
@@ -696,12 +698,18 @@ function wppb_recaptcha_login_wp_error_message($user){
 
             if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
+            $recaptcha_error_message = __('reCaptcha could not be verified. Please try again.','profile-builder');
+
+            if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+                $recaptcha_error_message = __('Please enter a (valid) reCAPTCHA value','profile-builder');
+            }
+
             //reCAPTCHA error for displaying on the PB login form
             if ( isset($_POST['wppb_login']) && ($_POST['wppb_login'] == true) ) {
 
                 // it's a PB login form, check if we have a reCAPTCHA on it and display error if not valid
                 if ((isset($field['captcha-pb-forms'])) && (strpos($field['captcha-pb-forms'], 'pb_login') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) && ($wppb_recaptcha_response == false)) {
-                    $user = new WP_Error('wppb_recaptcha_error', __('Please enter a (valid) reCAPTCHA value', 'profile-builder'));
+                    $user = new WP_Error('wppb_recaptcha_error', $recaptcha_error_message);
                     remove_filter( 'authenticate', 'wp_authenticate_username_password',  20, 3 );
                     remove_filter( 'authenticate', 'wp_authenticate_email_password',     20, 3 );
                 }
@@ -710,7 +718,7 @@ function wppb_recaptcha_login_wp_error_message($user){
             else {
                 //reCAPTCHA error for displaying on the default WP login form
                 if (isset($field['captcha-wp-forms']) && (strpos($field['captcha-wp-forms'], 'default_wp_login') !== false) && ($wppb_recaptcha_response == false)) {
-                    $user = new WP_Error('wppb_recaptcha_error', __('Please enter a (valid) reCAPTCHA value', 'profile-builder'));
+                    $user = new WP_Error('wppb_recaptcha_error', $recaptcha_error_message);
                     remove_filter( 'authenticate', 'wp_authenticate_username_password',  20, 3 );
                     remove_filter( 'authenticate', 'wp_authenticate_email_password',     20, 3 );
                 }
@@ -780,9 +788,15 @@ function wppb_verify_recaptcha_default_wp_recover_password(){
         global $wppb_recaptcha_response;
         if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
+        $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
+
+        if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+            $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
+        }
+
     // If reCAPTCHA not entered or incorrect reCAPTCHA answer
         if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
-            wp_die( esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder') . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
+            wp_die( $recaptcha_error_message . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
         }
     }
 }
@@ -828,9 +842,15 @@ function wppb_verify_recaptcha_default_wp_register( $errors ){
         global $wppb_recaptcha_response;
         if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
+        $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
+
+        if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+            $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
+        }
+
         // If reCAPTCHA not entered or incorrect reCAPTCHA answer
         if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
-            $errors->add( 'wppb_recaptcha_error', __('Please enter a (valid) reCAPTCHA value','profile-builder') );
+            $errors->add( 'wppb_recaptcha_error', $recaptcha_error_message );
         }
     }
 

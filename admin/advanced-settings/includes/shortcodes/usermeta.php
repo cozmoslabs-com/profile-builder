@@ -49,6 +49,8 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
         $atts['key'] = 'ID';
     }
 
+    $value = '';
+
 	if ( $user->has_prop( $atts['key'] ) ){
 
 		if ($atts['wpautop'] == 'on'){
@@ -72,7 +74,7 @@ function wppb_toolbox_usermeta_handler( $atts, $content=null){
 		}
 	}
 
-	if( $escape_value === true ){
+	if( $escape_value === true && !empty( $value ) ){
 		$value = esc_html( $value );
 	}
 
