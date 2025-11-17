@@ -18,6 +18,7 @@ function wppb_textarea_handler( $output, $form_location, $field, $user_id, $fiel
         $input_value = ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ? trim( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) : $input_value );
 
         $input_value = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_textarea_'.$field['id'].'_default_value_translation', $input_value, true );
+		$input_value = apply_filters( 'wppb_form_textarea_field_value', $input_value, $field, $form_location );
 
         if ( $form_location != 'back_end' ){
 			$error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );

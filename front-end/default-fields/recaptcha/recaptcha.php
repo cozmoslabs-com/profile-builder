@@ -68,13 +68,27 @@ function wppb_recaptcha_get_html ( $pubkey, $form_name='' ){
 
     if ( isset($field['recaptcha-type']) && ($field['recaptcha-type'] == 'v3') ) {
         $output .= '<input type="hidden" name="wppb-recaptcha-v3" value="1">';
+
+        if( $form_name == 'pb_login' ) {
+            add_filter( 'wppb_login_submit_button_extra_attributes', 'wppb_recaptcha_login_submit_button_extra_attributes' );
+        }
+
     }
 
     // reCAPTCHA html for all forms and we make sure we have a unique id for v2
     return $output;
 }
 
-
+/**
+ * Add disabled attribute to login form submit button when reCaptcha v3 is used
+ * This is used to prevent form submission before the reCaptcha script is loaded and a token is received
+ * 
+ * @param string $attributes
+ * @return string
+ */
+function wppb_recaptcha_login_submit_button_extra_attributes( $attributes ) {
+    return $attributes . ' disabled="disabled"';
+}
 
 /**
  *  Add reCAPTCHA scripts to both front-end PB forms (with support for multiple forms) as well as Default WP forms
@@ -149,6 +163,11 @@ function wppb_recaptcha_script_footer(){
                         jQuery(currentForm).on("submit.wppbRecaptchaV3", wppbInitializeRecaptchaV3);
                     });
                     window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
+
+                    // Enable login form submit button
+                    if( jQuery("#wppb-loginform input[type=submit]").length > 0 ) {
+                        jQuery("#wppb-loginform input[type=submit]").attr("disabled", false);
+                    }
                 }
             };
 

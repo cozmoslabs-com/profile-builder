@@ -15,6 +15,7 @@ function wppb_description_handler( $output, $form_location, $field, $user_id, $f
 		$input_value = $field['default-content'];
 		
 	$input_value = ( isset( $request_data['description'] ) ? trim( $request_data['description'] ) : $input_value );
+	$input_value = apply_filters( 'wppb_form_description_field_value', $input_value, $field, $form_location );
 
 	$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
 

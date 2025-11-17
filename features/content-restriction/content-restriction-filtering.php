@@ -688,9 +688,16 @@ if( function_exists( 'wc_get_page_id' ) ) {
 	 add_action( 'pre_get_posts', 'wppb_exclude_post_from_query', 40 );
 	 function wppb_exclude_post_from_query( $query ) {
 
-		 if( !function_exists( 'wppb_content_restriction_is_post_restricted' ) || is_admin() || is_single() )
+		if( !function_exists( 'wppb_content_restriction_is_post_restricted' ) || is_admin() || is_single() )
 			 return;
 
+        if( isset( $query->query_vars['wc_query'] ) && $query->query_vars['wc_query'] == 'product_query' )
+            return;
+ 
+         // Skip Ultimate Member queries
+         if( isset( $query->query_vars['um_action'] ) || isset( $query->query_vars['um_user'] ) ) 
+            return;
+ 
 		 if( $query->is_main_query() || ( $query->is_search() && isset( $_GET['s'] ) ) ) {
 
 			 remove_action('pre_get_posts', 'wppb_exclude_post_from_query', 40 );

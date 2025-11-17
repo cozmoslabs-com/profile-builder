@@ -20,8 +20,9 @@ function wppb_select_handler( $output, $form_location, $field, $user_id, $field_
             $input_value = ( isset( $field['default-option'] ) ? trim( $field['default-option'] ) : '' );
 
         $input_value = ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ? stripslashes( trim( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ) : $input_value );
+		$input_value = apply_filters( 'wppb_form_select_field_value', $input_value, $field, $form_location );
 
-		if ( $form_location != 'back_end' ){
+	if ( $form_location != 'back_end' ){
 			$error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );
 						
 			if ( array_key_exists( $field['id'], $field_check_errors ) )

@@ -38,6 +38,8 @@ function wppb_user_role_handler( $output, $form_location, $field, $user_id, $fie
 
         $input_value = isset( $request_data['custom_field_user_role'] ) ? $request_data['custom_field_user_role'] : $user_role;
         $input_value_multiple = isset( $request_data['custom_field_user_role'] ) ? $request_data['custom_field_user_role'] : $user_roles;
+        $input_value = apply_filters( 'wppb_form_user_role_field_value', $input_value, $field, $form_location );
+        $input_value_multiple = apply_filters( 'wppb_form_user_role_multiple_field_value', $input_value_multiple, $field, $form_location );
 
         $item_title = apply_filters( 'wppb_'.$form_location.'_user_role_custom_field_'.$field['id'].'_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) );
         $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'], true );

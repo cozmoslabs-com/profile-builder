@@ -44,6 +44,7 @@ function wppb_select2_display_handler($output, $form_location, $field, $user_id,
         $input_value = (isset($request_data[wppb_handle_meta_name($field['meta-name'])]) ? esc_attr(stripslashes(trim($request_data[wppb_handle_meta_name($field['meta-name'])]))) : $input_value);
 
         $input_value = html_entity_decode( htmlspecialchars_decode( $input_value, ENT_QUOTES ), ENT_QUOTES );
+        $input_value = apply_filters( 'wppb_form_select2_field_value', $input_value, $field, $form_location );
 
         if ($form_location != 'back_end') {
             $error_mark = (($field['required'] == 'Yes') ? '<span class="wppb-required" title="' . wppb_required_field_error($field["field-title"]) . '">*</span>' : '');

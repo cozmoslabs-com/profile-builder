@@ -1859,7 +1859,7 @@ function wppb_embed($atts, $content){
 	if(empty($atts['width']) || empty($atts['height'])){
 		$content = $wp_embed->run_shortcode('[embed]'.$content.'[/embed]');
 	} else {
-		$content = $wp_embed->run_shortcode('[embed width="'.$atts['width'].'" height="'.$atts['height'].'"]'.$content.'[/embed]');
+		$content = $wp_embed->run_shortcode('[embed width="'.esc_attr($atts['width']).'" height="'.esc_attr($atts['height']).'"]'.$content.'[/embed]');
 	}
 
 	return $content;

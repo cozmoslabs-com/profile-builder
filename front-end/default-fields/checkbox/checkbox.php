@@ -17,10 +17,13 @@ function wppb_checkbox_handler( $output, $form_location, $field, $user_id, $fiel
         else
             $input_value = ( !empty( $field['default-options'] ) ? array_map( 'trim', explode( ',', $field['default-options'] ) ) : array() );
 
-        if( isset( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) && !empty( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) )
+        if( isset( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) && !empty( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) ){
             $input_value = $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ];
+        }
 
-		$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
+        $input_value = apply_filters( 'wppb_form_checkbox_field_value', $input_value, $field, $form_location );
+
+	    $extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
 
 		if ( $form_location != 'back_end' ){
 			$error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );
