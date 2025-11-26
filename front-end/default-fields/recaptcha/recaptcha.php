@@ -210,8 +210,14 @@ function wppb_recaptcha_script_footer(){
                                     submitForm = false
                             } else if( currentForm.classList.contains("wppb-ajax-form") ) {
                                 submitForm = false;                                    
+                            } else if( currentForm.classList.contains("wppb-2fa-form") ) {
+                                submitForm = false;
                             }
-                    
+
+                            if( currentForm.classList.contains("wppb-2fa-authentication-requested" ) ){
+                                submitForm = true;
+                            }
+
                             if( submitForm ){
                                 jQuery(currentForm).off("submit.wppbRecaptchaV3");
                                 currentForm.submit();
@@ -302,6 +308,14 @@ function wppb_recaptcha_script_footer(){
                     if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" || jQuery(".pms_pay_gate[type=hidden]").val() == "paypal_connect" ) )
                         submitForm = false
 
+                } else if( currentForm.classList.contains("wppb-ajax-form") ) {
+                    submitForm = false;                                    
+                } else if( currentForm.classList.contains("wppb-2fa-form") ) {
+                    submitForm = false;
+                }
+
+                if( currentForm.classList.contains("wppb-2fa-authentication-requested" ) ){
+                    submitForm = true;
                 }
 
                 if( submitForm ){
@@ -815,7 +829,7 @@ function wppb_verify_recaptcha_default_wp_recover_password(){
 
     // If reCAPTCHA not entered or incorrect reCAPTCHA answer
         if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
-            wp_die( $recaptcha_error_message . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
+            wp_die( esc_html( $recaptcha_error_message ) . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
         }
     }
 }

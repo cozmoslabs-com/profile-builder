@@ -980,10 +980,11 @@
 <?php __("ERROR: ", "profile-builder"); ?>
 <?php __('You need to confirm your Email Address before logging in! </br>To resend the Confirmation Email  %1$sclick here%2$s.', 'profile-builder' ); ?>
 <?php __("The password field is empty.", "profile-builder"); ?>
-<?php __("The password you entered is incorrect.", "profile-builder"); ?>
 <?php __("The username field is empty", "profile-builder"); ?>
 <?php __("The username/email field is empty", "profile-builder"); ?>
 <?php __("The email field is empty.", "profile-builder"); ?>
+<?php __("The credentials you entered are incorrect.", "profile-builder"); ?>
+<?php __("The password you entered is incorrect.", "profile-builder"); ?>
 <?php __("Invalid username.", "profile-builder"); ?>
 <?php __("Invalid username or email.", "profile-builder"); ?>
 <?php __("Invalid email.", "profile-builder"); ?>
@@ -1000,7 +1001,7 @@
 <?php __("Please enter your username or email address.", "profile-builder"); ?>
 <?php __("Please enter your email address.", "profile-builder"); ?>
 <?php __("You will receive a link to create a new password via email.", "profile-builder"); ?>
-<?php __("Get New Password", "profile-builder"); ?>
+<?php __("Get Reset Link", "profile-builder"); ?>
 <?php __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profile-builder' ); ?>
 <?php __('Password Reset from %1$s', 'profile-builder' ); ?>
 <?php __("You have successfully reset your password.", "profile-builder"); ?>
@@ -1014,6 +1015,7 @@
 <?php __("The entered passwords don't match!", "profile-builder"); ?>
 <?php __("The password must have the minimum length of %s characters", "profile-builder"); ?>
 <?php __("Your password has been successfully changed!", "profile-builder"); ?>
+<?php __("If your information matches an account, a confirmation link will be sent to your email address.", "profile-builder"); ?>
 <?php __("The email/username entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct email/username.", "profile-builder"); ?>
 <?php __("The username entered wasn't found in the database!", "profile-builder"); ?>
@@ -1024,7 +1026,7 @@
 <?php __("Please check that you entered the correct email address.", "profile-builder"); ?>
 <?php __("Check your email for the confirmation link.", "profile-builder"); ?>
 <?php __("ERROR:", "profile-builder"); ?>
-<?php __('There was an error while trying to send the activation link to %1$s!', 'profile-builder' ); ?>
+<?php __("There was an error while trying to send the activation link!", "profile-builder"); ?>
 <?php __("Could not find registration. Contact administrator.", "profile-builder"); ?>
 <?php __("Invalid activation key!", "profile-builder"); ?>
 <?php __("This username is now active!", "profile-builder"); ?>

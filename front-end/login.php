@@ -116,6 +116,7 @@ function wppb_login_form( $args = array() ) {
 		// Default 'redirect' value takes the user back to the request URI.
 		'redirect'                  => $default_redirect,
 		'form_id'                   => 'wppb-loginform',
+        'form_classes'              => array(),
 		'label_username'            => __( 'Username or Email Address', 'profile-builder' ),
         'login_username_input_type' => 'text',
 		'label_password'            => __( 'Password', 'profile-builder' ),
@@ -152,6 +153,14 @@ function wppb_login_form( $args = array() ) {
 	 */
 	$login_form_bottom = apply_filters( 'login_form_bottom', '', $args );
 
+    if( !empty( $args['is_ajax_form'] ) ){
+        $args['form_classes'][] = 'wppb-ajax-form';
+    }
+
+    if( !empty( $args['form_classes'] ) ){
+        $args['form_classes'] = implode( ' ', $args['form_classes'] );
+    }
+
 	if( in_the_loop() )
 		$form_location = 'page';
 	else
@@ -165,7 +174,7 @@ function wppb_login_form( $args = array() ) {
     }
 
 	$form = '
-		<form name="' . $args['form_id'] . '" id="' . $args['form_id'] . '"' . ($args['is_ajax_form'] ? ' class="wppb-ajax-form"' : '') . ' action="'. esc_url( wppb_curpageurl() ) .'" method="post">
+		<form name="' . esc_attr( $args['form_id'] ) . '" id="' . esc_attr( $args['form_id'] ) . '" class="' . esc_attr( $args['form_classes'] ) . '" action="'. esc_url( wppb_curpageurl() ) .'" method="post">
 			' . $login_form_top . '
 			<p class="wppb-form-field login-username'. apply_filters( 'wppb_login_field_extra_css_class', '', $args['id_username']) .'">
 				<label for="' . esc_attr( $args['id_username'] ) . '">' . esc_html( $args['label_username'] ) . '</label>
@@ -427,16 +436,11 @@ function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
 				if( in_array( $user->get_error_code(), array( 'empty_username', 'empty_password', 'invalid_username', 'incorrect_password' ) ) )
 					$error_string = '<strong>' . __('ERROR: ', 'profile-builder') . '</strong>';
 
-
 				if ( $user->get_error_code() == 'empty_password' ) {
 					$error_string .= __( 'The password field is empty.', 'profile-builder' ) . ' ';
 				}
 
-                if ($user->get_error_code() == 'incorrect_password') {
-                    $error_string .= __('The password you entered is incorrect.', 'profile-builder') . ' ';
-                }
-
-				if ( $user->get_error_code() == 'empty_username' ) {
+                if ( $user->get_error_code() == 'empty_username' ) {
 					if ($wppb_generalSettings['loginWith'] == 'email')// if login with email is enabled change the word username with email
 						$error_string .= __('The email field is empty.', 'profile-builder') . ' ';
 					else if( $wppb_generalSettings['loginWith'] == 'usernameemail' )// if login with username and email is enabled change the word username with username or email
@@ -445,19 +449,29 @@ function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
 						$error_string .= __('The username field is empty', 'profile-builder') . ' ';
 				}
 
-                if ($user->get_error_code() == 'invalid_username') {
-                    if ($wppb_generalSettings['loginWith'] == 'email')// if login with email is enabled change the word username with email
-                        $error_string .= __('Invalid email.', 'profile-builder') . ' ';
-                    else if( $wppb_generalSettings['loginWith'] == 'usernameemail' )// if login with username and email is enabled change the word username with username or email
-                        $error_string .= __('Invalid username or email.', 'profile-builder') . ' ';
-                    else
-                        $error_string .= __('Invalid username.', 'profile-builder') . ' ';
+                if( apply_filters( 'wppb_login_use_old_error_messages', false ) ) {
+                    
+                    if ( $user->get_error_code() == 'incorrect_password' ) {
+                        $error_string .= __('The password you entered is incorrect.', 'profile-builder') . ' ';
+                    }
 
-                    $error_string = apply_filters('wppb_login_invalid_username_error_message', $error_string);
+                    if ( $user->get_error_code() == 'invalid_username' ) {
+                        if ($wppb_generalSettings['loginWith'] == 'email')// if login with email is enabled change the word username with email
+                            $error_string .= __('Invalid email.', 'profile-builder') . ' ';
+                        else if( $wppb_generalSettings['loginWith'] == 'usernameemail' )// if login with username and email is enabled change the word username with username or email
+                            $error_string .= __('Invalid username or email.', 'profile-builder') . ' ';
+                        else
+                            $error_string .= __('Invalid username.', 'profile-builder') . ' ';
+
+                        $error_string = apply_filters('wppb_login_invalid_username_error_message', $error_string);
+                    }
+
+                } else if( in_array( $user->get_error_code(), array( 'incorrect_password', 'invalid_username' ) ) ) {
+                    $error_string .= __( 'The credentials you entered are incorrect.', 'profile-builder' ) . ' ';
                 }
 
-				if( $user->get_error_code() == 'incorrect_password' || $user->get_error_code() == 'invalid_username' && empty( $message_check = apply_filters('wppb_login_invalid_username_error_message', '' )))
-					$error_string .= '<a href="' . esc_url( $lost_pass_url ) . '" title="' . __('Password Lost and Found.', 'profile-builder') . '">' . __('Lost your password?', 'profile-builder') . '</a>';
+                if( $user->get_error_code() == 'incorrect_password' || $user->get_error_code() == 'invalid_username' && empty( $message_check = apply_filters('wppb_login_invalid_username_error_message', '' )))
+                    $error_string .= '<a href="' . esc_url( $lost_pass_url ) . '" title="' . __('Password Lost and Found.', 'profile-builder') . '">' . __('Lost your password?', 'profile-builder') . '</a>';
 
             }
 

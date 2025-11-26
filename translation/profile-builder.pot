@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-17 11:30+0000\n"
+"POT-Creation-Date: 2025-11-26 10:04+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -450,7 +450,7 @@ msgstr ""
 msgid " Don't have a license? %sBuy one now%s."
 msgstr ""
 
-#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:903
+#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:917
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -842,7 +842,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:147, front-end/class-formbuilder.php:496, front-end/login.php:643, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:147, front-end/class-formbuilder.php:496, front-end/login.php:657, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -1054,11 +1054,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:357, front-end/login.php:371, front-end/login.php:592, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2908, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
+#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:366, front-end/login.php:380, front-end/login.php:606, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2908, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:587, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:545, add-ons/user-listing/userlisting.php:1020, add-ons/user-listing/userlisting.php:2909, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:601, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:545, add-ons/user-listing/userlisting.php:1020, add-ons/user-listing/userlisting.php:2909, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -1130,7 +1130,7 @@ msgstr ""
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:465, admin/general-settings.php:426, features/two-factor-authentication/class-two-factor-authentication.php:90, features/two-factor-authentication/class-two-factor-authentication.php:148
+#: admin/general-settings.php:465, admin/general-settings.php:426, features/two-factor-authentication/class-two-factor-authentication.php:92, features/two-factor-authentication/class-two-factor-authentication.php:150
 msgid "Two-Factor Authentication"
 msgstr ""
 
@@ -1294,7 +1294,7 @@ msgstr ""
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: admin/manage-fields.php:261, features/two-factor-authentication/class-two-factor-authentication.php:160, features/two-factor-authentication/class-two-factor-authentication.php:269
+#: admin/manage-fields.php:261, features/two-factor-authentication/class-two-factor-authentication.php:162, features/two-factor-authentication/class-two-factor-authentication.php:271
 msgid "Description"
 msgstr ""
 
@@ -1806,7 +1806,7 @@ msgstr ""
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
 msgstr ""
 
-#: admin/manage-fields.php:430, front-end/login.php:121, front-end/recover.php:66, features/email-customizer/email-customizer.php:32
+#: admin/manage-fields.php:430, front-end/login.php:122, front-end/recover.php:66, features/email-customizer/email-customizer.php:32
 msgid "Password"
 msgstr ""
 
@@ -3488,7 +3488,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3307, features/two-factor-authentication/class-two-factor-authentication.php:150, features/two-factor-authentication/class-two-factor-authentication.php:256
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3307, features/two-factor-authentication/class-two-factor-authentication.php:152, features/two-factor-authentication/class-two-factor-authentication.php:258
 msgid "Activate"
 msgstr ""
 
@@ -3788,7 +3788,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:847, front-end/recover.php:428, front-end/default-fields/password/password.php:64
+#: features/functions.php:847, front-end/recover.php:449, front-end/default-fields/password/password.php:64
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -3804,11 +3804,11 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1065, front-end/default-fields/recaptcha/recaptcha.php:720, front-end/default-fields/recaptcha/recaptcha.php:810, front-end/default-fields/recaptcha/recaptcha.php:864
+#: features/functions.php:1065, front-end/default-fields/recaptcha/recaptcha.php:734, front-end/default-fields/recaptcha/recaptcha.php:824, front-end/default-fields/recaptcha/recaptcha.php:878
 msgid "reCaptcha could not be verified. Please try again."
 msgstr ""
 
-#: features/functions.php:1063, front-end/default-fields/recaptcha/recaptcha.php:723, front-end/default-fields/recaptcha/recaptcha.php:813, front-end/default-fields/recaptcha/recaptcha.php:867
+#: features/functions.php:1063, front-end/default-fields/recaptcha/recaptcha.php:737, front-end/default-fields/recaptcha/recaptcha.php:827, front-end/default-fields/recaptcha/recaptcha.php:881
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
@@ -3856,7 +3856,7 @@ msgstr ""
 msgid "User Meta"
 msgstr ""
 
-#: front-end/class-formbuilder.php:61, front-end/login.php:548, front-end/recover.php:272
+#: front-end/class-formbuilder.php:61, front-end/login.php:562, front-end/recover.php:272
 msgid "Processing..."
 msgstr ""
 
@@ -3896,7 +3896,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:325, front-end/login.php:701, assets/lib/wck-api/wordpress-creation-kit.php:829
+#: front-end/class-formbuilder.php:325, front-end/login.php:715, assets/lib/wck-api/wordpress-creation-kit.php:829
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -3953,91 +3953,95 @@ msgstr ""
 msgid "<strong>ERROR:</strong> Cookies are blocked due to unexpected output. For help, please see <a href=\"%1$s\">this documentation</a> or try the <a href=\"%2$s\">support forums</a>."
 msgstr ""
 
-#: front-end/login.php:119
+#: front-end/login.php:120
 msgid "Username or Email Address"
 msgstr ""
 
-#: front-end/login.php:122
+#: front-end/login.php:123
 msgid "Remember Me"
 msgstr ""
 
-#: front-end/login.php:123
+#: front-end/login.php:124
 msgid "Log In"
 msgstr ""
 
-#: front-end/login.php:298
+#: front-end/login.php:307
 msgid "SUCCESS: "
 msgstr ""
 
-#: front-end/login.php:298
+#: front-end/login.php:307
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:336, front-end/login.php:428, front-end/login.php:466, front-end/recover.php:18
+#: front-end/login.php:345, front-end/login.php:437, front-end/login.php:480, front-end/recover.php:18
 msgid "ERROR: "
 msgstr ""
 
-#: front-end/login.php:336
+#: front-end/login.php:345
 msgid "You need to confirm your Email Address before logging in! </br>To resend the Confirmation Email  %1$sclick here%2$s."
 msgstr ""
 
-#: front-end/login.php:432
+#: front-end/login.php:440
 msgid "The password field is empty."
 msgstr ""
 
-#: front-end/login.php:436
-msgid "The password you entered is incorrect."
-msgstr ""
-
-#: front-end/login.php:445
+#: front-end/login.php:449
 msgid "The username field is empty"
 msgstr ""
 
-#: front-end/login.php:443
+#: front-end/login.php:447
 msgid "The username/email field is empty"
 msgstr ""
 
-#: front-end/login.php:441
+#: front-end/login.php:445
 msgid "The email field is empty."
 msgstr ""
 
-#: front-end/login.php:454
+#: front-end/login.php:470
+msgid "The credentials you entered are incorrect."
+msgstr ""
+
+#: front-end/login.php:455
+msgid "The password you entered is incorrect."
+msgstr ""
+
+#: front-end/login.php:464
 msgid "Invalid username."
 msgstr ""
 
-#: front-end/login.php:452
+#: front-end/login.php:462
 msgid "Invalid username or email."
 msgstr ""
 
-#: front-end/login.php:450
+#: front-end/login.php:460
 msgid "Invalid email."
 msgstr ""
 
-#: front-end/login.php:460
+#: front-end/login.php:474
 msgid "Password Lost and Found."
 msgstr ""
 
-#: front-end/login.php:460, front-end/login.php:649
+#: front-end/login.php:474, front-end/login.php:663
 msgid "Lost your password?"
 msgstr ""
 
-#: front-end/login.php:466
+#: front-end/login.php:480
 msgid "Both fields are empty."
 msgstr ""
 
-#: front-end/login.php:688, front-end/logout.php:45
+#: front-end/login.php:702, front-end/logout.php:45
 msgid "Log out of this account"
 msgstr ""
 
-#: front-end/login.php:688, front-end/logout.php:30
+#: front-end/login.php:702, front-end/logout.php:30
 msgid "Log out &raquo;"
 msgstr ""
 
-#: front-end/login.php:689
+#: front-end/login.php:703
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:597, front-end/recover.php:123
+#: front-end/login.php:611, front-end/recover.php:123
 msgid "Username or Email"
 msgstr ""
 
@@ -4066,7 +4070,7 @@ msgid "You will receive a link to create a new password via email."
 msgstr ""
 
 #: front-end/recover.php:139
-msgid "Get New Password"
+msgid "Get Reset Link"
 msgstr ""
 
 #: front-end/recover.php:190
@@ -4093,76 +4097,80 @@ msgstr ""
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:492
+#: front-end/recover.php:513
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:396
+#: front-end/recover.php:417
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:406
+#: front-end/recover.php:427
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:413, front-end/recover.php:519
+#: front-end/recover.php:434, front-end/recover.php:540
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:418
+#: front-end/recover.php:439
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:424, front-end/default-fields/password/password.php:60
+#: front-end/recover.php:445, front-end/default-fields/password/password.php:60
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:441
+#: front-end/recover.php:462
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:328
+#: front-end/recover.php:337, front-end/recover.php:356
+msgid "If your information matches an account, a confirmation link will be sent to your email address."
+msgstr ""
+
+#: front-end/recover.php:329
 msgid "The email/username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:328
+#: front-end/recover.php:329
 msgid "Please check that you entered the correct email/username."
 msgstr ""
 
-#: front-end/recover.php:325
+#: front-end/recover.php:326
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:325
+#: front-end/recover.php:326
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:321
+#: front-end/recover.php:322
 msgid "The email entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:321
+#: front-end/recover.php:322
 msgid "Please check that you entered the correct email."
 msgstr ""
 
-#: front-end/recover.php:373
+#: front-end/recover.php:394
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:373
+#: front-end/recover.php:394
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:343
+#: front-end/recover.php:354
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:357, front-end/recover.php:519, features/two-factor-authentication/class-two-factor-authentication.php:487
+#: front-end/recover.php:373, front-end/recover.php:540, features/two-factor-authentication/class-two-factor-authentication.php:489
 msgid "ERROR:"
 msgstr ""
 
-#: front-end/recover.php:357
-msgid "There was an error while trying to send the activation link to %1$s!"
+#: front-end/recover.php:373
+msgid "There was an error while trying to send the activation link!"
 msgstr ""
 
 #: front-end/register.php:50
@@ -5736,11 +5744,11 @@ msgstr ""
 msgid "The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:18, add-ons-advanced/multi-step-forms/index.php:44, add-ons-advanced/multi-step-forms/index.php:211
+#: add-ons-advanced/form-fields-in-columns/index.php:18, add-ons-advanced/multi-step-forms/index.php:45, add-ons-advanced/multi-step-forms/index.php:212
 msgid "Publish the form before adding Break Points!"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:19, add-ons-advanced/multi-step-forms/index.php:45
+#: add-ons-advanced/form-fields-in-columns/index.php:19, add-ons-advanced/multi-step-forms/index.php:46
 msgid "Request in process, please wait a few seconds before a new one!"
 msgstr ""
 
@@ -5780,15 +5788,15 @@ msgstr ""
 msgid "Form Fields in Columns options updated."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:120, add-ons-advanced/multi-step-forms/index.php:144
+#: add-ons-advanced/form-fields-in-columns/index.php:120, add-ons-advanced/multi-step-forms/index.php:145
 msgid "Enable on Forms"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:123, add-ons-advanced/multi-step-forms/index.php:147
+#: add-ons-advanced/form-fields-in-columns/index.php:123, add-ons-advanced/multi-step-forms/index.php:148
 msgid "PB Default Register Form"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:132, add-ons-advanced/multi-step-forms/index.php:156
+#: add-ons-advanced/form-fields-in-columns/index.php:132, add-ons-advanced/multi-step-forms/index.php:157
 msgid "PB Default Edit Profile Form"
 msgstr ""
 
@@ -5804,71 +5812,71 @@ msgstr ""
 msgid "MailPoet Newsletters needs to be installed and activated for Profile Builder - MailPoet Add-on to work!"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:40, add-ons-advanced/multi-step-forms/index.php:575
+#: add-ons-advanced/multi-step-forms/index.php:41, add-ons-advanced/multi-step-forms/index.php:576
 msgid "Step"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:41
+#: add-ons-advanced/multi-step-forms/index.php:42
 msgid "Title for Tab"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:42
+#: add-ons-advanced/multi-step-forms/index.php:43
 msgid "Add Break Points to edit tabs title."
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:43
+#: add-ons-advanced/multi-step-forms/index.php:44
 msgid "Publish the form to edit tabs title."
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:46
+#: add-ons-advanced/multi-step-forms/index.php:47
 msgid "Add form Break Point (for Multi-Step Forms)"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:47
+#: add-ons-advanced/multi-step-forms/index.php:48
 msgid "Remove form Break Point (for Multi-Step Forms)"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:88, add-ons-advanced/multi-step-forms/index.php:92
+#: add-ons-advanced/multi-step-forms/index.php:89, add-ons-advanced/multi-step-forms/index.php:93
 msgid "Multi-Step Forms"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:216, add-ons-advanced/multi-step-forms/index.php:168
+#: add-ons-advanced/multi-step-forms/index.php:217, add-ons-advanced/multi-step-forms/index.php:169
 msgid "Pagination and Tabs"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:217
+#: add-ons-advanced/multi-step-forms/index.php:218
 msgid "To enable MSF you must add Break Points."
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:222, add-ons-advanced/multi-step-forms/index.php:171
+#: add-ons-advanced/multi-step-forms/index.php:223, add-ons-advanced/multi-step-forms/index.php:172
 msgid "Enable Pagination"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:231, add-ons-advanced/multi-step-forms/index.php:180
+#: add-ons-advanced/multi-step-forms/index.php:232, add-ons-advanced/multi-step-forms/index.php:181
 msgid "Enable Tabs"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:239, add-ons-advanced/multi-step-forms/index.php:188
+#: add-ons-advanced/multi-step-forms/index.php:240, add-ons-advanced/multi-step-forms/index.php:189
 msgid "Edit Tabs Title"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:137
+#: add-ons-advanced/multi-step-forms/index.php:138
 msgid "Multi-Step Forms options updated."
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:164
+#: add-ons-advanced/multi-step-forms/index.php:165
 msgid "To enable it on Multiple Registration and Edit-Profile Forms add Break Points in each form page."
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:196
+#: add-ons-advanced/multi-step-forms/index.php:197
 msgid "Update Multi-Step"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:491
+#: add-ons-advanced/multi-step-forms/index.php:492
 msgid "Next"
 msgstr ""
 
-#: add-ons-advanced/multi-step-forms/index.php:492
+#: add-ons-advanced/multi-step-forms/index.php:493
 msgid "Previous"
 msgstr ""
 
@@ -6252,7 +6260,7 @@ msgstr ""
 msgid "Click to edit "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:369, front-end/default-fields/email/email.php:70
+#: add-ons-advanced/woocommerce/index.php:369, front-end/default-fields/email/email.php:72
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
@@ -7886,79 +7894,79 @@ msgstr ""
 msgid "Edit User Roles"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:71
+#: features/two-factor-authentication/class-two-factor-authentication.php:73
 msgid "Valid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:72
+#: features/two-factor-authentication/class-two-factor-authentication.php:74
 msgid "Invalid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:155, features/two-factor-authentication/class-two-factor-authentication.php:262
+#: features/two-factor-authentication/class-two-factor-authentication.php:157, features/two-factor-authentication/class-two-factor-authentication.php:264
 msgid "Relaxed Mode"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:157, features/two-factor-authentication/class-two-factor-authentication.php:265
+#: features/two-factor-authentication/class-two-factor-authentication.php:159, features/two-factor-authentication/class-two-factor-authentication.php:267
 msgid "Allow for more time drift on your phone clock ( &#177;4 min )."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:162
+#: features/two-factor-authentication/class-two-factor-authentication.php:164
 msgid "Description that you'll see in the Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:165, features/two-factor-authentication/class-two-factor-authentication.php:276
+#: features/two-factor-authentication/class-two-factor-authentication.php:167, features/two-factor-authentication/class-two-factor-authentication.php:278
 msgid "Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:169
+#: features/two-factor-authentication/class-two-factor-authentication.php:171
 msgid "New Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:170
+#: features/two-factor-authentication/class-two-factor-authentication.php:172
 msgid "QR Code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:173, features/two-factor-authentication/class-two-factor-authentication.php:286
+#: features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:288
 msgid "Scan this with the Authenticator app:"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:177, features/two-factor-authentication/class-two-factor-authentication.php:292
+#: features/two-factor-authentication/class-two-factor-authentication.php:179, features/two-factor-authentication/class-two-factor-authentication.php:294
 msgid "Verify TOTP"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:180, features/two-factor-authentication/class-two-factor-authentication.php:295
+#: features/two-factor-authentication/class-two-factor-authentication.php:182, features/two-factor-authentication/class-two-factor-authentication.php:297
 msgid "Check"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:252
+#: features/two-factor-authentication/class-two-factor-authentication.php:254
 msgid "Two-Factor Authentication Settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:272
+#: features/two-factor-authentication/class-two-factor-authentication.php:274
 msgid "Description that you'll see in the Authenticator app on your phone."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:279
+#: features/two-factor-authentication/class-two-factor-authentication.php:281
 msgid "Create new secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:280
+#: features/two-factor-authentication/class-two-factor-authentication.php:282
 msgid "Show/Hide QR code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:348
+#: features/two-factor-authentication/class-two-factor-authentication.php:350
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:483, features/two-factor-authentication/class-two-factor-authentication.php:608, features/two-factor-authentication/class-two-factor-authentication.php:612
+#: features/two-factor-authentication/class-two-factor-authentication.php:485, features/two-factor-authentication/class-two-factor-authentication.php:614, features/two-factor-authentication/class-two-factor-authentication.php:618
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:487
+#: features/two-factor-authentication/class-two-factor-authentication.php:489
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:642
+#: features/two-factor-authentication/class-two-factor-authentication.php:654
 msgid "Authenticator Code"
 msgstr ""
 
@@ -8954,35 +8962,35 @@ msgstr ""
 msgid "Privacy: I would like my site to appear in search engines, and in public listings around this network."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:45
+#: front-end/default-fields/email/email.php:47
 msgid "There is a pending change request of your email to: %s"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:46
+#: front-end/default-fields/email/email.php:48
 msgid "Cancel request"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:36
+#: front-end/default-fields/email/email.php:38
 msgid "If you change this, we will send you an email at your new address to confirm it."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:36
+#: front-end/default-fields/email/email.php:38
 msgid "The new address will not become active until confirmed."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:74, front-end/extra-fields/input-email/input-email.php:74
+#: front-end/default-fields/email/email.php:76, front-end/extra-fields/input-email/input-email.php:74
 msgid "You must enter a valid email address."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:89, front-end/default-fields/email/email.php:83
+#: front-end/default-fields/email/email.php:91, front-end/default-fields/email/email.php:85
 msgid "This email is already reserved to be used soon."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:89, front-end/default-fields/email/email.php:83, front-end/default-fields/email/email.php:99, front-end/default-fields/email/email.php:119, front-end/default-fields/username/username.php:52, front-end/default-fields/username/username.php:68
+#: front-end/default-fields/email/email.php:91, front-end/default-fields/email/email.php:85, front-end/default-fields/email/email.php:101, front-end/default-fields/email/email.php:121, front-end/default-fields/username/username.php:52, front-end/default-fields/username/username.php:68
 msgid "Please try a different one!"
 msgstr ""
 
-#: front-end/default-fields/email/email.php:99, front-end/default-fields/email/email.php:119
+#: front-end/default-fields/email/email.php:101, front-end/default-fields/email/email.php:121
 msgid "This email is already in use."
 msgstr ""
 
@@ -9006,19 +9014,19 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:378
+#: front-end/default-fields/recaptcha/recaptcha.php:392
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:490
+#: front-end/default-fields/recaptcha/recaptcha.php:504
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:818
+#: front-end/default-fields/recaptcha/recaptcha.php:832
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:902
+#: front-end/default-fields/recaptcha/recaptcha.php:916
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 

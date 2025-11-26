@@ -13,6 +13,8 @@ function wppb_email_handler( $output, $form_location, $field, $user_id, $field_c
 		$input_value = $field['default-value'];
 		
 	$input_value = ( isset( $request_data['email'] ) ? trim( $request_data['email'] ) : $input_value );
+    $input_value = apply_filters( 'wppb_form_email_field_value', $input_value, $field, $form_location );
+
 	$input_value = apply_filters( 'wppb_before_processing_email_from_forms' , stripslashes( $input_value ) );
 
 	if ( $form_location != 'back_end' ){

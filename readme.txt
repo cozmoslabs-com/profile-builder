@@ -3,9 +3,9 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.14.9
+Stable tag: 3.15.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.15.0 =
+* Enhancement: Updated Login form validation messages to be more general. Set the `wppb_login_use_old_error_messages` filter to true to return to the old behaviour
+* Enhancement: Updated Reset Password form validation messages to be more general. Set the `wppb_recover_password_use_old_error_messages` filter to true to return to the old behaviour
+* Fix: Compatibility issue between reCaptcha v3 and 2FA
+* Misc: Updated styling for the Login form widget
+
 = 3.14.9 =
 * Enhancement: When reCaptcha v3 is enabled on the Login form, disable the submit button until the reCaptcha token is retrieved
 * Fix: Issue with Authenticated Stored CSS via shortcode parameters for the [wppb-embed] shortcode. Thanks to Muhammad Yudha and the Wordfence team

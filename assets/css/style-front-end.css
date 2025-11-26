@@ -208,6 +208,16 @@
     text-decoration: none;
 }
 
+[id^="wppb-login-widget"] .wppb-user-login-form {
+    max-width: 100% !important;
+}
+
+[id^="wppb-login-widget"] .login-username > *,
+[id^="wppb-login-widget"] .login-password > * {
+    display: block;
+    width: 100% !important;
+}
+
 
 /*--------------------------------------------------------------
 3.0 Alignments
@@ -273,7 +283,7 @@
     width: 100%;
 }
 
-.wppb-form-field:not(#select_user_to_edit_form .wppb-form-field, .wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-subscription-plans) label:not(.wppb-checkboxes label, .wppb-radios label),
+.wppb-form-field:not(#select_user_to_edit_form .wppb-form-field, .wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-subscription-plans) label:not(.wppb-checkboxes label, .wppb-radios label, .login-remember label),
 #pms-subscription-plans-discount label,
 .pms-invite-code-name-field label,
 #wppb-login-wrap .login-username label,

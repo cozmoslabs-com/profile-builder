@@ -136,7 +136,7 @@ function wppb_create_recover_password_form( $user, $post_data, $is_ajax_form = f
 	echo apply_filters( 'wppb_recover_password_generate_password_input', $recover_input, trim( $username_email ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	<p class="form-submit">
-		<?php $button_name = __('Get New Password', 'profile-builder'); ?>
+		<?php $button_name = __('Get Reset Link', 'profile-builder'); ?>
 		<input name="recover_password" type="submit" id="wppb-recover-password-button" class="<?php echo esc_attr( apply_filters( 'wppb_recover_submit_class', "submit button" ) );?>" value="<?php echo esc_attr( apply_filters('wppb_recover_password_button_name3', $button_name) ); ?>" />
 		<input name="action" type="hidden" id="action" value="recover_password" />
 	</p>
@@ -314,22 +314,31 @@ function wppb_front_end_password_recovery( $atts ){
                 if( !empty( $query[0] ) ){
                     $username_email = $query[0]->user_email;
                 }
-            }
-            else{
-                if( !empty( $wppb_generalSettings['loginWith'] ) ){
-                    if( $wppb_generalSettings['loginWith'] == 'email' ){
-                        $warning = __( 'The email entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email.', 'profile-builder' );
+            } else {
+                if( apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
 
+                    if( !empty( $wppb_generalSettings['loginWith'] ) ){
+                        if( $wppb_generalSettings['loginWith'] == 'email' ){
+                            $warning = __( 'The email entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email.', 'profile-builder' );
+
+                        }
+                        else if( $wppb_generalSettings['loginWith'] == 'username' ) {
+                            $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
+                        }
+                        else{
+                            $warning = __( 'The email/username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email/username.', 'profile-builder' );
+                        }
                     }
-                    else if( $wppb_generalSettings['loginWith'] == 'username' ) {
-                        $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
-                    }
-                    else{
-                        $warning = __( 'The email/username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email/username.', 'profile-builder' );
-                    }
+                    $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
+                
+                    $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
+
+                } else {
+                    $warning = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
+                    $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
+                    $output .= wppb_password_recovery_success( $warning, 'wppb_recover_password_displayed_message1' );
+                    $password_email_sent = true;
                 }
-                $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
-                $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
             }
         }
 
@@ -337,10 +346,16 @@ function wppb_front_end_password_recovery( $atts ){
         if ( is_email( $username_email ) ){
             if ( email_exists( $username_email ) ){
                 $warning = wppb_check_for_unapproved_user($username_email, 'user_email');
-                if ($warning != ''){
+                if ( $warning != '' ){
                     $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
-                }else{
-                    $success = sprintf( __( 'Check your email for the confirmation link.', 'profile-builder'), $username_email );
+                } else {
+
+                    if( apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
+                        $success = __( 'Check your email for the confirmation link.', 'profile-builder' );
+                    } else {
+                        $success = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
+                    }
+
                     $success = apply_filters( 'wppb_recover_password_sent_message1', $success, $username_email );
 
                     if ( $success != 'wppb_recaptcha_error')
@@ -353,18 +368,24 @@ function wppb_front_end_password_recovery( $atts ){
 
                         //send mail to the user notifying him of the reset request
                         $sent = wppb_send_recovery_email( $user, $success );
-                        if ($sent === false){
-                            $warning = '<strong>'. __( 'ERROR:', 'profile-builder' ) .'</strong>' . sprintf( __( 'There was an error while trying to send the activation link to %1$s!', 'profile-builder' ), $username_email );
+
+                        if ( $sent === false ){
+                            $warning = '<strong>'. __( 'ERROR:', 'profile-builder' ) .'</strong>' . __( 'There was an error while trying to send the activation link!', 'profile-builder' );
                             $warning = apply_filters( 'wppb_recover_password_sent_message_error_sending', $warning );
                             $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
-                        }
-                        else
+                        } else {
                             $password_email_sent = true;
+                        }
 
+                        if( !apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
+                            // We want to set this to true regardless of the email result, so we can hide the form
+                            $password_email_sent = true;
+                        }
+                        
                     }
 
                 }
-            }elseif ( !email_exists( $username_email ) ){
+            } elseif ( !email_exists( $username_email ) ){
                 // check reCAPTCHA
                 $warning = wppb_password_recovery_warning( '', 'wppb_recover_password_displayed_message1' );
 
