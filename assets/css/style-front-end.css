@@ -1150,12 +1150,8 @@ li.wppb-facet-search {
 
 #wppb_auth_secret_buttons,
 #wppb_auth_verify_buttons,
-#wppb_auth_QR_INFO {
+#wppb_auth_backup_buttons {
     margin-left: 30%;
-}
-
-#wppb_auth_secret_buttons,
-#wppb_auth_verify_buttons {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -1184,16 +1180,19 @@ li.wppb-facet-search {
 }
 
 #wppb_auth_newsecret.wppb_auth_new_button,
-#wppb_auth_verify_button.wppb_auth_verify_button {
+#wppb_auth_verify_button.wppb_auth_verify_button,
+#wppb_auth_backup_button.wppb_auth_backup_button {
     flex-grow: 1;
 }
 
 #wppb_show_qr.wppb_auth_qr_button,
-#wppb_auth_verify_indicator.wppb_auth_verify_indicator {
+#wppb_auth_verify_indicator.wppb_auth_verify_indicator,
+#wppb_auth_backup_indicator.wppb_auth_backup_indicator {
     flex-grow: 1;
 }
 
-#wppb_auth_verify_indicator {
+#wppb_auth_verify_indicator,
+#wppb_auth_backup_indicator {
     pointer-events: none !important;
 }
 
@@ -1207,11 +1206,115 @@ li.wppb-facet-search {
     border-color: #f04040;
 }
 
+#wppb_auth_backup_indicator.low {
+    background-color: #ffeaa7;
+    border-color: #856404;
+}
+
+#wppb_auth_backup_indicator.zero {
+    background-color: #ffa0a0;
+    border-color: #f04040;
+}
+
+#wppb_auth_QR_INFO {
+    text-align: right;
+}
+
 #wppb_auth_QR_INFO .wppb-description-delimiter {
     font-size: 80%;
     font-style: italic;
 }
 
-#wppb_auth_QRCODE {
+/* Backup Codes Styling */
+/*.wppb-backup-codes-section,*/
+.wppb-backup-codes-admin-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+}
+
+.wppb-backup-codes-section h4,
+.wppb-backup-codes-admin-section h3,
+.wppb-backup-codes-admin-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.wppb-backup-codes-new,
+.wppb-backup-codes-admin-new {
+    /*
+    background-color: #d1ecf1;
+    */
+    border: 1px solid #ccc/*#bee5eb*/;
+    /*
+    color: #0c5460;
+    */
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.wppb-backup-codes-new h4,
+.wppb-backup-codes-new h5,
+.wppb-backup-codes-admin-new h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0c5460;
+}
+
+.wppb-backup-codes-list,
+.wppb-backup-codes-admin-list {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.wppb-backup-code-item,
+.wppb-backup-codes-admin-item {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    word-break: break-all;
+}
+
+.wppb-backup-codes-actions {
+    margin-top: 15px;
+}
+
+.wppb-backup-codes-actions .button {
+    background: none repeat scroll 0 0 #f7f7f7;
+    border: 1px solid #ccc !important;
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 15px;
+    text-decoration: none;
+    white-space: nowrap;
     text-align: center;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.wppb-backup-codes-actions .button:hover {
+    background: none repeat scroll 0 0 #fafafa;
+    border: 1px solid #999 !important;
+    color: #222;
+    text-decoration: none;
+}
+
+.wppb-2fa-forced-notice.wppb-error p{
+    margin: unset;
 }

@@ -244,6 +244,7 @@ function wppb_recaptcha_script_footer(){
         echo '
         <script>
             window.wppbRecaptchaCallbackExecuted = false;
+            window.wppbRecaptcha = true;
             var wppbRecaptchaCallback = function() {
                 if( !window.wppbRecaptchaCallbackExecuted ){//see if we executed this before
                     ' . $callback_conditions . '.each(function(){
@@ -295,6 +296,8 @@ function wppb_recaptcha_script_footer(){
                     return jQuery(this).val() === token;
                 });
 
+                var form = elem.closest("form");
+
                 var submitForm = true
 
                 /* dont submit form if PMS gateway is Stripe */
@@ -308,22 +311,20 @@ function wppb_recaptcha_script_footer(){
                     if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" || jQuery(".pms_pay_gate[type=hidden]").val() == "paypal_connect" ) )
                         submitForm = false
 
-                } else if( currentForm.classList.contains("wppb-ajax-form") ) {
+                } else if( form.hasClass("wppb-ajax-form") ) {
                     submitForm = false;                                    
-                } else if( currentForm.classList.contains("wppb-2fa-form") ) {
+                } else if( form.hasClass("wppb-2fa-form") ) {
                     submitForm = false;
                 }
 
-                if( currentForm.classList.contains("wppb-2fa-authentication-requested" ) ){
+                if( form.hasClass("wppb-2fa-authentication-requested" ) ){
                     submitForm = true;
                 }
 
                 if( submitForm ){
-                    var form = elem.closest("form");
                     form.submit();
                 } else {
                     jQuery(document).trigger( "wppb_invisible_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", elem.closest("form") ) )
-
                     return true;
                 }
             }

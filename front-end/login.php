@@ -157,9 +157,7 @@ function wppb_login_form( $args = array() ) {
         $args['form_classes'][] = 'wppb-ajax-form';
     }
 
-    if( !empty( $args['form_classes'] ) ){
-        $args['form_classes'] = implode( ' ', $args['form_classes'] );
-    }
+    $args['form_classes'] = implode( ' ', $args['form_classes'] );
 
 	if( in_the_loop() )
 		$form_location = 'page';

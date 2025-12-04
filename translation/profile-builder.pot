@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-26 10:04+0000\n"
+"POT-Creation-Date: 2025-12-04 09:02+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Get access to these Add-ons with a Basic, Pro or Agency license. %sBuy now%s"
 msgstr ""
 
-#: admin/add-ons.php:105, add-ons-advanced/form-fields-in-columns/index.php:80, add-ons-advanced/form-fields-in-columns/index.php:84
+#: admin/add-ons.php:105, add-ons-advanced/form-fields-in-columns/index.php:81, add-ons-advanced/form-fields-in-columns/index.php:85
 msgid "Form Fields in Columns"
 msgstr ""
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid " Don't have a license? %sBuy one now%s."
 msgstr ""
 
-#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:917
+#: admin/admin-functions.php:713, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:918
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -586,7 +586,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:141, admin/general-settings.php:399, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:283, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:289, features/roles-editor/roles-editor.php:296
+#: admin/basic-info.php:141, admin/general-settings.php:824, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:283, features/roles-editor/roles-editor.php:284, features/roles-editor/roles-editor.php:289, features/roles-editor/roles-editor.php:296
 msgid "Roles Editor"
 msgstr ""
 
@@ -842,7 +842,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:147, front-end/class-formbuilder.php:496, front-end/login.php:657, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:147, front-end/class-formbuilder.php:496, front-end/login.php:655, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -1054,11 +1054,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:366, front-end/login.php:380, front-end/login.php:606, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2908, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
+#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:364, front-end/login.php:378, front-end/login.php:604, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2908, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:601, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:545, add-ons/user-listing/userlisting.php:1020, add-ons/user-listing/userlisting.php:2909, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:599, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:545, add-ons/user-listing/userlisting.php:1020, add-ons/user-listing/userlisting.php:2909, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -1102,135 +1102,211 @@ msgstr ""
 msgid "Select the page which contains the \"[wppb-recover-password]\" shortcode."
 msgstr ""
 
-#: admin/general-settings.php:368
-msgid "Other features"
-msgstr ""
-
-#: admin/general-settings.php:371
-msgid "Hide Admin Bar for User Roles"
-msgstr ""
-
-#: admin/general-settings.php:379
-msgid "All User Roles"
-msgstr ""
-
-#: admin/general-settings.php:380
-msgid "All User Roles Except Admin"
-msgstr ""
-
-#: admin/general-settings.php:391
-msgid "Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for."
-msgstr ""
-
-#: admin/general-settings.php:407
-msgid "Easily create new custom user roles or customize any existing user role capabilities."
-msgstr ""
-
-#: admin/general-settings.php:410
-msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
-msgstr ""
-
-#: admin/general-settings.php:465, admin/general-settings.php:426, features/two-factor-authentication/class-two-factor-authentication.php:92, features/two-factor-authentication/class-two-factor-authentication.php:150
+#: admin/general-settings.php:368, admin/general-settings.php:772, admin/general-settings.php:382, features/two-factor-authentication/class-two-factor-authentication.php:131, features/two-factor-authentication/class-two-factor-authentication.php:213
 msgid "Two-Factor Authentication"
 msgstr ""
 
-#: admin/general-settings.php:473, admin/general-settings.php:434
+#: admin/general-settings.php:780, admin/general-settings.php:608
 msgid "Enable the Google Authenticator functionality."
 msgstr ""
 
-#: admin/general-settings.php:477
+#: admin/general-settings.php:784
 msgid "Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions."
 msgstr ""
 
-#: admin/general-settings.php:446
+#: admin/general-settings.php:503
+msgid "Confirm Two-Factor Authentication Enforcement"
+msgstr ""
+
+#: admin/general-settings.php:506, features/functions.php:1116, add-ons/user-listing/userlisting.php:3345, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:529
+msgid "Cancel"
+msgstr ""
+
+#: admin/general-settings.php:507
+msgid "Confirm & Save"
+msgstr ""
+
+#: admin/general-settings.php:570
+msgid "You are enforcing 2FA for the following user roles:"
+msgstr ""
+
+#: admin/general-settings.php:571
+msgid "Users with these roles will be required to set up 2FA on their next login."
+msgstr ""
+
+#: admin/general-settings.php:583
+msgid "Warning:"
+msgstr ""
+
+#: admin/general-settings.php:584
+msgid "Based on the configured settings, your account is also required to set up 2FA. Once you confirm this change, you will be redirected to set it up."
+msgstr ""
+
+#: admin/general-settings.php:621
+msgid "Require TOTP Verification on Profile Edit"
+msgstr ""
+
+#: admin/general-settings.php:629
+msgid "Require users with Two-Factor Authentication enabled to verify their TOTP code every time they edit their profile. This setting is enabled by default."
+msgstr ""
+
+#: admin/general-settings.php:641
 msgid "Enable Authenticator For"
 msgstr ""
 
-#: admin/general-settings.php:450
+#: admin/general-settings.php:645
 msgid "ALL ROLES"
 msgstr ""
 
-#: admin/general-settings.php:458
+#: admin/general-settings.php:653
 msgid "\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles."
 msgstr ""
 
-#: admin/general-settings.php:485
-msgid "Load CSS"
+#: admin/general-settings.php:666
+msgid "Force 2FA for Selected Roles"
 msgstr ""
 
-#: admin/general-settings.php:492
-msgid "You can find the default file here: %1$s"
+#: admin/general-settings.php:674
+msgid "Force users with selected roles to set up Two-Factor Authentication. Users will be redirected to their profile page if 2FA is not configured."
 msgstr ""
 
-#: admin/general-settings.php:505, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:492, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
-msgid "Update Settings"
+#: admin/general-settings.php:685
+msgid "Force 2FA For"
 msgstr ""
 
-#: admin/general-settings.php:508, admin/private-website.php:184, features/functions.php:1109, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
-msgid "Save Changes"
-msgstr ""
-
-#: admin/general-settings.php:633
-msgid "Available in the Pro versions of the plugin"
-msgstr ""
-
-#: admin/general-settings.php:682
-msgid "You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
-msgstr ""
-
-#: admin/general-settings.php:704
-msgid "Register Website"
-msgstr ""
-
-#: admin/general-settings.php:711
-msgid "License key"
-msgstr ""
-
-#: admin/general-settings.php:728
-msgid "Activate License"
+#: admin/general-settings.php:709
+msgid "Select which user roles will be forced to set up Two-Factor Authentication. Only roles that have 2FA enabled above are available."
 msgstr ""
 
 #: admin/general-settings.php:719
-msgid "Deactivate License"
+msgid "Grace Period"
 msgstr ""
 
-#: admin/general-settings.php:724
-msgid "Your license is invalid"
-msgstr ""
-
-#: admin/general-settings.php:722
-msgid "Active on this site"
-msgstr ""
-
-#: admin/general-settings.php:751
-msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
-msgstr ""
-
-#: admin/general-settings.php:752
-msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
-msgstr ""
-
-#: admin/general-settings.php:746
-msgid "Your %s license has reached its activation limit."
-msgstr ""
-
-#: admin/general-settings.php:747
-msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
-msgstr ""
-
-#: admin/general-settings.php:741
-msgid "Your %s license has expired."
+#: admin/general-settings.php:723
+msgid "Number of days users have to set up Two-Factor Authentication. Set to 0 for immediate enforcement."
 msgstr ""
 
 #: admin/general-settings.php:742
+msgid "Redirect to Edit Profile Page"
+msgstr ""
+
+#: admin/general-settings.php:745
+msgid "Admin Profile Page"
+msgstr ""
+
+#: admin/general-settings.php:760
+msgid "Select which page users should be redirected to when they need to set up Two-Factor Authentication."
+msgstr ""
+
+#: admin/general-settings.php:758
+msgid "No pages with Edit Profile forms found. Please create a page with the [wppb-edit-profile] shortcode or block."
+msgstr ""
+
+#: admin/general-settings.php:793
+msgid "Other features"
+msgstr ""
+
+#: admin/general-settings.php:796
+msgid "Hide Admin Bar for User Roles"
+msgstr ""
+
+#: admin/general-settings.php:804
+msgid "All User Roles"
+msgstr ""
+
+#: admin/general-settings.php:805
+msgid "All User Roles Except Admin"
+msgstr ""
+
+#: admin/general-settings.php:816
+msgid "Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for."
+msgstr ""
+
+#: admin/general-settings.php:832
+msgid "Easily create new custom user roles or customize any existing user role capabilities."
+msgstr ""
+
+#: admin/general-settings.php:835
+msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
+msgstr ""
+
+#: admin/general-settings.php:841
+msgid "Load CSS"
+msgstr ""
+
+#: admin/general-settings.php:848
+msgid "You can find the default file here: %1$s"
+msgstr ""
+
+#: admin/general-settings.php:861, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:492, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
+msgid "Update Settings"
+msgstr ""
+
+#: admin/general-settings.php:864, admin/private-website.php:184, features/functions.php:1109, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
+msgid "Save Changes"
+msgstr ""
+
+#: admin/general-settings.php:989
+msgid "Available in the Pro versions of the plugin"
+msgstr ""
+
+#: admin/general-settings.php:1038
+msgid "You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
+msgstr ""
+
+#: admin/general-settings.php:1060
+msgid "Register Website"
+msgstr ""
+
+#: admin/general-settings.php:1067
+msgid "License key"
+msgstr ""
+
+#: admin/general-settings.php:1084
+msgid "Activate License"
+msgstr ""
+
+#: admin/general-settings.php:1075
+msgid "Deactivate License"
+msgstr ""
+
+#: admin/general-settings.php:1080
+msgid "Your license is invalid"
+msgstr ""
+
+#: admin/general-settings.php:1078
+msgid "Active on this site"
+msgstr ""
+
+#: admin/general-settings.php:1107
+msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
+msgstr ""
+
+#: admin/general-settings.php:1108
+msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
+msgstr ""
+
+#: admin/general-settings.php:1102
+msgid "Your %s license has reached its activation limit."
+msgstr ""
+
+#: admin/general-settings.php:1103
+msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
+msgstr ""
+
+#: admin/general-settings.php:1097
+msgid "Your %s license has expired."
+msgstr ""
+
+#: admin/general-settings.php:1098
 msgid "Please %1$sRenew Your Licence%2$s  to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility."
 msgstr ""
 
-#: admin/general-settings.php:736
+#: admin/general-settings.php:1092
 msgid "Your %s license is about to expire on %s"
 msgstr ""
 
-#: admin/general-settings.php:737
+#: admin/general-settings.php:1093
 msgid "Please %sRenew Your Licence%s to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility."
 msgstr ""
 
@@ -1294,7 +1370,7 @@ msgstr ""
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: admin/manage-fields.php:261, features/two-factor-authentication/class-two-factor-authentication.php:162, features/two-factor-authentication/class-two-factor-authentication.php:271
+#: admin/manage-fields.php:261, features/two-factor-authentication/class-two-factor-authentication.php:226, features/two-factor-authentication/class-two-factor-authentication.php:422
 msgid "Description"
 msgstr ""
 
@@ -3488,7 +3564,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3307, features/two-factor-authentication/class-two-factor-authentication.php:152, features/two-factor-authentication/class-two-factor-authentication.php:258
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3307, features/two-factor-authentication/class-two-factor-authentication.php:217, features/two-factor-authentication/class-two-factor-authentication.php:409
 msgid "Activate"
 msgstr ""
 
@@ -3804,20 +3880,16 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1065, front-end/default-fields/recaptcha/recaptcha.php:734, front-end/default-fields/recaptcha/recaptcha.php:824, front-end/default-fields/recaptcha/recaptcha.php:878
+#: features/functions.php:1065, front-end/default-fields/recaptcha/recaptcha.php:735, front-end/default-fields/recaptcha/recaptcha.php:825, front-end/default-fields/recaptcha/recaptcha.php:879
 msgid "reCaptcha could not be verified. Please try again."
 msgstr ""
 
-#: features/functions.php:1063, front-end/default-fields/recaptcha/recaptcha.php:737, front-end/default-fields/recaptcha/recaptcha.php:827, front-end/default-fields/recaptcha/recaptcha.php:881
+#: features/functions.php:1063, front-end/default-fields/recaptcha/recaptcha.php:738, front-end/default-fields/recaptcha/recaptcha.php:828, front-end/default-fields/recaptcha/recaptcha.php:882
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
 #: features/functions.php:1073
 msgid "Incorrect phone number"
-msgstr ""
-
-#: features/functions.php:1116, add-ons/user-listing/userlisting.php:3345, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:529
-msgid "Cancel"
 msgstr ""
 
 #: features/functions.php:1137, assets/lib/wck-api/wordpress-creation-kit.php:484
@@ -3856,7 +3928,7 @@ msgstr ""
 msgid "User Meta"
 msgstr ""
 
-#: front-end/class-formbuilder.php:61, front-end/login.php:562, front-end/recover.php:272
+#: front-end/class-formbuilder.php:61, front-end/login.php:560, front-end/recover.php:272
 msgid "Processing..."
 msgstr ""
 
@@ -3896,7 +3968,7 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:325, front-end/login.php:715, assets/lib/wck-api/wordpress-creation-kit.php:829
+#: front-end/class-formbuilder.php:325, front-end/login.php:713, assets/lib/wck-api/wordpress-creation-kit.php:829
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -3965,83 +4037,83 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: front-end/login.php:307
+#: front-end/login.php:305
 msgid "SUCCESS: "
 msgstr ""
 
-#: front-end/login.php:307
+#: front-end/login.php:305
 msgid "Activation email sent to %s"
 msgstr ""
 
-#: front-end/login.php:345, front-end/login.php:437, front-end/login.php:480, front-end/recover.php:18
+#: front-end/login.php:343, front-end/login.php:435, front-end/login.php:478, front-end/recover.php:18
 msgid "ERROR: "
 msgstr ""
 
-#: front-end/login.php:345
+#: front-end/login.php:343
 msgid "You need to confirm your Email Address before logging in! </br>To resend the Confirmation Email  %1$sclick here%2$s."
 msgstr ""
 
-#: front-end/login.php:440
+#: front-end/login.php:438
 msgid "The password field is empty."
 msgstr ""
 
-#: front-end/login.php:449
+#: front-end/login.php:447
 msgid "The username field is empty"
 msgstr ""
 
-#: front-end/login.php:447
+#: front-end/login.php:445
 msgid "The username/email field is empty"
 msgstr ""
 
-#: front-end/login.php:445
+#: front-end/login.php:443
 msgid "The email field is empty."
 msgstr ""
 
-#: front-end/login.php:470
+#: front-end/login.php:468
 msgid "The credentials you entered are incorrect."
 msgstr ""
 
-#: front-end/login.php:455
+#: front-end/login.php:453
 msgid "The password you entered is incorrect."
 msgstr ""
 
-#: front-end/login.php:464
+#: front-end/login.php:462
 msgid "Invalid username."
 msgstr ""
 
-#: front-end/login.php:462
+#: front-end/login.php:460
 msgid "Invalid username or email."
 msgstr ""
 
-#: front-end/login.php:460
+#: front-end/login.php:458
 msgid "Invalid email."
 msgstr ""
 
-#: front-end/login.php:474
+#: front-end/login.php:472
 msgid "Password Lost and Found."
 msgstr ""
 
-#: front-end/login.php:474, front-end/login.php:663
+#: front-end/login.php:472, front-end/login.php:661
 msgid "Lost your password?"
 msgstr ""
 
-#: front-end/login.php:480
+#: front-end/login.php:478
 msgid "Both fields are empty."
 msgstr ""
 
-#: front-end/login.php:702, front-end/logout.php:45
+#: front-end/login.php:700, front-end/logout.php:45
 msgid "Log out of this account"
 msgstr ""
 
-#: front-end/login.php:702, front-end/logout.php:30
+#: front-end/login.php:700, front-end/logout.php:30
 msgid "Log out &raquo;"
 msgstr ""
 
-#: front-end/login.php:703
+#: front-end/login.php:701
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 
-#: front-end/login.php:611, front-end/recover.php:123
+#: front-end/login.php:609, front-end/recover.php:123
 msgid "Username or Email"
 msgstr ""
 
@@ -4165,7 +4237,7 @@ msgstr ""
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:373, front-end/recover.php:540, features/two-factor-authentication/class-two-factor-authentication.php:489
+#: front-end/recover.php:373, front-end/recover.php:540, features/two-factor-authentication/class-two-factor-authentication.php:805
 msgid "ERROR:"
 msgstr ""
 
@@ -5744,67 +5816,67 @@ msgstr ""
 msgid "The Nginx web server needs to be restarted for the new File Restriction rules to take effect. %1$sLearn more%2$s."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:18, add-ons-advanced/multi-step-forms/index.php:45, add-ons-advanced/multi-step-forms/index.php:212
+#: add-ons-advanced/form-fields-in-columns/index.php:19, add-ons-advanced/multi-step-forms/index.php:45, add-ons-advanced/multi-step-forms/index.php:212
 msgid "Publish the form before adding Break Points!"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:19, add-ons-advanced/multi-step-forms/index.php:46
+#: add-ons-advanced/form-fields-in-columns/index.php:20, add-ons-advanced/multi-step-forms/index.php:46
 msgid "Request in process, please wait a few seconds before a new one!"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:20
+#: add-ons-advanced/form-fields-in-columns/index.php:21
 msgid "Set column start"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:21
+#: add-ons-advanced/form-fields-in-columns/index.php:22
 msgid "Set column end"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:22
+#: add-ons-advanced/form-fields-in-columns/index.php:23
 msgid "Unset column start"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:23
+#: add-ons-advanced/form-fields-in-columns/index.php:24
 msgid "Unset column end"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:70
+#: add-ons-advanced/form-fields-in-columns/index.php:71
 msgid "Please remove or close unpaired breakpoints."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:161
+#: add-ons-advanced/form-fields-in-columns/index.php:162
 msgid "Publish the form before adding Interval Break Points! - Form Fields in Columns"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:166
+#: add-ons-advanced/form-fields-in-columns/index.php:167
 msgid "Begin by placing Start and End break points on your fields. Use the option below to disable the columns without removing the breakpoints."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:171
+#: add-ons-advanced/form-fields-in-columns/index.php:172
 msgid "Enable"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:113
+#: add-ons-advanced/form-fields-in-columns/index.php:114
 msgid "Form Fields in Columns options updated."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:120, add-ons-advanced/multi-step-forms/index.php:145
+#: add-ons-advanced/form-fields-in-columns/index.php:121, add-ons-advanced/multi-step-forms/index.php:145
 msgid "Enable on Forms"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:123, add-ons-advanced/multi-step-forms/index.php:148
+#: add-ons-advanced/form-fields-in-columns/index.php:124, add-ons-advanced/multi-step-forms/index.php:148
 msgid "PB Default Register Form"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:132, add-ons-advanced/multi-step-forms/index.php:157
+#: add-ons-advanced/form-fields-in-columns/index.php:133, add-ons-advanced/multi-step-forms/index.php:157
 msgid "PB Default Edit Profile Form"
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:140
+#: add-ons-advanced/form-fields-in-columns/index.php:141
 msgid "Enable or Disable Form Fields in Columns on default Register and Edit Profile forms."
 msgstr ""
 
-#: add-ons-advanced/form-fields-in-columns/index.php:145
+#: add-ons-advanced/form-fields-in-columns/index.php:146
 msgid "Update Form Fields in Columns"
 msgstr ""
 
@@ -7894,80 +7966,180 @@ msgstr ""
 msgid "Edit User Roles"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:73
+#: features/two-factor-authentication/class-two-factor-authentication.php:91
 msgid "Valid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:74
+#: features/two-factor-authentication/class-two-factor-authentication.php:92
 msgid "Invalid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:157, features/two-factor-authentication/class-two-factor-authentication.php:264
+#: features/two-factor-authentication/class-two-factor-authentication.php:93, features/two-factor-authentication/class-two-factor-authentication.php:278, features/two-factor-authentication/class-two-factor-authentication.php:460
+msgid "Backup Codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:94, features/two-factor-authentication/class-two-factor-authentication.php:281, features/two-factor-authentication/class-two-factor-authentication.php:463
+msgid "Regenerate Backup Codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:95
+msgid "Copy Codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:96
+msgid "Download Codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:97
+msgid "Regenerating will invalidate all existing codes. Continue?"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:98
+msgid "Each code can only be used once. Please save these codes in a secure location."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:99
+msgid "remaining codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:203, features/two-factor-authentication/class-two-factor-authentication.php:398
+msgid "Two-Factor Authentication is required for your role. Please set it up now."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:199, features/two-factor-authentication/class-two-factor-authentication.php:394
+msgid "You must set up Two-Factor Authentication within %d days. Your role requires 2FA for security."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:222, features/two-factor-authentication/class-two-factor-authentication.php:415
 msgid "Relaxed Mode"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:159, features/two-factor-authentication/class-two-factor-authentication.php:267
+#: features/two-factor-authentication/class-two-factor-authentication.php:223, features/two-factor-authentication/class-two-factor-authentication.php:418
 msgid "Allow for more time drift on your phone clock ( &#177;4 min )."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:164
+#: features/two-factor-authentication/class-two-factor-authentication.php:228
 msgid "Description that you'll see in the Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:167, features/two-factor-authentication/class-two-factor-authentication.php:278
+#: features/two-factor-authentication/class-two-factor-authentication.php:231, features/two-factor-authentication/class-two-factor-authentication.php:429
 msgid "Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:171
+#: features/two-factor-authentication/class-two-factor-authentication.php:235
 msgid "New Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:172
+#: features/two-factor-authentication/class-two-factor-authentication.php:236
 msgid "QR Code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:175, features/two-factor-authentication/class-two-factor-authentication.php:288
+#: features/two-factor-authentication/class-two-factor-authentication.php:239, features/two-factor-authentication/class-two-factor-authentication.php:439
 msgid "Scan this with the Authenticator app:"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:179, features/two-factor-authentication/class-two-factor-authentication.php:294
+#: features/two-factor-authentication/class-two-factor-authentication.php:243, features/two-factor-authentication/class-two-factor-authentication.php:445
 msgid "Verify TOTP"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:182, features/two-factor-authentication/class-two-factor-authentication.php:297
+#: features/two-factor-authentication/class-two-factor-authentication.php:247, features/two-factor-authentication/class-two-factor-authentication.php:448
 msgid "Check"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:254
+#: features/two-factor-authentication/class-two-factor-authentication.php:291, features/two-factor-authentication/class-two-factor-authentication.php:470
+msgid "%d remaining codes"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:288, features/two-factor-authentication/class-two-factor-authentication.php:468
+msgid "No remaining codes!"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:285, features/two-factor-authentication/class-two-factor-authentication.php:466
+msgid "%d remaining codes!"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:385
 msgid "Two-Factor Authentication Settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:274
+#: features/two-factor-authentication/class-two-factor-authentication.php:425
 msgid "Description that you'll see in the Authenticator app on your phone."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:281
+#: features/two-factor-authentication/class-two-factor-authentication.php:432
 msgid "Create new secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:282
+#: features/two-factor-authentication/class-two-factor-authentication.php:433
 msgid "Show/Hide QR code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:350
+#: features/two-factor-authentication/class-two-factor-authentication.php:496, features/two-factor-authentication/class-two-factor-authentication.php:642
+msgid "Two-Factor Authentication is required for your role. Please enable it."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:504, features/two-factor-authentication/class-two-factor-authentication.php:635
+msgid "You cannot disable Two-Factor Authentication as it is required for your role."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:533
+msgid "Two-Factor Authentication has been successfully set up!"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:534
+msgid "Continue to your destination"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:619
+msgid "Please verify TOTP to edit your profile."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:662
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:485, features/two-factor-authentication/class-two-factor-authentication.php:614, features/two-factor-authentication/class-two-factor-authentication.php:618
+#: features/two-factor-authentication/class-two-factor-authentication.php:660
+msgid "Please verify TOTP to set up Two-Factor Authentication"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:801, features/two-factor-authentication/class-two-factor-authentication.php:930, features/two-factor-authentication/class-two-factor-authentication.php:934
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:489
+#: features/two-factor-authentication/class-two-factor-authentication.php:805
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:654
-msgid "Authenticator Code"
+#: features/two-factor-authentication/class-two-factor-authentication.php:970
+msgid "Authentication Code"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:972
+msgid "Enter your 6-digit authenticator code or 16-digit backup code."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1467
+msgid "Your role requires Two-Factor Authentication. Please set it up immediately."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1463
+msgid "Your role requires Two-Factor Authentication. You have %d days remaining to set it up."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1473
+msgid "Set up 2FA Now"
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1813
+msgid "User not logged in."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1818
+msgid "Please wait before regenerating backup codes again."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1827
+msgid "Backup codes generated"
 msgstr ""
 
 #: features/upgrades/upgrades-functions.php:136, features/upgrades/upgrades-functions.php:93
@@ -9014,19 +9186,19 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:392
+#: front-end/default-fields/recaptcha/recaptcha.php:393
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:504
+#: front-end/default-fields/recaptcha/recaptcha.php:505
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:832
+#: front-end/default-fields/recaptcha/recaptcha.php:833
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:916
+#: front-end/default-fields/recaptcha/recaptcha.php:917
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 

@@ -365,6 +365,431 @@ function wppb_general_settings_content() {
                     </div>
 
                     <div class="cozmoslabs-form-subsection-wrapper">
+                        <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Two-Factor Authentication', 'profile-builder' ); ?></h4>
+
+                        <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <?php
+                                $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
+
+                                $enabled = 'no';
+                                if ( $wppb_two_factor_authentication_settings !== 'not_found' && is_array( $wppb_two_factor_authentication_settings ) && isset( $wppb_two_factor_authentication_settings['enabled'] ) ) {
+                                    $enabled = $wppb_two_factor_authentication_settings['enabled'];
+                                }
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
+                                </div>
+
+                                <?php
+                                $current_user = wp_get_current_user();
+                                ?>
+
+                                <script type="text/javascript">
+                                jQuery(document).ready(function($) {
+                                    // Handle 2FA enable toggle
+                                    $('#wppb-auth-enable').on('change', function() {
+                                        if ($(this).is(':checked')) {
+                                            $('#wppb-auth-roles-selector').show();
+                                            $('#wppb-force-2fa-enable').closest('.cozmoslabs-form-field-wrapper').show();
+                                            $('#wppb-2fa-require-totp-profile-edit').show();
+                                            if ($('#wppb-force-2fa-enable').is(':checked')) {
+                                                $('#wppb-force-2fa-roles-selector').show();
+                                                $('#wppb-force-2fa-grace-period').show();
+                                                $('#wppb-force-2fa-edit-profile-page-selector').show();
+
+                                            }
+                                        } else {
+                                            $('#wppb-auth-roles-selector').hide();
+                                            $('#wppb-force-2fa-enable').closest('.cozmoslabs-form-field-wrapper').hide();
+                                            $('#wppb-force-2fa-roles-selector').hide();
+                                            $('#wppb-force-2fa-grace-period').hide();
+                                            $('#wppb-force-2fa-edit-profile-page-selector').hide();
+
+                                            $('#wppb-2fa-require-totp-profile-edit').hide();
+                                        }
+                                    });
+
+                                    // Handle force 2FA enable toggle
+                                    $('#wppb-force-2fa-enable').on('change', function() {
+                                        if ($(this).is(':checked')) {
+                                            $('#wppb-force-2fa-roles-selector').show();
+                                            $('#wppb-force-2fa-grace-period').show();
+                                            $('#wppb-force-2fa-edit-profile-page-selector').show();
+
+                                        } else {
+                                            $('#wppb-force-2fa-roles-selector').hide();
+                                            $('#wppb-force-2fa-grace-period').hide();
+                                            $('#wppb-force-2fa-edit-profile-page-selector').hide();
+
+                                        }
+                                    });
+
+                                    // Handle changes to "Enable Authenticator For" roles
+                                    $('#wppb-auth-enable-roles').on('change', function() {
+                                        updateForce2FARolesDropdown();
+                                    });
+
+                                    // Function to update the Force 2FA roles dropdown based on enabled roles
+                                    function updateForce2FARolesDropdown() {
+                                        var enabledRoles = $('#wppb-auth-enable-roles').val() || [];
+                                        var force2FARolesSelect = $('#wppb-force-2fa-roles');
+                                        var currentlySelected = force2FARolesSelect.val() || [];
+                                        
+                                        // Clear current options
+                                        force2FARolesSelect.empty();
+                                        
+                                        // Get all available roles from the original select
+                                        var allRoleOptions = $('#wppb-auth-enable-roles option');
+                                        
+                                        // If '*' (all roles) is selected, show all roles
+                                        if (enabledRoles.indexOf('*') !== -1) {
+                                            allRoleOptions.each(function() {
+                                                var roleValue = $(this).val();
+                                                if (roleValue !== '*') { // Skip the "ALL ROLES" option
+                                                    var option = $('<option></option>')
+                                                        .attr('value', roleValue)
+                                                        .text($(this).text());
+                                                    if (currentlySelected.indexOf(roleValue) !== -1) {
+                                                        option.prop('selected', true);
+                                                    }
+                                                    force2FARolesSelect.append(option);
+                                                }
+                                            });
+                                        } else {
+                                            // Only show roles that are specifically enabled for 2FA
+                                            enabledRoles.forEach(function(roleKey) {
+                                                allRoleOptions.each(function() {
+                                                    if ($(this).val() === roleKey) {
+                                                        var option = $('<option></option>')
+                                                            .attr('value', roleKey)
+                                                            .text($(this).text());
+                                                        if (currentlySelected.indexOf(roleKey) !== -1) {
+                                                            option.prop('selected', true);
+                                                        }
+                                                        force2FARolesSelect.append(option);
+                                                    }
+                                                });
+                                            });
+                                        }
+                                        
+                                        // Trigger select2 update
+                                        force2FARolesSelect.trigger('change');
+                                    }
+
+                                    // Initial state
+                                    $('#wppb-auth-enable').trigger('change');
+                                    updateForce2FARolesDropdown();
+
+                                    // Force 2FA Confirmation Logic
+                                    var currentUserRoles = <?php echo json_encode( $current_user->roles ); ?>;
+                                    var currentUser2FAEnabled = <?php echo ( get_user_option( 'wppb_auth_enabled', $current_user->ID ) === 'enabled' ) ? 'true' : 'false'; ?>;
+
+                                    // Store initial state
+                                    var initialForce2FAEnabled = $('#wppb-force-2fa-enable').is(':checked');
+                                    var initialMain2FAEnabled = $('#wppb-auth-enable').is(':checked');
+                                    var initialSelectedRoles = $('#wppb-force-2fa-roles').val() || [];
+                                    initialSelectedRoles.sort();
+
+                                    // Create Modal
+                                    $('body').append(
+                                        '<div id="wppb-force-2fa-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">' +
+                                            '<div style="background-color:#fefefe; margin:15% auto; padding:20px; border:1px solid #888; width:500px; max-width:90%; border-radius:4px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">' +
+                                                '<h3 style="margin-top:0;">' + <?php echo json_encode( esc_html__( 'Confirm Two-Factor Authentication Enforcement', 'profile-builder' ) ); ?> + '</h3>' +
+                                                '<div id="wppb-force-2fa-message"></div>' +
+                                                '<div style="margin-top:20px; text-align:right;">' +
+                                                    '<button type="button" id="wppb-force-2fa-cancel" class="button">' + <?php echo json_encode( esc_html__( 'Cancel', 'profile-builder' ) ); ?> + '</button> ' +
+                                                    '<button type="button" id="wppb-force-2fa-confirm" class="button button-primary">' + <?php echo json_encode( esc_html__( 'Confirm & Save', 'profile-builder' ) ); ?> + '</button>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>'
+                                    );
+
+                                    // Intercept form submission
+                                    $('form').on('submit', function(e) {
+                                        // Only check if we are on the general settings page and submitting the main form
+                                        if ($(this).find('input[name="option_page"]').val() !== 'wppb_general_settings') {
+                                            return;
+                                        }
+
+                                        var force2FAEnabled = $('#wppb-force-2fa-enable').is(':checked');
+                                        var main2FAEnabled = $('#wppb-auth-enable').is(':checked');
+                                        var selectedRoles = $('#wppb-force-2fa-roles').val() || [];
+                                        selectedRoles.sort();
+
+                                        // Check if settings have changed
+                                        var settingsChanged = false;
+                                        
+                                        // Case 1: Force 2FA Enabled status changed
+                                        if (force2FAEnabled !== initialForce2FAEnabled) {
+                                            settingsChanged = true;
+                                        }
+                                        
+                                        // Case 2: Roles selection changed (only if Force 2FA is enabled)
+                                        if (force2FAEnabled) {
+                                            if (selectedRoles.length !== initialSelectedRoles.length) {
+                                                settingsChanged = true;
+                                            } else {
+                                                for (var i = 0; i < selectedRoles.length; i++) {
+                                                    if (selectedRoles[i] !== initialSelectedRoles[i]) {
+                                                        settingsChanged = true;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // Case 3: Main 2FA enabled status changed (only if Force 2FA is enabled)
+                                        // This covers the case where Force 2FA was already checked but inactive because Main 2FA was off
+                                        if (force2FAEnabled && main2FAEnabled !== initialMain2FAEnabled) {
+                                            settingsChanged = true;
+                                        }
+
+                                        // Only show popup if Force 2FA is enabled AND Main 2FA is enabled AND settings have changed
+                                        if (force2FAEnabled && main2FAEnabled && settingsChanged) {
+                                            // Check if we already confirmed
+                                            if ($(this).data('force-2fa-confirmed')) {
+                                                return;
+                                            }
+
+                                            var selectedRolesText = [];
+                                            
+                                            $('#wppb-force-2fa-roles option:selected').each(function() {
+                                                selectedRolesText.push($(this).text());
+                                            });
+
+                                            if (selectedRoles.length > 0) {
+                                                e.preventDefault();
+                                                var form = $(this);
+
+                                                var message = '<p>' + <?php echo json_encode( esc_html__( 'You are enforcing 2FA for the following user roles:', 'profile-builder' ) ); ?> + ' <strong>' + selectedRolesText.join(', ') + '</strong>.</p>';
+                                                message += '<p>' + <?php echo json_encode( esc_html__( 'Users with these roles will be required to set up 2FA on their next login.', 'profile-builder' ) ); ?> + '</p>';
+
+                                                // Check if current user is affected
+                                                var userAffected = false;
+                                                for (var i = 0; i < currentUserRoles.length; i++) {
+                                                    if (selectedRoles.indexOf(currentUserRoles[i]) !== -1) {
+                                                        userAffected = true;
+                                                        break;
+                                                    }
+                                                }
+
+                                                if (userAffected && !currentUser2FAEnabled) {
+                                                    message += '<div class="notice notice-warning inline" style="margin: 10px 0; padding: 10px; display: block !important;"><p><strong>' + <?php echo json_encode( esc_html__( 'Warning:', 'profile-builder' ) ); ?> + '</strong> ' +
+                                                               <?php echo json_encode( esc_html__( 'Based on the configured settings, your account is also required to set up 2FA. Once you confirm this change, you will be redirected to set it up.', 'profile-builder' ) ); ?> + '</p></div>';
+                                                }
+
+                                                $('#wppb-force-2fa-message').html(message);
+                                                $('#wppb-force-2fa-modal').show();
+
+                                                // Handle Confirm
+                                                $('#wppb-force-2fa-confirm').off('click').on('click', function() {
+                                                    $('#wppb-force-2fa-modal').hide();
+                                                    form.data('force-2fa-confirmed', true);
+                                                    form.submit();
+                                                });
+
+                                                // Handle Cancel
+                                                $('#wppb-force-2fa-cancel').off('click').on('click', function() {
+                                                    $('#wppb-force-2fa-modal').hide();
+                                                });
+                                            }
+                                        }
+                                    });
+                                });
+                                </script>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-auth-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+                                </div>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch" id="wppb-2fa-require-totp-profile-edit" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $require_totp_profile_edit = 'yes';
+                                if ( $wppb_two_factor_authentication_settings !== 'not_found' && is_array( $wppb_two_factor_authentication_settings ) && isset( $wppb_two_factor_authentication_settings['require_totp_profile_edit'] ) ) {
+                                    $require_totp_profile_edit = $wppb_two_factor_authentication_settings['require_totp_profile_edit'];
+                                }
+                                ?>
+
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-require-totp-profile-edit"><?php esc_html_e('Require TOTP Verification on Profile Edit', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_settings[require_totp_profile_edit]" id="wppb-require-totp-profile-edit" value="yes" <?php echo ($require_totp_profile_edit === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="wppb-require-totp-profile-edit"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-require-totp-profile-edit" class="cozmoslabs-description"><?php esc_html_e( 'Require users with Two-Factor Authentication enabled to verify their TOTP code every time they edit their profile. This setting is enabled by default.', 'profile-builder' ); ?></label>
+                                </div>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $roles = get_editable_roles( );
+                                $network_roles = array( );
+                                if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
+                                    $network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
+
+                                <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
+                                    <?php
+                                    echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
+
+                                    foreach ($roles as $role_key => $role) {
+                                        echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
+                                    }
+                                    ?>
+                                </select>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
+                            </div>
+
+                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+                                <?php
+                                $force_2fa_enabled = 'no';
+                                if ( $wppb_two_factor_authentication_settings !== 'not_found' && is_array( $wppb_two_factor_authentication_settings ) && isset( $wppb_two_factor_authentication_settings['force_2fa_enabled'] ) ) {
+                                    $force_2fa_enabled = $wppb_two_factor_authentication_settings['force_2fa_enabled'];
+                                }
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-force-2fa-enable"><?php esc_html_e('Force 2FA for Selected Roles', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_settings[force_2fa_enabled]" id="wppb-force-2fa-enable" value="yes" <?php echo ($force_2fa_enabled === 'yes') ? 'checked' : ''; ?> >
+                                    <label class="cozmoslabs-toggle-track" for="wppb-force-2fa-enable"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-force-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Force users with selected roles to set up Two-Factor Authentication. Users will be redirected to their profile page if 2FA is not configured.', 'profile-builder' ); ?></label>
+                                </div>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper" id="wppb-force-2fa-roles-selector" <?php echo $force_2fa_enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $force_2fa_roles = array( );
+                                if ( !empty( $wppb_two_factor_authentication_settings['force_2fa_roles'] ) )
+                                    $force_2fa_roles = is_array( $wppb_two_factor_authentication_settings['force_2fa_roles'] ) ? $wppb_two_factor_authentication_settings['force_2fa_roles'] : array( $wppb_two_factor_authentication_settings['force_2fa_roles'] );
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-force-2fa-roles"><?php esc_html_e( 'Force 2FA For', 'profile-builder' ); ?></label>
+
+                                <select name="wppb_two_factor_authentication_settings[force_2fa_roles][]" id="wppb-force-2fa-roles" class="wppb-select wppb-select2" multiple>
+                                    <?php
+                                    // Only show roles that are enabled for 2FA
+                                    $enabled_roles = isset( $wppb_two_factor_authentication_settings['roles'] ) ? 
+                                                   $wppb_two_factor_authentication_settings['roles'] : array();
+                                    
+                                    // If '*' (all roles) is selected, show all roles
+                                    if ( in_array( '*', $enabled_roles, true ) ) {
+                                        foreach ($roles as $role_key => $role) {
+                                            echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $force_2fa_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
+                                        }
+                                    } else {
+                                        // Only show roles that are specifically enabled for 2FA
+                                        foreach ($enabled_roles as $enabled_role) {
+                                            if ( isset( $roles[$enabled_role] ) ) {
+                                                echo '<option value="' . esc_attr($enabled_role) . '"' . (in_array($enabled_role, $force_2fa_roles, true) ? ' selected' : '') . '>' . esc_html($roles[$enabled_role]['name']) . '</option>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </select>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Select which user roles will be forced to set up Two-Factor Authentication. Only roles that have 2FA enabled above are available.', 'profile-builder' ); ?></p>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper" id="wppb-force-2fa-grace-period" <?php echo $force_2fa_enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $grace_period_days = 0;
+                                if ( !empty( $wppb_two_factor_authentication_settings['grace_period_days'] ) )
+                                    $grace_period_days = intval( $wppb_two_factor_authentication_settings['grace_period_days'] );
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-force-2fa-grace-period-days"><?php esc_html_e( 'Grace Period', 'profile-builder' ); ?></label>
+
+                                <input type="number" name="wppb_two_factor_authentication_settings[grace_period_days]" id="wppb-force-2fa-grace-period-days" class="wppb-text" min="0" max="365" value="<?php echo esc_attr( $grace_period_days ); ?>" />
+
+                                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( 'Number of days users have to set up Two-Factor Authentication. Set to 0 for immediate enforcement.', 'profile-builder' ); ?></p>
+                            </div>
+
+                            <div class="cozmoslabs-form-field-wrapper" id="wppb-force-2fa-edit-profile-page-selector" <?php echo $force_2fa_enabled === 'no' ? 'style="display: none;"' : '' ?> >
+                                <?php
+                                $edit_profile_page_id = 'admin';
+                                if ( !empty( $wppb_two_factor_authentication_settings['edit_profile_page_id'] ) ) {
+                                    $edit_profile_page_id = $wppb_two_factor_authentication_settings['edit_profile_page_id'];
+                                }
+
+                                // Get pages with Edit Profile shortcode or block
+                                if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) {
+                                    require_once( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' );
+                                    $edit_profile_pages = WPPB_Two_Factor_Authenticator::get_edit_profile_pages();
+                                } else {
+                                    $edit_profile_pages = array();
+                                }
+                                ?>
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-force-2fa-edit-profile-page"><?php esc_html_e( 'Redirect to Edit Profile Page', 'profile-builder' ); ?></label>
+
+                                <select name="wppb_two_factor_authentication_settings[edit_profile_page_id]" id="wppb-force-2fa-edit-profile-page" class="wppb-select">
+                                    <option value="admin" <?php selected( $edit_profile_page_id, 'admin' ); ?>><?php esc_html_e( 'Admin Profile Page', 'profile-builder' ); ?></option>
+                                    <?php
+                                    if ( !empty( $edit_profile_pages ) ) {
+                                        foreach ( $edit_profile_pages as $page ) {
+                                            echo '<option value="' . esc_attr( $page['ID'] ) . '" ' . selected( $edit_profile_page_id, $page['ID'], false ) . '>' . esc_html( $page['title'] ) . '</option>';
+                                        }
+                                    }
+                                    ?>
+                                </select>
+
+                                <div class="cozmoslabs-description cozmoslabs-description-space-left">
+                                    <?php 
+                                    if ( empty( $edit_profile_pages ) ) {
+                                        echo '<div class="cozmoslabs-description cozmoslabs-description-upsell" style="margin-top: 10px;">' . esc_html__( 'No pages with Edit Profile forms found. Please create a page with the [wppb-edit-profile] shortcode or block.', 'profile-builder' ) . '</div>';
+                                    } else {
+                                        esc_html_e( 'Select which page users should be redirected to when they need to set up Two-Factor Authentication.', 'profile-builder' );
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+
+
+
+                        <?php else : ?>
+
+                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
+
+                                <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
+
+                                <div class="cozmoslabs-toggle-container">
+                                    <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
+                                    <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
+                                </div>
+
+                                <div class="cozmoslabs-toggle-description">
+                                    <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
+                                </div>
+
+                                <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
+                                    <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
+                                </p>
+
+                            </div>
+
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="cozmoslabs-form-subsection-wrapper">
                         <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Other features', 'profile-builder' ); ?></h4>
 
                         <div class="cozmoslabs-form-field-wrapper">
@@ -411,75 +836,6 @@ function wppb_general_settings_content() {
                             </div>
 
                         <?php } ?>
-
-                        <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
-
-                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-                                <?php
-                                $wppb_two_factor_authentication_settings = get_option( 'wppb_two_factor_authentication_settings', 'not_found' );
-
-                                $enabled = 'no';
-                                if ( !empty( $wppb_two_factor_authentication_settings['enabled'] ) )
-                                    $enabled = $wppb_two_factor_authentication_settings['enabled'];
-                                ?>
-
-                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
-
-                                <div class="cozmoslabs-toggle-container">
-                                    <input type="checkbox" name="wppb_two_factor_authentication_settings[enabled]" id="wppb-auth-enable" value="yes" <?php echo ($enabled === 'yes') ? 'checked' : ''; ?> >
-                                    <label class="cozmoslabs-toggle-track" for="wppb-auth-enable"></label>
-                                </div>
-
-                                <div class="cozmoslabs-toggle-description">
-                                    <label for="wppb-auth-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
-                                </div>
-                            </div>
-
-                            <div class="cozmoslabs-form-field-wrapper" id="wppb-auth-roles-selector" <?php echo $enabled === 'no' ? 'style="display: none;"' : '' ?> >
-                                <?php
-                                $roles = get_editable_roles( );
-                                $network_roles = array( );
-                                if ( !empty( $wppb_two_factor_authentication_settings['roles'] ) )
-                                    $network_roles = is_array( $wppb_two_factor_authentication_settings['roles'] ) ? $wppb_two_factor_authentication_settings['roles'] : array( $wppb_two_factor_authentication_settings['roles'] );
-                                ?>
-
-                                <label class="cozmoslabs-form-field-label" for="wppb-auth-enable-roles"><?php esc_html_e( 'Enable Authenticator For', 'profile-builder' ); ?></label>
-
-                                <select name="wppb_two_factor_authentication_settings[roles][]" id="wppb-auth-enable-roles" class="wppb-select wppb-select2" multiple>
-                                    <?php
-                                    echo '<option value="*"' . (in_array('*', $network_roles, true) ? ' selected' : '') . '>'. esc_html__('ALL ROLES', 'profile-builder') .'</option>';
-
-                                    foreach ($roles as $role_key => $role) {
-                                        echo '<option value="' . esc_attr($role_key) . '"' . (in_array($role_key, $network_roles, true) ? ' selected' : '') . '>' . esc_html($role['name']) . '</option>';
-                                    }
-                                    ?>
-                                </select>
-
-                                <p class="cozmoslabs-description cozmoslabs-description-space-left"><?php esc_html_e( '"ALL ROLES" - Two-Factor Authentication will be enabled for all user roles.', 'profile-builder' ); ?></p>
-                            </div>
-
-                        <?php else : ?>
-
-                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-
-                                <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
-
-                                <div class="cozmoslabs-toggle-container">
-                                    <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
-                                    <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
-                                </div>
-
-                                <div class="cozmoslabs-toggle-description">
-                                    <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
-                                </div>
-
-                                <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
-                                    <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
-                                </p>
-
-                            </div>
-
-                        <?php endif; ?>
 
                         <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
                             <label class="cozmoslabs-form-field-label" for="extraFieldsLayout"><?php esc_html_e('Load CSS', 'profile-builder'); ?></label>

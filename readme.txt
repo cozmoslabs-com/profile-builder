@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.0
+Stable tag: 3.15.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.15.1 =
+* Fix: Notice being triggered from the Login form
+* Fix: An issue where the form couldn't be submitted if Invisible reCaptcha was used in the form
+* Misc: Compatibility changes for the new feature to automatically request 2FA setup from users
+
 = 3.15.0 =
 * Enhancement: Updated Login form validation messages to be more general. Set the `wppb_login_use_old_error_messages` filter to true to return to the old behaviour
 * Enhancement: Updated Reset Password form validation messages to be more general. Set the `wppb_recover_password_use_old_error_messages` filter to true to return to the old behaviour

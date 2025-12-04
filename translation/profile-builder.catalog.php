@@ -270,6 +270,31 @@
 <?php __("Password Recovery Page", "profile-builder"); ?>
 <?php __("None", "profile-builder"); ?>
 <?php __("Select the page which contains the \"[wppb-recover-password]\" shortcode.", "profile-builder"); ?>
+<?php __("Two-Factor Authentication", "profile-builder"); ?>
+<?php __("Enable the Google Authenticator functionality.", "profile-builder"); ?>
+<?php __('Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ); ?>
+<?php __("Confirm Two-Factor Authentication Enforcement", "profile-builder"); ?>
+<?php __("Cancel", "profile-builder"); ?>
+<?php __("Confirm & Save", "profile-builder"); ?>
+<?php __("You are enforcing 2FA for the following user roles:", "profile-builder"); ?>
+<?php __("Users with these roles will be required to set up 2FA on their next login.", "profile-builder"); ?>
+<?php __("Warning:", "profile-builder"); ?>
+<?php __("Based on the configured settings, your account is also required to set up 2FA. Once you confirm this change, you will be redirected to set it up.", "profile-builder"); ?>
+<?php __("Require TOTP Verification on Profile Edit", "profile-builder"); ?>
+<?php __("Require users with Two-Factor Authentication enabled to verify their TOTP code every time they edit their profile. This setting is enabled by default.", "profile-builder"); ?>
+<?php __("Enable Authenticator For", "profile-builder"); ?>
+<?php __("ALL ROLES", "profile-builder"); ?>
+<?php __("\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles.", "profile-builder"); ?>
+<?php __("Force 2FA for Selected Roles", "profile-builder"); ?>
+<?php __("Force users with selected roles to set up Two-Factor Authentication. Users will be redirected to their profile page if 2FA is not configured.", "profile-builder"); ?>
+<?php __("Force 2FA For", "profile-builder"); ?>
+<?php __("Select which user roles will be forced to set up Two-Factor Authentication. Only roles that have 2FA enabled above are available.", "profile-builder"); ?>
+<?php __("Grace Period", "profile-builder"); ?>
+<?php __("Number of days users have to set up Two-Factor Authentication. Set to 0 for immediate enforcement.", "profile-builder"); ?>
+<?php __("Redirect to Edit Profile Page", "profile-builder"); ?>
+<?php __("Admin Profile Page", "profile-builder"); ?>
+<?php __("Select which page users should be redirected to when they need to set up Two-Factor Authentication.", "profile-builder"); ?>
+<?php __("No pages with Edit Profile forms found. Please create a page with the [wppb-edit-profile] shortcode or block.", "profile-builder"); ?>
 <?php __("Other features", "profile-builder"); ?>
 <?php __("Hide Admin Bar for User Roles", "profile-builder"); ?>
 <?php __("All User Roles", "profile-builder"); ?>
@@ -277,12 +302,6 @@
 <?php __("Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for.", "profile-builder"); ?>
 <?php __("Easily create new custom user roles or customize any existing user role capabilities.", "profile-builder"); ?>
 <?php __('You can add / edit user roles at %1$sUsers > Roles Editor%2$s.', 'profile-builder' ); ?>
-<?php __("Two-Factor Authentication", "profile-builder"); ?>
-<?php __("Enable the Google Authenticator functionality.", "profile-builder"); ?>
-<?php __('Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ); ?>
-<?php __("Enable Authenticator For", "profile-builder"); ?>
-<?php __("ALL ROLES", "profile-builder"); ?>
-<?php __("\"ALL ROLES\" - Two-Factor Authentication will be enabled for all user roles.", "profile-builder"); ?>
 <?php __("Load CSS", "profile-builder"); ?>
 <?php __('You can find the default file here: %1$s', 'profile-builder' ); ?>
 <?php __("Update Settings", "profile-builder"); ?>
@@ -938,7 +957,6 @@
 <?php __("reCaptcha could not be verified. Please try again.", "profile-builder"); ?>
 <?php __("Please enter a (valid) reCAPTCHA value", "profile-builder"); ?>
 <?php __("Incorrect phone number", "profile-builder"); ?>
-<?php __("Cancel", "profile-builder"); ?>
 <?php __("Content", "profile-builder"); ?>
 <?php __("<br><br>Also, you will be able to visit your site at ", "profile-builder"); ?>
 <?php __("<br><br>You can visit your site at ", "profile-builder"); ?>
@@ -1943,6 +1961,15 @@
 <?php __("Edit User Roles", "profile-builder"); ?>
 <?php __("Valid", "profile-builder"); ?>
 <?php __("Invalid", "profile-builder"); ?>
+<?php __("Backup Codes", "profile-builder"); ?>
+<?php __("Regenerate Backup Codes", "profile-builder"); ?>
+<?php __("Copy Codes", "profile-builder"); ?>
+<?php __("Download Codes", "profile-builder"); ?>
+<?php __("Regenerating will invalidate all existing codes. Continue?", "profile-builder"); ?>
+<?php __("Each code can only be used once. Please save these codes in a secure location.", "profile-builder"); ?>
+<?php __("remaining codes", "profile-builder"); ?>
+<?php __("Two-Factor Authentication is required for your role. Please set it up now.", "profile-builder"); ?>
+<?php __("You must set up Two-Factor Authentication within %d days. Your role requires 2FA for security.", "profile-builder"); ?>
 <?php __("Relaxed Mode", "profile-builder"); ?>
 <?php __("Allow for more time drift on your phone clock ( &#177;4 min ).", "profile-builder"); ?>
 <?php __("Description that you'll see in the Authenticator app.", "profile-builder"); ?>
@@ -1952,14 +1979,30 @@
 <?php __("Scan this with the Authenticator app:", "profile-builder"); ?>
 <?php __("Verify TOTP", "profile-builder"); ?>
 <?php __("Check", "profile-builder"); ?>
+<?php __("%d remaining codes", "profile-builder"); ?>
+<?php __("No remaining codes!", "profile-builder"); ?>
+<?php __("%d remaining codes!", "profile-builder"); ?>
 <?php __("Two-Factor Authentication Settings", "profile-builder"); ?>
 <?php __("Description that you'll see in the Authenticator app on your phone.", "profile-builder"); ?>
 <?php __("Create new secret", "profile-builder"); ?>
 <?php __("Show/Hide QR code", "profile-builder"); ?>
+<?php __("Two-Factor Authentication is required for your role. Please enable it.", "profile-builder"); ?>
+<?php __("You cannot disable Two-Factor Authentication as it is required for your role.", "profile-builder"); ?>
+<?php __("Two-Factor Authentication has been successfully set up!", "profile-builder"); ?>
+<?php __("Continue to your destination", "profile-builder"); ?>
+<?php __("Please verify TOTP to edit your profile.", "profile-builder"); ?>
 <?php __("Please verify TOTP to change Two-Factor Authentication settings", "profile-builder"); ?>
+<?php __("Please verify TOTP to set up Two-Factor Authentication", "profile-builder"); ?>
 <?php __("Please enter the code from your Authenticator app.", "profile-builder"); ?>
 <?php __("Your Authenticator code was incorrect. Please try again.", "profile-builder"); ?>
-<?php __("Authenticator Code", "profile-builder"); ?>
+<?php __("Authentication Code", "profile-builder"); ?>
+<?php __("Enter your 6-digit authenticator code or 16-digit backup code.", "profile-builder"); ?>
+<?php __("Your role requires Two-Factor Authentication. Please set it up immediately.", "profile-builder"); ?>
+<?php __("Your role requires Two-Factor Authentication. You have %d days remaining to set it up.", "profile-builder"); ?>
+<?php __("Set up 2FA Now", "profile-builder"); ?>
+<?php __("User not logged in.", "profile-builder"); ?>
+<?php __("Please wait before regenerating backup codes again.", "profile-builder"); ?>
+<?php __("Backup codes generated", "profile-builder"); ?>
 <?php __("The usernames cannot be changed.", "profile-builder"); ?>
 <?php __("This Profile Builder add-on has been migrated to the main plugin and is no longer used. You can delete it.", "profile-builder"); ?>
 <?php __("ERROR", "profile-builder"); ?>
