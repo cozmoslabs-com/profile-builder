@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.1
+Stable tag: 3.15.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.15.2 =
+* Fix: A security issue. Immediate update is advised. Thanks to the WPScan team
+
 = 3.15.1 =
 * Fix: Notice being triggered from the Login form
 * Fix: An issue where the form couldn't be submitted if Invisible reCaptcha was used in the form
