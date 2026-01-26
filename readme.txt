@@ -208,9 +208,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 == Changelog ==
 = 3.15.3 =
 **Enhancements:**
+
 * Added extra parameter to the Edit Profile shortcode to filter ther users that are displayed in the Edit Other Users Dropdown for admins: admin_edit_roles="contributor,editor"
 
 **Fixes:**
+
 * Fix error being thrown from the GDPR Communication Preferences field in combination with Email Confirmation
 * Fix issue with the Email Confirmation functionality that could affect registrations in some cases
 * An issue on mobile devices with the Show/Hide password toggles
@@ -219,6 +221,7 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 * Fix an issue with the Roles Editor next step sending users to a broken page in some situations
 
 **Compatibility:**
+
 * Compatibility changes to allow the Email Customizer page to correctly save when the Events Tickets Plus plugin is also active
 
 = 3.15.2 =
