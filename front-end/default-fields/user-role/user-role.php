@@ -226,3 +226,22 @@ function wppb_userdata_add_user_role( $userdata, $global_request, $form_args ){
     return $userdata;
 }
 add_filter( 'wppb_build_userdata', 'wppb_userdata_add_user_role', 10, 3 );
+
+//Activating Roles Editor from setup wizard
+function wppb_handle_enable_roles_editor(){
+
+    if ( !isset( $_GET['wppb_nonce'] ) || !wp_verify_nonce( sanitize_text_field( $_GET['wppb_nonce'] ), 'wppb_enable_roles_editor_nonce' ) || !current_user_can( 'manage_options' ) )
+        return;
+
+    $wppb_generalSettings = get_option( 'wppb_general_settings', 'not_found' );
+
+    if ( $wppb_generalSettings !== 'not_found' && is_array( $wppb_generalSettings ) ) {
+        $wppb_generalSettings['rolesEditor'] = 'yes';
+        update_option( 'wppb_general_settings', $wppb_generalSettings );
+    }
+
+    // Redirect to Roles Editor page
+    wp_safe_redirect( admin_url( 'edit.php?post_type=wppb-roles-editor' ) );
+    exit;
+}
+add_action( 'admin_init', 'wppb_handle_enable_roles_editor', 9 );

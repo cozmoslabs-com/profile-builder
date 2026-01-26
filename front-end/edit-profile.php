@@ -88,11 +88,12 @@ function wppb_front_end_profile_info( $atts ){
         'form_name'         => 'unspecified',
         'redirect_url'      => '',
         'redirect_priority' => 'normal',
-        'ajax'              => false
+        'ajax'              => false,
+        'admin_edit_roles' => ''
     ), $atts, 'wppb-edit-profile' );
 
     $form = new Profile_Builder_Form_Creator(
-        array( 'form_type' => 'edit_profile', 'form_name' => $atts['form_name'], 'redirect_url' => $atts['redirect_url'], 'redirect_priority' => $atts['redirect_priority'], 'ajax' => $atts['ajax'] )
+        array( 'form_type' => 'edit_profile', 'form_name' => $atts['form_name'], 'redirect_url' => $atts['redirect_url'], 'redirect_priority' => $atts['redirect_priority'], 'ajax' => $atts['ajax'], 'admin_edit_roles' => $atts['admin_edit_roles'] )
     );
 
     return $form;

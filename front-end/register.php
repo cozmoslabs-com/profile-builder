@@ -141,6 +141,7 @@ function wppb_activate_signup( $key ) {
                                     $redirect_url = wppb_curpageurl();
                                 }
                                 $redirect_message = wppb_activate_signup_autologin_redirect_url($user_id, $redirect_url, $redirect_delay);
+                                $redirect_message = apply_filters( 'wppb_ec_sucess_message_redirect', $redirect_message, $meta );
                             }
 
 							return $success_message . ( ! empty ( $redirect_message ) ? $redirect_message : '' );
@@ -158,6 +159,7 @@ function wppb_activate_signup( $key ) {
                         $redirect_url = wppb_curpageurl();
                     }
                     $redirect_message = wppb_activate_signup_autologin_redirect_url($user_id, $redirect_url, $redirect_delay);
+                    $redirect_message = apply_filters( 'wppb_ec_sucess_message_redirect', $redirect_message, $meta );
                 }
 
                 return $success_message . ( ! empty ( $redirect_message ) ? $redirect_message : '' );

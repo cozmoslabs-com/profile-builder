@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.2
+Stable tag: 3.15.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,21 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.15.3 =
+**Enhancements:**
+* Added extra parameter to the Edit Profile shortcode to filter ther users that are displayed in the Edit Other Users Dropdown for admins: admin_edit_roles="contributor,editor"
+
+**Fixes:**
+* Fix error being thrown from the GDPR Communication Preferences field in combination with Email Confirmation
+* Fix issue with the Email Confirmation functionality that could affect registrations in some cases
+* An issue on mobile devices with the Show/Hide password toggles
+* Make sure a redirect message filter gets applied in all cases over a success message
+* Fix some potential notices that could be triggered from some Email Customizer functions
+* Fix an issue with the Roles Editor next step sending users to a broken page in some situations
+
+**Compatibility:**
+* Compatibility changes to allow the Email Customizer page to correctly save when the Events Tickets Plus plugin is also active
+
 = 3.15.2 =
 * Fix: A security issue. Immediate update is advised. Thanks to the WPScan team
 
@@ -219,205 +234,5 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 * Enhancement: Updated Reset Password form validation messages to be more general. Set the `wppb_recover_password_use_old_error_messages` filter to true to return to the old behaviour
 * Fix: Compatibility issue between reCaptcha v3 and 2FA
 * Misc: Updated styling for the Login form widget
-
-= 3.14.9 =
-* Enhancement: When reCaptcha v3 is enabled on the Login form, disable the submit button until the reCaptcha token is retrieved
-* Fix: Issue with Authenticated Stored CSS via shortcode parameters for the [wppb-embed] shortcode. Thanks to Muhammad Yudha and the Wordfence team
-* Fix: Exclude some WooCommerce and Ultimate Member queries from the Exclude restricted posts from queries functionality
-* Misc: Added filters to prefill input values to each custom field
-
-= 3.14.8 =
-* Enhancement: Add automatic updates support for paid versions
-* Fix: Added support to Labels Edit to change back-end strings
-* Fix: Issue with Labels Edit not being able to select the correct option in the label to edit dropdown when trying to edit labels with HTML in them
-* Fix: Issue with Labels Edit not being able to edit some labels that contained certain HTML
-* Misc: Changed validation failed message for Invisible and reCaptcha v3 message
-* Misc: Fix a notice coming from the usermeta shortcode
-
-= 3.14.7 =
-* Fix: A notice being thrown from the Edit Profile Elementor widget in some cases
-* Fix: Password visibility toggle not working correctly
-* Fix: Set autoload to no for some back-end only options
-* Misc: Use Gutenberg Blocks instead of shortcodes when plugin pages are created automatically through the Setup Wizard
-
-= 3.14.6 =
-* Fix: Front-end styles fixes for different cases
-* Fix: Issue with the Content Restriction functionality breaking WooCommerce products with variations from being added to cart
-* Fix: Conflict with the Porto Theme functionality plugin when the Email Customizer page was saved
-* Fix: Simple upload field duplicating files when Email Confirmation is enabled
-* Misc: The Labels Edit add-on is now able to also change gettext strings with context
-* Misc: Added a tool that can be used to cleanup postmeta of unnecessarily added entries from the Labels Edit add-on. Go to Settings -> Advanced Settings -> Admin to use it
-
-= 3.14.5 =
-* Fix: Change field ids for the login form in order to fix ID conflict when both the login and register forms are placed on the same page
-* Fix: Issue with reCaptcha v3 and AJAX on Forms where if 2 forms where placed on a single page and one of them didn't have reCaptcha v3 active, the other form couldn't be submitted anymore
-* Fix: Issue with not being able to activate add-ons on multisite environments
-* Misc: Fix a display issue with the Select User to Edit dropdown in front-end
-
-= 3.14.4 =
-* Fix: Security issue regarding Authenticated Stored Cross-Site Scripting coming from the GDPR Communication Preferences add-on. Thanks to Alex and the Wordfence team
-* Fix: Allow the activation of free add-ons without a license
-
-= 3.14.3 =
-* Fix: Issue with the email confirmation user activated hook executed twice when the register form was inserted using Blocks
-* Misc: Don't allow moving the Email Confirmation content boxes to the metaboxes sidebar
-* Misc: Fix a notice that could appear when bulk deleting unconfirmed email users
-* Misc: Added a filter that can be used to still place the user in Admin Approval, if Email Confirmation is also enabled and the admin confirms the email: wppb_admin_email_confirmation_maybe_use_admin_approval
-
-= 3.14.2 =
-* Enhancement: Improved back-end messages informing what features are available depending on license
-* Fix: Position of field descriptions on block themes
-* Fix: Adjusted sanitization for custom field values to not delete arrays
-* Fix: Issue with reCaptcha v3 not working in a scenario with the Gutenberg Block for register forms
-
-= 3.14.1 =
-* Fix: Make sure only valid Setup Wizard tabs can be loaded
-* Fix: Sorting indicator position for back-end tables
-* Fix: Allow WYSIWYG fields to output HTML through the usermeta shortcode
-* Fix: Add support for WPML translation for the input and textarea default value fields
-* Misc: Fix a random issue with some parameters in a string
-* Misc: Add success notice after email update when email confirmation is enabled
-* Misc: Password reset error message to take into account the Allow Users to Login with option
-
-= 3.14.0 =
-* Fix: Issue with the Submit button box positioning inside the Classic Editor
-
-= 3.13.9 =
-* Fix: Security issue regarding Authenticated Stored Cross Site Scripting via user_meta and compare shortcodes. Thanks to Muhammad Yudha and the Wordfence team
-* Fix: Security issue regarding Content Spoofing with paid version active. Thanks to Truong Huu Phuc and the Patchstack team
-* Fix: When a user tries to access restricted content and is sent to a Profile Builder login form, after a successful login he should now return to the restricted content. This new behaviour can be disabled using a filter: wppb_add_redirect_to_param
-* Fix: Improve behaviour of floating submit button on settings pages
-* Fix: The `Redirect on empty required field option` is now taking into account Conditional Logic rules
-* Misc: Added unique index to the signups table we create on single sites when the Email Confirmation functionality is used
-
-= 3.13.8 =
-* Enhancement: Added an option to the content restriction shortcode to display some content only to users that do not have certain roles: [wppb-restrict display_to="not_role" user_roles="subscriber"]Content[/wppb-restrict]
-* Enhancement: Added `All User Roles` and `All User Roles except Admin` options to the admin bar settings to make it easier to disable globally
-* Enhancement: Show a message to users when the [wppb-register] shortcode does not work because it is placed on a page that was not created by an Administrator
-* Fix: Removed CSS that was hiding Login and Password Recovery form labels unnecessarily in the block editor
-* Misc: Added a filter to revert to the previous content restriction functionality where the restriction rules would not apply if the logged in users box is not checked as well. Set the filter to false to revert to the previous functionality: wppb_content_restriction_enable_user_roles_without_logged_in_option
-* Misc: Compatibility changes with OceanWP theme
-* Misc: Block themes - adjusted bottom margin of fields
-
-= 3.13.7 =
-* Enhancement: Added multisite compatibility to the Multiple User Roles functionality
-* Fix: XSS issue with the message parameter of the wppb-restrict shortcode. Thanks to yudha and the Wordfence team
-* Fix: A notice that could be triggered from the usermeta shortcode in some cases
-* Fix: Issue with Content Restriction metabox not applying rules correctly if logged in users was not checked
-* Misc: Correctly localize confirm email message
-* Misc: Correct $user_id parameter on the `wppb_register_activate_user_error_message2` filter when Login With Email Only was enabled
-
-= 3.13.6 =
-* Fix: Security issue with the link_text parameter of the wppb-logout shortcode. Thanks to yudha and the Wordfence team
-* Fix: Do not save postmeta entries for unrelated custom post types
-* Fix: For the Select2 and Select2 multiple fields
-* Misc: Added a button on the Advanced Settings -> Admin page that will clear some unnecessary post meta keys that were added to unrelated Profile Builder custom post types. This option will disappear once used
-* Misc: Updated add-on icons
-* Misc: reCaptcha compatibility with a future Paid Member Subscriptions update
-
-= 3.13.5 =
-* Fix: Issue with Password Visibility toggle not being placed correctly in all cases
-* Fix: Allow the password strength meter to work if multiple forms using it are placed on the same page
-* Fix: Some notices coming from the score threshold options added for reCaptcha v3
-* Fix: Translation notice coming from the plugin
-* Fix: Some notices that were thrown from the Email Customizer functionality in some cases
-* Misc: Added a custom filter that can be used to add extra validations to the password reset process: wppb_recover_password_extra_validation
-* Misc: Delayed loading of a random script until jQuery is loaded
-* Misc: Fixed a display issue on front-end forms with block themes for the Paid Member Subscriptions currency switcher select
-* Misc: Small adjustments to back-end pages
-
-= 3.13.4 =
-* Feature: Added score threshold option to the reCaptcha v3 integration
-* Misc: Added a filter that can be used to remove unapproved users from the front-end admin Edit Other Users dropdown: wppb_edit_other_users_dropdown_user_list_excludes_admin_approval
-* Misc: When Login With is set to Email only, remove leading and trailing whitespace from the Email field on the Login form
-
-= 3.13.3 =
-* Fix: Issue with styling getting broken on the website generated with the latest update
-
-= 3.13.2 =
-* Fix: Correctly save Content Restriction metabox selected user roles, even if the logged in users option is not selected
-* Fix: An issue that in some cases was causing the form not to be submitted after reCaptcha was verified
-* Fix: More fixes for the translation loaded too early messages that started appearing with WordPress 6.7
-* Fix: UPP now only shows the image uploader to users that can actually upload avatars
-* Fix: Usage of deprecated functionality inside UPP
-* Fix: Add compatibility for the Simple Upload functionality when the Stripe Paid Member Subscriptions gateway is being used in the form
-* Misc: Reworked Gutenberg Blocks for forms
-* Misc: Added compatibility with the Elementor Loop Grid widget when removing restricted posts from queries
-* Misc: Fix a notice that could appear in some cases
-* Misc: Added a filter that can be used to adjust the avatar size from User Profile Picture: wppb_user_profile_picture_avatar_size
-
-= 3.13.1 =
-* Fix: Disabled autocomplete for the password field on the Edit Profile form
-* Fix: Increase specificity for some Elementor Styling rules so they can overwrite Form Designs
-* Misc: Localize the text on the Dashboard page
-* Misc: Added a filter to process the textarea field value just like before allowing HTML to be saved: wppb_form_field_textarea_escape_on_save
-* Misc: Properly prefix the recaptcha v3 styles function
-* Misc: Make sure Color Switcher settings disappear when Pro is disabled
-
-= 3.13.0 =
-* Fix: Security issue relating to Unauthenticated Stored Cross-Site Scripting. Thanks to Brian Mungah for the report
-* Fix: Add compatibility with Elementor Element Cache to our Content Restriction integration and form widgets
-* Fix: A compatibility issue between the bypass EC on form feature and autologin
-* Fix: A situation where the autologin feature was not working when used in a form that was selling a Paid Member Subscriptions plan through the PayPal Express gateway
-* Misc: Run a custom action after an user role is added through the User Role Editor: wppb_user_role_added
-* Misc: Small changes to the Blog Detail field
-* Misc: Correct styling for a notice
-
-= 3.12.9 =
-* Fix: More fixes relating to the doing it wrong WordPress 6.7 notice
-* Misc: Allow the usermeta shortcode to display user roles. Use the `role` key to display them
-
-= 3.12.8 =
-* Fix: Make sure that the restricted meta name check always runs regardless of field settings
-* Fix: PHP Notice that started appearing with the WordPress 6.7 update
-* Fix: Issue with Select2 not initialising correctly
-* Fix: Compatibility issue between Labels Edit and the Multi Step Forms add-on when saving MSF admin settings
-
-= 3.12.7 =
-* Fix: Error appearing on the Advanced Settings -> Forms tab
-* Misc: Add support to the automatically generate password feature to work in the User Approval Email
-* Misc: Allow admins to select user roles directly for content restriction without first checking the logged in checkbox
-* Misc: Small visual changes to the Setup Wizard
-
-= 3.12.6 =
-* Fix: Security issue regarding the refresh function of the Divi admin builder interface module
-* Fix: A notice that could appear in some cases
-* Fix: Divi Userlisting module issue where the selected meta_key wasn't being displayed correctly in the front-end
-* Misc: Improve search functionality for the Labels Edit strings selector
-* Misc: Added a JS filter over the Select2 field arguments: wppb_select2_initialize_arguments
-
-= 3.12.5 =
-* Feature: Added support for reCaptcha v3
-* Misc: Remove some unnecessary calls when looking to enqueue the Select Users to Edit dropdown
-* Misc: Fix a title display issue with our own CPTs
-
-= 3.12.4 =
-* Feature: Added option to exclude restricted posts from default queries. Go to Settings -> Content Restriction to enable this functionality
-* Feature: Added possibility to exclude an URL from the Private Website functionality through a query string
-* Fix: Security issue with the remove thumbnail ajax function from the User Profile Picture add-on. Thanks to the Plugin Vulnerabilities team
-* Fix: Pagination not working for the Users with unconfirmed email addresses page
-* Fix: Issue with Upload Fields not working correctly when used inside a Repeater Field
-* Misc: Add current form name to Email Confirmation registrations which are saved for later use
-* Misc: Small form settings page changes
-
-= 3.12.3 =
-* Fix: Security issues. Thanks to the Plugin Vulnerabilities team
-* Fix: Issue with Gutenberg Content Restriction not retrieving the saved user roles correctly
-* Fix: Conflict with LearnPress plugin when saving the Email Customizer settings page
-* Misc: Display fixes for the Show Password toggle
-
-= 3.12.2 =
-* Fix: Actually include the security changes
-
-= 3.12.1 =
-* Fix: Security issue relating to back-end form fields. Thanks to John Castro from WPScan
-* Misc: Remove extra back-end styling that was being added to titles of CPTs
-* Misc: Make sure the WYSIWYG element shows all the items added to the toolbar
-
-= 3.12.0 =
-* Feature: User Profile Picture free add-on - allow your users to set or edit a custom profile image using the standard WordPress media tools. Available through Gutenberg Blocks or custom insertion in the theme template
-* Fix: A notification regarding the resend email confirmation feature
-* Fix: Localize resend email confirmation shortcode messages
-* Misc: Added alt text for password visibility toggle
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

@@ -1544,6 +1544,7 @@
 <?php __("Country", "profile-builder"); ?>
 <?php __("Company Name", "profile-builder"); ?>
 <?php __("Address", "profile-builder"); ?>
+<?php __("Address 2", "profile-builder"); ?>
 <?php __("Town / City", "profile-builder"); ?>
 <?php __("State / County", "profile-builder"); ?>
 <?php __("Postcode / Zip", "profile-builder"); ?>

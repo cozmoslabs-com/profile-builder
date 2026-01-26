@@ -167,7 +167,8 @@ function wppb_gdprcp_save_gdpr_communication_preferences( $null, $object_id, $me
         if( empty( $existing_values ) )
             $existing_values = array();
 
-        $meta_value_array = explode( ',', $meta_value );
+        if( !is_array( $meta_value ) )
+            $meta_value_array = explode( ',', $meta_value );
 
         if( !empty( $meta_value_array ) ){
             foreach( $meta_value_array as $key => $value ){

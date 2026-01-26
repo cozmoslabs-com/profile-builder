@@ -69,6 +69,11 @@ class Profile_Builder_Form_Creator{
 
         //enqueue frontend scripts for forms
         add_action( 'wp_footer', array( $this, 'wppb_frontend_scripts' ), 9999 );
+
+        //admin_edit_roles parameter
+        if( !empty( $this->args['admin_edit_roles'] ) ){
+            add_filter( 'wppb_edit_other_users_dropdown_query_args', array( $this, 'wppb_admin_edit_roles' ), 10, 2 );
+        }
 	}
 
     /**
@@ -835,6 +840,35 @@ class Profile_Builder_Form_Creator{
         else{
             echo '<p id="wppb-no-other-users-to-edit">'. esc_html( apply_filters( 'wppb_no_users_to_edit_message', __( 'There are no other users to edit', 'profile-builder' ) ) ).'</p>';
         }
+    }
+
+    public function wppb_admin_edit_roles( $query_args, $form_name ){
+        $admin_edit_roles = $this->args['admin_edit_roles'];
+
+        $admin_edit_roles = array_filter( array_map( 'trim', explode( ',', (string) $admin_edit_roles ) ) );
+        $admin_edit_roles = array_map( 'sanitize_key', $admin_edit_roles );
+        $admin_edit_roles = array_values( array_unique( $admin_edit_roles ) );
+
+        global $wp_roles;
+        if ( ! $wp_roles ) {
+            $wp_roles = wp_roles();
+        }
+
+        $roles = array();
+        foreach ( $admin_edit_roles as $admin_edit_role ){
+            if ( isset( $wp_roles->roles[$admin_edit_role] ) )
+                $roles[] = $admin_edit_role;
+        }
+
+        if ( empty( $roles ) ) {
+            return $query_args;
+        }
+
+        unset( $query_args['role'] );
+        $query_args['role__in'] = $roles;
+
+        return $query_args;
+
     }
 
     static function wppb_frontend_scripts(){

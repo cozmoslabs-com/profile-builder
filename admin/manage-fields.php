@@ -743,9 +743,27 @@ function wppb_country_select_options( $form_location ) {
 		)
 	);
 
-	return $country_array;
+	return wppb_translate_countries( $country_array );
 }
 
+/**
+ * Helper function to translate country names with WPML
+ * Registers strings in WPML String Translation and returns translated value
+ */
+function wppb_translate_countries( $countries ) {
+
+    if ( !function_exists( 'icl_register_string' ) || !function_exists( 'icl_t' ) ) {
+        return $countries;
+    }
+
+    foreach( $countries as $index => $country ){
+        $prefix = 'country_' . $country;
+        icl_register_string( 'profile-builder', $prefix, $country );
+        $countries[$index] = icl_t( 'profile-builder', $prefix, $country );
+    }
+
+    return $countries;
+}
 
 /**
  * Function that returns an array with timezone options

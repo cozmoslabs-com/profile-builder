@@ -105,7 +105,7 @@ function wppb_email_customizer_generate_meta_merge_tags(){
 
 function wppb_email_customizer_admin_approval_new_user_signup_filter_handler( $default_string, $user_email, $user_password, $email_sent_from, $option_name ){
     $email_customizer_option = get_option( $option_name, 'not_found' );
-    if ( $email_customizer_option != 'not_found' ){
+    if ( $email_customizer_option != 'not_found' && !empty( $user_email ) ){
         $user_data = get_user_by( 'email', $user_email );
         $special_merge_tags = ( current_filter() == 'wppb_register_admin_email_message_with_admin_approval' ) ?  'admin_approval' : '';
 		wppb_change_email_from_headers();
@@ -122,7 +122,7 @@ function wppb_email_customizer_admin_approval_new_user_signup_subject_filter_han
 		$email_customizer_option = get_option( $option_name, 'not_found' );
 	}
 
-	if ( $email_customizer_option != 'not_found' ){
+	if ( $email_customizer_option != 'not_found' && !empty( $user_email ) ){
 		$user_data = get_user_by( 'email', $user_email );
 		wppb_change_email_from_headers();
 		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_id' => $user_data->ID, 'user_login' => $user_data->user_login, 'user_email' => $user_email, 'user_password' => $user_password, 'user_data' => $user_data, 'email_sent_from' => $email_sent_from ) );
@@ -138,7 +138,7 @@ function wppb_email_customizer_admin_approval_new_user_signup_message_filter_han
 		$email_customizer_option = get_option( $option_name, 'not_found' );
 	}
 
-	if ( $email_customizer_option != 'not_found' ){
+	if ( $email_customizer_option != 'not_found' && !empty( $user_email ) ){
 		$user_data = get_user_by( 'email', $user_email );
 		wppb_change_email_from_headers();
 		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_id' => $user_data->ID, 'user_login' => $user_data->user_login, 'user_email' => $user_email, 'user_password' => $user_password, 'user_data' => $user_data, 'email_sent_from' => $email_sent_from ) );
@@ -190,7 +190,7 @@ function wppb_email_customizer_password_reset_content_filter_handler( $default_s
 function wppb_email_customizer_password_reset_title_filter_handler( $default_string, $username ) {
 	$email_customizer_option = get_option( 'wppb_user_emailc_reset_email_subject', 'not_found' );
 
-	if( $email_customizer_option != 'not_found' ) {
+	if( $email_customizer_option != 'not_found' && !empty( $username ) ) {
 		wppb_change_email_from_headers();
         $user_info = get_user_by( 'login', $username );
         if( !empty( $user_info->data->user_email ) )
@@ -206,7 +206,7 @@ function wppb_email_customizer_password_reset_title_filter_handler( $default_str
 function wppb_email_customizer_password_reset_success_content_filter_handler( $default_string, $username, $new_password, $userID ) {
 	$email_customizer_option = get_option( 'wppb_user_emailc_reset_success_email_content', 'not_found' );
 
-	if( $email_customizer_option != 'not_found' ) {
+	if( $email_customizer_option != 'not_found' && !empty( $userID ) ) {
         $user_info = get_userdata( $userID );
 		wppb_change_email_from_headers();
 		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username, 'user_password' => $new_password, 'user_id' => $userID, 'user_email' => $user_info->user_email ) );
@@ -218,7 +218,7 @@ function wppb_email_customizer_password_reset_success_content_filter_handler( $d
 function wppb_email_customizer_password_reset_success_title_filter_handler( $default_string, $username ) {
 	$email_customizer_option = get_option( 'wppb_user_emailc_reset_success_email_subject', 'not_found' );
 
-	if( $email_customizer_option != 'not_found' ) {
+	if( $email_customizer_option != 'not_found' && !empty( $username ) ) {
         $user_info = get_user_by( 'login', $username );
 		/* we could have email instead of username in $username */
 		if( !$user_info )
@@ -238,7 +238,7 @@ function wppb_email_customizer_password_reset_success_title_filter_handler( $def
 function wppb_admin_email_customizer_password_reset_content_filter_handler( $default_string, $username, $new_password, $userID ) {
 	$email_customizer_option = get_option( 'wppb_admin_emailc_user_password_reset_email_content', 'not_found' );
 
-	if( $email_customizer_option != 'not_found' ) {
+	if( $email_customizer_option != 'not_found' && !empty( $userID ) ) {
         $user_info = get_userdata( $userID );
 		wppb_change_email_from_headers();
 		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username, 'user_password' => $new_password, 'user_id' => $userID, 'user_email' => $user_info->user_email ) );
@@ -250,7 +250,7 @@ function wppb_admin_email_customizer_password_reset_content_filter_handler( $def
 function wppb_admin_email_customizer_password_reset_title_filter_handler( $default_string, $username ) {
 	$email_customizer_option = get_option( 'wppb_admin_emailc_user_password_reset_email_subject', 'not_found' );
 
-	if( $email_customizer_option != 'not_found' ) {
+	if( $email_customizer_option != 'not_found' && !empty( $username ) ) {
         $user_info = get_user_by( 'login', $username );
 		/* we could have email instead of username in $username */
 		if( !$user_info )
@@ -332,7 +332,7 @@ function wppb_email_customizer_change_email_address_content_filter_handler ( $de
 function wppb_email_customizer_epaa_title_filter_handler ( $default, $user_id, $approved_field_names, $unapproved_field_names ){
     $email_customizer_option = get_option( 'wppb_user_emailc_epaa_notification_subject', 'not_found' );
 
-    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) ) {
+    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) && !empty( $user_id ) ) {
         $user_info = get_user_by( 'id', $user_id );
         $subject = (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'epaa_notification' ), $email_customizer_option, array( 'user_login' => $user_info->data->user_login, 'user_email' => $user_info->data->user_email, 'user_id' => $user_info->data->ID, 'approved_field_names' => $approved_field_names, 'unapproved_field_names' => $unapproved_field_names ) );
 
@@ -346,7 +346,7 @@ function wppb_email_customizer_epaa_title_filter_handler ( $default, $user_id, $
 function wppb_email_customizer_epaa_content_filter_handler ( $default, $user_id, $approved_field_names, $unapproved_field_names ){
     $email_customizer_option = get_option( 'wppb_user_emailc_epaa_notification_content', 'not_found' );
 
-    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) ) {
+    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) && !empty( $user_id ) ) {
         $user_info = get_user_by( 'id', $user_id );
         $email_content = (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'epaa_notification' ), $email_customizer_option, array( 'user_login' => $user_info->data->user_login, 'user_email' => $user_info->data->user_email, 'user_id' => $user_info->data->ID, 'approved_field_names' => $approved_field_names, 'unapproved_field_names' => $unapproved_field_names ) );
 
@@ -360,7 +360,7 @@ function wppb_email_customizer_epaa_content_filter_handler ( $default, $user_id,
 function wppb_admin_email_customizer_epaa_title_filter_handler ( $default, $user_id, $fields, $approve_url ){
     $email_customizer_option = get_option( 'wppb_admin_emailc_epaa_notification_subject', 'not_found' );
 
-    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) ) {
+    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) && !empty( $user_id ) ) {
         $user_info = get_user_by( 'id', $user_id );
         $subject = (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'epaa_notification_admin' ), $email_customizer_option, array( 'user_login' => $user_info->data->user_login, 'user_email' => $user_info->data->user_email, 'user_id' => $user_info->data->ID, 'modified_fields' => $fields, 'approval_url' => $approve_url ) );
 
@@ -374,7 +374,7 @@ function wppb_admin_email_customizer_epaa_title_filter_handler ( $default, $user
 function wppb_admin_email_customizer_epaa_content_filter_handler ( $default, $user_id, $fields, $approve_url ){
     $email_customizer_option = get_option( 'wppb_admin_emailc_epaa_notification_content', 'not_found' );
 
-    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) ) {
+    if( $email_customizer_option != 'not_found' && class_exists( 'PB_Mustache_Generate_Template' ) && !empty( $user_id ) ) {
         $user_info = get_user_by( 'id', $user_id );
         $email_content = (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'epaa_notification_admin' ), $email_customizer_option, array( 'user_login' => $user_info->data->user_login, 'user_email' => $user_info->data->user_email, 'user_id' => $user_info->data->ID, 'modified_fields' => $fields, 'approval_url' => $approve_url ) );
 

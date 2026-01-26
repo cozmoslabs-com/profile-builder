@@ -385,6 +385,17 @@ class WPPB_Setup_Wizard {
     }
 
     public static function get_progress_steps() {
+
+        $wppb_generalSettings = get_option( 'wppb_general_settings', 'not_found' );
+        $roles_editor_enabled = ( $wppb_generalSettings !== 'not_found' && isset( $wppb_generalSettings['rolesEditor'] ) && !empty( $wppb_generalSettings['rolesEditor'] ) && $wppb_generalSettings['rolesEditor'] === 'yes' );
+
+        if ( $roles_editor_enabled ) {
+            $roles_editor_url = admin_url( 'edit.php?post_type=wppb-roles-editor' );
+        } else {
+            // URL with nonce for activating Roles Editor
+            $roles_editor_url = wp_nonce_url( admin_url( 'admin.php?action=wppb_enable_roles_editor' ), 'wppb_enable_roles_editor_nonce', 'wppb_nonce' );
+        }
+
         $progress_steps = array(
             'user-pages'         => array(
                 'label' => __( 'Create user pages for registration, login, edit profile and password reset.', 'profile-builder' ),
@@ -408,7 +419,7 @@ class WPPB_Setup_Wizard {
             ),
             'extra_user_roles'   => array(
                 'label'  => __( 'Create new user roles with the Role Editor.', 'profile-builder' ),
-                'url'    => 'edit.php?post_type=wppb-roles-editor',
+                'url'    => $roles_editor_url,
             ),
         );
 

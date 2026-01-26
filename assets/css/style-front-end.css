@@ -985,12 +985,6 @@ li.wppb-facet-search {
     .wppb-form-field .wppb-upload-file {
         margin-left: 0;
     }
-
-    .wppb-form-field.wppb-default-password button.wppb-toggle-pw,
-    .wppb-form-field.wppb-default-repeat-password button.wppb-toggle-pw,
-    #wppb-login-wrap .login-password button.wppb-toggle-pw {
-        top: 6px !important;
-    }
 }
 
 

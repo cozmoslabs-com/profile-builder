@@ -315,10 +315,14 @@ add_action('init', 'wppb_toolbox_handle_email_change');
  * @return mixed
  */
 function wppb_toolbox_remove_email_from_userdata_update( $userdata ) {
-    $transient_check_key = apply_filters('wppb_pending_email_change_transient_key', '');
-    $transient_check = get_transient('wppb_pending_email_change_request_exists_' . $transient_check_key);
+    $transient_check_key = apply_filters( 'wppb_pending_email_change_transient_key', '' );
 
-    if ($transient_check !== false && ( !isset( $_POST['action'] ) || $_POST['action'] != 'register' ) )
+    if( empty( $transient_check_key ) )
+        return $userdata;
+
+    $transient_check = get_transient( 'wppb_pending_email_change_request_exists_' . $transient_check_key );
+
+    if ( $transient_check !== false && ( !isset( $_POST['action'] ) || $_POST['action'] != 'register' ) )
         unset( $userdata['user_email'] );
 
     return $userdata;

@@ -248,14 +248,24 @@ function wppb_recaptcha_script_footer(){
             var wppbRecaptchaCallback = function() {
                 if( !window.wppbRecaptchaCallbackExecuted ){//see if we executed this before
                     ' . $callback_conditions . '.each(function(){
-                        recID = grecaptcha.render( 
-                            jQuery(this).attr("id"), 
+                        var $recaptchaElement = jQuery(this);
+                        var existingRecaptchaId = $recaptchaElement.data("wppb-recaptcha-id");
+
+                        if ( typeof existingRecaptchaId !== "undefined" ) {
+                            grecaptcha.reset( existingRecaptchaId );
+                            return;
+                        }
+
+                        var recID = grecaptcha.render( 
+                            $recaptchaElement.attr("id"), 
                             {
                                 "sitekey" : "' . $pubkey . '",
                                 "error-callback": wppbRecaptchaInitializationError,
                                 ' . $invisible_parameters . '
                             }
-                        );
+                        )
+
+                        $recaptchaElement.data("wppb-recaptcha-id", recID);
                     });
                     window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
                 }
@@ -310,9 +320,9 @@ function wppb_recaptcha_script_footer(){
 
                     if( !jQuery(".pms_pay_gate[type=hidden]").is(":disabled") && ( jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_connect" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe_intents" || jQuery(".pms_pay_gate[type=hidden]").val() == "stripe" || jQuery(".pms_pay_gate[type=hidden]").val() == "paypal_connect" ) )
                         submitForm = false
-
+                                 
                 } else if( form.hasClass("wppb-ajax-form") ) {
-                    submitForm = false;                                    
+                    submitForm = false;    
                 } else if( form.hasClass("wppb-2fa-form") ) {
                     submitForm = false;
                 }
