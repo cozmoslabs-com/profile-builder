@@ -104,29 +104,27 @@ function wppb_dashboard_page_content() {
                 <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'users.php' ) ); ?>"><?php esc_html_e( 'View All Users', 'profile-builder' ); ?></a>
             </div>
 
-            <?php if ( !defined( 'WPPB_PAID_PLUGIN_DIR' ) ) : ?>
-                <div class="postbox cozmoslabs-form-subsection-wrapper">
-                    <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Have a question? Not sure how to proceed?', 'profile-builder' ); ?><span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
+            <div class="postbox cozmoslabs-form-subsection-wrapper">
+                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Have a question? Not sure how to proceed?', 'profile-builder' ); ?><span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
 
-                    <p><strong><span class="dashicons dashicons-plus" style="color: #0F15B0;"></span><?php esc_html_e( ' Open a new ticket over at', 'profile-builder' ); ?></strong>
+                <p><strong><span class="dashicons dashicons-plus" style="color: #0F15B0;"></span><?php esc_html_e( ' Open a new ticket over at', 'profile-builder' ); ?></strong>
 
-                    <br>
+                <br>
 
-                    <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" style="display:block;padding-left:24px;margin-top:4px;">https://wordpress.org/support/plugin/profile-builder/</a></p>
+                <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" style="display:block;padding-left:24px;margin-top:4px;">https://wordpress.org/support/plugin/profile-builder/</a></p>
 
-                    <p><strong><span class="dashicons dashicons-welcome-write-blog" style="color: #0F15B0;"></span><?php esc_html_e( ' Describe your problem:', 'profile-builder' ); ?></strong></p>
+                <p><strong><span class="dashicons dashicons-welcome-write-blog" style="color: #0F15B0;"></span><?php esc_html_e( ' Describe your problem:', 'profile-builder' ); ?></strong></p>
 
-                    <ul style="padding-left:24px;">
-                        <li><?php esc_html_e( 'What you tried to do', 'profile-builder' ); ?></li>
-                        <li><?php esc_html_e( 'What you expected to happen', 'profile-builder' ); ?></li>
-                        <li><?php esc_html_e( 'What actually happened', 'profile-builder' ); ?></li>
-                        <li><?php printf( esc_html__( 'Screenshots help. Use a service like %1s snipboard.io %2s and share the link.', 'profile-builder' ), '<a href="https://snipboard.io/">', '</a>' ); ?></li>
-                    </ul>
+                <ul style="padding-left:24px;">
+                    <li><?php esc_html_e( 'What you tried to do', 'profile-builder' ); ?></li>
+                    <li><?php esc_html_e( 'What you expected to happen', 'profile-builder' ); ?></li>
+                    <li><?php esc_html_e( 'What actually happened', 'profile-builder' ); ?></li>
+                    <li><?php printf( esc_html__( 'Screenshots help. Use a service like %1s snipboard.io %2s and share the link.', 'profile-builder' ), '<a href="https://snipboard.io/">', '</a>' ); ?></li>
+                </ul>
 
-                    <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span><?php esc_html_e( 'Get help from our team', 'profile-builder' ); ?></strong></p>
+                <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span><?php esc_html_e( 'Get help from our team', 'profile-builder' ); ?></strong></p>
 
-                </div>
-            <?php endif; ?>
+            </div>
 
             <div class="postbox cozmoslabs-form-subsection-wrapper wppb-dashboard-progress">
                 <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Setup Progress Review', 'profile-builder' ); ?></h4>

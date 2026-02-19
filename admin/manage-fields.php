@@ -1847,3 +1847,217 @@ if ( ! function_exists( 'wppb_filter_map_bubble_fields' ) ) {
 	}
 }
 add_filter( 'wppb_map_bubble_fields', 'wppb_filter_map_bubble_fields' );
+
+
+/**
+ * Get field property mapping for cleaning up stored field data
+ * 
+ * Maps each field type to its required properties based on the JavaScript
+ * field definitions in assets/js/jquery-manage-fields-live-change.js
+ *
+ * @since 3.15.3
+ * @return array Field type to properties mapping
+ */
+function wppb_get_field_property_mapping() {
+    
+	// Properties that can be dynamically added by various add-ons to many field types
+	$optional_addon_properties = array(
+		// Conditional Fields add-on
+		'conditional-logic-enabled',
+		'conditional-logic',
+		// WooCommerce Sync add-on
+		'woocommerce-checkout-field',
+		// BuddyPress add-on
+		'bdp-default-visibility',
+		'bdp-allow-custom-visibility',
+		// Field Visibility add-on
+		'visibility',
+		'user-role-visibility',
+		'location-visibility',
+		// Edit Profile Approved by Admin add-on
+		'edit-profile-approved-by-admin',
+		// Maximum Character Length add-on
+		'maximum-character-length',
+		// Custom CSS Classes add-on
+		'class-field',
+	);
+
+	/**
+	 * Filter the optional addon properties that are applied to all field types.
+	 * 
+	 * Add-ons can use this filter to register properties that should be preserved
+	 * across all field types (e.g., properties that can be applied to any field).
+	 * 
+	 * @since 3.15.3
+	 * 
+	 * @param array $optional_addon_properties Array of property slugs to preserve for all fields
+	 * 
+	 * @example
+	 * add_filter( 'wppb_field_optional_properties', 'my_addon_register_optional_properties' );
+	 * function my_addon_register_optional_properties( $properties ) {
+	 *     $properties[] = 'my-custom-property';
+	 *     $properties[] = 'another-property';
+	 *     return $properties;
+	 * }
+	 */
+	$optional_addon_properties = apply_filters( 'wppb_field_optional_properties', $optional_addon_properties );
+
+	$mapping = array(
+		// Default WordPress Fields - Headings
+		'Default - Name (Heading)' => array(),
+		'Default - Contact Info (Heading)' => array(),
+		'Default - About Yourself (Heading)' => array(),
+
+		// Default WordPress Fields - User Data
+		'Default - Username'                 => array('default-value'),
+		'Default - First Name'               => array('default-value'),
+		'Default - Last Name'                => array('default-value'),
+		'Default - Nickname'                 => array('default-value'),
+		'Default - E-mail'                   => array('default-value'),
+		'Default - Website'                  => array('default-value'),
+		'Default - AIM'                      => array('default-value'),
+		'Default - Yahoo IM'                 => array('default-value'),
+		'Default - Jabber / Google Talk'     => array('default-value'),
+		'Default - Password'                 => array(),
+		'Default - Repeat Password'          => array(),
+		'Default - Biographical Info'        => array('row-count', 'default-content'),
+		'Default - Display name publicly as' => array('default-value'),
+		'Default - Blog Details'             => array(),
+
+		// GDPR Fields
+		'GDPR Checkbox'                  => array(),
+		'GDPR Delete Button'             => array(),
+		'GDPR Communication Preferences' => array('gdpr-communication-preferences', 'gdpr-communication-preferences-sort-order'),
+
+		// Standard Fields
+		'Heading'            => array('heading-tag'),
+		'Input'              => array('default-value'),
+		'Email'              => array('default-value'),
+		'Email Confirmation' => array(),
+		'URL'                => array('default-value'),
+		'Number'             => array('default-value', 'min-number-value', 'max-number-value', 'number-step-value'),
+		'Input (Hidden)'     => array('default-value'),
+		'Language'           => array('default-value'),
+		'Textarea'           => array('default-content', 'row-count'),
+		'WYSIWYG'            => array('default-content', 'row-count'),
+		'Phone'              => array('default-value', 'phone-format'),
+		
+		// Select Fields
+		'Select'             => array('default-option', 'options', 'labels'),
+		'Select (Multiple)'  => array('default-options', 'options', 'labels'),
+		'Select (Country)'   => array('default-option-country'),
+		'Select (Currency)'  => array('show-currency-symbol', 'default-option-currency'),
+		'Select (Timezone)'  => array('default-option-timezone'),
+		'Select (CPT)'       => array('default-option', 'cpt'),
+		'Select (Taxonomy)'  => array('default-option', 'taxonomy'),
+		'Select2'            => array('default-option', 'options', 'labels'),
+		'Select2 (Multiple)' => array('default-options', 'options', 'labels', 'select2-multiple-limit', 'select2-multiple-tags'),
+		
+		// Checkbox and Radio Fields
+		'Checkbox'                        => array('default-options', 'options', 'labels'),
+		'Checkbox (Terms and Conditions)' => array('terms-of-agreement'),
+		'Radio'                           => array('default-option', 'options', 'labels'),
+		'Honeypot'                        => array(),
+
+		// Upload Fields
+		'Upload' => array('simple-upload', 'allowed-upload-extensions'),
+		'Avatar' => array('simple-upload', 'allowed-image-extensions', 'avatar-size'),
+
+		// Date/Time Fields
+		'Datepicker'  => array('default-value', 'date-format'),
+		'Timepicker'  => array('time-format'),
+		'Colorpicker' => array('default-value'),
+
+		// Advanced Fields
+		'Validation'         => array('validation-possible-values', 'custom-error-message'),
+		'reCAPTCHA'          => array('recaptcha-type', 'public-key', 'private-key', 'score-threshold', 'captcha-pb-forms', 'captcha-wp-forms'),
+		'Select (User Role)' => array('user-roles', 'user-roles-on-edit-profile', 'user-roles-sort-order'),
+		'Map'                => array('map-api-key', 'map-default-lat', 'map-default-lng', 'map-default-zoom', 'map-height', 'map-pins-load-type', 'map-pagination-number', 'map-bubble-fields'),
+		'Additional Map'     => array('map-default-lat', 'map-default-lng', 'map-default-zoom', 'map-height'),
+		'HTML'               => array('html-content'),
+
+		// WooCommerce Fields (added via JS by add-on)
+		'WooCommerce Customer Billing Address'  => array('woo-billing-fields', 'woo-billing-fields-required', 'woo-billing-fields-sort-order', 'woo-billing-fields-name'),
+		'WooCommerce Customer Shipping Address' => array('woo-shipping-fields', 'woo-shipping-fields-required', 'woo-shipping-fields-sort-order', 'woo-shipping-fields-name'),
+
+		// Add-on Fields (MailChimp, MailPoet, Campaign Monitor, etc. may add their own)
+		'MailChimp Subscribe'        => array('mailchimp-lists', 'mailchimp-default-checked', 'mailchimp-hide-field'),
+		'MailPoet Subscribe'         => array('mailpoet-lists', 'mailpoet-default-checked', 'mailpoet-hide-field'),
+		'Campaign Monitor Subscribe' => array('campaign-monitor-lists', 'campaign-monitor-hide-field'),
+		'Subscription Plans'         => array('subscription-plans', 'subscription-plans-sort-order', 'subscription-plan-selected'),
+		'PMS Billing Fields'         => array('pms-billing-fields'),
+		'Repeater'                   => array('rpf-enable-limit', 'rpf-limit', 'rpf-limit-reached-message', 'rpf-role-limit', 'rpf-button'),
+	);
+
+	// Add optional addon properties to all field types
+	foreach ( $mapping as $field_type => $properties ) {
+		$mapping[$field_type] = array_merge( $properties, $optional_addon_properties );
+	}
+
+	// Allow add-ons to register their field type property mappings
+	$mapping = apply_filters( 'wppb_field_property_mapping', $mapping );
+
+	return $mapping;
+}
+
+/**
+ * Clean up field properties before saving to database
+ * 
+ * Removes unused properties from each field based on its type, reducing database bloat.
+ * Common properties are kept for all fields, field-specific properties are kept only
+ * when relevant to the field type.
+ *
+ * @since 3.15.3
+ * @param array $value New field data being saved
+ * @param array $old_value Existing field data (not used)
+ * @return array Cleaned field data
+ */
+function wppb_cleanup_manage_fields_before_save( $value, $old_value ) {
+	// Only process if we have an array
+	if ( ! is_array( $value ) ) {
+		return $value;
+	}
+
+	// Get field type to property mapping
+	$mapping = wppb_get_field_property_mapping();
+
+	// Common properties kept for all fields
+	// Note: meta-name is kept even when not shown in UI, as it's set programmatically
+	$common_properties = array(
+		'id',
+		'field',
+		'field-title',
+		'meta-name',
+		'description',
+		'required',
+		'overwrite-existing',
+	);
+
+	// Process each field
+	foreach ( $value as $key => $field ) {
+		if ( ! isset( $field['field'] ) ) {
+			continue;
+		}
+
+		$field_type = $field['field'];
+		$allowed_properties = $common_properties;
+
+		// Add field-specific properties if we have a mapping
+		if ( isset( $mapping[$field_type] ) ) {
+			$allowed_properties = array_merge( $allowed_properties, $mapping[$field_type] );
+		} else {
+			// Unknown field type: keep common properties + any non-empty properties
+			foreach ( $field as $prop_key => $prop_value ) {
+				if ( ! in_array( $prop_key, $common_properties ) && ! empty( $prop_value ) ) {
+					$allowed_properties[] = $prop_key;
+				}
+			}
+		}
+
+		// Filter the field to only keep allowed properties
+		$value[$key] = array_intersect_key( $field, array_flip( $allowed_properties ) );
+	}
+
+	return $value;
+}
+add_filter( 'pre_update_option_wppb_manage_fields', 'wppb_cleanup_manage_fields_before_save', 5, 2 );

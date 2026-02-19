@@ -92,6 +92,7 @@
 <?php __("Settings", "profile-builder"); ?>
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
+<?php __("Get Support", "profile-builder"); ?>
 <?php __('You need an active license to add a new User Listing. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to add new User Listing.', 'profile-builder' ); ?>
 <?php __('You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
@@ -1040,6 +1041,7 @@
 <?php __("Please check that you entered the correct username.", "profile-builder"); ?>
 <?php __("The email entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct email.", "profile-builder"); ?>
+<?php __("Please enter your email address to request a password reset.", "profile-builder"); ?>
 <?php __("The email address entered wasn't found in the database!", "profile-builder"); ?>
 <?php __("Please check that you entered the correct email address.", "profile-builder"); ?>
 <?php __("Check your email for the confirmation link.", "profile-builder"); ?>
@@ -1298,6 +1300,9 @@
 <?php __("Set the avatar size on the all-userlisting only", "profile-builder"); ?>
 <?php __("Avatar Size (Single-userlisting)", "profile-builder"); ?>
 <?php __("Set the avatar size on the single-userlisting only", "profile-builder"); ?>
+<?php __("Retina-Ready Avatar", "profile-builder"); ?>
+<?php __("Enable", "profile-builder"); ?>
+<?php __("Generate a 2x crop size for avatar images while keeping the display size above.", "profile-builder"); ?>
 <?php __("Visible only to logged in users?", "profile-builder"); ?>
 <?php __("The userlisting will be visible only for logged in users", "profile-builder"); ?>
 <?php __("Visible to following Roles", "profile-builder"); ?>
@@ -1444,7 +1449,6 @@
 <?php __("Please remove or close unpaired breakpoints.", "profile-builder"); ?>
 <?php __("Publish the form before adding Interval Break Points! - Form Fields in Columns", "profile-builder"); ?>
 <?php __("Begin by placing Start and End break points on your fields. Use the option below to disable the columns without removing the breakpoints.", "profile-builder"); ?>
-<?php __("Enable", "profile-builder"); ?>
 <?php __("Form Fields in Columns options updated.", "profile-builder"); ?>
 <?php __("Enable on Forms", "profile-builder"); ?>
 <?php __("PB Default Register Form", "profile-builder"); ?>

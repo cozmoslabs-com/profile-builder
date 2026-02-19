@@ -688,39 +688,45 @@ if( function_exists( 'wc_get_page_id' ) ) {
 	 add_action( 'pre_get_posts', 'wppb_exclude_post_from_query', 40 );
 	 function wppb_exclude_post_from_query( $query ) {
 
-		if( !function_exists( 'wppb_content_restriction_is_post_restricted' ) || is_admin() || is_single() )
+		if( !function_exists( 'wppb_content_restriction_is_post_restricted' ) || is_admin() || is_singular() )
 			 return;
 
         if( isset( $query->query_vars['wc_query'] ) && $query->query_vars['wc_query'] == 'product_query' )
             return;
- 
+
          // Skip Ultimate Member queries
          if( isset( $query->query_vars['um_action'] ) || isset( $query->query_vars['um_user'] ) ) 
             return;
- 
-		 if( $query->is_main_query() || ( $query->is_search() && isset( $_GET['s'] ) ) ) {
 
-			 remove_action('pre_get_posts', 'wppb_exclude_post_from_query', 40 );
+		 if( $query->is_main_query() || ( $query->is_search() && isset( $query->query_vars['s'] ) ) ) {
+
+			 remove_action( 'pre_get_posts', 'wppb_exclude_post_from_query', 40 );
 
 			 $args = $query->query_vars;
 			 $args['suppress_filters'] = true;
-			 $args['posts_per_page'] = get_option( 'posts_per_page' );
+			 $args['fields']           = 'ids';
+
+			 // Setup paged arguments so we exclude restricted posts from the current page, not only the first N posts.
+			 if( !empty( $query->query_vars['paged'] ) ){
+				 $args['paged'] = round( $args['paged'] / 2 );
+				 if( !empty( $args['posts_per_page'] ) )
+					 $args['posts_per_page'] = $args['posts_per_page'] * 2;
+				 else
+					 $args['posts_per_page'] = get_option( 'posts_per_page' ) * 2;
+			 }
 
 			 if( is_search() )
 				 $args['post_type'] = 'any';
 
-			 $posts = get_posts($args);
+			 $restricted_posts = get_posts( $args );
 
 			 $previous_restricted_ids = $query->get( 'post__not_in' );
 			 if ( ! is_array( $previous_restricted_ids ) ) {
 				 $previous_restricted_ids = array();
 			 }
 
-			 $ids = wp_list_pluck( $posts, 'ID' );
-			 $restricted_ids = array_filter( $ids,'wppb_content_restriction_is_post_restricted' );
-			 $updated_restricted_ids = array_merge( $previous_restricted_ids, $restricted_ids );
-
-			 $query->set( 'post__not_in', $updated_restricted_ids );
+			 $restricted_ids = array_filter( $restricted_posts, 'wppb_content_restriction_is_post_restricted' );
+			 $query->set( 'post__not_in', array_merge( $previous_restricted_ids, $restricted_ids ) );
 
 		 }
 	 }
@@ -771,7 +777,11 @@ if( function_exists( 'wc_get_page_id' ) ) {
 				 $previous_restricted_ids = array();
 			 }
 
-			 $products = wc_get_products( $args );
+			 $transient_key = 'wppb_cr_products_' . md5( serialize( $args ) );
+			 if ( false === ( $products = get_transient( $transient_key ) ) ) {
+				 $products = wc_get_products( $args );
+				 set_transient( $transient_key, $products, 2 * HOUR_IN_SECONDS );
+			 }
 
 			 $product_ids = array();
 
@@ -789,7 +799,7 @@ if( function_exists( 'wc_get_page_id' ) ) {
 	 }
 
 	 //Alters the output of the [products] shortcode from WooCommerce, filtering restricted products from the output
-	 add_action( 'woocommerce_shortcode_products_query', 'wppb_exclude_restricted_products_from_woocoommerce_products_shortcode_queries' );
+	 add_filter( 'woocommerce_shortcode_products_query', 'wppb_exclude_restricted_products_from_woocoommerce_products_shortcode_queries' );
 	 function wppb_exclude_restricted_products_from_woocoommerce_products_shortcode_queries( $query_args ) {
 		 if( !is_admin() && function_exists('wppb_content_restriction_is_post_restricted') ) {
 			 $posts_per_page = $query_args['posts_per_page'];

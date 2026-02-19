@@ -245,7 +245,7 @@
                     <select id="toolbox-bypass-ec" class="wppb-select" name="wppb_toolbox_forms_settings[ec-bypass][]" multiple="multiple">
 
                         <?php
-                        $registration_forms = get_posts( array( 'post_type' => 'wppb-rf-cpt' ) );
+                        $registration_forms = get_posts( array( 'post_type' => 'wppb-rf-cpt', 'numberposts' => -1 ) );
 
                         if ( !empty( $registration_forms ) ) {
                             foreach ( $registration_forms as $form ) {

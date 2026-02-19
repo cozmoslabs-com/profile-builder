@@ -307,37 +307,44 @@ function wppb_front_end_password_recovery( $atts ){
 
         // if we do not have an email in the posted date we try to get the email for that user
         if( !is_email( $username_email ) ){
-            /* make sure it is a username */
-            $username = sanitize_user( $username_email );
-            if ( username_exists($username) ){
-                $query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_login= %s", $username ) );
-                if( !empty( $query[0] ) ){
-                    $username_email = $query[0]->user_email;
-                }
+            // When filter is enabled and login is set to email only, do not allow username for password reset
+            if ( apply_filters( 'wppb_recover_password_require_email_when_login_with_email', false ) && !empty( $wppb_generalSettings['loginWith'] ) && $wppb_generalSettings['loginWith'] == 'email' ) {
+                $warning = __( 'Please enter your email address to request a password reset.', 'profile-builder' );
+                $warning = apply_filters( 'wppb_recover_password_sent_message_username_not_allowed', $warning );
+                $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
             } else {
-                if( apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
-
-                    if( !empty( $wppb_generalSettings['loginWith'] ) ){
-                        if( $wppb_generalSettings['loginWith'] == 'email' ){
-                            $warning = __( 'The email entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email.', 'profile-builder' );
-
-                        }
-                        else if( $wppb_generalSettings['loginWith'] == 'username' ) {
-                            $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
-                        }
-                        else{
-                            $warning = __( 'The email/username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email/username.', 'profile-builder' );
-                        }
+                /* make sure it is a username */
+                $username = sanitize_user( $username_email );
+                if ( username_exists($username) ){
+                    $query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_login= %s", $username ) );
+                    if( !empty( $query[0] ) ){
+                        $username_email = $query[0]->user_email;
                     }
-                    $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
-                
-                    $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
-
                 } else {
-                    $warning = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
-                    $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
-                    $output .= wppb_password_recovery_success( $warning, 'wppb_recover_password_displayed_message1' );
-                    $password_email_sent = true;
+                    if( apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
+
+                        if( !empty( $wppb_generalSettings['loginWith'] ) ){
+                            if( $wppb_generalSettings['loginWith'] == 'email' ){
+                                $warning = __( 'The email entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email.', 'profile-builder' );
+
+                            }
+                            else if( $wppb_generalSettings['loginWith'] == 'username' ) {
+                                $warning = __( 'The username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct username.', 'profile-builder' );
+                            }
+                            else{
+                                $warning = __( 'The email/username entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email/username.', 'profile-builder' );
+                            }
+                        }
+                        $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
+                    
+                        $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
+
+                    } else {
+                        $warning = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
+                        $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
+                        $output .= wppb_password_recovery_success( $warning, 'wppb_recover_password_displayed_message1' );
+                        $password_email_sent = true;
+                    }
                 }
             }
         }

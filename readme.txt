@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.3
+Stable tag: 3.15.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,36 +206,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.15.3 =
-**Enhancements:**
-
-* Added extra parameter to the Edit Profile shortcode to filter ther users that are displayed in the Edit Other Users Dropdown for admins: admin_edit_roles="contributor,editor"
-
-**Fixes:**
-
-* Fix error being thrown from the GDPR Communication Preferences field in combination with Email Confirmation
-* Fix issue with the Email Confirmation functionality that could affect registrations in some cases
-* An issue on mobile devices with the Show/Hide password toggles
-* Make sure a redirect message filter gets applied in all cases over a success message
-* Fix some potential notices that could be triggered from some Email Customizer functions
-* Fix an issue with the Roles Editor next step sending users to a broken page in some situations
-
-**Compatibility:**
-
-* Compatibility changes to allow the Email Customizer page to correctly save when the Events Tickets Plus plugin is also active
-
-= 3.15.2 =
-* Fix: A security issue. Immediate update is advised. Thanks to the WPScan team
-
-= 3.15.1 =
-* Fix: Notice being triggered from the Login form
-* Fix: An issue where the form couldn't be submitted if Invisible reCaptcha was used in the form
-* Misc: Compatibility changes for the new feature to automatically request 2FA setup from users
-
-= 3.15.0 =
-* Enhancement: Updated Login form validation messages to be more general. Set the `wppb_login_use_old_error_messages` filter to true to return to the old behaviour
-* Enhancement: Updated Reset Password form validation messages to be more general. Set the `wppb_recover_password_use_old_error_messages` filter to true to return to the old behaviour
-* Fix: Compatibility issue between reCaptcha v3 and 2FA
-* Misc: Updated styling for the Login form widget
+= 3.15.4 =
+* Enhancement: Improved the way custom fields are stored
+* Fix: Issue with Exclude Restricted Posts from Queries feature only restricting a select set of posts
+* Fix: Add transient caching to Exclude Restricted Posts from Queries when it applies to default WooCommerce queries
+* Fix: Exclude Restricted Posts from Queries not applies correctly to the WooCommerce products shortcode 
+* Misc: Allow admins to select any Registration From when excluding them from Email Confirmation
+* Misc: Added a filter that can be used to enforce Email only reset requests in combination with the Allow Users to Login with option
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.
