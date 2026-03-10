@@ -967,8 +967,10 @@
 <?php __("Empty feed response", "profile-builder"); ?>
 <?php __("Unable to parse feed", "profile-builder"); ?>
 <?php __("Just now", "profile-builder"); ?>
-<?php __("%d hour ago"msgid_plural "%d hours ago", "profile-builder"); ?>
-<?php __("%d day ago"msgid_plural "%d days ago", "profile-builder"); ?>
+<?php __("%d hour ago", "profile-builder"); ?>
+<?php __("%d hours ago", "profile-builder"); ?>
+<?php __("%d day ago", "profile-builder"); ?>
+<?php __("%d days ago", "profile-builder"); ?>
 <?php __("GDPR Checkbox", "profile-builder"); ?>
 <?php __("I allow the website to collect and store the data I submit through this form.", "profile-builder"); ?>
 <?php __("Honeypot", "profile-builder"); ?>
