@@ -122,7 +122,7 @@ class Wordpress_Creation_Kit_PB{
 
                 $priority = 'high';
 
-				if( !empty( $this->args['meta_name'] ) && in_array( $this->args['meta_name'], array( 'wppb_ul_settings_query', 'wppb_ul_csv_download_settings' ) ) ){
+				if( !empty( $this->args['meta_name'] ) && in_array( $this->args['meta_name'], array( 'wppb_ul_settings_query', 'wppb_ul_csv_download_settings', 'wppb_rf_progress_bar_settings', 'wppb_epf_progress_bar_settings' ) ) ){
                     $priority = 'low';
                 }
 

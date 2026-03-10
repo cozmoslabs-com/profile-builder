@@ -109,6 +109,11 @@
 <?php __('Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ); ?>
 <?php __(" Don't have a license? %sBuy one now%s.", "profile-builder"); ?>
 <?php __("Dismiss this notice.", "profile-builder"); ?>
+<?php __("Before You Go", "profile-builder"); ?>
+<?php __("Profile Builder", "profile-builder"); ?>
+<?php __("If something isn't working as expected, we'd love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help.", "profile-builder"); ?>
+<?php __("Contact Support", "profile-builder"); ?>
+<?php __("Deactivate", "profile-builder"); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
 <?php __("The best way to add front-end registration, edit profile and login forms.", "profile-builder"); ?>
@@ -884,7 +889,6 @@
 <?php __("Retry Install", "profile-builder"); ?>
 <?php __('Plugin is %1$s active %2$s', 'profile-builder' ); ?>
 <?php __('Plugin is %1$s inactive %2$s', 'profile-builder' ); ?>
-<?php __("Deactivate", "profile-builder"); ?>
 <?php __("Plugin has been deactivated.", "profile-builder"); ?>
 <?php __("Free", "profile-builder"); ?>
 <?php __("Accept user payments, create subscription plans and restrict content on your website.", "profile-builder"); ?>
@@ -945,6 +949,26 @@
 <?php __("Create new user roles with the Role Editor.", "profile-builder"); ?>
 <?php __("Progress Review", "profile-builder"); ?>
 <?php __("Follow these steps to start registering users on your website. %1s out of %2s complete.", "profile-builder"); ?>
+<?php __("Need Help?", "profile-builder"); ?>
+<?php __("Recent community discussions", "profile-builder"); ?>
+<?php __("Loading...", "profile-builder"); ?>
+<?php __("Unable to load forum posts", "profile-builder"); ?>
+<?php __("Ask a Question", "profile-builder"); ?>
+<?php __("View All Topics", "profile-builder"); ?>
+<?php __("by", "profile-builder"); ?>
+<?php __("Have a question?", "profile-builder"); ?>
+<?php __("Get help directly from the plugin developers, suggest improvements, or share your feedback!", "profile-builder"); ?>
+<?php __("Tip for faster help:", "profile-builder"); ?>
+<?php __("Include what you tried, what you expected, and what happened. Screenshots help!", "profile-builder"); ?>
+<?php __("Toggle support chat", "profile-builder"); ?>
+<?php __("Ask the community", "profile-builder"); ?>
+<?php __("Close", "profile-builder"); ?>
+<?php __("Unauthorized", "profile-builder"); ?>
+<?php __("Empty feed response", "profile-builder"); ?>
+<?php __("Unable to parse feed", "profile-builder"); ?>
+<?php __("Just now", "profile-builder"); ?>
+<?php __("%d hour ago"msgid_plural "%d hours ago", "profile-builder"); ?>
+<?php __("%d day ago"msgid_plural "%d days ago", "profile-builder"); ?>
 <?php __("GDPR Checkbox", "profile-builder"); ?>
 <?php __("I allow the website to collect and store the data I submit through this form.", "profile-builder"); ?>
 <?php __("Honeypot", "profile-builder"); ?>
@@ -965,7 +989,6 @@
 <?php __('You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s', 'profile-builder' ); ?>
 <?php __("No feed available,please visit our <a href=\"%s\">homepage</a>!", "profile-builder"); ?>
 <?php __("You are not currently logged in.", "profile-builder"); ?>
-<?php __("Profile Builder", "profile-builder"); ?>
 <?php __("User Meta", "profile-builder"); ?>
 <?php __("Processing...", "profile-builder"); ?>
 <?php __("The role of the created user set to the default role. Only an administrator can register a user with the role assigned to this form.", "profile-builder"); ?>
@@ -1795,6 +1818,7 @@
 <?php __("Messages for logged-out users", "profile-builder"); ?>
 <?php __("Messages for logged-in users", "profile-builder"); ?>
 <?php __("Messages for restricted product purchase", "profile-builder"); ?>
+<?php __('Have a question? %1$sOpen a support ticket.%2$s', 'profile-builder' ); ?>
 <?php __("Content Restriction Settings", "profile-builder"); ?>
 <?php __("Activate Content Restriction.", "profile-builder"); ?>
 <?php __("If you select \"Message\", the post's content will be protected by being replaced with a custom message.", "profile-builder"); ?>
@@ -2011,6 +2035,15 @@
 <?php __("The usernames cannot be changed.", "profile-builder"); ?>
 <?php __("This Profile Builder add-on has been migrated to the main plugin and is no longer used. You can delete it.", "profile-builder"); ?>
 <?php __("ERROR", "profile-builder"); ?>
+<?php __("Enable Progress Bar", "profile-builder"); ?>
+<?php __("Show a completion progress bar on the form", "profile-builder"); ?>
+<?php __("Calculation Mode", "profile-builder"); ?>
+<?php __("Choose how the progress is calculated", "profile-builder"); ?>
+<?php __("Style/Display Options", "profile-builder"); ?>
+<?php __("Choose what to display", "profile-builder"); ?>
+<?php __("Position", "profile-builder"); ?>
+<?php __("Where to display the progress bar", "profile-builder"); ?>
+<?php __("Progress Bar Settings", "profile-builder"); ?>
 <?php __("Limit", "profile-builder"); ?>
 <?php __("Enable limit to the number of fields to be generated by users in front end forms ", "profile-builder"); ?>
 <?php __("General Limit", "profile-builder"); ?>
@@ -2049,7 +2082,6 @@
 <?php __("This field can be seen by: ", "profile-builder"); ?>
 <?php __("Change", "profile-builder"); ?>
 <?php __("Who can see this field?", "profile-builder"); ?>
-<?php __("Close", "profile-builder"); ?>
 <?php __("Only Me", "profile-builder"); ?>
 <?php __("All Members", "profile-builder"); ?>
 <?php __("My Friends", "profile-builder"); ?>
@@ -2387,6 +2419,10 @@
 <?php __("Warning", "profile-builder"); ?>
 <?php __("Note", "profile-builder"); ?>
 <?php __("Notification Border Color", "profile-builder"); ?>
+<?php __("Progress Bar", "profile-builder"); ?>
+<?php __("Fill Color", "profile-builder"); ?>
+<?php __("Background Color", "profile-builder"); ?>
+<?php __("Text Color", "profile-builder"); ?>
 <?php __("Replace Labels with Placeholders in Profile Builder forms.", "profile-builder"); ?>
 <?php __("Email Domains Registering", "profile-builder"); ?>
 <?php __("By enabling this option you can allow or deny email domains from registering.", "profile-builder"); ?>
@@ -2452,6 +2488,9 @@
 <?php __("Notification Border Color - Error", "profile-builder"); ?>
 <?php __("Notification Border Color - Warning", "profile-builder"); ?>
 <?php __("Notification Border Color - Note", "profile-builder"); ?>
+<?php __("Progress Bar Fill Color", "profile-builder"); ?>
+<?php __("Progress Bar Background Color", "profile-builder"); ?>
+<?php __("Progress Bar Text Color", "profile-builder"); ?>
 <?php __("Reset All Color Settings", "profile-builder"); ?>
 <?php __("Compare Shortcode", "profile-builder"); ?>
 <?php __("Enable Compare shortcode.", "profile-builder"); ?>

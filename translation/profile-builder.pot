@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-19 10:41+0000\n"
+"POT-Creation-Date: 2026-03-10 08:51+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,15 +14,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: index.php:419
+#: index.php:420
 msgid "To enable updates, you need an active license. %1$sRenew%2$s or %3$spurchase a new license%4$s."
 msgstr ""
 
-#: index.php:415
+#: index.php:416
 msgid "To enable updates, your licence needs to be renewed. Please go to the <a href=\"%s\">Cozmoslabs Account</a> page and login to renew."
 msgstr ""
 
-#: index.php:411
+#: index.php:412
 msgid "To enable updates, please enter your license key on the %sSettings%s page. If you don't have a license key, you can %sbuy one now%s."
 msgstr ""
 
@@ -458,6 +458,26 @@ msgstr ""
 msgid "Dismiss this notice."
 msgstr ""
 
+#: admin/admin-functions.php:824
+msgid "Before You Go"
+msgstr ""
+
+#: admin/admin-functions.php:826, features/functions.php:1718
+msgid "Profile Builder"
+msgstr ""
+
+#: admin/admin-functions.php:829
+msgid "If something isn't working as expected, we'd love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help."
+msgstr ""
+
+#: admin/admin-functions.php:835
+msgid "Contact Support"
+msgstr ""
+
+#: admin/admin-functions.php:839, admin/pms-cross-promotion.php:132, admin/pms-cross-promotion.php:162, admin/pms-cross-promotion.php:247
+msgid "Deactivate"
+msgstr ""
+
 #: admin/basic-info.php:11, admin/basic-info.php:11
 msgid "Basic Information"
 msgstr ""
@@ -846,7 +866,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:145, front-end/class-formbuilder.php:501, front-end/login.php:655, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:145, front-end/class-formbuilder.php:503, front-end/login.php:655, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -1122,7 +1142,7 @@ msgstr ""
 msgid "Confirm Two-Factor Authentication Enforcement"
 msgstr ""
 
-#: admin/general-settings.php:506, features/functions.php:1116, add-ons/user-listing/userlisting.php:3397, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:529
+#: admin/general-settings.php:506, features/functions.php:1116, add-ons/user-listing/userlisting.php:3397, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:559
 msgid "Cancel"
 msgstr ""
 
@@ -1242,11 +1262,11 @@ msgstr ""
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:861, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:492, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
+#: admin/general-settings.php:861, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:518, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:864, admin/private-website.php:184, features/functions.php:1109, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:494, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
+#: admin/general-settings.php:864, admin/private-website.php:184, features/functions.php:1109, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:520, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
 msgid "Save Changes"
 msgstr ""
 
@@ -1614,7 +1634,7 @@ msgstr ""
 msgid "Enter a comma separated list of possible values. Upon registration if the value provided by the user does not match one of these values, the user will not be registered."
 msgstr ""
 
-#: admin/manage-fields.php:290, admin/advanced-settings/includes/views/view-forms.php:228
+#: admin/manage-fields.php:290, admin/advanced-settings/includes/views/view-forms.php:254
 msgid "Error Message"
 msgstr ""
 
@@ -3496,7 +3516,7 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1473, features/functions.php:1130, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons/multiple-forms/multiple-forms.php:413, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
+#: admin/manage-fields.php:1473, features/functions.php:1130, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons/multiple-forms/multiple-forms.php:417, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
 msgid "Edit"
 msgstr ""
 
@@ -3516,7 +3536,7 @@ msgstr ""
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1602, add-ons/user-listing/one-map-listing.php:597
+#: admin/manage-fields.php:1602, add-ons/user-listing/one-map-listing.php:656
 msgid "Search Location"
 msgstr ""
 
@@ -3598,10 +3618,6 @@ msgstr ""
 
 #: admin/pms-cross-promotion.php:130, admin/pms-cross-promotion.php:167, admin/pms-cross-promotion.php:252
 msgid "Plugin is %1$s inactive %2$s"
-msgstr ""
-
-#: admin/pms-cross-promotion.php:132, admin/pms-cross-promotion.php:162, admin/pms-cross-promotion.php:247
-msgid "Deactivate"
 msgstr ""
 
 #: admin/pms-cross-promotion.php:133
@@ -3844,6 +3860,92 @@ msgstr ""
 msgid "Follow these steps to start registering users on your website. %1s out of %2s complete."
 msgstr ""
 
+#: admin/support-chat.php:190, admin/support-chat.php:231
+msgid "Need Help?"
+msgstr ""
+
+#: admin/support-chat.php:191
+msgid "Recent community discussions"
+msgstr ""
+
+#: admin/support-chat.php:192
+msgid "Loading..."
+msgstr ""
+
+#: admin/support-chat.php:193
+msgid "Unable to load forum posts"
+msgstr ""
+
+#: admin/support-chat.php:194
+msgid "Ask a Question"
+msgstr ""
+
+#: admin/support-chat.php:195
+msgid "View All Topics"
+msgstr ""
+
+#: admin/support-chat.php:196
+msgid "by"
+msgstr ""
+
+#: admin/support-chat.php:197
+msgid "Have a question?"
+msgstr ""
+
+#: admin/support-chat.php:198
+msgid "Get help directly from the plugin developers, suggest improvements, or share your feedback!"
+msgstr ""
+
+#: admin/support-chat.php:199
+msgid "Tip for faster help:"
+msgstr ""
+
+#: admin/support-chat.php:200
+msgid "Include what you tried, what you expected, and what happened. Screenshots help!"
+msgstr ""
+
+#: admin/support-chat.php:215
+msgid "Toggle support chat"
+msgstr ""
+
+#: admin/support-chat.php:232
+msgid "Ask the community"
+msgstr ""
+
+#: admin/support-chat.php:251, add-ons-advanced/buddypress/includes/field-visibility.php:118
+msgid "Close"
+msgstr ""
+
+#: admin/support-chat.php:312, admin/support-chat.php:331
+msgid "Unauthorized"
+msgstr ""
+
+#: admin/support-chat.php:365
+msgid "Empty feed response"
+msgstr ""
+
+#: admin/support-chat.php:373
+msgid "Unable to parse feed"
+msgstr ""
+
+#: admin/support-chat.php:431
+msgid "Just now"
+msgstr ""
+
+#. translators: %d: number of hours
+#: admin/support-chat.php:434
+msgid "%d hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of days
+#: admin/support-chat.php:441
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] ""
+msgstr[1] ""
+
 #: features/functions.php:372
 msgid "GDPR Checkbox"
 msgstr ""
@@ -3924,10 +4026,6 @@ msgstr ""
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1718
-msgid "Profile Builder"
-msgstr ""
-
 #: features/functions.php:1736, features/email-confirmation/class-email-confirmation.php:95, features/email-confirmation/class-email-confirmation.php:174
 msgid "User Meta"
 msgstr ""
@@ -3996,31 +4094,31 @@ msgstr ""
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:504
+#: front-end/class-formbuilder.php:506
 msgid "Update"
 msgstr ""
 
-#: front-end/class-formbuilder.php:501
+#: front-end/class-formbuilder.php:503
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:586
+#: front-end/class-formbuilder.php:588
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:841
+#: front-end/class-formbuilder.php:843
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:823
+#: front-end/class-formbuilder.php:825
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:825
+#: front-end/class-formbuilder.php:827
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:907
+#: front-end/class-formbuilder.php:909
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -4757,19 +4855,19 @@ msgstr ""
 msgid "This form is empty."
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:229
+#: add-ons/multiple-forms/multiple-forms.php:233
 msgid "You need to specify the title of the form before creating it"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413
+#: add-ons/multiple-forms/multiple-forms.php:417
 msgid "<pre>Title (Type)</pre>"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413
+#: add-ons/multiple-forms/multiple-forms.php:417
 msgid "Delete all items"
 msgstr ""
 
-#: add-ons/multiple-forms/multiple-forms.php:413, add-ons-free/labels-edit/labels-edit.php:428, add-ons-free/labels-edit/labels-edit.php:428
+#: add-ons/multiple-forms/multiple-forms.php:417, add-ons-free/labels-edit/labels-edit.php:428, add-ons-free/labels-edit/labels-edit.php:428
 msgid "Delete all"
 msgstr ""
 
@@ -4833,11 +4931,11 @@ msgstr ""
 msgid "Are you sure you want to delete this?"
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:471
+#: add-ons/user-listing/one-map-listing.php:529
 msgid "Please wait while the pins are loading..."
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:602
+#: add-ons/user-listing/one-map-listing.php:661
 msgid "The API Key was not provided."
 msgstr ""
 
@@ -5445,7 +5543,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3366, admin/advanced-settings/includes/views/view-forms.php:157
+#: add-ons/user-listing/userlisting.php:3366, admin/advanced-settings/includes/views/view-forms.php:183
 msgid "Reset Data"
 msgstr ""
 
@@ -5457,7 +5555,7 @@ msgstr ""
 msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3385, admin/advanced-settings/includes/views/view-forms.php:507
+#: add-ons/user-listing/userlisting.php:3385, admin/advanced-settings/includes/views/view-forms.php:533
 msgid "Select which settings you want to reset:"
 msgstr ""
 
@@ -5469,7 +5567,7 @@ msgstr ""
 msgid "All Theme Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3404, admin/advanced-settings/includes/views/view-forms.php:531
+#: add-ons/user-listing/userlisting.php:3404, admin/advanced-settings/includes/views/view-forms.php:561
 msgid "Confirm"
 msgstr ""
 
@@ -7258,6 +7356,10 @@ msgstr ""
 msgid "Messages for restricted product purchase"
 msgstr ""
 
+#: features/content-restriction/content-restriction-meta-box.php:224
+msgid "Have a question? %1$sOpen a support ticket.%2$s"
+msgstr ""
+
 #: features/content-restriction/content-restriction.php:72
 msgid "Content Restriction Settings"
 msgstr ""
@@ -8174,6 +8276,42 @@ msgstr ""
 msgid "ERROR"
 msgstr ""
 
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:24
+msgid "Enable Progress Bar"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:24
+msgid "Show a completion progress bar on the form"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:25
+msgid "Calculation Mode"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:25
+msgid "Choose how the progress is calculated"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:26
+msgid "Style/Display Options"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:26
+msgid "Choose what to display"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:27
+msgid "Position"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:27
+msgid "Where to display the progress bar"
+msgstr ""
+
+#: add-ons/multiple-forms/progress-bar/progress-bar.php:33, add-ons/multiple-forms/progress-bar/progress-bar.php:45
+msgid "Progress Bar Settings"
+msgstr ""
+
 #: add-ons/repeater-field/admin/repeater-manage-fields.php:212
 msgid "Limit"
 msgstr ""
@@ -8326,10 +8464,6 @@ msgstr ""
 
 #: add-ons-advanced/buddypress/includes/field-visibility.php:113
 msgid "Who can see this field?"
-msgstr ""
-
-#: add-ons-advanced/buddypress/includes/field-visibility.php:118
-msgid "Close"
 msgstr ""
 
 #: add-ons-advanced/buddypress/includes/field-visibility.php:223
@@ -9322,7 +9456,7 @@ msgstr ""
 msgid "Your email address has been successfully updated!"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:110, admin/advanced-settings/includes/forms/placeholder-labels.php:114, admin/advanced-settings/includes/views/view-forms.php:165
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:110, admin/advanced-settings/includes/forms/placeholder-labels.php:114, admin/advanced-settings/includes/views/view-forms.php:191
 msgid "Placeholder Labels"
 msgstr ""
 
@@ -9630,323 +9764,351 @@ msgstr ""
 msgid "Enabling this option, when changing the meta key of a field, existing entries from the database will be updated as well."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:78
+#: admin/advanced-settings/includes/views/view-forms.php:90
 msgid "Color Switcher"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:86
+#: admin/advanced-settings/includes/views/view-forms.php:98
 msgid "Enable this option to change the colors of the forms."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:91, admin/advanced-settings/includes/views/view-forms.php:510
+#: admin/advanced-settings/includes/views/view-forms.php:103, admin/advanced-settings/includes/views/view-forms.php:536
 msgid "Primary Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:96, admin/advanced-settings/includes/views/view-forms.php:511
+#: admin/advanced-settings/includes/views/view-forms.php:108, admin/advanced-settings/includes/views/view-forms.php:537
 msgid "Secondary Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:101, admin/advanced-settings/includes/views/view-forms.php:512
+#: admin/advanced-settings/includes/views/view-forms.php:113, admin/advanced-settings/includes/views/view-forms.php:538
 msgid "Button Text Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:106, admin/advanced-settings/includes/views/view-forms.php:513
+#: admin/advanced-settings/includes/views/view-forms.php:118, admin/advanced-settings/includes/views/view-forms.php:539
 msgid "Label Size"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:111, admin/advanced-settings/includes/views/view-forms.php:514
+#: admin/advanced-settings/includes/views/view-forms.php:123, admin/advanced-settings/includes/views/view-forms.php:540
 msgid "Label Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:116, admin/advanced-settings/includes/views/view-forms.php:515
+#: admin/advanced-settings/includes/views/view-forms.php:128, admin/advanced-settings/includes/views/view-forms.php:541
 msgid "Notification Text Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:121, admin/advanced-settings/includes/views/view-forms.php:520
+#: admin/advanced-settings/includes/views/view-forms.php:133, admin/advanced-settings/includes/views/view-forms.php:546
 msgid "Notification Background Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:124, admin/advanced-settings/includes/views/view-forms.php:141
+#: admin/advanced-settings/includes/views/view-forms.php:136, admin/advanced-settings/includes/views/view-forms.php:153
 msgid "Success"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:127, admin/advanced-settings/includes/views/view-forms.php:144
+#: admin/advanced-settings/includes/views/view-forms.php:139, admin/advanced-settings/includes/views/view-forms.php:156
 msgid "Error"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:130, admin/advanced-settings/includes/views/view-forms.php:147
+#: admin/advanced-settings/includes/views/view-forms.php:142, admin/advanced-settings/includes/views/view-forms.php:159
 msgid "Warning"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:133, admin/advanced-settings/includes/views/view-forms.php:150
+#: admin/advanced-settings/includes/views/view-forms.php:145, admin/advanced-settings/includes/views/view-forms.php:162
 msgid "Note"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:139
+#: admin/advanced-settings/includes/views/view-forms.php:151
 msgid "Notification Border Color"
 msgstr ""
 
+#: admin/advanced-settings/includes/views/view-forms.php:168
+msgid "Progress Bar"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:170
+msgid "Fill Color"
+msgstr ""
+
 #: admin/advanced-settings/includes/views/view-forms.php:173
+msgid "Background Color"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:176
+msgid "Text Color"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:199
 msgid "Replace Labels with Placeholders in Profile Builder forms."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:178
+#: admin/advanced-settings/includes/views/view-forms.php:204
 msgid "Email Domains Registering"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:186
+#: admin/advanced-settings/includes/views/view-forms.php:212
 msgid "By enabling this option you can allow or deny email domains from registering."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:192
+#: admin/advanced-settings/includes/views/view-forms.php:218
 msgid "Registering Type"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:197
+#: admin/advanced-settings/includes/views/view-forms.php:223
 msgid "Allow"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:202
+#: admin/advanced-settings/includes/views/view-forms.php:228
 msgid "Deny"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:206
+#: admin/advanced-settings/includes/views/view-forms.php:232
 msgid "Choose rather to allow or deny Email Domains from registering."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:210
+#: admin/advanced-settings/includes/views/view-forms.php:236
 msgid "Restricted Domains"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:224
+#: admin/advanced-settings/includes/views/view-forms.php:250
 msgid "You should add only the domain in the list from above. eg.: gmail.com."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:230
+#: admin/advanced-settings/includes/views/view-forms.php:256
 msgid "Add the Email Domain Registering restriction message."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:243
+#: admin/advanced-settings/includes/views/view-forms.php:269
 msgid "Email Confirmation Bypass Forms"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:265
+#: admin/advanced-settings/includes/views/view-forms.php:291
 msgid "Select the Forms that should bypass Email Confirmation."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:266
+#: admin/advanced-settings/includes/views/view-forms.php:292
 msgid "Users registering through any of the selected forms will not need to confirm their email address."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:271
+#: admin/advanced-settings/includes/views/view-forms.php:297
 msgid "Email confirmation"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:279
+#: admin/advanced-settings/includes/views/view-forms.php:305
 msgid "Enable “Email confirmation” for changing user email address."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:282
+#: admin/advanced-settings/includes/views/view-forms.php:308
 msgid "If enabled, an activation email is sent for the new email address."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:287
+#: admin/advanced-settings/includes/views/view-forms.php:313
 msgid "Bypass Email Confirmation"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:295
+#: admin/advanced-settings/includes/views/view-forms.php:321
 msgid "Disable Email Confirmation for Social Connect registrations."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:298
+#: admin/advanced-settings/includes/views/view-forms.php:324
 msgid "Allow users that register through the Social Connect add-on to bypass the Email Confirmation feature."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:303
+#: admin/advanced-settings/includes/views/view-forms.php:329
 msgid "Checked Remember Me"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:311
+#: admin/advanced-settings/includes/views/view-forms.php:337
 msgid "Check the \"Remember Me\" checkbox on Login forms, by default."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:316
+#: admin/advanced-settings/includes/views/view-forms.php:342
 msgid "Password Reset Auto-Login"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:324
+#: admin/advanced-settings/includes/views/view-forms.php:350
 msgid "Automatically log in users after they reset their password using the Recover Password form."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:329
+#: admin/advanced-settings/includes/views/view-forms.php:355
 msgid "Remove Profile Page Validation"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:337
+#: admin/advanced-settings/includes/views/view-forms.php:363
 msgid "Remove validation from back-end Profile page."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:346
+#: admin/advanced-settings/includes/views/view-forms.php:372
 msgid "Edit Users Selector"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:354
+#: admin/advanced-settings/includes/views/view-forms.php:380
 msgid "Always show edit other users dropdown."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:357
+#: admin/advanced-settings/includes/views/view-forms.php:383
 msgid "For perfomance reasons, we disable the Select if you have more than 5000 users on your website."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:362
+#: admin/advanced-settings/includes/views/view-forms.php:388
 msgid "Anyone can Register"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:370
+#: admin/advanced-settings/includes/views/view-forms.php:396
 msgid "Consider \"Anyone can Register\" WordPress option."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:375
+#: admin/advanced-settings/includes/views/view-forms.php:401
 msgid "By default, Profile Builder ignores this %1$s. By enabling this option, our Registration Form will consider it."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:375
+#: admin/advanced-settings/includes/views/view-forms.php:401
 msgid "setting"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:381
+#: admin/advanced-settings/includes/views/view-forms.php:407
 msgid "Redirect Delay Timer"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:383
+#: admin/advanced-settings/includes/views/view-forms.php:409
 msgid "This allows you to change the amount of seconds it takes for the \"After Registration\" redirect to happen."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:384
+#: admin/advanced-settings/includes/views/view-forms.php:410
 msgid "The default is 3 seconds. Leave empty if you do not want to change it."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:389
+#: admin/advanced-settings/includes/views/view-forms.php:415
 msgid "Admin Approval Status Usermeta"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:397
+#: admin/advanced-settings/includes/views/view-forms.php:423
 msgid "Save Admin Approval status in usermeta."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:400
+#: admin/advanced-settings/includes/views/view-forms.php:426
 msgid "By default, the Admin Approval status is saved as a custom taxonomy that is attached to the user."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:401
+#: admin/advanced-settings/includes/views/view-forms.php:427
 msgid "By enabling this option, the status will also be saved in the \"*_usermeta\" table under the \"wppb_approval_status\" meta name."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:407
+#: admin/advanced-settings/includes/views/view-forms.php:433
 msgid "Redirect Unapproved Users"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:415
+#: admin/advanced-settings/includes/views/view-forms.php:441
 msgid "Redirect \"/author\" page if user is not approved."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:418
+#: admin/advanced-settings/includes/views/view-forms.php:444
 msgid "By default, users placed in Admin Approval will not be able to login, but the Author pages will be accessible."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:419
+#: admin/advanced-settings/includes/views/view-forms.php:445
 msgid "Using this option you can redirect these pages, sending users who try to access them to your home page."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:424
+#: admin/advanced-settings/includes/views/view-forms.php:450
 msgid "Last Login Usermeta"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:432
+#: admin/advanced-settings/includes/views/view-forms.php:458
 msgid "Save \"Last Login\" date in usermeta."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:435
+#: admin/advanced-settings/includes/views/view-forms.php:461
 msgid "By enabling this option, each time a user logins, the date and time will be saved in the database under the \"last_login_date\" meta name."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:436
+#: admin/advanced-settings/includes/views/view-forms.php:462
 msgid "You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-login#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:440
+#: admin/advanced-settings/includes/views/view-forms.php:466
 msgid "Last Profile Update Usermeta"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:448
+#: admin/advanced-settings/includes/views/view-forms.php:474
 msgid "Save \"Last Profile Update\" date in usermeta."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:451
+#: admin/advanced-settings/includes/views/view-forms.php:477
 msgid "By enabling this option, each time a user modifies his profile the date and time will be saved in the database under the \"last_profile_update_date\" meta name."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:452
+#: admin/advanced-settings/includes/views/view-forms.php:478
 msgid "You can <a href=\"https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=pb-advanced-settings&utm_medium=client-site&utm_campaign=pb-last-profile-update#Manage_existing_custom_fields_with_Profile_Builder\" target=\"_blank\">create a field with this meta name</a> to display it in the Userlisting or Edit Profile forms."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:456
+#: admin/advanced-settings/includes/views/view-forms.php:482
 msgid "Disable Automatic Scrolling"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:464
+#: admin/advanced-settings/includes/views/view-forms.php:490
 msgid "Disable automatic scrolling after submit."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:467
+#: admin/advanced-settings/includes/views/view-forms.php:493
 msgid "By default, after each form submission the page will automatically scroll to the form message. By enabling this option, automatic scrolling will be disabled."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:472
+#: admin/advanced-settings/includes/views/view-forms.php:498
 msgid "Conditional Fields Ajax"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:480
+#: admin/advanced-settings/includes/views/view-forms.php:506
 msgid "Use Ajax on conditional fields."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:483
+#: admin/advanced-settings/includes/views/view-forms.php:509
 msgid "For large conditional forms. Enable option for improved page performance."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:516
+#: admin/advanced-settings/includes/views/view-forms.php:542
 msgid "Notification Background Color - Success"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:517
+#: admin/advanced-settings/includes/views/view-forms.php:543
 msgid "Notification Background Color - Error"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:518
+#: admin/advanced-settings/includes/views/view-forms.php:544
 msgid "Notification Background Color - Warning"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:519
+#: admin/advanced-settings/includes/views/view-forms.php:545
 msgid "Notification Background Color - Note"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:521
+#: admin/advanced-settings/includes/views/view-forms.php:547
 msgid "Notification Border Color - Success"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:522
+#: admin/advanced-settings/includes/views/view-forms.php:548
 msgid "Notification Border Color - Error"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:523
+#: admin/advanced-settings/includes/views/view-forms.php:549
 msgid "Notification Border Color - Warning"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:524
+#: admin/advanced-settings/includes/views/view-forms.php:550
 msgid "Notification Border Color - Note"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:525
+#: admin/advanced-settings/includes/views/view-forms.php:551
+msgid "Progress Bar Fill Color"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:552
+msgid "Progress Bar Background Color"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:553
+msgid "Progress Bar Text Color"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:555
 msgid "Reset All Color Settings"
 msgstr ""
 

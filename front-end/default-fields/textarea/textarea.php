@@ -62,9 +62,9 @@ add_filter( 'wppb_admin_output_form_field_textarea', 'wppb_textarea_handler', 10
 function wppb_save_textarea_value( $field, $user_id, $request_data, $form_location ){
 	if( $field['field'] == 'Textarea' ){
 		if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ){
-			$meta_value = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
+			$meta_value = sanitize_textarea_field( wp_unslash( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
 
-			if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+			if( apply_filters( 'wppb_form_field_textarea_escape_on_save', false ) )
 				$meta_value = esc_textarea( $meta_value );
 
 			update_user_meta( $user_id, $field['meta-name'], $meta_value );

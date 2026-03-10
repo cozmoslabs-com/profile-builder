@@ -217,6 +217,16 @@ function wppb_content_restriction_meta_box_output( $post ) {
         </div>
     </div>
 
+    <?php if ( ! defined( 'WPPB_PAID_PLUGIN_DIR' ) || ( defined( 'PROFILE_BUILDER_PAID_VERSION' ) && PROFILE_BUILDER_PAID_VERSION === 'dev' ) ) : ?>
+
+        <div class="cozmoslabs-form-field-wrapper">
+            <p class="cozmoslabs-description">
+                <?php echo wp_kses_post( sprintf( __( 'Have a question? %1$sOpen a support ticket.%2$s', 'profile-builder' ), '<a href="' . esc_url( 'https://wordpress.org/support/plugin/profile-builder/#new-topic-0' ) . '" target="_blank" rel="noopener">', '</a>' ) ); ?>
+            </p>
+        </div>
+
+    <?php endif; ?>
+
     <?php
     wp_nonce_field( 'wppb_meta_box_single_content_restriction_nonce', 'wppb_content_restriction_token', false );
 

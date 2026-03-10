@@ -493,6 +493,8 @@ class Profile_Builder_Form_Creator{
 			$this->wppb_add_send_credentials_checkbox( $_REQUEST, $this->args['form_type'] );
 			echo apply_filters( 'wppb_after_send_credentials_checkbox', '</ul>', $this->args['form_type'] ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
 
+            echo apply_filters( 'wppb_form_bottom', '</ul>', $this->args['form_type'], $this->args['ID'], $_REQUEST ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+
             $wppb_form_submit_extra_attr = apply_filters( 'wppb_form_submit_extra_attr', '', $this->args['form_type'], $this->args['ID'] );
 			?>
 			<p class="form-submit" <?php echo $wppb_form_submit_extra_attr; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped when created */ ?> >
@@ -738,9 +740,9 @@ class Profile_Builder_Form_Creator{
                         if( in_array( $field['field'], array( 'URL' ) ) )
                             $posted_value = esc_url_raw( $global_request[ $field['meta-name'] ] );
                         else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) ){
-                            $meta_value = $global_request[ $field['meta-name'] ];
+                            $meta_value = sanitize_textarea_field( wp_unslash( $global_request[ $field['meta-name'] ] ) );
 
-                            if( apply_filters( 'wppb_form_field_textarea_escape_on_save', true ) )
+                            if( apply_filters( 'wppb_form_field_textarea_escape_on_save', false ) )
                                 $meta_value = esc_textarea( $meta_value );
 
                             $posted_value = $meta_value;

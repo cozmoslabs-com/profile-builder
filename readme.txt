@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.4
+Stable tag: 3.15.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,7 @@ The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_sour
 * [Repeater Fields](https://www.cozmoslabs.com/add-ons/repeater-fields/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) - add repeater fields or groups of fields to your user profile
 * Admin Approval ([approve new users from dashboard or via email](https://www.cozmoslabs.com/approve-users-from-admin-email-using-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree))
 * Create a [Map of Users Locations](https://www.cozmoslabs.com/add-users-map-wordpress/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree)
+* Add progress bars to your Edit Profile and Registration forms
 * 17 Premium Add-ons (e.g. custom redirects, user listing, multiple registration forms etc.)
 * Access to Premium Support and Documentation
 * 1 Year of Plugin Updates, New Features and Priority Support
@@ -206,12 +207,10 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.15.4 =
-* Enhancement: Improved the way custom fields are stored
-* Fix: Issue with Exclude Restricted Posts from Queries feature only restricting a select set of posts
-* Fix: Add transient caching to Exclude Restricted Posts from Queries when it applies to default WooCommerce queries
-* Fix: Exclude Restricted Posts from Queries not applies correctly to the WooCommerce products shortcode 
-* Misc: Allow admins to select any Registration From when excluding them from Email Confirmation
-* Misc: Added a filter that can be used to enforce Email only reset requests in combination with the Allow Users to Login with option
+= 3.15.5 =
+* Fix: Issue with WooCommerce Products restriction with FSE themes
+* Fix: An encoding issue with the Textarea field
+* Misc: Admin UI changes
+* Misc: Compatibility changes for Progress Bar on forms feature
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

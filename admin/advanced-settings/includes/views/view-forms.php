@@ -26,6 +26,9 @@
 	    $wppb_notifications_border_color_error_default = '#C62828';
 	    $wppb_notifications_border_color_warning_default = '#F9A825';
 	    $wppb_notifications_border_color_note_default = '#00A0D2';
+        $wppb_progress_bar_fill_color_default = '#1079F3';
+        $wppb_progress_bar_background_color_default = '#D6F5FF';
+        $wppb_progress_bar_text_color_default = '#333333';
     }
     elseif( $active_design === 'form-style-2') {
 	    $wppb_primary_color_default = '#558B2F';
@@ -38,6 +41,9 @@
 	    $wppb_notifications_border_color_error_default = '#C62828';
 	    $wppb_notifications_border_color_warning_default = '#F9A825';
 	    $wppb_notifications_border_color_note_default = '#00A0D2';
+        $wppb_progress_bar_fill_color_default = '#558B2F';
+        $wppb_progress_bar_background_color_default = '#DCEDC8';
+        $wppb_progress_bar_text_color_default = '#333333';
     }
     elseif( $active_design === 'form-style-3') {
 	    $wppb_primary_color_default = '#554FE6';
@@ -50,6 +56,9 @@
 	    $wppb_notifications_border_color_error_default = '#C62828';
 	    $wppb_notifications_border_color_warning_default = '#F9A825';
 	    $wppb_notifications_border_color_note_default = '#00A0D2';
+        $wppb_progress_bar_fill_color_default = '#554FE6'; // Primary color
+        $wppb_progress_bar_background_color_default = '#F0F2F5';
+        $wppb_progress_bar_text_color_default = '#333333';
     }
     else {
 	    $wppb_primary_color_default = '';
@@ -62,6 +71,9 @@
 	    $wppb_notifications_border_color_error_default = '';
 	    $wppb_notifications_border_color_warning_default = '';
 	    $wppb_notifications_border_color_note_default = '';
+        $wppb_progress_bar_fill_color_default = '#4cd964';
+        $wppb_progress_bar_background_color_default = '#f0f0f0';
+        $wppb_progress_bar_text_color_default = '#333333';
     }
 
 
@@ -149,6 +161,20 @@
 
                         <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Note', 'profile-builder' ); ?></label>
                         <input type="color" id ="wppb-notifications-border-color-note" name="wppb_toolbox_forms_settings[notifications-border-color-note]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['notifications-border-color-note'] ) &&  !empty( $settings['notifications-border-color-note'] ) ) ? esc_attr( $settings['notifications-border-color-note'] ) : esc_attr( $wppb_notifications_border_color_note_default ) ); ?>"/>
+                    </div>
+                </div>
+
+                <div class="cozmoslabs-form-field-wrapper wppb-color-switcher-section" id="wppb-progress-bar-section">
+                    <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Progress Bar', 'profile-builder' ); ?></label><br>
+                    <div class="cozmoslabs-form-field-wrapper">
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Fill Color', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-progress-bar-fill-color" name="wppb_toolbox_forms_settings[progress-bar-fill-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['progress-bar-fill-color'] ) &&  !empty( $settings['progress-bar-fill-color'] ) ) ? esc_attr( $settings['progress-bar-fill-color'] ) : esc_attr( $wppb_progress_bar_fill_color_default ) ); ?>"/>
+
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Background Color', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-progress-bar-background-color" name="wppb_toolbox_forms_settings[progress-bar-background-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['progress-bar-background-color'] ) &&  !empty( $settings['progress-bar-background-color'] ) ) ? esc_attr( $settings['progress-bar-background-color'] ) : esc_attr( $wppb_progress_bar_background_color_default ) ); ?>"/>
+
+                        <label class="cozmoslabs-form-field-label"><?php esc_html_e( 'Text Color', 'profile-builder' ); ?></label>
+                        <input type="color" id ="wppb-progress-bar-text-color" name="wppb_toolbox_forms_settings[progress-bar-text-color]" class="custom_field_colorpicker" value="<?php echo ( ( isset( $settings['progress-bar-text-color'] ) &&  !empty( $settings['progress-bar-text-color'] ) ) ? esc_attr( $settings['progress-bar-text-color'] ) : esc_attr( $wppb_progress_bar_text_color_default ) ); ?>"/>
                     </div>
                 </div>
 
@@ -522,6 +548,10 @@
                         <label for="wppb-settings-notifications-border-color-error"><input type="checkbox" name="reset_notifications_border_color_error" id="wppb-settings-notifications-border-color-error" value="<?php echo esc_attr( $wppb_notifications_border_color_error_default ) ?>"><?php esc_html_e('Notification Border Color - Error', 'profile-builder'); ?></label>
                         <label for="wppb-settings-notifications-border-color-warning"><input type="checkbox" name="reset_notifications_border_color_warning" id="wppb-settings-notifications-border-color-warning" value="<?php echo esc_attr( $wppb_notifications_border_color_warning_default ) ?>"><?php esc_html_e('Notification Border Color - Warning', 'profile-builder'); ?></label>
                         <label for="wppb-settings-notifications-border-color-note"><input type="checkbox" name="reset_notifications_border_color_note" id="wppb-settings-notifications-border-color-note" value="<?php echo esc_attr( $wppb_notifications_border_color_note_default ) ?>"><?php esc_html_e('Notification Border Color - Note', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-progress-bar-fill-color"><input type="checkbox" name="reset_progress_bar_fill_color" id="wppb-settings-progress_bar_fill_color" value="<?php echo esc_attr( $wppb_progress_bar_fill_color_default ) ?>"><?php esc_html_e('Progress Bar Fill Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-progress-bar-background-color"><input type="checkbox" name="reset_progress_bar_background_color" id="wppb-settings-progress_bar_background_color" value="<?php echo esc_attr( $wppb_progress_bar_background_color_default ) ?>"><?php esc_html_e('Progress Bar Background Color', 'profile-builder'); ?></label>
+                        <label for="wppb-settings-progress-bar-text-color"><input type="checkbox" name="reset_progress_bar_text_color" id="wppb-settings-progress_bar_text_color" value="<?php echo esc_attr( $wppb_progress_bar_text_color_default ) ?>"><?php esc_html_e('Progress Bar Text Color', 'profile-builder'); ?></label>
+
                         <label for="wppb-settings-all-colors"><input type="checkbox" name="reset_all_colors" id="wppb-settings-all-colors" value="all"><?php esc_html_e('Reset All Color Settings', 'profile-builder'); ?></label>
                     </div>
                 </div>

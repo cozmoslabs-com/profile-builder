@@ -799,3 +799,53 @@ function wppb_maybe_remove_pms_styles() {
     }
 }
 add_action('admin_enqueue_scripts', 'wppb_maybe_remove_pms_styles', 100);
+
+
+/**
+ * Output the deactivation confirmation popup on the Plugins page
+ *
+ */
+function wppb_output_deactivation_popup() {
+
+    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && ( ! defined( 'PROFILE_BUILDER_PAID_VERSION' ) || PROFILE_BUILDER_PAID_VERSION === 'dev' ) )
+        return;
+
+    $screen = get_current_screen();
+
+    if ( empty( $screen ) )
+        return;
+
+    $is_plugins_screen = in_array( $screen->base, array( 'plugins', 'plugins-network' ), true ) || in_array( $screen->id, array( 'plugins', 'plugins-network' ), true );
+
+    if ( !$is_plugins_screen )
+        return;
+
+    ?>
+    <div id="wppb-deactivation-popup" title="<?php esc_attr_e( 'Before You Go', 'profile-builder' ); ?>" data-plugin="<?php echo esc_attr( WPPB_PLUGIN_BASENAME ); ?>" style="display: none;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+            <img src="<?php echo esc_url( WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Profile Builder', 'profile-builder' ); ?>" width="44" height="44">
+
+            <p style="margin: 0;">
+                <?php esc_html_e( 'If something isn\'t working as expected, we\'d love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help.', 'profile-builder' ); ?>
+            </p>
+        </div>
+
+        <div style="text-align: right;">
+            <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" rel="noopener" class="button button-primary wppb-deactivation-popup-support">
+                <?php esc_html_e( 'Contact Support', 'profile-builder' ); ?>
+            </a>
+
+            <button type="button" class="button button-primary wppb-deactivation-popup-confirm">
+                <?php esc_html_e( 'Deactivate', 'profile-builder' ); ?>
+            </button>
+        </div>
+    </div>
+    <style>
+        .ui-dialog[aria-describedby="wppb-deactivation-popup"] .ui-dialog-titlebar {
+            background: transparent;
+            border: none;
+        }
+    </style>
+    <?php
+}
+add_action( 'admin_footer', 'wppb_output_deactivation_popup' );
