@@ -123,12 +123,47 @@ function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location
                     }
                     else{
                         $attachment_id = $request_data[ $field[ 'meta-name' ] ];
-                        update_user_meta( $user_id, $field[ 'meta-name' ], absint( $attachment_id ) );
-                        if ( $attachment_id !== '' ) {
-                            wp_update_post(array(
-                                'ID' => absint(trim($attachment_id)),
-                                'post_author' => $user_id
-                            ));
+                        if ( $attachment_id !== '' && is_numeric( $attachment_id ) ) {
+                            $attachment = get_post( absint( trim( $attachment_id ) ) );
+                            if ( $attachment && $attachment->post_type === 'attachment' ) {
+
+                                // Get current user info for admin bypass checks
+                                $current_user_id = get_current_user_id();
+                                $current_user = $current_user_id ? get_userdata( $current_user_id ) : null;
+                                $is_admin = $current_user && current_user_can( 'manage_options' );
+
+                                $valid_attachment = false;
+
+                                if ( $user_id ) {
+                                    // Allow admins to upload files for users
+                                    if ( $is_admin ) {
+                                        $valid_attachment = true;
+                                    }
+                                    // Only update if the attachment belongs to the user or has no author (post_author = 0)
+                                    else if ( $attachment->post_author == $user_id || $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                                        $valid_attachment = true;
+                                    }
+                                } else {
+                                    // If no user ID is provided, check if current user is admin
+                                    if ( $is_admin ) {
+                                        $valid_attachment = true;
+                                    }
+                                    // If no user ID is provided, check if the attachment has no author
+                                    else if ( $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                                        $valid_attachment = true;
+                                    }
+                                }
+
+                                if ( $valid_attachment ) {
+                                    update_user_meta( $user_id, $field[ 'meta-name' ], absint( $attachment_id ) );
+                                    wp_update_post(array(
+                                        'ID' => absint(trim($attachment_id)),
+                                        'post_author' => $user_id
+                                    ));
+                                } else {
+                                    update_user_meta( $user_id, $field[ 'meta-name' ], '' );
+                                }
+                            }
                         }
                     }
                 }

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.5
+Stable tag: 3.15.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,7 +90,7 @@ You can use the following shortcode list or available plugin blocks to quickly d
 
 The [Pro version](https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree#pricing) has the following extra features:
 
-* Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select, Taxonomy Select)
+* Create Extra User Fields (Hidden Input, Agree to Terms Checkbox WYSIWYG, Upload fields, International Telephone Input, User Role Select, Country Select, Timezone Select Upload, Map, HTML, Phone, Datepicker, Timepicker, Colorpicker, Custom Validation field, Currency Select, CPT Select, Taxonomy Select)
 * Support for Conditional Fields
 * Use AJAX for form processing
 * Front-end User Listing (create fully customizable member directories, sorting included)
@@ -207,10 +207,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.15.5 =
-* Fix: Issue with WooCommerce Products restriction with FSE themes
-* Fix: An encoding issue with the Textarea field
-* Misc: Admin UI changes
-* Misc: Compatibility changes for Progress Bar on forms feature
+= 3.15.6 =
+* Fix: Security issue regarding Avatar field. Thanks to type5afe and the Wordfence team
+* Misc: Back-end UI changes
+* Misc: Compatibility changes for new field type: International Telephone Input
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

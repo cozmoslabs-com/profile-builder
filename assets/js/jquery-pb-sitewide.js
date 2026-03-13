@@ -341,6 +341,49 @@ jQuery(document).ready( function () {
 
 
 /**
+ * Documentation links popup
+ */
+jQuery( function() {
+    if ( ! jQuery.fn.dialog ) {
+        return;
+    }
+
+    const $docsLinkPopup = jQuery('#wppb-docs-link-popup');
+
+    if ( ! $docsLinkPopup.length ) {
+        return;
+    }
+
+    $docsLinkPopup.dialog({
+          autoOpen: false,
+          modal: true,
+          draggable: false,
+          resizable: false,
+          width: 480,
+          dialogClass: 'wppb-docs-link-popup-dialog'
+      });
+
+    jQuery(document).on('click', 'a.wppb-docs-link', function (e) {
+        const docsUrl = jQuery(this).attr('href');
+
+        if ( ! docsUrl ) {
+            return;
+        }
+
+        e.preventDefault();
+
+        $docsLinkPopup.find('.wppb-docs-link-popup-open-docs').attr('href', docsUrl);
+
+        $docsLinkPopup.dialog('open');
+    });
+
+    $docsLinkPopup.on('click', '.wppb-docs-link-popup-open-docs, .wppb-docs-link-popup-open-wporg', function () {
+        $docsLinkPopup.dialog('close');
+    });
+});
+
+
+/**
  * Initialize Select2
  *
  * */

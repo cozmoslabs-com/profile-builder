@@ -849,3 +849,74 @@ function wppb_output_deactivation_popup() {
     <?php
 }
 add_action( 'admin_footer', 'wppb_output_deactivation_popup' );
+
+
+/**
+ * Check if current screen is a Profile Builder admin page.
+ *
+ * @return bool
+ */
+function wppb_is_profile_builder_admin_page() {
+
+    if ( ! is_admin() )
+        return false;
+
+    $screen = get_current_screen();
+
+    if ( ! $screen )
+        return false;
+
+    $pb_pages = array(
+        'profile-builder',
+        'profile-builder-dashboard',
+        'profile-builder-basic-info',
+        'profile-builder-general-settings',
+        'profile-builder-add-ons',
+        'manage-fields',
+    );
+
+    foreach ( $pb_pages as $page ) {
+
+        if ( strpos( $screen->id, $page ) !== false )
+            return true;
+
+    }
+
+    if ( ! empty( $screen->post_type ) ) {
+        $pb_cpt_pages = array( 'wppb-ul-cpt', 'wppb-rf-cpt', 'wppb-epf-cpt' );
+
+        if ( in_array( $screen->post_type, $pb_cpt_pages, true ) )
+            return true;
+    }
+
+    return false;
+}
+
+
+/**
+ * Output the popup markup used for documentation links from the admin.
+ *
+ * @return void
+ */
+function wppb_output_docs_link_popup() {
+
+    if ( ! wppb_is_profile_builder_admin_page() )
+        return;
+
+    ?>
+    <div id="wppb-docs-link-popup" class="wppb-docs-link-popup" title="<?php echo esc_attr__( 'Need Help?', 'profile-builder' ); ?>" style="display:none;">
+        <div class="wppb-docs-link-popup-content">
+            <img src="<?php echo esc_url( WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Profile Builder', 'profile-builder' ); ?>" width="44" height="44" class="wppb-docs-link-popup-logo">
+            <div>
+                <p class="wppb-docs-link-popup-description"><?php esc_html_e( 'If you need a hand with this setting, you can check the documentation or open a support ticket on WordPress.org.', 'profile-builder' ); ?></p>
+                <p class="wppb-docs-link-popup-description"><?php esc_html_e( 'We will do our best to help you figure it out.', 'profile-builder' ); ?></p>
+            </div>
+        </div>
+        <div class="wppb-docs-link-popup-actions cozmoslabs-wrap">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="button button-primary wppb-docs-link-popup-open-docs"><?php esc_html_e( 'View Documentation', 'profile-builder' ); ?></a>
+            <a href="https://wordpress.org/support/plugin/profile-builder/#new-topic-0" target="_blank" rel="noopener noreferrer" class="button button-primary wppb-docs-link-popup-open-wporg"><?php esc_html_e( 'Open Support Ticket', 'profile-builder' ); ?></a>
+        </div>
+    </div>
+    <?php
+}
+add_action( 'admin_footer', 'wppb_output_docs_link_popup' );

@@ -107,6 +107,7 @@ function wppb_populate_manage_fields(){
         // $manage_field_types['optgroups']['standard']['options'][] = 'Radio';
         $manage_field_types['optgroups']['standard']['options'][] = 'HTML';
         $manage_field_types['optgroups']['standard']['options'][] = 'Upload';
+        $manage_field_types['optgroups']['standard']['options'][] = 'International Telephone Input';
         // $manage_field_types['optgroups']['standard']['options'][] = 'Avatar';
 
         $manage_field_types['optgroups']['advanced']['options'][] = 'Phone';
@@ -153,6 +154,7 @@ function wppb_populate_manage_fields(){
         $manage_field_types['optgroups']['standard']['options'][] = array( 'field_name' => 'Select (Multiple)', 'disabled' => true );
         $manage_field_types['optgroups']['standard']['options'][] = array( 'field_name' => 'HTML', 'disabled' => true );
         $manage_field_types['optgroups']['standard']['options'][] = array( 'field_name' => 'Upload', 'disabled' => true );
+        $manage_field_types['optgroups']['standard']['options'][] = array( 'field_name' => 'International Telephone Input', 'disabled' => true );
 
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Phone', 'disabled' => true );
         $manage_field_types['optgroups']['advanced']['options'][] = array( 'field_name' => 'Select (Country)', 'disabled' => true );
@@ -323,8 +325,13 @@ function wppb_populate_manage_fields(){
 		array( 'type' => 'text', 'slug' => 'number-step-value', 'title' => __( 'Number Step Value', 'profile-builder' ), 'description' => __( "Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal", 'profile-builder' ) .'<br>'. __( "To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on", 'profile-builder' ) .'<br>'. __( "You can also use step value to specify the legal number intervals (eg. step value 2 will allow only -4, -2, 0, 2 and so on)", 'profile-builder' ) .'<br>'. __( "Leave it empty for no restriction", 'profile-builder' ) ),
 		array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'initial-country', 'title' => __( 'Initial Country', 'profile-builder' ), 'description' => __( "Set the initial country for the phone field. Use 'auto' to detect it automatically by IP, or enter one ISO 3166-1 alpha-2 country code (e.g. ro, jp, us).", 'profile-builder' ), 'default' => 'auto' ),
+        array( 'type' => 'text', 'slug' => 'preferred-countries', 'title' => __( 'Preferred Countries', 'profile-builder' ), 'description' => __( "Set preferred countries using ISO 3166-1 alpha-2 codes (e.g. ro, jp, us), separated by commas.", 'profile-builder' ), 'default' => '' ),
+        array( 'type' => 'text', 'slug' => 'excluded-countries', 'title' => __( 'Excluded Countries', 'profile-builder' ), 'description' => __( "Exclude countries using ISO 3166-1 alpha-2 codes (e.g. af, ru, us), separated by commas.", 'profile-builder' ), 'default' => '' ),
+        array( 'type' => 'checkbox', 'slug' => 'national-mode', 'title' => __( 'National Mode', 'profile-builder' ), 'options' => array( '%'.__('Yes','profile-builder').'%'.'yes' ), 'description' => __( "Enable National Mode to enter numbers in local format (without country prefix). Disable it to use International Mode (with country prefix).", 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'hide-flags', 'title' => __( 'Hide Flags', 'profile-builder' ), 'options' => array( '%'.__('Yes','profile-builder').'%'.'yes' ), 'description' => __( "Enable to hide country flags in the phone field.", 'profile-builder' ) ),
 
-		// Added the new option for the map field type, that allows to customize the POIs load type.
+        // Added the new option for the map field type, that allows to customize the POIs load type.
 		array(
 			'type'        => 'select',
 			'slug'        => 'map-pins-load-type',

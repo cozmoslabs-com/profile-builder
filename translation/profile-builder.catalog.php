@@ -114,6 +114,11 @@
 <?php __("If something isn't working as expected, we'd love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help.", "profile-builder"); ?>
 <?php __("Contact Support", "profile-builder"); ?>
 <?php __("Deactivate", "profile-builder"); ?>
+<?php __("Need Help?", "profile-builder"); ?>
+<?php __("If you need a hand with this setting, you can check the documentation or open a support ticket on WordPress.org.", "profile-builder"); ?>
+<?php __("We will do our best to help you figure it out.", "profile-builder"); ?>
+<?php __("View Documentation", "profile-builder"); ?>
+<?php __("Open Support Ticket", "profile-builder"); ?>
 <?php __("Basic Information", "profile-builder"); ?>
 <?php __("<strong>Profile Builder </strong> %s", "profile-builder"); ?>
 <?php __("The best way to add front-end registration, edit profile and login forms.", "profile-builder"); ?>
@@ -442,6 +447,16 @@
 <?php __("Whether the field is required or not", "profile-builder"); ?>
 <?php __("Overwrite Existing", "profile-builder"); ?>
 <?php __("Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", "profile-builder"); ?>
+<?php __("Initial Country", "profile-builder"); ?>
+<?php __("Set the initial country for the phone field. Use 'auto' to detect it automatically by IP, or enter one ISO 3166-1 alpha-2 country code (e.g. ro, jp, us).", "profile-builder"); ?>
+<?php __("Preferred Countries", "profile-builder"); ?>
+<?php __("Set preferred countries using ISO 3166-1 alpha-2 codes (e.g. ro, jp, us), separated by commas.", "profile-builder"); ?>
+<?php __("Excluded Countries", "profile-builder"); ?>
+<?php __("Exclude countries using ISO 3166-1 alpha-2 codes (e.g. af, ru, us), separated by commas.", "profile-builder"); ?>
+<?php __("National Mode", "profile-builder"); ?>
+<?php __("Enable National Mode to enter numbers in local format (without country prefix). Disable it to use International Mode (with country prefix).", "profile-builder"); ?>
+<?php __("Hide Flags", "profile-builder"); ?>
+<?php __("Enable to hide country flags in the phone field.", "profile-builder"); ?>
 <?php __("POIs Load Type", "profile-builder"); ?>
 <?php __("POIs of the listed users (as filtered & paginated)", "profile-builder"); ?>
 <?php __("POIs of all the users for the filter* (no pagination)", "profile-builder"); ?>
@@ -949,7 +964,6 @@
 <?php __("Create new user roles with the Role Editor.", "profile-builder"); ?>
 <?php __("Progress Review", "profile-builder"); ?>
 <?php __("Follow these steps to start registering users on your website. %1s out of %2s complete.", "profile-builder"); ?>
-<?php __("Need Help?", "profile-builder"); ?>
 <?php __("Recent community discussions", "profile-builder"); ?>
 <?php __("Loading...", "profile-builder"); ?>
 <?php __("Unable to load forum posts", "profile-builder"); ?>
@@ -1226,6 +1240,9 @@
 <?php __("Search the User Listing", "profile-builder"); ?>
 <?php __("No User Listing found", "profile-builder"); ?>
 <?php __("No User Listing found in trash", "profile-builder"); ?>
+<?php __("Prefix", "profile-builder"); ?>
+<?php __("Without Prefix", "profile-builder"); ?>
+<?php __("Call Link", "profile-builder"); ?>
 <?php __("Blog URL", "profile-builder"); ?>
 <?php __("Website Link", "profile-builder"); ?>
 <?php __("Display name as", "profile-builder"); ?>
@@ -2319,6 +2336,22 @@
 <?php __("This username is already reserved to be used soon.", "profile-builder"); ?>
 <?php __("Something isn't right.", "profile-builder"); ?>
 <?php __("You must enter a valid URL.", "profile-builder"); ?>
+<?php __("International Telephone Input is active, but <strong>PHP phone validation is disabled</strong> because this site is running a <strong>PHP version lower than 8.1</strong>.", "profile-builder"); ?>
+<?php __("The field will still be <strong>displayed</strong> and users will still be able to <strong>submit it</strong>, but <strong>server-side validation</strong> and <strong>formatting</strong> powered by the PHP library will be skipped.", "profile-builder"); ?>
+<?php __("Please update PHP to <strong>version 8.1 or higher</strong> to enable <strong>full validation support</strong>.", "profile-builder"); ?>
+<?php __("Number is too short.", "profile-builder"); ?>
+<?php __("Number is too long.", "profile-builder"); ?>
+<?php __("The country code is invalid. Please check the international prefix.", "profile-builder"); ?>
+<?php __("Invalid number.", "profile-builder"); ?>
+<?php __("Please enter the number without country prefix in National Mode.", "profile-builder"); ?>
+<?php __("Please include the country prefix (for example %s...) for International Mode.", "profile-builder"); ?>
+<?php __("Invalid phone number.", "profile-builder"); ?>
+<?php __("Call me", "profile-builder"); ?>
+<?php __("Initial Country must be \"auto\" or one ISO 3166-1 alpha-2 code (e.g. ro, jp, us).", "profile-builder"); ?>
+<?php __("Preferred Countries contains invalid code(s): %s", "profile-builder"); ?>
+<?php __("Excluded Countries contains invalid code(s): %s", "profile-builder"); ?>
+<?php __("Initial Country cannot be one of the Excluded Countries.", "profile-builder"); ?>
+<?php __("Preferred Countries cannot contain countries also set in Excluded Countries: %s", "profile-builder"); ?>
 <?php __("Please add the Google Maps API key for this field.", "profile-builder"); ?>
 <?php __("Something went wrong. Please try again.", "profile-builder"); ?>
 <?php __("Please enter numbers only", "profile-builder"); ?>

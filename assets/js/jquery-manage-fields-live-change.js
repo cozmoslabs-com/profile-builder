@@ -296,6 +296,20 @@ var fields 	=	{
 																						'.row-overwrite-existing'
 																					]
 																},
+						'International Telephone Input':		{	'show_rows'	:	[
+																						'.row-field-title',
+																						'.row-meta-name',
+																						'.row-description',
+																						'.row-default-value',
+																						'.row-initial-country',
+																						'.row-preferred-countries',
+																						'.row-excluded-countries',
+																						'.row-national-mode',
+																						'.row-hide-flags',
+																						'.row-overwrite-existing',
+																						'.row-required'
+																					]
+																},
 						'Language':								{	'show_rows'	:	[
 																						'.row-field-title',
 																						'.row-meta-name',

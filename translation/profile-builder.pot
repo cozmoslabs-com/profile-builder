@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-10 08:51+0000\n"
+"POT-Creation-Date: 2026-03-13 08:19+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -454,7 +454,7 @@ msgstr ""
 msgid " Don't have a license? %sBuy one now%s."
 msgstr ""
 
-#: admin/admin-functions.php:679, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:928
+#: admin/admin-functions.php:679, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:928, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Before You Go"
 msgstr ""
 
-#: admin/admin-functions.php:826, features/functions.php:1718
+#: admin/admin-functions.php:826, admin/admin-functions.php:909, features/functions.php:1718
 msgid "Profile Builder"
 msgstr ""
 
@@ -476,6 +476,26 @@ msgstr ""
 
 #: admin/admin-functions.php:839, admin/pms-cross-promotion.php:132, admin/pms-cross-promotion.php:162, admin/pms-cross-promotion.php:247
 msgid "Deactivate"
+msgstr ""
+
+#: admin/admin-functions.php:907, admin/support-chat.php:190, admin/support-chat.php:231
+msgid "Need Help?"
+msgstr ""
+
+#: admin/admin-functions.php:911
+msgid "If you need a hand with this setting, you can check the documentation or open a support ticket on WordPress.org."
+msgstr ""
+
+#: admin/admin-functions.php:912
+msgid "We will do our best to help you figure it out."
+msgstr ""
+
+#: admin/admin-functions.php:916
+msgid "View Documentation"
+msgstr ""
+
+#: admin/admin-functions.php:917
+msgid "Open Support Ticket"
 msgstr ""
 
 #: admin/basic-info.php:11, admin/basic-info.php:11
@@ -1078,11 +1098,11 @@ msgstr ""
 msgid "Username and Email"
 msgstr ""
 
-#: admin/general-settings.php:303, admin/manage-fields.php:412, front-end/login.php:364, front-end/login.php:378, front-end/login.php:604, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:358, add-ons/user-listing/userlisting.php:547, add-ons/user-listing/userlisting.php:1014, add-ons/user-listing/userlisting.php:2958, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
+#: admin/general-settings.php:303, admin/manage-fields.php:419, front-end/login.php:364, front-end/login.php:378, front-end/login.php:604, add-ons/custom-redirects/custom_redirects_admin.php:83, add-ons/user-listing/userlisting.php:119, add-ons/user-listing/userlisting.php:364, add-ons/user-listing/userlisting.php:553, add-ons/user-listing/userlisting.php:1078, add-ons/user-listing/userlisting.php:3022, features/admin-approval/class-admin-approval.php:177, features/email-confirmation/class-email-confirmation.php:171, features/email-customizer/email-customizer.php:30, admin/advanced-settings/includes/views/view-fields.php:106
 msgid "Username"
 msgstr ""
 
-#: admin/general-settings.php:304, front-end/login.php:599, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:545, add-ons/user-listing/userlisting.php:1020, add-ons/user-listing/userlisting.php:2959, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
+#: admin/general-settings.php:304, front-end/login.php:599, front-end/recover.php:119, add-ons/user-listing/userlisting.php:125, add-ons/user-listing/userlisting.php:551, add-ons/user-listing/userlisting.php:1084, add-ons/user-listing/userlisting.php:3023, features/admin-approval/class-admin-approval.php:180, features/email-confirmation/class-email-confirmation.php:172, features/email-customizer/email-customizer.php:31, add-ons-free/gdpr-communication-preferences/admin/manage-fields.php:27, add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:12, admin/advanced-settings/includes/shortcodes/resend-activation.php:11, admin/advanced-settings/includes/shortcodes/resend-activation.php:12
 msgid "Email"
 msgstr ""
 
@@ -1118,7 +1138,7 @@ msgstr ""
 msgid "Password Recovery Page"
 msgstr ""
 
-#: admin/general-settings.php:342, add-ons/user-listing/userlisting.php:708, add-ons/user-listing/userlisting.php:705, add-ons/user-listing/userlisting.php:703, add-ons/user-listing/userlisting.php:686, add-ons/user-listing/userlisting.php:683, add-ons/user-listing/userlisting.php:681, add-ons-advanced/bbpress/bbpress-page.php:103, add-ons-advanced/bbpress/bbpress-page.php:134, add-ons-advanced/woocommerce/woosync-page.php:94, add-ons-advanced/woocommerce/woosync-page.php:125, features/content-restriction/content-restriction.php:148, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:588, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:256, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:331
+#: admin/general-settings.php:342, add-ons/user-listing/userlisting.php:714, add-ons/user-listing/userlisting.php:711, add-ons/user-listing/userlisting.php:709, add-ons/user-listing/userlisting.php:692, add-ons/user-listing/userlisting.php:689, add-ons/user-listing/userlisting.php:687, add-ons-advanced/bbpress/bbpress-page.php:103, add-ons-advanced/bbpress/bbpress-page.php:134, add-ons-advanced/woocommerce/woosync-page.php:94, add-ons-advanced/woocommerce/woosync-page.php:125, features/content-restriction/content-restriction.php:148, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:588, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:256, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:331
 msgid "None"
 msgstr ""
 
@@ -1142,7 +1162,7 @@ msgstr ""
 msgid "Confirm Two-Factor Authentication Enforcement"
 msgstr ""
 
-#: admin/general-settings.php:506, features/functions.php:1116, add-ons/user-listing/userlisting.php:3397, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:559
+#: admin/general-settings.php:506, features/functions.php:1116, add-ons/user-listing/userlisting.php:3461, features/roles-editor/roles-editor.php:219, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:559
 msgid "Cancel"
 msgstr ""
 
@@ -1354,2189 +1374,2229 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: admin/manage-fields.php:185
+#: admin/manage-fields.php:187
 msgid "Choose one of the supported field types"
 msgstr ""
 
-#: admin/manage-fields.php:187
+#: admin/manage-fields.php:189
 msgid ". Extra Field Types are available in <a href=\"%s\">Basic or PRO versions</a>."
 msgstr ""
 
-#: admin/manage-fields.php:243
+#: admin/manage-fields.php:245
 msgid "Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this will only affect subsequent entries"
 msgstr ""
 
-#: admin/manage-fields.php:240
+#: admin/manage-fields.php:242
 msgid "Use this in conjunction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be unique)<br/>Changing this might take long in case of a very big user-count"
 msgstr ""
 
-#: admin/manage-fields.php:257
+#: admin/manage-fields.php:259
 msgid "Field Title"
 msgstr ""
 
-#: admin/manage-fields.php:257
+#: admin/manage-fields.php:259
 msgid "Title of the field"
 msgstr ""
 
-#: admin/manage-fields.php:258, add-ons/multiple-forms/edit-profile-forms.php:252, add-ons/multiple-forms/register-forms.php:273
+#: admin/manage-fields.php:260, add-ons/multiple-forms/edit-profile-forms.php:252, add-ons/multiple-forms/register-forms.php:273
 msgid "Field"
 msgstr ""
 
-#: admin/manage-fields.php:259
+#: admin/manage-fields.php:261
 msgid "Meta-name"
 msgstr ""
 
-#: admin/manage-fields.php:260, add-ons/custom-redirects/custom_redirects_admin.php:95, add-ons/custom-redirects/custom_redirects_admin.php:123, add-ons/custom-redirects/custom_redirects_admin.php:142, add-ons/custom-redirects/custom_redirects_admin.php:167, add-ons/custom-redirects/custom_redirects_admin.php:213, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274, add-ons/user-listing/userlisting.php:1059, assets/misc/elementor/widgets/class-pb-widget-ul.php:182
+#: admin/manage-fields.php:262, add-ons/custom-redirects/custom_redirects_admin.php:95, add-ons/custom-redirects/custom_redirects_admin.php:123, add-ons/custom-redirects/custom_redirects_admin.php:142, add-ons/custom-redirects/custom_redirects_admin.php:167, add-ons/custom-redirects/custom_redirects_admin.php:213, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274, add-ons/user-listing/userlisting.php:1123, assets/misc/elementor/widgets/class-pb-widget-ul.php:182
 msgid "ID"
 msgstr ""
 
-#: admin/manage-fields.php:260, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274
+#: admin/manage-fields.php:262, add-ons/multiple-forms/edit-profile-forms.php:253, add-ons/multiple-forms/register-forms.php:274
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: admin/manage-fields.php:261, features/two-factor-authentication/class-two-factor-authentication.php:226, features/two-factor-authentication/class-two-factor-authentication.php:422
+#: admin/manage-fields.php:263, features/two-factor-authentication/class-two-factor-authentication.php:226, features/two-factor-authentication/class-two-factor-authentication.php:422
 msgid "Description"
 msgstr ""
 
-#: admin/manage-fields.php:261
+#: admin/manage-fields.php:263
 msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
 msgstr ""
 
-#: admin/manage-fields.php:262
+#: admin/manage-fields.php:264
 msgid "Row Count"
 msgstr ""
 
-#: admin/manage-fields.php:262
+#: admin/manage-fields.php:264
 msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
 msgstr ""
 
-#: admin/manage-fields.php:263
+#: admin/manage-fields.php:265
 msgid "Allowed Image Extensions"
 msgstr ""
 
-#: admin/manage-fields.php:263
+#: admin/manage-fields.php:265
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
 msgstr ""
 
-#: admin/manage-fields.php:264
+#: admin/manage-fields.php:266
 msgid "Use Simple Upload"
 msgstr ""
 
-#: admin/manage-fields.php:264, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:3010, add-ons/user-listing/userlisting.php:3023, add-ons-advanced/social-connect/index.php:439, features/admin-approval/admin-approval.php:323, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
+#: admin/manage-fields.php:266, admin/manage-fields.php:331, admin/manage-fields.php:332, add-ons/multiple-forms/edit-profile-forms.php:209, add-ons/multiple-forms/edit-profile-forms.php:215, add-ons/multiple-forms/register-forms.php:232, add-ons/multiple-forms/register-forms.php:233, add-ons/multiple-forms/register-forms.php:239, add-ons/user-listing/userlisting.php:3074, add-ons/user-listing/userlisting.php:3087, add-ons-advanced/social-connect/index.php:439, features/admin-approval/admin-approval.php:323, assets/misc/elementor/widgets/class-pb-widget-l.php:79, assets/misc/elementor/widgets/class-pb-widget-l.php:93, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:180, assets/misc/elementor/widgets/class-pb-widget-rf-epf.php:197, assets/misc/elementor/widgets/class-pb-widget-rp.php:57, assets/misc/elementor/widgets/class-pb-widget-ul.php:119
 msgid "Yes"
 msgstr ""
 
-#: admin/manage-fields.php:264
+#: admin/manage-fields.php:266
 msgid "Use a simple upload field instead of the WordPress upload"
 msgstr ""
 
-#: admin/manage-fields.php:265
+#: admin/manage-fields.php:267
 msgid "Allowed Upload Extensions"
 msgstr ""
 
-#: admin/manage-fields.php:265
+#: admin/manage-fields.php:267
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
 msgstr ""
 
-#: admin/manage-fields.php:266
+#: admin/manage-fields.php:268
 msgid "Avatar Size"
 msgstr ""
 
-#: admin/manage-fields.php:266
+#: admin/manage-fields.php:268
 msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
 msgstr ""
 
-#: admin/manage-fields.php:267
+#: admin/manage-fields.php:269
 msgid "Date-format"
 msgstr ""
 
-#: admin/manage-fields.php:267
+#: admin/manage-fields.php:269
 msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd, mm-dd-yy, yy-mm-dd, D, dd M yy, D, d M y, DD, dd-M-y, D, d M yy, mm/yy, mm/dd, dd/mm, @<br/>If not specified, defaults to mm/dd/yy<br/>ATTENTION: if you plan to use this field for sorting, please make sure to use year first, then month, and day last."
 msgstr ""
 
-#: admin/manage-fields.php:268
+#: admin/manage-fields.php:270
 msgid "Terms of Agreement"
 msgstr ""
 
-#: admin/manage-fields.php:268
+#: admin/manage-fields.php:270
 msgid "Enter a detailed description of the terms of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
 msgstr ""
 
-#: admin/manage-fields.php:269
+#: admin/manage-fields.php:271
 msgid "Options"
 msgstr ""
 
-#: admin/manage-fields.php:269
+#: admin/manage-fields.php:271
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
 msgstr ""
 
-#: admin/manage-fields.php:270, add-ons-free/labels-edit/labels-edit.php:428
+#: admin/manage-fields.php:272, add-ons-free/labels-edit/labels-edit.php:428
 msgid "Labels"
 msgstr ""
 
-#: admin/manage-fields.php:270
+#: admin/manage-fields.php:272
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
 msgstr ""
 
-#: admin/manage-fields.php:271
+#: admin/manage-fields.php:273
 msgid "reCAPTCHA Type"
 msgstr ""
 
-#: admin/manage-fields.php:271
+#: admin/manage-fields.php:273
 msgid "Choose the <a href=\"https://developers.google.com/recaptcha/docs/versions\" target=\"_blank\">type of reCAPTCHA</a> you wish to add to this site.<br/>Please note that the Invisible reCAPTCHA is a type of reCAPTCHA v2."
 msgstr ""
 
-#: admin/manage-fields.php:272
+#: admin/manage-fields.php:274
 msgid "Site Key"
 msgstr ""
 
-#: admin/manage-fields.php:272
+#: admin/manage-fields.php:274
 msgid "The site key from Google, <a href=\"https://www.google.com/recaptcha/admin/create\" target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
 msgstr ""
 
-#: admin/manage-fields.php:273
+#: admin/manage-fields.php:275
 msgid "Secret Key"
 msgstr ""
 
-#: admin/manage-fields.php:273
+#: admin/manage-fields.php:275
 msgid "The secret key from Google, <a href=\"https://www.google.com/recaptcha/admin/create\" target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
 msgstr ""
 
-#: admin/manage-fields.php:274
+#: admin/manage-fields.php:276
 msgid "Score Threshold"
 msgstr ""
 
-#: admin/manage-fields.php:274
+#: admin/manage-fields.php:276
 msgid "The required score threshold: 1.0 is very likely a good interaction, 0.0 is very likely a bot<br/>If not specified, defaults to 0.5"
 msgstr ""
 
-#: admin/manage-fields.php:275
+#: admin/manage-fields.php:277
 msgid "Display on PB forms"
 msgstr ""
 
-#: admin/manage-fields.php:275
+#: admin/manage-fields.php:277
 msgid "PB Login"
 msgstr ""
 
-#: admin/manage-fields.php:275
+#: admin/manage-fields.php:277
 msgid "PB Register"
 msgstr ""
 
-#: admin/manage-fields.php:275
+#: admin/manage-fields.php:277
 msgid "PB Recover Password"
 msgstr ""
 
-#: admin/manage-fields.php:275
+#: admin/manage-fields.php:277
 msgid "Select on which Profile Builder forms to display reCAPTCHA"
 msgstr ""
 
-#: admin/manage-fields.php:276
+#: admin/manage-fields.php:278
 msgid "Display on default WP forms"
 msgstr ""
 
-#: admin/manage-fields.php:276
+#: admin/manage-fields.php:278
 msgid "Default WP Login"
 msgstr ""
 
-#: admin/manage-fields.php:276
+#: admin/manage-fields.php:278
 msgid "Default WP Register"
 msgstr ""
 
-#: admin/manage-fields.php:276
+#: admin/manage-fields.php:278
 msgid "Default WP Recover Password"
 msgstr ""
 
-#: admin/manage-fields.php:276
+#: admin/manage-fields.php:278
 msgid "Select on which default WP forms to display reCAPTCHA"
 msgstr ""
 
-#: admin/manage-fields.php:277
+#: admin/manage-fields.php:279
 msgid "User Roles"
 msgstr ""
 
-#: admin/manage-fields.php:277
+#: admin/manage-fields.php:279
 msgid "Select which user roles to show to the user ( drag and drop to re-order )"
 msgstr ""
 
-#: admin/manage-fields.php:278
+#: admin/manage-fields.php:280
 msgid "Display on Edit Profile"
 msgstr ""
 
-#: admin/manage-fields.php:278
+#: admin/manage-fields.php:280
 msgid "Check if you want the select user role field to appear on Edit Profile forms"
 msgstr ""
 
-#: admin/manage-fields.php:279
+#: admin/manage-fields.php:281
 msgid "User Roles Order"
 msgstr ""
 
-#: admin/manage-fields.php:279
+#: admin/manage-fields.php:281
 msgid "Save the user role order from the user roles checkboxes"
 msgstr ""
 
-#: admin/manage-fields.php:280
+#: admin/manage-fields.php:282
 msgid "Default Value"
 msgstr ""
 
-#: admin/manage-fields.php:280
+#: admin/manage-fields.php:282
 msgid "Default value of the field"
 msgstr ""
 
-#: admin/manage-fields.php:281, admin/manage-fields.php:283, admin/manage-fields.php:284, admin/manage-fields.php:285
+#: admin/manage-fields.php:283, admin/manage-fields.php:285, admin/manage-fields.php:286, admin/manage-fields.php:287
 msgid "Default Option"
 msgstr ""
 
-#: admin/manage-fields.php:281
+#: admin/manage-fields.php:283
 msgid "Specify the option which should be selected by default"
 msgstr ""
 
-#: admin/manage-fields.php:282
+#: admin/manage-fields.php:284
 msgid "Default Option(s)"
 msgstr ""
 
-#: admin/manage-fields.php:282
+#: admin/manage-fields.php:284
 msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
 msgstr ""
 
-#: admin/manage-fields.php:283, admin/manage-fields.php:284, admin/manage-fields.php:285
+#: admin/manage-fields.php:285, admin/manage-fields.php:286, admin/manage-fields.php:287
 msgid "Default option of the field"
 msgstr ""
 
-#: admin/manage-fields.php:286
+#: admin/manage-fields.php:288
 msgid "Show Currency Symbol"
 msgstr ""
 
-#: admin/manage-fields.php:286
+#: admin/manage-fields.php:288
 msgid "Whether the currency symbol should be displayed after the currency name in the select option."
 msgstr ""
 
-#: admin/manage-fields.php:287
+#: admin/manage-fields.php:289
 msgid "Show Post Type"
 msgstr ""
 
-#: admin/manage-fields.php:287
+#: admin/manage-fields.php:289
 msgid "Posts from what post type will be displayed in the select."
 msgstr ""
 
-#: admin/manage-fields.php:288
+#: admin/manage-fields.php:290
 msgid "Show Taxonomy Term"
 msgstr ""
 
-#: admin/manage-fields.php:288
+#: admin/manage-fields.php:290
 msgid "Terms from taxonomies"
 msgstr ""
 
-#: admin/manage-fields.php:289
+#: admin/manage-fields.php:291
 msgid "Allowable Values"
 msgstr ""
 
-#: admin/manage-fields.php:289
+#: admin/manage-fields.php:291
 msgid "Enter a comma separated list of possible values. Upon registration if the value provided by the user does not match one of these values, the user will not be registered."
 msgstr ""
 
-#: admin/manage-fields.php:290, admin/advanced-settings/includes/views/view-forms.php:254
+#: admin/manage-fields.php:292, admin/advanced-settings/includes/views/view-forms.php:254
 msgid "Error Message"
 msgstr ""
 
-#: admin/manage-fields.php:290
+#: admin/manage-fields.php:292
 msgid "Set a custom error message that will be displayed to the user."
 msgstr ""
 
-#: admin/manage-fields.php:291
+#: admin/manage-fields.php:293
 msgid "Time Format"
 msgstr ""
 
-#: admin/manage-fields.php:291
+#: admin/manage-fields.php:293
 msgid "Specify the time format."
 msgstr ""
 
-#: admin/manage-fields.php:292
+#: admin/manage-fields.php:294
 msgid "Google Maps API Key"
 msgstr ""
 
-#: admin/manage-fields.php:292
+#: admin/manage-fields.php:294
 msgid "Enter your Google Maps API key ( <a href=\"https://console.developers.google.com/flows/enableapi?apiid=maps_backend\" target=\"_blank\">Get your API key</a> ). If more than one map fields are added to a form the API key from the first map displayed will be used."
 msgstr ""
 
-#: admin/manage-fields.php:297
+#: admin/manage-fields.php:299
 msgid "Default Latitude"
 msgstr ""
 
-#: admin/manage-fields.php:298
+#: admin/manage-fields.php:300
 msgid "The latitude at which the map should be displayed when no pins are attached."
 msgstr ""
 
-#: admin/manage-fields.php:304
+#: admin/manage-fields.php:306
 msgid "Default Longitude"
 msgstr ""
 
-#: admin/manage-fields.php:305
+#: admin/manage-fields.php:307
 msgid "The longitude at which the map should be displayed when no pins are attached."
 msgstr ""
 
-#: admin/manage-fields.php:311
+#: admin/manage-fields.php:313
 msgid "Default Zoom Level"
 msgstr ""
 
-#: admin/manage-fields.php:312
+#: admin/manage-fields.php:314
 msgid "Add a number from 0 to 19. The higher the number the higher the zoom."
 msgstr ""
 
-#: admin/manage-fields.php:316
+#: admin/manage-fields.php:318
 msgid "Map Height"
 msgstr ""
 
-#: admin/manage-fields.php:316
+#: admin/manage-fields.php:318
 msgid "The height of the map."
 msgstr ""
 
-#: admin/manage-fields.php:317
+#: admin/manage-fields.php:319
 msgid "Default Content"
 msgstr ""
 
-#: admin/manage-fields.php:317
+#: admin/manage-fields.php:319
 msgid "Default value of the textarea"
 msgstr ""
 
-#: admin/manage-fields.php:318
+#: admin/manage-fields.php:320
 msgid "HTML Content"
 msgstr ""
 
-#: admin/manage-fields.php:318
+#: admin/manage-fields.php:320
 msgid "Add your HTML (or text) content"
 msgstr ""
 
-#: admin/manage-fields.php:319
+#: admin/manage-fields.php:321
 msgid "Phone Format"
 msgstr ""
 
-#: admin/manage-fields.php:319
+#: admin/manage-fields.php:321
 msgid "You can use: # for numbers, parentheses ( ), - sign, + sign, dot . and spaces."
 msgstr ""
 
-#: admin/manage-fields.php:319
+#: admin/manage-fields.php:321
 msgid "Eg. (###) ###-####"
 msgstr ""
 
-#: admin/manage-fields.php:319
+#: admin/manage-fields.php:321
 msgid "Empty field won't check for correct phone number."
 msgstr ""
 
-#: admin/manage-fields.php:320
+#: admin/manage-fields.php:322
 msgid "Heading Tag"
 msgstr ""
 
-#: admin/manage-fields.php:320
+#: admin/manage-fields.php:322
 msgid "Change heading field size on front-end forms"
 msgstr ""
 
-#: admin/manage-fields.php:321
+#: admin/manage-fields.php:323
 msgid "Min Number Value"
 msgstr ""
 
-#: admin/manage-fields.php:321
+#: admin/manage-fields.php:323
 msgid "Min allowed number value (0 to allow only positive numbers)"
 msgstr ""
 
-#: admin/manage-fields.php:321
+#: admin/manage-fields.php:323
 msgid "Leave it empty for no min value"
 msgstr ""
 
-#: admin/manage-fields.php:322
+#: admin/manage-fields.php:324
 msgid "Max Number Value"
 msgstr ""
 
-#: admin/manage-fields.php:322
+#: admin/manage-fields.php:324
 msgid "Max allowed number value (0 to allow only negative numbers)"
 msgstr ""
 
-#: admin/manage-fields.php:322
+#: admin/manage-fields.php:324
 msgid "Leave it empty for no max value"
 msgstr ""
 
-#: admin/manage-fields.php:323
+#: admin/manage-fields.php:325
 msgid "Number Step Value"
 msgstr ""
 
-#: admin/manage-fields.php:323
+#: admin/manage-fields.php:325
 msgid "Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal"
 msgstr ""
 
-#: admin/manage-fields.php:323
+#: admin/manage-fields.php:325
 msgid "To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on"
 msgstr ""
 
-#: admin/manage-fields.php:323
+#: admin/manage-fields.php:325
 msgid "You can also use step value to specify the legal number intervals (eg. step value 2 will allow only -4, -2, 0, 2 and so on)"
 msgstr ""
 
-#: admin/manage-fields.php:323
+#: admin/manage-fields.php:325
 msgid "Leave it empty for no restriction"
 msgstr ""
 
-#: admin/manage-fields.php:324, add-ons-advanced/woocommerce/index.php:281
+#: admin/manage-fields.php:326, add-ons-advanced/woocommerce/index.php:281
 msgid "Required"
 msgstr ""
 
-#: admin/manage-fields.php:324
+#: admin/manage-fields.php:326
 msgid "Whether the field is required or not"
 msgstr ""
 
-#: admin/manage-fields.php:325
+#: admin/manage-fields.php:327
 msgid "Overwrite Existing"
 msgstr ""
 
-#: admin/manage-fields.php:325
+#: admin/manage-fields.php:327
 msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
 msgstr ""
 
+#: admin/manage-fields.php:328
+msgid "Initial Country"
+msgstr ""
+
+#: admin/manage-fields.php:328
+msgid "Set the initial country for the phone field. Use 'auto' to detect it automatically by IP, or enter one ISO 3166-1 alpha-2 country code (e.g. ro, jp, us)."
+msgstr ""
+
+#: admin/manage-fields.php:329
+msgid "Preferred Countries"
+msgstr ""
+
+#: admin/manage-fields.php:329
+msgid "Set preferred countries using ISO 3166-1 alpha-2 codes (e.g. ro, jp, us), separated by commas."
+msgstr ""
+
+#: admin/manage-fields.php:330
+msgid "Excluded Countries"
+msgstr ""
+
+#: admin/manage-fields.php:330
+msgid "Exclude countries using ISO 3166-1 alpha-2 codes (e.g. af, ru, us), separated by commas."
+msgstr ""
+
 #: admin/manage-fields.php:331
+msgid "National Mode"
+msgstr ""
+
+#: admin/manage-fields.php:331
+msgid "Enable National Mode to enter numbers in local format (without country prefix). Disable it to use International Mode (with country prefix)."
+msgstr ""
+
+#: admin/manage-fields.php:332
+msgid "Hide Flags"
+msgstr ""
+
+#: admin/manage-fields.php:332
+msgid "Enable to hide country flags in the phone field."
+msgstr ""
+
+#: admin/manage-fields.php:338
 msgid "POIs Load Type"
 msgstr ""
 
-#: admin/manage-fields.php:333
+#: admin/manage-fields.php:340
 msgid "POIs of the listed users (as filtered & paginated)"
 msgstr ""
 
-#: admin/manage-fields.php:334
+#: admin/manage-fields.php:341
 msgid "POIs of all the users for the filter* (no pagination)"
 msgstr ""
 
-#: admin/manage-fields.php:337
+#: admin/manage-fields.php:344
 msgid "This option allows you to load on a single map the POIs for all users, or just these for the listed ones (this will take into account the filters and the faceted menus). *Please use this feature wisely, it will impact the performance."
 msgstr ""
 
-#: admin/manage-fields.php:344
+#: admin/manage-fields.php:351
 msgid "POI Bubble Info"
 msgstr ""
 
-#: admin/manage-fields.php:347
+#: admin/manage-fields.php:354
 msgid "Select the attributes to be listed inside the POI bubble."
 msgstr ""
 
-#: admin/manage-fields.php:358
+#: admin/manage-fields.php:365
 msgid "Number of Users per Map Iteration"
 msgstr ""
 
-#: admin/manage-fields.php:359
+#: admin/manage-fields.php:366
 msgid "When loading the map of all users with no pagination, the map script will iterate multiple times and will expose gradually POIs on the map, until all the POIs for the users that match the criteria will be added on the map (think of this as of pagination for the map POIs). The smaller the number of users per iteration, the fastest the iteration response will be, but for a large number of users, the map script will iterate multiple times. Setting a higher limit will decrease the performance, but might produce a smaller number of iterations. <br><br><b>Please adjust this value to your hosting capabilities, and make sure that the value you set is the best for performance.</b> We recommend a <b>maximum</b> value of 300."
 msgstr ""
 
-#: admin/manage-fields.php:364
+#: admin/manage-fields.php:371
 msgid "Maximum Selections"
 msgstr ""
 
-#: admin/manage-fields.php:364
+#: admin/manage-fields.php:371
 msgid "Select2 multi-value select boxes can set restrictions regarding the maximum number of options selected."
 msgstr ""
 
-#: admin/manage-fields.php:365
+#: admin/manage-fields.php:372
 msgid "User Inputted Options"
 msgstr ""
 
-#: admin/manage-fields.php:365
+#: admin/manage-fields.php:372
 msgid "Check this to allow users to create their own options beside the pre-existing ones."
 msgstr ""
 
-#: admin/manage-fields.php:372
+#: admin/manage-fields.php:379
 msgid "Form Field Properties"
 msgstr ""
 
-#: admin/manage-fields.php:390
+#: admin/manage-fields.php:397
 msgid "Form Shortcodes"
 msgstr ""
 
-#: admin/manage-fields.php:411, add-ons-advanced/buddypress/buddypress-activator.php:50, add-ons-advanced/buddypress/index.php:484, add-ons-advanced/campaign-monitor/admin/widget.php:229, add-ons-advanced/campaign-monitor/admin/widget.php:231
+#: admin/manage-fields.php:418, add-ons-advanced/buddypress/buddypress-activator.php:50, add-ons-advanced/buddypress/index.php:484, add-ons-advanced/campaign-monitor/admin/widget.php:229, add-ons-advanced/campaign-monitor/admin/widget.php:231
 msgid "Name"
 msgstr ""
 
-#: admin/manage-fields.php:412
+#: admin/manage-fields.php:419
 msgid "Usernames cannot be changed."
 msgstr ""
 
-#: admin/manage-fields.php:413, add-ons/user-listing/userlisting.php:559, add-ons/user-listing/userlisting.php:1026, add-ons-advanced/woocommerce/billing-fields.php:9, add-ons-advanced/woocommerce/shipping-fields.php:9, admin/advanced-settings/includes/views/view-fields.php:111
+#: admin/manage-fields.php:420, add-ons/user-listing/userlisting.php:565, add-ons/user-listing/userlisting.php:1090, add-ons-advanced/woocommerce/billing-fields.php:9, add-ons-advanced/woocommerce/shipping-fields.php:9, admin/advanced-settings/includes/views/view-fields.php:111
 msgid "First Name"
 msgstr ""
 
-#: admin/manage-fields.php:414, add-ons/user-listing/userlisting.php:560, add-ons/user-listing/userlisting.php:1029, add-ons-advanced/woocommerce/billing-fields.php:10, add-ons-advanced/woocommerce/shipping-fields.php:10, admin/advanced-settings/includes/views/view-fields.php:116
+#: admin/manage-fields.php:421, add-ons/user-listing/userlisting.php:566, add-ons/user-listing/userlisting.php:1093, add-ons-advanced/woocommerce/billing-fields.php:10, add-ons-advanced/woocommerce/shipping-fields.php:10, admin/advanced-settings/includes/views/view-fields.php:116
 msgid "Last Name"
 msgstr ""
 
-#: admin/manage-fields.php:415, add-ons/user-listing/userlisting.php:1053, add-ons/user-listing/userlisting.php:2967
+#: admin/manage-fields.php:422, add-ons/user-listing/userlisting.php:1117, add-ons/user-listing/userlisting.php:3031
 msgid "Nickname"
 msgstr ""
 
-#: admin/manage-fields.php:416
+#: admin/manage-fields.php:423
 msgid "Display name publicly as"
 msgstr ""
 
-#: admin/manage-fields.php:417, add-ons-advanced/buddypress/buddypress-activator.php:73, add-ons-advanced/buddypress/index.php:507
+#: admin/manage-fields.php:424, add-ons-advanced/buddypress/buddypress-activator.php:73, add-ons-advanced/buddypress/index.php:507
 msgid "Contact Info"
 msgstr ""
 
-#: admin/manage-fields.php:418
+#: admin/manage-fields.php:425
 msgid "E-mail"
 msgstr ""
 
-#: admin/manage-fields.php:419, add-ons/user-listing/userlisting.php:129, add-ons/user-listing/userlisting.php:546, add-ons/user-listing/userlisting.php:1035, add-ons/user-listing/userlisting.php:2961, add-ons-free/user-profile-picture/metronet-profile-picture.php:1718, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
+#: admin/manage-fields.php:426, add-ons/user-listing/userlisting.php:129, add-ons/user-listing/userlisting.php:552, add-ons/user-listing/userlisting.php:1099, add-ons/user-listing/userlisting.php:3025, add-ons-free/user-profile-picture/metronet-profile-picture.php:1718, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
 msgid "Website"
 msgstr ""
 
-#: admin/manage-fields.php:423
+#: admin/manage-fields.php:430
 msgid "AIM"
 msgstr ""
 
-#: admin/manage-fields.php:424
+#: admin/manage-fields.php:431
 msgid "Yahoo IM"
 msgstr ""
 
-#: admin/manage-fields.php:425
+#: admin/manage-fields.php:432
 msgid "Jabber / Google Talk"
 msgstr ""
 
-#: admin/manage-fields.php:428, add-ons-advanced/buddypress/buddypress-activator.php:80, add-ons-advanced/buddypress/index.php:514
+#: admin/manage-fields.php:435, add-ons-advanced/buddypress/buddypress-activator.php:80, add-ons-advanced/buddypress/index.php:514
 msgid "About Yourself"
 msgstr ""
 
-#: admin/manage-fields.php:429, add-ons/user-listing/userlisting.php:134, add-ons/user-listing/userlisting.php:1038, add-ons/user-listing/userlisting.php:2962
+#: admin/manage-fields.php:436, add-ons/user-listing/userlisting.php:134, add-ons/user-listing/userlisting.php:1102, add-ons/user-listing/userlisting.php:3026
 msgid "Biographical Info"
 msgstr ""
 
-#: admin/manage-fields.php:429
+#: admin/manage-fields.php:436
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
 msgstr ""
 
-#: admin/manage-fields.php:430, front-end/login.php:122, front-end/recover.php:66, features/email-customizer/email-customizer.php:32
+#: admin/manage-fields.php:437, front-end/login.php:122, front-end/recover.php:66, features/email-customizer/email-customizer.php:32
 msgid "Password"
 msgstr ""
 
-#: admin/manage-fields.php:430
+#: admin/manage-fields.php:437
 msgid "Type your password."
 msgstr ""
 
-#: admin/manage-fields.php:431, front-end/recover.php:67
+#: admin/manage-fields.php:438, front-end/recover.php:67
 msgid "Repeat Password"
 msgstr ""
 
-#: admin/manage-fields.php:431
+#: admin/manage-fields.php:438
 msgid "Type your password again. "
 msgstr ""
 
-#: admin/manage-fields.php:433
+#: admin/manage-fields.php:440
 msgid "Blog Details"
 msgstr ""
 
-#: admin/manage-fields.php:492
+#: admin/manage-fields.php:499
 msgid "Select a Country"
 msgstr ""
 
-#: admin/manage-fields.php:493
+#: admin/manage-fields.php:500
 msgid "Afghanistan"
 msgstr ""
 
-#: admin/manage-fields.php:494
+#: admin/manage-fields.php:501
 msgid "Aland Islands"
 msgstr ""
 
-#: admin/manage-fields.php:495
+#: admin/manage-fields.php:502
 msgid "Albania"
 msgstr ""
 
-#: admin/manage-fields.php:496
+#: admin/manage-fields.php:503
 msgid "Algeria"
 msgstr ""
 
-#: admin/manage-fields.php:497
+#: admin/manage-fields.php:504
 msgid "American Samoa"
 msgstr ""
 
-#: admin/manage-fields.php:498
+#: admin/manage-fields.php:505
 msgid "Andorra"
 msgstr ""
 
-#: admin/manage-fields.php:499
+#: admin/manage-fields.php:506
 msgid "Angola"
 msgstr ""
 
-#: admin/manage-fields.php:500
+#: admin/manage-fields.php:507
 msgid "Anguilla"
 msgstr ""
 
-#: admin/manage-fields.php:501
+#: admin/manage-fields.php:508
 msgid "Antarctica"
 msgstr ""
 
-#: admin/manage-fields.php:502
+#: admin/manage-fields.php:509
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: admin/manage-fields.php:503
+#: admin/manage-fields.php:510
 msgid "Argentina"
 msgstr ""
 
-#: admin/manage-fields.php:504
+#: admin/manage-fields.php:511
 msgid "Armenia"
 msgstr ""
 
-#: admin/manage-fields.php:505
+#: admin/manage-fields.php:512
 msgid "Aruba"
 msgstr ""
 
-#: admin/manage-fields.php:506
+#: admin/manage-fields.php:513
 msgid "Australia"
 msgstr ""
 
-#: admin/manage-fields.php:507
+#: admin/manage-fields.php:514
 msgid "Austria"
 msgstr ""
 
-#: admin/manage-fields.php:508
+#: admin/manage-fields.php:515
 msgid "Azerbaijan"
 msgstr ""
 
-#: admin/manage-fields.php:509
+#: admin/manage-fields.php:516
 msgid "Bahamas"
 msgstr ""
 
-#: admin/manage-fields.php:510
+#: admin/manage-fields.php:517
 msgid "Bahrain"
 msgstr ""
 
-#: admin/manage-fields.php:511
+#: admin/manage-fields.php:518
 msgid "Bangladesh"
 msgstr ""
 
-#: admin/manage-fields.php:512
+#: admin/manage-fields.php:519
 msgid "Barbados"
 msgstr ""
 
-#: admin/manage-fields.php:513
+#: admin/manage-fields.php:520
 msgid "Belarus"
 msgstr ""
 
-#: admin/manage-fields.php:514
+#: admin/manage-fields.php:521
 msgid "Belgium"
 msgstr ""
 
-#: admin/manage-fields.php:515
+#: admin/manage-fields.php:522
 msgid "Belize"
 msgstr ""
 
-#: admin/manage-fields.php:516
+#: admin/manage-fields.php:523
 msgid "Benin"
 msgstr ""
 
-#: admin/manage-fields.php:517
+#: admin/manage-fields.php:524
 msgid "Bermuda"
 msgstr ""
 
-#: admin/manage-fields.php:518
+#: admin/manage-fields.php:525
 msgid "Bhutan"
 msgstr ""
 
-#: admin/manage-fields.php:519
+#: admin/manage-fields.php:526
 msgid "Bolivia"
 msgstr ""
 
-#: admin/manage-fields.php:520
+#: admin/manage-fields.php:527
 msgid "Bonaire, Saint Eustatius and Saba"
 msgstr ""
 
-#: admin/manage-fields.php:521
+#: admin/manage-fields.php:528
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: admin/manage-fields.php:522
+#: admin/manage-fields.php:529
 msgid "Botswana"
 msgstr ""
 
-#: admin/manage-fields.php:523
+#: admin/manage-fields.php:530
 msgid "Bouvet Island"
 msgstr ""
 
-#: admin/manage-fields.php:524
+#: admin/manage-fields.php:531
 msgid "Brazil"
 msgstr ""
 
-#: admin/manage-fields.php:525
+#: admin/manage-fields.php:532
 msgid "British Indian Ocean Territory"
 msgstr ""
 
-#: admin/manage-fields.php:526
+#: admin/manage-fields.php:533
 msgid "British Virgin Islands"
 msgstr ""
 
-#: admin/manage-fields.php:527
+#: admin/manage-fields.php:534
 msgid "Brunei"
 msgstr ""
 
-#: admin/manage-fields.php:528
+#: admin/manage-fields.php:535
 msgid "Bulgaria"
 msgstr ""
 
-#: admin/manage-fields.php:529
+#: admin/manage-fields.php:536
 msgid "Burkina Faso"
 msgstr ""
 
-#: admin/manage-fields.php:530
+#: admin/manage-fields.php:537
 msgid "Burundi"
 msgstr ""
 
-#: admin/manage-fields.php:531
+#: admin/manage-fields.php:538
 msgid "Cambodia"
 msgstr ""
 
-#: admin/manage-fields.php:532
+#: admin/manage-fields.php:539
 msgid "Cameroon"
 msgstr ""
 
-#: admin/manage-fields.php:533
+#: admin/manage-fields.php:540
 msgid "Canada"
 msgstr ""
 
-#: admin/manage-fields.php:534
+#: admin/manage-fields.php:541
 msgid "Cape Verde"
 msgstr ""
 
-#: admin/manage-fields.php:535
+#: admin/manage-fields.php:542
 msgid "Cayman Islands"
 msgstr ""
 
-#: admin/manage-fields.php:536
+#: admin/manage-fields.php:543
 msgid "Central African Republic"
 msgstr ""
 
-#: admin/manage-fields.php:537
+#: admin/manage-fields.php:544
 msgid "Chad"
 msgstr ""
 
-#: admin/manage-fields.php:538
+#: admin/manage-fields.php:545
 msgid "Chile"
 msgstr ""
 
-#: admin/manage-fields.php:539
+#: admin/manage-fields.php:546
 msgid "China"
 msgstr ""
 
-#: admin/manage-fields.php:540
+#: admin/manage-fields.php:547
 msgid "Christmas Island"
 msgstr ""
 
-#: admin/manage-fields.php:541
+#: admin/manage-fields.php:548
 msgid "Cocos Islands"
 msgstr ""
 
-#: admin/manage-fields.php:542
+#: admin/manage-fields.php:549
 msgid "Colombia"
 msgstr ""
 
-#: admin/manage-fields.php:543
+#: admin/manage-fields.php:550
 msgid "Comoros"
 msgstr ""
 
-#: admin/manage-fields.php:544
+#: admin/manage-fields.php:551
 msgid "Cook Islands"
 msgstr ""
 
-#: admin/manage-fields.php:545
+#: admin/manage-fields.php:552
 msgid "Costa Rica"
 msgstr ""
 
-#: admin/manage-fields.php:546
+#: admin/manage-fields.php:553
 msgid "Croatia"
 msgstr ""
 
-#: admin/manage-fields.php:547
+#: admin/manage-fields.php:554
 msgid "Cuba"
 msgstr ""
 
-#: admin/manage-fields.php:548
+#: admin/manage-fields.php:555
 msgid "Curacao"
 msgstr ""
 
-#: admin/manage-fields.php:549
+#: admin/manage-fields.php:556
 msgid "Cyprus"
 msgstr ""
 
-#: admin/manage-fields.php:550
+#: admin/manage-fields.php:557
 msgid "Czech Republic"
 msgstr ""
 
-#: admin/manage-fields.php:551
+#: admin/manage-fields.php:558
 msgid "Democratic Republic of the Congo"
 msgstr ""
 
-#: admin/manage-fields.php:552
+#: admin/manage-fields.php:559
 msgid "Denmark"
 msgstr ""
 
-#: admin/manage-fields.php:553
+#: admin/manage-fields.php:560
 msgid "Djibouti"
 msgstr ""
 
-#: admin/manage-fields.php:554
+#: admin/manage-fields.php:561
 msgid "Dominica"
 msgstr ""
 
-#: admin/manage-fields.php:555
+#: admin/manage-fields.php:562
 msgid "Dominican Republic"
 msgstr ""
 
-#: admin/manage-fields.php:556
+#: admin/manage-fields.php:563
 msgid "East Timor"
 msgstr ""
 
-#: admin/manage-fields.php:557
+#: admin/manage-fields.php:564
 msgid "Ecuador"
 msgstr ""
 
-#: admin/manage-fields.php:558
+#: admin/manage-fields.php:565
 msgid "Egypt"
 msgstr ""
 
-#: admin/manage-fields.php:559
+#: admin/manage-fields.php:566
 msgid "El Salvador"
 msgstr ""
 
-#: admin/manage-fields.php:560
+#: admin/manage-fields.php:567
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: admin/manage-fields.php:561
+#: admin/manage-fields.php:568
 msgid "Eritrea"
 msgstr ""
 
-#: admin/manage-fields.php:562
+#: admin/manage-fields.php:569
 msgid "Estonia"
 msgstr ""
 
-#: admin/manage-fields.php:563
+#: admin/manage-fields.php:570
 msgid "Ethiopia"
 msgstr ""
 
-#: admin/manage-fields.php:564
+#: admin/manage-fields.php:571
 msgid "Falkland Islands"
 msgstr ""
 
-#: admin/manage-fields.php:565
+#: admin/manage-fields.php:572
 msgid "Faroe Islands"
 msgstr ""
 
-#: admin/manage-fields.php:566
+#: admin/manage-fields.php:573
 msgid "Fiji"
 msgstr ""
 
-#: admin/manage-fields.php:567
+#: admin/manage-fields.php:574
 msgid "Finland"
 msgstr ""
 
-#: admin/manage-fields.php:568
+#: admin/manage-fields.php:575
 msgid "France"
 msgstr ""
 
-#: admin/manage-fields.php:569
+#: admin/manage-fields.php:576
 msgid "French Guiana"
 msgstr ""
 
-#: admin/manage-fields.php:570
+#: admin/manage-fields.php:577
 msgid "French Polynesia"
 msgstr ""
 
-#: admin/manage-fields.php:571
+#: admin/manage-fields.php:578
 msgid "French Southern Territories"
 msgstr ""
 
-#: admin/manage-fields.php:572
+#: admin/manage-fields.php:579
 msgid "Gabon"
 msgstr ""
 
-#: admin/manage-fields.php:573
+#: admin/manage-fields.php:580
 msgid "Gambia"
 msgstr ""
 
-#: admin/manage-fields.php:574
+#: admin/manage-fields.php:581
 msgid "Georgia"
 msgstr ""
 
-#: admin/manage-fields.php:575
+#: admin/manage-fields.php:582
 msgid "Germany"
 msgstr ""
 
-#: admin/manage-fields.php:576
+#: admin/manage-fields.php:583
 msgid "Ghana"
 msgstr ""
 
-#: admin/manage-fields.php:577
+#: admin/manage-fields.php:584
 msgid "Gibraltar"
 msgstr ""
 
-#: admin/manage-fields.php:578
+#: admin/manage-fields.php:585
 msgid "Greece"
 msgstr ""
 
-#: admin/manage-fields.php:579
+#: admin/manage-fields.php:586
 msgid "Greenland"
 msgstr ""
 
-#: admin/manage-fields.php:580
+#: admin/manage-fields.php:587
 msgid "Grenada"
 msgstr ""
 
-#: admin/manage-fields.php:581
+#: admin/manage-fields.php:588
 msgid "Guadeloupe"
 msgstr ""
 
-#: admin/manage-fields.php:582
+#: admin/manage-fields.php:589
 msgid "Guam"
 msgstr ""
 
-#: admin/manage-fields.php:583
+#: admin/manage-fields.php:590
 msgid "Guatemala"
 msgstr ""
 
-#: admin/manage-fields.php:584
+#: admin/manage-fields.php:591
 msgid "Guernsey"
 msgstr ""
 
-#: admin/manage-fields.php:585
+#: admin/manage-fields.php:592
 msgid "Guinea"
 msgstr ""
 
-#: admin/manage-fields.php:586
+#: admin/manage-fields.php:593
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: admin/manage-fields.php:587
+#: admin/manage-fields.php:594
 msgid "Guyana"
 msgstr ""
 
-#: admin/manage-fields.php:588
+#: admin/manage-fields.php:595
 msgid "Haiti"
 msgstr ""
 
-#: admin/manage-fields.php:589
+#: admin/manage-fields.php:596
 msgid "Heard Island and McDonald Islands"
 msgstr ""
 
-#: admin/manage-fields.php:590
+#: admin/manage-fields.php:597
 msgid "Honduras"
 msgstr ""
 
-#: admin/manage-fields.php:591
+#: admin/manage-fields.php:598
 msgid "Hong Kong"
 msgstr ""
 
-#: admin/manage-fields.php:592
+#: admin/manage-fields.php:599
 msgid "Hungary"
 msgstr ""
 
-#: admin/manage-fields.php:593
+#: admin/manage-fields.php:600
 msgid "Iceland"
 msgstr ""
 
-#: admin/manage-fields.php:594
+#: admin/manage-fields.php:601
 msgid "India"
 msgstr ""
 
-#: admin/manage-fields.php:595
+#: admin/manage-fields.php:602
 msgid "Indonesia"
 msgstr ""
 
-#: admin/manage-fields.php:596
+#: admin/manage-fields.php:603
 msgid "Iran"
 msgstr ""
 
-#: admin/manage-fields.php:597
+#: admin/manage-fields.php:604
 msgid "Iraq"
 msgstr ""
 
-#: admin/manage-fields.php:598
+#: admin/manage-fields.php:605
 msgid "Ireland"
 msgstr ""
 
-#: admin/manage-fields.php:599
+#: admin/manage-fields.php:606
 msgid "Isle of Man"
 msgstr ""
 
-#: admin/manage-fields.php:600
+#: admin/manage-fields.php:607
 msgid "Israel"
 msgstr ""
 
-#: admin/manage-fields.php:601
+#: admin/manage-fields.php:608
 msgid "Italy"
 msgstr ""
 
-#: admin/manage-fields.php:602
+#: admin/manage-fields.php:609
 msgid "Ivory Coast"
 msgstr ""
 
-#: admin/manage-fields.php:603
+#: admin/manage-fields.php:610
 msgid "Jamaica"
 msgstr ""
 
-#: admin/manage-fields.php:604
+#: admin/manage-fields.php:611
 msgid "Japan"
 msgstr ""
 
-#: admin/manage-fields.php:605
+#: admin/manage-fields.php:612
 msgid "Jersey"
 msgstr ""
 
-#: admin/manage-fields.php:606
+#: admin/manage-fields.php:613
 msgid "Jordan"
 msgstr ""
 
-#: admin/manage-fields.php:607
+#: admin/manage-fields.php:614
 msgid "Kazakhstan"
 msgstr ""
 
-#: admin/manage-fields.php:608
+#: admin/manage-fields.php:615
 msgid "Kenya"
 msgstr ""
 
-#: admin/manage-fields.php:609
+#: admin/manage-fields.php:616
 msgid "Kiribati"
 msgstr ""
 
-#: admin/manage-fields.php:610
+#: admin/manage-fields.php:617
 msgid "Kosovo"
 msgstr ""
 
-#: admin/manage-fields.php:611
+#: admin/manage-fields.php:618
 msgid "Kuwait"
 msgstr ""
 
-#: admin/manage-fields.php:612
+#: admin/manage-fields.php:619
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: admin/manage-fields.php:613
+#: admin/manage-fields.php:620
 msgid "Laos"
 msgstr ""
 
-#: admin/manage-fields.php:614
+#: admin/manage-fields.php:621
 msgid "Latvia"
 msgstr ""
 
-#: admin/manage-fields.php:615
+#: admin/manage-fields.php:622
 msgid "Lebanon"
 msgstr ""
 
-#: admin/manage-fields.php:616
+#: admin/manage-fields.php:623
 msgid "Lesotho"
 msgstr ""
 
-#: admin/manage-fields.php:617
+#: admin/manage-fields.php:624
 msgid "Liberia"
 msgstr ""
 
-#: admin/manage-fields.php:618
+#: admin/manage-fields.php:625
 msgid "Libya"
 msgstr ""
 
-#: admin/manage-fields.php:619
+#: admin/manage-fields.php:626
 msgid "Liechtenstein"
 msgstr ""
 
-#: admin/manage-fields.php:620
+#: admin/manage-fields.php:627
 msgid "Lithuania"
 msgstr ""
 
-#: admin/manage-fields.php:621
+#: admin/manage-fields.php:628
 msgid "Luxembourg"
 msgstr ""
 
-#: admin/manage-fields.php:622
+#: admin/manage-fields.php:629
 msgid "Macao"
 msgstr ""
 
-#: admin/manage-fields.php:623
+#: admin/manage-fields.php:630
 msgid "Macedonia"
 msgstr ""
 
-#: admin/manage-fields.php:624
+#: admin/manage-fields.php:631
 msgid "Madagascar"
 msgstr ""
 
-#: admin/manage-fields.php:625
+#: admin/manage-fields.php:632
 msgid "Malawi"
 msgstr ""
 
-#: admin/manage-fields.php:626
+#: admin/manage-fields.php:633
 msgid "Malaysia"
 msgstr ""
 
-#: admin/manage-fields.php:627
+#: admin/manage-fields.php:634
 msgid "Maldives"
 msgstr ""
 
-#: admin/manage-fields.php:628
+#: admin/manage-fields.php:635
 msgid "Mali"
 msgstr ""
 
-#: admin/manage-fields.php:629
+#: admin/manage-fields.php:636
 msgid "Malta"
 msgstr ""
 
-#: admin/manage-fields.php:630
+#: admin/manage-fields.php:637
 msgid "Marshall Islands"
 msgstr ""
 
-#: admin/manage-fields.php:631
+#: admin/manage-fields.php:638
 msgid "Martinique"
 msgstr ""
 
-#: admin/manage-fields.php:632
+#: admin/manage-fields.php:639
 msgid "Mauritania"
 msgstr ""
 
-#: admin/manage-fields.php:633
+#: admin/manage-fields.php:640
 msgid "Mauritius"
 msgstr ""
 
-#: admin/manage-fields.php:634
+#: admin/manage-fields.php:641
 msgid "Mayotte"
 msgstr ""
 
-#: admin/manage-fields.php:635
+#: admin/manage-fields.php:642
 msgid "Mexico"
 msgstr ""
 
-#: admin/manage-fields.php:636
+#: admin/manage-fields.php:643
 msgid "Micronesia"
 msgstr ""
 
-#: admin/manage-fields.php:637
+#: admin/manage-fields.php:644
 msgid "Moldova"
 msgstr ""
 
-#: admin/manage-fields.php:638
+#: admin/manage-fields.php:645
 msgid "Monaco"
 msgstr ""
 
-#: admin/manage-fields.php:639
+#: admin/manage-fields.php:646
 msgid "Mongolia"
 msgstr ""
 
-#: admin/manage-fields.php:640
+#: admin/manage-fields.php:647
 msgid "Montenegro"
 msgstr ""
 
-#: admin/manage-fields.php:641
+#: admin/manage-fields.php:648
 msgid "Montserrat"
 msgstr ""
 
-#: admin/manage-fields.php:642
+#: admin/manage-fields.php:649
 msgid "Morocco"
 msgstr ""
 
-#: admin/manage-fields.php:643
+#: admin/manage-fields.php:650
 msgid "Mozambique"
 msgstr ""
 
-#: admin/manage-fields.php:644
+#: admin/manage-fields.php:651
 msgid "Myanmar"
 msgstr ""
 
-#: admin/manage-fields.php:645
+#: admin/manage-fields.php:652
 msgid "Namibia"
 msgstr ""
 
-#: admin/manage-fields.php:646
+#: admin/manage-fields.php:653
 msgid "Nauru"
 msgstr ""
 
-#: admin/manage-fields.php:647
+#: admin/manage-fields.php:654
 msgid "Nepal"
 msgstr ""
 
-#: admin/manage-fields.php:648
+#: admin/manage-fields.php:655
 msgid "Netherlands"
 msgstr ""
 
-#: admin/manage-fields.php:649
+#: admin/manage-fields.php:656
 msgid "New Caledonia"
 msgstr ""
 
-#: admin/manage-fields.php:650
+#: admin/manage-fields.php:657
 msgid "New Zealand"
 msgstr ""
 
-#: admin/manage-fields.php:651
+#: admin/manage-fields.php:658
 msgid "Nicaragua"
 msgstr ""
 
-#: admin/manage-fields.php:652
+#: admin/manage-fields.php:659
 msgid "Niger"
 msgstr ""
 
-#: admin/manage-fields.php:653
+#: admin/manage-fields.php:660
 msgid "Nigeria"
 msgstr ""
 
-#: admin/manage-fields.php:654
+#: admin/manage-fields.php:661
 msgid "Niue"
 msgstr ""
 
-#: admin/manage-fields.php:655
+#: admin/manage-fields.php:662
 msgid "Norfolk Island"
 msgstr ""
 
-#: admin/manage-fields.php:656
+#: admin/manage-fields.php:663
 msgid "North Korea"
 msgstr ""
 
-#: admin/manage-fields.php:657
+#: admin/manage-fields.php:664
 msgid "Northern Mariana Islands"
 msgstr ""
 
-#: admin/manage-fields.php:658
+#: admin/manage-fields.php:665
 msgid "Norway"
 msgstr ""
 
-#: admin/manage-fields.php:659
+#: admin/manage-fields.php:666
 msgid "Oman"
 msgstr ""
 
-#: admin/manage-fields.php:660
+#: admin/manage-fields.php:667
 msgid "Pakistan"
 msgstr ""
 
-#: admin/manage-fields.php:661
+#: admin/manage-fields.php:668
 msgid "Palau"
 msgstr ""
 
-#: admin/manage-fields.php:662
+#: admin/manage-fields.php:669
 msgid "Palestinian Territory"
 msgstr ""
 
-#: admin/manage-fields.php:663
+#: admin/manage-fields.php:670
 msgid "Panama"
 msgstr ""
 
-#: admin/manage-fields.php:664
+#: admin/manage-fields.php:671
 msgid "Papua New Guinea"
 msgstr ""
 
-#: admin/manage-fields.php:665
+#: admin/manage-fields.php:672
 msgid "Paraguay"
 msgstr ""
 
-#: admin/manage-fields.php:666
+#: admin/manage-fields.php:673
 msgid "Peru"
 msgstr ""
 
-#: admin/manage-fields.php:667
+#: admin/manage-fields.php:674
 msgid "Philippines"
 msgstr ""
 
-#: admin/manage-fields.php:668
+#: admin/manage-fields.php:675
 msgid "Pitcairn"
 msgstr ""
 
-#: admin/manage-fields.php:669
+#: admin/manage-fields.php:676
 msgid "Poland"
 msgstr ""
 
-#: admin/manage-fields.php:670
+#: admin/manage-fields.php:677
 msgid "Portugal"
 msgstr ""
 
-#: admin/manage-fields.php:671
+#: admin/manage-fields.php:678
 msgid "Puerto Rico"
 msgstr ""
 
-#: admin/manage-fields.php:672
+#: admin/manage-fields.php:679
 msgid "Qatar"
 msgstr ""
 
-#: admin/manage-fields.php:673
+#: admin/manage-fields.php:680
 msgid "Republic of the Congo"
 msgstr ""
 
-#: admin/manage-fields.php:674
+#: admin/manage-fields.php:681
 msgid "Reunion"
 msgstr ""
 
-#: admin/manage-fields.php:675
+#: admin/manage-fields.php:682
 msgid "Romania"
 msgstr ""
 
-#: admin/manage-fields.php:676
+#: admin/manage-fields.php:683
 msgid "Russia"
 msgstr ""
 
-#: admin/manage-fields.php:677
+#: admin/manage-fields.php:684
 msgid "Rwanda"
 msgstr ""
 
-#: admin/manage-fields.php:678
+#: admin/manage-fields.php:685
 msgid "Saint Barthelemy"
 msgstr ""
 
-#: admin/manage-fields.php:679
+#: admin/manage-fields.php:686
 msgid "Saint Helena"
 msgstr ""
 
-#: admin/manage-fields.php:680
+#: admin/manage-fields.php:687
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: admin/manage-fields.php:681
+#: admin/manage-fields.php:688
 msgid "Saint Lucia"
 msgstr ""
 
-#: admin/manage-fields.php:682
+#: admin/manage-fields.php:689
 msgid "Saint Martin"
 msgstr ""
 
-#: admin/manage-fields.php:683
+#: admin/manage-fields.php:690
 msgid "Saint Pierre and Miquelon"
 msgstr ""
 
-#: admin/manage-fields.php:684
+#: admin/manage-fields.php:691
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: admin/manage-fields.php:685
+#: admin/manage-fields.php:692
 msgid "Samoa"
 msgstr ""
 
-#: admin/manage-fields.php:686
+#: admin/manage-fields.php:693
 msgid "San Marino"
 msgstr ""
 
-#: admin/manage-fields.php:687
+#: admin/manage-fields.php:694
 msgid "Sao Tome and Principe"
 msgstr ""
 
-#: admin/manage-fields.php:688
+#: admin/manage-fields.php:695
 msgid "Saudi Arabia"
 msgstr ""
 
-#: admin/manage-fields.php:689
+#: admin/manage-fields.php:696
 msgid "Senegal"
 msgstr ""
 
-#: admin/manage-fields.php:690
+#: admin/manage-fields.php:697
 msgid "Serbia"
 msgstr ""
 
-#: admin/manage-fields.php:691
+#: admin/manage-fields.php:698
 msgid "Seychelles"
 msgstr ""
 
-#: admin/manage-fields.php:692
+#: admin/manage-fields.php:699
 msgid "Sierra Leone"
 msgstr ""
 
-#: admin/manage-fields.php:693
+#: admin/manage-fields.php:700
 msgid "Singapore"
 msgstr ""
 
-#: admin/manage-fields.php:694
+#: admin/manage-fields.php:701
 msgid "Sint Maarten"
 msgstr ""
 
-#: admin/manage-fields.php:695
+#: admin/manage-fields.php:702
 msgid "Slovakia"
 msgstr ""
 
-#: admin/manage-fields.php:696
+#: admin/manage-fields.php:703
 msgid "Slovenia"
 msgstr ""
 
-#: admin/manage-fields.php:697
+#: admin/manage-fields.php:704
 msgid "Solomon Islands"
 msgstr ""
 
-#: admin/manage-fields.php:698
+#: admin/manage-fields.php:705
 msgid "Somalia"
 msgstr ""
 
-#: admin/manage-fields.php:699
+#: admin/manage-fields.php:706
 msgid "South Africa"
 msgstr ""
 
-#: admin/manage-fields.php:700
+#: admin/manage-fields.php:707
 msgid "South Georgia and the South Sandwich Islands"
 msgstr ""
 
-#: admin/manage-fields.php:701
+#: admin/manage-fields.php:708
 msgid "South Korea"
 msgstr ""
 
-#: admin/manage-fields.php:702
+#: admin/manage-fields.php:709
 msgid "South Sudan"
 msgstr ""
 
-#: admin/manage-fields.php:703
+#: admin/manage-fields.php:710
 msgid "Spain"
 msgstr ""
 
-#: admin/manage-fields.php:704
+#: admin/manage-fields.php:711
 msgid "Sri Lanka"
 msgstr ""
 
-#: admin/manage-fields.php:705
+#: admin/manage-fields.php:712
 msgid "Sudan"
 msgstr ""
 
-#: admin/manage-fields.php:706
+#: admin/manage-fields.php:713
 msgid "Suriname"
 msgstr ""
 
-#: admin/manage-fields.php:707
+#: admin/manage-fields.php:714
 msgid "Svalbard and Jan Mayen"
 msgstr ""
 
-#: admin/manage-fields.php:708
+#: admin/manage-fields.php:715
 msgid "Swaziland"
 msgstr ""
 
-#: admin/manage-fields.php:709
+#: admin/manage-fields.php:716
 msgid "Sweden"
 msgstr ""
 
-#: admin/manage-fields.php:710
+#: admin/manage-fields.php:717
 msgid "Switzerland"
 msgstr ""
 
-#: admin/manage-fields.php:711
+#: admin/manage-fields.php:718
 msgid "Syria"
 msgstr ""
 
-#: admin/manage-fields.php:712
+#: admin/manage-fields.php:719
 msgid "Taiwan"
 msgstr ""
 
-#: admin/manage-fields.php:713
+#: admin/manage-fields.php:720
 msgid "Tajikistan"
 msgstr ""
 
-#: admin/manage-fields.php:714
+#: admin/manage-fields.php:721
 msgid "Tanzania"
 msgstr ""
 
-#: admin/manage-fields.php:715
+#: admin/manage-fields.php:722
 msgid "Thailand"
 msgstr ""
 
-#: admin/manage-fields.php:716
+#: admin/manage-fields.php:723
 msgid "Togo"
 msgstr ""
 
-#: admin/manage-fields.php:717
+#: admin/manage-fields.php:724
 msgid "Tokelau"
 msgstr ""
 
-#: admin/manage-fields.php:718
+#: admin/manage-fields.php:725
 msgid "Tonga"
 msgstr ""
 
-#: admin/manage-fields.php:719
+#: admin/manage-fields.php:726
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: admin/manage-fields.php:720
+#: admin/manage-fields.php:727
 msgid "Tunisia"
 msgstr ""
 
-#: admin/manage-fields.php:721
+#: admin/manage-fields.php:728
 msgid "Turkey"
 msgstr ""
 
-#: admin/manage-fields.php:722
+#: admin/manage-fields.php:729
 msgid "Turkmenistan"
 msgstr ""
 
-#: admin/manage-fields.php:723
+#: admin/manage-fields.php:730
 msgid "Turks and Caicos Islands"
 msgstr ""
 
-#: admin/manage-fields.php:724
+#: admin/manage-fields.php:731
 msgid "Tuvalu"
 msgstr ""
 
-#: admin/manage-fields.php:725
+#: admin/manage-fields.php:732
 msgid "U.S. Virgin Islands"
 msgstr ""
 
-#: admin/manage-fields.php:726
+#: admin/manage-fields.php:733
 msgid "Uganda"
 msgstr ""
 
-#: admin/manage-fields.php:727
+#: admin/manage-fields.php:734
 msgid "Ukraine"
 msgstr ""
 
-#: admin/manage-fields.php:728
+#: admin/manage-fields.php:735
 msgid "United Arab Emirates"
 msgstr ""
 
-#: admin/manage-fields.php:729
+#: admin/manage-fields.php:736
 msgid "United Kingdom"
 msgstr ""
 
-#: admin/manage-fields.php:730
+#: admin/manage-fields.php:737
 msgid "United States"
 msgstr ""
 
-#: admin/manage-fields.php:731
+#: admin/manage-fields.php:738
 msgid "United States Minor Outlying Islands"
 msgstr ""
 
-#: admin/manage-fields.php:732
+#: admin/manage-fields.php:739
 msgid "Uruguay"
 msgstr ""
 
-#: admin/manage-fields.php:733
+#: admin/manage-fields.php:740
 msgid "Uzbekistan"
 msgstr ""
 
-#: admin/manage-fields.php:734
+#: admin/manage-fields.php:741
 msgid "Vanuatu"
 msgstr ""
 
-#: admin/manage-fields.php:735
+#: admin/manage-fields.php:742
 msgid "Vatican"
 msgstr ""
 
-#: admin/manage-fields.php:736
+#: admin/manage-fields.php:743
 msgid "Venezuela"
 msgstr ""
 
-#: admin/manage-fields.php:737
+#: admin/manage-fields.php:744
 msgid "Vietnam"
 msgstr ""
 
-#: admin/manage-fields.php:738
+#: admin/manage-fields.php:745
 msgid "Wallis and Futuna"
 msgstr ""
 
-#: admin/manage-fields.php:739
+#: admin/manage-fields.php:746
 msgid "Western Sahara"
 msgstr ""
 
-#: admin/manage-fields.php:740
+#: admin/manage-fields.php:747
 msgid "Yemen"
 msgstr ""
 
-#: admin/manage-fields.php:741
+#: admin/manage-fields.php:748
 msgid "Zambia"
 msgstr ""
 
-#: admin/manage-fields.php:742
+#: admin/manage-fields.php:749
 msgid "Zimbabwe"
 msgstr ""
 
-#: admin/manage-fields.php:793
+#: admin/manage-fields.php:800
 msgid "Albania Lek"
 msgstr ""
 
-#: admin/manage-fields.php:794
+#: admin/manage-fields.php:801
 msgid "Afghanistan Afghani"
 msgstr ""
 
-#: admin/manage-fields.php:795
+#: admin/manage-fields.php:802
 msgid "Argentina Peso"
 msgstr ""
 
-#: admin/manage-fields.php:796
+#: admin/manage-fields.php:803
 msgid "Aruba Guilder"
 msgstr ""
 
-#: admin/manage-fields.php:797
+#: admin/manage-fields.php:804
 msgid "Australia Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:798
+#: admin/manage-fields.php:805
 msgid "Azerbaijan New Manat"
 msgstr ""
 
-#: admin/manage-fields.php:799
+#: admin/manage-fields.php:806
 msgid "Bahamas Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:800
+#: admin/manage-fields.php:807
 msgid "Barbados Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:801
+#: admin/manage-fields.php:808
 msgid "Bangladeshi taka"
 msgstr ""
 
-#: admin/manage-fields.php:802
+#: admin/manage-fields.php:809
 msgid "Belarus Ruble"
 msgstr ""
 
-#: admin/manage-fields.php:803
+#: admin/manage-fields.php:810
 msgid "Belize Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:804
+#: admin/manage-fields.php:811
 msgid "Bermuda Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:805
+#: admin/manage-fields.php:812
 msgid "Bolivia Boliviano"
 msgstr ""
 
-#: admin/manage-fields.php:806
+#: admin/manage-fields.php:813
 msgid "Bosnia and Herzegovina Convertible Marka"
 msgstr ""
 
-#: admin/manage-fields.php:807
+#: admin/manage-fields.php:814
 msgid "Botswana Pula"
 msgstr ""
 
-#: admin/manage-fields.php:808
+#: admin/manage-fields.php:815
 msgid "Bulgaria Lev"
 msgstr ""
 
-#: admin/manage-fields.php:809
+#: admin/manage-fields.php:816
 msgid "Brazil Real"
 msgstr ""
 
-#: admin/manage-fields.php:810
+#: admin/manage-fields.php:817
 msgid "Brunei Darussalam Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:811
+#: admin/manage-fields.php:818
 msgid "Cambodia Riel"
 msgstr ""
 
-#: admin/manage-fields.php:812
+#: admin/manage-fields.php:819
 msgid "Canada Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:813
+#: admin/manage-fields.php:820
 msgid "Cayman Islands Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:814
+#: admin/manage-fields.php:821
 msgid "Chile Peso"
 msgstr ""
 
-#: admin/manage-fields.php:815
+#: admin/manage-fields.php:822
 msgid "China Yuan Renminbi"
 msgstr ""
 
-#: admin/manage-fields.php:816
+#: admin/manage-fields.php:823
 msgid "Colombia Peso"
 msgstr ""
 
-#: admin/manage-fields.php:817
+#: admin/manage-fields.php:824
 msgid "Costa Rica Colon"
 msgstr ""
 
-#: admin/manage-fields.php:818
+#: admin/manage-fields.php:825
 msgid "Croatia Kuna"
 msgstr ""
 
-#: admin/manage-fields.php:819
+#: admin/manage-fields.php:826
 msgid "Cuba Peso"
 msgstr ""
 
-#: admin/manage-fields.php:820
+#: admin/manage-fields.php:827
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: admin/manage-fields.php:821
+#: admin/manage-fields.php:828
 msgid "Denmark Krone"
 msgstr ""
 
-#: admin/manage-fields.php:822
+#: admin/manage-fields.php:829
 msgid "Dominican Republic Peso"
 msgstr ""
 
-#: admin/manage-fields.php:823
+#: admin/manage-fields.php:830
 msgid "East Caribbean Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:824
+#: admin/manage-fields.php:831
 msgid "Egypt Pound"
 msgstr ""
 
-#: admin/manage-fields.php:825
+#: admin/manage-fields.php:832
 msgid "El Salvador Colon"
 msgstr ""
 
-#: admin/manage-fields.php:826
+#: admin/manage-fields.php:833
 msgid "Estonia Kroon"
 msgstr ""
 
-#: admin/manage-fields.php:827
+#: admin/manage-fields.php:834
 msgid "Euro"
 msgstr ""
 
-#: admin/manage-fields.php:828
+#: admin/manage-fields.php:835
 msgid "Falkland Islands (Malvinas) Pound"
 msgstr ""
 
-#: admin/manage-fields.php:829
+#: admin/manage-fields.php:836
 msgid "Fiji Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:830
+#: admin/manage-fields.php:837
 msgid "Ghana Cedis"
 msgstr ""
 
-#: admin/manage-fields.php:831
+#: admin/manage-fields.php:838
 msgid "Gibraltar Pound"
 msgstr ""
 
-#: admin/manage-fields.php:832
+#: admin/manage-fields.php:839
 msgid "Guatemala Quetzal"
 msgstr ""
 
-#: admin/manage-fields.php:833
+#: admin/manage-fields.php:840
 msgid "Guernsey Pound"
 msgstr ""
 
-#: admin/manage-fields.php:834
+#: admin/manage-fields.php:841
 msgid "Guyana Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:835
+#: admin/manage-fields.php:842
 msgid "Honduras Lempira"
 msgstr ""
 
-#: admin/manage-fields.php:836
+#: admin/manage-fields.php:843
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:837
+#: admin/manage-fields.php:844
 msgid "Hungary Forint"
 msgstr ""
 
-#: admin/manage-fields.php:838
+#: admin/manage-fields.php:845
 msgid "Iceland Krona"
 msgstr ""
 
-#: admin/manage-fields.php:839
+#: admin/manage-fields.php:846
 msgid "India Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:840
+#: admin/manage-fields.php:847
 msgid "Indonesia Rupiah"
 msgstr ""
 
-#: admin/manage-fields.php:841
+#: admin/manage-fields.php:848
 msgid "Iran Rial"
 msgstr ""
 
-#: admin/manage-fields.php:842
+#: admin/manage-fields.php:849
 msgid "Isle of Man Pound"
 msgstr ""
 
-#: admin/manage-fields.php:843
+#: admin/manage-fields.php:850
 msgid "Israel Shekel"
 msgstr ""
 
-#: admin/manage-fields.php:844
+#: admin/manage-fields.php:851
 msgid "Jamaica Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:845
+#: admin/manage-fields.php:852
 msgid "Japan Yen"
 msgstr ""
 
-#: admin/manage-fields.php:846
+#: admin/manage-fields.php:853
 msgid "Jersey Pound"
 msgstr ""
 
-#: admin/manage-fields.php:847
+#: admin/manage-fields.php:854
 msgid "Kazakhstan Tenge"
 msgstr ""
 
-#: admin/manage-fields.php:848
+#: admin/manage-fields.php:855
 msgid "Korea (North) Won"
 msgstr ""
 
-#: admin/manage-fields.php:849
+#: admin/manage-fields.php:856
 msgid "Korea (South) Won"
 msgstr ""
 
-#: admin/manage-fields.php:850
+#: admin/manage-fields.php:857
 msgid "Kyrgyzstan Som"
 msgstr ""
 
-#: admin/manage-fields.php:851
+#: admin/manage-fields.php:858
 msgid "Laos Kip"
 msgstr ""
 
-#: admin/manage-fields.php:852
+#: admin/manage-fields.php:859
 msgid "Latvia Lat"
 msgstr ""
 
-#: admin/manage-fields.php:853
+#: admin/manage-fields.php:860
 msgid "Lebanon Pound"
 msgstr ""
 
-#: admin/manage-fields.php:854
+#: admin/manage-fields.php:861
 msgid "Liberia Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:855
+#: admin/manage-fields.php:862
 msgid "Lithuania Litas"
 msgstr ""
 
-#: admin/manage-fields.php:856
+#: admin/manage-fields.php:863
 msgid "Macedonia Denar"
 msgstr ""
 
-#: admin/manage-fields.php:857
+#: admin/manage-fields.php:864
 msgid "Malaysia Ringgit"
 msgstr ""
 
-#: admin/manage-fields.php:858
+#: admin/manage-fields.php:865
 msgid "Mauritius Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:859
+#: admin/manage-fields.php:866
 msgid "Mexico Peso"
 msgstr ""
 
-#: admin/manage-fields.php:860
+#: admin/manage-fields.php:867
 msgid "Mongolia Tughrik"
 msgstr ""
 
-#: admin/manage-fields.php:861
+#: admin/manage-fields.php:868
 msgid "Mozambique Metical"
 msgstr ""
 
-#: admin/manage-fields.php:862
+#: admin/manage-fields.php:869
 msgid "Namibia Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:863
+#: admin/manage-fields.php:870
 msgid "Nepal Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:864
+#: admin/manage-fields.php:871
 msgid "Netherlands Antilles Guilder"
 msgstr ""
 
-#: admin/manage-fields.php:865
+#: admin/manage-fields.php:872
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:866
+#: admin/manage-fields.php:873
 msgid "Nicaragua Cordoba"
 msgstr ""
 
-#: admin/manage-fields.php:867
+#: admin/manage-fields.php:874
 msgid "Nigeria Naira"
 msgstr ""
 
-#: admin/manage-fields.php:868
+#: admin/manage-fields.php:875
 msgid "Norway Krone"
 msgstr ""
 
-#: admin/manage-fields.php:869
+#: admin/manage-fields.php:876
 msgid "Oman Rial"
 msgstr ""
 
-#: admin/manage-fields.php:870
+#: admin/manage-fields.php:877
 msgid "Pakistan Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:871
+#: admin/manage-fields.php:878
 msgid "Panama Balboa"
 msgstr ""
 
-#: admin/manage-fields.php:872
+#: admin/manage-fields.php:879
 msgid "Paraguay Guarani"
 msgstr ""
 
-#: admin/manage-fields.php:873
+#: admin/manage-fields.php:880
 msgid "Peru Nuevo Sol"
 msgstr ""
 
-#: admin/manage-fields.php:874
+#: admin/manage-fields.php:881
 msgid "Philippines Peso"
 msgstr ""
 
-#: admin/manage-fields.php:875
+#: admin/manage-fields.php:882
 msgid "Poland Zloty"
 msgstr ""
 
-#: admin/manage-fields.php:876
+#: admin/manage-fields.php:883
 msgid "Qatar Riyal"
 msgstr ""
 
-#: admin/manage-fields.php:877
+#: admin/manage-fields.php:884
 msgid "Romania New Leu"
 msgstr ""
 
-#: admin/manage-fields.php:878
+#: admin/manage-fields.php:885
 msgid "Russia Ruble"
 msgstr ""
 
-#: admin/manage-fields.php:879
+#: admin/manage-fields.php:886
 msgid "Saint Helena Pound"
 msgstr ""
 
-#: admin/manage-fields.php:880
+#: admin/manage-fields.php:887
 msgid "Saudi Arabia Riyal"
 msgstr ""
 
-#: admin/manage-fields.php:881
+#: admin/manage-fields.php:888
 msgid "Serbia Dinar"
 msgstr ""
 
-#: admin/manage-fields.php:882
+#: admin/manage-fields.php:889
 msgid "Seychelles Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:883
+#: admin/manage-fields.php:890
 msgid "Singapore Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:884
+#: admin/manage-fields.php:891
 msgid "Solomon Islands Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:885
+#: admin/manage-fields.php:892
 msgid "Somalia Shilling"
 msgstr ""
 
-#: admin/manage-fields.php:886
+#: admin/manage-fields.php:893
 msgid "South Africa Rand"
 msgstr ""
 
-#: admin/manage-fields.php:887
+#: admin/manage-fields.php:894
 msgid "Sri Lanka Rupee"
 msgstr ""
 
-#: admin/manage-fields.php:888
+#: admin/manage-fields.php:895
 msgid "Sweden Krona"
 msgstr ""
 
-#: admin/manage-fields.php:889
+#: admin/manage-fields.php:896
 msgid "Switzerland Franc"
 msgstr ""
 
-#: admin/manage-fields.php:890
+#: admin/manage-fields.php:897
 msgid "Suriname Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:891
+#: admin/manage-fields.php:898
 msgid "Syria Pound"
 msgstr ""
 
-#: admin/manage-fields.php:892
+#: admin/manage-fields.php:899
 msgid "Taiwan New Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:893
+#: admin/manage-fields.php:900
 msgid "Thailand Baht"
 msgstr ""
 
-#: admin/manage-fields.php:894
+#: admin/manage-fields.php:901
 msgid "Trinidad and Tobago Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:895, admin/manage-fields.php:896
+#: admin/manage-fields.php:902, admin/manage-fields.php:903
 msgid "Turkey Lira"
 msgstr ""
 
-#: admin/manage-fields.php:897
+#: admin/manage-fields.php:904
 msgid "Tuvalu Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:898
+#: admin/manage-fields.php:905
 msgid "Ukraine Hryvna"
 msgstr ""
 
-#: admin/manage-fields.php:899
+#: admin/manage-fields.php:906
 msgid "United Kingdom Pound"
 msgstr ""
 
-#: admin/manage-fields.php:900
+#: admin/manage-fields.php:907
 msgid "Uganda Shilling"
 msgstr ""
 
-#: admin/manage-fields.php:901
+#: admin/manage-fields.php:908
 msgid "US Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:902
+#: admin/manage-fields.php:909
 msgid "Uruguay Peso"
 msgstr ""
 
-#: admin/manage-fields.php:903
+#: admin/manage-fields.php:910
 msgid "Uzbekistan Som"
 msgstr ""
 
-#: admin/manage-fields.php:904
+#: admin/manage-fields.php:911
 msgid "Venezuela Bolivar"
 msgstr ""
 
-#: admin/manage-fields.php:905
+#: admin/manage-fields.php:912
 msgid "Viet Nam Dong"
 msgstr ""
 
-#: admin/manage-fields.php:906
+#: admin/manage-fields.php:913
 msgid "Yemen Rial"
 msgstr ""
 
-#: admin/manage-fields.php:907
+#: admin/manage-fields.php:914
 msgid "Zimbabwe Dollar"
 msgstr ""
 
-#: admin/manage-fields.php:1421
+#: admin/manage-fields.php:1428
 msgid ""
 "That field is already added in this form\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1414, admin/manage-fields.php:1214
+#: admin/manage-fields.php:1421, admin/manage-fields.php:1221
 msgid ""
 "You must select a field\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1224
+#: admin/manage-fields.php:1231
 msgid ""
 "Please choose a different field type as this one already exists in your form (must be unique)\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1238
+#: admin/manage-fields.php:1245
 msgid ""
 "The entered avatar size is not numerical\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1235
+#: admin/manage-fields.php:1242
 msgid ""
 "The entered avatar size is not between 20 and 200\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1249
+#: admin/manage-fields.php:1256
 msgid ""
 "You must enter a value for the row number\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1246
+#: admin/manage-fields.php:1253
 msgid ""
 "The entered row number is not numerical\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1257
+#: admin/manage-fields.php:1264
 msgid ""
 "You must enter the site key\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1259
+#: admin/manage-fields.php:1266
 msgid ""
 "You must enter the secret key\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1281
+#: admin/manage-fields.php:1288
 msgid ""
 "The entered value for the Datepicker is not a valid date-format\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1267
+#: admin/manage-fields.php:1274
 msgid ""
 "You must enter a value for the date-format\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1300
+#: admin/manage-fields.php:1307
 msgid ""
 "The meta-name cannot be empty\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1305
+#: admin/manage-fields.php:1312
 msgid ""
 "The meta-name cannot begin with a space\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1308
+#: admin/manage-fields.php:1315
 msgid ""
 "The meta-name cannot end with a space\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1342, admin/manage-fields.php:1356
+#: admin/manage-fields.php:1349, admin/manage-fields.php:1363
 msgid ""
 "That meta-name is already in use\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1333
+#: admin/manage-fields.php:1340
 msgid ""
 "That meta-name can't be used, please choose another\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1374
+#: admin/manage-fields.php:1381
 msgid ""
 "The meta-name cannot contain spaces.\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1370
+#: admin/manage-fields.php:1377
 msgid ""
 "The meta-name can only contain lowercase letters, numbers, _ , - and no spaces.\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1398
+#: admin/manage-fields.php:1405
 msgid ""
 "The following option did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1394
+#: admin/manage-fields.php:1401
 msgid ""
 "The following option(s) did not coincide with the ones in the options list: %s\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1405
+#: admin/manage-fields.php:1412
 msgid ""
 "Please select at least one user role\n"
 ""
 msgstr ""
 
-#: admin/manage-fields.php:1473
+#: admin/manage-fields.php:1480
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1473, features/functions.php:1130, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons/multiple-forms/multiple-forms.php:417, add-ons-advanced/field-visibility/index.php:189, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
+#: admin/manage-fields.php:1480, features/functions.php:1130, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons/multiple-forms/multiple-forms.php:417, add-ons-advanced/field-visibility/index.php:190, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1473, features/functions.php:1123, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:189, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1480, features/functions.php:1123, features/functions.php:1137, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:190, features/admin-approval/class-admin-approval.php:119, features/admin-approval/class-admin-approval.php:235, features/email-confirmation/class-email-confirmation.php:124, features/email-confirmation/class-email-confirmation.php:221, features/roles-editor/roles-editor.php:218, features/roles-editor/roles-editor.php:951, features/roles-editor/roles-editor.php:940, features/roles-editor/roles-editor.php:931, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
-#: admin/manage-fields.php:1488
+#: admin/manage-fields.php:1495
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr ""
 
-#: admin/manage-fields.php:1503
+#: admin/manage-fields.php:1510
 msgid "With Profile Builder Pro you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms add-on."
 msgstr ""
 
-#: admin/manage-fields.php:1501
+#: admin/manage-fields.php:1508
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1602, add-ons/user-listing/one-map-listing.php:656
+#: admin/manage-fields.php:1609, add-ons/user-listing/one-map-listing.php:656
 msgid "Search Location"
 msgstr ""
 
@@ -3588,7 +3648,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3359, features/two-factor-authentication/class-two-factor-authentication.php:217, features/two-factor-authentication/class-two-factor-authentication.php:409
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3423, features/two-factor-authentication/class-two-factor-authentication.php:217, features/two-factor-authentication/class-two-factor-authentication.php:409
 msgid "Activate"
 msgstr ""
 
@@ -3858,10 +3918,6 @@ msgstr ""
 
 #: admin/setup-wizard.php:464
 msgid "Follow these steps to start registering users on your website. %1s out of %2s complete."
-msgstr ""
-
-#: admin/support-chat.php:190, admin/support-chat.php:231
-msgid "Need Help?"
 msgstr ""
 
 #: admin/support-chat.php:191
@@ -4467,7 +4523,7 @@ msgstr ""
 msgid "PMS: Login with No Subscription"
 msgstr ""
 
-#: add-ons/custom-redirects/custom_redirects_admin.php:82, add-ons/user-listing/userlisting.php:185, add-ons/user-listing/userlisting.php:2960
+#: add-ons/custom-redirects/custom_redirects_admin.php:82, add-ons/user-listing/userlisting.php:191, add-ons/user-listing/userlisting.php:3024
 msgid "User ID"
 msgstr ""
 
@@ -4779,11 +4835,11 @@ msgstr ""
 msgid "No Edit-profile Forms found in trash"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:138, add-ons/multiple-forms/register-forms.php:141, add-ons/user-listing/userlisting.php:2822
+#: add-ons/multiple-forms/edit-profile-forms.php:138, add-ons/multiple-forms/register-forms.php:141, add-ons/user-listing/userlisting.php:2886
 msgid "Shortcode"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:158, add-ons/multiple-forms/register-forms.php:162, add-ons/user-listing/userlisting.php:2843
+#: add-ons/multiple-forms/edit-profile-forms.php:158, add-ons/multiple-forms/register-forms.php:162, add-ons/user-listing/userlisting.php:2907
 msgid "(no title)"
 msgstr ""
 
@@ -4795,11 +4851,11 @@ msgstr ""
 msgid "<span style=\"color: #e76054;\">NOTE:</span> Changing the form title also changes the shortcode!"
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:179, add-ons/multiple-forms/register-forms.php:182, add-ons/user-listing/userlisting.php:2864
+#: add-ons/multiple-forms/edit-profile-forms.php:179, add-ons/multiple-forms/register-forms.php:182, add-ons/user-listing/userlisting.php:2928
 msgid "The shortcode will be available after you publish this form."
 msgstr ""
 
-#: add-ons/multiple-forms/edit-profile-forms.php:190, add-ons/multiple-forms/register-forms.php:193, add-ons/user-listing/userlisting.php:2906
+#: add-ons/multiple-forms/edit-profile-forms.php:190, add-ons/multiple-forms/register-forms.php:193, add-ons/user-listing/userlisting.php:2970
 msgid "Form Shortcode"
 msgstr ""
 
@@ -4967,6 +5023,18 @@ msgstr ""
 msgid "No User Listing found in trash"
 msgstr ""
 
+#: add-ons/user-listing/userlisting.php:173, front-end/extra-fields/international-telephone-input/international-telephone-input.php:417
+msgid "Prefix"
+msgstr ""
+
+#: add-ons/user-listing/userlisting.php:174, front-end/extra-fields/international-telephone-input/international-telephone-input.php:423
+msgid "Without Prefix"
+msgstr ""
+
+#: add-ons/user-listing/userlisting.php:175, front-end/extra-fields/international-telephone-input/international-telephone-input.php:430
+msgid "Call Link"
+msgstr ""
+
 #: add-ons/user-listing/userlisting.php:138, features/email-customizer/email-customizer.php:39
 msgid "Blog URL"
 msgstr ""
@@ -4979,623 +5047,623 @@ msgstr ""
 msgid "Display name as"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:186, add-ons/user-listing/userlisting.php:360, add-ons/user-listing/userlisting.php:561, add-ons/user-listing/userlisting.php:1056, add-ons/user-listing/userlisting.php:2969, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:294
+#: add-ons/user-listing/userlisting.php:192, add-ons/user-listing/userlisting.php:366, add-ons/user-listing/userlisting.php:567, add-ons/user-listing/userlisting.php:1120, add-ons/user-listing/userlisting.php:3033, features/admin-approval/class-admin-approval.php:181, features/roles-editor/roles-editor.php:294
 msgid "Role"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:187, features/roles-editor/roles-editor.php:404, features/roles-editor/roles-editor.php:568
+#: add-ons/user-listing/userlisting.php:193, features/roles-editor/roles-editor.php:404, features/roles-editor/roles-editor.php:568
 msgid "Role Slug"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:188, add-ons/user-listing/userlisting.php:2963
+#: add-ons/user-listing/userlisting.php:194, add-ons/user-listing/userlisting.php:3027
 msgid "Registration Date"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:189, add-ons/user-listing/userlisting.php:2968
+#: add-ons/user-listing/userlisting.php:195, add-ons/user-listing/userlisting.php:3032
 msgid "Number of Posts"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:193
+#: add-ons/user-listing/userlisting.php:199
 msgid "More Info"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:194
+#: add-ons/user-listing/userlisting.php:200
 msgid "More Info Url"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:195
+#: add-ons/user-listing/userlisting.php:201
 msgid "Avatar or Gravatar"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:196
+#: add-ons/user-listing/userlisting.php:202
 msgid "User Nicename"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:238
+#: add-ons/user-listing/userlisting.php:244
 msgid "Pagination"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:239
+#: add-ons/user-listing/userlisting.php:245
 msgid "Search all Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:240, add-ons/user-listing/userlisting.php:3118
+#: add-ons/user-listing/userlisting.php:246, add-ons/user-listing/userlisting.php:3182
 msgid "Faceted Menus"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:241
+#: add-ons/user-listing/userlisting.php:247
 msgid "User Count"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:242, add-ons/user-listing/userlisting.php:4457
+#: add-ons/user-listing/userlisting.php:248, add-ons/user-listing/userlisting.php:4521
 msgid "Download All Users CSV"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:243, add-ons/user-listing/userlisting.php:4493
+#: add-ons/user-listing/userlisting.php:249, add-ons/user-listing/userlisting.php:4557
 msgid "Download Current Page CSV"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:250
+#: add-ons/user-listing/userlisting.php:256
 msgid "Map of listed users"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:271, add-ons/user-listing/userlisting.php:301, features/email-customizer/email-customizer.php:13
+#: add-ons/user-listing/userlisting.php:277, add-ons/user-listing/userlisting.php:307, features/email-customizer/email-customizer.php:13
 msgid "User Fields Tags"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:277
+#: add-ons/user-listing/userlisting.php:283
 msgid "Sort Tags"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:281, add-ons/user-listing/userlisting.php:305
+#: add-ons/user-listing/userlisting.php:287, add-ons/user-listing/userlisting.php:311
 msgid "Extra Functions"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:307
+#: add-ons/user-listing/userlisting.php:313
 msgid "Go Back Link"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:328, add-ons/user-listing/userlisting.php:3389
+#: add-ons/user-listing/userlisting.php:334, add-ons/user-listing/userlisting.php:3453
 msgid "All-userlisting Template"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:331, add-ons/user-listing/userlisting.php:3390
+#: add-ons/user-listing/userlisting.php:337, add-ons/user-listing/userlisting.php:3454
 msgid "Single-userlisting Template"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:357
+#: add-ons/user-listing/userlisting.php:363
 msgid "Avatar"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:359, add-ons/user-listing/userlisting.php:2964, features/admin-approval/class-admin-approval.php:178
+#: add-ons/user-listing/userlisting.php:365, add-ons/user-listing/userlisting.php:3028, features/admin-approval/class-admin-approval.php:178
 msgid "Firstname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:361, add-ons/user-listing/userlisting.php:595, add-ons/user-listing/userlisting.php:555, add-ons/user-listing/userlisting.php:1041, features/roles-editor/roles-editor.php:489
+#: add-ons/user-listing/userlisting.php:367, add-ons/user-listing/userlisting.php:601, add-ons/user-listing/userlisting.php:561, add-ons/user-listing/userlisting.php:1105, features/roles-editor/roles-editor.php:489
 msgid "Posts"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:362, add-ons/user-listing/userlisting.php:1023
+#: add-ons/user-listing/userlisting.php:368, add-ons/user-listing/userlisting.php:1087
 msgid "Sign-up Date"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:363
+#: add-ons/user-listing/userlisting.php:369
 msgid "More"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:471
+#: add-ons/user-listing/userlisting.php:477
 msgid "You do not have permission to view this user list."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:488
+#: add-ons/user-listing/userlisting.php:494
 msgid "You do not have the required user role to view this user list."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:593, features/roles-editor/roles-editor.php:406, features/roles-editor/roles-editor.php:513, features/roles-editor/roles-editor.php:557
+#: add-ons/user-listing/userlisting.php:599, features/roles-editor/roles-editor.php:406, features/roles-editor/roles-editor.php:513, features/roles-editor/roles-editor.php:557
 msgid "Users"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:594
+#: add-ons/user-listing/userlisting.php:600
 msgid "Filters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:596, add-ons/user-listing/userlisting.php:543
+#: add-ons/user-listing/userlisting.php:602, add-ons/user-listing/userlisting.php:549
 msgid "Sign-up date"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:597
+#: add-ons/user-listing/userlisting.php:603
 msgid "View Profile"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:598
+#: add-ons/user-listing/userlisting.php:604
 msgid "View"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:542
+#: add-ons/user-listing/userlisting.php:548
 msgid "About"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:544
+#: add-ons/user-listing/userlisting.php:550
 msgid "Contact Details"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:548
+#: add-ons/user-listing/userlisting.php:554
 msgid "Online Profiles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:549
+#: add-ons/user-listing/userlisting.php:555
 msgid "Facebook"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:550
+#: add-ons/user-listing/userlisting.php:556
 msgid "LinkedIn"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:551
+#: add-ons/user-listing/userlisting.php:557
 msgid "Instagram"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:552
+#: add-ons/user-listing/userlisting.php:558
 msgid "View all posts"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:553
+#: add-ons/user-listing/userlisting.php:559
 msgid "NickName"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:554
+#: add-ons/user-listing/userlisting.php:560
 msgid "Occupation"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:556
+#: add-ons/user-listing/userlisting.php:562
 msgid "Employment"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:557
+#: add-ons/user-listing/userlisting.php:563
 msgid "Basic info"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:558
+#: add-ons/user-listing/userlisting.php:564
 msgid "User Info"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:512
+#: add-ons/user-listing/userlisting.php:518
 msgid "User not found"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1050, add-ons/user-listing/userlisting.php:2975
+#: add-ons/user-listing/userlisting.php:1114, add-ons/user-listing/userlisting.php:3039
 msgid "Jabber"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1047, add-ons/user-listing/userlisting.php:2974
+#: add-ons/user-listing/userlisting.php:1111, add-ons/user-listing/userlisting.php:3038
 msgid "Yim"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1044, add-ons/user-listing/userlisting.php:2973
+#: add-ons/user-listing/userlisting.php:1108, add-ons/user-listing/userlisting.php:3037
 msgid "Aim"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1032, add-ons/user-listing/userlisting.php:2966
+#: add-ons/user-listing/userlisting.php:1096, add-ons/user-listing/userlisting.php:3030
 msgid "Display Name"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1017
+#: add-ons/user-listing/userlisting.php:1081
 msgid "First/Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1387, add-ons/user-listing/userlisting.php:1937, add-ons/user-listing/userlisting.php:2577, add-ons/user-listing/userlisting.php:4057
+#: add-ons/user-listing/userlisting.php:1451, add-ons/user-listing/userlisting.php:2001, add-ons/user-listing/userlisting.php:2641, add-ons/user-listing/userlisting.php:4121
 msgid "Search Users by All Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1714
+#: add-ons/user-listing/userlisting.php:1778
 msgid "Click here to see more information about this user."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1711
+#: add-ons/user-listing/userlisting.php:1775
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1711, add-ons/user-listing/userlisting.php:1711
+#: add-ons/user-listing/userlisting.php:1775, add-ons/user-listing/userlisting.php:1775
 msgid "More..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1759, front-end/extra-fields/map/map.php:15
+#: add-ons/user-listing/userlisting.php:1823, front-end/extra-fields/map/map.php:15
 msgid "Remove Marker"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1741
+#: add-ons/user-listing/userlisting.php:1805
 msgid "View Map"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1894, add-ons/user-listing/userlisting.php:1891
+#: add-ons/user-listing/userlisting.php:1958, add-ons/user-listing/userlisting.php:1955
 msgid "Click here to go back"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1891, add-ons/user-listing/userlisting.php:1891
+#: add-ons/user-listing/userlisting.php:1955, add-ons/user-listing/userlisting.php:1955
 msgid "Back"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1956
+#: add-ons/user-listing/userlisting.php:2020
 msgid "You don't have any pagination settings on this userlisting!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1924
+#: add-ons/user-listing/userlisting.php:1988
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1925
+#: add-ons/user-listing/userlisting.php:1989
 msgid "&laquo; Prev"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1926
+#: add-ons/user-listing/userlisting.php:1990
 msgid "Next &raquo; "
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1927
+#: add-ons/user-listing/userlisting.php:1991
 msgid "Last &raquo;&raquo;"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2005
+#: add-ons/user-listing/userlisting.php:2069
 msgid "Show All"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2006
+#: add-ons/user-listing/userlisting.php:2070
 msgid "Hide"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2087, admin/advanced-settings/includes/views/view-fields.php:72
+#: add-ons/user-listing/userlisting.php:2151, admin/advanced-settings/includes/views/view-fields.php:72
 msgid "Choose..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2126
+#: add-ons/user-listing/userlisting.php:2190
 msgid "Choose or type in an option..."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2253
+#: add-ons/user-listing/userlisting.php:2317
 msgid "No options available"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2439
+#: add-ons/user-listing/userlisting.php:2503
 msgid "Remove All Filters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2622
+#: add-ons/user-listing/userlisting.php:2686
 msgid "Search"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2867
+#: add-ons/user-listing/userlisting.php:2931
 msgid "Use this shortcode on the page you want the form to be displayed:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2870
+#: add-ons/user-listing/userlisting.php:2934
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2875, add-ons/user-listing/userlisting.php:2880
+#: add-ons/user-listing/userlisting.php:2939, add-ons/user-listing/userlisting.php:2944
 msgid "Extra shortcode parameters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2877
+#: add-ons/user-listing/userlisting.php:2941
 msgid "View all extra shortcode parameters"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2883
+#: add-ons/user-listing/userlisting.php:2947
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2884
+#: add-ons/user-listing/userlisting.php:2948
 msgid "Example:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2886
+#: add-ons/user-listing/userlisting.php:2950
 msgid "Remember though, that the field-value combination must exist in the database."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2892
+#: add-ons/user-listing/userlisting.php:2956
 msgid "displays only the users that you specified the user_id for"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2898
+#: add-ons/user-listing/userlisting.php:2962
 msgid "displays all users except the ones you specified the user_id for"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2965, features/admin-approval/class-admin-approval.php:179
+#: add-ons/user-listing/userlisting.php:3029, features/admin-approval/class-admin-approval.php:179
 msgid "Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2990
+#: add-ons/user-listing/userlisting.php:3054
 msgid "Random (very slow on large databases > 10K user)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2993
+#: add-ons/user-listing/userlisting.php:3057
 msgid "Ascending"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:2994
+#: add-ons/user-listing/userlisting.php:3058
 msgid "Descending"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3003, add-ons/user-listing/userlisting.php:3016
+#: add-ons/user-listing/userlisting.php:3067, add-ons/user-listing/userlisting.php:3080
 msgid "Roles to Display"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3003, add-ons/user-listing/userlisting.php:3016
+#: add-ons/user-listing/userlisting.php:3067, add-ons/user-listing/userlisting.php:3080
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3004, add-ons/user-listing/userlisting.php:3017
+#: add-ons/user-listing/userlisting.php:3068, add-ons/user-listing/userlisting.php:3081
 msgid "Number of Users/Page"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3004, add-ons/user-listing/userlisting.php:3017
+#: add-ons/user-listing/userlisting.php:3068, add-ons/user-listing/userlisting.php:3081
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3005, add-ons/user-listing/userlisting.php:3018
+#: add-ons/user-listing/userlisting.php:3069, add-ons/user-listing/userlisting.php:3082
 msgid "Default Sorting Criteria"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3005, add-ons/user-listing/userlisting.php:3018
+#: add-ons/user-listing/userlisting.php:3069, add-ons/user-listing/userlisting.php:3082
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3006, add-ons/user-listing/userlisting.php:3019
+#: add-ons/user-listing/userlisting.php:3070, add-ons/user-listing/userlisting.php:3083
 msgid "Default Sorting Order"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3006, add-ons/user-listing/userlisting.php:3019
+#: add-ons/user-listing/userlisting.php:3070, add-ons/user-listing/userlisting.php:3083
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3007, add-ons/user-listing/userlisting.php:3020
+#: add-ons/user-listing/userlisting.php:3071, add-ons/user-listing/userlisting.php:3084
 msgid "Avatar Size (All-userlisting)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3007, add-ons/user-listing/userlisting.php:3020
+#: add-ons/user-listing/userlisting.php:3071, add-ons/user-listing/userlisting.php:3084
 msgid "Set the avatar size on the all-userlisting only"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3008, add-ons/user-listing/userlisting.php:3021
+#: add-ons/user-listing/userlisting.php:3072, add-ons/user-listing/userlisting.php:3085
 msgid "Avatar Size (Single-userlisting)"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3008, add-ons/user-listing/userlisting.php:3021
+#: add-ons/user-listing/userlisting.php:3072, add-ons/user-listing/userlisting.php:3085
 msgid "Set the avatar size on the single-userlisting only"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3009, add-ons/user-listing/userlisting.php:3022
+#: add-ons/user-listing/userlisting.php:3073, add-ons/user-listing/userlisting.php:3086
 msgid "Retina-Ready Avatar"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3009, add-ons/user-listing/userlisting.php:3022, add-ons-advanced/form-fields-in-columns/index.php:172
+#: add-ons/user-listing/userlisting.php:3073, add-ons/user-listing/userlisting.php:3086, add-ons-advanced/form-fields-in-columns/index.php:172
 msgid "Enable"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3009, add-ons/user-listing/userlisting.php:3022
+#: add-ons/user-listing/userlisting.php:3073, add-ons/user-listing/userlisting.php:3086
 msgid "Generate a 2x crop size for avatar images while keeping the display size above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3010, add-ons/user-listing/userlisting.php:3023
+#: add-ons/user-listing/userlisting.php:3074, add-ons/user-listing/userlisting.php:3087
 msgid "Visible only to logged in users?"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3010, add-ons/user-listing/userlisting.php:3023
+#: add-ons/user-listing/userlisting.php:3074, add-ons/user-listing/userlisting.php:3087
 msgid "The userlisting will be visible only for logged in users"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3011, add-ons/user-listing/userlisting.php:3024
+#: add-ons/user-listing/userlisting.php:3075, add-ons/user-listing/userlisting.php:3088
 msgid "Visible to following Roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3011, add-ons/user-listing/userlisting.php:3024
+#: add-ons/user-listing/userlisting.php:3075, add-ons/user-listing/userlisting.php:3088
 msgid "The userlisting will only be visible to the following roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3025
+#: add-ons/user-listing/userlisting.php:3089
 msgid "Relation for Custom Fields Queries"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3025
+#: add-ons/user-listing/userlisting.php:3089
 msgid "The relation between multiple fields being added to the meta query"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3032
+#: add-ons/user-listing/userlisting.php:3096
 msgid "Userlisting Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3086
+#: add-ons/user-listing/userlisting.php:3150
 msgid "Key"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3086
+#: add-ons/user-listing/userlisting.php:3150
 msgid "Choose the meta name for the desired field<br/>You can select from the options in the drop-down or type in a different one"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3087
+#: add-ons/user-listing/userlisting.php:3151
 msgid "Value"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3087
+#: add-ons/user-listing/userlisting.php:3151
 msgid "Input the field value"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3088
+#: add-ons/user-listing/userlisting.php:3152
 msgid "Compare"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3088
+#: add-ons/user-listing/userlisting.php:3152
 msgid "Choose the operator"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3089
+#: add-ons/user-listing/userlisting.php:3153
 msgid "Type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3089
+#: add-ons/user-listing/userlisting.php:3153
 msgid "Choose the custom field type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3095
+#: add-ons/user-listing/userlisting.php:3159
 msgid "Custom Field Queries"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3108
+#: add-ons/user-listing/userlisting.php:3172
 msgid "Label"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3108
+#: add-ons/user-listing/userlisting.php:3172
 msgid "Choose the facet name that appears on the frontend"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3109
+#: add-ons/user-listing/userlisting.php:3173
 msgid "Facet Type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3109
+#: add-ons/user-listing/userlisting.php:3173
 msgid "Choose the facet menu type"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3110
+#: add-ons/user-listing/userlisting.php:3174
 msgid "Facet Meta"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3110
+#: add-ons/user-listing/userlisting.php:3174
 msgid "Choose the meta field for the facet menu. If you want to use a repeater meta or a meta outside Profile Builder just type the value and press enter."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3111
+#: add-ons/user-listing/userlisting.php:3175
 msgid "Behaviour"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3111
+#: add-ons/user-listing/userlisting.php:3175
 msgid "Narrow the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3111
+#: add-ons/user-listing/userlisting.php:3175
 msgid "Expand the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3111
+#: add-ons/user-listing/userlisting.php:3175
 msgid "Choose how multiple selections affect the results"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3112
+#: add-ons/user-listing/userlisting.php:3176
 msgid "Visible choices"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3112
+#: add-ons/user-listing/userlisting.php:3176
 msgid "Show a toggle link after this many choices. Leave blank for all"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3127
+#: add-ons/user-listing/userlisting.php:3191
 msgid "User Login"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3128
+#: add-ons/user-listing/userlisting.php:3192
 msgid "User Email"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3129
+#: add-ons/user-listing/userlisting.php:3193
 msgid "User Display Name"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3130
+#: add-ons/user-listing/userlisting.php:3194
 msgid "User Website"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3141
+#: add-ons/user-listing/userlisting.php:3205
 msgid "Search Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3141
+#: add-ons/user-listing/userlisting.php:3205
 msgid "Choose the fields in which the Search Field will look in"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3146
+#: add-ons/user-listing/userlisting.php:3210
 msgid "Search Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3190
+#: add-ons/user-listing/userlisting.php:3254
 msgid "CSV Download Role Restrictions"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3190
+#: add-ons/user-listing/userlisting.php:3254
 msgid "Select which user roles can see the \"Download All Users CSV\" and \"Download Current Page CSV\" buttons in userlistings<br/>If not specified, defaults to all existing roles"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3191
+#: add-ons/user-listing/userlisting.php:3255
 msgid "CSV Export Fields"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3191
+#: add-ons/user-listing/userlisting.php:3255
 msgid "Select which user fields to include in the CSV export<br/>If no fields are selected, all fields will be included<br/>Only fields present in your userlisting template are shown"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3197
+#: add-ons/user-listing/userlisting.php:3261
 msgid "CSV Download Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3211
+#: add-ons/user-listing/userlisting.php:3275
 msgid "Themes: add style to your user listing section"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3342
+#: add-ons/user-listing/userlisting.php:3406
 msgid "Preview"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3366, admin/advanced-settings/includes/views/view-forms.php:183
+#: add-ons/user-listing/userlisting.php:3430, admin/advanced-settings/includes/views/view-forms.php:183
 msgid "Reset Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3380
+#: add-ons/user-listing/userlisting.php:3444
 msgid "Reset %s Theme Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3381
+#: add-ons/user-listing/userlisting.php:3445
 msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3385, admin/advanced-settings/includes/views/view-forms.php:533
+#: add-ons/user-listing/userlisting.php:3449, admin/advanced-settings/includes/views/view-forms.php:533
 msgid "Select which settings you want to reset:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3388
+#: add-ons/user-listing/userlisting.php:3452
 msgid "User-Listing Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3391
+#: add-ons/user-listing/userlisting.php:3455
 msgid "All Theme Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3404, admin/advanced-settings/includes/views/view-forms.php:561
+#: add-ons/user-listing/userlisting.php:3468, admin/advanced-settings/includes/views/view-forms.php:561
 msgid "Confirm"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4033
+#: add-ons/user-listing/userlisting.php:4097
 msgid "You need to activate the Userlisting feature from within the \"Add-ons\" page!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4033
+#: add-ons/user-listing/userlisting.php:4097
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4210
+#: add-ons/user-listing/userlisting.php:4274
 msgid "No results found!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4512
+#: add-ons/user-listing/userlisting.php:4576
 msgid "Security check failed."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4519
+#: add-ons/user-listing/userlisting.php:4583
 msgid "You do not have permission to download CSV files."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4524
+#: add-ons/user-listing/userlisting.php:4588
 msgid "Userlisting not found."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4577
+#: add-ons/user-listing/userlisting.php:4641
 msgid "No data to export."
 msgstr ""
 
@@ -5878,55 +5946,55 @@ msgstr ""
 msgid "Exit Review Mode"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:169
+#: add-ons-advanced/field-visibility/index.php:170
 msgid "Visibility"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:169
+#: add-ons-advanced/field-visibility/index.php:170
 msgid "<strong>Admin Only</strong> field is visible only for administrators. <strong>User Locked</strong> field is visible for both administrators and users, but only administrators have the capability to edit it."
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:170
+#: add-ons-advanced/field-visibility/index.php:171
 msgid "User Role Visibility"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:170
+#: add-ons-advanced/field-visibility/index.php:171
 msgid "Select which user roles see this field"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:171
+#: add-ons-advanced/field-visibility/index.php:172
 msgid "Location Visibility"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:171
+#: add-ons-advanced/field-visibility/index.php:172
 msgid "Select the locations you wish the field to appear"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:189
+#: add-ons-advanced/field-visibility/index.php:190
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre><pre class=\"wppb-mb-head-visibility\"></pre>"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:210
+#: add-ons-advanced/field-visibility/index.php:211
 msgid "This field is visible only for administrators."
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:213
+#: add-ons-advanced/field-visibility/index.php:214
 msgid "This field is visible for both administrators and users, but only administrators have the capability to edit it."
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:236
+#: add-ons-advanced/field-visibility/index.php:237
 msgid "This field is visible only for the following user roles: %1$s"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:282
+#: add-ons-advanced/field-visibility/index.php:283
 msgid "This field is visible only in the following locations: %1$s"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:424
+#: add-ons-advanced/field-visibility/index.php:425
 msgid "Get file"
 msgstr ""
 
-#: add-ons-advanced/field-visibility/index.php:567
+#: add-ons-advanced/field-visibility/index.php:568
 msgid "You do not have the capabilities necessary to edit this field."
 msgstr ""
 
@@ -8272,7 +8340,7 @@ msgstr ""
 msgid "This Profile Builder add-on has been migrated to the main plugin and is no longer used. You can delete it."
 msgstr ""
 
-#: front-end/default-fields/fields-functions.php:62, front-end/extra-fields/extra-fields.php:95
+#: front-end/default-fields/fields-functions.php:62, front-end/extra-fields/extra-fields.php:96
 msgid "ERROR"
 msgstr ""
 
@@ -9184,7 +9252,7 @@ msgstr ""
 msgid "Save the communication preferences order"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:89, front-end/default-fields/checkbox/checkbox.php:53, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:48, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:91, front-end/extra-fields/upload/upload.php:85, front-end/extra-fields/wysiwyg/wysiwyg.php:62
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:89, front-end/default-fields/checkbox/checkbox.php:53, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:48, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:91, front-end/extra-fields/upload/upload.php:85, front-end/extra-fields/wysiwyg/wysiwyg.php:62
 msgid "required"
 msgstr ""
 
@@ -9410,6 +9478,70 @@ msgstr ""
 
 #: front-end/extra-fields/input-url/input-url.php:74
 msgid "You must enter a valid URL."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:54
+msgid "International Telephone Input is active, but <strong>PHP phone validation is disabled</strong> because this site is running a <strong>PHP version lower than 8.1</strong>."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:56
+msgid "The field will still be <strong>displayed</strong> and users will still be able to <strong>submit it</strong>, but <strong>server-side validation</strong> and <strong>formatting</strong> powered by the PHP library will be skipped."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:58
+msgid "Please update PHP to <strong>version 8.1 or higher</strong> to enable <strong>full validation support</strong>."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:83
+msgid "Number is too short."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:84
+msgid "Number is too long."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:85
+msgid "The country code is invalid. Please check the international prefix."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:86
+msgid "Invalid number."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:221
+msgid "Please enter the number without country prefix in National Mode."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:239
+msgid "Please include the country prefix (for example %s...) for International Mode."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:247, front-end/extra-fields/international-telephone-input/international-telephone-input.php:250
+msgid "Invalid phone number."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:331
+msgid "Call me"
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:520
+msgid "Initial Country must be \"auto\" or one ISO 3166-1 alpha-2 code (e.g. ro, jp, us)."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:529
+msgid "Preferred Countries contains invalid code(s): %s"
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:537
+msgid "Excluded Countries contains invalid code(s): %s"
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:546
+msgid "Initial Country cannot be one of the Excluded Countries."
+msgstr ""
+
+#: front-end/extra-fields/international-telephone-input/international-telephone-input.php:553
+msgid "Preferred Countries cannot contain countries also set in Excluded Countries: %s"
 msgstr ""
 
 #: front-end/extra-fields/map/map.php:81, front-end/extra-fields/map/map.php:55
