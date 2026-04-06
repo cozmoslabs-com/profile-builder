@@ -672,24 +672,19 @@ function wppb_front_end_login( $atts ){
 		$user_ID = get_current_user_id();
 		$wppb_user = get_userdata( $user_ID );
 
-		if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
+		$login_with = isset( $wppb_generalSettings['loginWith'] ) ? $wppb_generalSettings['loginWith'] : '';
+
+		// Email login: always show the email. Username+email: show email when the login is the auto-generated slug from that email.
+		if ( $login_with === 'email' ) {
 			$display_name = $wppb_user->user_email;
-
-		elseif($wppb_user->display_name !== '')
-			$display_name = $wppb_user->user_login;
-
-		else
-			$display_name = $wppb_user->display_name;
-
-		if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) )
-			if( $wppb_user->user_login == Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $wppb_user->user_email ) ) )
+		} elseif ( $login_with === 'usernameemail'
+			&& $wppb_user->user_login === Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $wppb_user->user_email ) ) ) {
 			$display_name = $wppb_user->user_email;
-
-		elseif($wppb_user->display_name !== '')
-			$display_name = $wppb_user->user_login;
-
-		else
+		} elseif ( $wppb_user->display_name !== '' ) {
 			$display_name = $wppb_user->display_name;
+		} else {
+			$display_name = $wppb_user->user_login;
+		}
 
 		$logged_in_message = '<p class="wppb-alert">';
 

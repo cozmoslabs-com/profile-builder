@@ -555,14 +555,14 @@ function wppb_manual_activate_signup( $activation_key ) {
 		$meta = unserialize( $signup->meta );
 		$user_login = esc_sql( $signup->user_login );
 		$user_email = esc_sql( $signup->user_email );
-        /* the password is in hashed form in the signup table and we will copy it later to the user */
-		// set to placeholder so it doesn't trigger internal WordPress notices coming from the trim function with PHP 8
-		$password = 'placeholder';
+        /* Signup meta holds the real password hash, applied after user creation. WordPress requires a non-empty user_pass when creating users. */
+		$password = '';
 
 		$user_id = username_exists($user_login);
 
-		if ( ! $user_id )
-			$user_id = wppb_create_user( $user_login, $password, $user_email );
+		if ( ! $user_id ) {
+			$user_id = wppb_create_user( $user_login, wp_generate_password( 24, true, true ), $user_email );
+		}
 		else
 			$user_already_exists = true;
 

@@ -73,16 +73,6 @@ class WPPB_Support_Chat {
      */
     private function __construct() {
 
-        // only include the Support Chat in PB Free version
-//        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
-//            return;
-//        }
-
-        // include the Support Chat in PB Free and Dev versions
-        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && ( ! defined( 'PROFILE_BUILDER_PAID_VERSION' ) || PROFILE_BUILDER_PAID_VERSION !== 'dev' ) ) {
-            return;
-        }
-
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
         add_action( 'admin_footer', array( $this, 'render_chat_widget' ) );
         add_action( 'wp_ajax_wppb_get_forum_posts', array( $this, 'ajax_get_forum_posts' ) );

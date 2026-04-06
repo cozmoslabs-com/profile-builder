@@ -239,6 +239,8 @@ function wppb_sync_api( $action ) {
         'action'            => $action,
     );
 
+    $body = apply_filters( 'wppb_sync_api_body', $body, $action );
+
     wp_remote_post( $url, array(
         'body'     => $body,
         'timeout'  => 3,
@@ -260,6 +262,88 @@ function wppb_handle_plugin_activation(){
 function wppb_handle_plugin_deactivation(){
     wppb_sync_api( 'end' );
 }
+
+/**
+ * Add the stored deactivation reason to the sync payload
+ *
+ * @param array  $body   Sync request body
+ * @param string $action Sync action slug
+ *
+ * @return array
+ */
+function wppb_add_deactivation_reason_to_sync_body( $body, $action ) {
+
+    if ( $action !== 'end' )
+        return $body;
+
+    $reason_data = get_option( 'wppb_deactivation_reason', array() );
+
+    if ( ! is_array( $reason_data ) )
+        $reason_data = array();
+
+    if ( empty( $reason_data['reason'] ) )
+        $reason_data['reason'] = 'skip';
+
+    $body['reason'] = sanitize_key( $reason_data['reason'] );
+
+    $reason_key = $reason_data['reason'] . '_reason';
+
+    if ( ! empty( $reason_data[ $reason_key ] ) )
+        $body['extra_metadata'] = sanitize_text_field( $reason_data[ $reason_key ] );
+
+    delete_option( 'wppb_deactivation_reason' );
+
+    return $body;
+}
+add_filter( 'wppb_sync_api_body', 'wppb_add_deactivation_reason_to_sync_body', 10, 2 );
+
+/**
+ * Store the deactivation reason selected in the popup
+ */
+function wppb_store_deactivation_reason() {
+
+    if ( ! check_ajax_referer( 'wppb_deactivation_reason', 'nonce', false ) )
+        wp_send_json_error( array( 'message' => __( 'We could not verify your request. Please refresh the page and try again.', 'profile-builder' ) ), 403 );
+
+    if ( ! current_user_can( 'activate_plugins' ) )
+        wp_send_json_error( array( 'message' => __( 'You do not have permission to deactivate plugins on this site.', 'profile-builder' ) ), 403 );
+
+    $valid_reasons = array(
+        'dont_need_it',
+        'switched_to_another_plugin',
+        'missing_features',
+        'did_not_work',
+        'temporary_deactivation',
+        'other',
+        'skip',
+    );
+
+    $reason = '';
+
+    if ( isset( $_POST['reason'] ) )
+        $reason = sanitize_key( wp_unslash( $_POST['reason'] ) );
+
+    if ( ! in_array( $reason, $valid_reasons, true ) )
+        wp_send_json_error( array( 'message' => __( 'We could not save your deactivation feedback. Please try again.', 'profile-builder' ) ), 400 );
+
+    $reason_data = array(
+        'reason' => $reason,
+    );
+
+    if ( $reason === 'switched_to_another_plugin' && ! empty( $_POST['switched_to_another_plugin_reason'] ) )
+        $reason_data['switched_to_another_plugin_reason'] = sanitize_text_field( wp_unslash( $_POST['switched_to_another_plugin_reason'] ) );
+
+    if ( $reason === 'missing_features' && ! empty( $_POST['missing_features_reason'] ) )
+        $reason_data['missing_features_reason'] = sanitize_text_field( wp_unslash( $_POST['missing_features_reason'] ) );
+
+    if ( $reason === 'other' && ! empty( $_POST['other_reason'] ) )
+        $reason_data['other_reason'] = sanitize_text_field( wp_unslash( $_POST['other_reason'] ) );
+
+    update_option( 'wppb_deactivation_reason', $reason_data, false );
+
+    wp_send_json_success();
+}
+add_action( 'wp_ajax_wppb_store_deactivation_reason', 'wppb_store_deactivation_reason' );
 
 /* hook to create pages for out forms when a user press the create pages/setup button */
 add_action( 'admin_init', 'wppb_create_form_pages' );
@@ -652,7 +736,7 @@ function wppb_filter_extra_manage_fields_options( $values, $element_id ) {
 
 }
 
-function wppb_in_ffc_admin_notification() {
+function wppb_international_telephone_input_admin_notification() {
 
     if( !current_user_can( 'manage_options' ) )
         return;
@@ -660,28 +744,48 @@ function wppb_in_ffc_admin_notification() {
     /* initiate the plugin notifications class */
     $notifications = WPPB_Plugin_Notifications::get_instance();
     /* this must be unique */
-    $notification_id = 'wppb_ffc_notification';
+    $dismiss_notification_id = 'wppb_international_telephone_input_notification';
+    $notification_id = 'wppb_international_telephone_input_notification_pb';
 
-    $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . sprintf( __( 'New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users.', 'profile-builder' ), '<strong>', '</strong>') . '</p>';
-    $extra_message = sprintf( __( 'Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-add-ons' ) . '">', '</a>');
+    $docs_url = 'https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/international-telephone-input/';
+    $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . __( 'Let users pick their country, see flags and placeholders, and validate numbers in a familiar format.', 'profile-builder' ) . '</p>';
 
-    if( !defined( 'WPPB_PAID_PLUGIN_DIR' ) )
-        $extra_message .= sprintf( __( ' Don\'t have a license? %sBuy one now%s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=ffc_notification&utm_campaign=PBFree#pricing" target="_blank">', '</a>');
+    $docs_link = sprintf( __( '%1$sRead the documentation%2$s', 'profile-builder' ), '<a href="' . esc_url( $docs_url ) . '" target="_blank" rel="noopener noreferrer">', '</a>' );
+
+    $buy_url = 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=international_telephone_input_notification&utm_campaign=PBFree#pricing';
+
+    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+        $extra_message = sprintf(
+            /* translators: 1: documentation link (HTML), 2: opening Form Fields link, 3: closing Form Fields link */
+            __( '%1$s to set it up, or add the field under %2$sProfile Builder → Form Fields%3$s.', 'profile-builder' ),
+            $docs_link,
+            '<a href="' . esc_url( admin_url( 'admin.php?page=manage-fields' ) ) . '">',
+            '</a>'
+        );
+    } else {
+        $extra_message = sprintf(
+            /* translators: 1: documentation link (HTML), 2: opening upgrade link, 3: closing upgrade link */
+            __( '%1$s. This field is available in Profile Builder Basic and Pro. %2$sUpgrade now%3$s to use it.', 'profile-builder' ),
+            $docs_link,
+            '<a href="' . esc_url( $buy_url ) . '" target="_blank" rel="noopener noreferrer">',
+            '</a>'
+        );
+    }
 
     $notification_message .= '<p style="font-size: 15px; margin-top:4px; padding-left: 77px;">' . $extra_message . '</p>';
 
-    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/add-ons/pb-add-on-form-fields-in-columns-logo.png' )) ? WPPB_PLUGIN_URL . 'assets/images/add-ons/pb-add-on-form-fields-in-columns-logo.png' : '';
-    $ul_icon = ( !empty( $ul_icon_url ) ) ? '<img src="'. $ul_icon_url .'" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder - Form Fields in Columns">' : '';
+    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' ) ) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
+    $ul_icon = ( !empty( $ul_icon_url ) ) ? '<img src="' . esc_url( $ul_icon_url ) . '" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder">' : '';
 
     $message = $ul_icon;
-    $message .= '<h3 style="margin-bottom: 0;">Profile Builder - New Add-on</h3>';
+    $message .= '<h3 style="margin-bottom: 0;">' . esc_html__( 'New field: International Telephone Input.', 'profile-builder' ) . '</h3>';
     $message .= $notification_message;
-    $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+    $message .= '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $dismiss_notification_id ) ), 'wppb_plugin_notice_dismiss' ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
-    $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', false );
+    $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', true, array( 'manage-fields' ) );
 
 }
-add_action( 'admin_init', 'wppb_in_ffc_admin_notification' );
+add_action( 'admin_init', 'wppb_international_telephone_input_admin_notification' );
 
 /**
  * Get the Profile Builder Page or Post slug
@@ -807,7 +911,7 @@ add_action('admin_enqueue_scripts', 'wppb_maybe_remove_pms_styles', 100);
  */
 function wppb_output_deactivation_popup() {
 
-    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && ( ! defined( 'PROFILE_BUILDER_PAID_VERSION' ) || PROFILE_BUILDER_PAID_VERSION === 'dev' ) )
+    if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) )
         return;
 
     $screen = get_current_screen();
@@ -821,26 +925,114 @@ function wppb_output_deactivation_popup() {
         return;
 
     ?>
-    <div id="wppb-deactivation-popup" title="<?php esc_attr_e( 'Before You Go', 'profile-builder' ); ?>" data-plugin="<?php echo esc_attr( WPPB_PLUGIN_BASENAME ); ?>" style="display: none;">
-        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+    <div id="wppb-deactivation-popup" title="<?php esc_attr_e( 'Before You Go', 'profile-builder' ); ?>" data-plugin="<?php echo esc_attr( WPPB_PLUGIN_BASENAME ); ?>">
+        <div class="wppb-deactivation-popup-header">
             <img src="<?php echo esc_url( WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Profile Builder', 'profile-builder' ); ?>" width="44" height="44">
 
-            <p style="margin: 0;">
-                <?php esc_html_e( 'If something isn\'t working as expected, we\'d love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help.', 'profile-builder' ); ?>
+            <p class="wppb-deactivation-popup-description">
+                <?php esc_html_e( 'If you have a moment, please share the reason you are deactivating Profile Builder:', 'profile-builder' ); ?>
             </p>
         </div>
 
-        <div style="text-align: right;">
-            <a href="https://wordpress.org/support/plugin/profile-builder/" target="_blank" rel="noopener" class="button button-primary wppb-deactivation-popup-support">
-                <?php esc_html_e( 'Contact Support', 'profile-builder' ); ?>
-            </a>
+        <form class="wppb-deactivation-popup-form">
+            <fieldset class="wppb-deactivation-popup-fieldset">
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="dont_need_it">
+                    <span><?php esc_html_e( 'I no longer need the plugin', 'profile-builder' ); ?></span>
+                </label>
 
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="switched_to_another_plugin">
+                    <span><?php esc_html_e( 'I found a better plugin', 'profile-builder' ); ?></span>
+                    <input type="text" name="switched_to_another_plugin_reason" class="wppb-deactivation-popup-extra" data-reason="switched_to_another_plugin" placeholder="<?php esc_attr_e( 'Which plugin', 'profile-builder' ); ?>">
+                </label>
+
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="missing_features">
+                    <span><?php esc_html_e( 'I didn\'t find the feature I need', 'profile-builder' ); ?></span>
+                    <input type="text" name="missing_features_reason" class="wppb-deactivation-popup-extra" data-reason="missing_features" placeholder="<?php esc_attr_e( 'Which feature', 'profile-builder' ); ?>">
+                </label>
+
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="did_not_work">
+                    <span><?php esc_html_e( 'I couldn\'t get the plugin to work', 'profile-builder' ); ?></span>
+                </label>
+
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="temporary_deactivation">
+                    <span><?php esc_html_e( 'Temporary deactivation', 'profile-builder' ); ?></span>
+                </label>
+
+                <label class="wppb-deactivation-popup-option">
+                    <input type="radio" name="wppb_deactivation_reason" value="other">
+                    <span><?php esc_html_e( 'Other', 'profile-builder' ); ?></span>
+                    <input type="text" name="other_reason" class="wppb-deactivation-popup-extra" data-reason="other" placeholder="<?php esc_attr_e( 'Please tell us more', 'profile-builder' ); ?>">
+                </label>
+            </fieldset>
+
+            <p class="wppb-deactivation-popup-error"></p>
+        </form>
+
+        <div class="wppb-deactivation-popup-actions">
             <button type="button" class="button button-primary wppb-deactivation-popup-confirm">
-                <?php esc_html_e( 'Deactivate', 'profile-builder' ); ?>
+                <?php esc_html_e( 'Submit & deactivate', 'profile-builder' ); ?>
+            </button>
+
+            <button type="button" class="button wppb-deactivation-popup-skip">
+                <?php esc_html_e( 'Skip & deactivate', 'profile-builder' ); ?>
             </button>
         </div>
     </div>
     <style>
+        #wppb-deactivation-popup {
+            display: none;
+        }
+
+        .wppb-deactivation-popup-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .wppb-deactivation-popup-description {
+            margin: 0;
+        }
+
+        .wppb-deactivation-popup-fieldset {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .wppb-deactivation-popup-option {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .wppb-deactivation-popup-extra {
+            display: none;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .wppb-deactivation-popup-error {
+            display: none;
+            color: #b32d2e;
+            margin: 0px 0px 12px 0px;
+        }
+
+        .wppb-deactivation-popup-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .wppb-deactivation-popup-extra.error {
+            border: 1px solid #b32d2e;
+        }
+
         .ui-dialog[aria-describedby="wppb-deactivation-popup"] .ui-dialog-titlebar {
             background: transparent;
             border: none;

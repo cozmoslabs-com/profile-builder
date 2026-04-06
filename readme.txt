@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.15.6
+Stable tag: 3.15.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,9 +207,17 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.15.6 =
-* Fix: Security issue regarding Avatar field. Thanks to type5afe and the Wordfence team
-* Misc: Back-end UI changes
-* Misc: Compatibility changes for new field type: International Telephone Input
+= 3.15.7 =
+* Feature: Added Cloudflare Turnstile integration. Go to Form Fields to set it up
+* Feature: Added ability to restrict custom taxonomies through the Content Restriction functionality
+* Fix: Avatar field not working together with email confirmation
+* Fix: A notice being triggered from creating users with an empty password
+* Fix: Login banner label for display name and login modes
+* Fix: Email confirmation issue when removing registered users from the signups table
+* Fix: Restricted Domains "changed" message can now be translated with WPML or Polylang
+* Fix: Admin publish button alignment on WordPress 7.0 sites
+* Misc: International phone number field — move library out of core
+* Misc: Fix a notice being generated from the reCaptcha functionality
+* Misc: Divi 5 theme compatibility
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

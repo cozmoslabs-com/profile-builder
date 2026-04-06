@@ -13,6 +13,8 @@ function wppb_content_restriction_filter_content( $content, $post = null ) {
 	if( empty( $post->ID ) )
 		return $content;
 
+    $user_ID = get_current_user_id();
+
     /*
      * Defining this variable:
      *
@@ -33,6 +35,27 @@ function wppb_content_restriction_filter_content( $content, $post = null ) {
     // Check if any PMS restriction should take place. PMS restrictions have priority
     if( isset( $pms_is_post_restricted_arr[$post->ID] ) && $pms_is_post_restricted_arr[$post->ID] === true ) {
         return $content;
+    }
+
+    $restricted_term = wppb_content_restriction_get_restricted_term_for_post( $post->ID );
+
+    if ( $restricted_term ) {
+        $term_user_status = get_term_meta( $restricted_term->term_id, 'wppb-content-restrict-user-status', true );
+        $term_user_roles  = get_term_meta( $restricted_term->term_id, 'wppb-content-restrict-user-role' );
+
+        if ( ! wppb_content_restriction_check_user_access( $term_user_status, $term_user_roles, $user_ID ) ) {
+            $wppb_show_content = false;
+
+            if ( is_user_logged_in() ) {
+                $message = wppb_content_restriction_process_term_content_message( 'logged_in', $user_ID, $restricted_term->term_id );
+
+                return do_shortcode( apply_filters( 'wppb_content_restriction_message_logged_in', $message, $content, $post, $user_ID ) );
+            }
+
+            $message = wppb_content_restriction_process_term_content_message( 'logged_out', $user_ID, $restricted_term->term_id );
+
+            return do_shortcode( apply_filters( 'wppb_content_restriction_message_logged_out', $message, $content, $post, $user_ID ) );
+        }
     }
 
     // Get user roles that have access to this post

@@ -109,6 +109,47 @@ function wppb_show_admin_bar($content){
     return $show === null ? $content : $show;
 }
 
+function wppb_has_international_tel_input_field() {
+    $manage_fields = get_option( 'wppb_manage_fields', array() );
+
+    if ( ! is_array( $manage_fields ) ) {
+        return false;
+    }
+
+    foreach ( $manage_fields as $field ) {
+        if ( ! empty( $field['field'] ) && $field['field'] === 'International Telephone Input' ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function wppb_maybe_add_international_tel_input_notice() {
+    if ( ! class_exists( 'WPPB_Plugin_Notifications' ) ) {
+        return;
+    }
+
+    if ( ! wppb_has_international_tel_input_field() ) {
+        return;
+    }
+
+    if ( function_exists( 'wppb_international_tel_input_handler' ) ) {
+        return;
+    }
+
+    $notification_id = 'wppb_intl_tel_input_paid_update_notice';
+    $message  = '<p>';
+    $message .= __( 'The <strong>International Telephone Input</strong> field is currently used on this site, but it now requires the <strong>paid Profile Builder plugin</strong> to be updated as well.', 'profile-builder' );
+    $message .= ' ';
+    $message .= __( 'Please update the paid plugin to the latest version so this field can continue to load and validate correctly.', 'profile-builder' );
+    $message .= '</p>';
+    $message .= '<a href="' . wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+
+    WPPB_Plugin_Notifications::get_instance()->add_notification( $notification_id, $message, 'wppb-notice notice notice-warning is-dismissible', false, array(), true );
+}
+
+add_action( 'admin_init', 'wppb_maybe_add_international_tel_input_notice' );
 
 if(!function_exists('wppb_curpageurl')){
 	function wppb_curpageurl(){
@@ -441,6 +482,12 @@ function wppb_print_cpt_script( $hook ){
     }
 
     wp_enqueue_script( 'wppb-sitewide', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-sitewide.js', array(), PROFILE_BUILDER_VERSION, true );
+    wp_localize_script( 'wppb-sitewide', 'wppbDeactivationData', array(
+        'deactivationReasonNonce'     => wp_create_nonce( 'wppb_deactivation_reason' ),
+        'deactivationReasonRequired'  => __( 'Please select a reason before deactivating.', 'profile-builder' ),
+        'deactivationReasonInput'     => __( 'Please complete the required field before deactivating.', 'profile-builder' ),
+        'deactivationReasonSaveError' => __( 'We could not save your feedback. Please try again.', 'profile-builder' ),
+    ) );
 
     wp_enqueue_style( 'wppb-serial-notice-css', WPPB_PLUGIN_URL . 'assets/css/serial-notice.css', false, PROFILE_BUILDER_VERSION );
 }
@@ -733,16 +780,27 @@ function wppb_resize_avatar( $userID, $userlisting_size = null, $userlisting_cro
 	function wppb_delete_user_from_signups_table($user_id) {
 		global $wpdb;
 
-		$userLogin = $wpdb->get_var( $wpdb->prepare( "SELECT user_login, user_email FROM " . $wpdb->users . " WHERE ID = %d LIMIT 1", $user_id ) );
-		if ( is_multisite() )
-			$delete = $wpdb->delete( $wpdb->signups, array( 'user_login' => $userLogin ) );
-        else {
-            $table_name = $wpdb->prefix . 'signups';
-            $val = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) );
-            if ( $val ){
-                $delete = $wpdb->delete($wpdb->prefix . 'signups', array('user_login' => $userLogin));
-            }
-        }
+		$user = get_userdata( $user_id );
+
+		if ( empty( $user ) ) {
+			return;
+		}
+
+		// Delete signup rows by both email and login so activated entries do not remain orphaned in the signups table
+		// - the signup row can preserve the originally submitted username, while the actual WP user_login may be regenerated from the submitted email address on activation
+		// - the signup row can also preserve the email address used at registration time, while the actual WP user_email may later change after activation
+		// - deleting by both keys covers both mismatch cases and keeps stale signups rows from blocking future registrations or other flows
+		if ( is_multisite() ) {
+			$wpdb->delete( $wpdb->signups, array( 'user_email' => $user->user_email ), array( '%s' ) );
+			$wpdb->delete( $wpdb->signups, array( 'user_login' => $user->user_login ), array( '%s' ) );
+		} else {
+			$table_name = $wpdb->prefix . 'signups';
+			$val = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) );
+			if ( $val ) {
+				$wpdb->delete( $table_name, array( 'user_email' => $user->user_email ), array( '%s' ) );
+				$wpdb->delete( $table_name, array( 'user_login' => $user->user_login ), array( '%s' ) );
+			}
+		}
 	}
 
     $wppb_generalSettings = get_option( 'wppb_general_settings' );

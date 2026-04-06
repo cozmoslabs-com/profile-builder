@@ -581,6 +581,24 @@ var fields 	=	{
                                                                     }
 																},
 
+						'Turnstile':							{	'show_rows'	:	[
+																						'.row-field-title',
+																						'.row-description',
+																						'.row-theme',
+																						'.row-turnstile-site-key',
+																						'.row-turnstile-secret-key',
+                                                                                        '.row-turnstile-pb-forms',
+                                                                                        '.row-turnstile-wp-forms',
+																						'.row-required'
+																					],
+																	'required'	:	[
+																						true
+																					],
+                                                                    'properties':	{
+                                                                       'meta_name_value'	: ''
+                                                                    }
+																},
+
                         'Select (User Role)':					{	'show_rows'	:	[
                                                                                         '.row-field-title',
                                                                                         '.row-description',
@@ -683,7 +701,7 @@ function wppb_hide_all ( container_name ){
 	jQuery( container_name + ' ' + '.mb-list-entry-fields .button-primary' ).attr( 'disabled', true );
 
 	jQuery( container_name + ' ' + '.element_type_default-e-mail .mbdelete,' + ' ' + container_name + ' ' + '.element_type_default-password .mbdelete,' + ' ' + container_name + ' ' + '.element_type_default-username .mbdelete'  ).hide();	// PB specific line
-	jQuery( container_name + ' ' + '.element_type_default-e-mail #field' + ', ' + container_name + ' ' + '.element_type_default-password #field' + ',  ' + container_name + ' ' + '.element_type_default-username #field' + ', ' + container_name + ' ' + '.element_type_default-e-mail #required' + ', ' + container_name + ' ' + '.element_type_default-password #required,'  + container_name + ' ' + '.element_type_default-username #required,'  + container_name + ' ' + '.element_type_checkbox-terms-and-conditions #required,'  + container_name + ' ' + '.element_type_recaptcha #required,' + container_name + ' ' + '.element_type_woocommerce-customer-billing-address #field, ' + container_name + ' ' + '.element_type_woocommerce-customer-shipping-address #field').attr( 'disabled', true );		// PB specific line
+	jQuery( container_name + ' ' + '.element_type_default-e-mail #field' + ', ' + container_name + ' ' + '.element_type_default-password #field' + ',  ' + container_name + ' ' + '.element_type_default-username #field' + ', ' + container_name + ' ' + '.element_type_default-e-mail #required' + ', ' + container_name + ' ' + '.element_type_default-password #required,'  + container_name + ' ' + '.element_type_default-username #required,'  + container_name + ' ' + '.element_type_checkbox-terms-and-conditions #required,'  + container_name + ' ' + '.element_type_recaptcha #required,' + container_name + ' ' + '.element_type_turnstile #required,' + container_name + ' ' + '.element_type_woocommerce-customer-billing-address #field, ' + container_name + ' ' + '.element_type_woocommerce-customer-shipping-address #field').attr( 'disabled', true );		// PB specific line
 
 }
 

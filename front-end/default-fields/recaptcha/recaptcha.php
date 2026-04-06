@@ -95,7 +95,7 @@ function wppb_recaptcha_login_submit_button_extra_attributes( $attributes ) {
  */
 function wppb_recaptcha_script_footer(){
     $field = wppb_get_recaptcha_field();
-    /* if we do not have a recaptcha field don't do nothing */
+    /* if we do not have a recaptcha field do nothing */
     if( empty( $field ) )
         return;
 
@@ -917,7 +917,7 @@ function wppb_recaptcha_set_default_values() {
     }
 }
 
-if ( function_exists('is_plugin_active') && is_plugin_active( 'paid-member-subscriptions/index.php' ) && version_compare( PMS_VERSION, '2.12.9', '<' ) ){
+if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'paid-member-subscriptions/index.php' ) && defined( 'PMS_VERSION' ) && version_compare( PMS_VERSION, '2.12.9', '<' ) ) {
 
     $notifications = WPPB_Plugin_Notifications::get_instance();
 

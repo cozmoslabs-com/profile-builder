@@ -123,48 +123,7 @@ function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location
                     }
                     else{
                         $attachment_id = $request_data[ $field[ 'meta-name' ] ];
-                        if ( $attachment_id !== '' && is_numeric( $attachment_id ) ) {
-                            $attachment = get_post( absint( trim( $attachment_id ) ) );
-                            if ( $attachment && $attachment->post_type === 'attachment' ) {
-
-                                // Get current user info for admin bypass checks
-                                $current_user_id = get_current_user_id();
-                                $current_user = $current_user_id ? get_userdata( $current_user_id ) : null;
-                                $is_admin = $current_user && current_user_can( 'manage_options' );
-
-                                $valid_attachment = false;
-
-                                if ( $user_id ) {
-                                    // Allow admins to upload files for users
-                                    if ( $is_admin ) {
-                                        $valid_attachment = true;
-                                    }
-                                    // Only update if the attachment belongs to the user or has no author (post_author = 0)
-                                    else if ( $attachment->post_author == $user_id || $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
-                                        $valid_attachment = true;
-                                    }
-                                } else {
-                                    // If no user ID is provided, check if current user is admin
-                                    if ( $is_admin ) {
-                                        $valid_attachment = true;
-                                    }
-                                    // If no user ID is provided, check if the attachment has no author
-                                    else if ( $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
-                                        $valid_attachment = true;
-                                    }
-                                }
-
-                                if ( $valid_attachment ) {
-                                    update_user_meta( $user_id, $field[ 'meta-name' ], absint( $attachment_id ) );
-                                    wp_update_post(array(
-                                        'ID' => absint(trim($attachment_id)),
-                                        'post_author' => $user_id
-                                    ));
-                                } else {
-                                    update_user_meta( $user_id, $field[ 'meta-name' ], '' );
-                                }
-                            }
-                        }
+                        wppb_save_attachment_id( $attachment_id, $field, $user_id );
                     }
                 }
             }
@@ -172,50 +131,14 @@ function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location
         else{
             //Save data in the case the WordPress upload is used
             if ( isset( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) ){
-                update_user_meta( $user_id, $field['meta-name'], sanitize_text_field( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) );
+                $attachment_id = sanitize_text_field( $request_data[wppb_handle_meta_name( $field['meta-name'] )] );
+                wppb_save_attachment_id( $attachment_id, $field, $user_id );
             }
         }
 	}
 }
 add_action( 'wppb_save_form_field', 'wppb_save_avatar_value', 10, 4 );
 add_action( 'wppb_backend_save_form_field', 'wppb_save_avatar_value', 10, 4 );
-
-/**
- * Function that saves an attachment from the simple upload version of the Avatar field
- * @param $field_name
- * @return string|WP_Error
- */
-function wppb_avatar_save_simple_upload_file ( $field_name ){
-
-    require_once( ABSPATH . 'wp-admin/includes/file.php' );
-    $upload_overrides = array( 'test_form' => false );
-
-    if( isset( $_FILES[$field_name] ) )
-    $file = wp_handle_upload( $_FILES[$field_name], $upload_overrides );
-
-    if ( isset( $file[ 'error' ] ) ) {
-        return new WP_Error( 'upload_error', $file[ 'error' ] );
-    }
-    $filename = isset( $_FILES[ $field_name ][ 'name' ] ) ? sanitize_text_field( $_FILES[ $field_name ][ 'name' ] ) : '';
-    $wp_filetype = wp_check_filetype( $filename, null );
-    $attachment = array(
-        'post_mime_type'    => $wp_filetype[ 'type' ],
-        'post_title'        => $filename,
-        'post_content'      => '',
-        'post_status'       => 'inherit'
-    );
-
-    $attachment_id = wp_insert_attachment( $attachment, $file[ 'file' ] );
-
-    if (!is_wp_error($attachment_id) && is_numeric($attachment_id)) {
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
-        $attachment_data = wp_generate_attachment_metadata($attachment_id, $file['file']);
-        wp_update_attachment_metadata($attachment_id, $attachment_data);
-        return trim($attachment_id);
-    } else {
-        return '';
-    }
-}
 
 /* save file when ec is enabled */
 function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_data ){
@@ -224,14 +147,15 @@ function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_
     // It will have no author until the user's email is confirmed
     if( $field['field'] == 'Avatar' ) {
         if( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] === 'yes' && ( !isset( $field[ 'woocommerce-checkout-field' ] ) || $field[ 'woocommerce-checkout-field' ] !== 'Yes' ) ) {
-            $field_name = 'simple_upload_' . $field['meta-name'];
+            $field['meta-name'] = Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] );
+            $field_name = 'simple_upload_' . wppb_handle_meta_name( $field['meta-name'] );
 
             if (isset($_FILES[$field_name]) &&
                 isset($_FILES[$field_name]['size']) && $_FILES[$field_name]['size'] !== 0 &&
                 !(wppb_belongs_to_repeater_with_conditional_logic($field) && !isset($request_data[wppb_handle_meta_name($field['meta-name'])])) &&
                 !(isset($field['conditional-logic-enabled']) && $field['conditional-logic-enabled'] == 'yes' && !isset($request_data[wppb_handle_meta_name($field['meta-name'])])) &&
                 wppb_valid_simple_upload($field, $_FILES[$field_name])) { /* phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */ /* no need here */
-                return wppb_save_simple_upload_file($field_name);
+                return wppb_avatar_save_simple_upload_file($field_name);
             }
         } else {
             $attachment_id = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
@@ -249,7 +173,7 @@ add_filter( 'wppb_add_to_user_signup_form_field_avatar', 'wppb_avatar_add_upload
 function wppb_ajax_simple_avatar(){
     check_ajax_referer( 'wppb_ajax_simple_upload', 'nonce' );
     if ( isset($_POST["name"]) ) {
-        echo json_encode( wppb_avatar_save_simple_upload_file( sanitize_text_field( $_POST["name"] ) ) );
+        echo json_encode( wppb_save_simple_upload_file( sanitize_text_field( $_POST["name"] ) ) );
     }
     wp_die();
 }

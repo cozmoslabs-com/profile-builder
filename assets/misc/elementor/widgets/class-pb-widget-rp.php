@@ -107,7 +107,8 @@ class PB_Elementor_Recover_Password_Widget extends PB_Elementor_Widget {
 
         // reCAPTCHA Style tab
         if( !$this->is_placeholder_labels_active() ) {
-            include_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/recaptcha/recaptcha.php');
+        include_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/recaptcha/recaptcha.php');
+        include_once(WPPB_PLUGIN_DIR . '/front-end/default-fields/turnstile/turnstile.php');
             $field = wppb_get_recaptcha_field();
             if (!empty($field) && isset($field['captcha-pb-forms']) && (strpos($field['captcha-pb-forms'], 'pb_recover_password') !== false)) {
                 $this->add_styling_control_group(

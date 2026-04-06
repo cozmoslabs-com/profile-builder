@@ -17,6 +17,7 @@ function wppb_toolbox_check_email_domain( $message, $field, $request_data, $form
 
     $domain = strtolower( substr( strrchr( trim( $request_data['email'] ), '@' ), 1 ) );
     $validation_message = wppb_toolbox_get_settings( 'forms', 'restricted-email-domains-message' );
+    $validation_message = wppb_icl_t( 'plugin profile-builder-pro', 'restricted_email_domains_message_translation', $validation_message, true );
 
     if ( $type == 'allow' ) {
 

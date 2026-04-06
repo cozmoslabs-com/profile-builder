@@ -169,7 +169,7 @@ function wppb_get_email_display_username($user){
  */
 function wppb_send_recovery_email( $user, $success ){
 
-    if ( $success == 'wppb_recaptcha_error')
+    if ( $success == 'wppb_recaptcha_error' || $success == 'wppb_turnstile_error' || $success == 'wppb_captcha_error' )
         return false;
 
     $user_object = new WP_User( $user->ID );
@@ -365,8 +365,11 @@ function wppb_front_end_password_recovery( $atts ){
 
                     $success = apply_filters( 'wppb_recover_password_sent_message1', $success, $username_email );
 
-                    if ( $success != 'wppb_recaptcha_error')
+                    if ( $success != 'wppb_recaptcha_error' && $success != 'wppb_turnstile_error' && $success != 'wppb_captcha_error' ) {
                         $output .= wppb_password_recovery_success( $success, 'wppb_recover_password_displayed_message2' );
+                    } else {
+                        $output .= wppb_password_recovery_warning( $success, 'wppb_recover_password_displayed_message1' );
+                    }
 
                     //verify e-mail validity
                     $query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_email= %s", sanitize_email( $username_email ) ) );
@@ -385,8 +388,11 @@ function wppb_front_end_password_recovery( $atts ){
                         }
 
                         if( !apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
-                            // We want to set this to true regardless of the email result, so we can hide the form
-                            $password_email_sent = true;
+                            // We want to set this to true regardless of the email result, so we can hide the form (to prevent user enumeration).
+                            // But ONLY if the captcha was solved successfully.
+                            if ( $success != 'wppb_recaptcha_error' && $success != 'wppb_turnstile_error' && $success != 'wppb_captcha_error' ) {
+                                $password_email_sent = true;
+                            }
                         }
                         
                     }

@@ -843,7 +843,10 @@ jQuery(function () {
 
 
 /**
- * Confirm plugin deactivation on the Plugins page
+ * Handle the Profile Builder deactivation popup on the Plugins page
+ *
+ * - intercepts the plugin deactivation link
+ * - validates and stores the selected reason through AJAX before redirecting
  *
  */
 jQuery(function () {
@@ -856,8 +859,28 @@ jQuery(function () {
     if ( $popup.length === 0 )
         return;
 
+    const $form = $popup.find('.wppb-deactivation-popup-form');
+    const $error = $popup.find('.wppb-deactivation-popup-error');
+    const $actionButtons = $popup.find('.wppb-deactivation-popup-confirm, .wppb-deactivation-popup-skip');
     const pluginBasename = $popup.data('plugin');
     let deactivateLink = '';
+    let isRedirecting = false;
+
+    $actionButtons.each(function () {
+        const $btn = jQuery(this);
+        $btn.data('wppbOriginalText', $btn.text().trim());
+    });
+
+    function resetActionButtons() {
+        $actionButtons.each(function () {
+            const $btn = jQuery(this);
+            const original = $btn.data('wppbOriginalText');
+            if (original !== undefined) {
+                $btn.text(original);
+            }
+            $btn.prop('disabled', false);
+        });
+    }
 
     $popup.dialog({
         autoOpen: false,
@@ -867,22 +890,121 @@ jQuery(function () {
         width: 480
     });
 
+    function setError(message) {
+        if (!message) {
+            $error.hide().text('');
+            jQuery('.wppb-deactivation-popup-extra').removeClass('error');
+            return;
+        }
+
+        $error.text(message).show();
+        jQuery('.wppb-deactivation-popup-extra').addClass('error');
+    }
+
+    function toggleExtraFields() {
+        const selectedReason = $form.find('input[name="wppb_deactivation_reason"]:checked').val() || '';
+
+        $form.find('.wppb-deactivation-popup-extra').each(function () {
+            const $input = jQuery(this);
+            const shouldShow = $input.data('reason') === selectedReason;
+
+            $input.toggle(shouldShow);
+
+            if (!shouldShow) {
+                $input.val('');
+            }
+        });
+    }
+
+    function getPayload(reasonOverride) {
+        const payload = {
+            action: 'wppb_store_deactivation_reason',
+            nonce: (window.wppbDeactivationData && window.wppbDeactivationData.deactivationReasonNonce) ? window.wppbDeactivationData.deactivationReasonNonce : '',
+            reason: reasonOverride || ($form.find('input[name="wppb_deactivation_reason"]:checked').val() || '')
+        };
+
+        $form.find('.wppb-deactivation-popup-extra').each(function () {
+            const $input = jQuery(this);
+
+            if ($input.val()) {
+                payload[$input.attr('name')] = $input.val();
+            }
+        });
+
+        return payload;
+    }
+
+    function validatePayload(payload) {
+        if (payload.reason === 'skip') {
+            return true;
+        }
+
+        if (!payload.reason) {
+            setError(window.wppbDeactivationData ? window.wppbDeactivationData.deactivationReasonRequired : '');
+            return false;
+        }
+
+        if (
+            (payload.reason === 'switched_to_another_plugin' && !payload.switched_to_another_plugin_reason) ||
+            (payload.reason === 'missing_features' && !payload.missing_features_reason) ||
+            (payload.reason === 'other' && !payload.other_reason)
+        ) {
+            setError(window.wppbDeactivationData ? window.wppbDeactivationData.deactivationReasonInput : '');
+            return false;
+        }
+
+        setError('');
+        return true;
+    }
+
+    function submitReason(payload, $triggerButton) {
+        if (!validatePayload(payload) || !deactivateLink || isRedirecting) {
+            return;
+        }
+
+        isRedirecting = true;
+
+        if ($triggerButton && $triggerButton.length) {
+            $triggerButton.text('Deactivating...');
+        }
+        $actionButtons.prop('disabled', true);
+
+        jQuery.post(ajaxurl, payload)
+            .done(function () {
+                window.location.href = deactivateLink;
+            })
+            .fail(function () {
+                isRedirecting = false;
+                resetActionButtons();
+                setError(window.wppbDeactivationData ? window.wppbDeactivationData.deactivationReasonSaveError : '');
+            });
+    }
+
     jQuery(document).on('click', 'tr[data-plugin="' + pluginBasename + '"] .deactivate a', function (e) {
         e.preventDefault();
         e.stopPropagation();
 
         deactivateLink = jQuery(this).attr('href');
+        isRedirecting = false;
+        resetActionButtons();
+        $form[0].reset();
+        toggleExtraFields();
+        setError('');
         $popup.dialog('open');
+    });
+
+    $form.on('change', 'input[name="wppb_deactivation_reason"]', function () {
+        toggleExtraFields();
+        setError('');
     });
 
     $popup.on('click', '.wppb-deactivation-popup-confirm', function (e) {
         e.preventDefault();
-
-        if ( deactivateLink )
-            window.location.href = deactivateLink;
+        submitReason(getPayload(), jQuery(this));
     });
 
-    $popup.on('click', '.wppb-deactivation-popup-support', function () {
-        $popup.dialog('close');
+    $popup.on('click', '.wppb-deactivation-popup-skip', function (e) {
+        e.preventDefault();
+        submitReason(getPayload('skip'), jQuery(this));
     });
 });

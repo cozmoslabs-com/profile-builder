@@ -238,6 +238,10 @@ if( !class_exists('WPPB_toolbox') ){
             if( empty( $settings['admin-emails'] ) )
                 $settings['admin-emails'] = sanitize_email( get_option('admin_email') );
 
+            if ( $this->active_tab === 'forms' && !empty( $settings['restricted-email-domains-message'] ) && function_exists( 'wppb_icl_register_string' ) ) {
+                wppb_icl_register_string( 'plugin profile-builder-pro', 'restricted_email_domains_message_translation', $settings['restricted-email-domains-message']);
+            }
+
             $settings = apply_filters( 'wppb_advanced_settings_sanitize', $settings, $previous_settings );
 
             return $settings;

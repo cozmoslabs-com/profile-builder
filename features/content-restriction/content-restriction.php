@@ -224,7 +224,7 @@ function wppb_content_restriction_content() {
 
 function wppb_content_restriction_scripts_styles($hook_suffix) {
     //Check if it's an editing or adding new post page
-    if( $hook_suffix === 'post-new.php' || $hook_suffix === 'edit.php' || ( $hook_suffix === 'post.php' && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) || ( isset( $_GET['page'] ) && $_GET['page'] === 'profile-builder-content_restriction' ) ){
+    if( $hook_suffix === 'post-new.php' || $hook_suffix === 'edit.php' || $hook_suffix === 'edit-tags.php' || $hook_suffix === 'term.php' || ( $hook_suffix === 'post.php' && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) || ( isset( $_GET['page'] ) && $_GET['page'] === 'profile-builder-content_restriction' ) ){
         wp_enqueue_script( 'wppb_content_restriction_js', plugin_dir_url( __FILE__ ) .'assets/js/content-restriction.js', array( 'jquery' ), PROFILE_BUILDER_VERSION );
         wp_enqueue_style( 'wppb_content_restriction_css', plugin_dir_url( __FILE__ ) .'assets/css/content-restriction.css', array(), PROFILE_BUILDER_VERSION );
 

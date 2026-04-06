@@ -402,6 +402,74 @@ function wppb_save_simple_upload_file ( $field_name ){
     }
 }
 
+/**
+ * Verifies if an attachment either doesn't exist or already belongs to the user.
+ * Used for IDOR protection on both Upload and Avatar fields.
+ *
+ * @param string|int $attachment_id The attachment post ID to verify.
+ * @param int|null   $user_id      The user ID to check ownership against.
+ *
+ * @return bool True if the attachment is valid for this user, false otherwise.
+ */
+if ( !function_exists( 'wppb_verify_attachment_id' ) ) {
+    function wppb_verify_attachment_id( $attachment_id, $user_id = null ) {
+        if ( $attachment_id !== '' && is_numeric( $attachment_id ) ) {
+            $attachment = get_post( absint( trim( $attachment_id ) ) );
+            if ( $attachment && $attachment->post_type === 'attachment' ) {
+
+                // Get current user info for admin bypass checks
+                $current_user_id = get_current_user_id();
+                $current_user = $current_user_id ? get_userdata( $current_user_id ) : null;
+                $is_admin = $current_user && current_user_can( 'manage_options' );
+
+                if ( $user_id ) {
+                    // Allow admins to upload files for users
+                    if ( $is_admin ) {
+                        return true;
+                    }
+                    // Only update if the attachment belongs to the user or has no author (post_author = 0)
+                    if ( $attachment->post_author == $user_id || $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                        return true;
+                    }
+                } else {
+                    // If no user ID is provided, check if current user is admin
+                    if ( $is_admin ) {
+                        return true;
+                    }
+                    // If no user ID is provided, check if the attachment has no author
+                    if ( $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+/**
+ * Validates attachment ownership and updates the user meta and post author.
+ * Used for IDOR-safe saving on both Upload and Avatar fields.
+ *
+ * @param string|int $attachment_id The attachment post ID.
+ * @param array      $field         The field definition array (must contain 'meta-name').
+ * @param int        $user_id       The user ID to save for.
+ */
+if ( !function_exists( 'wppb_save_attachment_id' ) ) {
+    function wppb_save_attachment_id( $attachment_id, $field, $user_id ) {
+        // Verify that the attachment either doesn't exist or already belongs to the user
+        if ( wppb_verify_attachment_id( $attachment_id, $user_id ) ) {
+            update_user_meta( $user_id, $field['meta-name'], absint( $attachment_id ) );
+            wp_update_post( array(
+                'ID'          => absint( trim( $attachment_id ) ),
+                'post_author' => $user_id
+            ) );
+        } else {
+            update_user_meta( $user_id, $field['meta-name'], '' );
+        }
+    }
+}
+
 function wppb_check_that_field_is_defined( $meta_name, $field_types = array() ){
 
     if( empty( $meta_name ) )

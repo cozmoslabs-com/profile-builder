@@ -20,3 +20,20 @@
 #wppb_post_content_restriction .cozmoslabs-checkbox-list input[type="checkbox"]:disabled + label {
     opacity: 0.6;
 }
+
+#addtag #wppb-meta-box-fields-wrapper-restriction-custom-messages{
+    margin-bottom: 20px;
+}
+
+body.term-php .wppb-taxonomy-content-restriction-cell {
+    width: 100%;
+}
+
+body.term-php .wppb-taxonomy-content-restriction {
+    width: min(920px, 100%);
+    max-width: 100%;
+}
+
+body.term-php .wppb-taxonomy-content-restriction:first-of-type {
+    margin-top: 0;
+}

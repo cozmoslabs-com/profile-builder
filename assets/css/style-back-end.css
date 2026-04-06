@@ -2380,6 +2380,7 @@ body[class*="post-type-wppb-"] #major-publishing-actions #publishing-action {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin: 0;
 }
 
 body[class*="post-type-wppb-"] #major-publishing-actions #publishing-action .spinner {

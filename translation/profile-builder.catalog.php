@@ -93,6 +93,9 @@
 <?php __("View Profile Builder documentation", "profile-builder"); ?>
 <?php __("Docs", "profile-builder"); ?>
 <?php __("Get Support", "profile-builder"); ?>
+<?php __("We could not verify your request. Please refresh the page and try again.", "profile-builder"); ?>
+<?php __("You do not have permission to deactivate plugins on this site.", "profile-builder"); ?>
+<?php __("We could not save your deactivation feedback. Please try again.", "profile-builder"); ?>
 <?php __('You need an active license to add a new User Listing. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to add new User Listing.', 'profile-builder' ); ?>
 <?php __('You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ); ?>
@@ -105,15 +108,26 @@
 <?php __('Please %1$senter your license key%2$s first, to use the Conditional Logic feature.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to configure Field Visibility options.', 'profile-builder' ); ?>
 <?php __('Please %1$senter your license key%2$s first, to use the Edit Profile Updates Approved by Admin addon feature.', 'profile-builder' ); ?>
-<?php __('New add-on released: %1$sForm Fields in Columns%2$s.<br>Place multiple fields on the same row to create better looking forms for your users.', 'profile-builder' ); ?>
-<?php __('Go to the %1$sProfile Builder -> Add-ons%2$s page to activate the add-on.', 'profile-builder' ); ?>
-<?php __(" Don't have a license? %sBuy one now%s.", "profile-builder"); ?>
+<?php __("Let users pick their country, see flags and placeholders, and validate numbers in a familiar format.", "profile-builder"); ?>
+<?php __('%1$sRead the documentation%2$s', 'profile-builder' ); ?>
+<?php __('%1$s. This field is available in Profile Builder Basic and Pro. %2$sUpgrade now%3$s to use it.', 'profile-builder' ); ?>
+<?php __('%1$s to set it up, or add the field under %2$sProfile Builder → Form Fields%3$s.', 'profile-builder' ); ?>
+<?php __("New field: International Telephone Input.", "profile-builder"); ?>
 <?php __("Dismiss this notice.", "profile-builder"); ?>
 <?php __("Before You Go", "profile-builder"); ?>
 <?php __("Profile Builder", "profile-builder"); ?>
-<?php __("If something isn't working as expected, we'd love the chance to fix it. Most issues can be resolved quickly, and our support team is here to help.", "profile-builder"); ?>
-<?php __("Contact Support", "profile-builder"); ?>
-<?php __("Deactivate", "profile-builder"); ?>
+<?php __("If you have a moment, please share the reason you are deactivating Profile Builder:", "profile-builder"); ?>
+<?php __("I no longer need the plugin", "profile-builder"); ?>
+<?php __("I found a better plugin", "profile-builder"); ?>
+<?php __("Which plugin", "profile-builder"); ?>
+<?php __("I didn't find the feature I need", "profile-builder"); ?>
+<?php __("Which feature", "profile-builder"); ?>
+<?php __("I couldn't get the plugin to work", "profile-builder"); ?>
+<?php __("Temporary deactivation", "profile-builder"); ?>
+<?php __("Other", "profile-builder"); ?>
+<?php __("Please tell us more", "profile-builder"); ?>
+<?php __("Submit & deactivate", "profile-builder"); ?>
+<?php __("Skip & deactivate", "profile-builder"); ?>
 <?php __("Need Help?", "profile-builder"); ?>
 <?php __("If you need a hand with this setting, you can check the documentation or open a support ticket on WordPress.org.", "profile-builder"); ?>
 <?php __("We will do our best to help you figure it out.", "profile-builder"); ?>
@@ -236,8 +250,6 @@
 <?php __("How can we improve our user experience ?", "profile-builder"); ?>
 <?php __("Unsatisfactory support", "profile-builder"); ?>
 <?php __("Give us another try! Open a support ticket <a href='https://www.cozmoslabs.com/support/open-ticket/' target='_blank'>here</a>", "profile-builder"); ?>
-<?php __("Other", "profile-builder"); ?>
-<?php __("Please tell us more", "profile-builder"); ?>
 <?php __("Poor Documentation", "profile-builder"); ?>
 <?php __("Tell us what you couldn't find", "profile-builder"); ?>
 <?php __("Submit & Deactivate", "profile-builder"); ?>
@@ -387,6 +399,12 @@
 <?php __("Default WP Register", "profile-builder"); ?>
 <?php __("Default WP Recover Password", "profile-builder"); ?>
 <?php __("Select on which default WP forms to display reCAPTCHA", "profile-builder"); ?>
+<?php __("Turnstile Theme", "profile-builder"); ?>
+<?php __("Choose the theme for the Turnstile widget. The Auto option conforms to the user system preferences.", "profile-builder"); ?>
+<?php __("The site key from <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" target=\"_blank\">Cloudflare</a>", "profile-builder"); ?>
+<?php __("The secret key from <a href=\"https://dash.cloudflare.com/?to=/:account/turnstile\" target=\"_blank\">Cloudflare</a>", "profile-builder"); ?>
+<?php __("Select on which Profile Builder forms to display Turnstile", "profile-builder"); ?>
+<?php __("Select on which default WP forms to display Turnstile", "profile-builder"); ?>
 <?php __("User Roles", "profile-builder"); ?>
 <?php __("Select which user roles to show to the user ( drag and drop to re-order )", "profile-builder"); ?>
 <?php __("Display on Edit Profile", "profile-builder"); ?>
@@ -859,12 +877,13 @@
 <?php __("That field is already added in this form\n", "profile-builder"); ?>
 <?php __("You must select a field\n", "profile-builder"); ?>
 <?php __("Please choose a different field type as this one already exists in your form (must be unique)\n", "profile-builder"); ?>
+<?php __("You cannot have both a reCAPTCHA and a Turnstile field! Please remove the other existing field first.\n", "profile-builder"); ?>
 <?php __("The entered avatar size is not numerical\n", "profile-builder"); ?>
 <?php __("The entered avatar size is not between 20 and 200\n", "profile-builder"); ?>
 <?php __("You must enter a value for the row number\n", "profile-builder"); ?>
 <?php __("The entered row number is not numerical\n", "profile-builder"); ?>
-<?php __("You must enter the site key\n", "profile-builder"); ?>
-<?php __("You must enter the secret key\n", "profile-builder"); ?>
+<?php __("You must enter the site key!\n", "profile-builder"); ?>
+<?php __("You must enter the secret key!\n", "profile-builder"); ?>
 <?php __("The entered value for the Datepicker is not a valid date-format\n", "profile-builder"); ?>
 <?php __("You must enter a value for the date-format\n", "profile-builder"); ?>
 <?php __("The meta-name cannot be empty\n", "profile-builder"); ?>
@@ -904,6 +923,7 @@
 <?php __("Retry Install", "profile-builder"); ?>
 <?php __('Plugin is %1$s active %2$s', 'profile-builder' ); ?>
 <?php __('Plugin is %1$s inactive %2$s', 'profile-builder' ); ?>
+<?php __("Deactivate", "profile-builder"); ?>
 <?php __("Plugin has been deactivated.", "profile-builder"); ?>
 <?php __("Free", "profile-builder"); ?>
 <?php __("Accept user payments, create subscription plans and restrict content on your website.", "profile-builder"); ?>
@@ -985,9 +1005,14 @@
 <?php __("%d hours ago", "profile-builder"); ?>
 <?php __("%d day ago", "profile-builder"); ?>
 <?php __("%d days ago", "profile-builder"); ?>
+<?php __("The <strong>International Telephone Input</strong> field is currently used on this site, but it now requires the <strong>paid Profile Builder plugin</strong> to be updated as well.", "profile-builder"); ?>
+<?php __("Please update the paid plugin to the latest version so this field can continue to load and validate correctly.", "profile-builder"); ?>
 <?php __("GDPR Checkbox", "profile-builder"); ?>
 <?php __("I allow the website to collect and store the data I submit through this form.", "profile-builder"); ?>
 <?php __("Honeypot", "profile-builder"); ?>
+<?php __("Please select a reason before deactivating.", "profile-builder"); ?>
+<?php __("Please complete the required field before deactivating.", "profile-builder"); ?>
+<?php __("We could not save your feedback. Please try again.", "profile-builder"); ?>
 <?php __("Strength indicator", "profile-builder"); ?>
 <?php __("Very Weak", "profile-builder"); ?>
 <?php __("Minimum length of %d characters.", "profile-builder"); ?>
@@ -1818,16 +1843,13 @@
 <?php __("This product cannot be purchased by your user role.", "profile-builder"); ?>
 <?php __("This content is restricted for your user role.", "profile-builder"); ?>
 <?php __("You must be logged in to view this content.", "profile-builder"); ?>
-<?php __("Display Options", "profile-builder"); ?>
 <?php __("Message", "profile-builder"); ?>
+<?php __("term", "profile-builder"); ?>
 <?php __("Type of Restriction", "profile-builder"); ?>
 <?php __("Settings Default", "profile-builder"); ?>
 <?php __("Display For", "profile-builder"); ?>
 <?php __("Checking only \"Logged In Users\" will show this %s to all logged in users, regardless of user role.", "profile-builder"); ?>
 <?php __("Checking any user role will show this %s only to users that have one of those user roles assigned.", "profile-builder"); ?>
-<?php __("Purchase Options", "profile-builder"); ?>
-<?php __("Who can purchase?", "profile-builder"); ?>
-<?php __("Select who can purchase this product.", "profile-builder"); ?>
 <?php __("Restriction Redirect URL", "profile-builder"); ?>
 <?php __("Enable Custom Redirect URL", "profile-builder"); ?>
 <?php __("Enable if you wish to add a custom redirect URL for this %s.", "profile-builder"); ?>
@@ -1836,6 +1858,10 @@
 <?php __("Enable if you wish to add custom messages for this %s.", "profile-builder"); ?>
 <?php __("Messages for logged-out users", "profile-builder"); ?>
 <?php __("Messages for logged-in users", "profile-builder"); ?>
+<?php __("Display Options", "profile-builder"); ?>
+<?php __("Purchase Options", "profile-builder"); ?>
+<?php __("Who can purchase?", "profile-builder"); ?>
+<?php __("Select who can purchase this product.", "profile-builder"); ?>
 <?php __("Messages for restricted product purchase", "profile-builder"); ?>
 <?php __('Have a question? %1$sOpen a support ticket.%2$s', 'profile-builder' ); ?>
 <?php __("Content Restriction Settings", "profile-builder"); ?>
@@ -2322,6 +2348,10 @@
 <?php __("To use reCAPTCHA you must get an API public key from:", "profile-builder"); ?>
 <?php __("Click the BACK button on your browser, and try again.", "profile-builder"); ?>
 <?php __("reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues.", "profile-builder"); ?>
+<?php __("To use Cloudflare Turnstile you must get a Site Key from", "profile-builder"); ?>
+<?php __("For security reasons, you must pass the remote ip to Turnstile!", "profile-builder"); ?>
+<?php __("To use Cloudflare Turnstile you must get a Site Key and Secret Key from:", "profile-builder"); ?>
+<?php __("Cloudflare Turnstile could not be verified. Please try again.", "profile-builder"); ?>
 <?php __("Files must be smaller than ", "profile-builder"); ?>
 <?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
 <?php __("An error occurred, please try again later.", "profile-builder"); ?>

@@ -6,8 +6,9 @@ add_filter( 'wppb_email_confirmation_on_register', 'wppb_toolbox_bypass_email_co
 function wppb_toolbox_bypass_email_confirmation( $email_confirmation, $global_request ) {
     $forms = wppb_toolbox_get_settings( 'forms', 'ec-bypass' );
 
-    if ( in_array( $global_request['form_name'], $forms ) )
+    if ( ! empty( $global_request['form_name'] ) && is_array( $forms ) && in_array( $global_request['form_name'], $forms, true ) ) {
         return 'no';
+    }
 
     return $email_confirmation;
 }
@@ -17,8 +18,9 @@ function wppb_toolbox_force_enable_send_credentials_via_email( $send_credentials
 
     $forms = wppb_toolbox_get_settings( 'forms', 'ec-bypass' );
 
-    if ( in_array( $form_args['form_name'], $forms ) )
+    if ( ! empty( $form_args['form_name'] ) && is_array( $forms ) && in_array( $form_args['form_name'], $forms, true ) ) {
         return 'no';
+    }
 
     return $send_credentials;
 

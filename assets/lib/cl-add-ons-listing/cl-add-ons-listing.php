@@ -17,7 +17,7 @@ class CL_Addons_List_Table extends WP_List_Table {
     public $sections;
 
     public $images_folder;
-    public $text_domain;
+    public $text_domain = 'profile-builder';
 
     public $all_addons;
     public $all_plugins;

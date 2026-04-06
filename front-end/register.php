@@ -50,7 +50,7 @@ function wppb_activate_signup( $key ) {
     $user_login = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? trim( $signup->user_email ) : trim( $signup->user_login ) );
 
     $user_email = esc_sql( $signup->user_email );
-    /* the password is in hashed form in the signup table so we will add it later */
+    /* Signup meta holds the real password hash, applied after user creation. WordPress requires a non-empty user_pass when creating users. */
     $password = '';
 
 	$user_id = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? email_exists( $user_login ) : username_exists( $user_login ) );
@@ -73,8 +73,9 @@ function wppb_activate_signup( $key ) {
         $login_after_register = false;
     }
 
-	if ( !$user_id )
-		$user_id = wppb_create_user( $user_login, $password, $user_email );
+	if ( ! $user_id ) {
+		$user_id = wppb_create_user( $user_login, wp_generate_password( 24, true, true ), $user_email );
+	}
 	else
 		$user_already_exists = true;
 

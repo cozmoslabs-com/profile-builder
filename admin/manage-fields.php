@@ -136,8 +136,13 @@ function wppb_populate_manage_fields(){
 
     $manage_field_types['optgroups']['other']['options'][] = 'Email Confirmation';
 
-    /* added recaptcha and user role field since version 2.6.2 */
+    /* added recaptcha field since version 2.6.2 */
     $manage_field_types['optgroups']['advanced']['options'][] = 'reCAPTCHA';
+
+    /* added turnstile field since version 3.15. */
+    $manage_field_types['optgroups']['advanced']['options'][] = 'Turnstile';
+
+    /* added user role field since version 2.6.2 */
     $manage_field_types['optgroups']['advanced']['options'][] = 'Select (User Role)';
 
 
@@ -276,6 +281,11 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'text', 'slug' => 'score-threshold', 'title' => __( 'Score Threshold', 'profile-builder' ), 'default' => 0.5, 'description' => __( 'The required score threshold: 1.0 is very likely a good interaction, 0.0 is very likely a bot<br/>If not specified, defaults to 0.5', 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'captcha-pb-forms', 'title' => __( 'Display on PB forms', 'profile-builder' ), 'options' => array( '%'.__('PB Login','profile-builder').'%'.'pb_login', '%'.__('PB Register','profile-builder').'%'.'pb_register', '%'.__('PB Recover Password','profile-builder').'%'.'pb_recover_password' ), 'default' => 'pb_register', 'description' => __( "Select on which Profile Builder forms to display reCAPTCHA", 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'captcha-wp-forms', 'title' => __( 'Display on default WP forms', 'profile-builder' ), 'options' => array( '%'.__('Default WP Login', 'profile-builder').'%'.'default_wp_login', '%'.__('Default WP Register', 'profile-builder').'%'.'default_wp_register', '%'.__('Default WP Recover Password', 'profile-builder').'%'.'default_wp_recover_password'), 'default' => 'default_wp_register', 'description' => __( "Select on which default WP forms to display reCAPTCHA", 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'theme', 'title' => __( 'Turnstile Theme', 'profile-builder' ), 'options' => array('%Auto%auto', '%Light%light', '%Dark%dark'), 'default' => 'auto', 'description' => __( 'Choose the theme for the Turnstile widget. The Auto option conforms to the user system preferences.', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'turnstile-site-key', 'title' => __( 'Site Key', 'profile-builder' ), 'description' => __( 'The site key from <a href="https://dash.cloudflare.com/?to=/:account/turnstile" target="_blank">Cloudflare</a>', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'turnstile-secret-key', 'title' => __( 'Secret Key', 'profile-builder' ), 'description' => __( 'The secret key from <a href="https://dash.cloudflare.com/?to=/:account/turnstile" target="_blank">Cloudflare</a>', 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'turnstile-pb-forms', 'title' => __( 'Display on PB forms', 'profile-builder' ), 'options' => array( '%'.__('PB Login','profile-builder').'%'.'pb_login', '%'.__('PB Register','profile-builder').'%'.'pb_register', '%'.__('PB Recover Password','profile-builder').'%'.'pb_recover_password' ), 'default' => 'pb_register', 'description' => __( "Select on which Profile Builder forms to display Turnstile", 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'turnstile-wp-forms', 'title' => __( 'Display on default WP forms', 'profile-builder' ), 'options' => array( '%'.__('Default WP Login', 'profile-builder').'%'.'default_wp_login', '%'.__('Default WP Register', 'profile-builder').'%'.'default_wp_register', '%'.__('Default WP Recover Password', 'profile-builder').'%'.'default_wp_recover_password'), 'default' => 'default_wp_register', 'description' => __( "Select on which default WP forms to display Turnstile", 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'user-roles', 'title' => __( 'User Roles', 'profile-builder' ), 'options' => $user_roles, 'description' => __( "Select which user roles to show to the user ( drag and drop to re-order )", 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'user-roles-on-edit-profile', 'title' => __( 'Display on Edit Profile', 'profile-builder' ), 'options' => array('%Yes%yes'), 'description' => __( "Check if you want the select user role field to appear on Edit Profile forms", 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'user-roles-sort-order', 'title' => __( 'User Roles Order', 'profile-builder' ), 'description' => __( "Save the user role order from the user roles checkboxes", 'profile-builder' ) ),
@@ -1190,6 +1200,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
     if( !$only_default_fields ){
 	    $unique_field_list[] = 'Avatar';
 	    $unique_field_list[] = 'reCAPTCHA';
+	    $unique_field_list[] = 'Turnstile';
         $unique_field_list[] = 'Select (User Role)';
         $unique_field_list[] = 'Map';
     }
@@ -1231,6 +1242,11 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 					$message .= __( "Please choose a different field type as this one already exists in your form (must be unique)\n", 'profile-builder' );
 					break;
 				}
+
+                if ( ( $posted_values['field'] == 'reCAPTCHA' && $field['field'] == 'Turnstile' ) || ( $posted_values['field'] == 'Turnstile' && $field['field'] == 'reCAPTCHA' ) ){
+                    $message .= __( "You cannot have both a reCAPTCHA and a Turnstile field! Please remove the other existing field first.\n", 'profile-builder' );
+                    break;
+                }
 			}
 		}
 		// END check if the unique fields are only added once
@@ -1259,11 +1275,17 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 
 
 		// check for the public and private keys
-		if ( $posted_values['field'] == 'reCAPTCHA'){
+		if ( $posted_values['field'] == 'reCAPTCHA' ){
 			if ( trim( $posted_values['public-key'] ) == '' )
-				$message .= __( "You must enter the site key\n", 'profile-builder' );
+				$message .= __( "You must enter the site key!\n", 'profile-builder' );
 			if ( trim( $posted_values['private-key'] ) == '' )
-				$message .= __( "You must enter the secret key\n", 'profile-builder' );
+				$message .= __( "You must enter the secret key!\n", 'profile-builder' );
+		}
+		if ( $posted_values['field'] == 'Turnstile' ){
+			if ( trim( $posted_values['turnstile-site-key'] ) == '' )
+				$message .= __( "You must enter the site key!\n", 'profile-builder' );
+			if ( trim( $posted_values['turnstile-secret-key'] ) == '' )
+				$message .= __( "You must enter the secret key!\n", 'profile-builder' );
 		}
 		// END check for the public and private keys
 
@@ -1301,7 +1323,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
             $reserved_meta_name_list = wppb_get_reserved_meta_name_list( $all_fields, $posted_values );
 
             //check to see if meta-name is empty
-            $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'HTML', 'GDPR Delete Button' );
+            $skip_empty_check_for_fields = array( 'Heading', 'Select (User Role)', 'reCAPTCHA', 'Turnstile', 'HTML', 'GDPR Delete Button' );
 
             if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
                 $message .= __( "The meta-name cannot be empty\n", 'profile-builder' );

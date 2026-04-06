@@ -63,7 +63,10 @@ function wppb_check_username_value( $message, $field, $request_data, $form_locat
                 return __( 'This username is invalid because it uses illegal characters.', 'profile-builder' ) .'<br/>'. __( 'Please enter a valid username.', 'profile-builder' );
             }
 
-            $userSignup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_login = %s", $request_data['username'] ) );
+            // Only pending signup rows should reserve a username during Email Confirmation
+            // - activated rows can remain in the signups table after confirmation, so they must not block a new registration
+            // - this keeps the username reservation check aligned with the email reservation check, which also only considers pending signups
+            $userSignup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_login = %s AND active = 0", $request_data['username'] ) );
             if ( !empty( $userSignup ) ){
                 return __( 'This username is already reserved to be used soon.', 'profile-builder') .'<br/>'. __( 'Please try a different one!', 'profile-builder' );
             }

@@ -581,6 +581,7 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
             'wppb_user_pages',
             'wppb_version',
             'wppb_recaptcha_validations',
+            'wppb_turnstile_validations',
         ];
 
         $this->blacklisted_option_names = [
@@ -779,11 +780,18 @@ class Cozmoslabs_Plugin_Optin_Metadata_Builder_WPPB extends Cozmoslabs_Plugin_Op
 
         foreach( $manage_fields as $field ){
 
-            // Fix for recaptcha settings being present on every field
+            // Fix for recaptcha & turnstile settings being present on every field
             if( $field['field'] != 'reCAPTCHA' ){
                 unset( $field['recaptcha-type'] );
                 unset( $field['captcha-pb-forms'] );
                 unset( $field['captcha-wp-forms'] );
+            }
+            if( $field['field'] != 'Turnstile' ){
+                unset( $field['theme'] );
+                unset( $field['turnstile-site-key'] );
+                unset( $field['turnstile-secret-key'] );
+                unset( $field['turnstile-pb-forms'] );
+                unset( $field['turnstile-wp-forms'] );
             }
 
             $custom_fields[] = array_filter( array_intersect_key( $field, $whitelisted_settings ) );
