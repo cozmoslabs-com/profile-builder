@@ -14,7 +14,8 @@
 .wppb-user-forms .pms-field > label,
 .wppb-user-forms #pms-subscription-plans-discount > label,
 .wppb-user-forms .pms-group-memberships-field > label,
-.wppb-form-field:not(.wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-mailchimp-subscribe, .wppb-send-credentials-checkbox, .wppb-campaign-monitor-subscribe, .wppb-mailpoet-subscribe, .login-remember) > label {
+.wppb-form-field:not(.wppb-checkbox-terms-and-conditions, .wppb-gdpr-checkbox, .wppb-mailchimp-subscribe, .wppb-send-credentials-checkbox, .wppb-campaign-monitor-subscribe, .wppb-mailpoet-subscribe, .login-remember) > label,
+.wppb-form-field .wppb-password-subfield > label {
     font-size: 18px;
     line-height: 26px;
     font-weight: 500;

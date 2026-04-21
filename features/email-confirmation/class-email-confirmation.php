@@ -83,16 +83,21 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                 global $wpdb;
                 $sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $item['email'] ), ARRAY_A );
                 $user_meta = $sql_result['meta'];
-                $user_meta_content = '';
-                if( !empty( $user_meta ) ){
-                    foreach( maybe_unserialize( $user_meta ) as $key => $value ){
-                        if( $key != 'user_pass' ){
-                            if ( is_array($value) ) $value = implode(',',$value);
-                            $user_meta_content .= wp_kses_post( $key ).':'.wp_kses_post( $value ).'<br/>';
+                $user_meta_lines = array();
+                if ( ! empty( $user_meta ) ) {
+                    foreach ( maybe_unserialize( $user_meta ) as $key => $value ) {
+                        if ( 'user_pass' === $key ) {
+                            continue;
                         }
+                        if ( is_array( $value ) ) {
+                            $value = implode( ',', $value );
+                        }
+                        $user_meta_lines[] = esc_html( (string) $key ) . ':' . esc_html( (string) $value );
                     }
                 }
-                return '<a href="#" data-email="'. esc_attr( $item['email'] ) .'" onclick="'. esc_attr( 'jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. addslashes( __("User Meta", "profile-builder" ) ) .'\', width: 500 }) ;return false;') .'">'. __( 'show', 'profile-builder' ) .'</a>';
+                $user_meta_html = '<div><pre>' . implode( "\n", $user_meta_lines ) . '</pre></div>';
+                $dialog_js       = 'jQuery(\'' . esc_js( $user_meta_html ) . '\').dialog({title:\'' . esc_js( __( 'User Meta', 'profile-builder' ) ) . '\', width: 500 }); return false;';
+                return '<a href="#" data-email="' . esc_attr( $item['email'] ) . '" onclick="' . esc_attr( $dialog_js ) . '">' . esc_html__( 'show', 'profile-builder' ) . '</a>';
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }

@@ -609,6 +609,25 @@ label[for="blog-privacy"] {
     margin-left: 0;
 }
 
+.wppb-password-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wppb-edit-user .wppb-default-password.wppb-current-password-field-error {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.wppb-edit-user .wppb-default-password .wppb-current-password-subfield-error {
+    background-color: #ffdfdf;
+    border: 1px dotted #c89797;
+    padding: 6px;
+    margin-bottom: 6px;
+}
+
 /* Remove global Blog Details Field error */
 #wppb-register-user .wppb-default-blog-details.wppb-field-error {
     background-color: transparent !important;

@@ -744,7 +744,6 @@ function wppb_international_telephone_input_admin_notification() {
     /* initiate the plugin notifications class */
     $notifications = WPPB_Plugin_Notifications::get_instance();
     /* this must be unique */
-    $dismiss_notification_id = 'wppb_international_telephone_input_notification';
     $notification_id = 'wppb_international_telephone_input_notification_pb';
 
     $docs_url = 'https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/international-telephone-input/';
@@ -780,7 +779,7 @@ function wppb_international_telephone_input_admin_notification() {
     $message = $ul_icon;
     $message .= '<h3 style="margin-bottom: 0;">' . esc_html__( 'New field: International Telephone Input.', 'profile-builder' ) . '</h3>';
     $message .= $notification_message;
-    $message .= '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $dismiss_notification_id ) ), 'wppb_plugin_notice_dismiss' ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+    $message .= '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
     $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', true, array( 'manage-fields' ) );
 

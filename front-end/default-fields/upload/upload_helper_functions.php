@@ -86,6 +86,16 @@ if( !function_exists( 'wppb_upload_file_type' ) ) {
                     foreach ($all_fields as $field) {
                         if ($field['meta-name'] == $meta_name) {
 
+                            // per-field file size limit
+                            if ( !empty( $field['max-file-size'] ) && is_numeric( $field['max-file-size'] ) && floatval( $field['max-file-size'] ) > 0 ) {
+                                $field_limit = floatval( $field['max-file-size'] ) * 1024 * 1024;
+                                $effective_limit = min( $field_limit, $limit );
+                                if ( $size > $effective_limit ) {
+                                    $file['error'] = __( "Files must be smaller than ", "profile-builder" ) . floatval( $field['max-file-size'] ) . 'MB';
+                                    return $file;
+                                }
+                            }
+
                             $allowed_upload_extensions = '';
 
                             if ($field['field'] == 'Upload' && !empty($field['allowed-upload-extensions']))
@@ -145,6 +155,11 @@ function wppb_valid_simple_upload( $field, $upload ){
     if ( !empty( $all_fields ) ) {
         foreach ( $all_fields as $form_field ) {
             if ($form_field[ 'meta-name' ] == $field[ 'meta-name' ] ) {
+                // apply per-field size limit if set
+                if ( !empty( $form_field['max-file-size'] ) && is_numeric( $form_field['max-file-size'] ) && floatval( $form_field['max-file-size'] ) > 0 ) {
+                    $field_limit = floatval( $form_field['max-file-size'] ) * 1024 * 1024;
+                    $limit = min( $field_limit, $limit );
+                }
                 $allowed_upload_extensions = '';
                 if ( $form_field[ 'field' ] == 'Upload' && !empty( $form_field[ 'allowed-upload-extensions' ] ) ) {
                     $allowed_upload_extensions = $form_field[ 'allowed-upload-extensions' ];
@@ -262,11 +277,16 @@ function wppb_belongs_to_repeater_with_conditional_logic( $field ){
 }
 
 function wppb_make_upload_button( $field, $input_value, $extra_attr = '' ){
-    // change the upload limit. This is not functional.
-    // just for display in the upload window. see upload_helper_functions.php for the actual restriction.
-    add_filter('upload_size_limit', function($limit, $u, $p){
-        return apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize')));
-    }, 10, 3);
+    // change the upload limit displayed in the upload window (per-field aware)
+    $per_field_max = $field;
+    add_filter('upload_size_limit', function($wp_limit) use ($per_field_max) {
+        $server_limit = apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize')));
+        if ( !empty( $per_field_max['max-file-size'] ) && is_numeric( $per_field_max['max-file-size'] ) && floatval( $per_field_max['max-file-size'] ) > 0 ) {
+            $field_limit = floatval( $per_field_max['max-file-size'] ) * 1024 * 1024;
+            return min( $field_limit, $server_limit );
+        }
+        return $server_limit;
+    }, 10, 1);
 
     $upload_button = '';
     $upload_input_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] ) );
@@ -310,6 +330,11 @@ function wppb_make_upload_button( $field, $input_value, $extra_attr = '' ){
         if ( !empty( $all_fields ) ) {
             foreach ( $all_fields as $form_field ) {
                 if ($form_field[ 'meta-name' ] == $field[ 'meta-name' ] ) {
+                    // apply per-field size limit if set
+                    if ( !empty( $form_field['max-file-size'] ) && is_numeric( $form_field['max-file-size'] ) && floatval( $form_field['max-file-size'] ) > 0 ) {
+                        $field_limit = floatval( $form_field['max-file-size'] ) * 1024 * 1024;
+                        $limit = min( $field_limit, $limit );
+                    }
                     $allowed_upload_extensions = '';
                     if ( $form_field[ 'field' ] == 'Upload' && !empty( $form_field[ 'allowed-upload-extensions' ] ) ) {
                         $allowed_upload_extensions = $form_field[ 'allowed-upload-extensions' ];
@@ -332,6 +357,7 @@ function wppb_make_upload_button( $field, $input_value, $extra_attr = '' ){
             }
         }
         $upload_button .= '<input id="allowed_extensions_simple_upload_'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="allowed_extensions_simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. $allowed_extensions .'"/>';
+        $upload_button .= '<input id="size_limit_simple_upload_'. esc_attr( $upload_input_id ) .'" type="hidden" name="size_limit_simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. esc_attr( $limit ) .'"/>';
         $allowed_mime_types = get_allowed_mime_types();
         $allowed_types = '';
         if ( !empty( $allowed_mime_types ) ) {

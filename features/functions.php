@@ -1042,28 +1042,25 @@ function wppb_enqueue_password_visibility_toggle() {
 
             });
             function wppb_password_visibility_toggle() {
-                var target_form_id = "#" + jQuery(this).closest('form').attr("id") + " ";
+                var button = jQuery( this );
+                var container = button.closest( '.wppb-password-field-container' );
+                var input = container.find( 'input' ).first();
+                var icon = button.find( 'img' );
 
-                var password_inputs = [ ".login-password input#wppb_user_pass", "input#passw1", "input#passw2" ]
+                if ( ! input.length ) {
+                    return;
+                }
 
-                for ( var password_input of password_inputs ){
-                    var input = jQuery( target_form_id + password_input );
-                    var button = jQuery( target_form_id + "button.wppb-toggle-pw" );
-                    var icon = jQuery( target_form_id + "button.wppb-toggle-pw img" );
-
-                    if ( input.length ) {
-                        if ("password" === input.attr("type")) {
-                            input.attr("type", "text");
-                            button.toggleClass("wppb-show-pw").toggleClass("wppb-hide-pw");
-                            icon.attr("src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-off-outline.svg");
-                            icon.attr("title", "<?php esc_html_e( 'Hide password', 'profile-builder' ); ?>");
-                        } else {
-                            input.attr("type", "password");
-                            button.toggleClass("wppb-show-pw").toggleClass("wppb-hide-pw");
-                            icon.attr("src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-outline.svg");
-                            icon.attr("title", "<?php esc_html_e( 'Show password', 'profile-builder' ); ?>");
-                        }
-                    }
+                if ( "password" === input.attr( "type" ) ) {
+                    input.attr( "type", "text" );
+                    button.removeClass( "wppb-show-pw" ).addClass( "wppb-hide-pw" );
+                    icon.attr( "src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-off-outline.svg" );
+                    icon.attr( "title", "<?php esc_html_e( 'Hide password', 'profile-builder' ); ?>" );
+                } else {
+                    input.attr( "type", "password" );
+                    button.removeClass( "wppb-hide-pw" ).addClass( "wppb-show-pw" );
+                    icon.attr( "src", "<?php echo esc_attr( WPPB_PLUGIN_URL ); ?>/assets/images/eye-outline.svg" );
+                    icon.attr( "title", "<?php esc_html_e( 'Show password', 'profile-builder' ); ?>" );
                 }
             }
         </script>

@@ -248,7 +248,9 @@ class WPPB_Setup_Wizard {
     }
 
     public static function get_completed_progress_steps() {
-        return get_option( 'wppb_setup_wizard_steps', false );
+        $steps = get_option( 'wppb_setup_wizard_steps', array() );
+
+        return is_array( $steps ) ? $steps : array();
     }
 
     private function get_next_step_link( $step = '' ) {

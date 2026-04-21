@@ -734,29 +734,34 @@ class Profile_Builder_Form_Creator{
         $form_fields = apply_filters( 'wppb_form_fields', $this->args['form_fields'], array( 'meta' => $meta, 'global_request' => $global_request, 'context' => 'user_signup' ) );
         if( !empty( $form_fields ) ){
             foreach( $form_fields as $field ){
-                if( !empty( $field['meta-name'] ) ){
-                    if( !empty( $global_request[$field['meta-name']] ) ){
-
-                        if( in_array( $field['field'], array( 'URL' ) ) )
-                            $posted_value = esc_url_raw( $global_request[ $field['meta-name'] ] );
-                        else if( in_array( $field['field'], array( 'Default - Biographical Info', 'Textarea' ) ) ){
-                            $meta_value = sanitize_textarea_field( wp_unslash( $global_request[ $field['meta-name'] ] ) );
-
-                            if( apply_filters( 'wppb_form_field_textarea_escape_on_save', false ) )
-                                $meta_value = esc_textarea( $meta_value );
-
-                            $posted_value = $meta_value;
-                        } else
-                            if ( is_array( $global_request[ $field['meta-name'] ] ) ) {
-                                $posted_value = array_map( 'sanitize_text_field', $global_request[ $field['meta-name'] ] );
-                            } else {
-                                $posted_value = sanitize_text_field( $global_request[ $field['meta-name'] ] );
-                            }
-                    } else
+                if( !empty( $field['meta-name'] ) && ( ! isset( $field['field'] ) || 'Default - Biographical Info' !== $field['field'] ) ){
+                    if ( ! array_key_exists( $field['meta-name'], $global_request ) ) {
                         $posted_value = '';
+                    } elseif( in_array( $field['field'], array( 'URL' ), true ) ) {
+                        $posted_value = esc_url_raw( $global_request[ $field['meta-name'] ] );
+                    } elseif( in_array( $field['field'], array( 'Textarea' ), true ) ){
+                        $meta_value = sanitize_textarea_field( wp_unslash( $global_request[ $field['meta-name'] ] ) );
+
+                        if( apply_filters( 'wppb_form_field_textarea_escape_on_save', false ) )
+                            $meta_value = esc_textarea( $meta_value );
+
+                        $posted_value = $meta_value;
+                    } elseif ( is_array( $global_request[ $field['meta-name'] ] ) ) {
+                        $posted_value = array_map( 'sanitize_text_field', $global_request[ $field['meta-name'] ] );
+                    } else {
+                        $posted_value = sanitize_text_field( $global_request[ $field['meta-name'] ] );
+                    }
 
                     $meta[$field['meta-name']] = apply_filters( 'wppb_add_to_user_signup_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), $posted_value, $field, $global_request );
 
+                }
+
+                if ( isset( $field['field'] ) && 'Default - Biographical Info' === $field['field'] ) {
+                    $posted_value = '';
+                    if ( array_key_exists( 'description', $global_request ) ) {
+                        $posted_value = wppb_sanitize_default_biographical_info_from_request( $global_request );
+                    }
+                    $meta['description'] = apply_filters( 'wppb_add_to_user_signup_form_field_' . Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), $posted_value, $field, $global_request );
                 }
             }
         }

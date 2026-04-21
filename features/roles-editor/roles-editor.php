@@ -93,26 +93,8 @@ class WPPB_Roles_Editor {
         global $post_type;
         global $current_screen;
         global $post;
-        global $wp_scripts;
-        global $wp_styles;
 
         if( $post_type == 'wppb-roles-editor' ) {
-            $wp_default_scripts = $this->wp_default_scripts();
-            $scripts_exceptions = array( 'wppb-sitewide', 'acf-field-group', 'acf-pro-field-group', 'acf-input', 'acf-pro-input', 'query-monitor' );
-            foreach( $wp_scripts->registered as $key => $value ) {
-                if( ! in_array( $key, $wp_default_scripts ) && ! in_array( $key, $scripts_exceptions ) ) {
-                    wp_deregister_script( $key );
-                }
-            }
-
-            $wp_default_styles = $this->wp_default_styles();
-            $styles_exceptions = array( 'wppb-serial-notice-css', 'acf-global', 'wppb-back-end-style', 'wppb-new-back-end-style', 'query-monitor' );
-            foreach( $wp_styles->registered as $key => $value ) {
-                if( ! in_array( $key, $wp_default_styles ) && ! in_array( $key, $styles_exceptions ) ) {
-                    wp_deregister_style( $key );
-                }
-            }
-
             wp_enqueue_script( 'wppb_select2_js', WPPB_PLUGIN_URL .'assets/js/select2/select2.min.js', array( 'jquery' ), PROFILE_BUILDER_VERSION );
             wp_enqueue_style( 'wppb_select2_css', WPPB_PLUGIN_URL .'assets/css/select2/select2.min.css', array(), PROFILE_BUILDER_VERSION );
 
@@ -1002,61 +984,6 @@ class WPPB_Roles_Editor {
         }
 
         remove_role( $role_slug );
-
-    }
-
-    function wp_default_scripts() {
-
-        $wp_default_scripts = array(
-            'jquery', 'jquery-core', 'jquery-migrate', 'jquery-ui-core', 'jquery-ui-accordion',
-            'jquery-ui-autocomplete', 'jquery-ui-button', 'jquery-ui-datepicker', 'jquery-ui-dialog',
-            'jquery-ui-draggable', 'jquery-ui-droppable', 'jquery-ui-menu', 'jquery-ui-mouse',
-            'jquery-ui-position', 'jquery-ui-progressbar', 'jquery-ui-resizable', 'jquery-ui-selectable',
-            'jquery-ui-slider', 'jquery-ui-sortable', 'jquery-ui-spinner', 'jquery-ui-tabs',
-            'jquery-ui-tooltip', 'jquery-ui-widget', 'underscore', 'backbone', 'utils', 'common',
-            'wp-a11y', 'sack', 'quicktags', 'colorpicker', 'editor', 'wp-fullscreen-stub', 'wp-ajax-response',
-            'wp-pointer', 'heartbeat', 'wp-auth-check', 'wp-lists', 'prototype', 'scriptaculous-root',
-            'scriptaculous-builder', 'scriptaculous-dragdrop', 'scriptaculous-effects', 'scriptaculous-slider',
-            'scriptaculous-sound', 'scriptaculous-controls', 'scriptaculous', 'cropper', 'jquery-effects-core',
-            'jquery-effects-blind', 'jquery-effects-bounce', 'jquery-effects-clip', 'jquery-effects-drop',
-            'jquery-effects-explode', 'jquery-effects-fade', 'jquery-effects-fold', 'jquery-effects-highlight',
-            'jquery-effects-puff', 'jquery-effects-pulsate', 'jquery-effects-scale', 'jquery-effects-shake',
-            'jquery-effects-size', 'jquery-effects-slide', 'jquery-effects-transfer', 'jquery-ui-selectmenu',
-            'jquery-form', 'jquery-color', 'schedule', 'jquery-query', 'jquery-serialize-object', 'jquery-hotkeys',
-            'jquery-table-hotkeys', 'jquery-touch-punch', 'suggest', 'imagesloaded', 'masonry', 'jquery-masonry',
-            'thickbox', 'jcrop', 'swfobject', 'plupload', 'plupload-all', 'plupload-html5', 'plupload-flash',
-            'plupload-silverlight', 'plupload-html4', 'plupload-handlers', 'wp-plupload', 'swfupload', 'swfupload-swfobject',
-            'swfupload-queue', 'swfupload-speed', 'swfupload-all', 'swfupload-handlers', 'comment-reply', 'json2',
-            'underscore', 'backbone', 'wp-util', 'wp-backbone', 'revisions', 'imgareaselect', 'mediaelement',
-            'wp-mediaelement', 'froogaloop', 'wp-playlist', 'zxcvbn-async', 'password-strength-meter', 'user-profile',
-            'language-chooser', 'user-suggest', 'admin-bar', 'wplink', 'wpdialogs', 'word-count', 'media-upload',
-            'hoverIntent', 'customize-base', 'customize-loader', 'customize-preview', 'customize-models', 'customize-views',
-            'customize-controls', 'customize-selective-refresh', 'customize-widgets', 'customize-preview-widgets',
-            'customize-preview-nav-menus', 'wp-custom-header', 'accordion', 'shortcode', 'media-models', 'wp-embed',
-            'media-views', 'media-editor', 'media-audiovideo', 'mce-view', 'wp-api', 'admin-tags', 'admin-comments', 'xfn',
-            'postbox', 'tags-box', 'tags-suggest', 'post', 'press-this', 'editor-expand', 'link', 'comment', 'admin-gallery',
-            'admin-widgets', 'theme', 'inline-edit-post', 'inline-edit-tax', 'plugin-install', 'updates', 'farbtastic', 'iris',
-            'wp-color-picker', 'dashboard', 'list-revisions', 'media-grid', 'media', 'image-edit', 'set-post-thumbnail',
-            'nav-menu', 'custom-header', 'custom-background', 'media-gallery', 'svg-painter', 'customize-nav-menus',
-        );
-
-        return $wp_default_scripts;
-
-    }
-
-    function wp_default_styles() {
-
-        $wp_default_styles = array(
-            'admin-bar', 'colors', 'ie', 'wp-auth-check', 'wp-jquery-ui-dialog', 'wppb-serial-notice-css',
-            'common', 'forms', 'admin-menu', 'dashboard', 'list-tables', 'edit', 'revisions', 'media',
-            'themes', 'about', 'nav-menus', 'widgets', 'site-icon', 'l10n', 'wp-admin', 'login', 'install',
-            'wp-color-picker', 'customize-controls', 'customize-widgets', 'customize-nav-menus', 'press-this',
-            'buttons', 'dashicons', 'editor-buttons', 'media-views', 'wp-pointer', 'customize-preview',
-            'wp-embed-template-ie', 'imgareaselect', 'mediaelement', 'wp-mediaelement', 'thickbox',
-            'deprecated-media', 'farbtastic', 'jcrop', 'colors-fresh', 'open-sans',
-        );
-
-        return $wp_default_styles;
 
     }
 

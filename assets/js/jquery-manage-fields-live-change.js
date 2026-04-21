@@ -140,14 +140,15 @@ var fields 	=	{
 																					}
 																},
 
-						'Default - Password':					{	'show_rows'	:	[
-																						'.row-field-title',
-																						'.row-description',
-																						'.row-required'
-																					],
-                                                                    'properties':	{
-                                                                        'meta_name_value'	: ''
-                                                                    },
+							'Default - Password':					{	'show_rows'	:	[
+																							'.row-field-title',
+																							'.row-description',
+																							'.row-required',
+																							'.row-ask-current-password'
+																						],
+	                                                                    'properties':	{
+	                                                                        'meta_name_value'	: ''
+	                                                                    },
                                                                     'required'	:	[
 																						true
 																					]
@@ -502,7 +503,8 @@ var fields 	=	{
 																						'.row-allowed-extensions',
 																						'.row-required',
 																						'.row-overwrite-existing',
-																						'.row-allowed-upload-extensions'
+																						'.row-allowed-upload-extensions',
+																						'.row-max-file-size'
 																					]
 																},
 
@@ -513,6 +515,7 @@ var fields 	=	{
 																						'.row-simple-upload',
 																						'.row-allowed-image-extensions',
 																						'.row-avatar-size',
+																						'.row-max-file-size',
 																						'.row-required',
 																						'.row-overwrite-existing'
 																					]

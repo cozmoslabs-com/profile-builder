@@ -19,12 +19,12 @@ abstract class PB_Elementor_Register_Edit_Profile_Widget extends PB_Elementor_Wi
         // wp_enqueue_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
 
 
+        //Upload
+        wp_register_style( 'profile-builder-upload-css', WPPB_PLUGIN_URL.'front-end/default-fields/upload/upload.css', false, PROFILE_BUILDER_VERSION );
+
         if( defined( 'WPPB_PAID_PLUGIN_URL' ) ){
             //SelectCPT
             wp_register_style( 'wppb-select-cpt-style', WPPB_PAID_PLUGIN_URL.'front-end/extra-fields/select-cpt/style-front-end.css', array(), PROFILE_BUILDER_VERSION );
-
-            //Upload
-            wp_register_style( 'profile-builder-upload-css', WPPB_PAID_PLUGIN_URL.'front-end/extra-fields/upload/upload.css', false, PROFILE_BUILDER_VERSION );
 
             //Multi-Step Forms compatibility
             wp_register_style( 'wppb-msf-style-frontend', WPPB_PAID_PLUGIN_URL.'add-ons-advanced/multi-step-forms/assets/css/frontend-multi-step-forms.css', array(), PROFILE_BUILDER_VERSION );

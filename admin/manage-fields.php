@@ -271,6 +271,7 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'checkbox', 'slug' => 'simple-upload', 'title' => __( 'Use Simple Upload', 'profile-builder' ), 'options' => array( '%'.__('Yes','profile-builder').'%'.'yes' ), 'description' => __( 'Use a simple upload field instead of the WordPress upload', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'allowed-upload-extensions', 'title' => __( 'Allowed Upload Extensions', 'profile-builder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'avatar-size', 'title' => __( 'Avatar Size', 'profile-builder' ), 'default' => 100, 'description' => __( "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'max-file-size', 'title' => __( 'Maximum File Size (MB)', 'profile-builder' ), 'description' => __( 'Specify the maximum file size allowed for upload (in MB)<br/>If not specified, defaults to the server maximum upload size', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'date-format', 'title' => __( 'Date-format', 'profile-builder' ), 'default' => 'mm/dd/yy', 'description' => __( 'Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd, mm-dd-yy, yy-mm-dd, D, dd M yy, D, d M y, DD, dd-M-y, D, d M yy, mm/yy, mm/dd, dd/mm, @<br/>If not specified, defaults to mm/dd/yy<br/>ATTENTION: if you plan to use this field for sorting, please make sure to use year first, then month, and day last.', 'profile-builder' ) ),
         array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profile-builder' ), 'description' => __( 'Enter a detailed description of the terms of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'options', 'title' => __( 'Options', 'profile-builder' ), 'description' => __( "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes", 'profile-builder' ) ),
@@ -332,6 +333,7 @@ function wppb_populate_manage_fields(){
 		array( 'type' => 'select', 'slug' => 'heading-tag', 'title' => __( 'Heading Tag', 'profile-builder' ), 'options' => array( '%h1 - biggest size%h1', 'h2', 'h3', 'h4', 'h5', '%h6 - smallest size%h6' ), 'default' => 'h4', 'description' => __( 'Change heading field size on front-end forms', 'profile-builder' ) ),
 		array( 'type' => 'text', 'slug' => 'min-number-value', 'title' => __( 'Min Number Value', 'profile-builder' ), 'description' => __( "Min allowed number value (0 to allow only positive numbers)", 'profile-builder' ) .'<br>'. __( "Leave it empty for no min value", 'profile-builder' ) ),
 		array( 'type' => 'text', 'slug' => 'max-number-value', 'title' => __( 'Max Number Value', 'profile-builder' ), 'description' => __( "Max allowed number value (0 to allow only negative numbers)", 'profile-builder' ) .'<br>'. __( "Leave it empty for no max value", 'profile-builder' ) ),
+		array( 'type' => 'checkbox', 'slug' => 'ask-current-password', 'title' => __( 'Ask for Current Password', 'profile-builder' ), 'options' => array( '%' . __( 'Yes', 'profile-builder' ) . '%yes' ), 'description' => __( 'On Edit Profile forms, require users to enter their current password before changing it. This applies only when users change their own password.', 'profile-builder' ) ),
 		array( 'type' => 'text', 'slug' => 'number-step-value', 'title' => __( 'Number Step Value', 'profile-builder' ), 'description' => __( "Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal", 'profile-builder' ) .'<br>'. __( "To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on", 'profile-builder' ) .'<br>'. __( "You can also use step value to specify the legal number intervals (eg. step value 2 will allow only -4, -2, 0, 2 and so on)", 'profile-builder' ) .'<br>'. __( "Leave it empty for no restriction", 'profile-builder' ) ),
 		array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profile-builder' ) ),
         array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profile-builder' ) ),
@@ -1263,6 +1265,15 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		}
 		// END check for avatar size
 
+		// check for max file size
+		if ( in_array( $posted_values['field'], array( 'Avatar', 'Upload' ) ) ){
+			if ( isset( $posted_values['max-file-size'] ) && $posted_values['max-file-size'] !== '' ){
+				if ( !is_numeric( $posted_values['max-file-size'] ) || floatval( $posted_values['max-file-size'] ) <= 0 )
+					$message .= __( "The entered maximum file size is not a valid positive number\n", 'profile-builder' );
+			}
+		}
+		// END check for max file size
+
 		// check for correct row value
 		if ( ( $posted_values['field'] == 'Default - Biographical Info' ) || ( $posted_values['field'] == 'Textarea' ) ){
 			if ( !is_numeric( $posted_values['row-count'] ) )
@@ -1947,7 +1958,7 @@ function wppb_get_field_property_mapping() {
 		'Default - AIM'                      => array('default-value'),
 		'Default - Yahoo IM'                 => array('default-value'),
 		'Default - Jabber / Google Talk'     => array('default-value'),
-		'Default - Password'                 => array(),
+        'Default - Password'                 => array('ask-current-password'),
 		'Default - Repeat Password'          => array(),
 		'Default - Biographical Info'        => array('row-count', 'default-content'),
 		'Default - Display name publicly as' => array('default-value'),
@@ -1989,8 +2000,8 @@ function wppb_get_field_property_mapping() {
 		'Honeypot'                        => array(),
 
 		// Upload Fields
-		'Upload' => array('simple-upload', 'allowed-upload-extensions'),
-		'Avatar' => array('simple-upload', 'allowed-image-extensions', 'avatar-size'),
+		'Upload' => array('simple-upload', 'allowed-upload-extensions', 'max-file-size'),
+		'Avatar' => array('simple-upload', 'allowed-image-extensions', 'avatar-size', 'max-file-size'),
 
 		// Date/Time Fields
 		'Datepicker'  => array('default-value', 'date-format'),

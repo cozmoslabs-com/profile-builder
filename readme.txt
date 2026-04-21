@@ -3,9 +3,9 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.15.7
+Stable tag: 3.15.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,17 +207,13 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.15.7 =
-* Feature: Added Cloudflare Turnstile integration. Go to Form Fields to set it up
-* Feature: Added ability to restrict custom taxonomies through the Content Restriction functionality
-* Fix: Avatar field not working together with email confirmation
-* Fix: A notice being triggered from creating users with an empty password
-* Fix: Login banner label for display name and login modes
-* Fix: Email confirmation issue when removing registered users from the signups table
-* Fix: Restricted Domains "changed" message can now be translated with WPML or Polylang
-* Fix: Admin publish button alignment on WordPress 7.0 sites
-* Misc: International phone number field — move library out of core
-* Misc: Fix a notice being generated from the reCaptcha functionality
-* Misc: Divi 5 theme compatibility
+= 3.15.8 =
+* Feature: Added a Maximum File Size option to the Avatar and Upload fields
+* Feature: Added option to request users to enter their current password when changing passwords from the Edit Profile form. This can be activated by editing the Password field under the Form Fields interface
+* Fix: Security issue regarding Unauthenticated Stored Cross-Site Scripting. Thanks to daroo and the Wordfence team
+* Fix: Missing dependencies errors being thrown from the Roles Editor page
+* Fix: A notice that could be thrown from the Setup Wizard in some cases
+* Fix: International Telephone Input admin notice not being dismissable
+* Fix: A notice that could be thrown on the Edit Profile page
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.
