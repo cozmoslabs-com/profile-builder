@@ -373,6 +373,8 @@
 <?php __("Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)", "profile-builder"); ?>
 <?php __("Avatar Size", "profile-builder"); ?>
 <?php __("Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", "profile-builder"); ?>
+<?php __("Maximum File Size (MB)", "profile-builder"); ?>
+<?php __("Specify the maximum file size allowed for upload (in MB)<br/>If not specified, defaults to the server maximum upload size", "profile-builder"); ?>
 <?php __("Date-format", "profile-builder"); ?>
 <?php __("Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd, mm-dd-yy, yy-mm-dd, D, dd M yy, D, d M y, DD, dd-M-y, D, d M yy, mm/yy, mm/dd, dd/mm, @<br/>If not specified, defaults to mm/dd/yy<br/>ATTENTION: if you plan to use this field for sorting, please make sure to use year first, then month, and day last.", "profile-builder"); ?>
 <?php __("Terms of Agreement", "profile-builder"); ?>
@@ -456,6 +458,8 @@
 <?php __("Max Number Value", "profile-builder"); ?>
 <?php __("Max allowed number value (0 to allow only negative numbers)", "profile-builder"); ?>
 <?php __("Leave it empty for no max value", "profile-builder"); ?>
+<?php __("Ask for Current Password", "profile-builder"); ?>
+<?php __("On Edit Profile forms, require users to enter their current password before changing it. This applies only when users change their own password.", "profile-builder"); ?>
 <?php __("Number Step Value", "profile-builder"); ?>
 <?php __("Step value 1 to allow only integers, 0.1 to allow integers and numbers with 1 decimal", "profile-builder"); ?>
 <?php __("To allow multiple decimals use for eg. 0.01 (for 2 deciamls) and so on", "profile-builder"); ?>
@@ -880,6 +884,7 @@
 <?php __("You cannot have both a reCAPTCHA and a Turnstile field! Please remove the other existing field first.\n", "profile-builder"); ?>
 <?php __("The entered avatar size is not numerical\n", "profile-builder"); ?>
 <?php __("The entered avatar size is not between 20 and 200\n", "profile-builder"); ?>
+<?php __("The entered maximum file size is not a valid positive number\n", "profile-builder"); ?>
 <?php __("You must enter a value for the row number\n", "profile-builder"); ?>
 <?php __("The entered row number is not numerical\n", "profile-builder"); ?>
 <?php __("You must enter the site key!\n", "profile-builder"); ?>
@@ -2342,6 +2347,9 @@
 <?php __("The email confirmation does not match your email address.", "profile-builder"); ?>
 <?php __("Type %s to confirm deleting your account and all data associated with it:", "profile-builder"); ?>
 <?php __("You did not type %s. Try again!", "profile-builder"); ?>
+<?php __("Current Password", "profile-builder"); ?>
+<?php __("Please enter your current password to change your password.", "profile-builder"); ?>
+<?php __("The current password you entered is incorrect.", "profile-builder"); ?>
 <?php __("The passwords do not match", "profile-builder"); ?>
 <?php __("To use reCAPTCHA you must get an API key from", "profile-builder"); ?>
 <?php __("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder"); ?>
