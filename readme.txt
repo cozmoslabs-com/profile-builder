@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.15.9
+Stable tag: 3.16.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,6 +207,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
+= 3.16.0 =
+* Fix: More compatibility errors regarding Upload and Avatar fields helpers with very old paid plugin versions
+
 = 3.15.9 =
 * Fix: An php error that was triggered with the pro versions of the plugin
 

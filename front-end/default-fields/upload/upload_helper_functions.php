@@ -276,7 +276,7 @@ function wppb_belongs_to_repeater_with_conditional_logic( $field ){
     return false;
 }
 
-function wppb_make_upload_button( $field, $input_value, $extra_attr = '' ){
+function wppb_default_fields_make_upload_button( $field, $input_value, $extra_attr = '' ){
     // change the upload limit displayed in the upload window (per-field aware)
     $per_field_max = $field;
     add_filter('upload_size_limit', function($wp_limit) use ($per_field_max) {
@@ -399,7 +399,7 @@ function wppb_make_upload_button( $field, $input_value, $extra_attr = '' ){
  * @param $field_name
  * @return string|WP_Error
  */
-function wppb_save_simple_upload_file ( $field_name ){
+function wppb_default_fields_save_simple_upload_file( $field_name ) {
     require_once(ABSPATH . 'wp-admin/includes/file.php');
     $upload_overrides = array('test_form' => false);
 

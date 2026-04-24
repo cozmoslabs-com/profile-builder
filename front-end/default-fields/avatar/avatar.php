@@ -82,7 +82,7 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
             $extra_attr = apply_filters( 'wppb_extra_attribute', '', $field, $form_location );
 
             $output = '<label for="'.$field['meta-name'].'">'.$item_title.$error_mark.'</label>';
-            $output .= wppb_make_upload_button( $field, $input_value, $extra_attr );
+            $output .= wppb_default_fields_make_upload_button( $field, $input_value, $extra_attr );
             if( !empty( $item_description ) )
                 $output .= '<span class="wppb-description-delimiter">'.$item_description.'</span>';
         }else{
@@ -92,7 +92,7 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
 					<tr>
 						<th><label for="'.$field['meta-name'].'">'.$item_title.'</label></th>
 						<td>';
-            $output .= wppb_make_upload_button( $field, $input_value );
+            $output .= wppb_default_fields_make_upload_button( $field, $input_value );
             $output .='<br/><span class="wppb-description-delimiter">'.$item_description;
             $output .= '
 						</td>
@@ -173,7 +173,7 @@ add_filter( 'wppb_add_to_user_signup_form_field_avatar', 'wppb_avatar_add_upload
 function wppb_ajax_simple_avatar(){
     check_ajax_referer( 'wppb_ajax_simple_upload', 'nonce' );
     if ( isset($_POST["name"]) ) {
-        echo json_encode( wppb_save_simple_upload_file( sanitize_text_field( $_POST["name"] ) ) );
+        echo json_encode( wppb_default_fields_save_simple_upload_file( sanitize_text_field( $_POST["name"] ) ) );
     }
     wp_die();
 }
