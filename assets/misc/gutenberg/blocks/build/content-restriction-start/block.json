@@ -12,11 +12,11 @@
   "textdomain": "profile-builder",
   "attributes": {
     "wppb_content_restriction_block_start": {
-      "type": "bool",
+      "type": "boolean",
       "default": true
     },
     "cover": {
-      "type": "bool",
+      "type": "boolean",
       "default": false
     }
   },

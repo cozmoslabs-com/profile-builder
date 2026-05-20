@@ -80,8 +80,8 @@ add_action(
         global $pagenow;
 
         $arrDeps = ($pagenow === 'widgets.php') ?
-            array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-widgets', 'lodash', ) :
-            array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post'   , 'lodash', );
+            array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-widgets' ) :
+            array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post' );
 
 
         //Register the Block Content Restriction assets

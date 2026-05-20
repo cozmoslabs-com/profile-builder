@@ -50,22 +50,43 @@ function wppb_autologin_after_password_changed(){
                         }
                     }
 
+                    $session_token = '';
+
                     if( !isset( $_GET['edit_user'] ) ) {
-                        // Parse the logged-in cookie before clearing it; wp_parse_auth_cookie() can return false when no cookie exists.
+                        // Keep the current session token before clearing auth cookies. Some plugins remove the logged-in
+                        // - cookie from $_COOKIE on clear_auth_cookie, so wp_get_session_token() can be empty later in this request
                         $logged_in_cookie = wp_parse_auth_cookie('', 'logged_in');
                         /** This filter is documented in wp-includes/pluggable.php */
                         $default_cookie_life = apply_filters('auth_cookie_expiration', (2 * DAY_IN_SECONDS), $user_id, false);
                         $remember = false;
-                        if ( is_array( $logged_in_cookie ) && isset( $logged_in_cookie['expiration'] ) ) {
-                            // If expiration is greater than the default, the user checked 'Remember Me' when they logged in.
-                            $remember = ( ( $logged_in_cookie['expiration'] - time() ) > $default_cookie_life );
+                        if ( is_array( $logged_in_cookie ) ) {
+                            if ( isset( $logged_in_cookie['token'] ) ) {
+                                $session_token = $logged_in_cookie['token'];
+                            }
+
+                            if ( isset( $logged_in_cookie['expiration'] ) ) {
+                                // If expiration is greater than the default, the user checked 'Remember Me' when they logged in
+                                $remember = ( ( $logged_in_cookie['expiration'] - time() ) > $default_cookie_life );
+                            }
                         }
 
                         wp_clear_auth_cookie();
                         /* set the new password for the user */
                         wp_set_password($_POST['passw1'], $user_id);//phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-                        wp_set_auth_cookie($user_id, $remember, '', wp_get_session_token() );
+                        wp_set_auth_cookie($user_id, $remember, '', $session_token );
+                        if ( ! empty( $session_token ) ) {
+                            $cookie_life = $remember ? 14 * DAY_IN_SECONDS : 2 * DAY_IN_SECONDS;
+                            /** This filter is documented in wp-includes/pluggable.php */
+                            $cookie_expiration = time() + apply_filters( 'auth_cookie_expiration', $cookie_life, $user_id, $remember );
+
+                            // wp_set_auth_cookie() sends the new browser cookie, but it does not repopulate $_COOKIE
+                            // - restore it for the remaining form processing, including the second nonce verification
+                            $_COOKIE[ LOGGED_IN_COOKIE ] = wp_generate_auth_cookie( $user_id, $cookie_expiration, 'logged_in', $session_token );
+                        }
+
+                        wp_set_current_user( $user_id );
+                        do_action( 'wppb_edit_profile_password_changed', $user_id );
                     }
                     else{
                         wp_set_password($_POST['passw1'], $user_id); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
@@ -74,8 +95,10 @@ function wppb_autologin_after_password_changed(){
 
                     /* log out of other sessions or all sessions if the admin is editing the profile */
                     $sessions = WP_Session_Tokens::get_instance( $user_id );
-                    if ( $user_id === get_current_user_id() ) {                        
-                        $sessions->destroy_others( wp_get_session_token() );
+                    if ( $user_id === get_current_user_id() ) {
+                        // Reuse the captured token so destroying other sessions does not depend on the current $_COOKIE state
+                        $current_session_token = ! empty( $session_token ) ? $session_token : wp_get_session_token();
+                        $sessions->destroy_others( $current_session_token );
                     } else {                        
                         $sessions->destroy_all();                        
                     }

@@ -32,6 +32,7 @@ function wppb_process_login(){
 		}
 	}
 
+	$redirect_to = '';
 	if ( isset( $_REQUEST['redirect_to'] ) ) {
 		$redirect_to = esc_url_raw( $_REQUEST['redirect_to'] );
 	}

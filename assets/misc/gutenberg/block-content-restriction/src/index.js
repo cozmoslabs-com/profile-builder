@@ -1,4 +1,3 @@
-import { assign, has } from "lodash";
 
 import { addFilter } from "@wordpress/hooks";
 import { createHigherOrderComponent } from "@wordpress/compose";
@@ -23,7 +22,7 @@ function WPPBBlockContentRestrictionControls(props) {
     // wppbContentRestriction attribute registered or if the block is one of the Content Restriction blocks
     if (
         !contentRestrictionActivated ||
-        !has(attributes, "wppbContentRestriction") ||
+        !("wppbContentRestriction" in attributes) ||
         [
             "wppb/content-restriction-start",
             "wppb/content-restriction-end",
@@ -45,10 +44,10 @@ function WPPBBlockContentRestrictionControls(props) {
                 initialOpen={wppbContentRestriction.panel_open}
                 onToggle={(value) =>
                     setAttributes({
-                        wppbContentRestriction: assign(
-                            { ...wppbContentRestriction },
-                            { panel_open: !wppbContentRestriction.panel_open },
-                        ),
+                        wppbContentRestriction: {
+                            ...wppbContentRestriction,
+                            panel_open: !wppbContentRestriction.panel_open,
+                        },
                     })
                 }
             >
@@ -76,10 +75,10 @@ function WPPBContentRestrictionAttributes(settings) {
                     type: "string",
                 },
                 enable_message_logged_in: {
-                    type: "bool",
+                    type: "boolean",
                 },
                 enable_message_logged_out: {
-                    type: "bool",
+                    type: "boolean",
                 },
                 message_logged_in: {
                     type: "string",
@@ -88,7 +87,7 @@ function WPPBContentRestrictionAttributes(settings) {
                     type: "string",
                 },
                 panel_open: {
-                    type: "bool",
+                    type: "boolean",
                 },
             },
             default: {
@@ -119,10 +118,10 @@ function WPPBContentRestrictionAttributes(settings) {
         return settings;
     }
 
-    settings.attributes = assign(
-        settings.attributes,
-        contentRestrictionAttributes,
-    );
+    settings.attributes = {
+        ...settings.attributes,
+        ...contentRestrictionAttributes,
+    };
     return settings;
 }
 addFilter(

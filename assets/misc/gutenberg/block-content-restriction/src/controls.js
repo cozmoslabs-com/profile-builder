@@ -1,10 +1,10 @@
-import { assign, has } from "lodash";
 
 import { Fragment } from "react";
 import { __ } from "@wordpress/i18n";
 import { decodeEntities } from "@wordpress/html-entities";
 import {
     BaseControl,
+    CheckboxControl,
     SelectControl,
     TextareaControl,
     ToggleControl,
@@ -13,37 +13,7 @@ import {
     __experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from "@wordpress/components";
 
-export default function WPPBBlockContentRestrictionControlsCommon(props) {
-    const { name, attributes, setAttributes } = props;
-
-    // Abort if content restriction is not enabled or if the block type does not have the wppbContentRestriction attribute registered
-    if (!has(attributes, "wppbContentRestriction")) {
-        return null;
-    }
-
-    const { wppbContentRestriction } = attributes;
-
-    const userRoles = JSON.parse(wppbBlockEditorData.userRoles);
-    const contentRestrictionActivated = JSON.parse(
-        wppbBlockEditorData.content_restriction_activated,
-    );
-
-    // Abort if content restriction is not enabled
-    if (!contentRestrictionActivated) {
-        return null;
-    }
-
-    // Check if this is one of the Content Restriction blocks so that the 'All Users' option can be hidden
-    let contentRestrictionBlock = false;
-    if (
-        [
-            "wppb/content-restriction-start",
-            "wppb/content-restriction-end",
-        ].includes(name)
-    ) {
-        contentRestrictionBlock = true;
-    }
-
+export function getRestrictionHelpMessage(wppbContentRestriction, userRoles) {
     let helpMessage = "";
     let rolesSelected = false;
 
@@ -102,6 +72,42 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
         default:
             helpMessage = __("Please select an option.", "profile-builder");
     }
+
+    return helpMessage;
+}
+
+export default function WPPBBlockContentRestrictionControlsCommon(props) {
+    const { name, attributes, setAttributes } = props;
+
+    // Abort if content restriction is not enabled or if the block type does not have the wppbContentRestriction attribute registered
+    if (!("wppbContentRestriction" in attributes)) {
+        return null;
+    }
+
+    const { wppbContentRestriction } = attributes;
+
+    const userRoles = JSON.parse(wppbBlockEditorData.userRoles);
+    const contentRestrictionActivated = JSON.parse(
+        wppbBlockEditorData.content_restriction_activated,
+    );
+
+    // Abort if content restriction is not enabled
+    if (!contentRestrictionActivated) {
+        return null;
+    }
+
+    // Check if this is one of the Content Restriction blocks so that the 'All Users' option can be hidden
+    let contentRestrictionBlock = false;
+    if (
+        [
+            "wppb/content-restriction-start",
+            "wppb/content-restriction-end",
+        ].includes(name)
+    ) {
+        contentRestrictionBlock = true;
+    }
+
+    let helpMessage = getRestrictionHelpMessage(wppbContentRestriction, userRoles);
     return (
         <>
             <p>{helpMessage}</p>
@@ -112,10 +118,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                 value={wppbContentRestriction.display_to}
                 onChange={(value) =>
                     setAttributes({
-                        wppbContentRestriction: assign(
-                            { ...wppbContentRestriction },
-                            { display_to: value },
-                        ),
+                        wppbContentRestriction: {
+                            ...wppbContentRestriction,
+                            display_to: value,
+                        },
                     })
                 }
             >
@@ -137,35 +143,58 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
             {wppbContentRestriction.display_to == "all" && <p></p>}
             {wppbContentRestriction.display_to == "" && (
                 <div>
-                    <BaseControl label={__("User Roles", "profile-builder")}>
-                        <SelectControl
-                            help={__(
-                                "The desired valid user roles. Select none for all roles to be valid.",
-                                "profile-builder",
-                            )}
-                            multiple
-                            value={wppbContentRestriction.user_roles}
-                            onChange={(values) =>
-                                setAttributes({
-                                    wppbContentRestriction: assign(
-                                        { ...wppbContentRestriction },
-                                        { user_roles: values },
-                                    ),
-                                })
-                            }
-                            className="components-select-control__input"
-                        >
+                    <BaseControl 
+                        label={__("User Roles", "profile-builder")}
+                        help={__(
+                            "The desired valid user roles. Select none for all roles to be valid.",
+                            "profile-builder",
+                        )}
+                    >
+                        <div style={{ maxHeight: '380px', overflowY: 'auto', border: '1px solid #8c8f94', padding: '8px 12px', borderRadius: '2px', marginBottom: '16px', backgroundColor: '#fff' }}>
+                            <style>
+                                {`
+                                    .wppb-user-role-checkbox {
+                                        margin-bottom: 4px !important;
+                                    }
+                                    .wppb-user-role-checkbox:last-child {
+                                        margin-bottom: 0 !important;
+                                    }
+                                    .wppb-user-role-checkbox .components-checkbox-control__label {
+                                        font-size: 13px !important;
+                                        line-height: 1.4 !important;
+                                    }
+                                    .wppb-user-role-checkbox .components-checkbox-control__input-container {
+                                        margin-right: 8px !important;
+                                    }
+                                `}
+                            </style>
                             {userRoles?.map((userRole) => {
+                                const isChecked = wppbContentRestriction.user_roles ? wppbContentRestriction.user_roles.includes(userRole.slug) : false;
                                 return (
-                                    <option
+                                    <CheckboxControl
                                         key={userRole.slug}
-                                        value={userRole.slug}
-                                    >
-                                        {decodeEntities(userRole.name)}
-                                    </option>
+                                        label={decodeEntities(userRole.name)}
+                                        checked={isChecked}
+                                        className="wppb-user-role-checkbox"
+                                        onChange={(checked) => {
+                                            const currentRoles = wppbContentRestriction.user_roles ? [...wppbContentRestriction.user_roles] : [];
+                                            let newRoles;
+                                            if (checked) {
+                                                newRoles = [...currentRoles, userRole.slug];
+                                            } else {
+                                                newRoles = currentRoles.filter(r => r !== userRole.slug);
+                                            }
+                                            setAttributes({
+                                                wppbContentRestriction: {
+                                                    ...wppbContentRestriction,
+                                                    user_roles: newRoles,
+                                                },
+                                            });
+                                        }}
+                                    />
                                 );
                             })}
-                        </SelectControl>
+                        </div>
                     </BaseControl>
                     <BaseControl label={__("User IDs", "profile-builder")}>
                         <InputControl
@@ -176,10 +205,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                             value={wppbContentRestriction.users_ids}
                             onChange={(value) =>
                                 setAttributes({
-                                    wppbContentRestriction: assign(
-                                        { ...wppbContentRestriction },
-                                        { users_ids: value },
-                                    ),
+                                    wppbContentRestriction: {
+                                        ...wppbContentRestriction,
+                                        users_ids: value,
+                                    },
                                 })
                             }
                             className="components-input-control__input"
@@ -198,13 +227,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                             }
                             onChange={() =>
                                 setAttributes({
-                                    wppbContentRestriction: assign(
-                                        { ...wppbContentRestriction },
-                                        {
-                                            enable_message_logged_in:
-                                                !wppbContentRestriction.enable_message_logged_in,
-                                        },
-                                    ),
+                                    wppbContentRestriction: {
+                                        ...wppbContentRestriction,
+                                        enable_message_logged_in: !wppbContentRestriction.enable_message_logged_in,
+                                    },
                                 })
                             }
                         />
@@ -217,10 +243,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                                 value={wppbContentRestriction.message_logged_in}
                                 onChange={(value) =>
                                     setAttributes({
-                                        wppbContentRestriction: assign(
-                                            { ...wppbContentRestriction },
-                                            { message_logged_in: value },
-                                        ),
+                                        wppbContentRestriction: {
+                                            ...wppbContentRestriction,
+                                            message_logged_in: value,
+                                        },
                                     })
                                 }
                             />
@@ -239,13 +265,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                         }
                         onChange={() =>
                             setAttributes({
-                                wppbContentRestriction: assign(
-                                    { ...wppbContentRestriction },
-                                    {
-                                        enable_message_logged_out:
-                                            !wppbContentRestriction.enable_message_logged_out,
-                                    },
-                                ),
+                                wppbContentRestriction: {
+                                    ...wppbContentRestriction,
+                                    enable_message_logged_out: !wppbContentRestriction.enable_message_logged_out,
+                                },
                             })
                         }
                     />
@@ -258,10 +281,10 @@ export default function WPPBBlockContentRestrictionControlsCommon(props) {
                             value={wppbContentRestriction.message_logged_out}
                             onChange={(value) =>
                                 setAttributes({
-                                    wppbContentRestriction: assign(
-                                        { ...wppbContentRestriction },
-                                        { message_logged_out: value },
-                                    ),
+                                    wppbContentRestriction: {
+                                        ...wppbContentRestriction,
+                                        message_logged_out: value,
+                                    },
                                 })
                             }
                         />

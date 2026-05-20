@@ -59,7 +59,10 @@ class Profile_Builder_Form_Creator{
         if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && isset( $this->args['ajax'] ) && $this->args['ajax'] === 'true' && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/ajax/assets/forms-ajax-validation.js' ) ) {
             wp_enqueue_script( 'wppb-forms-ajax-validation-script', WPPB_PAID_PLUGIN_URL . 'features/ajax/assets/forms-ajax-validation.js', array( 'jquery' ), PROFILE_BUILDER_VERSION, true );
             wp_localize_script( 'wppb-forms-ajax-validation-script', 'submitButtonData', array( 'processingText' => __( 'Processing...', 'profile-builder' ) ) );
-            wp_enqueue_editor();
+
+            // AJAX validation re-renders the form and needs editor assets only when a WYSIWYG field must be reinitialized
+            if( apply_filters( 'wppb_ajax_form_should_enqueue_editor', $this->wppb_form_has_wysiwyg_field( $this->args['form_fields'] ), $this->args, $this ) )
+                wp_enqueue_editor();
         }
 
         // NOTE: for Multisite, the capability we check against is `remove_users` because `edit_users` is on the do not allow on multisite list for current_user_can()
@@ -162,6 +165,27 @@ class Profile_Builder_Form_Creator{
             }
         }
 	}
+
+    /**
+     * Check whether the current form field list contains a WYSIWYG field
+     *
+     * @param array $form_fields The form fields configured for the current form.
+     * @return bool True when a WYSIWYG field is present, false otherwise.
+     */
+    function wppb_form_has_wysiwyg_field( $form_fields ){
+        if( empty( $form_fields ) || !is_array( $form_fields ) )
+            return false;
+
+        foreach( $form_fields as $field ){
+            if( empty( $field['field'] ) )
+                continue;
+
+            if( $field['field'] === 'WYSIWYG' )
+                return true;
+        }
+
+        return false;
+    }
 
     function wppb_form_logic() {
         if( isset( $this->args['form_type'] ) ) {

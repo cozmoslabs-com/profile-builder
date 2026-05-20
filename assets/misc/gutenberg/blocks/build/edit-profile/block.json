@@ -21,15 +21,15 @@
       "default": ""
     },
     "is_preview": {
-      "type": "bool",
+      "type": "boolean",
       "default": false
     },
     "is_editor": {
-      "type": "bool",
+      "type": "boolean",
       "default": false
     },
     "ajax": {
-      "type": "bool",
+      "type": "boolean",
       "default": false
     }
   },

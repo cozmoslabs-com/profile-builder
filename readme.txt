@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.0
+Stable tag: 3.16.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,19 +207,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.0 =
-* Fix: More compatibility errors regarding Upload and Avatar fields helpers with very old paid plugin versions
-
-= 3.15.9 =
-* Fix: An php error that was triggered with the pro versions of the plugin
-
-= 3.15.8 =
-* Feature: Added a Maximum File Size option to the Avatar and Upload fields
-* Feature: Added option to request users to enter their current password when changing passwords from the Edit Profile form. This can be activated by editing the Password field under the Form Fields interface
-* Fix: Security issue regarding Unauthenticated Stored Cross-Site Scripting. Thanks to daroo and the Wordfence team
-* Fix: Missing dependencies errors being thrown from the Roles Editor page
-* Fix: A notice that could be thrown from the Setup Wizard in some cases
-* Fix: International Telephone Input admin notice not being dismissable
-* Fix: A notice that could be thrown on the Edit Profile page
+= 3.16.1 =
+* Fix: A nonce error appearing for users that tried to edit their profile in some cases
+* Fix: A notice coming from the login form
+* Fix: DbDelta failure notice on legacy wp_signup tables when enabling email confirmation
+* Fix: Only enqueue wysiwyg assets when they are needed in the form
+* Fix: Blocks content restriction changes
+* Misc: Fix some random notices
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

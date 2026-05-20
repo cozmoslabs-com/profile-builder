@@ -17,6 +17,19 @@ function wppb_signup_schema( $oldVal, $newVal ){
 			$charset_collate .= " COLLATE ".$wpdb->collate;
 		$tableName = $wpdb->prefix.'signups';
 
+		// If a legacy signups table exists without the signup_id column, add the
+		// AUTO_INCREMENT column and PRIMARY KEY together. dbDelta would otherwise
+		// split this into two ALTER statements and MySQL rejects an AUTO_INCREMENT
+		// column that isn't simultaneously declared a key.
+		$table_exists = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $tableName ) );
+		if ( $table_exists ) {
+			$column_exists = $wpdb->get_results( "SHOW COLUMNS FROM `{$tableName}` LIKE 'signup_id'" );
+			if ( empty( $column_exists ) ) {
+				$wpdb->query( "ALTER TABLE `{$tableName}` ADD COLUMN signup_id bigint(20) NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (signup_id)" );
+				update_option( 'wppb_signups_table_updated', 'yes' );
+			}
+		}
+
 		$sql = "
 			CREATE TABLE $tableName (
 				signup_id bigint(20) NOT NULL AUTO_INCREMENT,
