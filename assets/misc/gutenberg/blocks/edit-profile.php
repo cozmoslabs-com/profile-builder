@@ -355,7 +355,7 @@ add_action(
                 ];
             } else {
                 $atts = [
-                    'form_name' => ' form_name="' . $form_name . '"',
+                    'form_name' => ' form_name="' . esc_attr( $form_name ) . '"',
                     'redirect_url' => '',
                     'ajax' => ' ajax="multiple-register-form"',
                 ];

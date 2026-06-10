@@ -731,11 +731,13 @@ function wppb_general_settings_content() {
                                 }
 
                                 // Get pages with Edit Profile shortcode or block
+                                $edit_profile_pages = array();
                                 if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) {
                                     require_once( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' );
-                                    $edit_profile_pages = WPPB_Two_Factor_Authenticator::get_edit_profile_pages();
-                                } else {
-                                    $edit_profile_pages = array();
+                                    // The method only exists in paid add-on versions matching this base plugin; guard against a stale add-on to avoid a fatal error.
+                                    if ( method_exists( 'WPPB_Two_Factor_Authenticator', 'get_edit_profile_pages' ) ) {
+                                        $edit_profile_pages = WPPB_Two_Factor_Authenticator::get_edit_profile_pages();
+                                    }
                                 }
                                 ?>
 

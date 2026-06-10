@@ -1427,8 +1427,8 @@
 <?php __("You need to activate the Userlisting feature from within the \"Add-ons\" page!", "profile-builder"); ?>
 <?php __("You can find it in the Profile Builder menu.", "profile-builder"); ?>
 <?php __("No results found!", "profile-builder"); ?>
-<?php __("Security check failed.", "profile-builder"); ?>
 <?php __("You do not have permission to download CSV files.", "profile-builder"); ?>
+<?php __("Security check failed.", "profile-builder"); ?>
 <?php __("Userlisting not found.", "profile-builder"); ?>
 <?php __("No data to export.", "profile-builder"); ?>
 <?php __("bbPress Integration", "profile-builder"); ?>
@@ -2074,6 +2074,7 @@
 <?php __("Please verify TOTP to set up Two-Factor Authentication", "profile-builder"); ?>
 <?php __("Please enter the code from your Authenticator app.", "profile-builder"); ?>
 <?php __("Your Authenticator code was incorrect. Please try again.", "profile-builder"); ?>
+<?php __("Application passwords are disabled because Two-Factor Authentication is required for your account.", "profile-builder"); ?>
 <?php __("Authentication Code", "profile-builder"); ?>
 <?php __("Enter your 6-digit authenticator code or 16-digit backup code.", "profile-builder"); ?>
 <?php __("Your role requires Two-Factor Authentication. Please set it up immediately.", "profile-builder"); ?>
@@ -2331,6 +2332,7 @@
 <?php __("Install the free Paid Member Subscriptions plugin to get access this field.", "profile-builder"); ?>
 <?php __("Profile Builder Forms", "profile-builder"); ?>
 <?php __("Remove", "profile-builder"); ?>
+<?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
 <?php __("Yes, I'd like to create a new site", "profile-builder"); ?>
 <?php __("Your site url will look like this: ", "profile-builder"); ?>
 <?php __("Site URL slug", "profile-builder"); ?>
@@ -2361,7 +2363,6 @@
 <?php __("To use Cloudflare Turnstile you must get a Site Key and Secret Key from:", "profile-builder"); ?>
 <?php __("Cloudflare Turnstile could not be verified. Please try again.", "profile-builder"); ?>
 <?php __("Files must be smaller than ", "profile-builder"); ?>
-<?php __("Sorry, you cannot upload this file type for this field.", "profile-builder"); ?>
 <?php __("An error occurred, please try again later.", "profile-builder"); ?>
 <?php __("Select File", "profile-builder"); ?>
 <?php __("Upload ", "profile-builder"); ?>

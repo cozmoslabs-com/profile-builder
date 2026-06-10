@@ -41,7 +41,12 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
             else
                 $input_value = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
 
-            if( !empty( $input_value ) && !is_numeric( $input_value ) && apply_filters( 'wppb_avatar_field_transform_file_to_attachment', true, $field ) ){
+            if ( is_array( $input_value ) ) {
+                $first_value = reset( $input_value );
+                $input_value = is_scalar( $first_value ) ? $first_value : '';
+            }
+
+            if( !empty( $input_value ) && is_string( $input_value ) && !is_numeric( $input_value ) && apply_filters( 'wppb_avatar_field_transform_file_to_attachment', true, $field ) ){
                 /* we have a file url and we need to change it into an attachment */
                 // Check the type of file. We'll use this as the 'post_mime_type'.
                 $wp_upload_dir = wp_upload_dir();
@@ -155,7 +160,7 @@ function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_
                 !(wppb_belongs_to_repeater_with_conditional_logic($field) && !isset($request_data[wppb_handle_meta_name($field['meta-name'])])) &&
                 !(isset($field['conditional-logic-enabled']) && $field['conditional-logic-enabled'] == 'yes' && !isset($request_data[wppb_handle_meta_name($field['meta-name'])])) &&
                 wppb_valid_simple_upload($field, $_FILES[$field_name])) { /* phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */ /* no need here */
-                return wppb_avatar_save_simple_upload_file($field_name);
+                return wppb_default_fields_save_simple_upload_file($field_name);
             }
         } else {
             $attachment_id = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
@@ -172,9 +177,24 @@ add_filter( 'wppb_add_to_user_signup_form_field_avatar', 'wppb_avatar_add_upload
 /* handle simple upload at the WooCommerce Checkout */
 function wppb_ajax_simple_avatar(){
     check_ajax_referer( 'wppb_ajax_simple_upload', 'nonce' );
-    if ( isset($_POST["name"]) ) {
-        echo json_encode( wppb_default_fields_save_simple_upload_file( sanitize_text_field( $_POST["name"] ) ) );
+
+    if ( ! isset( $_POST['name'] ) ) {
+        wp_die();
     }
+
+    $post_name = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+    $field     = wppb_resolve_simple_upload_ajax_field( $post_name, 'Avatar' );
+
+    if (
+        false === $field
+        || ! isset( $_FILES[ $post_name ] )
+        || ! wppb_valid_simple_upload( $field, $_FILES[ $post_name ] ) /* phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */
+    ) {
+        echo wp_json_encode( new WP_Error( 'upload_error', __( 'Sorry, you cannot upload this file type for this field.', 'profile-builder' ) ) );
+        wp_die();
+    }
+
+    echo wp_json_encode( wppb_default_fields_save_simple_upload_file( $post_name ) );
     wp_die();
 }
 add_action( 'wp_ajax_nopriv_wppb_ajax_simple_avatar', 'wppb_ajax_simple_avatar' );

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-20 06:32+0000\n"
+"POT-Creation-Date: 2026-06-10 09:39+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -394,164 +394,164 @@ msgstr ""
 msgid "Get Support"
 msgstr ""
 
-#: admin/admin-functions.php:306
+#: admin/admin-functions.php:267
 msgid "We could not verify your request. Please refresh the page and try again."
 msgstr ""
 
-#: admin/admin-functions.php:309
+#: admin/admin-functions.php:270
 msgid "You do not have permission to deactivate plugins on this site."
 msgstr ""
 
-#: admin/admin-functions.php:327
+#: admin/admin-functions.php:288
 msgid "We could not save your deactivation feedback. Please try again."
 msgstr ""
 
-#: admin/admin-functions.php:495
+#: admin/admin-functions.php:456
 msgid "You need an active license to add a new User Listing. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:493
+#: admin/admin-functions.php:454
 msgid "Please %1$senter your license key%2$s first, to add new User Listing."
 msgstr ""
 
-#: admin/admin-functions.php:489
+#: admin/admin-functions.php:450
 msgid "You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:487
+#: admin/admin-functions.php:448
 msgid "Please %1$senter your license key%2$s first, to add new Edit Profile Forms."
 msgstr ""
 
-#: admin/admin-functions.php:483
+#: admin/admin-functions.php:444
 msgid "You need an active license to add new User Registration Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:481
+#: admin/admin-functions.php:442
 msgid "Please %1$senter your license key%2$s first, to add new User Registration Forms."
 msgstr ""
 
-#: admin/admin-functions.php:548
+#: admin/admin-functions.php:509
 msgid "You need an active license to configure the Condi  tional Logic feature. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:549
+#: admin/admin-functions.php:510
 msgid "You need an active license to configure Field Visibility options. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:550
+#: admin/admin-functions.php:511
 msgid "You need an active license to use the Edit Profile Updates Approved by Admin addon. %1$sRenew%2$s or %3$spurchase a new one%4$s."
 msgstr ""
 
-#: admin/admin-functions.php:544
+#: admin/admin-functions.php:505
 msgid "Please %1$senter your license key%2$s first, to use the Conditional Logic feature."
 msgstr ""
 
-#: admin/admin-functions.php:545
+#: admin/admin-functions.php:506
 msgid "Please %1$senter your license key%2$s first, to configure Field Visibility options."
 msgstr ""
 
-#: admin/admin-functions.php:546
+#: admin/admin-functions.php:507
 msgid "Please %1$senter your license key%2$s first, to use the Edit Profile Updates Approved by Admin addon feature."
 msgstr ""
 
-#: admin/admin-functions.php:750
+#: admin/admin-functions.php:711
 msgid "Let users pick their country, see flags and placeholders, and validate numbers in a familiar format."
 msgstr ""
 
-#: admin/admin-functions.php:752
+#: admin/admin-functions.php:713
 msgid "%1$sRead the documentation%2$s"
 msgstr ""
 
 #. translators: 1: documentation link (HTML), 2: opening upgrade link, 3: closing upgrade link
-#: admin/admin-functions.php:767
+#: admin/admin-functions.php:728
 msgid "%1$s. This field is available in Profile Builder Basic and Pro. %2$sUpgrade now%3$s to use it."
 msgstr ""
 
-#: admin/admin-functions.php:759
+#: admin/admin-functions.php:720
 msgid "%1$s to set it up, or add the field under %2$sProfile Builder → Form Fields%3$s."
 msgstr ""
 
-#: admin/admin-functions.php:780
+#: admin/admin-functions.php:741
 msgid "New field: International Telephone Input."
 msgstr ""
 
-#: admin/admin-functions.php:782, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:147, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:928, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
+#: admin/admin-functions.php:743, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:147, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1118, front-end/default-fields/recaptcha/recaptcha.php:928, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
 msgid "Dismiss this notice."
 msgstr ""
 
-#: admin/admin-functions.php:927
+#: admin/admin-functions.php:888
 msgid "Before You Go"
 msgstr ""
 
-#: admin/admin-functions.php:929, admin/admin-functions.php:1100, features/functions.php:1773
+#: admin/admin-functions.php:890, admin/admin-functions.php:1061, features/functions.php:1773
 msgid "Profile Builder"
 msgstr ""
 
-#: admin/admin-functions.php:932
+#: admin/admin-functions.php:893
 msgid "If you have a moment, please share the reason you are deactivating Profile Builder:"
 msgstr ""
 
-#: admin/admin-functions.php:940
+#: admin/admin-functions.php:901
 msgid "I no longer need the plugin"
 msgstr ""
 
-#: admin/admin-functions.php:945
+#: admin/admin-functions.php:906
 msgid "I found a better plugin"
 msgstr ""
 
-#: admin/admin-functions.php:946
+#: admin/admin-functions.php:907
 msgid "Which plugin"
 msgstr ""
 
-#: admin/admin-functions.php:951
+#: admin/admin-functions.php:912
 msgid "I didn't find the feature I need"
 msgstr ""
 
-#: admin/admin-functions.php:952
+#: admin/admin-functions.php:913
 msgid "Which feature"
 msgstr ""
 
-#: admin/admin-functions.php:957
+#: admin/admin-functions.php:918
 msgid "I couldn't get the plugin to work"
 msgstr ""
 
-#: admin/admin-functions.php:962
+#: admin/admin-functions.php:923
 msgid "Temporary deactivation"
 msgstr ""
 
-#: admin/admin-functions.php:967, admin/feedback.php:47, admin/manage-fields.php:76
+#: admin/admin-functions.php:928, admin/feedback.php:47, admin/manage-fields.php:76
 msgid "Other"
 msgstr ""
 
-#: admin/admin-functions.php:968, admin/feedback.php:48
+#: admin/admin-functions.php:929, admin/feedback.php:48
 msgid "Please tell us more"
 msgstr ""
 
-#: admin/admin-functions.php:977
+#: admin/admin-functions.php:938
 msgid "Submit & deactivate"
 msgstr ""
 
-#: admin/admin-functions.php:981
+#: admin/admin-functions.php:942
 msgid "Skip & deactivate"
 msgstr ""
 
-#: admin/admin-functions.php:1098, admin/support-chat.php:180, admin/support-chat.php:221
+#: admin/admin-functions.php:1059, admin/support-chat.php:180, admin/support-chat.php:221
 msgid "Need Help?"
 msgstr ""
 
-#: admin/admin-functions.php:1102
+#: admin/admin-functions.php:1063
 msgid "If you need a hand with this setting, you can check the documentation or open a support ticket on WordPress.org."
 msgstr ""
 
-#: admin/admin-functions.php:1103
+#: admin/admin-functions.php:1064
 msgid "We will do our best to help you figure it out."
 msgstr ""
 
-#: admin/admin-functions.php:1107
+#: admin/admin-functions.php:1068
 msgid "View Documentation"
 msgstr ""
 
-#: admin/admin-functions.php:1108
+#: admin/admin-functions.php:1069
 msgid "Open Support Ticket"
 msgstr ""
 
@@ -687,7 +687,7 @@ msgstr ""
 msgid "Allow users to log in with their email or username when accessing your site."
 msgstr ""
 
-#: admin/basic-info.php:141, admin/general-settings.php:824, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:265, features/roles-editor/roles-editor.php:266, features/roles-editor/roles-editor.php:271, features/roles-editor/roles-editor.php:278
+#: admin/basic-info.php:141, admin/general-settings.php:826, features/roles-editor/roles-editor.php:69, features/roles-editor/roles-editor.php:70, features/roles-editor/roles-editor.php:265, features/roles-editor/roles-editor.php:266, features/roles-editor/roles-editor.php:271, features/roles-editor/roles-editor.php:278
 msgid "Roles Editor"
 msgstr ""
 
@@ -1195,15 +1195,15 @@ msgstr ""
 msgid "Select the page which contains the \"[wppb-recover-password]\" shortcode."
 msgstr ""
 
-#: admin/general-settings.php:368, admin/general-settings.php:772, admin/general-settings.php:382, features/two-factor-authentication/class-two-factor-authentication.php:131, features/two-factor-authentication/class-two-factor-authentication.php:213
+#: admin/general-settings.php:368, admin/general-settings.php:774, admin/general-settings.php:382, features/two-factor-authentication/class-two-factor-authentication.php:137, features/two-factor-authentication/class-two-factor-authentication.php:219
 msgid "Two-Factor Authentication"
 msgstr ""
 
-#: admin/general-settings.php:780, admin/general-settings.php:608
+#: admin/general-settings.php:782, admin/general-settings.php:608
 msgid "Enable the Google Authenticator functionality."
 msgstr ""
 
-#: admin/general-settings.php:784
+#: admin/general-settings.php:786
 msgid "Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions."
 msgstr ""
 
@@ -1211,7 +1211,7 @@ msgstr ""
 msgid "Confirm Two-Factor Authentication Enforcement"
 msgstr ""
 
-#: admin/general-settings.php:506, features/functions.php:1171, add-ons/user-listing/userlisting.php:3483, features/roles-editor/roles-editor.php:201, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:559
+#: admin/general-settings.php:506, features/functions.php:1171, add-ons/user-listing/userlisting.php:3486, features/roles-editor/roles-editor.php:201, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:559
 msgid "Cancel"
 msgstr ""
 
@@ -1279,127 +1279,127 @@ msgstr ""
 msgid "Number of days users have to set up Two-Factor Authentication. Set to 0 for immediate enforcement."
 msgstr ""
 
-#: admin/general-settings.php:742
+#: admin/general-settings.php:744
 msgid "Redirect to Edit Profile Page"
 msgstr ""
 
-#: admin/general-settings.php:745
+#: admin/general-settings.php:747
 msgid "Admin Profile Page"
 msgstr ""
 
-#: admin/general-settings.php:760
+#: admin/general-settings.php:762
 msgid "Select which page users should be redirected to when they need to set up Two-Factor Authentication."
 msgstr ""
 
-#: admin/general-settings.php:758
+#: admin/general-settings.php:760
 msgid "No pages with Edit Profile forms found. Please create a page with the [wppb-edit-profile] shortcode or block."
 msgstr ""
 
-#: admin/general-settings.php:793
+#: admin/general-settings.php:795
 msgid "Other features"
 msgstr ""
 
-#: admin/general-settings.php:796
+#: admin/general-settings.php:798
 msgid "Hide Admin Bar for User Roles"
 msgstr ""
 
-#: admin/general-settings.php:804
+#: admin/general-settings.php:806
 msgid "All User Roles"
 msgstr ""
 
-#: admin/general-settings.php:805
+#: admin/general-settings.php:807
 msgid "All User Roles Except Admin"
 msgstr ""
 
-#: admin/general-settings.php:816
+#: admin/general-settings.php:818
 msgid "Hide the WordPress Admin Bar for these user roles. You can select multiple roles to hide it for."
 msgstr ""
 
-#: admin/general-settings.php:832
+#: admin/general-settings.php:834
 msgid "Easily create new custom user roles or customize any existing user role capabilities."
 msgstr ""
 
-#: admin/general-settings.php:835
+#: admin/general-settings.php:837
 msgid "You can add / edit user roles at %1$sUsers > Roles Editor%2$s."
 msgstr ""
 
-#: admin/general-settings.php:841
+#: admin/general-settings.php:843
 msgid "Load CSS"
 msgstr ""
 
-#: admin/general-settings.php:848
+#: admin/general-settings.php:850
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:861, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:518, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
+#: admin/general-settings.php:863, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:518, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:864, admin/private-website.php:184, features/functions.php:1164, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:520, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
+#: admin/general-settings.php:866, admin/private-website.php:184, features/functions.php:1164, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:520, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
 msgid "Save Changes"
 msgstr ""
 
-#: admin/general-settings.php:989
+#: admin/general-settings.php:991
 msgid "Available in the Pro versions of the plugin"
 msgstr ""
 
-#: admin/general-settings.php:1038
+#: admin/general-settings.php:1040
 msgid "You can now beautify your forms using pre-made templates. Enable %3$sForm Designs%4$s by upgrading to %1$sBasic or PRO versions%2$s."
 msgstr ""
 
-#: admin/general-settings.php:1060
+#: admin/general-settings.php:1062
 msgid "Register Website"
 msgstr ""
 
-#: admin/general-settings.php:1067
+#: admin/general-settings.php:1069
 msgid "License key"
 msgstr ""
 
-#: admin/general-settings.php:1084
+#: admin/general-settings.php:1086
 msgid "Activate License"
 msgstr ""
 
-#: admin/general-settings.php:1075
+#: admin/general-settings.php:1077
 msgid "Deactivate License"
 msgstr ""
 
-#: admin/general-settings.php:1080
+#: admin/general-settings.php:1082
 msgid "Your license is invalid"
 msgstr ""
 
-#: admin/general-settings.php:1078
+#: admin/general-settings.php:1080
 msgid "Active on this site"
 msgstr ""
 
-#: admin/general-settings.php:1107
+#: admin/general-settings.php:1109
 msgid "Enter your license key. Your license key can be found in your %sCozmoslabs account%s. "
 msgstr ""
 
-#: admin/general-settings.php:1108
+#: admin/general-settings.php:1110
 msgid "You can use this core version of Profile Builder for free. For priority support and advanced functionality, %sa license key is required%s."
 msgstr ""
 
-#: admin/general-settings.php:1102
+#: admin/general-settings.php:1104
 msgid "Your %s license has reached its activation limit."
 msgstr ""
 
-#: admin/general-settings.php:1103
+#: admin/general-settings.php:1105
 msgid "%sUpgrade now%s for unlimited activations and extra features like multiple registration and edit profile forms, userlisting, custom redirects and more."
 msgstr ""
 
-#: admin/general-settings.php:1097
+#: admin/general-settings.php:1099
 msgid "Your %s license has expired."
 msgstr ""
 
-#: admin/general-settings.php:1098
+#: admin/general-settings.php:1100
 msgid "Please %1$sRenew Your Licence%2$s  to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility."
 msgstr ""
 
-#: admin/general-settings.php:1092
+#: admin/general-settings.php:1094
 msgid "Your %s license is about to expire on %s"
 msgstr ""
 
-#: admin/general-settings.php:1093
+#: admin/general-settings.php:1095
 msgid "Please %sRenew Your Licence%s to continue receiving access to new features, premium addons, product downloads & automatic updates — including important security patches and WordPress compatibility."
 msgstr ""
 
@@ -1463,7 +1463,7 @@ msgstr ""
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
 msgstr ""
 
-#: admin/manage-fields.php:268, features/two-factor-authentication/class-two-factor-authentication.php:226, features/two-factor-authentication/class-two-factor-authentication.php:422
+#: admin/manage-fields.php:268, features/two-factor-authentication/class-two-factor-authentication.php:232, features/two-factor-authentication/class-two-factor-authentication.php:428
 msgid "Description"
 msgstr ""
 
@@ -3697,7 +3697,7 @@ msgstr ""
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Add-ons."
 msgstr ""
 
-#: admin/manage-fields.php:1642, add-ons/user-listing/one-map-listing.php:656
+#: admin/manage-fields.php:1642, add-ons/user-listing/one-map-listing.php:661
 msgid "Search Location"
 msgstr ""
 
@@ -3749,7 +3749,7 @@ msgstr ""
 msgid "Payment Management"
 msgstr ""
 
-#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3445, features/two-factor-authentication/class-two-factor-authentication.php:217, features/two-factor-authentication/class-two-factor-authentication.php:409
+#: admin/pms-cross-promotion.php:120, admin/pms-cross-promotion.php:158, admin/pms-cross-promotion.php:243, add-ons/user-listing/userlisting.php:3448, features/two-factor-authentication/class-two-factor-authentication.php:223, features/two-factor-authentication/class-two-factor-authentication.php:415
 msgid "Activate"
 msgstr ""
 
@@ -4524,7 +4524,7 @@ msgstr ""
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:383, front-end/recover.php:553, features/two-factor-authentication/class-two-factor-authentication.php:805
+#: front-end/recover.php:383, front-end/recover.php:553, features/two-factor-authentication/class-two-factor-authentication.php:811
 msgid "ERROR:"
 msgstr ""
 
@@ -5112,11 +5112,11 @@ msgstr ""
 msgid "Are you sure you want to delete this?"
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:529
+#: add-ons/user-listing/one-map-listing.php:534
 msgid "Please wait while the pins are loading..."
 msgstr ""
 
-#: add-ons/user-listing/one-map-listing.php:661
+#: add-ons/user-listing/one-map-listing.php:666
 msgid "The API Key was not provided."
 msgstr ""
 
@@ -5220,11 +5220,11 @@ msgstr ""
 msgid "User Count"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:248, add-ons/user-listing/userlisting.php:4552
+#: add-ons/user-listing/userlisting.php:248, add-ons/user-listing/userlisting.php:4695
 msgid "Download All Users CSV"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:249, add-ons/user-listing/userlisting.php:4588
+#: add-ons/user-listing/userlisting.php:249, add-ons/user-listing/userlisting.php:4731
 msgid "Download Current Page CSV"
 msgstr ""
 
@@ -5248,11 +5248,11 @@ msgstr ""
 msgid "Go Back Link"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:334, add-ons/user-listing/userlisting.php:3475
+#: add-ons/user-listing/userlisting.php:334, add-ons/user-listing/userlisting.php:3478
 msgid "All-userlisting Template"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:337, add-ons/user-listing/userlisting.php:3476
+#: add-ons/user-listing/userlisting.php:337, add-ons/user-listing/userlisting.php:3479
 msgid "Single-userlisting Template"
 msgstr ""
 
@@ -5376,7 +5376,7 @@ msgstr ""
 msgid "First/Lastname"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:1451, add-ons/user-listing/userlisting.php:2023, add-ons/user-listing/userlisting.php:2663, add-ons/user-listing/userlisting.php:4143
+#: add-ons/user-listing/userlisting.php:1451, add-ons/user-listing/userlisting.php:2023, add-ons/user-listing/userlisting.php:2663, add-ons/user-listing/userlisting.php:4205
 msgid "Search Users by All Fields"
 msgstr ""
 
@@ -5732,63 +5732,63 @@ msgstr ""
 msgid "Themes: add style to your user listing section"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3428
+#: add-ons/user-listing/userlisting.php:3431
 msgid "Preview"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3452, admin/advanced-settings/includes/views/view-forms.php:183
+#: add-ons/user-listing/userlisting.php:3455, admin/advanced-settings/includes/views/view-forms.php:183
 msgid "Reset Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3466
+#: add-ons/user-listing/userlisting.php:3469
 msgid "Reset %s Theme Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3467
+#: add-ons/user-listing/userlisting.php:3470
 msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3471, admin/advanced-settings/includes/views/view-forms.php:533
+#: add-ons/user-listing/userlisting.php:3474, admin/advanced-settings/includes/views/view-forms.php:533
 msgid "Select which settings you want to reset:"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3474
+#: add-ons/user-listing/userlisting.php:3477
 msgid "User-Listing Settings"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3477
+#: add-ons/user-listing/userlisting.php:3480
 msgid "All Theme Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3490, admin/advanced-settings/includes/views/view-forms.php:561
+#: add-ons/user-listing/userlisting.php:3493, admin/advanced-settings/includes/views/view-forms.php:561
 msgid "Confirm"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4119
+#: add-ons/user-listing/userlisting.php:4181
 msgid "You need to activate the Userlisting feature from within the \"Add-ons\" page!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4119
+#: add-ons/user-listing/userlisting.php:4181
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4305
+#: add-ons/user-listing/userlisting.php:4367
 msgid "No results found!"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4607
-msgid "Security check failed."
-msgstr ""
-
-#: add-ons/user-listing/userlisting.php:4614
+#: add-ons/user-listing/userlisting.php:4752, add-ons/user-listing/userlisting.php:4764
 msgid "You do not have permission to download CSV files."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4619
+#: add-ons/user-listing/userlisting.php:4757
+msgid "Security check failed."
+msgstr ""
+
+#: add-ons/user-listing/userlisting.php:4769
 msgid "Userlisting not found."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:4672
+#: add-ons/user-listing/userlisting.php:4822
 msgid "No data to export."
 msgstr ""
 
@@ -8285,179 +8285,183 @@ msgstr ""
 msgid "Edit User Roles"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:91
+#: features/two-factor-authentication/class-two-factor-authentication.php:97
 msgid "Valid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:92
+#: features/two-factor-authentication/class-two-factor-authentication.php:98
 msgid "Invalid"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:93, features/two-factor-authentication/class-two-factor-authentication.php:278, features/two-factor-authentication/class-two-factor-authentication.php:460
+#: features/two-factor-authentication/class-two-factor-authentication.php:99, features/two-factor-authentication/class-two-factor-authentication.php:284, features/two-factor-authentication/class-two-factor-authentication.php:466
 msgid "Backup Codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:94, features/two-factor-authentication/class-two-factor-authentication.php:281, features/two-factor-authentication/class-two-factor-authentication.php:463
+#: features/two-factor-authentication/class-two-factor-authentication.php:100, features/two-factor-authentication/class-two-factor-authentication.php:287, features/two-factor-authentication/class-two-factor-authentication.php:469
 msgid "Regenerate Backup Codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:95
+#: features/two-factor-authentication/class-two-factor-authentication.php:101
 msgid "Copy Codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:96
+#: features/two-factor-authentication/class-two-factor-authentication.php:102
 msgid "Download Codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:97
+#: features/two-factor-authentication/class-two-factor-authentication.php:103
 msgid "Regenerating will invalidate all existing codes. Continue?"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:98
+#: features/two-factor-authentication/class-two-factor-authentication.php:104
 msgid "Each code can only be used once. Please save these codes in a secure location."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:99
+#: features/two-factor-authentication/class-two-factor-authentication.php:105
 msgid "remaining codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:203, features/two-factor-authentication/class-two-factor-authentication.php:398
+#: features/two-factor-authentication/class-two-factor-authentication.php:209, features/two-factor-authentication/class-two-factor-authentication.php:404
 msgid "Two-Factor Authentication is required for your role. Please set it up now."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:199, features/two-factor-authentication/class-two-factor-authentication.php:394
+#: features/two-factor-authentication/class-two-factor-authentication.php:205, features/two-factor-authentication/class-two-factor-authentication.php:400
 msgid "You must set up Two-Factor Authentication within %d days. Your role requires 2FA for security."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:222, features/two-factor-authentication/class-two-factor-authentication.php:415
+#: features/two-factor-authentication/class-two-factor-authentication.php:228, features/two-factor-authentication/class-two-factor-authentication.php:421
 msgid "Relaxed Mode"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:223, features/two-factor-authentication/class-two-factor-authentication.php:418
+#: features/two-factor-authentication/class-two-factor-authentication.php:229, features/two-factor-authentication/class-two-factor-authentication.php:424
 msgid "Allow for more time drift on your phone clock ( &#177;4 min )."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:228
+#: features/two-factor-authentication/class-two-factor-authentication.php:234
 msgid "Description that you'll see in the Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:231, features/two-factor-authentication/class-two-factor-authentication.php:429
+#: features/two-factor-authentication/class-two-factor-authentication.php:237, features/two-factor-authentication/class-two-factor-authentication.php:435
 msgid "Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:235
+#: features/two-factor-authentication/class-two-factor-authentication.php:241
 msgid "New Secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:236
+#: features/two-factor-authentication/class-two-factor-authentication.php:242
 msgid "QR Code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:239, features/two-factor-authentication/class-two-factor-authentication.php:439
+#: features/two-factor-authentication/class-two-factor-authentication.php:245, features/two-factor-authentication/class-two-factor-authentication.php:445
 msgid "Scan this with the Authenticator app:"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:243, features/two-factor-authentication/class-two-factor-authentication.php:445
+#: features/two-factor-authentication/class-two-factor-authentication.php:249, features/two-factor-authentication/class-two-factor-authentication.php:451
 msgid "Verify TOTP"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:247, features/two-factor-authentication/class-two-factor-authentication.php:448
+#: features/two-factor-authentication/class-two-factor-authentication.php:253, features/two-factor-authentication/class-two-factor-authentication.php:454
 msgid "Check"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:291, features/two-factor-authentication/class-two-factor-authentication.php:470
+#: features/two-factor-authentication/class-two-factor-authentication.php:297, features/two-factor-authentication/class-two-factor-authentication.php:476
 msgid "%d remaining codes"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:288, features/two-factor-authentication/class-two-factor-authentication.php:468
+#: features/two-factor-authentication/class-two-factor-authentication.php:294, features/two-factor-authentication/class-two-factor-authentication.php:474
 msgid "No remaining codes!"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:285, features/two-factor-authentication/class-two-factor-authentication.php:466
+#: features/two-factor-authentication/class-two-factor-authentication.php:291, features/two-factor-authentication/class-two-factor-authentication.php:472
 msgid "%d remaining codes!"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:385
+#: features/two-factor-authentication/class-two-factor-authentication.php:391
 msgid "Two-Factor Authentication Settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:425
+#: features/two-factor-authentication/class-two-factor-authentication.php:431
 msgid "Description that you'll see in the Authenticator app on your phone."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:432
+#: features/two-factor-authentication/class-two-factor-authentication.php:438
 msgid "Create new secret"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:433
+#: features/two-factor-authentication/class-two-factor-authentication.php:439
 msgid "Show/Hide QR code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:496, features/two-factor-authentication/class-two-factor-authentication.php:642
+#: features/two-factor-authentication/class-two-factor-authentication.php:502, features/two-factor-authentication/class-two-factor-authentication.php:648
 msgid "Two-Factor Authentication is required for your role. Please enable it."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:504, features/two-factor-authentication/class-two-factor-authentication.php:635
+#: features/two-factor-authentication/class-two-factor-authentication.php:510, features/two-factor-authentication/class-two-factor-authentication.php:641
 msgid "You cannot disable Two-Factor Authentication as it is required for your role."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:533
+#: features/two-factor-authentication/class-two-factor-authentication.php:539
 msgid "Two-Factor Authentication has been successfully set up!"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:534
+#: features/two-factor-authentication/class-two-factor-authentication.php:540
 msgid "Continue to your destination"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:619
+#: features/two-factor-authentication/class-two-factor-authentication.php:625
 msgid "Please verify TOTP to edit your profile."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:662
+#: features/two-factor-authentication/class-two-factor-authentication.php:668
 msgid "Please verify TOTP to change Two-Factor Authentication settings"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:660
+#: features/two-factor-authentication/class-two-factor-authentication.php:666
 msgid "Please verify TOTP to set up Two-Factor Authentication"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:801, features/two-factor-authentication/class-two-factor-authentication.php:942, features/two-factor-authentication/class-two-factor-authentication.php:946
+#: features/two-factor-authentication/class-two-factor-authentication.php:807, features/two-factor-authentication/class-two-factor-authentication.php:1019, features/two-factor-authentication/class-two-factor-authentication.php:1023
 msgid "Please enter the code from your Authenticator app."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:805
+#: features/two-factor-authentication/class-two-factor-authentication.php:811
 msgid "Your Authenticator code was incorrect. Please try again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:982
+#: features/two-factor-authentication/class-two-factor-authentication.php:885
+msgid "Application passwords are disabled because Two-Factor Authentication is required for your account."
+msgstr ""
+
+#: features/two-factor-authentication/class-two-factor-authentication.php:1059
 msgid "Authentication Code"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:984
+#: features/two-factor-authentication/class-two-factor-authentication.php:1061
 msgid "Enter your 6-digit authenticator code or 16-digit backup code."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1479
+#: features/two-factor-authentication/class-two-factor-authentication.php:1556
 msgid "Your role requires Two-Factor Authentication. Please set it up immediately."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1475
+#: features/two-factor-authentication/class-two-factor-authentication.php:1552
 msgid "Your role requires Two-Factor Authentication. You have %d days remaining to set it up."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1485
+#: features/two-factor-authentication/class-two-factor-authentication.php:1562
 msgid "Set up 2FA Now"
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1825
+#: features/two-factor-authentication/class-two-factor-authentication.php:1902
 msgid "User not logged in."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1830
+#: features/two-factor-authentication/class-two-factor-authentication.php:1907
 msgid "Please wait before regenerating backup codes again."
 msgstr ""
 
-#: features/two-factor-authentication/class-two-factor-authentication.php:1839
+#: features/two-factor-authentication/class-two-factor-authentication.php:1916
 msgid "Backup codes generated"
 msgstr ""
 
@@ -9381,7 +9385,7 @@ msgstr ""
 msgid "Save the communication preferences order"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:89, front-end/default-fields/checkbox/checkbox.php:53, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:48, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:91, front-end/extra-fields/upload/upload.php:85, front-end/extra-fields/wysiwyg/wysiwyg.php:62
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:94, front-end/default-fields/checkbox/checkbox.php:53, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:48, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:91, front-end/extra-fields/upload/upload.php:90, front-end/extra-fields/wysiwyg/wysiwyg.php:62
 msgid "required"
 msgstr ""
 
@@ -9463,6 +9467,10 @@ msgstr ""
 
 #: front-end/default-fields/avatar/avatar.php:24, front-end/default-fields/upload/upload_helper_functions.php:313, front-end/extra-fields/upload/upload.php:21, assets/lib/wck-api/fields/upload.php:43
 msgid "Remove"
+msgstr ""
+
+#: front-end/default-fields/avatar/avatar.php:193, front-end/default-fields/upload/upload_helper_functions.php:116, front-end/default-fields/upload/upload_helper_functions.php:127, front-end/default-fields/upload/upload_helper_functions.php:370, front-end/extra-fields/upload/upload.php:170
+msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
 #: front-end/default-fields/blog-details/blog-details.php:68
@@ -9583,10 +9591,6 @@ msgstr ""
 
 #: front-end/default-fields/upload/upload_helper_functions.php:78, front-end/default-fields/upload/upload_helper_functions.php:94, front-end/default-fields/upload/upload_helper_functions.php:369
 msgid "Files must be smaller than "
-msgstr ""
-
-#: front-end/default-fields/upload/upload_helper_functions.php:116, front-end/default-fields/upload/upload_helper_functions.php:127, front-end/default-fields/upload/upload_helper_functions.php:370
-msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
 #: front-end/default-fields/upload/upload_helper_functions.php:136

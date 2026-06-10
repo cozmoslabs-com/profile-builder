@@ -3,16 +3,16 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.16.1
+ * Version: 3.16.2
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * WC requires at least: 3.0.0
- * WC tested up to: 10.7
- * Elementor tested up to: 4.0.9
- * Elementor Pro tested up to: 4.0.9
+ * WC tested up to: 10.8
+ * Elementor tested up to: 4.1.2
+ * Elementor Pro tested up to: 4.1.2
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -442,7 +442,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.16.1' );
+define('PROFILE_BUILDER_VERSION', '3.16.2' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -504,24 +504,6 @@ if( !function_exists( 'wppb_activate_plugin_redirect' ) ){
         }
     }
     add_action( 'activated_plugin', 'wppb_activate_plugin_redirect' );
-}
-
-add_action( 'wppb_register_activation_hook', 'wppb_activation_deactivation_hook_callback' );
-add_action( 'wppb_register_deactivation_hook', 'wppb_activation_deactivation_hook_callback' );
-function wppb_activation_deactivation_hook_callback() {
-    
-    if( !function_exists( 'wppb_field_format' ) ){
-        include_once( WPPB_PLUGIN_DIR . '/admin/admin-functions.php' );
-    }
-
-    $current_action = current_action();
-
-    if( $current_action == 'wppb_register_activation_hook' && function_exists( 'wppb_handle_plugin_activation' ) ){
-        wppb_handle_plugin_activation();
-    } else if( $current_action == 'wppb_register_deactivation_hook' && function_exists( 'wppb_handle_plugin_deactivation' ) ){
-        wppb_handle_plugin_deactivation();
-    }
-
 }
 
 /**

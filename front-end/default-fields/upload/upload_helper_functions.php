@@ -503,6 +503,46 @@ function wppb_register_attachment_ownership_helpers() {
     }
 }
 
+/**
+ * Resolves a simple-upload AJAX `name` parameter to a configured form field.
+ *
+ * @param string       $post_name  Sanitized value of $_POST['name'] from the AJAX request.
+ * @param string|array $field_type Expected field type(s), e.g. 'Avatar' or 'Upload'.
+ *
+ * @return array|false Field definition array, or false when not found or not simple-upload.
+ */
+function wppb_resolve_simple_upload_ajax_field( $post_name, $field_type ) {
+    if ( empty( $post_name ) ) {
+        return false;
+    }
+
+    $field_types = is_array( $field_type ) ? $field_type : array( $field_type );
+    $all_fields  = apply_filters( 'wppb_form_fields', get_option( 'wppb_manage_fields' ), array( 'context' => 'simple_upload_ajax', 'upload_post_name' => $post_name ) );
+
+    if ( empty( $all_fields ) ) {
+        return false;
+    }
+
+    foreach ( $all_fields as $field ) {
+        if ( ! in_array( $field['field'], $field_types, true ) ) {
+            continue;
+        }
+        if ( ! isset( $field['simple-upload'] ) || $field['simple-upload'] !== 'yes' ) {
+            continue;
+        }
+        if ( isset( $field['woocommerce-checkout-field'] ) && $field['woocommerce-checkout-field'] === 'Yes' ) {
+            continue;
+        }
+
+        $field_slug = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) );
+        if ( $field_slug === $post_name ) {
+            return $field;
+        }
+    }
+
+    return false;
+}
+
 function wppb_check_that_field_is_defined( $meta_name, $field_types = array() ){
 
     if( empty( $meta_name ) )

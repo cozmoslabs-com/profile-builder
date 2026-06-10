@@ -9,12 +9,20 @@ function wppb_toolbox_flush_rewrite_rules() {
 
 	$rules           = get_option( 'rewrite_rules' );
     $frontpage_id    = get_option( 'page_on_front' );
+    $lang_pattern    = function_exists( 'wppb_userlisting_get_language_pattern' ) ? wppb_userlisting_get_language_pattern() : '';
 
-    if ( !isset($rules['(.+?)/'.$base.'/([^/]+)']) ||
+    $needs_flush = (
+        !isset($rules['(.+?)/'.$base.'/([^/]+)']) ||
         !isset($rules['(.?.+?)/' . wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$'] ) ||
-        ( !empty( $frontpage_id ) && !isset( $rules[wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$'] ) ) ) {
-        global $wp_rewrite;
+        ( !empty( $frontpage_id ) && !isset( $rules[wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$'] ) )
+    );
 
+    if ( ! $needs_flush && $lang_pattern !== '' && ! isset( $rules[ $lang_pattern . '/(.+?)/' . $base . '/([^/]+)' ] ) ) {
+        $needs_flush = true;
+    }
+
+    if ( $needs_flush ) {
+        global $wp_rewrite;
 		$wp_rewrite->flush_rules();
 	}
 }
@@ -28,13 +36,26 @@ function wppb_toolbox_insert_userlisting_rule( $rules ) {
     $wppb_addonOptions = get_option('wppb_module_settings');
 
     if( $wppb_addonOptions['wppb_userListing'] == 'show' ) {
-        $new_rules = array();
+        $new_rules    = array();
+        $frontpage_id = get_option('page_on_front');
+        $lang_pattern = function_exists( 'wppb_userlisting_get_language_pattern' ) ? wppb_userlisting_get_language_pattern() : '';
+
+        // Polylang compatibility: capture the language slug separately so the pagename only
+        // contains the actual page slug.
+        if ( $lang_pattern !== '' ) {
+            $new_rules[ $lang_pattern . '/(.+?)/' . $base . '/([^/]+)' ] = 'index.php?lang=$matches[1]&pagename=$matches[2]&username=$matches[3]';
+
+            if ( !empty($frontpage_id) ) {
+                $new_rules[ $lang_pattern . '/' . wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$' ] = 'index.php?lang=$matches[1]&page_id=' . $frontpage_id . '&wppb_page=$matches[2]';
+            }
+
+            $new_rules[ $lang_pattern . '/(.?.+?)/' . wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$' ] = 'index.php?lang=$matches[1]&pagename=$matches[2]&wppb_page=$matches[3]';
+        }
 
         //user rule
         $new_rules['(.+?)/'. $base .'/([^/]+)'] = 'index.php?pagename=$matches[1]&username=$matches[2]';
 
         //users-page rule
-        $frontpage_id = get_option('page_on_front');
         if (!empty($frontpage_id)) {
             $new_rules[wppb_get_users_pagination_slug() . '/?([0-9]{1,})/?$'] = 'index.php?&page_id=' . $frontpage_id . '&wppb_page=$matches[1]';
         }

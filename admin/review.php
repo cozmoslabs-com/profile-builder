@@ -91,7 +91,7 @@ class WPPB_Review_Request {
 
                         <div style="display: flex; margin-bottom: 24px; padding-left: 95px;">
                             <div>
-                                <a href="https://wordpress.org/support/plugin/profile-builder/reviews/?filter=5#new-post"
+                                <a href="https://wordpress.org/support/plugin/profile-builder/reviews/#new-post"
                                    target="_blank" rel="noopener" class="button-primary" style="margin-right: 20px">
 		                            <?php esc_html_e('Ok, I will gladly help!', 'profile-builder'); ?>
                                 </a>
@@ -144,7 +144,7 @@ class WPPB_Review_Request {
         if ( $current_screen->parent_base == 'profile-builder' ){
             $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profile-builder' ),
                 PROFILE_BUILDER,
-                'https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5#postform'
+                'https://wordpress.org/support/view/plugin-reviews/profile-builder#postform'
             );
             return '<span id="footer-thankyou">' .$rate_text . '</span>';
         } else {

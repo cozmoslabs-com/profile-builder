@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.1
+Stable tag: 3.16.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,12 +207,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.1 =
-* Fix: A nonce error appearing for users that tried to edit their profile in some cases
-* Fix: A notice coming from the login form
-* Fix: DbDelta failure notice on legacy wp_signup tables when enabling email confirmation
-* Fix: Only enqueue wysiwyg assets when they are needed in the form
-* Fix: Blocks content restriction changes
-* Misc: Fix some random notices
+= 3.16.2 =
+* Fix: Security issue regarding unauthenticated media library attachment creation. Thanks to Nir Yehoshua and the Cipher Security Labs team
+* Fix: An error that could be thrown on the Edit Profile page from the 2FA functionality
+* Fix: Undefined function error coming from the Avatar field when Email Confirmation was enabled
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

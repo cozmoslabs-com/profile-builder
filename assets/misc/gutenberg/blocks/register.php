@@ -374,7 +374,7 @@ add_action(
             } else {
                 $atts = [
                     'role'                => '',
-                    'form_name'           => ' form_name="' . $form_name . '"',
+                    'form_name'           => ' form_name="' . esc_attr( $form_name ) . '"',
                     'redirect_url'        => '',
                     'logout_redirect_url' => $attributes['logout_redirect_url'] !== '' ? ' logout_redirect_url="' . esc_url( $attributes['logout_redirect_url'] ) . '"' : '',
                     'automatic_login'     => '',

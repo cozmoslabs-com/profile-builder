@@ -92,7 +92,7 @@ class CL_Addons_List_Table extends WP_List_Table {
     function column_cb($item){
         if( $item['type'] === 'add-on') {
             in_array( $this->current_version, $this->section_versions ) ? $disabled = '' : $disabled = 'disabled';
-            return '<input type="checkbox" name="cl_add_ons[]" ' . checked($this->is_add_on_active($item['slug']), true, false) . ' '. $disabled .' value="' . $item['slug'] . '" />';
+            return '<input type="checkbox" name="cl_add_ons[]" ' . checked($this->is_add_on_active($item['slug']), true, false) . ' '. $disabled .' value="' . esc_attr( $item['slug'] ) . '" />';
         }elseif( $item['type'] === 'plugin') {
             $all_wp_plugins = get_plugins();
             array_key_exists( $item['slug'], $all_wp_plugins ) ? $disabled = '' : $disabled = 'disabled';//add disabled if the current version isn't eligible
@@ -100,7 +100,7 @@ class CL_Addons_List_Table extends WP_List_Table {
                 is_plugin_active_for_network( $item['slug'] ) ? $disabled = 'disabled' : $disabled = '';
             }
 
-            return '<input type="checkbox" name="cl_plugins[]" ' . checked(is_plugin_active($item['slug']), true, false) . ' '. $disabled .' value="' . $item['slug'] . '" />';
+            return '<input type="checkbox" name="cl_plugins[]" ' . checked(is_plugin_active($item['slug']), true, false) . ' '. $disabled .' value="' . esc_attr( $item['slug'] ) . '" />';
         }
     }
 
@@ -110,7 +110,7 @@ class CL_Addons_List_Table extends WP_List_Table {
      * @return string
      */
     function column_icon($item){
-        return '<img src="'.$this->images_folder. $item['icon'] .'" width="64" height="64" alt="'. $item['name'] .'">';
+        return '<img src="' . esc_url( $this->images_folder . $item['icon'] ) . '" width="64" height="64" alt="' . esc_attr( $item['name'] ) . '">';
     }
 
     /**
@@ -119,7 +119,7 @@ class CL_Addons_List_Table extends WP_List_Table {
      * @return string
      */
     function column_add_on($item){
-        return '<strong class="cl-add-ons-name">'. $item['name'] . '</strong><br/>'. $item['description'];
+        return '<strong class="cl-add-ons-name">' . esc_html( $item['name'] ) . '</strong><br/>' . esc_html( $item['description'] );
     }
 
     /**
@@ -149,7 +149,7 @@ class CL_Addons_List_Table extends WP_List_Table {
                 }
             }
             else{
-                $action = '<a target="_blank" class="right button button-secondary" href="'. $item['download_url'] .'">' . __('Download', $this->text_domain) . '</a>'; //phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain
+                $action = '<a target="_blank" class="right button button-secondary" href="' . esc_url( $item['download_url'] ) . '">' . __('Download', $this->text_domain) . '</a>'; //phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain
             }
 
 
@@ -194,7 +194,7 @@ class CL_Addons_List_Table extends WP_List_Table {
         }
 
 
-        $documentation = '<a target="_blank" class="right" href="'. $item['doc_url'] . '">' . __( 'Documentation', $this->text_domain ) . '</a>'; //phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain
+        $documentation = '<a target="_blank" class="right" href="' . esc_url( $item['doc_url'] ) . '">' . __( 'Documentation', $this->text_domain ) . '</a>'; //phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralDomain
 
         return $action . $documentation;
     }

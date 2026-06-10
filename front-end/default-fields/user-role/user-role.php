@@ -121,11 +121,11 @@ function wppb_user_role_handler( $output, $form_location, $field, $user_id, $fie
         else{
             if( !empty( $input_value_multiple ) ){
                 foreach( $input_value_multiple as $input_value_multi ){
-                    $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="'.$input_value_multi.'">';
+                    $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="' . esc_attr( $input_value_multi ) . '">';
                 }
             }
             else {
-                $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="' . $input_value . '">';
+                $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="' . esc_attr( $input_value ) . '">';
             }
         }
 

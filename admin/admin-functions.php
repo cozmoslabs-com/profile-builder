@@ -229,73 +229,34 @@ function wppb_plugin_row_meta( $links, $file ) {
     return (array) $links;
 }
 
-function wppb_sync_api( $action ) {
+/**
+ * Send deactivation feedback from the plugins screen modal.
+ *
+ * @param array $reason_data Sanitized reason payload from the popup form.
+ */
+function wppb_send_deactivation_feedback( $reason_data ) {
 
-    $base = 'https://usagetracker.cozmoslabs.com';
-    $url  = $base . '/syncPlugin';
+    if ( ! is_array( $reason_data ) || empty( $reason_data['reason'] ) )
+        return;
+
     $body = array(
         'unique_identifier' => hash( 'sha256', home_url( '', 'https' ) ),
         'product'           => 'wppb',
-        'action'            => $action,
+        'action'            => 'end',
+        'reason'            => sanitize_key( $reason_data['reason'] ),
     );
-
-    $body = apply_filters( 'wppb_sync_api_body', $body, $action );
-
-    wp_remote_post( $url, array(
-        'body'     => $body,
-        'timeout'  => 3,
-        'blocking' => false,
-    ) );
-
-}
-
-function wppb_handle_plugin_activation(){
-
-    $general_settings = get_option( 'wppb_general_settings' );
-
-    if( empty( $general_settings ) || !is_array( $general_settings ) || empty( $general_settings['extraFieldsLayout'] ) ){
-        wppb_sync_api( 'start' );
-    }
-
-}
-
-function wppb_handle_plugin_deactivation(){
-    wppb_sync_api( 'end' );
-}
-
-/**
- * Add the stored deactivation reason to the sync payload
- *
- * @param array  $body   Sync request body
- * @param string $action Sync action slug
- *
- * @return array
- */
-function wppb_add_deactivation_reason_to_sync_body( $body, $action ) {
-
-    if ( $action !== 'end' )
-        return $body;
-
-    $reason_data = get_option( 'wppb_deactivation_reason', array() );
-
-    if ( ! is_array( $reason_data ) )
-        $reason_data = array();
-
-    if ( empty( $reason_data['reason'] ) )
-        $reason_data['reason'] = 'skip';
-
-    $body['reason'] = sanitize_key( $reason_data['reason'] );
 
     $reason_key = $reason_data['reason'] . '_reason';
 
     if ( ! empty( $reason_data[ $reason_key ] ) )
         $body['extra_metadata'] = sanitize_text_field( $reason_data[ $reason_key ] );
 
-    delete_option( 'wppb_deactivation_reason' );
-
-    return $body;
+    wp_remote_post( 'https://usagetracker.cozmoslabs.com/syncPlugin', array(
+        'body'     => $body,
+        'timeout'  => 3,
+        'blocking' => false,
+    ) );
 }
-add_filter( 'wppb_sync_api_body', 'wppb_add_deactivation_reason_to_sync_body', 10, 2 );
 
 /**
  * Store the deactivation reason selected in the popup
@@ -339,7 +300,7 @@ function wppb_store_deactivation_reason() {
     if ( $reason === 'other' && ! empty( $_POST['other_reason'] ) )
         $reason_data['other_reason'] = sanitize_text_field( wp_unslash( $_POST['other_reason'] ) );
 
-    update_option( 'wppb_deactivation_reason', $reason_data, false );
+    wppb_send_deactivation_feedback( $reason_data );
 
     wp_send_json_success();
 }
