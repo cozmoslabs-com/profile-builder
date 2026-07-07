@@ -208,13 +208,23 @@ function validate_simple_upload(){
             } else {
                 var fieldName = uploadInputName.replace(/^(simple_upload_)/,'').replace(/-/g,'_');
                 var formData = new FormData();
-                if (uploadButton.closest('.wppb-upload').length > 0) {
-                    formData.append('action', 'wppb_ajax_simple_upload');
-                    formData.append(fieldName, jQuery(e.target).prop('files')[0]);
+                /* Route to the correct AJAX action based on the field type. Rely on the
+                   data-field_type attribute (set for both Upload and Avatar fields) so the
+                   routing is correct regardless of layout. Fall back to the container check
+                   for older markup that doesn't expose the attribute. The back-end user page
+                   doesn't wrap fields in .wppb-upload, so the container check alone would
+                   wrongly send Upload fields to the avatar handler. */
+                var fieldType = uploadButton.data('field_type');
+                var uploadAction;
+                if ( fieldType === 'Upload' ) {
+                    uploadAction = 'wppb_ajax_simple_upload';
+                } else if ( fieldType === 'Avatar' ) {
+                    uploadAction = 'wppb_ajax_simple_avatar';
                 } else {
-                    formData.append('action', 'wppb_ajax_simple_avatar');
-                    formData.append(fieldName, jQuery(e.target).prop('files')[0]);
+                    uploadAction = uploadButton.closest('.wppb-upload').length > 0 ? 'wppb_ajax_simple_upload' : 'wppb_ajax_simple_avatar';
                 }
+                formData.append('action', uploadAction);
+                formData.append(fieldName, jQuery(e.target).prop('files')[0]);
                 formData.append('nonce', wppb_upload_script_vars.nonce);
                 formData.append('name', fieldName);
 

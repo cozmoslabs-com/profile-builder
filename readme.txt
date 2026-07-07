@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.2
+Stable tag: 3.16.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -158,6 +158,11 @@ For more information please visit [cozmoslabs.com](https://www.cozmoslabs.com/do
 NOTE:
 This plugin adds/removes user fields in the front-end. Both default and extra profile fields will be visible in the back-end as well.
 
+= External Services =
+If you opt in, the plugin sends limited diagnostic and configuration data to Cozmoslabs.com to help improve the product.
+
+Terms & Conditions: https://www.cozmoslabs.com/terms-conditions/
+Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 
 == Installation ==
 
@@ -207,9 +212,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.2 =
-* Fix: Security issue regarding unauthenticated media library attachment creation. Thanks to Nir Yehoshua and the Cipher Security Labs team
-* Fix: An error that could be thrown on the Edit Profile page from the 2FA functionality
-* Fix: Undefined function error coming from the Avatar field when Email Confirmation was enabled
+= 3.16.3 =
+* Fix: Security hardening
+* Fix: Simple Upload field failing on the back-end edit user screen
+* Fix: Invalid markup in login form submit button
+* Fix: Some changes to reCaptcha and Turnstile validation
+* Misc: Add a filter to force load the block theme stylesheets
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

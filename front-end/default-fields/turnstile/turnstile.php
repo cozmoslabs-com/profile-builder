@@ -199,6 +199,13 @@ function wppb_turnstile_check_answer ( $privkey, $remoteip, $response ) {
 
 /* the function to validate the Turnstile response with the API */
 function wppb_validate_turnstile_response( $publickey, $privatekey ){
+    /* If the Turnstile keys are not configured the widget cannot work for anyone, so do not enforce -
+    otherwise an incomplete setup would lock every visitor out of the form. These keys are admin-side
+    configuration, not attacker controlled, so this cannot be used to bypass a properly configured Turnstile. */
+    if ( empty( $publickey ) || empty( $privatekey ) ) {
+        return true;
+    }
+
     if (isset($_POST['cf-turnstile-response'])){
         $turnstile_response_field = sanitize_textarea_field( $_POST['cf-turnstile-response'] );
     } else {
@@ -289,7 +296,10 @@ function wppb_check_turnstile_value( $message, $field, $request_data, $form_loca
             if (!isset($wppb_turnstile_response)){
                 $wppb_turnstile_response = wppb_validate_turnstile_response( trim( $field['turnstile-site-key'] ), trim( $field['turnstile-secret-key'] ) );
             }
-            if ( (  $wppb_turnstile_response == false ) && ( $field['required'] == 'Yes' ) ){
+            /* Turnstile must fail closed: whenever it is configured to display on this form it has to be
+            verified, regardless of the "required" toggle. A missing/empty token makes
+            wppb_validate_turnstile_response() return false, so bots that omit cf-turnstile-response are blocked. */
+            if ( $wppb_turnstile_response == false ){
                 return __('Cloudflare Turnstile could not be verified. Please try again.', 'profile-builder');
             }
         }
@@ -554,8 +564,10 @@ function wppb_verify_turnstile_default_wp_recover_password(){
 
         $turnstile_error_message = esc_html__('Cloudflare Turnstile could not be verified. Please try again.','profile-builder');
 
-        // If Turnstile not entered or incorrect Turnstile answer
-        if ( isset( $_REQUEST['cf-turnstile-response'] ) && ( ( "" ===  $_REQUEST['cf-turnstile-response'] )  || ( $wppb_turnstile_response == false ) ) ) {
+        // Fail closed, but only where Turnstile is configured for this form. Gate on turnstile-wp-forms (as the
+        // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
+        // without blocking default WP password recovery on sites that only use Turnstile on PB forms.
+        if ( isset( $field['turnstile-wp-forms'] ) && ( strpos( $field['turnstile-wp-forms'], 'default_wp_recover_password' ) !== false ) && ( $wppb_turnstile_response == false ) ) {
             wp_die( esc_html( $turnstile_error_message ) . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
         }
     }
@@ -599,8 +611,10 @@ function wppb_verify_turnstile_default_wp_register( $errors ){
 
         $turnstile_error_message = esc_html__('Cloudflare Turnstile could not be verified. Please try again.','profile-builder');
 
-        // If Turnstile not entered or incorrect Turnstile answer
-        if ( isset( $_REQUEST['cf-turnstile-response'] ) && ( ( "" ===  $_REQUEST['cf-turnstile-response'] )  || ( $wppb_turnstile_response == false ) ) ) {
+        // Fail closed, but only where Turnstile is configured for this form. Gate on turnstile-wp-forms (as the
+        // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
+        // without blocking default WP registration on sites that only use Turnstile on PB forms.
+        if ( isset( $field['turnstile-wp-forms'] ) && ( strpos( $field['turnstile-wp-forms'], 'default_wp_register' ) !== false ) && ( $wppb_turnstile_response == false ) ) {
             $errors->add( 'wppb_turnstile_error', $turnstile_error_message );
         }
     }

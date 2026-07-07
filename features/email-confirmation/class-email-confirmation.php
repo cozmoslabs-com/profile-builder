@@ -248,7 +248,14 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
     function wppb_process_bulk_action() {
 		global $current_user;
 		global $wpdb;
-		
+
+		// Only verify and process when a bulk action is actually being submitted through the list-table form.
+		if ( false === $this->current_action() )
+			return;
+
+		// CSRF protection: the bulk-action form rendered by display() already outputs a 'bulk-{plural}' nonce, verify it here.
+		check_admin_referer( 'bulk-' . $this->_args['plural'] );
+
 		if ( current_user_can( apply_filters( 'wppb_email_confirmation_user_capability', 'manage_options' ) ) ){
 			if( 'delete' === $this->current_action() ) {
 			    if( !empty( $_GET['user'] ) && is_array( $_GET['user'] ) ) {

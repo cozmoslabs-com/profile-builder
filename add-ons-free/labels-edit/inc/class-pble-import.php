@@ -31,6 +31,13 @@ class WPPB_LE_Import {
 			return;
 		}
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$this->import_messages[$this->j]['message'] = __( 'You are not allowed to do this!', 'profile-builder' );
+			$this->import_messages[$this->j]['type'] = 'error';
+			$this->j++;
+			return;
+		}
+
 		/* decode and put json to array */
 		$imported_array_from_json = json_decode( $json_content, true );
 		if ( $imported_array_from_json !== NULL ) {
@@ -49,7 +56,7 @@ class WPPB_LE_Import {
 
 	/* upload json file function */
 	public function upload_json_file() {
-		if( isset( $_POST['pble-import'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_import_labels' ) ) {
+		if( isset( $_POST['pble-import'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_import_labels' ) && current_user_can( 'manage_options' ) ) {
 			if( ! empty( $_FILES['pble-upload']['tmp_name'] ) ) {
 				$json_content = file_get_contents( $_FILES['pble-upload']['tmp_name'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				$this->json_to_db( $json_content, sanitize_text_field( $_POST['wppb_nonce'] ) );

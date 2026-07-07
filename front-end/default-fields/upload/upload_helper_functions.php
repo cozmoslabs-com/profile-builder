@@ -322,7 +322,7 @@ function wppb_default_fields_make_upload_button( $field, $input_value, $extra_at
 
     if ( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] == 'yes' ){
         //If selected accordingly in form fields, generate a simple upload button
-        $upload_button .= '<input type="file" id="upload_' . esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug($field['meta-name'], $field)) . '_button" class="wppb_simple_upload" name="simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'"';
+        $upload_button .= '<input type="file" id="upload_' . esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug($field['meta-name'], $field)) . '_button" class="wppb_simple_upload" data-field_type="'. esc_attr( $field['field'] ) .'" name="simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'"';
         $upload_button .=  $hide_upload_button . '>';
         $upload_button .= '<p id="p_simple_upload_'. esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug($field['meta-name'], $field)) .'"></p>';
         $limit = apply_filters( 'wppb_server_max_upload_size_byte_constant', wppb_return_bytes( ini_get( 'upload_max_filesize' ) ) );
@@ -356,7 +356,7 @@ function wppb_default_fields_make_upload_button( $field, $input_value, $extra_at
                 }
             }
         }
-        $upload_button .= '<input id="allowed_extensions_simple_upload_'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="allowed_extensions_simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. $allowed_extensions .'"/>';
+        $upload_button .= '<input id="allowed_extensions_simple_upload_'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="allowed_extensions_simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. esc_attr( $allowed_extensions ) .'"/>';
         $upload_button .= '<input id="size_limit_simple_upload_'. esc_attr( $upload_input_id ) .'" type="hidden" name="size_limit_simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. esc_attr( $limit ) .'"/>';
         $allowed_mime_types = get_allowed_mime_types();
         $allowed_types = '';
@@ -390,7 +390,7 @@ function wppb_default_fields_make_upload_button( $field, $input_value, $extra_at
         $upload_button .= '>' . apply_filters( 'wppb_upload_button_select_label', __( 'Upload ', 'profile-builder' ) ) . '</a>';
     }
 
-    $upload_button .= '<input id="'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. $input_value .'"/>';
+    $upload_button .= '<input id="'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'" value="'. esc_attr( wp_unslash( $input_value ) ) .'"/>';
     return $upload_button;
 }
 
@@ -459,8 +459,16 @@ function wppb_register_attachment_ownership_helpers() {
                         if ( $is_admin ) {
                             return true;
                         }
-                        // Only update if the attachment belongs to the user or has no author (post_author = 0)
-                        if ( $attachment->post_author == $user_id || $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                        // The attachment is claimable when it already belongs to the target
+                        // user, or to the user performing the request. An author-less
+                        // attachment (post_author == 0) is only claimable by an
+                        // unauthenticated request (e.g. a visitor registering, whose upload
+                        // has no author yet). This prevents an authenticated user from
+                        // claiming (IDOR) an author-0 attachment created by someone else's
+                        // anonymous/nopriv upload.
+                        if ( $attachment->post_author == $user_id
+                            || ( $current_user_id && $attachment->post_author == $current_user_id )
+                            || ( 0 === (int) $current_user_id && 0 === (int) $attachment->post_author ) ) {
                             return true;
                         }
                     } else {
@@ -468,8 +476,11 @@ function wppb_register_attachment_ownership_helpers() {
                         if ( $is_admin ) {
                             return true;
                         }
-                        // If no user ID is provided, check if the attachment has no author
-                        if ( $attachment->post_author == $current_user_id || $attachment->post_author == 0 ) {
+                        // Without an explicit target user, an authenticated user may only
+                        // reference an attachment they already own; an author-less
+                        // attachment is only claimable by an unauthenticated request.
+                        if ( ( $current_user_id && $attachment->post_author == $current_user_id )
+                            || ( 0 === (int) $current_user_id && 0 === (int) $attachment->post_author ) ) {
                             return true;
                         }
                     }

@@ -402,14 +402,13 @@ function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response, $score_th
     if ( $remoteip == null || $remoteip == '' )
         echo '<span class="error">'. esc_html__("For security reasons, you must pass the remote ip to reCAPTCHA!", "profile-builder") .'</span><br/><br/>';
 
-    // Discard empty solution submissions
+    // Discard empty solution submissions. Fail closed: a missing token is never valid.
+    // The previous wppb_recaptcha_load_error nonce "escape hatch" was removed - that nonce is printed in the
+    // page HTML, so a bot could replay it to skip verification. A genuinely unconfigured reCAPTCHA (empty keys)
+    // is handled upstream in wppb_validate_captcha_response(), so this does not lock users out on misconfig.
     if ($response == null || strlen($response) == 0) {
         $recaptchaResponse = new wppb_ReCaptchaResponse();
-
-        if( isset( $_POST['wppb_recaptcha_load_error'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_recaptcha_load_error'] ), 'wppb_recaptcha_init_error' ) )
-            $recaptchaResponse->is_valid = true;
-        else
-            $recaptchaResponse->is_valid = false;
+        $recaptchaResponse->is_valid = false;
 
         return $recaptchaResponse;
     }
@@ -444,6 +443,13 @@ function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response, $score_th
 
 /* the function to display error message on the registration page */
 function wppb_validate_captcha_response( $publickey, $privatekey, $score_threshold = 0.5 ){
+    /* If the reCAPTCHA keys are not configured the widget cannot work for anyone, so do not enforce -
+    otherwise an incomplete setup would lock every visitor out of the form. These keys are admin-side
+    configuration, not attacker controlled, so this cannot be used to bypass a properly configured reCAPTCHA. */
+    if ( empty( $publickey ) || empty( $privatekey ) ) {
+        return true;
+    }
+
     if (isset($_POST['g-recaptcha-response'])){
         $recaptcha_response_field = sanitize_textarea_field( $_POST['g-recaptcha-response'] );
     } else {
@@ -543,7 +549,10 @@ function wppb_check_recaptcha_value( $message, $field, $request_data, $form_loca
             if (!isset($wppb_recaptcha_response)){
                 $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
             }
-            if ( (  $wppb_recaptcha_response == false ) && ( $field['required'] == 'Yes' ) ){
+            /* reCAPTCHA must fail closed: whenever it is configured to display on this form it has to be
+            verified, regardless of the "required" toggle. A missing/empty token makes
+            wppb_validate_captcha_response() return false, so bots that omit g-recaptcha-response are blocked. */
+            if ( $wppb_recaptcha_response == false ){
                 return wppb_required_field_error($field["field-title"]);
             }
         }
@@ -611,7 +620,7 @@ function wppb_recaptcha_change_recover_password_message_no($messageNo) {
 
                 if ( isset($field['captcha-pb-forms']) && (strpos($field['captcha-pb-forms'], 'pb_recover_password') !== false) ) {
 
-                    if ( ($wppb_recaptcha_response == false ) && ( $field['required'] == 'Yes' ) )
+                    if ( $wppb_recaptcha_response == false )
                         $messageNo = '';
                 }
             }
@@ -838,8 +847,10 @@ function wppb_verify_recaptcha_default_wp_recover_password(){
             $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
         }
 
-    // If reCAPTCHA not entered or incorrect reCAPTCHA answer
-        if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
+    // Fail closed, but only where reCAPTCHA is configured for this form. Gate on captcha-wp-forms (as the
+    // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
+    // without blocking default WP password recovery on sites that only use reCAPTCHA on PB forms.
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_recover_password' ) !== false ) && ( $wppb_recaptcha_response == false ) ) {
             wp_die( esc_html( $recaptcha_error_message ) . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
         }
     }
@@ -892,8 +903,10 @@ function wppb_verify_recaptcha_default_wp_register( $errors ){
             $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
         }
 
-        // If reCAPTCHA not entered or incorrect reCAPTCHA answer
-        if ( isset( $_REQUEST['g-recaptcha-response'] ) && ( ( "" ===  $_REQUEST['g-recaptcha-response'] )  || ( $wppb_recaptcha_response == false ) ) ) {
+        // Fail closed, but only where reCAPTCHA is configured for this form. Gate on captcha-wp-forms (as the
+        // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
+        // without blocking default WP registration on sites that only use reCAPTCHA on PB forms.
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_register' ) !== false ) && ( $wppb_recaptcha_response == false ) ) {
             $errors->add( 'wppb_recaptcha_error', $recaptcha_error_message );
         }
     }

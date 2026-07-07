@@ -444,6 +444,29 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
         }
 
         /**
+         * Safely normalizes a remote payload field without ever unserializing it.
+         *
+         * The store responds with JSON, so `sections`, `banners` and `icons` are
+         * already decoded into objects/arrays. Older endpoints may still deliver them
+         * as a JSON-encoded string, which we decode here. Remote data is never passed
+         * through `unserialize()`/`maybe_unserialize()`, avoiding PHP object injection.
+         *
+         * @param mixed $data
+         * @return mixed
+         */
+        private function maybe_json_decode( $data ) {
+            if ( is_string( $data ) ) {
+                $trimmed = trim( $data );
+                $decoded = json_decode( $trimmed );
+                if ( null !== $decoded || 'null' === $trimmed ) {
+                    return $decoded;
+                }
+            }
+
+            return $data;
+        }
+
+        /**
          * Convert some objects to arrays when injecting data into the update API
          *
          * Some data like sections, banners, and icons are expected to be an associative array, however due to the JSON
@@ -602,17 +625,17 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
             $request = json_decode( wp_remote_retrieve_body( $request ) );
 
             if ( $request && isset( $request->sections ) ) {
-                $request->sections = maybe_unserialize( $request->sections );
+                $request->sections = $this->maybe_json_decode( $request->sections );
             } else {
                 $request = false;
             }
 
             if ( $request && isset( $request->banners ) ) {
-                $request->banners = maybe_unserialize( $request->banners );
+                $request->banners = $this->maybe_json_decode( $request->banners );
             }
 
             if ( $request && isset( $request->icons ) ) {
-                $request->icons = maybe_unserialize( $request->icons );
+                $request->icons = $this->maybe_json_decode( $request->icons );
             }
 
             if ( ! empty( $request->sections ) ) {
@@ -732,6 +755,8 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
     }
 }
 
+if ( ! class_exists( 'WPPB_Plugin_Updater' ) ) {
+
 class WPPB_Plugin_Updater {
 
     private $store_url = "https://www.cozmoslabs.com";
@@ -824,7 +849,7 @@ class WPPB_Plugin_Updater {
             );
 
             // Call the custom API.
-            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => true, 'body' => $api_params ) );
 
             // make sure the response came back okay
             if ( !is_wp_error($response) ) {
@@ -908,7 +933,7 @@ class WPPB_Plugin_Updater {
             );
 
             // Call the custom API.
-            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => true, 'body' => $api_params ) );
 
             // make sure the response came back okay
             if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
@@ -1007,7 +1032,7 @@ class WPPB_Plugin_Updater {
         );
 
         // Call the custom API.
-        $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+        $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => true, 'body' => $api_params ) );
 
         if ( !is_wp_error($response) ) {
 
@@ -1053,7 +1078,7 @@ class WPPB_Plugin_Updater {
             );
 
             // Call the custom API.
-            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+            $response = wp_remote_post( $this->store_url, array( 'timeout' => 15, 'sslverify' => true, 'body' => $api_params ) );
 
             // make sure the response came back okay
             if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
@@ -1093,3 +1118,64 @@ class WPPB_Plugin_Updater {
 }
 
 new WPPB_Plugin_Updater();
+
+}
+
+if ( defined( 'WPPB_PAID_EDD_ITEM_ID' ) && defined( 'WPPB_PAID_PLUGIN_FILE' ) && function_exists( 'wppb_paid_plugin_owns_updates' ) && wppb_paid_plugin_owns_updates() ) {
+    add_action( 'plugins_loaded', 'wppb_paid_plugin_init_updater', 20 );
+}
+
+if ( ! function_exists( 'wppb_paid_plugin_init_updater' ) ) {
+    function wppb_paid_plugin_init_updater() {
+
+        if ( ! function_exists( 'wppb_paid_plugin_owns_updates' ) || ! wppb_paid_plugin_owns_updates() )
+            return;
+
+        if( ! function_exists( 'get_plugin_data' ) )
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+        $plugin_data    = get_plugin_data( WPPB_PAID_PLUGIN_FILE, false, false );
+        $plugin_version = ( $plugin_data && $plugin_data['Version'] ) ? $plugin_data['Version'] : '3.7.6';
+
+        new WPPB_EDD_SL_Plugin_Updater( 'https://cozmoslabs.com', WPPB_PAID_PLUGIN_FILE, array(
+            'version'   => $plugin_version,
+            'license'   => wppb_get_serial_number(),
+            'item_name' => PROFILE_BUILDER,
+            'item_id'   => WPPB_PAID_EDD_ITEM_ID,
+            'author'    => 'Cozmoslabs',
+            'beta'      => false,
+        ) );
+
+        $update_message_hook = 'in_plugin_update_message-' . plugin_basename( WPPB_PAID_PLUGIN_FILE );
+
+        remove_action( $update_message_hook, 'wppb_plugin_update_message', 10 );
+
+        if( ! has_action( $update_message_hook, 'wppb_paid_plugin_update_message' ) )
+            add_action( $update_message_hook, 'wppb_paid_plugin_update_message', 10, 2 );
+    }
+}
+
+if ( ! function_exists( 'wppb_paid_plugin_update_message' ) ) {
+    function wppb_paid_plugin_update_message( $plugin_data, $new_data ) {
+
+        if( ! function_exists( 'wppb_get_serial_number' ) )
+            return;
+
+        $wppb_profile_builder_serial        = wppb_get_serial_number();
+        $wppb_profile_builder_serial_status = wppb_get_serial_number_status();
+
+        if( empty( $wppb_profile_builder_serial ) ){
+
+            echo '<br />' . wp_kses_post( sprintf( __('To enable updates, please enter your license key on the %sSettings%s page. If you don\'t have a license key, you can %sbuy one now%s.', 'profile-builder' ), '<a href="'.esc_url( admin_url('admin.php?page=profile-builder-general-settings') ).'">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
+
+        } else if( $wppb_profile_builder_serial_status == 'expired' ) {
+
+            echo '<br />' . wp_kses_post( sprintf( __('To enable updates, your licence needs to be renewed. Please go to the <a href="%s">Cozmoslabs Account</a> page and login to renew.', 'profile-builder' ), 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro' ) );
+
+        } else if ( $wppb_profile_builder_serial_status != 'valid' ) {
+
+            echo '<br />' . wp_kses_post( sprintf( __('To enable updates, you need an active license. %1$sRenew%2$s or %3$spurchase a new license%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro" target="_blank">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
+
+        }
+    }
+}

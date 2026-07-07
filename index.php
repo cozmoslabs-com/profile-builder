@@ -3,16 +3,16 @@
  * Plugin Name: Profile Builder
  * Plugin URI: https://www.cozmoslabs.com/wordpress-profile-builder/
  * Description: Login, registration and edit profile shortcodes for the front-end. Also you can choose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
- * Version: 3.16.2
+ * Version: 3.16.3
  * Author: Cozmoslabs
  * Author URI: https://www.cozmoslabs.com/
  * Text Domain: profile-builder
  * Domain Path: /translation
  * License: GPL2
  * WC requires at least: 3.0.0
- * WC tested up to: 10.8
- * Elementor tested up to: 4.1.2
- * Elementor Pro tested up to: 4.1.2
+ * WC tested up to: 10.9
+ * Elementor tested up to: 4.1.4
+ * Elementor Pro tested up to: 4.1.4
  *
  * == Copyright ==
  * Copyright 2014 Cozmoslabs (www.cozmoslabs.com)
@@ -154,9 +154,8 @@ function wppb_plugin_init() {
             new WPPB_Two_Factor_Authenticator();
         }
 
-        if (file_exists(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php')) {
-            include_once(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php');
-            include_once(WPPB_PLUGIN_DIR . '/admin/register-version.php');
+        if ( file_exists( WPPB_PLUGIN_DIR . '/admin/register-version.php' ) ) {
+            include_once( WPPB_PLUGIN_DIR . '/admin/register-version.php' );
         }
 
         if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) ) {
@@ -370,9 +369,9 @@ function wppb_plugin_init() {
          * Add explanatory message on the plugins page when updates are not available
          *
          */
-        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists(WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php') ) {
+        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && ! wppb_paid_plugin_owns_updates() && file_exists( WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php' ) ) {
 
-            if ( class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
+            if ( class_exists( 'WPPB_EDD_SL_Plugin_Updater' ) ) {
 
                 $serial = wppb_get_serial_number();
 
@@ -405,27 +404,33 @@ function wppb_plugin_init() {
 
             }
 
-            function wppb_plugin_update_message( $plugin_data, $new_data ) {
+            if ( ! function_exists( 'wppb_plugin_update_message' ) ) {
+                function wppb_plugin_update_message( $plugin_data, $new_data ) {
 
-                $wppb_profile_builder_serial        = wppb_get_serial_number();
-                $wppb_profile_builder_serial_status = wppb_get_serial_number_status();
+                    $wppb_profile_builder_serial        = wppb_get_serial_number();
+                    $wppb_profile_builder_serial_status = wppb_get_serial_number_status();
 
-                if( empty( $wppb_profile_builder_serial ) ){
+                    if( empty( $wppb_profile_builder_serial ) ){
 
-                    echo '<br />' . wp_kses_post( sprintf( __('To enable updates, please enter your license key on the %sSettings%s page. If you don\'t have a license key, you can %sbuy one now%s.', 'profile-builder' ), '<a href="'.esc_url( admin_url('admin.php?page=profile-builder-general-settings') ).'">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
+                        echo '<br />' . wp_kses_post( sprintf( __('To enable updates, please enter your license key on the %sSettings%s page. If you don\'t have a license key, you can %sbuy one now%s.', 'profile-builder' ), '<a href="'.esc_url( admin_url('admin.php?page=profile-builder-general-settings') ).'">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
 
-                } else if( $wppb_profile_builder_serial_status == 'expired' ) {
+                    } else if( $wppb_profile_builder_serial_status == 'expired' ) {
 
-                    echo '<br />' . wp_kses_post( sprintf( __('To enable updates, your licence needs to be renewed. Please go to the <a href="%s">Cozmoslabs Account</a> page and login to renew.', 'profile-builder' ), 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro' ) );
+                        echo '<br />' . wp_kses_post( sprintf( __('To enable updates, your licence needs to be renewed. Please go to the <a href="%s">Cozmoslabs Account</a> page and login to renew.', 'profile-builder' ), 'https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro' ) );
 
-                } else if ( $wppb_profile_builder_serial_status != 'valid' ) {
+                    } else if ( $wppb_profile_builder_serial_status != 'valid' ) {
 
-                    echo '<br />' . wp_kses_post( sprintf( __('To enable updates, you need an active license. %1$sRenew%2$s or %3$spurchase a new license%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro" target="_blank">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
+                        echo '<br />' . wp_kses_post( sprintf( __('To enable updates, you need an active license. %1$sRenew%2$s or %3$spurchase a new license%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro" target="_blank">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=license-updates-disabled-notification&utm_campaign=PBPro#pricing" target="_blank">', '</a>' ) );
+
+                    }
 
                 }
-
             }
-            add_action( 'in_plugin_update_message-' . strtolower( str_replace( ' ', '-', PROFILE_BUILDER ) ) . '/index.php', 'wppb_plugin_update_message', 10, 2 );
+
+            $update_message_hook = 'in_plugin_update_message-' . plugin_basename( WPPB_PAID_PLUGIN_DIR . '/index.php' );
+
+            if ( ! has_action( $update_message_hook, 'wppb_plugin_update_message' ) && ! function_exists( 'wppb_paid_plugin_update_message' ) )
+                add_action( $update_message_hook, 'wppb_plugin_update_message', 10, 2 );
         }
 
 
@@ -442,7 +447,7 @@ add_action( 'plugins_loaded', 'wppb_plugin_init' );
  *
  *
  */
-define('PROFILE_BUILDER_VERSION', '3.16.2' );
+define('PROFILE_BUILDER_VERSION', '3.16.3' );
 define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WPPB_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -486,6 +491,43 @@ if ( in_array( 'profile-builder-pro/index.php', $active_plugins ) || isset( $act
 
 } else
     define('PROFILE_BUILDER', 'Profile Builder Free');
+
+if ( ! function_exists( 'wppb_paid_plugin_owns_updates' ) ) {
+    function wppb_paid_plugin_owns_updates() {
+
+        if ( ! defined( 'WPPB_PAID_PLUGIN_DIR' ) || ! defined( 'WPPB_PLUGIN_DIR' ) )
+            return false;
+
+        if ( trailingslashit( WPPB_PAID_PLUGIN_DIR ) === trailingslashit( WPPB_PLUGIN_DIR ) )
+            return false;
+
+        return file_exists( WPPB_PAID_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php' );
+
+    }
+}
+
+if ( ! function_exists( 'wppb_paid_plugin_load_updater' ) ) {
+    function wppb_paid_plugin_load_updater() {
+
+        if ( class_exists( 'WPPB_Plugin_Updater', false ) )
+            return;
+
+        if ( function_exists( 'wppb_paid_plugin_owns_updates' ) && wppb_paid_plugin_owns_updates() ) {
+            $wppb_updater_file = WPPB_PAID_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php';
+        } elseif ( file_exists( WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php' ) ) {
+            $wppb_updater_file = WPPB_PLUGIN_DIR . '/update/class-edd-sl-plugin-updater.php';
+        } else {
+            return;
+        }
+
+        if ( file_exists( $wppb_updater_file ) ) {
+            require_once $wppb_updater_file;
+        }
+
+    }
+}
+
+add_action( 'plugins_loaded', 'wppb_paid_plugin_load_updater', 0 );
 
 // Needs to be loaded early for Upload fields to work correctly
 if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/add-ons.php' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/add-ons/repeater-field/repeater-module.php' ) )

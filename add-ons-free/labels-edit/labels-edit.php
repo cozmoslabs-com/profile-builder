@@ -457,7 +457,7 @@ add_action( "wck_after_adding_form_pble", "wppb_le_chosen_pble" );
 
 /* import class arguments and call */
 function wppb_le_import() {
-	if( isset( $_POST['pble-import'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_import_labels' ) ) {
+	if( isset( $_POST['pble-import'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_import_labels' ) && current_user_can( 'manage_options' ) ) {
 		if( isset( $_FILES['pble-upload'] ) ) {
 			$pble_args = array(
 				'pble'

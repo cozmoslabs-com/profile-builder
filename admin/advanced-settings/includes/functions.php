@@ -33,6 +33,10 @@ function wppb_toolbox_get_settings( $context, $setting ) {
 function wppb_cleanup_postmeta() {
     check_ajax_referer( 'wppb_cleanup_postmeta', 'nonce' );
 
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_send_json_error();
+    }
+
     global $wpdb;
 
     $query         = '';

@@ -537,6 +537,10 @@ class PB_Mustache_Generate_Admin_Box{
 		global $post_type;
 		/* addition to save as option if we are not on a post type */
 		if( !is_numeric( $post_id ) && isset( $_POST['_meta_box_nonce'] ) && @wp_verify_nonce( sanitize_text_field( $_POST['_meta_box_nonce'] ),  basename( __FILE__ ) ) ){
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return $post_id;
+			}
+
 			foreach ( $this->fields as $field ) {
 
 				if ( isset( $_POST[$field['id']] ) ) {

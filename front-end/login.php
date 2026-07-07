@@ -192,7 +192,7 @@ function wppb_login_form( $args = array() ) {
 			' . $login_form_middle . '
 			' . ( $args['remember'] ? '<p class="wppb-form-field login-remember"><input name="rememberme" type="checkbox" id="' . esc_attr( $args['id_remember'] ) . '" value="forever"' . ( $args['value_remember'] ? ' checked="checked"' : '' ) . ' /><label for="' . esc_attr( $args['id_remember'] ) . '">' . esc_html( $args['label_remember'] ) . '</label></p>' : '' ) . '
 			<p class="login-submit form-submit">
-				<input type="submit" name="wp-submit" id="' . esc_attr( $args['id_submit'] ) . '" class="'. esc_attr( apply_filters( 'wppb_login_submit_class', "button button-primary" ) ) . '" value="' . esc_attr( $args['label_log_in'] ) . '"' . apply_filters( 'wppb_login_submit_button_extra_attributes', '' ) . '" />
+				<input type="submit" name="wp-submit" id="' . esc_attr( $args['id_submit'] ) . '" class="'. esc_attr( apply_filters( 'wppb_login_submit_class', "button button-primary" ) ) . '" value="' . esc_attr( $args['label_log_in'] ) . '"' . apply_filters( 'wppb_login_submit_button_extra_attributes', '' ) . ' />
 				<input type="hidden" name="redirect_to" value="' . esc_url( $args['redirect'] ) . '" />
 			</p>
 			<input type="hidden" name="wppb_login" value="true"/>

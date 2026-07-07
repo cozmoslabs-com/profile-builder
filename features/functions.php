@@ -56,6 +56,22 @@ function wppb_icl_register_string( $context, $name, $value ) {
 }
 
 
+/**
+ * Whether Profile Builder should load style-block-themes-front-end.css.
+ */
+function wppb_should_load_block_theme_stylesheet() {
+	$is_block_theme_context = version_compare( get_bloginfo( 'version' ), '5.9', '>=' )
+		&& function_exists( 'wp_is_block_theme' )
+		&& wp_is_block_theme();
+
+	/**
+	 * Filter whether to load the block theme front-end stylesheet.
+	 *
+	 * @param bool $load_block_theme_stylesheet True when WordPress is 5.9+ and the active theme is a block theme.
+	 */
+	return (bool) apply_filters( 'wppb_load_block_theme_stylesheet', $is_block_theme_context );
+}
+
 function wppb_add_plugin_stylesheet() {
 	$wppb_generalSettings = get_option( 'wppb_general_settings' );
 
@@ -71,17 +87,13 @@ function wppb_add_plugin_stylesheet() {
 		}
 	}
 
-    // load stylesheet for the Default Form Style if the active WP Theme is a Block Theme (Block Themes were introduced in WordPress since the 5.9 release)
-    if ( version_compare( get_bloginfo( 'version' ), '5.9', '>=' ) && function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() ) {
-
+    if ( wppb_should_load_block_theme_stylesheet() ) {
         $active_design = function_exists( 'wppb_get_active_form_design' ) ? wppb_get_active_form_design() : 'form-style-default';
 
-        // load stylesheet only if the active Form Design is the Default Style
         if ( $active_design === 'form-style-default' && file_exists( WPPB_PLUGIN_DIR . 'assets/css/style-block-themes-front-end.css' ) ) {
             wp_register_style( 'wppb_block_themes_front_end_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-block-themes-front-end.css', array(), PROFILE_BUILDER_VERSION );
             wp_enqueue_style( 'wppb_block_themes_front_end_stylesheet' );
         }
-
     }
 }
 
