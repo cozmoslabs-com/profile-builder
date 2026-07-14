@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-07 06:37+0000\n"
+"POT-Creation-Date: 2026-07-14 06:55+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -334,7 +334,7 @@ msgstr ""
 msgid "Login is set to be done using the Email. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
 msgstr ""
 
-#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:966
+#: admin/admin-functions.php:38, admin/general-settings.php:11, add-ons-advanced/social-connect/index.php:983
 msgid "General Settings"
 msgstr ""
 
@@ -378,7 +378,7 @@ msgstr ""
 msgid "Add Field"
 msgstr ""
 
-#: admin/admin-functions.php:208, admin/general-settings.php:114, admin/general-settings.php:114, add-ons-advanced/social-connect/index.php:282, add-ons-free/user-profile-picture/metronet-profile-picture.php:857
+#: admin/admin-functions.php:208, admin/general-settings.php:114, admin/general-settings.php:114, add-ons-advanced/social-connect/index.php:282, add-ons-free/user-profile-picture/metronet-profile-picture.php:891
 msgid "Settings"
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "New field: International Telephone Input."
 msgstr ""
 
-#: admin/admin-functions.php:743, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1122, front-end/default-fields/recaptcha/recaptcha.php:941, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
+#: admin/admin-functions.php:743, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1139, front-end/default-fields/recaptcha/recaptcha.php:941, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -483,7 +483,7 @@ msgstr ""
 msgid "Before You Go"
 msgstr ""
 
-#: admin/admin-functions.php:890, admin/admin-functions.php:1061, features/functions.php:1785
+#: admin/admin-functions.php:890, admin/admin-functions.php:1061, features/functions.php:1864
 msgid "Profile Builder"
 msgstr ""
 
@@ -943,7 +943,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:145, front-end/class-formbuilder.php:527, front-end/login.php:656, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:145, front-end/class-formbuilder.php:528, front-end/login.php:656, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -1883,7 +1883,7 @@ msgstr ""
 msgid "Leave it empty for no restriction"
 msgstr ""
 
-#: admin/manage-fields.php:338, add-ons-advanced/woocommerce/index.php:281
+#: admin/manage-fields.php:338, add-ons-advanced/woocommerce/index.php:286
 msgid "Required"
 msgstr ""
 
@@ -2027,7 +2027,7 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-#: admin/manage-fields.php:438, add-ons/user-listing/userlisting.php:129, add-ons/user-listing/userlisting.php:552, add-ons/user-listing/userlisting.php:1099, add-ons/user-listing/userlisting.php:3047, add-ons-free/user-profile-picture/metronet-profile-picture.php:1718, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
+#: admin/manage-fields.php:438, add-ons/user-listing/userlisting.php:129, add-ons/user-listing/userlisting.php:552, add-ons/user-listing/userlisting.php:1099, add-ons/user-listing/userlisting.php:3047, add-ons-free/user-profile-picture/metronet-profile-picture.php:1760, features/email-customizer/email-customizer.php:35, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:381
 msgid "Website"
 msgstr ""
 
@@ -4191,23 +4191,23 @@ msgstr ""
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1498, add-ons-advanced/social-connect/index.php:451
+#: features/functions.php:1577, add-ons-advanced/social-connect/index.php:451
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1499
+#: features/functions.php:1578
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1698
+#: features/functions.php:1777
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1748
+#: features/functions.php:1827
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1803, features/email-confirmation/class-email-confirmation.php:99, features/email-confirmation/class-email-confirmation.php:179
+#: features/functions.php:1882, features/email-confirmation/class-email-confirmation.php:99, features/email-confirmation/class-email-confirmation.php:179
 msgid "User Meta"
 msgstr ""
 
@@ -4251,55 +4251,55 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:354, front-end/login.php:709, assets/lib/wck-api/wordpress-creation-kit.php:829
+#: front-end/class-formbuilder.php:355, front-end/login.php:709, assets/lib/wck-api/wordpress-creation-kit.php:829
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: front-end/class-formbuilder.php:467
+#: front-end/class-formbuilder.php:468
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: front-end/class-formbuilder.php:453
+#: front-end/class-formbuilder.php:454
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:417, front-end/class-formbuilder.php:424
+#: front-end/class-formbuilder.php:418, front-end/class-formbuilder.php:425
 msgid "The account %1$s has been successfully created!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:420, front-end/class-formbuilder.php:430
+#: front-end/class-formbuilder.php:421, front-end/class-formbuilder.php:431
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: front-end/class-formbuilder.php:426
+#: front-end/class-formbuilder.php:427
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:530
+#: front-end/class-formbuilder.php:531
 msgid "Update"
 msgstr ""
 
-#: front-end/class-formbuilder.php:527
+#: front-end/class-formbuilder.php:528
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:612
+#: front-end/class-formbuilder.php:613
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:872
+#: front-end/class-formbuilder.php:873
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:854
+#: front-end/class-formbuilder.php:855
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:856
+#: front-end/class-formbuilder.php:857
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:938
+#: front-end/class-formbuilder.php:939
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -4452,7 +4452,7 @@ msgstr ""
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:526
+#: front-end/recover.php:524
 msgid "The password must not be empty!"
 msgstr ""
 
@@ -4464,7 +4464,7 @@ msgstr ""
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:447, front-end/recover.php:553
+#: front-end/recover.php:447, front-end/recover.php:551
 msgid "Invalid key!"
 msgstr ""
 
@@ -4524,7 +4524,7 @@ msgstr ""
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:383, front-end/recover.php:553, features/two-factor-authentication/class-two-factor-authentication.php:811
+#: front-end/recover.php:383, front-end/recover.php:551, features/two-factor-authentication/class-two-factor-authentication.php:811
 msgid "ERROR:"
 msgstr ""
 
@@ -4564,7 +4564,7 @@ msgstr ""
 msgid "Could not create user!"
 msgstr ""
 
-#: front-end/register.php:226
+#: front-end/register.php:224
 msgid "Only an administrator can create pages with the register shortcode."
 msgstr ""
 
@@ -6515,35 +6515,35 @@ msgstr ""
 msgid "Please enter your X email!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:811
+#: add-ons-advanced/social-connect/index.php:828
 msgid "Profile Builder not active!"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:970
+#: add-ons-advanced/social-connect/index.php:987
 msgid "Application Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:974
+#: add-ons-advanced/social-connect/index.php:991
 msgid "Appearance Settings"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1044
+#: add-ons-advanced/social-connect/index.php:1061
 msgid "Unlink"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1051
+#: add-ons-advanced/social-connect/index.php:1068
 msgid "Your account is linked with:"
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1117
+#: add-ons-advanced/social-connect/index.php:1134
 msgid "The current integration with %s is deprecated and will be removed in the future. Please migrate to the new %s integration."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1119
+#: add-ons-advanced/social-connect/index.php:1136
 msgid "To switch, go to %sProfile Builder -> Social Connect%s -> Application Settings -> enable the Google App and add your new credentials."
 msgstr ""
 
-#: add-ons-advanced/social-connect/index.php:1121
+#: add-ons-advanced/social-connect/index.php:1138
 msgid "Learn More"
 msgstr ""
 
@@ -6579,91 +6579,91 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:831
+#: add-ons-advanced/woocommerce/index.php:836
 msgid "WooCommerce needs to be installed and activated for Profile Builder - WooCommerce Sync Add-on to work!"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:221, add-ons-advanced/woocommerce/index.php:240, add-ons-advanced/woocommerce/index.php:342, add-ons-advanced/woocommerce/index.php:339, add-ons-advanced/woocommerce/index.php:770
+#: add-ons-advanced/woocommerce/index.php:226, add-ons-advanced/woocommerce/index.php:245, add-ons-advanced/woocommerce/index.php:347, add-ons-advanced/woocommerce/index.php:344, add-ons-advanced/woocommerce/index.php:775
 msgid "Address line 2"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:229
+#: add-ons-advanced/woocommerce/index.php:234
 msgid "Billing Fields"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:229
+#: add-ons-advanced/woocommerce/index.php:234
 msgid "Select which WooCommerce Billing fields to display to the user ( drag and drop to re-order ) and which should be required"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:230
+#: add-ons-advanced/woocommerce/index.php:235
 msgid "Billing Fields Order"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:230
+#: add-ons-advanced/woocommerce/index.php:235
 msgid "Save the billing fields order from the billing fields checkboxes"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:231
+#: add-ons-advanced/woocommerce/index.php:236
 msgid "Billing Fields Name"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:231
+#: add-ons-advanced/woocommerce/index.php:236
 msgid "Save the billing fields names"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:248
+#: add-ons-advanced/woocommerce/index.php:253
 msgid "Shipping Fields"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:248
+#: add-ons-advanced/woocommerce/index.php:253
 msgid "Select which WooCommerce Shipping fields to display to the user ( drag and drop to re-order ) and which should be required"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:249
+#: add-ons-advanced/woocommerce/index.php:254
 msgid "Shipping Fields Order"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:249
+#: add-ons-advanced/woocommerce/index.php:254
 msgid "Save the shipping fields order from the shipping fields checkboxes"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:250
+#: add-ons-advanced/woocommerce/index.php:255
 msgid "Shipping Fields Name"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:250
+#: add-ons-advanced/woocommerce/index.php:255
 msgid "Save the shipping fields names"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:280
+#: add-ons-advanced/woocommerce/index.php:285
 msgid "Field Name"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:344
+#: add-ons-advanced/woocommerce/index.php:349
 msgid "Click to edit "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:369, front-end/default-fields/email/email.php:72
+#: add-ons-advanced/woocommerce/index.php:374, front-end/default-fields/email/email.php:72
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:627
+#: add-ons-advanced/woocommerce/index.php:632
 msgid "No options available. Please select one country."
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:646, add-ons-advanced/woocommerce/index.php:671
+#: add-ons-advanced/woocommerce/index.php:651, add-ons-advanced/woocommerce/index.php:676
 msgid "Billing "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:654, add-ons-advanced/woocommerce/index.php:678
+#: add-ons-advanced/woocommerce/index.php:659, add-ons-advanced/woocommerce/index.php:683
 msgid "Shipping "
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:714, add-ons-advanced/woocommerce/woocommerce-activator.php:28
+#: add-ons-advanced/woocommerce/index.php:719, add-ons-advanced/woocommerce/woocommerce-activator.php:28
 msgid "Billing Address"
 msgstr ""
 
-#: add-ons-advanced/woocommerce/index.php:715, add-ons-advanced/woocommerce/woocommerce-activator.php:32
+#: add-ons-advanced/woocommerce/index.php:720, add-ons-advanced/woocommerce/woocommerce-activator.php:32
 msgid "Shipping Address"
 msgstr ""
 
@@ -6897,79 +6897,83 @@ msgstr ""
 msgid "Save Options"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:404, add-ons-free/user-profile-picture/metronet-profile-picture.php:473, add-ons-free/user-profile-picture/metronet-profile-picture.php:455, add-ons-free/user-profile-picture/metronet-profile-picture.php:508, add-ons-free/user-profile-picture/metronet-profile-picture.php:897, add-ons-free/user-profile-picture/metronet-profile-picture.php:891
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:420, add-ons-free/user-profile-picture/metronet-profile-picture.php:496, add-ons-free/user-profile-picture/metronet-profile-picture.php:478, add-ons-free/user-profile-picture/metronet-profile-picture.php:542, add-ons-free/user-profile-picture/metronet-profile-picture.php:931, add-ons-free/user-profile-picture/metronet-profile-picture.php:925
 msgid "Upload or Change Profile Picture"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:406, add-ons-free/user-profile-picture/metronet-profile-picture.php:474, add-ons-free/user-profile-picture/metronet-profile-picture.php:457, add-ons-free/user-profile-picture/metronet-profile-picture.php:509, add-ons-free/user-profile-picture/metronet-profile-picture.php:899, add-ons-free/user-profile-picture/metronet-profile-picture.php:893
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:422, add-ons-free/user-profile-picture/metronet-profile-picture.php:497, add-ons-free/user-profile-picture/metronet-profile-picture.php:480, add-ons-free/user-profile-picture/metronet-profile-picture.php:543, add-ons-free/user-profile-picture/metronet-profile-picture.php:933, add-ons-free/user-profile-picture/metronet-profile-picture.php:927
 msgid "Click to Edit"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:407, add-ons-free/user-profile-picture/metronet-profile-picture.php:407, add-ons-free/user-profile-picture/metronet-profile-picture.php:458, add-ons-free/user-profile-picture/metronet-profile-picture.php:458, add-ons-free/user-profile-picture/metronet-profile-picture.php:907, add-ons-free/user-profile-picture/metronet-profile-picture.php:907
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:423, add-ons-free/user-profile-picture/metronet-profile-picture.php:423, add-ons-free/user-profile-picture/metronet-profile-picture.php:481, add-ons-free/user-profile-picture/metronet-profile-picture.php:481, add-ons-free/user-profile-picture/metronet-profile-picture.php:941, add-ons-free/user-profile-picture/metronet-profile-picture.php:941
 msgid "Remove profile image"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:753, add-ons-free/user-profile-picture/metronet-profile-picture.php:970
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:787, add-ons-free/user-profile-picture/metronet-profile-picture.php:1004
 msgid "Crop Thumbnail"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:880
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:914
 msgid "Profile Image"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:932
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:966
 msgid "Override Avatar?"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:968
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1002
 msgid "Set Profile Image"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:969
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1003
 msgid "Remove Profile Image"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1205, add-ons-free/user-profile-picture/metronet-profile-picture.php:1249, add-ons-free/user-profile-picture/metronet-profile-picture.php:1288, add-ons-free/user-profile-picture/metronet-profile-picture.php:1317, add-ons-free/user-profile-picture/metronet-profile-picture.php:1353
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1239, add-ons-free/user-profile-picture/metronet-profile-picture.php:1288, add-ons-free/user-profile-picture/metronet-profile-picture.php:1330, add-ons-free/user-profile-picture/metronet-profile-picture.php:1359, add-ons-free/user-profile-picture/metronet-profile-picture.php:1395
 msgid "User not found."
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1209, add-ons-free/user-profile-picture/metronet-profile-picture.php:1245
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1244, add-ons-free/user-profile-picture/metronet-profile-picture.php:1284
 msgid "You must be able to upload files."
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1252
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1248, add-ons-free/user-profile-picture/metronet-profile-picture.php:1294
+msgid "Invalid media."
+msgstr ""
+
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1291
 msgid "You must have a role of editor or above to set a new profile image."
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1256
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1298
 msgid "User not owner."
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1326, add-ons-free/user-profile-picture/metronet-profile-picture.php:1360
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1368, add-ons-free/user-profile-picture/metronet-profile-picture.php:1402
 msgid "Profile picture not found."
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1646
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1688
 msgid "Author"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1647, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:226
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1689, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:226
 msgid "Latest Posts"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1648
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1690
 msgid "Author Information"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1685, add-ons-free/user-profile-picture/metronet-profile-picture.php:1741, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:66, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:330, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:404
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1727, add-ons-free/user-profile-picture/metronet-profile-picture.php:1783, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:66, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:330, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:404
 msgid "View Posts"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1690, add-ons-free/user-profile-picture/metronet-profile-picture.php:1746, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:70, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:343, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:409
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1732, add-ons-free/user-profile-picture/metronet-profile-picture.php:1788, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:70, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:343, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:409
 msgid "View Website"
 msgstr ""
 
-#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1714, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:377
+#: add-ons-free/user-profile-picture/metronet-profile-picture.php:1756, add-ons-free/user-profile-picture/gutenberg/class-gutenberg.php:377
 msgid "View all posts by"
 msgstr ""
 
@@ -9317,19 +9321,19 @@ msgid ""
 ""
 msgstr ""
 
-#: add-ons-advanced/social-connect/facebook/facebook.php:41
+#: add-ons-advanced/social-connect/facebook/facebook.php:91
 msgid "Sign in with Facebook"
 msgstr ""
 
-#: add-ons-advanced/social-connect/facebook/facebook.php:35
+#: add-ons-advanced/social-connect/facebook/facebook.php:85
 msgid "Link with Facebook"
 msgstr ""
 
-#: add-ons-advanced/social-connect/google/google.php:41, add-ons-advanced/social-connect/google-gis/google-gis.php:43
+#: add-ons-advanced/social-connect/google/google.php:93, add-ons-advanced/social-connect/google-gis/google-gis.php:92
 msgid "Sign in with Google"
 msgstr ""
 
-#: add-ons-advanced/social-connect/google/google.php:35, add-ons-advanced/social-connect/google-gis/google-gis.php:37
+#: add-ons-advanced/social-connect/google/google.php:87, add-ons-advanced/social-connect/google-gis/google-gis.php:86
 msgid "Link with Google"
 msgstr ""
 

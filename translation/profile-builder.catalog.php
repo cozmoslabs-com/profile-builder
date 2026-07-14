@@ -1714,6 +1714,7 @@
 <?php __("Remove Profile Image", "profile-builder"); ?>
 <?php __("User not found.", "profile-builder"); ?>
 <?php __("You must be able to upload files.", "profile-builder"); ?>
+<?php __("Invalid media.", "profile-builder"); ?>
 <?php __("You must have a role of editor or above to set a new profile image.", "profile-builder"); ?>
 <?php __("User not owner.", "profile-builder"); ?>
 <?php __("Profile picture not found.", "profile-builder"); ?>

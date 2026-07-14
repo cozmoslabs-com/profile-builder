@@ -173,12 +173,10 @@ function wppb_activate_signup( $key ) {
 
 //function that generates the redirect message when the user should be automatically logged in
 function wppb_activate_signup_autologin_redirect_url( $user_id, $redirect_url, $redirect_delay ){
-    $nonce = wp_create_nonce( 'autologin-'. $user_id .'-'. (int)( time() / 60 ) );
-
     $redirect_url = remove_query_arg( 'activation_key' ,$redirect_url );
 
     $redirect_url = apply_filters( 'wppb_login_after_reg_redirect_url', $redirect_url );
-    $redirect_url = add_query_arg( array( 'autologin' => 'true', 'uid' => $user_id, '_wpnonce' => $nonce ), $redirect_url );
+    $redirect_url = add_query_arg( wppb_get_autologin_query_args( $user_id ), $redirect_url );
 
     return wppb_build_redirect( $redirect_url, $redirect_delay, 'after_success_email_confirmation' );
 }

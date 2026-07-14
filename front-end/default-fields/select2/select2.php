@@ -19,7 +19,7 @@ function wppb_select2_display_handler($output, $form_location, $field, $user_id,
         wp_enqueue_script('wppb_sl2_lib_js', WPPB_PLUGIN_URL . 'assets/js/select2/select2.min.js', array('jquery'));
         wp_enqueue_style('wppb_sl2_lib_css', WPPB_PLUGIN_URL . 'assets/css/select2/select2.min.css');
 
-        wp_enqueue_script( 'wppb_sl2_js', WPPB_PLUGIN_URL.'front-end/default-fields/select2/select2.js', array('jquery'), PROFILE_BUILDER_VERSION, true );
+        wp_enqueue_script( 'wppb_sl2_js', WPPB_PLUGIN_URL.'front-end/default-fields/select2/select2.js', array('jquery', 'wp-hooks'), PROFILE_BUILDER_VERSION, true );
         wp_enqueue_style( 'wppb_sl2_css', WPPB_PLUGIN_URL.'front-end/default-fields/select2/select2.css', false, PROFILE_BUILDER_VERSION );
 
 

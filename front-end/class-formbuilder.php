@@ -243,7 +243,7 @@ class Profile_Builder_Form_Creator{
     }
 
     // Function used to automatically log in a user after register if that option is set on yes in register form settings
-	function wppb_log_in_user( $redirect, $redirect_old ) {
+	function wppb_log_in_user( $redirect, $redirect_old, $user_id ) {
         if( is_user_logged_in() ) {
             return;
         }
@@ -259,16 +259,17 @@ class Profile_Builder_Form_Creator{
             return $redirect_old;
         }
 
-        /* get user id */
-        if( empty( $_POST['email'] ) )
-            return;
+        $user_id = absint( $user_id );
 
-        $user = get_user_by( 'email', trim( sanitize_email( $_POST['email'] ) ) );
+        if ( ! $user_id || is_wp_error( $user_id ) ) {
+            return $redirect_old;
+        }
 
-        if( !$user )
-            return;
+        $user = get_userdata( $user_id );
 
-        $nonce = wp_create_nonce( 'autologin-'. $user->ID .'-'. (int)( time() / 60 ) );
+        if ( ! $user ) {
+            return $redirect_old;
+        }
 
         if ( wppb_get_admin_approval_option_value() === 'yes' ) {
             if( !empty( $wppb_general_settings['adminApprovalOnUserRole'] ) ) {
@@ -297,7 +298,7 @@ class Profile_Builder_Form_Creator{
 
         $redirect = apply_filters( 'wppb_login_after_reg_redirect_url', $redirect, $this );
 
-        $redirect = add_query_arg( array( 'autologin' => 'true', 'uid' => $user->ID, '_wpnonce' => $nonce ), $redirect );
+        $redirect = add_query_arg( wppb_get_autologin_query_args( $user_id ), $redirect );
 
         // CHECK FOR REDIRECT
 		if( $this->args['redirect_activated'] == 'No' || ( empty( $this->args['redirect_delay'] ) || $this->args['redirect_delay'] == '0' ) ) {
@@ -436,7 +437,7 @@ class Profile_Builder_Form_Creator{
 
                         // using case-insensitive string comparison to allow for both 'Yes' and 'yes'
                         if( strcasecmp($this->args['login_after_register'], 'Yes') == 0 ) {
-                            $redirect = $this->wppb_log_in_user( $this->args['redirect_url'], $redirect );
+                            $redirect = $this->wppb_log_in_user( $this->args['redirect_url'], $redirect, $user_id );
                         }
 
 						echo $form_message_tpl_start . wp_kses_post( $wppb_register_success_message )  . $form_message_tpl_end . $redirect; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped above */
@@ -943,19 +944,21 @@ class Profile_Builder_Form_Creator{
 /* set action for automatic login after registration */
 add_action( 'init', 'wppb_autologin_after_registration' );
 function wppb_autologin_after_registration(){
-    if( isset( $_GET['autologin'] ) && isset( $_GET['uid'] ) && isset( $_REQUEST['_wpnonce'] ) ){
-        $uid = absint( $_GET['uid'] );
+    if( isset( $_GET['autologin'] ) && isset( $_REQUEST['_wpnonce'] ) ){
+        $nonce = sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) );
+        $uid   = wppb_get_autologin_user_id( $nonce, false );
 
         $arr_params = array( 'autologin', 'uid', '_wpnonce' );
         $current_page_url = remove_query_arg( $arr_params, wppb_curpageurl() );
 
-        if ( ! ( wp_verify_nonce( sanitize_text_field( $_REQUEST['_wpnonce'] ) , 'autologin-'.$uid.'-'.(int)( time() / 60 ) ) || wp_verify_nonce( sanitize_text_field( $_REQUEST['_wpnonce'] ) , 'autologin-'.$uid.'-'.(int)( time() / 60 - 1 ) ) ) ){
-            wp_redirect( $current_page_url );
-            exit;
-        } else {
-            wp_set_auth_cookie( $uid );
+        if ( ! $uid || ! get_userdata( $uid ) || ! wppb_verify_autologin_nonce( $nonce, $uid ) ) {
             wp_redirect( $current_page_url );
             exit;
         }
+
+        wppb_get_autologin_user_id( $nonce, true );
+        wp_set_auth_cookie( $uid );
+        wp_redirect( $current_page_url );
+        exit;
     }
 }

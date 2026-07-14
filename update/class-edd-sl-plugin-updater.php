@@ -444,23 +444,16 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
         }
 
         /**
-         * Safely normalizes a remote payload field without ever unserializing it.
+         * Normalizes a remote payload field from the store API.
          *
-         * The store responds with JSON, so `sections`, `banners` and `icons` are
-         * already decoded into objects/arrays. Older endpoints may still deliver them
-         * as a JSON-encoded string, which we decode here. Remote data is never passed
-         * through `unserialize()`/`maybe_unserialize()`, avoiding PHP object injection.
+         * `sections`, `banners`, and `icons` are delivered as PHP-serialized strings.
          *
          * @param mixed $data
          * @return mixed
          */
-        private function maybe_json_decode( $data ) {
-            if ( is_string( $data ) ) {
-                $trimmed = trim( $data );
-                $decoded = json_decode( $trimmed );
-                if ( null !== $decoded || 'null' === $trimmed ) {
-                    return $decoded;
-                }
+        private function maybe_unserialize_remote_field( $data ) {
+            if ( is_string( $data ) && is_serialized( $data ) ) {
+                return maybe_unserialize( $data );
             }
 
             return $data;
@@ -625,20 +618,20 @@ if( !class_exists('WPPB_EDD_SL_Plugin_Updater') ) {
             $request = json_decode( wp_remote_retrieve_body( $request ) );
 
             if ( $request && isset( $request->sections ) ) {
-                $request->sections = $this->maybe_json_decode( $request->sections );
+                $request->sections = $this->maybe_unserialize_remote_field( $request->sections );
             } else {
                 $request = false;
             }
 
             if ( $request && isset( $request->banners ) ) {
-                $request->banners = $this->maybe_json_decode( $request->banners );
+                $request->banners = $this->maybe_unserialize_remote_field( $request->banners );
             }
 
             if ( $request && isset( $request->icons ) ) {
-                $request->icons = $this->maybe_json_decode( $request->icons );
+                $request->icons = $this->maybe_unserialize_remote_field( $request->icons );
             }
 
-            if ( ! empty( $request->sections ) ) {
+            if ( ! empty( $request->sections ) && ( is_array( $request->sections ) || is_object( $request->sections ) ) ) {
                 foreach ( $request->sections as $key => $section ) {
                     $request->$key = (array) $section;
                 }

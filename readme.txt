@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.3
+Stable tag: 3.16.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -212,11 +212,8 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.3 =
-* Fix: Security hardening
-* Fix: Simple Upload field failing on the back-end edit user screen
-* Fix: Invalid markup in login form submit button
-* Fix: Some changes to reCaptcha and Turnstile validation
-* Misc: Add a filter to force load the block theme stylesheets
+= 3.16.4 =
+* Fix: Security issue regarding the auto-login after registration feature. Thanks to Jakub Herman and the WPScan team
+* Fix: Issue with Select2 arguments not being parsed correctly in front-end
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

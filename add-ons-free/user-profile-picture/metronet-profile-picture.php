@@ -394,6 +394,22 @@ class User_Profile_Picture {
         }
         check_ajax_referer( "mt-update-post_$user_id" );
 
+        // Ensure the current user is allowed to edit this user's profile (prevents IDOR).
+        if ( ! current_user_can( 'edit_user', $user_id ) ) {
+            die( '' );
+        }
+
+        // Ensure the profile-picture post actually belongs to this user.
+        $profile_post = get_post( $post_id );
+        if ( ! $profile_post || (int) $profile_post->post_author !== $user_id ) {
+            die( '' );
+        }
+
+        // Ensure the selected media is a real attachment.
+        if ( 'attachment' !== get_post_type( $thumbnail_id ) ) {
+            die( '' );
+        }
+
         // Save user meta.
         update_user_option( $user_id, 'metronet_post_id', $post_id );
         update_user_option( $user_id, 'metronet_image_id', $thumbnail_id ); // Added via this thread (Props Solinx) - https://wordpress.org/support/topic/storing-image-id-directly-as-user-meta-data.
@@ -444,11 +460,18 @@ class User_Profile_Picture {
         $user_id = isset( $_POST['user_id'] ) ? absint( $_POST['user_id'] ) : 0;
         $post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
         check_ajax_referer( "mt-update-post_$user_id" );
-        $post    = get_post( $post_id );
-        $user_id = 0;
-        if ( $post ) {
-            $user_id = $post->post_author;
+
+        // Ensure the current user is allowed to view this user's profile (prevents IDOR).
+        if ( ! current_user_can( 'edit_user', $user_id ) ) {
+            die( '' );
         }
+
+        // Ensure the post is this user's profile-picture post.
+        $post = get_post( $post_id );
+        if ( ! $post || 'mt_pp' !== $post->post_type || (int) $post->post_author !== $user_id ) {
+            die( '' );
+        }
+        $user_id = (int) $post->post_author;
 
         if ( has_post_thumbnail( $post_id ) ) {
             $thumb_src      = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'thumbnail', false, '' );
@@ -503,6 +526,17 @@ class User_Profile_Picture {
             die( '' );
         }
         check_ajax_referer( "mt-update-post_$user_id" );
+
+        // Ensure the current user is allowed to edit this user's profile (prevents IDOR).
+        if ( ! current_user_can( 'edit_user', $user_id ) ) {
+            die( '' );
+        }
+
+        // Ensure the post is this user's profile-picture post before removing its thumbnail.
+        $profile_post = get_post( $post_id );
+        if ( ! $profile_post || 'mt_pp' !== $profile_post->post_type || (int) $profile_post->post_author !== $user_id ) {
+            die( '' );
+        }
 
         $thumb_html  = '<a style="display:block" href="#" class="mpp_add_media default-image">';
         $thumb_html .= sprintf( '<img style="display:block" src="%s" width="150" height="150" title="%s" />', self::get_plugin_url( 'img/mystery.png' ), esc_attr__( 'Upload or Change Profile Picture', 'profile-builder' ) );
@@ -1201,12 +1235,17 @@ class User_Profile_Picture {
         $user_id  = (int) $request['user_id'];
         $media_id = (int) $request['media_id'];
 
-        if ( ! $user_id ) {
+        if ( ! $user_id || ! get_user_by( 'id', $user_id ) ) {
             return new WP_Error( 'mpp_no_user', __( 'User not found.', 'profile-builder' ), array( 'status' => 403 ) );
         }
 
-        if ( ! current_user_can( 'upload_files', $user_id ) ) {
+        // Ensure the current user is allowed to edit the targeted user (prevents IDOR).
+        if ( ! current_user_can( 'edit_user', $user_id ) || ! current_user_can( 'upload_files' ) ) {
             return new WP_Error( 'mpp_insufficient_privs', __( 'You must be able to upload files.', 'profile-builder' ), array( 'status' => 403 ) );
+        }
+
+        if ( 'attachment' !== get_post_type( $media_id ) ) {
+            return new WP_Error( 'mpp_invalid_media', __( 'Invalid media.', 'profile-builder' ), array( 'status' => 400 ) );
         }
 
         $post_id = $this->get_post_id( $user_id );
@@ -1251,7 +1290,10 @@ class User_Profile_Picture {
         if ( ! current_user_can( 'edit_others_posts', $user_id ) ) {
             return new WP_Error( 'mpp_not_privs', __( 'You must have a role of editor or above to set a new profile image.', 'profile-builder' ), array( 'status' => 403 ) );
         }
-        $is_post_owner = ( get_post( $media_id )->post_author === $user_id ) ? true : false;
+        if ( 'attachment' !== get_post_type( $media_id ) ) {
+            return new WP_Error( 'mpp_invalid_media', __( 'Invalid media.', 'profile-builder' ), array( 'status' => 400 ) );
+        }
+        $is_post_owner = ( (int) get_post( $media_id )->post_author === $user_id ) ? true : false;
         if ( ! $is_post_owner && ! current_user_can( 'edit_others_posts', $user_id ) ) {
             return new WP_Error( 'mpp_not_owner', __( 'User not owner.', 'profile-builder' ), array( 'status' => 403 ) );
         }

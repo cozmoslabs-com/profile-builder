@@ -1473,6 +1473,85 @@ function wppb_get_redirect_url( $redirect_priority, $redirect_type, $redirect_ur
 }
 
 /**
+ * Bind an autologin nonce to a user ID server-side (one-time use).
+ *
+ * @param int    $user_id User ID to log in.
+ * @param string $nonce   Autologin nonce.
+ */
+function wppb_store_autologin_user( $user_id, $nonce ) {
+	$user_id = absint( $user_id );
+
+	if ( ! $user_id || empty( $nonce ) ) {
+		return;
+	}
+
+	set_transient( 'wppb_autologin_' . md5( $nonce ), $user_id, 2 * MINUTE_IN_SECONDS );
+}
+
+/**
+ * Resolve the user bound to an autologin nonce.
+ *
+ * @param string $nonce   Autologin nonce.
+ * @param bool   $consume Whether to delete the stored mapping.
+ *
+ * @return int User ID, or 0 when not found.
+ */
+function wppb_get_autologin_user_id( $nonce, $consume = true ) {
+	if ( empty( $nonce ) ) {
+		return 0;
+	}
+
+	$key     = 'wppb_autologin_' . md5( $nonce );
+	$user_id = absint( get_transient( $key ) );
+
+	if ( $user_id && $consume ) {
+		delete_transient( $key );
+	}
+
+	return $user_id;
+}
+
+/**
+ * Build autologin query args for a user.
+ *
+ * @param int $user_id User ID to log in.
+ *
+ * @return array Query args for add_query_arg().
+ */
+function wppb_get_autologin_query_args( $user_id ) {
+	$user_id = absint( $user_id );
+	$nonce   = wp_create_nonce( 'autologin-' . $user_id . '-' . (int) ( time() / 60 ) );
+
+	wppb_store_autologin_user( $user_id, $nonce );
+
+	return array(
+		'autologin' => 'true',
+		'_wpnonce'  => $nonce,
+	);
+}
+
+/**
+ * Verify an autologin nonce for the given user ID.
+ *
+ * @param string $nonce   Autologin nonce.
+ * @param int    $user_id User ID bound to the nonce.
+ *
+ * @return bool
+ */
+function wppb_verify_autologin_nonce( $nonce, $user_id ) {
+	$user_id = absint( $user_id );
+
+	if ( ! $user_id || empty( $nonce ) ) {
+		return false;
+	}
+
+	$nonce_action = 'autologin-' . $user_id . '-';
+
+	return wp_verify_nonce( $nonce, $nonce_action . (int) ( time() / 60 ) )
+		|| wp_verify_nonce( $nonce, $nonce_action . (int) ( time() / 60 - 1 ) );
+}
+
+/**
  * Function that builds the redirect
  *
  * @param	string		$redirect_url	- redirect URL

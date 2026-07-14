@@ -500,8 +500,6 @@ function wppb_front_end_password_recovery( $atts ){
 
                 //log the user in if the option was selected
                 if ( apply_filters( 'wppb_recover_password_autologin', false ) ){
-                    $nonce = wp_create_nonce( 'autologin-'. sanitize_user( $user_info->ID ) .'-'. (int)( time() / 60 ) );
-
                     //use the after_login redirect if no after_success_password_reset redirect is set
                     if( empty( $redirect_url ) ) {
                         $redirect_url = wppb_get_redirect_url( 'normal', 'after_login', '', sanitize_user( $user_info->user_login ) );
@@ -511,7 +509,7 @@ function wppb_front_end_password_recovery( $atts ){
                         $redirect_url = remove_query_arg( 'key', wppb_curpageurl() );
                     }
 
-                    $redirect_url = add_query_arg( array( 'autologin' => 'true', 'uid' => sanitize_user( $user_info->ID ), '_wpnonce' => $nonce ), $redirect_url );
+                    $redirect_url = add_query_arg( wppb_get_autologin_query_args( $user_info->ID ), $redirect_url );
                 }
 
                 $redirect_delay = apply_filters( 'wppb_success_password_reset_redirect_delay', 3, sanitize_user( $user_info->user_login ) );
