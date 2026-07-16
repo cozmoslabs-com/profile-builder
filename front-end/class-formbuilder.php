@@ -259,9 +259,14 @@ class Profile_Builder_Form_Creator{
             return $redirect_old;
         }
 
+        // Reject failed registrations
+        if ( is_wp_error( $user_id ) ) {
+            return $redirect_old;
+        }
+
         $user_id = absint( $user_id );
 
-        if ( ! $user_id || is_wp_error( $user_id ) ) {
+        if ( ! $user_id ) {
             return $redirect_old;
         }
 
@@ -371,7 +376,10 @@ class Profile_Builder_Form_Creator{
 
                 do_action( 'wppb_after_saving_form_values',$_REQUEST, $this->args );
 
-				if( ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] ) && ( isset( $_POST['action'] ) && $_POST['action'] === $this->args['form_type'] ) ) {
+				if( $this->args['form_type'] == 'register' && is_wp_error( $user_id ) ) {
+                    // Failed registration: show the error and re-render the form so the user can retry.
+                    echo $message . wp_kses_post( apply_filters( 'wppb_general_top_error_message', '<p id="wppb_form_general_message" class="wppb-error">'. esc_html__( 'Something went wrong while creating the user account, please try again.', 'profile-builder' ) .'</p>' ) ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+                } elseif( ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] ) && ( isset( $_POST['action'] ) && $_POST['action'] === $this->args['form_type'] ) ) {
 
                     $form_message_tpl_start = apply_filters( 'wppb_form_message_tpl_start', '<p class="alert wppb-success" id="wppb_form_general_message">' );
                     $form_message_tpl_end = apply_filters( 'wppb_form_message_tpl_end', '</p>' );
@@ -668,7 +676,7 @@ class Profile_Builder_Form_Creator{
                     $user_data->remove_all_caps();
 
                     foreach ($userdata['role'] as $role) {
-                        if ($role !== 'administrator' || $role !== 'super-admin')//make sure this doesn't happen for any reason
+                        if ($role !== 'administrator' && $role !== 'super-admin')//make sure this doesn't happen for any reason
                             $user_data->add_role($role);
                     }
                 }

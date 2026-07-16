@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-14 06:55+0000\n"
+"POT-Creation-Date: 2026-07-16 08:09+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -943,7 +943,7 @@ msgstr ""
 msgid "Use these shortcodes to quickly setup and customize your membership website."
 msgstr ""
 
-#: admin/dashboard.php:145, front-end/class-formbuilder.php:528, front-end/login.php:656, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
+#: admin/dashboard.php:145, front-end/class-formbuilder.php:536, front-end/login.php:656, add-ons-advanced/custom-profile-menus/index.php:305, add-ons-advanced/custom-profile-menus/wppb-custom-profile-menus.php:77, assets/misc/elementor/widgets/class-pb-widget-rf.php:32
 msgid "Register"
 msgstr ""
 
@@ -4251,55 +4251,59 @@ msgstr ""
 msgid "Only an administrator can add new users."
 msgstr ""
 
-#: front-end/class-formbuilder.php:355, front-end/login.php:709, assets/lib/wck-api/wordpress-creation-kit.php:829
+#: front-end/class-formbuilder.php:360, front-end/login.php:709, assets/lib/wck-api/wordpress-creation-kit.php:829
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: front-end/class-formbuilder.php:468
+#: front-end/class-formbuilder.php:476
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: front-end/class-formbuilder.php:454
+#: front-end/class-formbuilder.php:462
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:418, front-end/class-formbuilder.php:425
+#: front-end/class-formbuilder.php:426, front-end/class-formbuilder.php:433
 msgid "The account %1$s has been successfully created!"
 msgstr ""
 
-#: front-end/class-formbuilder.php:421, front-end/class-formbuilder.php:431
+#: front-end/class-formbuilder.php:429, front-end/class-formbuilder.php:439
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: front-end/class-formbuilder.php:427
+#: front-end/class-formbuilder.php:435
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:531
+#: front-end/class-formbuilder.php:381
+msgid "Something went wrong while creating the user account, please try again."
+msgstr ""
+
+#: front-end/class-formbuilder.php:539
 msgid "Update"
 msgstr ""
 
-#: front-end/class-formbuilder.php:528
+#: front-end/class-formbuilder.php:536
 msgid "Add User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:613
+#: front-end/class-formbuilder.php:621
 msgid "Send these credentials via email."
 msgstr ""
 
-#: front-end/class-formbuilder.php:873
+#: front-end/class-formbuilder.php:881
 msgid "There are no other users to edit"
 msgstr ""
 
-#: front-end/class-formbuilder.php:855
+#: front-end/class-formbuilder.php:863
 msgid "User to edit:"
 msgstr ""
 
-#: front-end/class-formbuilder.php:857
+#: front-end/class-formbuilder.php:865
 msgid "Select User"
 msgstr ""
 
-#: front-end/class-formbuilder.php:939
+#: front-end/class-formbuilder.php:947
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
@@ -9521,7 +9525,7 @@ msgstr ""
 msgid "This email is already reserved to be used soon."
 msgstr ""
 
-#: front-end/default-fields/email/email.php:91, front-end/default-fields/email/email.php:85, front-end/default-fields/email/email.php:101, front-end/default-fields/email/email.php:121, front-end/default-fields/username/username.php:52, front-end/default-fields/username/username.php:71
+#: front-end/default-fields/email/email.php:91, front-end/default-fields/email/email.php:85, front-end/default-fields/email/email.php:101, front-end/default-fields/email/email.php:121, front-end/default-fields/username/username.php:52, front-end/default-fields/username/username.php:75
 msgid "Please try a different one!"
 msgstr ""
 
@@ -9625,15 +9629,19 @@ msgstr ""
 msgid "This username already exists."
 msgstr ""
 
-#: front-end/default-fields/username/username.php:55, front-end/default-fields/username/username.php:63
+#: front-end/default-fields/username/username.php:55, front-end/default-fields/username/username.php:67
 msgid "This username is invalid because it uses illegal characters."
 msgstr ""
 
-#: front-end/default-fields/username/username.php:55, front-end/default-fields/username/username.php:63
+#: front-end/default-fields/username/username.php:55, front-end/default-fields/username/username.php:67
 msgid "Please enter a valid username."
 msgstr ""
 
-#: front-end/default-fields/username/username.php:71
+#: front-end/default-fields/username/username.php:59
+msgid "This username is too long. It must be 60 characters or fewer."
+msgstr ""
+
+#: front-end/default-fields/username/username.php:75
 msgid "This username is already reserved to be used soon."
 msgstr ""
 

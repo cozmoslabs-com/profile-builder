@@ -25,7 +25,7 @@ function wppb_username_handler( $output, $form_location, $field, $user_id, $fiel
 
         $output = '
 			<label for="username">'.$item_title.$error_mark.'</label>
-			<input class="text-input default_field_username '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="username" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70, $field ) .'" type="text" id="username" value="'. esc_attr( $input_value ) .'" '.$readonly.' '. $extra_attr .'/>';
+			<input class="text-input default_field_username '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="username" maxlength="'. apply_filters( 'wppb_maximum_character_length', 60, $field ) .'" type="text" id="username" value="'. esc_attr( $input_value ) .'" '.$readonly.' '. $extra_attr .'/>';
         if( !empty( $item_description ) )
             $output .= '<span class="wppb-description-delimiter">'.$item_description.'</span>';
 	}
@@ -53,6 +53,10 @@ function wppb_check_username_value( $message, $field, $request_data, $form_locat
             }
             if (!validate_username($request_data['username'])) {
                 return __('This username is invalid because it uses illegal characters.', 'profile-builder') . '<br/>' . __('Please enter a valid username.', 'profile-builder');
+            }
+            // WordPress core rejects usernames longer than 60 characters in wp_insert_user().
+            if ( mb_strlen( sanitize_user( trim( $request_data['username'] ) ) ) > 60 ) {
+                return __( 'This username is too long. It must be 60 characters or fewer.', 'profile-builder' );
             }
         }
 

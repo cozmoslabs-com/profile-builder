@@ -551,6 +551,58 @@ function wppb_resolve_simple_upload_ajax_field( $post_name, $field_type ) {
         }
     }
 
+    // The field was not found among the top-level form fields. Repeater fields store
+    // their inner Upload fields in a separate option keyed by the repeater's
+    // meta-name, so those fields are never part of the wppb_manage_fields list scanned
+    // above. Scan the repeater groups as well, otherwise Simple Upload inside a
+    // Repeater field is silently rejected (the lookup fails and the file input clears).
+    return wppb_resolve_simple_upload_ajax_field_in_repeater( $post_name, $field_types, $all_fields );
+}
+
+/**
+ * Resolves a simple-upload AJAX `name` parameter to an Upload field nested inside a
+ * Repeater field.
+ *
+ * Repeater sub-fields are stored unindexed in an option keyed by the repeater's
+ * meta-name. On the front-end each group posts either "<slug>" (the first group) or
+ * "<slug>_N" (the Nth extra group), where <slug> is the dash-normalized wck slug of
+ * the inner field's meta-name.
+ *
+ * @param string $post_name   Sanitized value of $_POST['name'] from the AJAX request.
+ * @param array  $field_types Expected field type(s), e.g. array( 'Upload' ).
+ * @param array  $all_fields  The already-resolved top-level form fields.
+ *
+ * @return array|false Inner field definition array, or false when not found.
+ */
+function wppb_resolve_simple_upload_ajax_field_in_repeater( $post_name, $field_types, $all_fields ) {
+    foreach ( $all_fields as $form_field ) {
+        if ( empty( $form_field['field'] ) || $form_field['field'] !== 'Repeater' ) {
+            continue;
+        }
+
+        $repeater_group = get_option( $form_field['meta-name'], 'not_set' );
+        if ( $repeater_group === 'not_set' || ! is_array( $repeater_group ) ) {
+            continue;
+        }
+
+        foreach ( $repeater_group as $inner_field ) {
+            if ( empty( $inner_field['field'] ) || ! in_array( $inner_field['field'], $field_types, true ) ) {
+                continue;
+            }
+            if ( ! isset( $inner_field['simple-upload'] ) || $inner_field['simple-upload'] !== 'yes' ) {
+                continue;
+            }
+            if ( isset( $inner_field['woocommerce-checkout-field'] ) && $inner_field['woocommerce-checkout-field'] === 'Yes' ) {
+                continue;
+            }
+
+            $base_slug = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $inner_field['meta-name'], $inner_field ) );
+            if ( $base_slug === $post_name || preg_match( '/^' . preg_quote( $base_slug, '/' ) . '_[0-9]+$/', $post_name ) ) {
+                return $inner_field;
+            }
+        }
+    }
+
     return false;
 }
 

@@ -1052,6 +1052,7 @@
 <?php __('The account %1$s has been successfully created!', 'profile-builder' ); ?>
 <?php __("Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", "profile-builder"); ?>
 <?php __("Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", "profile-builder"); ?>
+<?php __("Something went wrong while creating the user account, please try again.", "profile-builder"); ?>
 <?php __("Update", "profile-builder"); ?>
 <?php __("Add User", "profile-builder"); ?>
 <?php __("Send these credentials via email.", "profile-builder"); ?>
@@ -2373,6 +2374,7 @@
 <?php __("This username already exists.", "profile-builder"); ?>
 <?php __("This username is invalid because it uses illegal characters.", "profile-builder"); ?>
 <?php __("Please enter a valid username.", "profile-builder"); ?>
+<?php __("This username is too long. It must be 60 characters or fewer.", "profile-builder"); ?>
 <?php __("This username is already reserved to be used soon.", "profile-builder"); ?>
 <?php __("Something isn't right.", "profile-builder"); ?>
 <?php __("You must enter a valid URL.", "profile-builder"); ?>
