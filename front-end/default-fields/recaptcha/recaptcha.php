@@ -139,6 +139,18 @@ function wppb_recaptcha_script_footer(){
         $invisible_parameters = '';
     }
 
+    /* For Invisible reCAPTCHA the token is only produced once the async grecaptcha script has loaded and bound the
+    submit button. Until then the submit button behaves like a plain button, so an early click would submit the form
+    with an empty g-recaptcha-response. Since validation now fails closed on a missing token, disable the submit
+    button(s) until the widget is ready and re-enable them afterwards (same approach used for reCAPTCHA v3 login). */
+    $invisible_submit_selector   = 'jQuery( "input[type=\'submit\'], button[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest( "form" ) )';
+    $invisible_disable_submit_js = '';
+    $invisible_enable_submit_js  = '';
+    if ( $field['recaptcha-type'] === 'invisible' ) {
+        $invisible_disable_submit_js = $invisible_submit_selector . '.prop( "disabled", true ).addClass( "wppb-recaptcha-not-ready" );';
+        $invisible_enable_submit_js  = $invisible_submit_selector . '.prop( "disabled", false ).removeClass( "wppb-recaptcha-not-ready" );';
+    }
+
     if( $field['recaptcha-type'] === 'v3' ) {
 
         //the section below is properly escaped or the variables contain static strings
@@ -245,6 +257,10 @@ function wppb_recaptcha_script_footer(){
         <script>
             window.wppbRecaptchaCallbackExecuted = false;
             window.wppbRecaptcha = true;
+
+            /* keep the form from being submitted with an empty token before the invisible reCAPTCHA is ready */
+            ' . $invisible_disable_submit_js . '
+
             var wppbRecaptchaCallback = function() {
                 if( !window.wppbRecaptchaCallbackExecuted ){//see if we executed this before
                     ' . $callback_conditions . '.each(function(){
@@ -256,8 +272,8 @@ function wppb_recaptcha_script_footer(){
                             return;
                         }
 
-                        var recID = grecaptcha.render( 
-                            $recaptchaElement.attr("id"), 
+                        var recID = grecaptcha.render(
+                            $recaptchaElement.attr("id"),
                             {
                                 "sitekey" : "' . $pubkey . '",
                                 "error-callback": wppbRecaptchaInitializationError,
@@ -267,13 +283,20 @@ function wppb_recaptcha_script_footer(){
 
                         $recaptchaElement.data("wppb-recaptcha-id", recID);
                     });
+
+                    /* the invisible reCAPTCHA is now bound to the submit button, so it is safe to re-enable it */
+                    ' . $invisible_enable_submit_js . '
+
                     window.wppbRecaptchaCallbackExecuted = true;//we use this to make sure we only run the callback once
                 }
             };
-    
+
             /* the callback function for when the captcha does not load propperly, maybe network problem or wrong keys  */
             function wppbRecaptchaInitializationError(){
                 window.wppbRecaptchaInitError = true;
+
+                /* the widget could not load, so re-enable the submit button and let the (fallback) submit below run */
+                ' . $invisible_enable_submit_js . '
             ';
     }
 

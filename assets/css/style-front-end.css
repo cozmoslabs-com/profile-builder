@@ -1391,6 +1391,22 @@ International Telephone Input
     margin-left: 10px;
 }
 
+/* Prevent theme/PMS button styles from affecting the intl-tel-input country selector. */
+#wppb-form-style-1-wrapper .wppb-form-field.wppb-international-telephone-input .iti button.iti__selected-country,
+#wppb-form-style-2-wrapper .wppb-form-field.wppb-international-telephone-input .iti button.iti__selected-country,
+#wppb-form-style-3-wrapper .wppb-form-field.wppb-international-telephone-input .iti button.iti__selected-country {
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+}
+
 /* Style 1/2 + placeholder labels:
    move floating label text to the right so it doesn't overlap the country flag. */
 #wppb-form-style-1-wrapper .wppb-form-field.wppb-international-telephone-input.label-inside > label:not(.wppb-epaa-switch):not(.wppb-field-visibility-settings label),
@@ -1398,11 +1414,14 @@ International Telephone Input
     padding-left: 56px;
 }
 
-/* RTL support */
-[dir="rtl"] #wppb-form-style-1-wrapper .wppb-form-field.wppb-international-telephone-input.label-inside > label:not(.wppb-epaa-switch):not(.wppb-field-visibility-settings label),
-[dir="rtl"] #wppb-form-style-2-wrapper .wppb-form-field.wppb-international-telephone-input.label-inside > label:not(.wppb-epaa-switch):not(.wppb-field-visibility-settings label) {
-    padding-left: 15px;
-    padding-right: 56px;
+/* Style 1 (Sublime) + placeholder labels:
+   Style 1's label-inside rule sets "padding: 15px 15px 0 15px !important" on inputs, which
+   overrides the inline left padding intl-tel-input adds to clear the country flag. Without a
+   matching override the typed number sits underneath the flag/dropdown. Reserve the same room
+   on the input as the floating label above (the :not() qualifiers keep specificity high enough
+   to win over the !important text-field rule). */
+#wppb-form-style-1-wrapper .wppb-form-field.wppb-international-telephone-input.label-inside input.wppb-intl-tel-input:not([type='radio']):not([type='checkbox']):not([type='submit']) {
+    padding-left: 56px !important;
 }
 
 .wppb-form-field .iti + .wppb-iti-error {

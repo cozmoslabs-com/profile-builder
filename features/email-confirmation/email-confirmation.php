@@ -299,13 +299,7 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 					if ( isset( $meta[$value['meta-name']] ) ){
                         if( !empty( $meta[$value['meta-name']] ) ) {
                             if (is_numeric($meta[$value['meta-name']])) {
-                                update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
-
-                                // use this to update the post author to the correct user
-                                wp_update_post( array(
-                                    'ID'            => trim( $meta[$value['meta-name']] ),
-                                    'post_author'   => $user_id
-                                ) );
+                                wppb_save_attachment_id( trim( $meta[$value['meta-name']] ), $value, $user_id );
                             } else {
                                 $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
 
@@ -336,13 +330,7 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 					if ( isset( $meta[$value['meta-name']] ) ) {
                         if( !empty( $meta[$value['meta-name']] ) ) {
                             if (is_numeric($meta[$value['meta-name']])) {
-                                update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
-
-                                // use this to update the post author to the correct user
-                                wp_update_post( array(
-                                    'ID'            => trim( $meta[$value['meta-name']] ),
-                                    'post_author'   => $user_id
-                                ) );
+                                wppb_save_attachment_id( trim( $meta[$value['meta-name']] ), $value, $user_id );
                             } else {
                                 $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
 

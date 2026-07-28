@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-16 08:09+0000\n"
+"POT-Creation-Date: 2026-07-28 06:32+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -475,7 +475,7 @@ msgstr ""
 msgid "New field: International Telephone Input."
 msgstr ""
 
-#: admin/admin-functions.php:743, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1139, front-end/default-fields/recaptcha/recaptcha.php:941, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
+#: admin/admin-functions.php:743, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1139, front-end/default-fields/recaptcha/recaptcha.php:964, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -4167,11 +4167,11 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1132, front-end/default-fields/recaptcha/recaptcha.php:754, front-end/default-fields/recaptcha/recaptcha.php:844, front-end/default-fields/recaptcha/recaptcha.php:900
+#: features/functions.php:1132, front-end/default-fields/recaptcha/recaptcha.php:777, front-end/default-fields/recaptcha/recaptcha.php:867, front-end/default-fields/recaptcha/recaptcha.php:923
 msgid "reCaptcha could not be verified. Please try again."
 msgstr ""
 
-#: features/functions.php:1130, front-end/default-fields/recaptcha/recaptcha.php:757, front-end/default-fields/recaptcha/recaptcha.php:847, front-end/default-fields/recaptcha/recaptcha.php:903
+#: features/functions.php:1130, front-end/default-fields/recaptcha/recaptcha.php:780, front-end/default-fields/recaptcha/recaptcha.php:870, front-end/default-fields/recaptcha/recaptcha.php:926
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
@@ -4556,7 +4556,7 @@ msgstr ""
 msgid "Your email was successfully confirmed."
 msgstr ""
 
-#: front-end/register.php:125, features/email-confirmation/email-confirmation.php:796
+#: front-end/register.php:125, features/email-confirmation/email-confirmation.php:784
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
 msgstr ""
 
@@ -4564,7 +4564,7 @@ msgstr ""
 msgid "This username is already activated!"
 msgstr ""
 
-#: front-end/register.php:83, features/email-confirmation/email-confirmation.php:583
+#: front-end/register.php:83, features/email-confirmation/email-confirmation.php:571
 msgid "Could not create user!"
 msgstr ""
 
@@ -7677,47 +7677,47 @@ msgstr ""
 msgid "There was an error performing that action!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:538
+#: features/email-confirmation/email-confirmation.php:526
 msgid "[%1$s] Activate %2$s"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:541
+#: features/email-confirmation/email-confirmation.php:529
 msgid "To activate your user, please click the following link:<br><br>%s%s%s<br><br>After you activate it you will receive yet *another email* with your login."
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:617
+#: features/email-confirmation/email-confirmation.php:605
 msgid "There was an error while trying to activate the user"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:586
+#: features/email-confirmation/email-confirmation.php:574
 msgid "That username is already activated!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:665, features/email-customizer/admin-email-customizer.php:90
+#: features/email-confirmation/email-confirmation.php:653, features/email-customizer/admin-email-customizer.php:90
 msgid "A new subscriber has (been) registered!"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:668
+#: features/email-confirmation/email-confirmation.php:656
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>Email:%3$s<br/>"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:723
+#: features/email-confirmation/email-confirmation.php:711
 msgid "[%1$s] Your new account information"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:727, features/email-customizer/email-customizer.php:597, features/email-customizer/email-customizer.php:604, features/email-customizer/email-customizer.php:617, admin/advanced-settings/includes/fields/automatically-generate-password.php:61, admin/advanced-settings/includes/fields/automatically-generate-password.php:81
+#: features/email-confirmation/email-confirmation.php:715, features/email-customizer/email-customizer.php:597, features/email-customizer/email-customizer.php:604, features/email-customizer/email-customizer.php:617, admin/advanced-settings/includes/fields/automatically-generate-password.php:61, admin/advanced-settings/includes/fields/automatically-generate-password.php:81
 msgid "Your selected password at signup"
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:735
+#: features/email-confirmation/email-confirmation.php:723
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and the password: %3$s<br/><br/>Access your account: %4$s "
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:733
+#: features/email-confirmation/email-confirmation.php:721
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is: %2$s and your password is the one that you have selected during registration.<br/><br/>Access your account: %3$s "
 msgstr ""
 
-#: features/email-confirmation/email-confirmation.php:788
+#: features/email-confirmation/email-confirmation.php:776
 msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
 msgstr ""
 
@@ -9477,7 +9477,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: front-end/default-fields/avatar/avatar.php:193, front-end/default-fields/upload/upload_helper_functions.php:116, front-end/default-fields/upload/upload_helper_functions.php:127, front-end/default-fields/upload/upload_helper_functions.php:370, front-end/extra-fields/upload/upload.php:175
+#: front-end/default-fields/avatar/avatar.php:193, front-end/default-fields/upload/upload_helper_functions.php:116, front-end/default-fields/upload/upload_helper_functions.php:127, front-end/default-fields/upload/upload_helper_functions.php:370, front-end/extra-fields/upload/upload.php:203
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
@@ -9565,19 +9565,19 @@ msgstr ""
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:403
+#: front-end/default-fields/recaptcha/recaptcha.php:426
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:521
+#: front-end/default-fields/recaptcha/recaptcha.php:544
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:854, front-end/default-fields/turnstile/turnstile.php:571
+#: front-end/default-fields/recaptcha/recaptcha.php:877, front-end/default-fields/turnstile/turnstile.php:571
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:940
+#: front-end/default-fields/recaptcha/recaptcha.php:963
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 

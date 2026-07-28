@@ -164,7 +164,7 @@ function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_
             }
         } else {
             $attachment_id = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
-            if ( isset( $attachment_id ) ) {
+            if ( isset( $attachment_id ) && wppb_verify_attachment_id( $attachment_id ) ) {
                 return absint( trim( $attachment_id ) );
             }
         }

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.5
+Stable tag: 3.16.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -212,8 +212,8 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.5 =
-* Fix: Security issue regarding authentication bypass introduced in the latest update. Thanks to Supakiad S. and the Wordfence team for the report
-* Fix: Simple upload fields not working inside Repeater fields
+= 3.16.6 =
+* Fix: Security issue regarding arbitrary attachment ownership takeover via registration with Email Confirmation. Thanks to Ananda Dhakal and the Patchstack team
+* Fix: Invisible reCaptcha issue with rejecting valid registrations
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.
