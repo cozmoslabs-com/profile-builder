@@ -192,6 +192,10 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 
 	For more information please check out the [documentation section](https://www.cozmoslabs.com/docs/profile-builder/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) from Profile Builder - front-end user registration plugin.
 
+= Where do I report security bugs found in this plugin? =
+
+    Please report security bugs found in the source code of the Profile Builder plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/405e067c-7b0f-49e7-ae3c-97037b80ad2d). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin. 
+
 == Screenshots ==
 1. User Registration Form Style preview
 2. Register Form - Front-end User Registration Page with Custom Fields
