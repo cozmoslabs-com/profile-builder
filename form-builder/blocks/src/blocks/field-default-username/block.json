@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-username",
+    "title": "Username",
+    "wppbFieldType": "Default - Username",
+    "category": "profile-builder-default",
+    "icon": "admin-users",
+    "description": "Required username field for registration.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Username"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "Yes"
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

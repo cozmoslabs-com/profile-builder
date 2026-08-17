@@ -1,0 +1,90 @@
+// Delete-confirmation modal (Existing Fields panel → Delete).
+//
+// A Gutenberg <Modal> (not a native window.confirm()) keeps the dialog
+// DOM-visible (testable by Playwright / Cypress) and can carry a cross-form
+// usage warning. The Modal frame + header/title/close are styled by Gutenberg;
+// these rules lay out the body: the message, the amber "alert" callout listing
+// the OTHER forms the field is used on, and the Cancel / Delete button row.
+// Matches the designer's alert-style mockup. Tokens: _tokens.scss.
+.wppb-fb-delete-confirm {
+
+	// Modal frame radius — the style guide specifies modals/overlays use
+	// radius/xl (12). `className` lands on `.components-modal__frame`, so pin it
+	// there (0,2,0) to beat WP core's default frame radius.
+	&.components-modal__frame {
+		border-radius: var(--wppb-fb-radius-xl);
+	}
+
+	.wppb-fb-delete-confirm__message {
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	// "Checking which other forms use this field…" — spinner + label inline.
+	.wppb-fb-delete-confirm__checking {
+		display: flex;
+		align-items: center;
+		gap: var(--wppb-fb-space-sm);
+		color: var(--wppb-fb-text-muted);
+		margin: var(--wppb-fb-space-xl) 0 0;
+
+		.components-spinner {
+			margin: 0;
+		}
+	}
+
+	// Amber alert callout — the `status/warning` tokens (warning-surface fill +
+	// a thick warning-colored left rail). Holds the bold lead-in and the divided
+	// list of other forms.
+	.wppb-fb-delete-confirm__usage {
+		background-color: var(--wppb-fb-status-warning-surface);
+		border-left: 4px solid var(--wppb-fb-status-warning);
+		border-radius: var(--wppb-fb-radius-md);
+		color: var(--wppb-fb-text-primary);
+		margin: var(--wppb-fb-space-xl) 0 0;
+		padding: var(--wppb-fb-space-xl);
+	}
+
+	.wppb-fb-delete-confirm__usage-lead {
+		margin: 0;
+		font-size: var(--wppb-fb-font-md);
+		line-height: 1.5;
+	}
+
+	// The list of OTHER forms that use this field. No bullets; each form is a
+	// row separated by a subtle divider (mockup treatment).
+	.wppb-fb-delete-confirm__forms {
+		list-style: none;
+		margin: var(--wppb-fb-space-lg) 0 0;
+		padding: 0;
+
+		li {
+			font-weight: 400;
+			// Reset WP admin's default list-item margin-bottom (~6px). Left in,
+			// it lands BELOW the border, so the gap under the divider is larger
+			// than above it and the divider reads "high". With margin 0 the
+			// symmetric 10px padding centers the divider between rows.
+			margin: 0;
+			padding: var(--wppb-fb-space-md) 0;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+			}
+		}
+	}
+
+	// Cancel / Delete button row, right-aligned.
+	.wppb-fb-delete-confirm__actions {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: var(--wppb-fb-space-lg);
+		margin-top: var(--wppb-fb-space-3xl);
+
+		// Cancel — blue text link (WP tertiary uses --wp-admin-theme-color; pin
+		// to the Figma accent so it matches the rest of the editor).
+		.components-button.is-tertiary {
+			color: var(--wppb-fb-accent);
+		}
+	}
+}

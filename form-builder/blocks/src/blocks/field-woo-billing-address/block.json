@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-woo-billing-address",
+    "title": "WooCommerce Customer Billing Address",
+    "wppbFieldType": "WooCommerce Customer Billing Address",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-advanced",
+    "icon": "cart",
+    "description": "WooCommerce billing address fields (choose which sub-fields to show, which are required, and their labels).",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Billing Address" },
+        "meta-name": { "type": "string", "default": "wppbwoo_billing" },
+        "description": { "type": "string", "default": "" },
+        "woo-billing-fields": { "type": "string", "default": "" },
+        "woo-billing-fields-required": { "type": "string", "default": "" },
+        "woo-billing-fields-sort-order": { "type": "string", "default": "" },
+        "woo-billing-fields-name": { "type": "string", "default": "" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

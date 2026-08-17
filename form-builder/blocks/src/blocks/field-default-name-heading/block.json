@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-name-heading",
+    "title": "Name (Heading)",
+    "wppbFieldType": "Default - Name (Heading)",
+    "category": "profile-builder-default",
+    "icon": "heading",
+    "description": "Default Name section heading.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Name"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

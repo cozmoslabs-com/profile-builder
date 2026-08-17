@@ -31,13 +31,15 @@ function wppb_checkbox_handler( $output, $form_location, $field, $user_id, $fiel
 			if ( array_key_exists( $field['id'], $field_check_errors ) )
 				$error_mark = '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.wppb_required_field_error($field["field-title"]).'"/>';
 
+			$question_id = 'wppb-question-' . $field['id'];
+
 			$output = '
-				<label for="'.$field['meta-name'].'">'.$item_title.$error_mark.'</label>';
+				<label id="'. esc_attr( $question_id ) .'">'.$item_title.$error_mark.'</label>';
 					$output .= '<ul class="wppb-checkboxes">';
                     $output .= '<li class="wppb-hidden"><input type="hidden" value="" name="' . $field['meta-name'] . '"></li>';
 					foreach( $checkbox_values as $key => $value ) {
                         if ( $value !== "" ) {
-                            $output .= '<li><input value="' . esc_attr(trim($value)) . '" class="custom_field_checkbox" name="' . $field['meta-name'] . '[]" id="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" type="checkbox" ' . $extra_attr . ' ';
+                            $output .= '<li><input value="' . esc_attr(trim($value)) . '" class="custom_field_checkbox" name="' . $field['meta-name'] . '[]" id="' . Wordpress_Creation_Kit_PB::wck_generate_slug(trim($value)) . '_' . $field['id'] . '" type="checkbox" aria-describedby="' . esc_attr( $question_id ) . '" ' . $extra_attr . ' ';
 
                             if (in_array(trim($value), $input_value))
                                 $output .= ' checked';

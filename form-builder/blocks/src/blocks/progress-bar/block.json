@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/progress-bar",
+    "wppbAddonBlock": true,
+    "title": "Progress Bar",
+    "category": "profile-builder-structural",
+    "description": "Visual placeholder for the form's completion progress bar. Position and style are controlled from the Progress Bar panel in the document sidebar.",
+    "icon": "chart-bar",
+    "keywords": [ "progress", "bar", "completion" ],
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "multiple": true,
+        "inserter": false
+    },
+    "textdomain": "profile-builder",
+    "attributes": {
+        "position-context": {
+            "type": "string",
+            "default": "top",
+            "enum": [ "top", "bottom" ]
+        }
+    }
+}

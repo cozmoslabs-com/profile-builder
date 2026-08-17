@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-gdpr-checkbox",
+    "title": "GDPR Checkbox",
+    "wppbFieldType": "GDPR Checkbox",
+    "category": "profile-builder-other",
+    "icon": "shield",
+    "description": "GDPR agreement checkbox field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "GDPR Checkbox"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": "user_consent_gdpr"
+        },
+        "description": {
+            "type": "string",
+            "default": "I agree to the GDPR terms"
+        },
+        "required": {
+            "type": "string",
+            "default": "Yes"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

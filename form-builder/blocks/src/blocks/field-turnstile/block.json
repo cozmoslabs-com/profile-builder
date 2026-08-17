@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-turnstile",
+    "title": "Turnstile",
+    "wppbFieldType": "Turnstile",
+    "category": "profile-builder-advanced",
+    "icon": "shield",
+    "description": "Cloudflare Turnstile field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Turnstile"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "turnstile-site-key": {
+            "type": "string",
+            "default": ""
+        },
+        "turnstile-secret-key": {
+            "type": "string",
+            "default": ""
+        },
+        "theme": {
+            "type": "string",
+            "default": "auto"
+        },
+        "turnstile-pb-forms": {
+            "type": "string",
+            "default": "pb_register"
+        },
+        "turnstile-wp-forms": {
+            "type": "string",
+            "default": "default_wp_register"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

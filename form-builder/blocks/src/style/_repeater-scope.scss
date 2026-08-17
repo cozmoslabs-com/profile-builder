@@ -1,0 +1,57 @@
+// Repeater scope-lock drag gate.
+//
+// Repeater sub-fields must stay bound to their parent (legacy user_meta uses
+// `_{N}` suffixes that change semantics if a field crosses the boundary).
+// Rather than a per-frame JS reconciler that snaps cross-boundary moves back
+// (which fights Gutenberg's live drop-preview reordering and lagged the drag),
+// we gate drop detection at the CSS layer.
+//
+// `pointer-events` is INHERITED: setting `none` on a senior wrapper makes the
+// whole subtree transparent to pointer/drag events, so Gutenberg's dropzone
+// listener (on the inner `.block-editor-block-list__layout`) never gets
+// `dragover`, never computes a drop position, never calls `showInsertionPoint`
+// → no blue line. Setting `none` only on descendants does NOT work: the wrapper
+// stays pe:auto and events still reach the listener. Anchoring at the senior
+// wrapper is what works.
+//
+// Classes are applied to the canvas root by `useRepeaterScopeGuard` in
+// components/RepeaterScopeGuard.js — they flip only on drag start/end, not per
+// frame.
+.wppb-fb-drag-from-outside {
+    // Dragging a top-level field. Make the entire Repeater block
+    // transparent to drag events. Events pass through to the root
+    // dropzone, which correctly shows indicators above/below the
+    // Repeater (valid top-level drop positions) — never inside.
+    [data-type="profile-builder/field-repeater"] {
+        pointer-events: none !important;
+
+        // Visual hint for the gated zone. The actual gate is the pe:none
+        // above; this is purely communicative.
+        .block-editor-inner-blocks {
+            filter: blur(2px);
+            opacity: 0.5;
+            transition: filter 0.1s ease, opacity 0.1s ease;
+        }
+    }
+}
+
+.wppb-fb-drag-from-repeater {
+    // Dragging a sub-field. Make the entire root layout transparent to
+    // drag events so no top-level indicators show, then explicitly
+    // re-enable the dragged-from Repeater so intra-Repeater reorder
+    // works.
+    .is-root-container {
+        pointer-events: none !important;
+    }
+    .is-root-container > [data-block]:not(.wppb-fb-drag-allowed-parent) {
+        filter: blur(2px);
+        opacity: 0.5;
+        transition: filter 0.1s ease, opacity 0.1s ease;
+    }
+    // Re-enable on the allowed parent. pe:auto on it re-enables the
+    // whole subtree (inheritance), so its inner block list's dropzone
+    // fires and indicators show between sub-fields.
+    .wppb-fb-drag-allowed-parent {
+        pointer-events: auto !important;
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-input",
+    "title": "Text",
+    "wppbFieldType": "Input",
+    "category": "profile-builder-standard",
+    "icon": "editor-textcolor",
+    "description": "Standard text input field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Text Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

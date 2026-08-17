@@ -76,3 +76,4 @@ function wppb_mcl_set_max_character_length( $default_value, $field = '' ) {
     return $output;
 }
 add_filter( 'wppb_maximum_character_length', 'wppb_mcl_set_max_character_length', 10 , 2);
+

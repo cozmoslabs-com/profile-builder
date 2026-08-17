@@ -8,20 +8,10 @@ class WPPB_ImpEx_Import {
 	public $import_messages = array();
 	private $j = '0';
 
-	/**
-	 * this will take custom options and posttypes that will be imported to database.
-	 *
-	 * @param array  $args_to_import  custom options and posttypes to import.
-	 */
 	function __construct( $args_to_import ) {
 		$this->args_to_import = $args_to_import;
 	}
 
-	/**
-	 * this will save imported json.
-	 *
-	 * @param string  $json_content  imported json.
-	 */
 	private function json_to_db( $json_content, $nonce ) {
 
 		if( !wp_verify_nonce( $nonce, 'wppb_import_setttings' ) ){
@@ -37,7 +27,6 @@ class WPPB_ImpEx_Import {
 			$imported_options = $imported_array_from_json['options'];
 			$imported_posts = $imported_array_from_json['posts'];
 
-			/* import options to database */
 			foreach( $imported_options as $key => $value ) {
 
 				if( ! empty( $value ) && strpos( $key, 'wppb_' ) !== false )
@@ -45,10 +34,15 @@ class WPPB_ImpEx_Import {
 
 			}
 
-			/* import custom posts to database */
+			// Suppress form-builder projection during insert — empty post_content would wipe fields.
+			if ( function_exists( 'wppb_fb_set_importing' ) ) {
+				wppb_fb_set_importing( true );
+			}
+
+			$imported_default_ids = array();
+
 			foreach( $this->args_to_import as $imported_post_type ) {
 
-				/* there could be the possibility that the post type doesn't exist yet so we need to register it */
 				if ( !post_type_exists( $imported_post_type ) ) {
 					register_post_type( $imported_post_type );
 				}
@@ -64,13 +58,31 @@ class WPPB_ImpEx_Import {
 						unset( $imported_post["ID"] );
 						$imported_post_id = wp_insert_post( $imported_post );
 						foreach( $imported_post["postmeta"] as $key => $value ) {
-							foreach( $value as $value_key => $serialized_value ) {
+							// Replace, don't append — get_post_meta(..., true) would otherwise return a stale first row.
+							delete_post_meta( $imported_post_id, $key );
+							foreach( $value as $serialized_value ) {
 								add_post_meta( $imported_post_id, $key, maybe_unserialize( $serialized_value ) );
+							}
+						}
+
+						if ( ! empty( $imported_post["postmeta"]["_pbform_is_default"] ) ) {
+							foreach( (array) $imported_post["postmeta"]["_pbform_is_default"] as $wppb_default_flag ) {
+								if ( maybe_unserialize( $wppb_default_flag ) === '1' ) {
+									$imported_default_ids[ $imported_post_type ] = $imported_post_id;
+									break;
+								}
 							}
 						}
 					}
 				}
 			}
+
+			if ( function_exists( 'wppb_fb_set_importing' ) ) {
+				wppb_fb_set_importing( false );
+			}
+
+			// Repoint wppb_default_form_ids — new IDs are not in the export.
+			$this->reconcile_default_forms( $imported_default_ids );
 		} else {
 			$this->import_messages[$this->j]['message'] = __( 'Uploaded file is not valid json!', 'profile-builder' );
 			$this->import_messages[$this->j]['type'] = 'error';
@@ -78,7 +90,51 @@ class WPPB_ImpEx_Import {
 		}
 	}
 
-	/* upload json file function */
+	/**
+	 * Point wppb_default_form_ids at imported defaults and demote any other default for the same type.
+	 *
+	 * @param array $imported_default_ids  Map of CPT slug => imported post ID.
+	 */
+	private function reconcile_default_forms( $imported_default_ids ) {
+		if ( ! function_exists( 'wppb_fb_ensure_default_forms' ) || empty( $imported_default_ids ) ) {
+			return;
+		}
+
+		$slots = array(
+			'wppb-rf-cpt'  => 'register',
+			'wppb-epf-cpt' => 'edit_profile',
+		);
+
+		$defaults     = (array) get_option( 'wppb_default_form_ids', array() );
+		$seeded_slots = array();
+
+		foreach ( $slots as $cpt => $slot ) {
+			if ( empty( $imported_default_ids[ $cpt ] ) ) {
+				continue;
+			}
+
+			$keep              = (int) $imported_default_ids[ $cpt ];
+			$defaults[ $slot ] = $keep;
+
+			$existing = get_posts( array(
+				'post_type'   => $cpt,
+				'post_status' => 'any',
+				'numberposts' => -1,
+				'fields'      => 'ids',
+			) );
+			foreach ( $existing as $existing_id ) {
+				if ( (int) $existing_id !== $keep && get_post_meta( $existing_id, '_pbform_is_default', true ) === '1' ) {
+					// Demote other defaults; do not delete their posts.
+					delete_post_meta( $existing_id, '_pbform_is_default' );
+				}
+			}
+
+			$seeded_slots[ $cpt ] = true;
+		}
+
+		update_option( 'wppb_default_form_ids', $defaults );
+	}
+
 	public function upload_json_file() {
 		if( isset( $_POST['cozmos-import'] ) && isset( $_POST['wppb_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['wppb_nonce'] ), 'wppb_import_setttings' ) ) {
             if( ( !is_multisite() && current_user_can( apply_filters( 'wppb_settings_import_user_capability', 'manage_options' ) ) ) ||
@@ -110,7 +166,6 @@ class WPPB_ImpEx_Import {
 		}
 	}
 
-	/* messages return function */
 	public function get_messages() {
 		return $this->import_messages;
 	}

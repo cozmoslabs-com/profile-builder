@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-pms-billing-fields",
+    "title": "Billing Fields",
+    "wppbFieldType": "PMS Billing Fields",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-other",
+    "icon": "id",
+    "description": "Displays the Paid Member Subscriptions billing fields (from the Tax and/or Invoice add-ons) on Edit Profile forms.",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Billing Fields" },
+        "meta-name": { "type": "string", "default": "" },
+        "pms-billing-fields": { "type": "string", "default": "" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

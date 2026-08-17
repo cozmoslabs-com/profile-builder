@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-password",
+    "title": "Password",
+    "wppbFieldType": "Default - Password",
+    "category": "profile-builder-default",
+    "icon": "lock",
+    "description": "Required password field for registration.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Password"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "Yes"
+        },
+        "ask-current-password": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

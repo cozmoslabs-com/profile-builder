@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-mailchimp-subscribe",
+    "title": "MailChimp Subscribe",
+    "wppbFieldType": "MailChimp Subscribe",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-advanced",
+    "icon": "email-alt",
+    "description": "Adds a checkbox that subscribes the user to a MailChimp list.",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Subscribe to our newsletter" },
+        "meta-name": { "type": "string", "default": "" },
+        "description": { "type": "string", "default": "" },
+        "mailchimp-lists": { "type": "string", "default": "" },
+        "mailchimp-default-checked": { "type": "string", "default": "" },
+        "mailchimp-hide-field": { "type": "string", "default": "" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

@@ -1,0 +1,280 @@
+// Existing Fields panel (hijacked "Existing Fields" inserter tab). Token values
+// come from style/_tokens.scss.
+.wppb-fb-existing-fields {
+    // The search box and the empty state reuse Gutenberg's own inserter classes
+    // (`block-editor-inserter__search`, `block-editor-inserter__no-results`) so
+    // they match the "New Fields" tab exactly — padding, centering and sticky
+    // behavior all come from Gutenberg + the shared rule in _editor-chrome.scss.
+    // Hence no padding on the wrapper; the card list supplies its own inset.
+
+    // Sticky header (search + filter). The TOOLBAR owns the sticky behavior, so
+    // the per-search sticky rule from _editor-chrome.scss is neutralized here or
+    // the box would pin independently of — and overlap — the toolbar. This partial
+    // is `@use`d after editor-chrome, so the equal-specificity override wins.
+    &__toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--wppb-fb-surface-default);
+
+        .block-editor-inserter__search {
+            position: static;
+            top: auto;
+            z-index: auto;
+        }
+    }
+
+    // The control is `isBlock` (width: 100%), so the 16px inset aligning it with
+    // the search input MUST be this wrapper's PADDING — a horizontal margin on a
+    // width:100% element adds to the width and overflows the toolbar.
+    //
+    // padding-bottom is 0 on purpose: the toggle → first-card gap lives on the
+    // list instead (see &__list), because here it would sit inside the sticky
+    // toolbar and never scroll, leaving cards tucked under a pinned white band.
+    &__filter {
+        padding: var(--wppb-fb-space-md) var(--wppb-fb-space-xl) 0;
+
+        // Match the search field so the filter reads as its pair. Gutenberg's
+        // SearchControl draws `1px solid #949494`; the ToggleGroupControl ships a
+        // shorter track with a lighter `#ddd`, so pin both. `#949494` is kept
+        // literal to stay in sync with the search field — not a design token.
+        .components-toggle-group-control {
+            min-height: 40px;
+            border-color: #949494;
+            border-radius: var(--wppb-fb-radius-sm);
+        }
+
+        // The options keep their intrinsic ~34px height, leaving a gap visible
+        // under the selected option's background. Stretch them to the full track.
+        .components-toggle-group-control-option-base {
+            min-height: 40px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--wppb-fb-space-sm);
+        list-style: none;
+        margin: 0;
+        // Horizontal inset matches `.block-editor-inserter__search`. The top
+        // padding is the toggle → first-card gap, and lives HERE rather than on
+        // the sticky toolbar so it scrolls away with the list.
+        padding: var(--wppb-fb-space-md) var(--wppb-fb-space-xl) var(--wppb-fb-space-lg);
+    }
+
+    &__card {
+        background: var(--wppb-fb-surface-default);
+        border: 1px solid var(--wppb-fb-border-default);
+        border-radius: var(--wppb-fb-radius-lg);
+        position: relative;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+        &:hover {
+            border-color: var(--wppb-fb-border-strong);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        // A faint tint is the "already added" cue, not an opacity dim — dimming
+        // would also dim the hover-revealed actions, which live inside the card.
+        &.is-in-form {
+            background: var(--wppb-fb-surface-canvas);
+
+            // The `:not()` is load-bearing: at (0,3,0) this rule otherwise beats
+            // `.is-selected` (0,2,0) and the selection ring vanishes on hover.
+            &:not(.is-selected):hover {
+                box-shadow: none;
+            }
+        }
+
+        // Sub-field cards (inside a Repeater's expanded panel). Declared BEFORE
+        // `.is-selected` so the selection border wins on `.is-selected.is-subfield`
+        // (equal specificity → source order).
+        &.is-subfield {
+            border-color: var(--wppb-fb-border-default);
+
+            > .wppb-fb-existing-fields__body {
+                padding: var(--wppb-fb-space-xs) var(--wppb-fb-space-md);
+            }
+
+            // Clickable as a whole — they have no `__card-main` wrapper because
+            // they carry no Insert/Delete buttons.
+            cursor: pointer;
+        }
+
+        // Mirrors Gutenberg's "block is selected" indicator, so a card reads as
+        // selected the same way its canvas block does. Must come AFTER
+        // `.is-subfield` (equal specificity → source order).
+        &.is-selected {
+            border-color: var(--wppb-fb-accent);
+            box-shadow: 0 0 0 1px var(--wppb-fb-accent);
+        }
+    }
+
+    // Title row — the actions are absolutely positioned (see &__actions), so
+    // revealing them on hover can't reflow this row or change the card height.
+    &__header {
+        align-items: center;
+        display: flex;
+        margin-bottom: var(--wppb-fb-space-sm);
+        // Reserve the right edge so a long title isn't abruptly covered when the
+        // actions appear.
+        padding-right: var(--wppb-fb-space-2xs);
+    }
+
+    // The nested <ul> shown when a Repeater card is expanded. Lighter background
+    // for the nesting; no extra left indent, so sub-field cards stay aligned with
+    // top-level ones.
+    &__subfields {
+        background: var(--wppb-fb-surface-canvas);
+        border-top: 1px solid var(--wppb-fb-border-default);
+        border-bottom-left-radius: var(--wppb-fb-radius-sm);
+        border-bottom-right-radius: var(--wppb-fb-radius-sm);
+        display: flex;
+        flex-direction: column;
+        gap: var(--wppb-fb-space-2xs);
+        list-style: none;
+        margin: 0;
+        padding: var(--wppb-fb-space-xs);
+
+        > .wppb-fb-existing-fields__card.is-subfield {
+            background: var(--wppb-fb-surface-default);
+        }
+    }
+
+    // The clickable card interior (title row + the Field Type / Meta Name / ID rows).
+    &__card-main {
+        cursor: pointer;
+        padding: var(--wppb-fb-space-xl);
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    &__title {
+        align-items: center;
+        color: var(--wppb-fb-text-primary);
+        display: flex;
+        font-weight: 600;
+        gap: var(--wppb-fb-space-xs);
+        line-height: 1.3;
+        min-width: 0;
+
+        // Truncate the title, never the trailing markers — the required asterisk
+        // and sub-field count are fixed-width cues and are excluded here.
+        > :first-child:not(.wppb-fb-existing-fields__subfield-count):not(.wppb-fb-existing-fields__required) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    // Required marker — the same `status/danger` asterisk as the canvas field
+    // label and the front-end form, so a required field reads identically
+    // everywhere. Sits before the sub-field-count badge.
+    &__required {
+        color: var(--wppb-fb-status-danger);
+        flex: 0 0 auto;
+        font-weight: 600;
+        line-height: 1;
+        // The title row is a flex container with a `gap` (the title text is an
+        // anonymous flex item, so it applies here); pull it back so the asterisk
+        // reads as part of the title rather than a chip beside it.
+        margin-left: calc(var(--wppb-fb-space-3xs) - var(--wppb-fb-space-xs));
+    }
+
+    // Sub-field count — inline with the title, so a non-empty Repeater is
+    // recognisable without expanding it.
+    &__subfield-count {
+        background: var(--wppb-fb-surface-subtle);
+        border-radius: var(--wppb-fb-radius-pill);
+        color: var(--wppb-fb-text-muted);
+        flex: 0 0 auto;
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 500;
+        line-height: 1;
+        min-width: 16px;
+        padding: 3px var(--wppb-fb-space-xs);
+        text-align: center;
+    }
+
+    &__row {
+        align-items: baseline;
+        display: flex;
+        font-size: var(--wppb-fb-font-sm);
+        gap: var(--wppb-fb-space-2xs);
+        line-height: 1.3;
+    }
+
+    &__label {
+        color: var(--wppb-fb-text-muted);
+        flex: 0 0 5.5em;
+    }
+
+    &__type {
+        color: var(--wppb-fb-text-muted);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__meta {
+        color: var(--wppb-fb-text-muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: var(--wppb-fb-font-xs);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__id {
+        color: var(--wppb-fb-text-muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: var(--wppb-fb-font-xs);
+    }
+
+    // Card actions (Delete + Insert/Remove), revealed on hover / selection /
+    // keyboard focus. ABSOLUTELY POSITIONED against `&__card` so toggling their
+    // visibility never changes the card height — the title row can't grow when
+    // the taller buttons appear — and the card-matching background lets them
+    // occlude the end of a long title cleanly.
+    &__actions {
+        position: absolute;
+        top: var(--wppb-fb-space-lg);
+        right: var(--wppb-fb-space-lg);
+        align-items: center;
+        background: var(--wppb-fb-surface-default);
+        display: none;
+        gap: var(--wppb-fb-space-sm);
+        padding-left: var(--wppb-fb-space-sm);
+
+        // Insert / Remove — WP `variant="secondary"` would use
+        // --wp-admin-theme-color; pin to our token so it's the Figma blue.
+        .components-button.is-secondary {
+            box-shadow: inset 0 0 0 1px var(--wppb-fb-accent);
+            color: var(--wppb-fb-accent);
+        }
+
+        // Delete — WP destructive is already red; pin to the token.
+        .components-button.is-destructive {
+            color: var(--wppb-fb-status-danger);
+        }
+    }
+
+    // Match the in-form tint so the actions occlude a long title there too.
+    &__card.is-in-form &__actions {
+        background: var(--wppb-fb-surface-canvas);
+    }
+
+    &__card:hover &__actions,
+    &__card.is-selected &__actions,
+    &__card:focus-within &__actions {
+        display: flex;
+    }
+}

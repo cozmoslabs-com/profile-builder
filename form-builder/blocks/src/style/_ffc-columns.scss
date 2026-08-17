@@ -1,0 +1,78 @@
+// Form Fields in Columns — wrapper block.
+//
+// A dashed-outline box with a small
+// "COLUMNS" tab overlapping the top-left border. Editor preview keeps the
+// frontend's `.ffc-wrapper` flex layout so what-you-see matches what-renders.
+// Token values come from style/_tokens.scss.
+.wppb-fb-ffc-columns {
+    border: 1px dashed var(--wppb-fb-border-strong);
+    border-radius: var(--wppb-fb-radius-md);
+    // See _field-block.scss: border-box so the content-size caps total width
+    // and every PB block lines up at the same width.
+    box-sizing: border-box;
+    margin: var(--wppb-fb-space-md) 0;
+    padding: var(--wppb-fb-space-xl) var(--wppb-fb-space-lg) var(--wppb-fb-space-lg);
+    position: relative;
+
+    &:hover {
+        border-color: #b1b1b5; // one-off hover gray, between border-strong and text-faint
+    }
+
+    // The overlapping corner tab. `background:#fff` cuts the dashed border so
+    // the label reads as a tab on the (white) editor canvas.
+    &__tab {
+        align-items: center;
+        background: var(--wppb-fb-surface-default);
+        color: var(--wppb-fb-text-muted);
+        display: inline-flex;
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 600;
+        gap: var(--wppb-fb-space-xs);
+        left: var(--wppb-fb-space-lg);
+        letter-spacing: 0.04em;
+        padding: 0 var(--wppb-fb-space-sm);
+        position: absolute;
+        text-transform: uppercase;
+        top: -10px;
+
+        svg {
+            color: var(--wppb-fb-text-muted);
+        }
+    }
+
+    &__hint {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 500;
+        margin: var(--wppb-fb-space-sm) 0 0;
+    }
+
+    &__row {
+        > .block-editor-inner-blocks > .block-editor-block-list__layout {
+            display: flex;
+            gap: var(--wppb-fb-space-xl);
+            // This element IS the InnerBlocks drop zone (data-is-drop-zone).
+            // The block uses renderAppender={ () => null }, so when the wrapper
+            // is empty the appender contributes no height and the layout
+            // collapses to 0px — Gutenberg's drop detection needs a non-zero
+            // pointer area, so dropping a field into an EMPTY Columns block was
+            // impossible (it only worked once a child gave the layout height).
+            // A min-height keeps the empty drop zone targetable; populated rows
+            // are always taller, so it's a no-op once fields are inside.
+            min-height: 44px;
+
+            > .wp-block {
+                flex: 1 1 0;
+                margin: 0;
+                min-width: 0;
+            }
+        }
+    }
+
+    // Invalid position (nested / inside a Repeater) — tint muted so the
+    // warning Notice reads as the reason the box can't be used here.
+    &.is-invalid {
+        background: repeating-linear-gradient(135deg, var(--wppb-fb-surface-canvas) 0 8px, #efefef 8px 16px);
+        border-color: #b1b1b5;
+    }
+}

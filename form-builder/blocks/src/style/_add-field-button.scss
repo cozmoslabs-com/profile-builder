@@ -1,0 +1,89 @@
+// Dashed "add" button for the bottom-of-canvas "Add field" and the "Add
+// sub-field" appenders. One shared
+// look applied to:
+//   • the AddFieldButton component (Columns / Repeater field appenders), and
+//   • the ROOT canvas block appender (the bottom-of-form "Add field" button),
+// so every "add" affordance reads identically. Tokens: style/_tokens.scss.
+
+@mixin wppb-fb-add-btn {
+    align-items: center;
+    background: transparent;
+    border: 1px dashed var(--wppb-fb-border-strong);
+    border-radius: var(--wppb-fb-radius-md);
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--wppb-fb-text-muted);
+    cursor: pointer;
+    display: flex;
+    // Force row so the icon + label sit inline. Core's root block appender
+    // (`.block-editor-button-block-appender`) sets `flex-direction: column`,
+    // which would otherwise stack the "Add field" label below the "+".
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: var(--wppb-fb-font-md);
+    font-weight: 500;
+    gap: var(--wppb-fb-space-sm);
+    height: 44px;
+    justify-content: center;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        border-color: var(--wppb-fb-accent);
+        color: var(--wppb-fb-accent);
+    }
+
+    svg {
+        flex: 0 0 auto;
+    }
+}
+
+// Component button used as the Columns / Repeater appender. `button.` +
+// `.components-button` both reached so it beats the @wordpress/components
+// default Button sizing (height/padding/box-shadow).
+button.wppb-fb-add-button,
+.wppb-fb-add-button.components-button {
+    @include wppb-fb-add-btn;
+    margin-top: var(--wppb-fb-space-sm);
+}
+
+// <Inserter> wraps the toggle button in a `.block-editor-inserter` dropdown
+// that's inline-block by default, so the button's `width: 100%` only fills the
+// shrink-wrapped wrapper. Make the wrapper block-level so the button spans the
+// container width like the mockup's full-width add buttons.
+.block-editor-inserter:has( .wppb-fb-add-button ) {
+    display: block;
+    width: 100%;
+}
+
+// The rule below uses a bare generic Gutenberg selector (the ROOT canvas
+// appender), so it is scoped to PB form CPT screens via `.wppb-fb-block-editor`
+// (see _editor-chrome.scss header) — the bundle stylesheet loads on every
+// block-editor screen. The appender is inside the canvas iframe, so the marker is
+// stamped on the iframe <body> too (components/EditorBodyClass.js), not only the
+// main <body>. Without the scope, EVERY post/page root appender would be restyled
+// into an "Add field" button and lose its "Browse all". The `.wppb-fb-add-button`
+// rules above are self-scoped (our own class) and need no wrapper.
+//
+// Two quick-inserter rules used to sit here (hide "Browse all", border the
+// popover). No PB affordance opens core's quick inserter any more: AddFieldButton
+// omits `__experimentalIsQuick`, RootCanvasAppender replaces core's appender, and
+// CanvasPointInserter swallows the click on both remaining core "+"s.
+
+// Root canvas appender → the bottom-of-form "Add field" button. The node is
+// ours (components/RootCanvasAppender.js appends it to the root block list —
+// core's own `.block-list-appender` only exists while nothing is selected, and
+// is hidden in _mini-inserter.scss), so it only needs the gap that separated
+// core's appender from the last field; the button inside carries the dashed
+// look already.
+.wppb-fb-block-editor .block-editor-block-list__layout.is-root-container > .wppb-fb-root-appender {
+    margin-top: 18px;
+
+    // The button's own `margin-top` would stack on top of that gap.
+    button.wppb-fb-add-button,
+    .wppb-fb-add-button.components-button {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-wysiwyg",
+    "title": "WYSIWYG",
+    "wppbFieldType": "WYSIWYG",
+    "category": "profile-builder-standard",
+    "icon": "editor-code",
+    "description": "Rich text editor field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "WYSIWYG Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-content": {
+            "type": "string",
+            "default": ""
+        },
+        "row-count": {
+            "type": "string",
+            "default": "5"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

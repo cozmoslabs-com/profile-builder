@@ -1,0 +1,124 @@
+// Paid Member Subscriptions "Subscription Plans" field — the drag-sortable plan
+// picker in the Field Settings sidebar. Mirrors the classic Manage Fields
+// `.row-subscription-plans .wck-checkboxes` jQuery-UI sortable: one draggable
+// row per plan option (drag handle + include checkbox + label). Drag is
+// initiated from the handle only so the row's checkbox stays clickable; the row
+// is the drop target. Rendered by blocks/field-pms-subscription-plans/edit.js.
+$wppb-pms-handle: 18px;
+$wppb-pms-check: 18px;
+
+.wppb-fb-pms-plans {
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: var(--wppb-fb-space-sm);
+        padding: var(--wppb-fb-space-2xs) 0;
+        border-radius: var(--wppb-fb-radius-sm);
+
+        // Insertion indicator while a dragged row hovers this one.
+        &.is-drag-over {
+            box-shadow: inset 0 2px 0 0 var(--wppb-fb-accent);
+        }
+    }
+
+    // Drag handle — the only drag initiator (keeps the checkbox clickable).
+    &__handle {
+        flex: 0 0 #{$wppb-pms-handle};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+        color: var(--wppb-fb-text-faint);
+
+        &:active { cursor: grabbing; }
+
+        .dashicons {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__check {
+        flex: 0 0 #{$wppb-pms-check};
+        margin: 0;
+    }
+
+    &__label {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: var(--wppb-fb-font-sm);
+        color: var(--wppb-fb-text-primary);
+    }
+}
+
+// Canvas preview — mirrors the front-end row shape of
+// pms_output_subscription_plans(): radio + plan name + price/duration + trial +
+// sign-up fee on one line, plan description underneath (the front end's
+// `.pms-subscription-plan-description` is 85% italic, indented past the radio).
+// Rendered with form-builder tokens rather than the theme's, so it reads like the
+// rendered form without pretending to be a pixel preview of it.
+.wppb-fb-pms-plans-preview {
+    &__empty {
+        color: var(--wppb-fb-text-faint);
+        font-size: var(--wppb-fb-font-md);
+    }
+}
+
+.wppb-fb-pms-plan {
+    // Front end: .pms-subscription-plan { margin-bottom: 18px }.
+    &:not(:last-child) {
+        margin-bottom: var(--wppb-fb-space-xl);
+    }
+
+    // The row is a flex line, so the inter-span spacing PMS gets for free from
+    // HTML whitespace has to be re-created. The base gap stands in for a single
+    // space (price → trial → sign-up fee read as one sentence on the front end);
+    // the radio and the price each add a little more, matching the front end's
+    // `input { margin-right: 7px }` and the form designs' name/price gap.
+    &__row {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--wppb-fb-space-2xs);
+    }
+
+    input[type="radio"] {
+        flex: none;
+        margin: 0 var(--wppb-fb-space-2xs) 0 0;
+    }
+
+    &__name {
+        color: var(--wppb-fb-text-primary);
+        font-size: var(--wppb-fb-font-md);
+        font-weight: 500;
+    }
+
+    &__price {
+        margin-left: var(--wppb-fb-space-2xs);
+    }
+
+    // Price / duration / trial / sign-up fee all read as secondary detail next to
+    // the plan name. Their wording (incl. the " / " duration divider) comes from
+    // PMS's own output, so it matches the front end verbatim.
+    &__price,
+    &__trial,
+    &__fee {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-md);
+    }
+
+    &__desc {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-sm);
+        font-style: italic;
+        margin-top: var(--wppb-fb-space-3xs);
+        padding-left: var(--wppb-fb-space-2xl);
+    }
+
+    // A single displayed plan has no radio (front end emits a hidden input), so
+    // its description isn't indented either — matching `.pms-hidden`.
+    &.is-single &__desc {
+        padding-left: 0;
+    }
+}

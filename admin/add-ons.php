@@ -41,21 +41,12 @@ function wppb_add_ons_content() {
     $pb_addons_listing->section_header      = array( 'title' => __( 'Pro Add-ons', 'profile-builder' ), 'description' => __( 'These Add-ons are available with the Pro and Agency license', 'profile-builder' )  );
     $pb_addons_listing->section_header_free = array( 'title' => __( 'Pro Add-ons', 'profile-builder' ), 'description' => sprintf( __( 'Get access to these Add-ons with a Pro or Agency license. %sBuy now%s', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-addons-pro&utm_medium=client-site&utm_campaign=pb-pro-addons-upsell#pricing" target="_blank">', '</a>' ) );
     $pb_addons_listing->section_versions    = array( 'Profile Builder Pro', 'Profile Builder Agency', 'Profile Builder Unlimited' );
+    // The Multiple Registration / Multiple Edit Profile Forms cards were
+    // removed because the underlying functionality is now bundled with the
+    // form-builder (see form-builder/multiple-forms/). Users access the
+    // classic UI via the per-CPT toggle in Advanced Settings -> Forms ->
+    // Forms Editor, so the standalone upsell cards no longer apply.
     $pb_addons_listing->items               = array(
-        array(  'slug' => 'wppb_multipleRegistrationForms',
-            'type'        => 'add-on',
-            'name'        => __( 'Multiple Registration Forms', 'profile-builder' ),
-            'description' => __( 'Set up multiple registration forms with different fields for certain user roles. Helps capture different information from different types of users.', 'profile-builder' ),
-            'icon'        => 'pb-add-on-multiple-registration-forms-logo.png',
-            'doc_url'     => 'https://www.cozmoslabs.com/docs/profile-builder/modules/multiple-registration-forms/?utm_source=pb-addons-pro&utm_medium=client-site&utm_campaign=pb-multiple-registration-addon',
-        ),
-        array(  'slug' => 'wppb_multipleEditProfileForms',
-            'type'        => 'add-on',
-            'name'        => __( 'Multiple Edit Profile Forms', 'profile-builder' ),
-            'description' => __( 'Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles.', 'profile-builder' ),
-            'icon'        => 'pb-add-on-multiple-edit-profile-forms-icon.png',
-            'doc_url'     => 'https://www.cozmoslabs.com/docs/profile-builder/modules/multiple-edit-profile-forms/?utm_source=pb-addons-pro&utm_medium=client-site&utm_campaign=pb-multiple-edit-profile-addon',
-        ),
         array(  'slug' => 'wppb_userListing',
             'type'        => 'add-on',
             'name'        => __( 'User Listing', 'profile-builder' ),
@@ -187,6 +178,14 @@ function wppb_add_ons_content() {
                 'icon'         => 'pb-add-on-mailpoet-logo.png',
                 'doc_url'      => 'https://www.cozmoslabs.com/docs/profile-builder/add-ons/mailpoet/?utm_source=pb-addons-basic&utm_medium=client-site&utm_campaign=pb-mailpoet-addon',
                 'download_url' => 'https://www.cozmoslabs.com/add-ons/mailpoet/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree',
+        ),
+        array(  'slug' => 'progress-bar',
+                'type'         => 'add-on',
+                'name'         => __( 'Progress Bar', 'profile-builder' ),
+                'description'  => __( 'Display a live completion progress bar on your Register and Edit Profile forms.', 'profile-builder' ),
+                'icon'         => 'pb-add-on-progress-bar-logo.png',
+                'doc_url'      => 'https://www.cozmoslabs.com/docs/profile-builder/add-ons/progress-bar/?utm_source=pb-addons-basic&utm_medium=client-site&utm_campaign=pb-progress-bar-addon',
+                'download_url' => 'https://www.cozmoslabs.com/add-ons/progress-bar/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PBFree',
         )
     );
     $pb_addons_listing->add_section();

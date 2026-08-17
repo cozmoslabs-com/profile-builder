@@ -1,0 +1,64 @@
+// Design tokens — the single source of truth for the form-builder editor's
+// visual language. Mirrors the Figma handoff ("Profile Builder draft" →
+// Variable Specs / Style Guide frames). Named category/role, like the Figma
+// variables.
+//
+// Emitted as CSS custom properties on :root so they resolve in BOTH the main
+// admin document (top bar / rails) AND the iframed canvas (field blocks) — the
+// editor bundle is injected into both contexts, so this :root block lands in
+// each document. Partials reference these with var(--wppb-fb-*) directly; they
+// do NOT @use this file (these are runtime CSS vars, not Sass variables).
+//
+// Accent is pinned to the Figma blue (#3858e9), NOT `var(--wp-admin-theme-color)`.
+// The design specifies this exact accent, and the admin color scheme on some
+// installs resolves --wp-admin-theme-color to the older #007cba, which made the
+// progress-bar fill / step-break dot / selection outlines render in the wrong
+// blue. Pinning the value makes every accent-colored element match the mockup
+// regardless of the admin scheme. (Native Gutenberg chrome still follows the
+// admin scheme via its own --wp-admin-theme-color; only OUR elements use this.)
+:root {
+    // ── Color ──────────────────────────────────────────────────────────
+    --wppb-fb-text-primary: #1e1e1e; // labels, headings, values
+    --wppb-fb-text-muted: #757575; // secondary text, captions
+    --wppb-fb-text-faint: #949494; // placeholder, meta, field numbers
+    --wppb-fb-text-on-accent: #fff; // text on accent / dark surfaces
+
+    --wppb-fb-surface-default: #fff; // panels, cards, fields
+    --wppb-fb-surface-canvas: #f6f7f7; // app / editor background
+    --wppb-fb-surface-subtle: #f0f0f0; // tags, hover, icon chips
+    --wppb-fb-surface-inverse: #1e1e1e; // dark surfaces (active icon button)
+
+    --wppb-fb-border-default: #e0e0e0; // panels, cards, dividers
+    --wppb-fb-border-strong: #ccc; // inputs, controls
+
+    --wppb-fb-accent: #3858e9; // primary, links, active, selection (Figma blue, pinned)
+    --wppb-fb-accent-hover: #2145e6; // pressed / hover
+    --wppb-fb-status-success: #008a20; // published status
+    --wppb-fb-status-danger: #cc1818; // required marker, errors
+    --wppb-fb-status-warning: #b26200; // destructive-adjacent notices (e.g. delete callout rail)
+    --wppb-fb-status-warning-surface: #fcf9e8; // callout background
+
+    // ── Spacing (px) ───────────────────────────────────────────────────
+    --wppb-fb-space-3xs: 2px;
+    --wppb-fb-space-2xs: 4px;
+    --wppb-fb-space-xs: 6px;
+    --wppb-fb-space-sm: 8px;
+    --wppb-fb-space-md: 10px;
+    --wppb-fb-space-lg: 12px;
+    --wppb-fb-space-xl: 16px;
+    --wppb-fb-space-2xl: 20px;
+    --wppb-fb-space-3xl: 24px;
+
+    // ── Radius ─────────────────────────────────────────────────────────
+    --wppb-fb-radius-sm: 2px; // controls, buttons
+    --wppb-fb-radius-md: 4px; // cards, tiles, fields
+    --wppb-fb-radius-lg: 8px; // large cards, stages
+    --wppb-fb-radius-xl: 12px; // modals, overlays
+    --wppb-fb-radius-pill: 999px; // pills, dots, chips
+
+    // ── Font size (px) ─────────────────────────────────────────────────
+    --wppb-fb-font-xs: 11px; // meta, eyebrow
+    --wppb-fb-font-sm: 12px; // help, hints, tile labels, code
+    --wppb-fb-font-md: 13px; // body, inputs, rows
+    --wppb-fb-font-lg: 14px; // field & section labels
+}

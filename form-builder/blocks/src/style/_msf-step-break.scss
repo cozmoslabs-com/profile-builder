@@ -1,0 +1,88 @@
+// Multi-Step Forms — Step Break block (the movable separator).
+//
+// A centered "Step N → Step N+1"
+// pair of pills flanked by connector lines, with a small uppercase "STEP BREAK"
+// caption beneath. Numbered dots inside each pill (the "from" step filled with
+// the accent color, the "to" step hollow) read as a step transition. Token
+// values come from style/_tokens.scss.
+.wppb-fb-msf-step-break {
+    // See _field-block.scss: border-box so the content-size caps total width
+    // and every PB block lines up at the same width.
+    box-sizing: border-box;
+    margin: var(--wppb-fb-space-3xl) 0;
+
+    &__divider {
+        align-items: center;
+        display: flex;
+        gap: var(--wppb-fb-space-lg);
+        user-select: none;
+    }
+
+    &__line {
+        background: var(--wppb-fb-border-strong);
+        flex: 1 1 auto;
+        height: 1px;
+    }
+
+    &__core {
+        align-items: center;
+        display: flex;
+        flex: 0 0 auto;
+        gap: var(--wppb-fb-space-sm);
+    }
+
+    &__pill {
+        align-items: center;
+        background: var(--wppb-fb-surface-default);
+        border: 1px solid var(--wppb-fb-border-strong);
+        border-radius: var(--wppb-fb-radius-pill);
+        color: var(--wppb-fb-text-primary);
+        display: inline-flex;
+        font-size: var(--wppb-fb-font-sm);
+        font-weight: 600;
+        gap: var(--wppb-fb-space-xs);
+        padding: var(--wppb-fb-space-2xs) var(--wppb-fb-space-lg) var(--wppb-fb-space-2xs) var(--wppb-fb-space-sm);
+
+        &.is-inert {
+            border-style: dashed;
+            color: var(--wppb-fb-text-muted);
+            padding: var(--wppb-fb-space-2xs) var(--wppb-fb-space-lg);
+        }
+    }
+
+    &__dot {
+        align-items: center;
+        background: var(--wppb-fb-surface-subtle);
+        border-radius: 50%;
+        color: var(--wppb-fb-text-muted);
+        display: flex;
+        flex: 0 0 auto;
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 700;
+        height: 18px;
+        justify-content: center;
+        width: 18px;
+
+        &.is-done {
+            background: var(--wppb-fb-accent);
+            color: var(--wppb-fb-text-on-accent);
+        }
+    }
+
+    &__arrow {
+        align-items: center;
+        color: var(--wppb-fb-text-faint);
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+    &__caption {
+        color: var(--wppb-fb-text-faint);
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        margin-top: var(--wppb-fb-space-sm);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

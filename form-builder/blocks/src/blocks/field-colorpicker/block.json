@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-colorpicker",
+    "title": "Colorpicker",
+    "wppbFieldType": "Colorpicker",
+    "category": "profile-builder-advanced",
+    "icon": "art",
+    "description": "Color selection field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Colorpicker Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

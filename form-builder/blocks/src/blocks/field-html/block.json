@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-html",
+    "title": "HTML",
+    "wppbFieldType": "HTML",
+    "category": "profile-builder-standard",
+    "icon": "html",
+    "description": "Custom HTML block.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "HTML Field"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "html-content": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

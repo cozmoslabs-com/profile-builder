@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-pms-subscription-plans",
+    "title": "Subscription Plans",
+    "wppbFieldType": "Subscription Plans",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-other",
+    "icon": "cart",
+    "description": "Displays the Paid Member Subscriptions plans on the register form so users can pick a plan and pay.",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Subscription Plans" },
+        "meta-name": { "type": "string", "default": "" },
+        "description": { "type": "string", "default": "" },
+        "subscription-plans": { "type": "string", "default": "" },
+        "subscription-plans-sort-order": { "type": "string", "default": "" },
+        "subscription-plan-selected": { "type": "string", "default": "-1" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

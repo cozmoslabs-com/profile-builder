@@ -160,10 +160,12 @@ function wppb_pbpl_save_meta_box_option( $post_id ) {
     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
         return;
 
-    if( ! current_user_can( 'edit_post', $post_id ) )
+    /* Verify our metabox nonce before current_user_can — save_post runs for every
+     * post type and map_meta_cap warns if the CPT is unregistered. */
+    if( ! isset( $_POST['wppb_pbpl_save_post_options'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_pbpl_save_post_options'] ), 'wppb-pbpl-post-'. $post_id .'-options-verify' ) )
         return;
 
-    if( ! isset( $_POST['wppb_pbpl_save_post_options'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['wppb_pbpl_save_post_options'] ), 'wppb-pbpl-post-'. $post_id .'-options-verify' ) )
+    if( ! current_user_can( 'edit_post', $post_id ) )
         return;
 
     if( isset( $_POST['pbpl-active'] ) && $_POST['pbpl-active'] == 'yes' )

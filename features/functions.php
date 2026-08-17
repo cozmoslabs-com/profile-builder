@@ -480,6 +480,7 @@ function wppb_print_cpt_script( $hook ){
 		if ( ( 'wppb-epf-cpt' == $post_type ) || ( 'wppb-rf-cpt' == $post_type ) || ( 'wppb-ul-cpt' == $post_type ) ){
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
             wp_enqueue_script( 'wppb-epf-rf', WPPB_PLUGIN_URL . 'assets/js/jquery-epf-rf.js', array(), PROFILE_BUILDER_VERSION, true );
+            wp_localize_script( 'wppb-epf-rf', 'wppbEpfRf', array( 'nonce' => wp_create_nonce( 'wppb-epf-rf-id-change' ) ) );
 		}
 		else if( 'wppb-roles-editor' == $post_type ){
 			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', array(), PROFILE_BUILDER_VERSION );
@@ -839,6 +840,20 @@ function wppb_user_meta_exists( $id, $meta_name ){
 	return apply_filters( 'wppb_user_meta_exists_meta_name', $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = %s", $id, $meta_name ) ), $id, $meta_name );
 }
 
+
+/**
+ * Sanitize a URL from request input. Non-string values (e.g. arrays from bracket notation) return ''.
+ *
+ * @param mixed $url Candidate URL.
+ * @return string
+ */
+function wppb_sanitize_request_url( $url ) {
+	if ( ! is_string( $url ) || $url === '' ) {
+		return '';
+	}
+
+	return esc_url_raw( wp_unslash( $url ) );
+}
 
 // function to check if there is a need to add the http:// prefix
 function wppb_check_missing_http( $redirectLink ) {

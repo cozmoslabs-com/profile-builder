@@ -8,7 +8,7 @@ function wppb_rf_epf_change_id( field, container_name, fieldObj ) {
     buttonInContainer.attr('tempclick', buttonInContainer.attr("onclick") );
     buttonInContainer.removeAttr('onclick');
 
-	jQuery.post( ajaxurl ,  { action:"wppb_handle_rf_epf_id_change", field:field }, function(response) {
+	jQuery.post( ajaxurl ,  { action:"wppb_handle_rf_epf_id_change", field:field, _ajax_nonce: ( typeof wppbEpfRf !== 'undefined' ? wppbEpfRf.nonce : '' ) }, function(response) {
 
         /**
          * since version 2.0.2 we have the id directly on the option in the select so this ajax function is a little

@@ -1,0 +1,67 @@
+// Form Shortcode panel — mirrors the designer mockup's Shortcode section:
+// muted help text, a monospace shortcode box, and a small borderless copy
+// button. Token values come from style/_tokens.scss.
+
+// Intro + footnote help text (12px, muted).
+.wppb-fb-shortcode-intro {
+    color: var(--wppb-fb-text-muted);
+    font-size: var(--wppb-fb-font-sm);
+    margin: 0 0 var(--wppb-fb-space-md);
+}
+
+.wppb-fb-shortcode-help {
+    color: var(--wppb-fb-text-muted);
+    font-size: var(--wppb-fb-font-sm);
+    margin: var(--wppb-fb-space-md) 0 0;
+}
+
+// Shortcode box.
+.wppb-fb-shortcode-box {
+    align-items: center;
+    background: var(--wppb-fb-surface-subtle);
+    border: 1px solid var(--wppb-fb-border-default);
+    border-radius: var(--wppb-fb-radius-sm);
+    display: flex;
+    gap: var(--wppb-fb-space-sm);
+    justify-content: space-between;
+    padding: var(--wppb-fb-space-md) var(--wppb-fb-space-lg);
+}
+
+.wppb-fb-shortcode-code {
+    // Reset the editor's default <code> styling (it ships its own background +
+    // padding) so the code reads flush on the box's surface-subtle background.
+    background: transparent;
+    color: var(--wppb-fb-text-primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: var(--wppb-fb-font-sm);
+    line-height: 1.5;
+    padding: 0;
+    // Long shortcodes wrap rather than overflow the narrow sidebar.
+    overflow-wrap: anywhere;
+    // Let users still select the text manually if they prefer.
+    user-select: all;
+}
+
+// Borderless icon button (transparent, muted, 2px padding,
+// hover/focus → accent). `.components-button` chained + `!important` on sizing
+// so it beats the @wordpress/components default Button box (36px min / padding
+// / focus ring), shrinking it to the bare 16px icon like the mockup.
+.wppb-fb-shortcode-copy.components-button {
+    background: transparent;
+    color: var(--wppb-fb-text-muted);
+    flex: 0 0 auto;
+    height: auto !important;
+    min-width: 0 !important;
+    padding: var(--wppb-fb-space-3xs) !important;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        box-shadow: none;
+        color: var(--wppb-fb-accent);
+    }
+
+    svg {
+        display: block;
+    }
+}

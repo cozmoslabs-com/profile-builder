@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-phone",
+    "title": "Phone",
+    "wppbFieldType": "Phone",
+    "category": "profile-builder-advanced",
+    "icon": "phone",
+    "description": "Phone number input field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Phone Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "phone-format": {
+            "type": "string",
+            "default": ""
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

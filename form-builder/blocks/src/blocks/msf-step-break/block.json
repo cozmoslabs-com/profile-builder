@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/msf-step-break",
+    "wppbAddonBlock": true,
+    "title": "Step Break",
+    "category": "profile-builder-structural",
+    "description": "Multi-Step Forms: ends the current step and starts a new one. Insert between fields to split the form into pages.",
+    "icon": "minus",
+    "keywords": [ "step", "break", "multi", "page", "msf" ],
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "multiple": true,
+        "inserter": true
+    },
+    "textdomain": "profile-builder",
+    "attributes": {}
+}

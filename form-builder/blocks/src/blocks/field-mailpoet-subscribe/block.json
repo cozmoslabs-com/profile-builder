@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-mailpoet-subscribe",
+    "title": "MailPoet Subscribe",
+    "wppbFieldType": "MailPoet Subscribe",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-advanced",
+    "icon": "email",
+    "description": "Adds a checkbox that subscribes the user to a MailPoet list.",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Subscribe to our newsletter" },
+        "meta-name": { "type": "string", "default": "" },
+        "description": { "type": "string", "default": "" },
+        "mailpoet-lists": { "type": "string", "default": "" },
+        "mailpoet-default-checked": { "type": "string", "default": "" },
+        "mailpoet-hide-field": { "type": "string", "default": "" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

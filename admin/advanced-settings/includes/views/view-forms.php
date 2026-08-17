@@ -512,6 +512,52 @@
 
             <input type="hidden" name="wppb_toolbox_current_tab" value="forms" />
 
+            <?php
+            // Forms editor mode toggle. Registered under the same Settings
+            // API group (wppb_toolbox_forms_settings) by form-builder-editor-mode.php
+            // so the existing Save Changes button below persists it too --
+            // a separate form here collided with the floating publish bar.
+            if ( function_exists( 'wppb_fb_forms_editor_mode' ) ) :
+                $wppb_fb_current_modes = array(
+                    'wppb-rf-cpt'  => wppb_fb_forms_editor_mode( 'wppb-rf-cpt' ),
+                    'wppb-epf-cpt' => wppb_fb_forms_editor_mode( 'wppb-epf-cpt' ),
+                );
+                $wppb_fb_rows = array(
+                    'wppb-rf-cpt'  => __( 'Registration Forms', 'profile-builder' ),
+                    'wppb-epf-cpt' => __( 'Edit Profile Forms', 'profile-builder' ),
+                );
+            ?>
+                <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-settings wppb-forms-editor-mode-section">
+                    <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Forms Editor', 'profile-builder' ); ?></h3>
+
+                    <p class="cozmoslabs-description">
+                        <?php esc_html_e( 'Choose which editor handles each form type. The modern editor is the Gutenberg-based form-builder; the classic editor restores the legacy Multiple Registration / Edit Profile Forms interface.', 'profile-builder' ); ?>
+                    </p>
+
+                    <?php foreach ( $wppb_fb_rows as $wppb_fb_pt => $wppb_fb_label ) :
+                        $wppb_fb_mode = $wppb_fb_current_modes[ $wppb_fb_pt ];
+                    ?>
+                        <div class="cozmoslabs-form-field-wrapper">
+                            <label class="cozmoslabs-form-field-label"><?php echo esc_html( $wppb_fb_label ); ?></label>
+                            <fieldset>
+                                <label style="margin-right: 16px;">
+                                    <input type="radio" name="wppb_forms_editor_mode[<?php echo esc_attr( $wppb_fb_pt ); ?>]" value="modern" <?php checked( $wppb_fb_mode, 'modern' ); ?>>
+                                    <?php esc_html_e( 'Modern', 'profile-builder' ); ?>
+                                </label>
+                                <label>
+                                    <input type="radio" name="wppb_forms_editor_mode[<?php echo esc_attr( $wppb_fb_pt ); ?>]" value="classic" <?php checked( $wppb_fb_mode, 'classic' ); ?>>
+                                    <?php esc_html_e( 'Classic', 'profile-builder' ); ?>
+                                </label>
+                            </fieldset>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <p class="cozmoslabs-description">
+                        <?php esc_html_e( 'Switching to Classic auto-enables the matching Multiple Forms module so its admin interface loads. Forms created in either editor read and write the same data, so you can switch back at any time.', 'profile-builder' ); ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+
         </div>
 
         <div class="submit cozmoslabs-submit">

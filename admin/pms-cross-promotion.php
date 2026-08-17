@@ -286,9 +286,22 @@ function wppb_pms_cross_promo() {
  */
 add_action('init', function()
 {
-    if ( ( !isset($_GET['page']) || $_GET['page'] != 'profile-builder-pms-promo' ) && function_exists('is_plugin_active') && !is_plugin_active( 'paid-member-subscriptions/index.php' ) ){
-        new WPPB_Add_General_Notices('wppb_pms_cross_promo',
-            sprintf(__('Allow your users to have <strong>paid accounts with Profile Builder</strong>. %1$sFind out how >%2$s %3$sDismiss%4$s', 'profile-builder'), "<a href='" . esc_url( admin_url('options.php?page=profile-builder-pms-promo') ) . "'>", "</a>", "<a class='wppb-dismiss-notification' href='" . esc_url( wp_nonce_url( add_query_arg( 'wppb_pms_cross_promo_dismiss_notification', '0' ), 'wppb_general_notice_dismiss' ) ) . "'>", "</a>"),
-            'pms-cross-promo');
+    $is_pms_promo_page = isset( $_GET['page'] ) && $_GET['page'] === 'profile-builder-pms-promo';
+    $is_setup_wizard   = isset( $_GET['subpage'] ) && $_GET['subpage'] === 'wppb-setup';
+
+    if ( $is_pms_promo_page || $is_setup_wizard ) {
+        return;
     }
+
+    if ( ! function_exists( 'is_plugin_active' ) || is_plugin_active( 'paid-member-subscriptions/index.php' ) ) {
+        return;
+    }
+
+    if ( ! wppb_should_show_marketing_notice() ) {
+        return;
+    }
+
+    new WPPB_Add_General_Notices('wppb_pms_cross_promo',
+        sprintf(__('Allow your users to have <strong>paid accounts with Profile Builder</strong>. %1$sFind out how >%2$s %3$sDismiss%4$s', 'profile-builder'), "<a href='" . esc_url( admin_url('options.php?page=profile-builder-pms-promo') ) . "'>", "</a>", "<a class='wppb-dismiss-notification' href='" . esc_url( wp_nonce_url( add_query_arg( 'wppb_pms_cross_promo_dismiss_notification', '0' ), 'wppb_general_notice_dismiss' ) ) . "'>", "</a>"),
+        'pms-cross-promo');
 });

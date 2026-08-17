@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-upload",
+    "title": "Upload",
+    "wppbFieldType": "Upload",
+    "category": "profile-builder-standard",
+    "icon": "upload",
+    "description": "File upload field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Upload Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "simple-upload": {
+            "type": "string",
+            "default": ""
+        },
+        "allowed-upload-extensions": {
+            "type": "string",
+            "default": ".*"
+        },
+        "max-file-size": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

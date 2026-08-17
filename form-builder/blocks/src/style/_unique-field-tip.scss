@@ -1,0 +1,41 @@
+// Tooltip on a greyed-out "New Fields" inserter entry
+// (components/UniqueFieldTooltip.js). Core dims the entry of a field type that
+// may only appear once per form and says nothing about why, so we anchor our
+// own explanation to it.
+//
+// Styled as a dark chip like core's own Tooltip rather than the light sheet a
+// bare Popover renders — that's the affordance users read as "hint" instead of
+// "menu."
+//
+// No `.wppb-fb-block-editor` scope needed (unlike the bare-Gutenberg-selector
+// partials): the class is ours and only reaches the DOM from a component that
+// already gates on the PB form CPTs.
+// `.components-popover` is doubled up (not decoration): core sizes the popover
+// through those same classes, and a lone `.wppb-fb-unique-tip` only ties on
+// specificity — which core's stylesheet then wins on source order.
+.components-popover.wppb-fb-unique-tip {
+    // Load-bearing, not polish. The tooltip renders directly beneath the entry,
+    // so a pointer over it would resolve to "not an inserter entry", close the
+    // tooltip, land back on the entry, reopen it — flickering for as long as the
+    // pointer sat there.
+    pointer-events: none;
+
+    .components-popover__content {
+        // Core shrink-wraps the content box to min-content, which for a sentence
+        // means "as wide as the longest word" — the tip renders as a
+        // one-word-per-line ribbon. Sizing must land HERE, on the content box,
+        // not on the popover root: the root is itself sized from this child, so
+        // a `width` up there only widens an empty frame around a 56px chip.
+        max-width: 220px;
+        width: max-content;
+
+        background: var(--wppb-fb-surface-inverse);
+        border: none;
+        border-radius: var(--wppb-fb-radius-sm);
+        box-shadow: none;
+        color: var(--wppb-fb-text-on-accent);
+        font-size: var(--wppb-fb-font-sm);
+        line-height: 1.4;
+        padding: var(--wppb-fb-space-xs) var(--wppb-fb-space-sm);
+    }
+}

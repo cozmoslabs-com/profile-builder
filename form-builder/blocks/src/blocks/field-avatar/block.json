@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-avatar",
+    "title": "Avatar",
+    "wppbFieldType": "Avatar",
+    "category": "profile-builder-standard",
+    "icon": "admin-users",
+    "description": "User avatar upload field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Avatar"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "simple-upload": {
+            "type": "string",
+            "default": ""
+        },
+        "allowed-image-extensions": {
+            "type": "string",
+            "default": ".*"
+        },
+        "avatar-size": {
+            "type": "string",
+            "default": "100"
+        },
+        "max-file-size": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

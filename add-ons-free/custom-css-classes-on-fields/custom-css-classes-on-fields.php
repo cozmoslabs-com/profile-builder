@@ -46,3 +46,4 @@ function wppb_ccc_class( $class, $field, $error_var ){
     return $class;
 }
 add_filter( 'wppb_field_css_class', 'wppb_ccc_class', 10, 3 );
+

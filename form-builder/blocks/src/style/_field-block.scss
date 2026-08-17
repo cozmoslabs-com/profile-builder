@@ -1,0 +1,130 @@
+// Canvas field-block visuals.
+//
+// Mirrors the designer's "Form Editor" mockup field-block design: a roomy white
+// card, a 14px bold label with a red required asterisk, a bordered "control"
+// placeholder preview of the front-end input, and a meta row with a field-type
+// chip + the field number. Token values come from style/_tokens.scss.
+.wppb-fb-field-block {
+    background: var(--wppb-fb-surface-default);
+    border: 1px solid var(--wppb-fb-border-default);
+    border-radius: var(--wppb-fb-radius-md); // Figma radius "md" = cards/tiles/fields
+    // border-box so the layout's content-size (max-width) caps the block's
+    // TOTAL width, not its content box. Without it, content-box adds each
+    // block's padding+border OUTSIDE the max-width, so blocks with different
+    // padding render at different total widths once the canvas is wide enough
+    // for the content-size to bind (masked on a narrow, both-sidebars canvas).
+    box-sizing: border-box;
+    margin: var(--wppb-fb-space-md) 0;
+    padding: var(--wppb-fb-space-2xl); // 20px all sides
+
+    // Persist the "selected block" outline while focus is inside the Field
+    // Settings PluginSidebar. Gutenberg binds the blue outline to
+    // `.block-editor-block-list__block:focus::after` — DOM focus, not
+    // `.is-selected` — so clicking any control in our right-rail PluginSidebar
+    // makes the canvas block lose `:focus` and the outline vanishes, though it's
+    // still the selected block in the store — the opposite of the Block-inspector
+    // contract users expect when editing a field's settings.
+    //
+    // Repaint the same outline off `.is-selected` so it survives the focus shift.
+    // Mirrors Gutenberg's pseudo-element geometry (inset 0, outline 2px theme
+    // color, white inner ring via inset box-shadow) so the two render pixel-
+    // identically — when focus IS on the canvas both paint the same outline, no
+    // double border.
+    &.is-selected::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        outline: 2px solid var(--wppb-fb-accent);
+        outline-offset: -2px;
+        box-shadow: inset 0 0 0 2.5px rgba(255, 255, 255, 0.7);
+        border-radius: inherit;
+    }
+
+    .wppb-fb-field-label {
+        color: var(--wppb-fb-text-primary);
+        display: block;
+        font-size: var(--wppb-fb-font-lg);
+        font-weight: 600;
+        margin-bottom: var(--wppb-fb-space-sm);
+    }
+
+    // Required marker beside the label.
+    .wppb-fb-field-required {
+        color: var(--wppb-fb-status-danger);
+        margin-left: var(--wppb-fb-space-3xs);
+    }
+
+    // In-card callouts (e.g. `wppb-fb-username-hidden-notice`, the exclusive-
+    // field-conflict warning). Core's `.components-notice` declares padding but
+    // NO margin, so the notice sits flush against whatever follows it — the
+    // field preview when it's passed as a child, the meta row otherwise. Give
+    // it bottom breathing room. Scoped by our own block class, so it can't
+    // affect notices on other editor screens.
+    .components-notice {
+        margin-bottom: var(--wppb-fb-space-lg);
+    }
+
+    // Static preview of the front-end control. Each block passes a real (but
+    // disabled) input/select/textarea as children; style them to read like a
+    // placeholder box. Checkbox/radio/file inputs keep
+    // their native size — only text-like fields get the full-width frame.
+    .wppb-fb-field-preview {
+        color: var(--wppb-fb-text-primary);
+
+        input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+        select,
+        textarea {
+            background: var(--wppb-fb-surface-default);
+            border: 1px solid var(--wppb-fb-border-strong);
+            border-radius: var(--wppb-fb-radius-sm);
+            box-sizing: border-box;
+            color: var(--wppb-fb-text-faint);
+            font-size: var(--wppb-fb-font-md);
+            height: 38px;
+            padding: 0 var(--wppb-fb-space-lg);
+            width: 100%;
+        }
+
+        textarea {
+            height: 96px;
+            padding: var(--wppb-fb-space-md) var(--wppb-fb-space-lg);
+            resize: none;
+        }
+
+        // Previews are display-only — block all interaction regardless of type.
+        input,
+        select,
+        textarea {
+            pointer-events: none;
+        }
+    }
+
+    .wppb-fb-field-desc {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-sm);
+        margin-top: var(--wppb-fb-space-sm);
+    }
+
+    // Bottom meta row: a field-type chip followed by the field number.
+    .wppb-fb-field-meta {
+        align-items: center;
+        color: var(--wppb-fb-text-faint);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: var(--wppb-fb-font-xs);
+        gap: var(--wppb-fb-space-md);
+        margin-top: var(--wppb-fb-space-lg);
+    }
+
+    .wppb-fb-field-tag {
+        align-items: center;
+        background: var(--wppb-fb-surface-subtle);
+        border-radius: var(--wppb-fb-radius-pill);
+        color: var(--wppb-fb-text-muted);
+        display: inline-flex;
+        font-weight: 500;
+        gap: var(--wppb-fb-space-2xs);
+        padding: var(--wppb-fb-space-3xs) var(--wppb-fb-space-xs);
+    }
+}

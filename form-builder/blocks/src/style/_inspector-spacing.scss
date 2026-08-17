@@ -1,0 +1,61 @@
+// Spacing rules mirroring Gutenberg's `.block-editor-block-inspector` scope.
+// The native Block sidebar wraps controls in that container, whose CSS supplies
+// margin-bottom between successive base/radio controls. Our right-rail surfaces
+// (the Field Settings PluginSidebar AND the Document sidebar's
+// PluginDocumentSettingPanels for Form Settings / Progress Bar / MSF / FFC) lack
+// that ancestor, so controls would otherwise collapse against each other.
+//
+// Scope: `.interface-complementary-area` covers every right-rail container on
+// our screens; SCSS only loads on PB form CPTs, so it can't leak elsewhere. We
+// mirror only the vertical-rhythm rules — NOT inspector chrome like separators
+// or panel headers.
+// Scoped to PB form CPT screens via `.wppb-fb-block-editor` (see
+// _editor-chrome.scss header): this partial ships in the bundle stylesheet that
+// loads on every block-editor screen, and `.interface-complementary-area` is the
+// generic right-rail container present on ALL editors — without the scope these
+// spacing rules would pad the block inspector on posts/pages/other CPTs.
+.wppb-fb-block-editor .interface-complementary-area {
+    // Section header typography — the mockup's collapsible section titles
+    // ("Shortcode", "After submission", …) read as label-lg (14/600, primary).
+    // The PanelBody title text lives in the toggle button inside
+    // `.components-panel__body-title`; style the text there (keep the chevron
+    // Gutenberg renders on the right).
+    .components-panel__body > .components-panel__body-title .components-button {
+        color: var(--wppb-fb-text-primary);
+        font-size: var(--wppb-fb-font-lg);
+        font-weight: 600;
+    }
+
+    .components-panel__body {
+        .block-editor-html-element-control:where(:not(:last-child)),
+        .block-editor-image-size-control:where(:not(:last-child)),
+        .components-base-control:where(:not(:last-child)),
+        .components-radio-control:where(:not(:last-child)) {
+            margin-bottom: var(--wppb-fb-space-xl);
+        }
+
+        // CheckboxControl renders <ul><li> for grouped choices via the parent
+        // component (e.g. user-role / location pickers). The legacy inspector
+        // styles add inter-item breathing room through generic descendant
+        // rules; replicate just the list-spacing piece here.
+        .components-checkbox-control + .components-checkbox-control {
+            margin-top: var(--wppb-fb-space-sm);
+        }
+
+        // Notices used as in-panel callouts (login-with-email, no-selectable-
+        // roles, add-on-inactive, conditional-logic warnings, …) also render
+        // outside .components-base-control and carry no margin of their own, so
+        // the control that follows fuses to them.
+        .components-notice:where(:not(:last-child)) {
+            margin-bottom: var(--wppb-fb-space-xl);
+        }
+
+        // ToggleControl + help-text combos need breathing room so the next
+        // control isn't fused to the prior group. Inspector gets this via the
+        // base-control margin-bottom (above), but ToggleControl historically
+        // renders outside .components-base-control, so add an explicit margin.
+        .components-toggle-control:where(:not(:last-child)) {
+            margin-bottom: var(--wppb-fb-space-xl);
+        }
+    }
+}

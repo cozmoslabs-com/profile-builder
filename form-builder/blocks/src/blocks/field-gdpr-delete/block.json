@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-gdpr-delete",
+    "title": "GDPR Delete Button",
+    "wppbFieldType": "GDPR Delete Button",
+    "category": "profile-builder-other",
+    "icon": "trash",
+    "description": "Button to delete account and all data.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Delete Account"
+        },
+        "description": {
+            "type": "string",
+            "default": "Click here to delete your account."
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

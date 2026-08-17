@@ -1,0 +1,70 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-map",
+    "title": "Map",
+    "wppbFieldType": "Map",
+    "category": "profile-builder-advanced",
+    "icon": "location",
+    "description": "Google Maps location selection field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Map Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "map-api-key": {
+            "type": "string",
+            "default": ""
+        },
+        "map-default-lat": {
+            "type": "string",
+            "default": "40.7127753"
+        },
+        "map-default-lng": {
+            "type": "string",
+            "default": "-74.0059728"
+        },
+        "map-default-zoom": {
+            "type": "string",
+            "default": "12"
+        },
+        "map-height": {
+            "type": "string",
+            "default": "400"
+        },
+        "map-pins-load-type": {
+            "type": "string",
+            "default": ""
+        },
+        "map-pagination-number": {
+            "type": "string",
+            "default": ""
+        },
+        "map-bubble-fields": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-woo-shipping-address",
+    "title": "WooCommerce Customer Shipping Address",
+    "wppbFieldType": "WooCommerce Customer Shipping Address",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-advanced",
+    "icon": "cart",
+    "description": "WooCommerce shipping address fields (choose which sub-fields to show, which are required, and their labels).",
+    "attributes": {
+        "id": { "type": "number", "default": 0 },
+        "field-title": { "type": "string", "default": "Shipping Address" },
+        "meta-name": { "type": "string", "default": "wppbwoo_shipping" },
+        "description": { "type": "string", "default": "" },
+        "woo-shipping-fields": { "type": "string", "default": "" },
+        "woo-shipping-fields-required": { "type": "string", "default": "" },
+        "woo-shipping-fields-sort-order": { "type": "string", "default": "" },
+        "woo-shipping-fields-name": { "type": "string", "default": "" }
+    },
+    "supports": { "html": false, "reusable": false, "inserter": true },
+    "textdomain": "profile-builder"
+}

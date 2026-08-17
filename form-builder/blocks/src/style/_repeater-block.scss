@@ -1,0 +1,73 @@
+// Repeater field block — visual layout.
+//
+// A white card with a
+// header (icon + title + type chip + field number), an italic scope hint, and
+// a body holding the sub-field InnerBlocks plus a dashed "Add sub-field"
+// appender. Reuses `.wppb-fb-field-block` for the card frame + selection
+// outline (`.is-selected::after`); padding is zeroed here so the head/body
+// supply their own insets like the mockup. Token values come from
+// style/_tokens.scss.
+.wppb-fb-field-block.wppb-fb-repeater-block {
+    padding: 0;
+}
+
+.wppb-fb-repeater-block {
+    &__head {
+        align-items: center;
+        display: flex;
+        gap: var(--wppb-fb-space-sm);
+        padding: var(--wppb-fb-space-lg) var(--wppb-fb-space-xl) 0;
+    }
+
+    &__icon {
+        align-items: center;
+        color: var(--wppb-fb-text-muted);
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+    &__title {
+        color: var(--wppb-fb-text-primary);
+        font-size: var(--wppb-fb-font-lg);
+        font-weight: 600;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__meta {
+        align-items: center;
+        color: var(--wppb-fb-text-faint);
+        display: flex;
+        flex: 0 0 auto;
+        font-size: var(--wppb-fb-font-xs);
+        gap: var(--wppb-fb-space-md);
+        margin-left: auto;
+    }
+
+    &__desc {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-sm);
+        padding: var(--wppb-fb-space-xs) var(--wppb-fb-space-xl) 0;
+    }
+
+    &__hint {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-sm);
+        font-style: italic;
+        padding: var(--wppb-fb-space-xs) var(--wppb-fb-space-xl) var(--wppb-fb-space-lg);
+    }
+
+    &__body {
+        padding: 0 var(--wppb-fb-space-lg) var(--wppb-fb-space-lg);
+
+        // Sub-field cards sit flush inside the body, lightly spaced.
+        .wppb-fb-field-block {
+            margin: var(--wppb-fb-space-sm) 0;
+        }
+
+        // The "Add sub-field" appender (AddFieldButton) is styled by the
+        // shared rule in style/_add-field-button.scss.
+    }
+}

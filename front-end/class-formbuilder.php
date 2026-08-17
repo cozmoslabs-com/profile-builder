@@ -39,6 +39,14 @@ class Profile_Builder_Form_Creator{
             $this->args['ID'] = Profile_Builder_Form_Creator::wppb_get_form_id_from_form_name( $this->args['form_name'], $this->args['form_type'] );
         }
 
+        /* Let add-ons finalise the form args once ID/form_name are resolved.
+           The form-builder hooks this (wppb_fb_resolve_default_form_id) to point
+           a shortcode with no form specified (empty ID) at the configured
+           default form CPT, so [wppb-register] / [wppb-edit-profile] render the
+           default form. Must run before the wppb_change_form_fields filter below
+           (multiple-forms reads $this->args['ID'] to pick the per-form list). */
+        $this->args = apply_filters( 'wppb_form_args_after_init', $this->args );
+
         global $wppb_shortcode_on_front;
         $wppb_shortcode_on_front = true;
 
@@ -160,7 +168,7 @@ class Profile_Builder_Form_Creator{
             if( !empty( $role_in_arg->capabilities['manage_options'] ) || !empty( $role_in_arg->capabilities['remove_users'] ) ){
                 if( !current_user_can( 'manage_options' ) || !current_user_can( 'remove_users' ) ){
                     $this->args['role'] = get_option('default_role');
-                    echo wp_kses_post( apply_filters( 'wppb_register_pre_form_user_role_message', '<p class="alert wppb-error" id="wppb_form_general_message">'.__( 'The role of the created user set to the default role. Only an administrator can register a user with the role assigned to this form.', 'profile-builder').'</p>' ) );
+                    echo wp_kses_post( apply_filters( 'wppb_register_pre_form_user_role_message', '<p class="alert wppb-error" id="wppb_form_general_message" role="alert">'.__( 'The role of the created user set to the default role. Only an administrator can register a user with the role assigned to this form.', 'profile-builder').'</p>' ) );
                 }
             }
         }
@@ -194,7 +202,7 @@ class Profile_Builder_Form_Creator{
 
                 if ( !is_user_logged_in() ){
                     if ( !$registration )
-                        echo wp_kses_post( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.esc_html(__( 'Only an administrator can add new users.', 'profile-builder')).'</p>' ) );
+                        echo wp_kses_post( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message" role="alert">'.esc_html(__( 'Only an administrator can add new users.', 'profile-builder')).'</p>' ) );
 
                     elseif ( $registration ){
                         $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '' ) );
@@ -204,10 +212,10 @@ class Profile_Builder_Form_Creator{
                     $current_user_capability = apply_filters ( 'wppb_registration_user_capability', 'create_users' );
 
                     if ( current_user_can( $current_user_capability ) && $registration )
-                        $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.esc_html(__( 'Users can register themselves or you can manually create users here.', 'profile-builder')). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.esc_attr(__( 'This message is only visible by administrators', 'profile-builder' )).'"/>' . '</p>' ) );
+                        $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message" role="alert">'.esc_html(__( 'Users can register themselves or you can manually create users here.', 'profile-builder')). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.esc_attr(__( 'This message is only visible by administrators', 'profile-builder' )).'"/>' . '</p>' ) );
 
                     elseif ( current_user_can( $current_user_capability ) && !$registration )
-                        $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.esc_html(__( 'Users cannot currently register themselves, but you can manually create users here.', 'profile-builder')). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.esc_attr(__( 'This message is only visible by administrators', 'profile-builder' )).'"/>' . '</p>' ) );
+                        $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message" role="alert">'.esc_html(__( 'Users cannot currently register themselves, but you can manually create users here.', 'profile-builder')). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.esc_attr(__( 'This message is only visible by administrators', 'profile-builder' )).'"/>' . '</p>' ) );
 
                     elseif ( !current_user_can( $current_user_capability ) ){
                         global $user_ID;
@@ -227,13 +235,13 @@ class Profile_Builder_Form_Creator{
                         $this->args['logout_redirect_url'] = wppb_get_redirect_url( $this->args['redirect_priority'], 'after_logout', $this->args['logout_redirect_url'], $userdata );
                         $this->args['logout_redirect_url'] = apply_filters( 'wppb_after_logout_redirect_url', $this->args['logout_redirect_url'] );
 
-                        echo wp_kses_post( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.sprintf( __( "You are currently logged in as %1s. You don't need another account. %2s", 'profile-builder' ), '<a href="'.get_author_posts_url( $user_ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( $this->args['logout_redirect_url'] ).'" title="'.__( 'Log out of this account.', 'profile-builder' ).'">'.__( 'Logout', 'profile-builder' ).'  &raquo;</a>' ).'</p>', $user_ID ) );
+                        echo wp_kses_post( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message" role="alert">'.sprintf( __( "You are currently logged in as %1s. You don't need another account. %2s", 'profile-builder' ), '<a href="'.get_author_posts_url( $user_ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( $this->args['logout_redirect_url'] ).'" title="'.__( 'Log out of this account.', 'profile-builder' ).'">'.__( 'Logout', 'profile-builder' ).'  &raquo;</a>' ).'</p>', $user_ID ) );
                     }
                 }
 
             }elseif ( $this->args['form_type'] == 'edit_profile' ){
                 if ( !is_user_logged_in() )
-                    echo wp_kses_post( apply_filters( 'wppb_edit_profile_user_not_logged_in_message', '<p class="warning" id="wppb_edit_profile_user_not_logged_in_message">'.esc_html(__( 'You must be logged in to edit your profile.', 'profile-builder' )) .'</p>' ) );
+                    echo wp_kses_post( apply_filters( 'wppb_edit_profile_user_not_logged_in_message', '<p class="warning" id="wppb_edit_profile_user_not_logged_in_message" role="alert">'.esc_html(__( 'You must be logged in to edit your profile.', 'profile-builder' )) .'</p>' ) );
 
                 elseif ( is_user_logged_in() )
                     $this->wppb_form_content( apply_filters( 'wppb_edit_profile_logged_in_user_message', '' ) );
@@ -292,7 +300,7 @@ class Profile_Builder_Form_Creator{
         /* define redirect location */
         if( $this->args['redirect_activated'] == 'No' ) {
             if( isset( $_POST['_wp_http_referer'] ) ) {
-                $redirect = esc_url_raw($_POST['_wp_http_referer']);
+                $redirect = wppb_sanitize_request_url( $_POST['_wp_http_referer'] );
 			} else {
                 $redirect = home_url();
 			}
@@ -378,10 +386,10 @@ class Profile_Builder_Form_Creator{
 
 				if( $this->args['form_type'] == 'register' && is_wp_error( $user_id ) ) {
                     // Failed registration: show the error and re-render the form so the user can retry.
-                    echo $message . wp_kses_post( apply_filters( 'wppb_general_top_error_message', '<p id="wppb_form_general_message" class="wppb-error">'. esc_html__( 'Something went wrong while creating the user account, please try again.', 'profile-builder' ) .'</p>' ) ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+                    echo $message . wp_kses_post( apply_filters( 'wppb_general_top_error_message', '<p id="wppb_form_general_message" class="wppb-error" role="alert">'. esc_html__( 'Something went wrong while creating the user account, please try again.', 'profile-builder' ) .'</p>' ) ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
                 } elseif( ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] ) && ( isset( $_POST['action'] ) && $_POST['action'] === $this->args['form_type'] ) ) {
 
-                    $form_message_tpl_start = apply_filters( 'wppb_form_message_tpl_start', '<p class="alert wppb-success" id="wppb_form_general_message">' );
+                    $form_message_tpl_start = apply_filters( 'wppb_form_message_tpl_start', '<p class="alert wppb-success" id="wppb_form_general_message" role="alert">' );
                     $form_message_tpl_end = apply_filters( 'wppb_form_message_tpl_end', '</p>' );
 
                     if( ! current_user_can( 'manage_options' ) && $this->args['form_type'] != 'edit_profile' && isset( $_POST['custom_field_user_role'] ) ) {
@@ -473,7 +481,7 @@ class Profile_Builder_Form_Creator{
 				}
 
 			}else
-				echo $message. wp_kses_post( apply_filters( 'wppb_general_top_error_message', '<p id="wppb_form_general_message" class="wppb-error">'.esc_html(__( 'There was an error in the submitted form', 'profile-builder' )).'</p>' ) ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped above */
+				echo $message. wp_kses_post( apply_filters( 'wppb_general_top_error_message', '<p id="wppb_form_general_message" class="wppb-error" role="alert">'.esc_html(__( 'There was an error in the submitted form', 'profile-builder' )).'</p>' ) ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped above */
 
 		}else
 			echo $message; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */  /* properly escaped when created */
@@ -550,9 +558,9 @@ class Profile_Builder_Form_Creator{
 
 				if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' ) {
                     if( isset( $_POST['wppb_referer_url'] ) )
-                        $referer = esc_url_raw( $_POST['wppb_referer_url'] );
+                        $referer = wppb_sanitize_request_url( $_POST['wppb_referer_url'] );
                     elseif( isset( $_SERVER['HTTP_REFERER'] ) )
-                        $referer =  esc_url_raw( $_SERVER['HTTP_REFERER'] );
+                        $referer = wppb_sanitize_request_url( $_SERVER['HTTP_REFERER'] );
                     else
                         $referer = '';
 
@@ -771,7 +779,7 @@ class Profile_Builder_Form_Creator{
                     if ( ! array_key_exists( $field['meta-name'], $global_request ) ) {
                         $posted_value = '';
                     } elseif( in_array( $field['field'], array( 'URL' ), true ) ) {
-                        $posted_value = esc_url_raw( $global_request[ $field['meta-name'] ] );
+                        $posted_value = wppb_sanitize_request_url( $global_request[ $field['meta-name'] ] );
                     } elseif( in_array( $field['field'], array( 'Textarea' ), true ) ){
                         $meta_value = sanitize_textarea_field( wp_unslash( $global_request[ $field['meta-name'] ] ) );
 

@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-datepicker",
+    "title": "Datepicker",
+    "wppbFieldType": "Datepicker",
+    "category": "profile-builder-advanced",
+    "icon": "calendar",
+    "description": "Date selection field with a calendar popup.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Datepicker Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        },
+        "date-format": {
+            "type": "string",
+            "default": "mm/dd/yy"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

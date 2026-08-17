@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-select-user-role",
+    "title": "Select (User Role)",
+    "wppbFieldType": "Select (User Role)",
+    "category": "profile-builder-advanced",
+    "icon": "groups",
+    "description": "Lets users pick from a configurable list of WordPress roles at registration.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "User Role"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "user-roles": {
+            "type": "string",
+            "default": ""
+        },
+        "user-roles-on-edit-profile": {
+            "type": "string",
+            "default": ""
+        },
+        "user-roles-sort-order": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

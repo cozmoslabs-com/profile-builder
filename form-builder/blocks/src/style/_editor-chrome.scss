@@ -1,0 +1,152 @@
+// Editor-chrome cleanup for PB form CPT screens.
+//
+// The `.wppb-fb-block-editor` wrapper is REQUIRED, not cosmetic: this stylesheet is
+// every PB block's `editor_style`, so WordPress loads it on EVERY block-editor
+// screen. The rules below use bare generic Gutenberg selectors; unscoped they would
+// restyle posts, pages, the Site Editor and the Widgets screen. The marker class is
+// added to the main <body> by admin_body_class (form-builder-editor-chrome.php) and
+// to the canvas iframe <body> by components/EditorBodyClass.js. Inner rules keep
+// their original indentation to keep the scoping diff reviewable.
+.wppb-fb-block-editor {
+// Existing Fields tab hijack: suppress Gutenberg's own children of the Media
+// tabpanel so only our portalled panel shows.
+.wppb-fb-existing-fields-hijacked > *:not(.wppb-fb-existing-fields-injected) {
+    display: none !important;
+}
+
+// Hide the Settings sidebar's "Block" tab — PB blocks route their inspector content
+// to the Field Settings PluginSidebar, so it would land on an empty pane. The
+// keyboard/dispatch route is closed separately in FieldSettingsAutoOpener.
+.interface-complementary-area [role="tab"][data-tab-id="edit-post/block"] {
+    display: none;
+}
+
+// With one tab left, Gutenberg's overflow fade-mask fades the only visible tab.
+// `!important`: the mask comes from an emotion class of equal specificity.
+.interface-complementary-area [role="tablist"] {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+}
+
+// Hide the Patterns tab (renamed → "Examples" in JS): no PB examples yet, so it
+// lands on an empty pane. Re-enabling is just deleting this rule.
+.block-editor-tabbed-sidebar [role="tab"][id$="-patterns"] {
+    display: none;
+}
+
+// Hide the inserter's "Tips" panel. Its heading is already VisuallyHidden, so this
+// drops only the decorative hint.
+.block-editor-inserter__tips {
+    display: none;
+}
+
+// Pin the inserter search field while the list scrolls beneath it. Applies to both
+// tabs carrying `.block-editor-inserter__search` (native + hijacked).
+.block-editor-tabbed-sidebar__tabpanel .block-editor-inserter__search {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--wppb-fb-surface-default);
+}
+
+// Layer 8d: hide the toolbar "+" inserter toggle — the inserter is forced open by
+// components/ForceOpenInserter.js, so the toggle only flickers. Core ships a stable
+// (0,3,0) chain, so we replicate it + `.components-button` for (0,4,0) rather than
+// reaching for `!important`.
+.editor-document-tools .editor-document-tools__left > .editor-document-tools__inserter-toggle.components-button {
+    display: none;
+}
+
+// The inserter panel's own "Close Block Inserter" (✕): same rationale.
+// `.components-button` appended for (0,2,0) over core's generic (0,1,0) rule.
+.block-editor-tabbed-sidebar__close-button.components-button {
+    display: none;
+}
+
+// Layer 10: hide Undo / Redo / Document Overview (their shortcuts are already
+// unregistered by Layer 9). Ancestry + `.components-button` = (0,4,0) over core's
+// (0,3,0); descendant combinator so it holds if a button stops being a direct child.
+.editor-document-tools .editor-document-tools__left .editor-history__undo.components-button,
+.editor-document-tools .editor-document-tools__left .editor-history__redo.components-button,
+.editor-document-tools .editor-document-tools__left .editor-document-tools__document-overview-toggle.components-button {
+    display: none;
+}
+
+// Layer 11: hide the "Ctrl+K" command-palette hint — `core/commands` is unregistered
+// by Layer 9. Scoping through `.editor-document-bar__command` gives (0,2,0), needed
+// to beat core's equal-specificity `@media` rule that flips it back on wide screens.
+.editor-document-bar__command .editor-document-bar__shortcut {
+    display: none;
+}
+
+// Layer 12: make the center document bar non-interactive — its only control opens
+// the disabled command palette. pointer-events is INHERITED, so anchoring at the
+// wrapper cascades to every descendant. Title text stays readable; the button stays
+// keyboard-focusable, which is acceptable while the palette is neutered.
+.editor-document-bar {
+    pointer-events: none;
+}
+
+// Layer 13: hide View + Options (the two `.components-dropdown-menu` direct children)
+// and Settings (the sole `.interface-pinned-items` control), leaving Preview and Save
+// — neither of which matches. Scoped (0,2,0) over core's (0,1,0).
+.editor-header__settings > .components-dropdown-menu,
+.editor-header__settings .interface-pinned-items {
+    display: none;
+}
+
+// Layer 14: the Document sidebar is always open and un-closable (the behavioral half
+// is FieldSettingsAutoOpener), so hide its "Close Settings" ✕. The wrapper id uses
+// ':' where the store name uses '/'. Specificity: this header carries
+// `.editor-sidebar__panel-tabs`, for which core ships a (0,4,0) `display: flex` inside
+// a min-width media query — matching the button's own `.components-button.has-icon`
+// raises us to (0,5,1). The `:not()` is defensive; no pin renders today.
+[id="edit-post:document"] > .interface-complementary-area-header > button.components-button.has-icon:not(.interface-complementary-area__pin-unpin-item) {
+    display: none;
+}
+
+// Layer 15: hide the block toolbar's Options (⋮) dropdown — the only relevant field
+// action, Delete, is surfaced as its own toolbar button by BlockToolbarDelete.js.
+// BOTH selectors are load-bearing: the `:has()` one also hides the dropdown's bare
+// `.components-toolbar-group`, which would otherwise leave a ~12px flex gap; the
+// inner one is the `:has()`-less fallback (worst case the gap returns).
+.block-editor-block-toolbar .block-editor-block-settings-menu,
+.block-editor-block-toolbar .components-toolbar-group:has( > .block-editor-block-settings-menu ) {
+    display: none;
+}
+
+// Layer 16: hide the "Unlock" button. Mandatory Registration fields carry
+// server-injected `attrs.lock = { remove: true }`; the lock modal would let a user
+// clear it and delete the field. (The Options-dropdown "Lock" route died with Layer
+// 15.) This element IS its own toolbar-group, so no `:has()` trick is needed.
+.block-editor-block-toolbar .block-editor-block-lock-toolbar {
+    display: none;
+}
+
+// Layer 17: kill the block-switcher's INTERACTION but keep the icon (a block-type
+// indicator; its transform menu is empty for every PB block). `pointer-events` over
+// `display: none` so the icon survives and no empty flex gap appears.
+//
+// The `*` and the `!important` are BOTH load-bearing (verified live, whack-a-mole):
+// core re-asserts `pointer-events: all` on the contextual toolbar, on the toggle, and
+// on the icon SVG, and a descendant that re-enables it still captures the click even
+// under an ancestor's `none`. Wrapper-only and wrapper+toggle both stayed clickable.
+.block-editor-block-toolbar .block-editor-block-switcher,
+.block-editor-block-toolbar .block-editor-block-switcher * {
+    pointer-events: none !important;
+}
+
+// Layer 19: hide the editor footer (the block-breadcrumb bar) — structural navigation
+// for free-form documents, noise on a fixed field palette, and absent from the target
+// design shell. Nothing else lands in this region (Layer 2 default-denies meta-boxes).
+// Scoped through the skeleton ancestor for (0,2,0) over core's (0,1,0).
+.interface-interface-skeleton .interface-interface-skeleton__footer {
+    display: none;
+}
+
+// …and reclaim the clearance core reserves for that absolutely-positioned footer
+// (a `padding-bottom` on the scrolling body), which is now a dead strip.
+.interface-interface-skeleton .interface-interface-skeleton__body {
+    padding-bottom: 0;
+}
+} // end .wppb-fb-block-editor scope

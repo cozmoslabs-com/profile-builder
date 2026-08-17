@@ -34,7 +34,7 @@ function wppb_process_login(){
 
 	$redirect_to = '';
 	if ( isset( $_REQUEST['redirect_to'] ) ) {
-		$redirect_to = esc_url_raw( $_REQUEST['redirect_to'] );
+		$redirect_to = wppb_sanitize_request_url( $_REQUEST['redirect_to'] );
 	}
 
 	$user = wp_signon( array(), $secure_cookie );
@@ -47,7 +47,7 @@ function wppb_process_login(){
 		}
 	}
 
-	$requested_redirect_to = isset( $_REQUEST['redirect_to'] ) ? esc_url_raw( $_REQUEST['redirect_to'] ) : '';
+	$requested_redirect_to = isset( $_REQUEST['redirect_to'] ) ? wppb_sanitize_request_url( $_REQUEST['redirect_to'] ) : '';
 	/**
 	 * Filters the login redirect URL.
 	 */
@@ -167,9 +167,9 @@ function wppb_login_form( $args = array() ) {
 
 	// if an error is being shown pass the original referer forward
     if( isset( $_GET['wppb_referer_url'] ) ){
-        $wppb_referer_url = esc_url_raw ( $_GET['wppb_referer_url'] );
+        $wppb_referer_url = wppb_sanitize_request_url( $_GET['wppb_referer_url'] );
     } else {
-        $wppb_referer_url = esc_url_raw ( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : '' );
+        $wppb_referer_url = wppb_sanitize_request_url( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : '' );
     }
 
 	$form = '
@@ -412,7 +412,7 @@ function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
 		if( is_wp_error( $user ) ) {
             // if we don't have a successful login we must redirect to the url of the form, so make sure this happens
             if( isset( $_POST['wppb_request_url'] ) )
-                $redirect_to = esc_url_raw( $_POST['wppb_request_url'] );
+                $redirect_to = wppb_sanitize_request_url( $_POST['wppb_request_url'] );
             if( isset( $_POST['wppb_form_location'] ) )
                 $request_form_location = sanitize_text_field( $_POST['wppb_form_location'] );
             $error_string = $user->get_error_message();
@@ -423,8 +423,9 @@ function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
 
 				$lost_pass_url = site_url('/wp-login.php?action=lostpassword');
                 // if the Login shortcode has a lostpassword argument set, give the lost password error link that value
-                if (!empty($_POST['wppb_lostpassword_url'])) {
-                    $lost_pass_url = esc_url_raw( $_POST['wppb_lostpassword_url'] );
+                $lost_pass_url_input = wppb_sanitize_request_url( $_POST['wppb_lostpassword_url'] ?? '' );
+                if ( $lost_pass_url_input !== '' ) {
+                    $lost_pass_url = $lost_pass_url_input;
                     if ( wppb_check_missing_http( $lost_pass_url ) )
                         $lost_pass_url = "http://" . $lost_pass_url;
                 }
@@ -484,8 +485,9 @@ function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
             $wppb_error_string_nonce = wp_create_nonce( 'wppb_login_error_'.$error_string );
 
             // encode the error string and send it as a GET parameter
-            if ( isset($_POST['wppb_referer_url']) && $_POST['wppb_referer_url'] !== '' ) {
-                $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), '_wpnonce' => $wppb_error_string_nonce, 'request_form_location' => $request_form_location, 'wppb_referer_url' => urlencode(esc_url_raw( $_POST['wppb_referer_url'] )));
+            $referer_url = wppb_sanitize_request_url( $_POST['wppb_referer_url'] ?? '' );
+            if ( $referer_url !== '' ) {
+                $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), '_wpnonce' => $wppb_error_string_nonce, 'request_form_location' => $request_form_location, 'wppb_referer_url' => urlencode( $referer_url ));
             } else {
                 $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), '_wpnonce' => $wppb_error_string_nonce, 'request_form_location' => $request_form_location);
             }
@@ -629,7 +631,7 @@ function wppb_front_end_login( $atts ){
                 if ( isset( $_GET['wppb_message_type'] ) && $_GET['wppb_message_type'] == 'success' )
                     $message_type = 'wppb-success';
                 else $message_type = 'wppb-error';
-                $loginerror = '<p class="'. $message_type .'">' . wp_kses_post(str_replace( '-wppb-plus-', '+', $error_string)) . '</p><!-- .error -->';
+                $loginerror = '<p class="'. $message_type .'" role="alert">' . wp_kses_post(str_replace( '-wppb-plus-', '+', $error_string)) . '</p><!-- .error -->';
                 if (isset($_GET['request_form_location'])) {
                     if ($_GET['request_form_location'] === 'widget' && !in_the_loop()) {
                         $login_form .= $loginerror;
@@ -687,7 +689,7 @@ function wppb_front_end_login( $atts ){
 			$display_name = $wppb_user->user_login;
 		}
 
-		$logged_in_message = '<p class="wppb-alert">';
+		$logged_in_message = '<p class="wppb-alert" role="alert">';
 
         // CHECK FOR REDIRECT
         $logout_redirect_url = wppb_get_redirect_url( $redirect_priority, 'after_logout', $logout_redirect_url, $wppb_user );

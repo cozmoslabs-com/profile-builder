@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-checkbox-toa",
+    "title": "Terms and Conditions",
+    "wppbFieldType": "Checkbox (Terms and Conditions)",
+    "category": "profile-builder-advanced",
+    "icon": "feedback",
+    "description": "Checkbox for agreeing to terms and conditions.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "I agree to the Terms and Conditions"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": "Please read our terms and conditions..."
+        },
+        "required": {
+            "type": "string",
+            "default": "Yes"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

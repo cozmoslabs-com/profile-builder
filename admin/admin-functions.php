@@ -413,8 +413,15 @@ add_action('admin_head', 'wppb_maybe_remove_add_new_button_for_cpt' );
 function wppb_maybe_remove_add_new_button_for_cpt() {
 
     global $pagenow;
-    
-    $target_slugs    = [ 'wppb-rf-cpt', 'wppb-epf-cpt', 'wppb-ul-cpt' ];
+
+    // Registration ('wppb-rf-cpt') and Edit Profile ('wppb-epf-cpt') forms are deliberately excluded: form
+    // creation is gated on an active paid VERSION at the CPT capability level (see
+    // wppb_fb_multiple_forms_available() in form-builder/form-builder-licensing.php), not on the LICENSE. Gating
+    // them here would disable a button an expired-but-paid install may still use, and -- since the capability gate
+    // makes core skip the button entirely on free -- would inject an empty, label-less stand-in next to the page
+    // title (no button left to read a label from). The free-tier stand-in comes from
+    // wppb_fb_enqueue_locked_add_new_button() instead. Same narrowing as wppb_filter_own_post_creation() below.
+    $target_slugs    = [ 'wppb-ul-cpt' ];
     $current_slug    = '';
     $pointer_content = '';
 
@@ -437,19 +444,7 @@ function wppb_maybe_remove_add_new_button_for_cpt() {
     if ( $correct_page ) {
         $license_status = wppb_get_serial_number_status();
 
-        if( $current_slug === 'wppb-rf-cpt' ) {
-            if( $license_status == 'missing' ) {
-                $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new User Registration Forms.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
-            } else {
-                $pointer_content .= '<p>' . sprintf( __( 'You need an active license to add new User Registration Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-registration-forms&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-registration-forms&utm_medium=client-site&utm_campaign=pb-multi-registration-addon#pricing" target="_blank">', '</a>' ) . '</p>';
-            }
-        } else if( $current_slug === 'wppb-epf-cpt' ) {
-            if( $license_status == 'missing' ) {
-                $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new Edit Profile Forms.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
-            } else {
-                $pointer_content .= '<p>' . sprintf( __( 'You need an active license to add new Edit Profile Forms. %1$sRenew%2$s or %3$spurchase a new one%4$s.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/account/?utm_source=pb-edit-profile-forms&utm_medium=client-site&utm_campaign=pb-expired-license">', '</a>', '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-edit-profile-forms&utm_medium=client-site&utm_campaign=pb-multi-edit-profile-addon#pricing" target="_blank">', '</a>' ) . '</p>';
-            }
-        } else if( $current_slug === 'wppb-ul-cpt' ) {
+        if( $current_slug === 'wppb-ul-cpt' ) {
             if( $license_status == 'missing' ) {
                 $pointer_content .= '<p>' . sprintf( __( 'Please %1$senter your license key%2$s first, to add new User Listing.', 'profile-builder' ), '<a href="'. admin_url( 'admin.php?page=profile-builder-general-settings' ) .'">', '</a>' ) . '</p>';
             } else {
@@ -638,7 +633,8 @@ function wppb_maybe_remove_add_new_button_for_cpt() {
 }
 
 function wppb_filter_own_post_creation( $data, $postarr ) {
-    if ( in_array( $data['post_type'], [ 'wppb-rf-cpt', 'wppb-epf-cpt', 'wppb-ul-cpt' ] ) && empty( $postarr['ID'] ) ) {
+    // Only User Listing still needs a valid license here; RF/EPF free/multiple-forms gating lives in form-builder-licensing.php.
+    if ( in_array( $data['post_type'], [ 'wppb-ul-cpt' ] ) && empty( $postarr['ID'] ) ) {
 
         $license_status = wppb_get_serial_number_status();
 
@@ -697,55 +693,53 @@ function wppb_filter_extra_manage_fields_options( $values, $element_id ) {
 
 }
 
-function wppb_international_telephone_input_admin_notification() {
+function wppb_form_builder_transition_admin_notification() {
 
     if( !current_user_can( 'manage_options' ) )
+        return;
+
+    /* don't advertise the Form Builder unless it actually loaded */
+    if( !function_exists( 'wppb_fb_loaded' ) )
         return;
 
     /* initiate the plugin notifications class */
     $notifications = WPPB_Plugin_Notifications::get_instance();
     /* this must be unique */
-    $notification_id = 'wppb_international_telephone_input_notification_pb';
+    $notification_id = 'wppb_form_builder_transition_notification';
 
-    $docs_url = 'https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/international-telephone-input/';
-    $notification_message = '<p style="font-size: 15px; margin-top:4px;">' . __( 'Let users pick their country, see flags and placeholders, and validate numbers in a familiar format.', 'profile-builder' ) . '</p>';
+    $forms_url = admin_url( 'edit.php?post_type=wppb-rf-cpt' );
 
-    $docs_link = sprintf( __( '%1$sRead the documentation%2$s', 'profile-builder' ), '<a href="' . esc_url( $docs_url ) . '" target="_blank" rel="noopener noreferrer">', '</a>' );
+    /* Filterable so the documentation link can be pointed at the Form Builder
+     * article without a code change. */
+    $docs_url = apply_filters( 'wppb_fb_transition_notice_docs_url', 'https://www.cozmoslabs.com/docs/profile-builder/manage-user-fields/?utm_source=wpbackend&utm_medium=clientsite&utm_content=form_builder_transition_notification&utm_campaign=PBDocs' );
 
-    $buy_url = 'https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=international_telephone_input_notification&utm_campaign=PBFree#pricing';
+    $notification_message  = '<p style="font-size: 15px; margin-top:4px;">' . esc_html__( 'Registration and Edit Profile forms are now built with a drag-and-drop editor: pick fields from the inserter, arrange them on the canvas, and edit each one in place.', 'profile-builder' ) . '</p>';
 
-    if( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
-        $extra_message = sprintf(
-            /* translators: 1: documentation link (HTML), 2: opening Form Fields link, 3: closing Form Fields link */
-            __( '%1$s to set it up, or add the field under %2$sProfile Builder → Form Fields%3$s.', 'profile-builder' ),
-            $docs_link,
-            '<a href="' . esc_url( admin_url( 'admin.php?page=manage-fields' ) ) . '">',
-            '</a>'
-        );
-    } else {
-        $extra_message = sprintf(
-            /* translators: 1: documentation link (HTML), 2: opening upgrade link, 3: closing upgrade link */
-            __( '%1$s. This field is available in Profile Builder Basic and Pro. %2$sUpgrade now%3$s to use it.', 'profile-builder' ),
-            $docs_link,
-            '<a href="' . esc_url( $buy_url ) . '" target="_blank" rel="noopener noreferrer">',
-            '</a>'
-        );
-    }
+    $notification_message .= '<p style="font-size: 15px; margin-top:4px;">' . esc_html__( 'Your existing forms and fields carried over automatically, and your live forms keep rendering exactly as before.', 'profile-builder' ) . '</p>';
 
-    $notification_message .= '<p style="font-size: 15px; margin-top:4px; padding-left: 77px;">' . $extra_message . '</p>';
+    $notification_message .= '<p style="font-size: 15px; margin-top:4px;">' . wp_kses_post( sprintf(
+        /* translators: 1: opening Forms link (HTML), 2: closing Forms link, 3: opening documentation link (HTML), 4: closing documentation link */
+        __( 'Open %1$sProfile Builder → Forms%2$s to take a look, or %3$sread the documentation%4$s.', 'profile-builder' ),
+        '<a href="' . esc_url( $forms_url ) . '">',
+        '</a>',
+        '<a href="' . esc_url( $docs_url ) . '" target="_blank" rel="noopener noreferrer">',
+        '</a>'
+    ) ) . '</p>';
 
-    $ul_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' ) ) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
-    $ul_icon = ( !empty( $ul_icon_url ) ) ? '<img src="' . esc_url( $ul_icon_url ) . '" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder">' : '';
+    $pb_icon_url = ( file_exists( WPPB_PLUGIN_DIR . 'assets/images/pb-logo.svg' ) ) ? WPPB_PLUGIN_URL . 'assets/images/pb-logo.svg' : '';
+    $pb_icon = ( !empty( $pb_icon_url ) ) ? '<img src="' . esc_url( $pb_icon_url ) . '" width="64" height="64" style="float: left; margin: 15px 12px 15px 0; max-width: 100px;" alt="Profile Builder">' : '';
 
-    $message = $ul_icon;
-    $message .= '<h3 style="margin-bottom: 0;">' . esc_html__( 'New field: International Telephone Input.', 'profile-builder' ) . '</h3>';
+    $message = $pb_icon;
+    $message .= '<div style="overflow: hidden;">';
+    $message .= '<h3 style="margin-bottom: 0;">' . esc_html__( 'Introducing the new Profile Builder Form Builder.', 'profile-builder' ) . '</h3>';
     $message .= $notification_message;
+    $message .= '</div>';
     $message .= '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ), 'wppb_plugin_notice_dismiss' ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
 
-    $notifications->add_notification( $notification_id, $message, 'wppb-notice notice notice-info', true, array( 'manage-fields' ) );
+    $notifications->add_marketing_notification( $notification_id, $message, 'wppb-notice notice notice-info', true, array( 'edit.php?post_type=wppb-rf-cpt' ) );
 
 }
-add_action( 'admin_init', 'wppb_international_telephone_input_admin_notification' );
+add_action( 'admin_init', 'wppb_form_builder_transition_admin_notification' );
 
 /**
  * Get the Profile Builder Page or Post slug

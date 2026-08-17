@@ -1,0 +1,177 @@
+// WooCommerce Billing / Shipping composite address fields.
+//
+// Two surfaces:
+//   1. `.wppb-fb-woo-fields` — the sub-field picker in the Field Settings
+//      sidebar. Mirrors the classic Manage Fields "woocheckbox" control: a
+//      compact two-column table ("Field Name" | "Required"), one draggable row
+//      per sub-field (drag handle + include checkbox + inline-editable label +
+//      required checkbox), rather than the old checkbox-then-expand layout.
+//   2. `.wppb-fb-woo-address` — the canvas preview: each included sub-field as a
+//      real title + a disabled placeholder input, so the block reads like the
+//      rendered address form.
+//
+// Rendered by components/WooAddressFieldEdit.js. Column widths are shared between
+// the header and every row so they line up.
+$wppb-woo-handle: 18px;
+$wppb-woo-check: 18px;
+$wppb-woo-req-col: 60px;
+
+.wppb-fb-woo-fields {
+    &__head,
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: var(--wppb-fb-space-sm);
+    }
+
+    &__head {
+        padding-bottom: var(--wppb-fb-space-2xs);
+        margin-bottom: var(--wppb-fb-space-2xs);
+        border-bottom: 1px solid var(--wppb-fb-border-default);
+    }
+
+    &__head-name,
+    &__head-req {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+
+    // Align the header labels over their columns: "Field Name" starts past the
+    // handle + include-checkbox columns; "Required" sits over the req column.
+    &__head-name {
+        flex: 1 1 auto;
+        padding-left: calc(#{$wppb-woo-handle} + #{$wppb-woo-check} + 2 * var(--wppb-fb-space-sm));
+    }
+
+    &__head-req {
+        flex: 0 0 #{$wppb-woo-req-col};
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    &__row {
+        padding: var(--wppb-fb-space-2xs) 0;
+        border-radius: var(--wppb-fb-radius-sm);
+
+        // Insertion indicator while a dragged row hovers this one.
+        &.is-drag-over {
+            box-shadow: inset 0 2px 0 0 var(--wppb-fb-accent);
+        }
+    }
+
+    // Drag handle — the only drag initiator (keeps the label input selectable).
+    &__handle {
+        flex: 0 0 #{$wppb-woo-handle};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+        color: var(--wppb-fb-text-faint);
+
+        &:active { cursor: grabbing; }
+
+        .dashicons {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__include {
+        flex: 0 0 #{$wppb-woo-check};
+        margin: 0;
+    }
+
+    &__req-cell {
+        flex: 0 0 #{$wppb-woo-req-col};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__req {
+        margin: 0;
+    }
+
+    // Editable label — a text input styled to sit flush like the classic control,
+    // with a subtle pencil affordance that surfaces on hover / focus.
+    &__name {
+        flex: 1 1 auto;
+        min-width: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input[type="text"] {
+            width: 100%;
+            min-height: 30px;
+            padding: 2px var(--wppb-fb-space-lg) 2px var(--wppb-fb-space-sm);
+            font-size: var(--wppb-fb-font-sm);
+            line-height: 1.4;
+            color: var(--wppb-fb-text-primary);
+            background: var(--wppb-fb-surface-default);
+            border: 1px solid var(--wppb-fb-border-strong);
+            border-radius: var(--wppb-fb-radius-sm);
+            box-shadow: none;
+            transition: border-color 0.15s ease-in-out;
+
+            &::placeholder {
+                color: var(--wppb-fb-text-faint);
+            }
+
+            &:focus {
+                border-color: var(--wppb-fb-accent);
+                box-shadow: 0 0 0 1px var(--wppb-fb-accent);
+                outline: none;
+            }
+
+            &:disabled {
+                background: var(--wppb-fb-surface-subtle);
+                border-color: var(--wppb-fb-border-default);
+                color: var(--wppb-fb-text-faint);
+            }
+        }
+
+        .dashicons-edit {
+            position: absolute;
+            right: var(--wppb-fb-space-2xs);
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+            color: var(--wppb-fb-text-faint);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease-in-out;
+        }
+    }
+
+    // Hide the pencil while the row is disabled; reveal on hover / focus otherwise.
+    &__row:not(.is-included) &__name .dashicons-edit {
+        display: none;
+    }
+
+    &__name:hover .dashicons-edit,
+    &__name input[type="text"]:focus + .dashicons-edit {
+        opacity: 0.6;
+    }
+}
+
+// Canvas preview — one real title + disabled placeholder input per included
+// sub-field. The input picks up the shared `.wppb-fb-field-preview` frame from
+// _field-block.scss; here we only add the per-sub-field title + spacing.
+.wppb-fb-woo-address {
+    &__field:not(:last-child) {
+        margin-bottom: var(--wppb-fb-space-lg);
+    }
+
+    &__label {
+        display: block;
+        color: var(--wppb-fb-text-primary);
+        font-size: var(--wppb-fb-font-md);
+        font-weight: 500;
+        margin-bottom: var(--wppb-fb-space-2xs);
+    }
+}

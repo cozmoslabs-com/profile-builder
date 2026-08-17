@@ -29,8 +29,11 @@ function _wppb_submitHTTPGet($path, $data)
     $req = _wppb_encodeQS($data);
     $response = wp_remote_get($path . $req);
 
-    if ( ! is_wp_error( $response ))
-        return $response["body"];
+    if ( is_wp_error( $response ) ) {
+        return '';
+    }
+
+    return isset( $response['body'] ) ? $response['body'] : '';
 }
 
 /**
@@ -99,13 +102,14 @@ function wppb_recaptcha_script_footer(){
     if( empty( $field ) )
         return;
 
-    //do not add script if there is no shortcode
+    global $wppb_recaptcha_present;
     global $wppb_shortcode_on_front;
-    if( current_filter() == 'wp_footer' && ( !isset( $wppb_shortcode_on_front ) || $wppb_shortcode_on_front === false ) )
+
+    //do not add script on regular frontend pages unless a PB shortcode or reCAPTCHA HTML is present
+    if( current_filter() == 'wp_footer' && ( !isset( $wppb_shortcode_on_front ) || $wppb_shortcode_on_front === false ) && ( !isset( $wppb_recaptcha_present ) || $wppb_recaptcha_present === false ) )
         return;
 
     //do not add script if the html for the field has not been added
-    global $wppb_recaptcha_present;
     if( !isset( $wppb_recaptcha_present ) || $wppb_recaptcha_present === false )
         return;
 
@@ -232,7 +236,11 @@ function wppb_recaptcha_script_footer(){
 
                             if( submitForm ){
                                 jQuery(currentForm).off("submit.wppbRecaptchaV3");
-                                currentForm.submit();
+                                if( currentForm.id === "commentform" ){
+                                    HTMLFormElement.prototype.submit.call(currentForm);
+                                } else {
+                                    currentForm.submit();
+                                }
                             } else {
                                 jQuery(document).trigger( "wppb_v3_recaptcha_success", jQuery( "input[type=\'submit\']", jQuery( currentForm ) ) )
                             }
@@ -272,16 +280,24 @@ function wppb_recaptcha_script_footer(){
                             return;
                         }
 
-                        var recID = grecaptcha.render(
-                            $recaptchaElement.attr("id"),
-                            {
-                                "sitekey" : "' . $pubkey . '",
-                                "error-callback": wppbRecaptchaInitializationError,
-                                ' . $invisible_parameters . '
-                            }
-                        )
+                        try {
+                            var recID = grecaptcha.render(
+                                $recaptchaElement.attr("id"),
+                                {
+                                    "sitekey" : "' . $pubkey . '",
+                                    "error-callback": wppbRecaptchaInitializationError,
+                                    ' . $invisible_parameters . '
+                                }
+                            )
 
-                        $recaptchaElement.data("wppb-recaptcha-id", recID);
+                            $recaptchaElement.data("wppb-recaptcha-id", recID);
+                        } catch( error ) {
+                            if( error && error.message && error.message.indexOf("already been rendered") !== -1 ) {
+                                return;
+                            }
+
+                            throw error;
+                        }
                     });
 
                     /* the invisible reCAPTCHA is now bound to the submit button, so it is safe to re-enable it */
@@ -303,7 +319,7 @@ function wppb_recaptcha_script_footer(){
     if ( $field['recaptcha-type'] === 'invisible' ) {
         echo '
             /* make sure that if the invisible recaptcha did not load properly ( network error or wrong keys ) we can still submit the form */
-            jQuery("input[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest("form") ).on("click", function(e){
+            jQuery("input[type=\'submit\']", jQuery( ".wppb-recaptcha-element" ).closest("form") ).not("#commentform input[type=\'submit\']").on("click", function(e){
                         jQuery(this).closest("form").submit();
                 });
             ';
@@ -355,7 +371,11 @@ function wppb_recaptcha_script_footer(){
                 }
 
                 if( submitForm ){
-                    form.submit();
+                    if( form.attr("id") === "commentform" && form[0] ){
+                        HTMLFormElement.prototype.submit.call(form[0]);
+                    } else {
+                        form.submit();
+                    }
                 } else {
                     jQuery(document).trigger( "wppb_invisible_recaptcha_success", jQuery( ".form-submit input[type=\'submit\']", elem.closest("form") ) )
                     return true;
@@ -447,17 +467,19 @@ function wppb_recaptcha_check_answer ( $privkey, $remoteip, $response, $score_th
         )
     );
 
-    $answers = json_decode($getResponse, true);
+    $answers = json_decode( $getResponse, true );
     $recaptchaResponse = new wppb_ReCaptchaResponse();
 
-    if (trim($answers ['success']) == true) {
-        if ( array_key_exists( 'score', $answers ) ) {
-            $recaptchaResponse->is_valid = ($answers['score'] >= $score_threshold);
-        } else {
-            $recaptchaResponse->is_valid = true;
-        }
-    } else {
+    // Fail closed when the HTTP call fails or the body is not valid JSON.
+    if ( ! is_array( $answers ) || empty( $answers['success'] ) ) {
         $recaptchaResponse->is_valid = false;
+        return $recaptchaResponse;
+    }
+
+    if ( array_key_exists( 'score', $answers ) ) {
+        $recaptchaResponse->is_valid = ( $answers['score'] >= $score_threshold );
+    } else {
+        $recaptchaResponse->is_valid = true;
     }
 
     return $recaptchaResponse;
@@ -937,6 +959,83 @@ function wppb_verify_recaptcha_default_wp_register( $errors ){
 return $errors;
 }
 add_filter('registration_errors','wppb_verify_recaptcha_default_wp_register');
+
+/* Display reCAPTCHA html on default WP Comments form */
+function wppb_display_recaptcha_default_wp_comments(){
+    $field = wppb_get_recaptcha_field();
+
+    if ( !empty( $field ) ) {
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_comments' ) !== false ) ) {
+            $publickey = trim( $field['public-key'] );
+            $item_title = apply_filters( 'wppb_comments_recaptcha_custom_field_' . $field['id'] . '_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true ) );
+            $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true );
+            $recaptcha_type = empty( $field['recaptcha-type'] ) ? 'v2' : $field['recaptcha-type'];
+
+            global $wppb_recaptcha_present;
+            $wppb_recaptcha_present = true;
+
+            if ( $recaptcha_type == 'v2' ) {
+                $recaptcha_output = '<label for="recaptcha_response_field">' . $item_title . '</label>' . wppb_recaptcha_get_html( $publickey, 'default_wp_comments' );
+                if ( !empty( $item_description ) )
+                    $recaptcha_output .= '<span class="wppb-description-delimiter">' . $item_description . '</span>';
+
+                echo '<div class="wppb-form-field wppb-recaptcha wppb-recaptcha-' . esc_attr( $recaptcha_type ) . '">' . $recaptcha_output . '</div>'; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ /* properly escaped when constructing the var */
+            }
+            else {
+                echo wppb_recaptcha_get_html( $publickey, 'default_wp_comments' ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ /* properly escaped when constructing the var */
+            }
+        }
+    }
+}
+add_action( 'comment_form_after_fields', 'wppb_display_recaptcha_default_wp_comments' );
+add_action( 'comment_form_logged_in_after', 'wppb_display_recaptcha_default_wp_comments' );
+
+function wppb_display_recaptcha_default_wp_comments_error(){
+    if ( !isset( $_GET['wppb_comment_recaptcha_error'] ) )
+        return;
+
+    $field = wppb_get_recaptcha_field();
+
+    if ( empty( $field ) || !isset( $field['captcha-wp-forms'] ) || ( strpos( $field['captcha-wp-forms'], 'default_wp_comments' ) === false ) )
+        return;
+
+    echo '<p class="wppb-error wppb-comment-captcha-error" id="wppb_comment_recaptcha_error">' . esc_html( wppb_recaptcha_field_error( $field['field-title'] ) ) . '</p>';
+}
+add_action( 'comment_form_top', 'wppb_display_recaptcha_default_wp_comments_error' );
+
+// Verify reCAPTCHA for default WP Comments form
+function wppb_verify_recaptcha_default_wp_comments( $approved, $commentdata ){
+    if ( !isset( $_POST['comment_post_ID'] ) )
+        return $approved;
+
+    $field = wppb_get_recaptcha_field();
+
+    if ( !empty( $field ) ) {
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_comments' ) !== false ) ) {
+            global $wppb_recaptcha_response;
+            if ( !isset( $wppb_recaptcha_response ) )
+                $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
+
+            if ( $wppb_recaptcha_response == false ) {
+                $redirect_to = wp_get_referer();
+
+                if ( empty( $redirect_to ) && isset( $commentdata['comment_post_ID'] ) )
+                    $redirect_to = get_permalink( absint( $commentdata['comment_post_ID'] ) );
+
+                if ( !empty( $redirect_to ) && !wp_doing_ajax() ) {
+                    $redirect_to = preg_replace( '/#.*$/', '', remove_query_arg( array( 'wppb_comment_recaptcha_error', 'wppb_comment_turnstile_error' ), $redirect_to ) );
+                    wp_safe_redirect( add_query_arg( 'wppb_comment_recaptcha_error', '1', $redirect_to ) . '#respond' );
+                    exit;
+                }
+
+                return new WP_Error( 'wppb_recaptcha_error', wppb_recaptcha_field_error( $field['field-title'] ), 200 );
+            }
+        }
+    }
+
+    return $approved;
+}
+add_filter( 'pre_comment_approved', 'wppb_verify_recaptcha_default_wp_comments', 10, 2 );
 
 // set default values in case there's already an existing reCAPTCHA field in Manage fields (when upgrading)
 function wppb_recaptcha_set_default_values() {

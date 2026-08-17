@@ -7,12 +7,14 @@ class WPPB_Setup_Wizard {
     private $steps             = array();
     public  $general_settings  = array();
     public  $user_pages  = array();
+    public  $content_restriction_settings = array();
 
     public function __construct() {
         if( apply_filters( 'wppb_run_setup_wizard', true ) && current_user_can( 'manage_options' ) ){
             add_action( 'admin_menu', array( $this, 'add_page' ) );
             add_action( 'admin_head', array( $this, 'hide_page_from_dashboard' ) );
             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_and_styles' ) );
+            add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_wizard_forms_pointer' ) );
             add_filter( 'wppb_output_dashboard_setup_wizard', array( $this, 'setup_wizard' ) );
             add_action( 'admin_init', array( $this, 'redirect_to_setup' ) );
             add_action( 'admin_init', array( $this, 'save_data' ) );
@@ -36,13 +38,80 @@ class WPPB_Setup_Wizard {
         }
     }
 
-    public function get_default_steps(){
-        return array(
-            'user-pages' => __( 'User Pages', 'profile-builder' ),
-            'general'    => __( 'Design & UI', 'profile-builder' ),
-            'addons'     => __( 'Add-Ons', 'profile-builder' ),
-            'next'       => __( 'Ready!', 'profile-builder' ),
+    /**
+     * Native WP pointer on the Registration Forms list after the setup wizard.
+     *
+     * @param string $hook Current admin page hook.
+     */
+    public function enqueue_wizard_forms_pointer( $hook ) {
+        if ( $hook !== 'edit.php' ) {
+            return;
+        }
+
+        if ( empty( $_GET['post_type'] ) || sanitize_text_field( $_GET['post_type'] ) !== 'wppb-rf-cpt' ) {
+            return;
+        }
+
+        if ( empty( $_GET['wppb_wizard_hint'] ) || sanitize_text_field( $_GET['wppb_wizard_hint'] ) !== '1' ) {
+            return;
+        }
+
+        $pointer_id = 'wppb_setup_customize_form';
+        $dismissed  = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+
+        if ( in_array( $pointer_id, $dismissed, true ) ) {
+            return;
+        }
+
+        $defaults = get_option( 'wppb_default_form_ids', array() );
+        $form_id  = ( is_array( $defaults ) && ! empty( $defaults['register'] ) ) ? absint( $defaults['register'] ) : 0;
+        $target   = $form_id ? '#post-' . $form_id . ' .row-title' : '#the-list .row-title:first';
+
+        wp_enqueue_style( 'wp-pointer' );
+        wp_enqueue_script(
+            'wppb-setup-wizard-pointer',
+            WPPB_PLUGIN_URL . 'assets/js/setup-wizard-pointer.js',
+            array( 'jquery', 'wp-pointer' ),
+            PROFILE_BUILDER_VERSION,
+            true
         );
+        wp_localize_script(
+            'wppb-setup-wizard-pointer',
+            'wppbSetupWizardPointer',
+            array(
+                'pointerId' => $pointer_id,
+                'target'    => $target,
+                'content'   => '<h3>' . esc_html__( 'Customize your registration form', 'profile-builder' ) . '</h3><p>' . esc_html__( 'Your registration form is ready. Click the form name to open the Form Builder and customize it.', 'profile-builder' ) . '</p>',
+            )
+        );
+    }
+
+    /**
+     * Registration Forms list, with a query flag that opens the post-wizard pointer.
+     *
+     * @return string
+     */
+    public static function get_setup_complete_url() {
+        return add_query_arg(
+            'wppb_wizard_hint',
+            '1',
+            admin_url( 'edit.php?post_type=wppb-rf-cpt' )
+        );
+    }
+
+    public function get_default_steps(){
+        $steps = array(
+            'user-pages' => __( 'User Pages', 'profile-builder' ),
+            'general'    => __( 'User Flow', 'profile-builder' ),
+        );
+
+        if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+            $steps['addons'] = __( 'Add-Ons', 'profile-builder' );
+        }
+
+        $steps['next'] = __( 'Ready!', 'profile-builder' );
+
+        return $steps;
     }
 
     public function redirect_to_setup(){
@@ -64,6 +133,7 @@ class WPPB_Setup_Wizard {
 
         $this->general_settings  = get_option( 'wppb_general_settings', array() );
         $this->user_pages  = get_option( 'wppb_user_pages', array() );
+        $this->content_restriction_settings = get_option( 'wppb_content_restriction_settings', array() );
 
         $default_steps = $this->get_default_steps();
 
@@ -188,10 +258,29 @@ class WPPB_Setup_Wizard {
             else
                 unset( $general_settings['adminApproval'] );
 
+            // Roles Editor
+            if ( isset( $_POST['rolesEditor'] ) )
+                $general_settings['rolesEditor'] = 'yes';
+            else
+                unset( $general_settings['rolesEditor'] );
+
             if( !empty( $general_settings ) )
                 update_option( 'wppb_general_settings', $general_settings );
 
-        } elseif( $this->step === 'addons' ) {
+            // Content Restriction
+            $content_restriction_settings = get_option( 'wppb_content_restriction_settings', array() );
+            if ( ! is_array( $content_restriction_settings ) ) {
+                $content_restriction_settings = array();
+            }
+
+            if ( isset( $_POST['contentRestriction'] ) )
+                $content_restriction_settings['contentRestriction'] = 'yes';
+            else
+                $content_restriction_settings['contentRestriction'] = 'no';
+
+            update_option( 'wppb_content_restriction_settings', $content_restriction_settings );
+
+        } elseif( $this->step === 'addons' && defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
             $pro_addons = get_option( 'wppb_module_settings', 'not_found' );
 
             // User Listing Addon
@@ -260,7 +349,7 @@ class WPPB_Setup_Wizard {
         $keys = array_keys( $this->steps );
 
         if( end( $keys ) === $step )
-            return admin_url();
+            return $this->get_setup_complete_url();
 
         $step_index = array_search( $step, $keys, true );
 
@@ -404,16 +493,12 @@ class WPPB_Setup_Wizard {
                 'url'   => admin_url( 'admin.php?page=profile-builder-dashboard&subpage=wppb-setup' ),
             ),
             'general'            => array(
-                'label' => __( 'Choose a design and optimize the login and registration flow for your users.', 'profile-builder' ),
+                'label' => __( 'Optimize the login and registration flow for your users', 'profile-builder' ),
                 'url'   => admin_url( 'admin.php?page=profile-builder-dashboard&subpage=wppb-setup&step=general' ),
-            ),
-            'addons'           => array(
-                'label' => __( 'Learn about and enable addons for extra functionality.', 'profile-builder' ),
-                'url'   => admin_url( 'admin.php?page=profile-builder-dashboard&subpage=wppb-setup&step=addons' ),
             ),
             'extra_form_field' => array(
                 'label' => __( 'Add extra fields to the registration and edit profile forms.', 'profile-builder' ),
-                'url'   => admin_url( 'admin.php?page=manage-fields#manage-fields' ),
+                'url'   => admin_url( 'edit.php?post_type=wppb-rf-cpt' ),
             ),
             'restrict_content'   => array(
                 'label'  => __( 'Restrict your content based on the user role.', 'profile-builder' ),
@@ -438,10 +523,6 @@ class WPPB_Setup_Wizard {
             $steps_completion['general']    = 1;
         }
 
-        // Addons Completion
-        if( !isset( $steps_completion['addons'] ) && self::website_has_active_addons() )
-            $steps_completion['addons'] = 1;
-
         // Extra Form Field Completion
         if( !isset( $steps_completion['extra_form_field'] ) && self::website_edited_form_fields() )
             $steps_completion['extra_form_field'] = 1;
@@ -456,7 +537,7 @@ class WPPB_Setup_Wizard {
 
         update_option( 'wppb_setup_wizard_steps', $steps_completion, false );
 
-        $current_step = is_array( $steps_completion ) ? count( $steps_completion ) : 0;
+        $current_step = count( array_intersect_key( $steps_completion, $steps ) );
         $total_steps  = count( $steps );
 
         ob_start(); ?>
@@ -505,21 +586,6 @@ class WPPB_Setup_Wizard {
             $existing_page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_status NOT IN ( 'pending', 'trash', 'future', 'auto-draft' ) AND post_content LIKE %s LIMIT 1;", '%' . $wpdb->esc_like( $pattern ) . '%' ) );
 
             if( !empty( $existing_page ) )
-                return true;
-        }
-
-        return false;
-    }
-
-    public static function website_has_active_addons() {
-        $free_addons = get_option( 'wppb_free_add_ons_settings', array() );
-        $pro_addons = get_option( 'wppb_module_settings', 'not_found' );
-        $basic_addons = get_option( 'wppb_advanced_add_ons_settings', array() );
-
-        $all_addons = array_merge( $free_addons, $pro_addons, $basic_addons );
-
-        foreach ( $all_addons as $addon => $value ) {
-            if( $value === true || $value === 'show' )
                 return true;
         }
 

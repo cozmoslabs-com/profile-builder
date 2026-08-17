@@ -1,5 +1,33 @@
 <?php
 /**
+ * Store first activation time. Existing installs are backdated past the 7-day marketing delay.
+ *
+ * Runs on init priority 1 so it sees a missing wppb_version before upgrades.php writes one.
+ */
+function wppb_maybe_set_first_activation_time() {
+    if ( get_option( 'wppb_first_activation' ) ) {
+        return;
+    }
+
+    $stamp = get_option( 'wppb_version' ) ? time() - WEEK_IN_SECONDS : time();
+    add_option( 'wppb_first_activation', $stamp );
+}
+add_action( 'init', 'wppb_maybe_set_first_activation_time', 1 );
+
+/**
+ * True when 7 days have passed since first activation.
+ */
+function wppb_should_show_marketing_notice() {
+    $first_activation = (int) get_option( 'wppb_first_activation', 0 );
+
+    if ( $first_activation <= 0 ) {
+        return false;
+    }
+
+    return ( time() - $first_activation ) >= WEEK_IN_SECONDS;
+}
+
+/**
  * Class that adds a misc notice
  *
  * @since v.2.0
@@ -193,6 +221,18 @@ Class WPPB_Plugin_Notifications {
             new WPPB_Add_General_Notices( $notification_id, $notification_message, $notification_class );
         }
 
+    }
+
+
+    /**
+     * Feature / promo notices. Hidden for 7 days after a new install.
+     */
+    public function add_marketing_notification( $notification_id = '', $notification_message = '', $notification_class = 'update-nag', $count_in_menu = true, $count_in_submenu = array(), $show_in_all_backend = false ) {
+        if ( ! wppb_should_show_marketing_notice() ) {
+            return;
+        }
+
+        $this->add_notification( $notification_id, $notification_message, $notification_class, $count_in_menu, $count_in_submenu, $show_in_all_backend );
     }
 
 

@@ -164,7 +164,7 @@ function wppb_basic_info_content() {
             <?php if ($version == 'Free'){ ?>
                 <a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=pb-basic-info&utm_medium=client-site&utm_campaign=pb-extra-fields#pricing" target="_blank" class="button button-primary wppb-button-free"><?php esc_html_e( 'Extra Profile Fields are available in Basic or PRO versions', 'profile-builder' ); ?></a>
             <?php } else {?>
-                <a href="admin.php?page=manage-fields" class="button button-secondary"><?php esc_html_e( 'Get started with extra fields', 'profile-builder' ); ?></a>
+                <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=wppb-rf-cpt' ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Get started with extra fields', 'profile-builder' ); ?></a>
             <?php } ?>
 
 			<div class="cozmoslabs-form-field-wrapper" id="basic-info-extra-fields-list">

@@ -1,0 +1,72 @@
+// "New Fields" tab — visual treatment of Gutenberg's native block inserter to
+// match the designer mockup's field palette (eyebrow category headers + a grid
+// of icon-over-label field tiles). VISUAL ONLY — the categories themselves are
+// the block.json registration categories; re-grouping fields into semantic
+// buckets (STRUCTURE / ACCOUNT / NAME / PROFILE) is a separate IA change.
+//
+// Targets Gutenberg's stable inserter classes. Our SCSS only loads on PB form
+// CPTs, and these classes appear only in the native "New Fields" tab (the
+// "Existing Fields" tab renders its own `.wppb-fb-existing-fields__*` markup),
+// so the rules are implicitly scoped to the right tab. Tokens: _tokens.scss.
+
+// Duplicated category headers (each title twice, the second set holding two or
+// three blocks) are core, not a loading race: WP 7.0's `BlockTypesTab` renders the
+// list twice through the same categories — `…insertable-blocks-at-selection` (items
+// allowed at the current insertion point) then `…all-blocks` (the rest) — separated
+// by a bare 1px border. It only shows where the destination is restricted (a Columns
+// appender's mini inserter, or the docked sidebar while a field inside Columns is
+// selected). Group 2's items can't go where the user is pointing; core would insert
+// them somewhere else, which reads as "it ignored where I clicked".
+//
+// The adjacent-sibling form is deliberate: group 2 is hidden only when group 1
+// exists, so a destination where NOTHING is insertable still lists blocks.
+.wppb-fb-block-editor .block-editor-inserter__insertable-blocks-at-selection {
+    border-bottom: none;
+
+    + .block-editor-inserter__all-blocks {
+        display: none;
+    }
+}
+
+// Category header → the mockup's eyebrow label. These are generic inserter classes
+// present in every editor, hence the `.wppb-fb-block-editor` scope.
+.wppb-fb-block-editor .block-editor-inserter__panel-header .block-editor-inserter__panel-title,
+.wppb-fb-block-editor .block-editor-inserter__panel-title {
+    color: var(--wppb-fb-text-muted);
+    font-size: var(--wppb-fb-font-xs);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    // The title button/label Gutenberg wraps inside inherits the same look.
+    button,
+    .components-button {
+        color: inherit;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+    }
+}
+
+// Field tiles — icon over label cards. Give each tile a light card treatment
+// with a subtle hover so the palette reads like the mockup's tile grid. Layout
+// (the ~3-column flow) is left to Gutenberg's own grid so its roving-tabindex
+// keyboard navigation keeps working; we only tune appearance + hover.
+.wppb-fb-block-editor .block-editor-block-types-list__item {
+    border-radius: var(--wppb-fb-radius-md);
+    color: var(--wppb-fb-text-primary);
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover,
+    &:focus {
+        background: var(--wppb-fb-surface-subtle);
+        color: var(--wppb-fb-accent);
+    }
+}
+
+// Tile label — the block title under the icon (mockup's tile caption: 12px,
+// muted). `.block-editor-block-types-list__item-title` is the stable label node.
+.wppb-fb-block-editor .block-editor-block-types-list__item-title {
+    color: var(--wppb-fb-text-muted);
+    font-size: var(--wppb-fb-font-sm);
+}

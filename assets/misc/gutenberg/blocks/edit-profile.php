@@ -25,15 +25,22 @@ add_action(
     function () {
         $wppb_module_settings = get_option( 'wppb_module_settings', 'not_found' );
 
-        $registration_form_options[] = [ "label" => __( 'Default' , 'profile-builder' ), "value" => "" ];
+        $registration_form_options = array();
 
         if ( !( ( $wppb_module_settings !== 'not_found' && (
                     !isset( $wppb_module_settings['wppb_multipleEditProfileForms'] ) ||
                     $wppb_module_settings['wppb_multipleEditProfileForms'] !== 'show'
                 ) ) ||
             $wppb_module_settings === 'not_found' ) ){
+            // Published forms only. WP_Query adds the admin-visible protected
+            // statuses (draft, pending, future, private) when it runs in the
+            // admin, and this list is built on admin_enqueue_scripts — so
+            // without the explicit status a draft form would be offered here
+            // while its form_name resolves to nothing on the front end (the
+            // resolver queries post_status = 'publish').
             $args = array(
                 'post_type'      => 'wppb-epf-cpt',
+                'post_status'    => 'publish',
                 'posts_per_page' => -1
             );
 

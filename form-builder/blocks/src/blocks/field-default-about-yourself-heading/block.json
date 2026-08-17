@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-about-yourself-heading",
+    "title": "About Yourself (Heading)",
+    "wppbFieldType": "Default - About Yourself (Heading)",
+    "category": "profile-builder-default",
+    "icon": "heading",
+    "description": "Default About Yourself section heading.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "About Yourself"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

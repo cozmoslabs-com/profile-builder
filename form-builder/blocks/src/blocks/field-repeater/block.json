@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-repeater",
+    "title": "Repeater",
+    "wppbFieldType": "Repeater",
+    "category": "profile-builder-other",
+    "icon": "embed-generic",
+    "description": "Container for repeating fields.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Repeater"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "rpf-enable-limit": {
+            "type": "string",
+            "default": ""
+        },
+        "rpf-limit": {
+            "type": "string",
+            "default": "0"
+        },
+        "rpf-limit-reached-message": {
+            "type": "string",
+            "default": ""
+        },
+        "rpf-role-limit": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

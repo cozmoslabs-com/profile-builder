@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-biographical-info",
+    "title": "Biographical Info",
+    "wppbFieldType": "Default - Biographical Info",
+    "category": "profile-builder-default",
+    "icon": "admin-users",
+    "description": "Biographical info (description) field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Biographical Info"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-content": {
+            "type": "string",
+            "default": ""
+        },
+        "row-count": {
+            "type": "string",
+            "default": "5"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

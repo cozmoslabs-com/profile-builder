@@ -320,6 +320,12 @@ function wppb_generate_new_advanced_add_ons_setting(){
                     else
                         $wppb_advanced_add_ons_settings['mailpoet-integration'] = false;
                     break;
+                case 'pb-add-on-progress-bar/index.php':
+                    if( wppb_was_addon_active_as_plugin( $addon_slug ) )
+                        $wppb_advanced_add_ons_settings['progress-bar'] = true;
+                    else
+                        $wppb_advanced_add_ons_settings['progress-bar'] = false;
+                    break;
             }
 
 

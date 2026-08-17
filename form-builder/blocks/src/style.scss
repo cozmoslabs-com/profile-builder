@@ -1,0 +1,52 @@
+// Form-editor stylesheet manifest.
+//
+// Per-concern partials live in ./style/. Each partial is a self-contained
+// SCSS file with no shared variables/mixins, so the import order is
+// non-load-bearing. Kept in functional groupings:
+//
+//   editor chrome  → Gutenberg-surface suppression (tab hijack, Block tab hide).
+//   panels         → existing-fields panel + the right-rail Field Settings sidebar.
+//   blocks         → per-block visuals (MSF step-break, Progress Bar, FFC).
+//   interactions   → drag scope gates and selection outlines.
+//
+// Add a new partial as `style/_<topic>.scss` and `@use` it from below.
+// Don't add new rules directly to this file — keep it a manifest.
+
+// Design tokens — MUST come first so the :root custom-property block is emitted
+// before any partial references var(--wppb-fb-*). (CSS custom properties resolve
+// at runtime regardless of source order, but keeping it first documents intent.)
+@use 'style/tokens';
+
+// Chrome
+@use 'style/editor-chrome';
+@use 'style/inspector-spacing';
+@use 'style/inserter';
+@use 'style/top-bar';
+
+// Panels
+@use 'style/existing-fields';
+@use 'style/field-settings-sidebar';
+@use 'style/delete-confirm';
+@use 'style/form-shortcode';
+
+// Block visuals
+@use 'style/msf-step-break';
+@use 'style/progress-bar';
+@use 'style/ffc-columns';
+@use 'style/woo-address';
+@use 'style/pms-fields';
+
+// Interactions
+@use 'style/repeater-scope';
+@use 'style/field-block';
+@use 'style/repeater-block';
+@use 'style/add-field-button';
+// After add-field-button + existing-fields: overrides the shared card/list
+// insets for the compact on-canvas inserter popover.
+@use 'style/mini-inserter';
+@use 'style/unique-field-tip';
+
+// No partial for the inserter hover-preview mockups (`field-art/`): every rule
+// they need is inline on the wrapper and the <svg>, because the preview iframe
+// loads this stylesheet a beat after first paint and anything sizing-related
+// left here would visibly reflow. See `field-art/index.js`.

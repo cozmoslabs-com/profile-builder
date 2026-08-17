@@ -119,7 +119,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
             update_option( 'wppb_toolbox_admin_settings', $settings );
 
-            wp_safe_redirect( admin_url( 'admin.php?page=profile-builder-dashboard' ) );
+            wp_safe_redirect( WPPB_Setup_Wizard::get_setup_complete_url() );
             exit;
 
         }
@@ -137,7 +137,7 @@ class Cozmoslabs_Plugin_Optin_WPPB {
 
             update_option( 'wppb_toolbox_admin_settings', $settings );
 
-            wp_safe_redirect( admin_url( 'admin.php?page=profile-builder-dashboard' ) );
+            wp_safe_redirect( WPPB_Setup_Wizard::get_setup_complete_url() );
             exit;
 
         }

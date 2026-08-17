@@ -104,6 +104,14 @@ function wppb_dashboard_page_content() {
                 <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'users.php' ) ); ?>"><?php esc_html_e( 'View All Users', 'profile-builder' ); ?></a>
             </div>
 
+            <div class="postbox cozmoslabs-form-subsection-wrapper wppb-dashboard-progress">
+                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Setup Progress Review', 'profile-builder' ); ?></h4>
+
+                <?php WPPB_Setup_Wizard::output_progress_steps(); ?>
+
+                <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'admin.php?page=profile-builder-dashboard&subpage=wppb-setup' ) ); ?>"><?php esc_html_e( 'Open the Setup Wizard', 'profile-builder' ); ?></a>
+            </div>
+
             <div class="postbox cozmoslabs-form-subsection-wrapper">
                 <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Have a question? Not sure how to proceed?', 'profile-builder' ); ?><span class="dashicons dashicons-editor-help" style="color: #0F15B0;"> </span></h4>
 
@@ -124,14 +132,6 @@ function wppb_dashboard_page_content() {
 
                 <p><strong><span class="dashicons dashicons-yes" style="color: #0F15B0;"></span><?php esc_html_e( 'Get help from our team', 'profile-builder' ); ?></strong></p>
 
-            </div>
-
-            <div class="postbox cozmoslabs-form-subsection-wrapper wppb-dashboard-progress">
-                <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Setup Progress Review', 'profile-builder' ); ?></h4>
-
-                <?php WPPB_Setup_Wizard::output_progress_steps(); ?>
-
-                <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'admin.php?page=profile-builder-dashboard&subpage=wppb-setup' ) ); ?>"><?php esc_html_e( 'Open the Setup Wizard', 'profile-builder' ); ?></a>
             </div>
 
             <div class="postbox cozmoslabs-form-subsection-wrapper">

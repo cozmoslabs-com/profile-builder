@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-select2",
+    "title": "Select2",
+    "wppbFieldType": "Select2",
+    "category": "profile-builder-advanced",
+    "icon": "menu",
+    "description": "Enhanced single-selection drop-down field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Select2 Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "options": {
+            "type": "string",
+            "default": ""
+        },
+        "labels": {
+            "type": "string",
+            "default": ""
+        },
+        "default-option": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

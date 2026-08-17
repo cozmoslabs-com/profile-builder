@@ -25,7 +25,9 @@ if( strpos( wp_get_referer(), 'wp-admin' ) === false && isset( $_REQUEST['action
 
 }
 
-/* create a fake user with the "upload_posts" capability and assign him to the global $current_user. this is used to bypass the checks for current_user_can('upload_files') in async-upload.php */
+/* Front-end Avatar/Upload async-upload bypass when the real user lacks upload caps.
+ * Guests use WP_User(0) (author-less until registration). Logged-in users keep their ID
+ * and only gain temporary caps so the attachment is owned by them (see wppb_verify_attachment_id). */
 add_action( 'current_screen', 'wppb_create_fake_user_when_uploading_and_not_logged_in' );
 if( !function_exists( 'wppb_create_fake_user_when_uploading_and_not_logged_in' ) ) {
     function wppb_create_fake_user_when_uploading_and_not_logged_in() {
@@ -40,8 +42,21 @@ if( !function_exists( 'wppb_create_fake_user_when_uploading_and_not_logged_in' )
 
             if ( !is_user_logged_in() || !current_user_can( 'upload_files' ) || !current_user_can( 'edit_posts' ) ) {
                 global $current_user;
-                $current_user = new WP_User( 0, 'frontend_uploader' );
-                $current_user->allcaps = array( "upload_files" => true, "edit_posts" => true, "edit_others_posts" => true, "edit_pages" => true, "edit_others_pages" => true );
+
+                $upload_caps = array(
+                    'upload_files'      => true,
+                    'edit_posts'        => true,
+                    'edit_others_posts' => true,
+                    'edit_pages'        => true,
+                    'edit_others_pages' => true,
+                );
+
+                if ( is_user_logged_in() ) {
+                    $current_user->allcaps = array_merge( (array) $current_user->allcaps, $upload_caps );
+                } else {
+                    $current_user          = new WP_User( 0, 'frontend_uploader' );
+                    $current_user->allcaps = $upload_caps;
+                }
             }
         }
     }

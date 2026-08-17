@@ -37,6 +37,6 @@
     <?php $this->output_progress_steps(); ?>
 
     <div class="wppb-setup-form-button">
-        <a class="button primary button-primary button-hero" href="<?php echo esc_url( admin_url( 'admin.php?page=profile-builder-dashboard' ) ); ?>"><?php esc_html_e( 'Continue to Your Profile Builder Dashboard', 'profile-builder' ); ?></a>
+        <a class="button primary button-primary button-hero" href="<?php echo esc_url( $this->get_setup_complete_url() ); ?>"><?php esc_html_e( 'Continue to Registration Forms', 'profile-builder' ); ?></a>
     </div>
 </div>

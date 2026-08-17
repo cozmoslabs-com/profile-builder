@@ -1,0 +1,106 @@
+// Hide the close (X) button in the Field Settings PluginSidebar header. The
+// sidebar opens/closes automatically on PB-block/card selection (see
+// FieldSettingsAutoOpener in ExistingFieldsPanel.js); a close button would let
+// users dismiss it while a field is still selected, stranding them with no way
+// to reach field settings until they reselect.
+//
+// Selector caveat: <PluginSidebar>'s `className` lands on the inner
+// `.components-panel`, not the outer `.interface-complementary-area`, so a
+// `.wppb-fb-field-settings-sidebar …-header` descendant selector has no match
+// (the header is a SIBLING of our panel). We target the outer wrapper by its
+// stable ID (Gutenberg derives it from registerPlugin slug + sidebar name, `:`
+// separator). The `:not(.interface-complementary-area__pin-unpin-item)` carve-out
+// stays correct if `isPinnable` is re-enabled; today it's `false`.
+.interface-complementary-area[id="wppb-fb-existing-fields-sidebar:field-settings"]
+    > .interface-complementary-area-header
+    > button:not(.interface-complementary-area__pin-unpin-item) {
+    display: none;
+}
+
+// Header card rendered at the top of the Field Settings PluginSidebar
+// (replaces @wordpress/block-editor's BlockCard, which crashes when mounted
+// outside a parent-block-aware context). Mirrors BlockCard's visual shape.
+//
+// Selector starts with .interface-complementary-area to win specificity
+// against the UA `h2` bottom-margin and Gutenberg's body styles. The card's
+// border-bottom doubles as the separator before the first PanelBody — no
+// margin needed below.
+.interface-complementary-area .wppb-fb-field-type-card {
+    align-items: center;
+    border-bottom: 1px solid var(--wppb-fb-border-default);
+    color: var(--wppb-fb-text-primary);
+    display: flex;
+    gap: var(--wppb-fb-space-lg);
+    margin: 0;
+    padding: var(--wppb-fb-space-lg) var(--wppb-fb-space-xl);
+
+    .wppb-fb-field-type-card__icon {
+        align-items: center;
+        display: flex;
+        flex: 0 0 24px;
+        height: 24px;
+        justify-content: center;
+        width: 24px;
+    }
+
+    .wppb-fb-field-type-card__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: var(--wppb-fb-space-3xs);
+        min-width: 0;
+    }
+
+    .wppb-fb-field-type-card__title {
+        font-size: var(--wppb-fb-font-md);
+        font-weight: 500;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .wppb-fb-field-type-card__description {
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-sm);
+        line-height: 1.4;
+    }
+
+    // When a description is present, the title should top-align with the icon
+    // rather than vertically-centring (which would push the title off the
+    // icon's baseline on multi-line descriptions).
+    &:has(.wppb-fb-field-type-card__description) {
+        align-items: flex-start;
+    }
+}
+
+// Helper text shown at the top of the Field Settings PluginSidebar when a
+// not-in-form card has been selected. Communicates that edits here are global.
+.wppb-fb-field-settings__hint {
+    background: #f0f6fc; // one-off info-banner tint (not in the palette)
+    border-left: 3px solid var(--wppb-fb-accent);
+    color: var(--wppb-fb-text-primary);
+    font-size: var(--wppb-fb-font-sm);
+    line-height: 1.4;
+    margin: 0 0 var(--wppb-fb-space-lg);
+    padding: var(--wppb-fb-space-sm) var(--wppb-fb-space-md);
+}
+
+.wppb-fb-field-settings__status {
+    margin-top: var(--wppb-fb-space-sm);
+    min-height: 20px;
+}
+
+// Hidden mount point for VirtualFieldEdit. Holds a BlockEditorProvider that
+// drives the selected block's Edit() so its FieldSettingsFill populates the
+// PluginSidebar's Slot. Rendered but invisible — `display: none` keeps React's
+// commit cycle running so the Fill stays registered. Position absolute as belt-
+// and-braces so it can't push sidebar content even if `display` were ignored.
+.wppb-fb-virtual-field-edit {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+}

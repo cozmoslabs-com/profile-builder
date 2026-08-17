@@ -45,7 +45,7 @@ function wppb_activate_signup( $key ) {
 	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE activation_key = %s", $key ) ) );
 
 	if( empty( $signup ) )
-		return apply_filters( 'wppb_register_activate_user_error_message6', '<p class="error">'.__( 'Could not find registration. Contact administrator.', 'profile-builder' ).'</p>');
+		return apply_filters( 'wppb_register_activate_user_error_message6', '<p class="error" role="alert">'.__( 'Could not find registration. Contact administrator.', 'profile-builder' ).'</p>');
 
     $user_login = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? trim( $signup->user_email ) : trim( $signup->user_login ) );
 
@@ -56,11 +56,11 @@ function wppb_activate_signup( $key ) {
 	$user_id = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? email_exists( $user_login ) : username_exists( $user_login ) );
 
 	if ( empty( $signup ) )
-		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error">'.__( 'Invalid activation key!', 'profile-builder' ).'</p>');
+		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error" role="alert">'.__( 'Invalid activation key!', 'profile-builder' ).'</p>');
 
 	if ( $signup->active )
 		if ( empty( $signup->domain ) )
-			return apply_filters( 'wppb_register_activate_user_error_message2', '<p class="wppb-success">'.__( 'This username is now active!', 'profile-builder' ).'</p>', $user_id );
+			return apply_filters( 'wppb_register_activate_user_error_message2', '<p class="wppb-success" role="alert">'.__( 'This username is now active!', 'profile-builder' ).'</p>', $user_id );
 
 	$meta = unserialize( $signup->meta );
 
@@ -80,10 +80,10 @@ function wppb_activate_signup( $key ) {
 		$user_already_exists = true;
 
 	if ( ! $user_id )
-		return apply_filters( 'wppb_register_activate_user_error_message4', '<p class="error">'.__('Could not create user!', 'profile-builder').'</p>' );
+		return apply_filters( 'wppb_register_activate_user_error_message4', '<p class="error" role="alert">'.__('Could not create user!', 'profile-builder').'</p>' );
 		
 	elseif ( isset( $user_already_exists ) && ( $user_already_exists == true ) )
-		return apply_filters( 'wppb_register_activate_user_error_message5', '<p class="error">'.__( 'This username is already activated!', 'profile-builder' ).'</p>' );
+		return apply_filters( 'wppb_register_activate_user_error_message5', '<p class="error" role="alert">'.__( 'This username is already activated!', 'profile-builder' ).'</p>' );
 	
 	else{
 		$inserted_user = ( is_multisite() ? $wpdb->update( $wpdb->signups, array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) : $wpdb->update( $wpdb->base_prefix.'signups', array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) );
@@ -121,8 +121,8 @@ function wppb_activate_signup( $key ) {
             $redirect_message = wppb_build_redirect( $redirect_url, $redirect_delay, 'after_success_email_confirmation' );
 			$redirect_message = apply_filters( 'wppb_ec_sucess_message_redirect', $redirect_message, $meta );
 
-			$success_message = apply_filters( 'wppb_success_email_confirmation', '<p class="wppb-success">' . __( 'Your email was successfully confirmed.', 'profile-builder' ) . '</p><!-- .success -->', $user_id );
-            $admin_approval_message = apply_filters( 'wppb_email_confirmation_with_admin_approval', '<p class="alert">' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profile-builder' ) . '</p>', $user_id );
+			$success_message = apply_filters( 'wppb_success_email_confirmation', '<p class="wppb-success" role="alert">' . __( 'Your email was successfully confirmed.', 'profile-builder' ) . '</p><!-- .success -->', $user_id );
+            $admin_approval_message = apply_filters( 'wppb_email_confirmation_with_admin_approval', '<p class="alert" role="alert">' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profile-builder' ) . '</p>', $user_id );
 
             $wppb_general_settings = get_option( 'wppb_general_settings', 'false' );
 
@@ -166,7 +166,7 @@ function wppb_activate_signup( $key ) {
                 return $success_message . ( ! empty ( $redirect_message ) ? $redirect_message : '' );
             }
         } else {
-			return apply_filters('wppb_register_failed_user_activation', '<p class="error">'. __('There was an error while trying to activate the user.', 'profile-builder') .'</p><!-- .error -->');
+			return apply_filters('wppb_register_failed_user_activation', '<p class="error" role="alert">'. __('There was an error while trying to activate the user.', 'profile-builder') .'</p><!-- .error -->');
         }
 	}		
 }
@@ -236,7 +236,7 @@ function wppb_default_registration_redirect( $user_id ) {
 
     // CHECK FOR REDIRECT
     if( isset( $_POST['redirect_to']  ) )
-        $_POST['redirect_to'] = apply_filters( 'wppb_after_registration_redirect_url', wppb_get_redirect_url( 'normal', 'after_registration', esc_url_raw( $_POST['redirect_to'] ), $user_data ) );
+        $_POST['redirect_to'] = apply_filters( 'wppb_after_registration_redirect_url', wppb_get_redirect_url( 'normal', 'after_registration', wppb_sanitize_request_url( $_POST['redirect_to'] ), $user_data ) );
 
 }
 add_action( 'register_new_user', 'wppb_default_registration_redirect' );

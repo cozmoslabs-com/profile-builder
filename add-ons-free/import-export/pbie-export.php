@@ -33,6 +33,8 @@ function wppb_pbie_export_our_json() {
 				'wppb_profile_builder_'.$version.'_serial',
 				// Manage Fields
 				'wppb_manage_fields',
+				// Form Builder per-CPT editor mode (modern/classic toggle)
+				'wppb_forms_editor_mode',
 				// Module Settings
 				'wppb_module_settings',
 				'wppb_module_settings_description',

@@ -334,9 +334,14 @@ function wppb_pro_userlisting_compatibility_upgrade(){
 
 	$old_userlisting_settings = get_option( 'customUserListingSettings', 'not_found' );
 	if ( $old_userlisting_settings == 'not_found' )
-		$old_userlisting_settings = get_option( 'userListingSettings' );
-		
-	if ( $old_userlisting_settings == 'not_found' )
+		$old_userlisting_settings = get_option( 'userListingSettings', 'not_found' );
+
+	// Bail on fresh installs (and any install with no legacy user-listing data).
+	// Without the 'not_found' default above, get_option() returned `false` and
+	// `false == 'not_found'` is false in PHP 8, so this guard let fresh installs
+	// fall through and create a phantom 'Userlisting' post — which trips the
+	// license gate in wppb_filter_own_post_creation() and wp_die()'s on activation.
+	if ( $old_userlisting_settings == 'not_found' || empty( $old_userlisting_settings ) )
 		return;
 		
 	$all_userlisting = ( isset( $old_userlisting_settings['allUserlisting'] ) ? wppb_replace_merge_tags( $old_userlisting_settings['allUserlisting'], true ) : '' );

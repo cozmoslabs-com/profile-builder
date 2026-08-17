@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-default-jabber",
+    "title": "Jabber / Google Talk",
+    "wppbFieldType": "Default - Jabber / Google Talk",
+    "category": "profile-builder-default",
+    "icon": "admin-users",
+    "description": "Default Jabber / Google Talk field. WordPress removed Jabber from user profiles in 3.6 (2013); this block stays registered so legacy forms still render, but it is hidden from the inserter for new forms.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Jabber / Google Talk"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": false
+    },
+    "textdomain": "profile-builder"
+}

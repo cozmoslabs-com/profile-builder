@@ -542,6 +542,21 @@ label[for="blog-privacy"] {
     color: #007acc !important;
 }
 
+.wppb-comment-captcha-error {
+    clear: both !important;
+    margin: 0 0 24px !important;
+    padding: 12px 16px !important;
+    line-height: 1.5 !important;
+}
+
+.wppb-comment-captcha-error + .comment-notes,
+.wppb-comment-captcha-error + .logged-in-as {
+    clear: both !important;
+    display: block !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+}
+
 .admin-bar #wppb_form_general_message {
     padding-top: 32px;
 }
@@ -773,6 +788,20 @@ ul.wppb-faceted-list > li:first-child {
 
 .wppb-userlisting-container .wppb-faceted-list li h5 {
     margin: 5px 0;
+}
+
+.wppb-screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
 }
 
 ul.wppb-faceted-list label > * {

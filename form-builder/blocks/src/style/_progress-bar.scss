@@ -1,0 +1,81 @@
+// Progress Bar — auto-injected at top and/or bottom of the canvas (or per
+// MSF step) based on the Progress Bar panel settings. Locked from drag/remove
+// so the document sidebar is the only edit surface.
+//
+// Wrapper chrome (card + type chip + meta line) is editor-only and follows the
+// same neutral design language as the field blocks (white card, grey chip,
+// faint meta). The inner `.wppb-progress-bar-container` mirrors the front-end
+// markup from `add-ons/multiple-forms/progress-bar/progress-bar.php`. Token
+// values come from style/_tokens.scss.
+.wppb-fb-progress-bar {
+    background: var(--wppb-fb-surface-default);
+    border: 1px solid var(--wppb-fb-border-default);
+    border-radius: var(--wppb-fb-radius-md);
+    // See _field-block.scss: border-box so the content-size caps total width
+    // and every PB block lines up at the same width.
+    box-sizing: border-box;
+    margin: var(--wppb-fb-space-md) 0;
+    padding: var(--wppb-fb-space-lg) var(--wppb-fb-space-xl);
+
+    &--bottom {
+        margin-top: var(--wppb-fb-space-lg);
+    }
+
+    &__chrome {
+        align-items: center;
+        display: flex;
+        gap: var(--wppb-fb-space-md);
+        margin-bottom: var(--wppb-fb-space-md);
+    }
+
+    // Type chip — mirrors the field-block `.wppb-fb-field-tag`.
+    &__badge {
+        background: var(--wppb-fb-surface-subtle);
+        border-radius: var(--wppb-fb-radius-pill);
+        color: var(--wppb-fb-text-muted);
+        font-size: var(--wppb-fb-font-xs);
+        font-weight: 500;
+        padding: var(--wppb-fb-space-3xs) var(--wppb-fb-space-xs);
+    }
+
+    &__meta {
+        color: var(--wppb-fb-text-faint);
+        font-size: var(--wppb-fb-font-xs);
+    }
+
+    // Mirror of front-end .wppb-progress-bar-container layout. The editor fill
+    // uses the accent color (per the Figma mockup) rather than the front-end
+    // green (#4cd964) — a deliberate editor-only treatment (scoped under
+    // .wppb-fb-progress-bar) that reads as an editor-UI accent, distinct from
+    // the live front-end bar. The front-end bar color is unaffected.
+    .wppb-progress-bar-container {
+        background-color: var(--wppb-fb-surface-subtle);
+        border-radius: var(--wppb-fb-radius-md);
+        box-sizing: border-box;
+        height: 20px;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .wppb-progress-bar-fill {
+        background-color: var(--wppb-fb-accent);
+        border-radius: var(--wppb-fb-radius-md);
+        height: 100%;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .wppb-progress-bar-text {
+        color: var(--wppb-fb-text-primary);
+        font-size: var(--wppb-fb-font-sm);
+        font-weight: 700;
+        left: 0;
+        mix-blend-mode: multiply;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+}

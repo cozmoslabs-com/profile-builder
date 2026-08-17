@@ -14,8 +14,11 @@ function _wppb_turnstile_submitHTTPPost($path, $data)
         'body' => $data
     ) );
 
-    if ( ! is_wp_error( $response ) )
-        return $response["body"];
+    if ( is_wp_error( $response ) ) {
+        return '';
+    }
+
+    return isset( $response['body'] ) ? $response['body'] : '';
 }
 
 /**
@@ -70,13 +73,14 @@ function wppb_turnstile_script_footer(){
     if( empty( $field ) )
         return;
 
-    //do not add script if there is no shortcode
+    global $wppb_turnstile_present;
     global $wppb_shortcode_on_front;
-    if( current_filter() == 'wp_footer' && ( !isset( $wppb_shortcode_on_front ) || $wppb_shortcode_on_front === false ) )
+
+    //do not add script on regular frontend pages unless a PB shortcode or Turnstile HTML is present
+    if( current_filter() == 'wp_footer' && ( !isset( $wppb_shortcode_on_front ) || $wppb_shortcode_on_front === false ) && ( !isset( $wppb_turnstile_present ) || $wppb_turnstile_present === false ) )
         return;
 
     //do not add script if the html for the field has not been added
-    global $wppb_turnstile_present;
     if( !isset( $wppb_turnstile_present ) || $wppb_turnstile_present === false )
         return;
 
@@ -184,13 +188,14 @@ function wppb_turnstile_check_answer ( $privkey, $remoteip, $response ) {
         )
     );
 
-    $answers = json_decode($getResponse, true);
+    $answers = json_decode( $getResponse, true );
     $turnstileResponse = new wppb_TurnstileResponse();
 
-    if (trim($answers ['success']) == true) {
-        $turnstileResponse->is_valid = true;
-    } else {
+    // Fail closed when the HTTP call fails or the body is not valid JSON.
+    if ( ! is_array( $answers ) || empty( $answers['success'] ) ) {
         $turnstileResponse->is_valid = false;
+    } else {
+        $turnstileResponse->is_valid = true;
     }
 
     return $turnstileResponse;
@@ -622,6 +627,81 @@ function wppb_verify_turnstile_default_wp_register( $errors ){
 return $errors;
 }
 add_filter('registration_errors','wppb_verify_turnstile_default_wp_register');
+
+/* Display Turnstile html on default WP Comments form */
+function wppb_display_turnstile_default_wp_comments(){
+    $field = wppb_get_turnstile_field();
+
+    if ( !empty( $field ) ) {
+        if ( isset( $field['turnstile-wp-forms'] ) && ( strpos( $field['turnstile-wp-forms'], 'default_wp_comments' ) !== false ) ) {
+            $publickey = trim( $field['turnstile-site-key'] );
+            $item_title = apply_filters( 'wppb_comments_turnstile_custom_field_' . $field['id'] . '_item_title', wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_title_translation', $field['field-title'], true ) );
+            $item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_' . $field['id'] . '_description_translation', $field['description'], true );
+
+            global $wppb_turnstile_present;
+            $wppb_turnstile_present = true;
+
+            $turnstile_output = '<label for="turnstile_response_field">' . $item_title . '</label>' . wppb_turnstile_get_html( $publickey, 'default_wp_comments' );
+            if ( !empty( $item_description ) )
+                $turnstile_output .= '<span class="wppb-description-delimiter">' . $item_description . '</span>';
+
+            echo '<div class="wppb-form-field wppb-turnstile">' . $turnstile_output . '</div>'; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ /* properly escaped when constructing the var */
+        }
+    }
+}
+add_action( 'comment_form_after_fields', 'wppb_display_turnstile_default_wp_comments' );
+add_action( 'comment_form_logged_in_after', 'wppb_display_turnstile_default_wp_comments' );
+
+function wppb_get_turnstile_default_wp_comments_error_message(){
+    return __( 'Cloudflare Turnstile could not be verified. Please try again.', 'profile-builder' );
+}
+
+function wppb_display_turnstile_default_wp_comments_error(){
+    if ( !isset( $_GET['wppb_comment_turnstile_error'] ) )
+        return;
+
+    $field = wppb_get_turnstile_field();
+
+    if ( empty( $field ) || !isset( $field['turnstile-wp-forms'] ) || ( strpos( $field['turnstile-wp-forms'], 'default_wp_comments' ) === false ) )
+        return;
+
+    echo '<p class="wppb-error wppb-comment-captcha-error" id="wppb_comment_turnstile_error">' . esc_html( wppb_get_turnstile_default_wp_comments_error_message() ) . '</p>';
+}
+add_action( 'comment_form_top', 'wppb_display_turnstile_default_wp_comments_error' );
+
+// Verify Turnstile for default WP Comments form
+function wppb_verify_turnstile_default_wp_comments( $approved, $commentdata ){
+    if ( !isset( $_POST['comment_post_ID'] ) )
+        return $approved;
+
+    $field = wppb_get_turnstile_field();
+
+    if ( !empty( $field ) ) {
+        if ( isset( $field['turnstile-wp-forms'] ) && ( strpos( $field['turnstile-wp-forms'], 'default_wp_comments' ) !== false ) ) {
+            global $wppb_turnstile_response;
+            if ( !isset( $wppb_turnstile_response ) )
+                $wppb_turnstile_response = wppb_validate_turnstile_response( trim( $field['turnstile-site-key'] ), trim( $field['turnstile-secret-key'] ) );
+
+            if ( $wppb_turnstile_response == false ) {
+                $redirect_to = wp_get_referer();
+
+                if ( empty( $redirect_to ) && isset( $commentdata['comment_post_ID'] ) )
+                    $redirect_to = get_permalink( absint( $commentdata['comment_post_ID'] ) );
+
+                if ( !empty( $redirect_to ) && !wp_doing_ajax() ) {
+                    $redirect_to = preg_replace( '/#.*$/', '', remove_query_arg( array( 'wppb_comment_recaptcha_error', 'wppb_comment_turnstile_error' ), $redirect_to ) );
+                    wp_safe_redirect( add_query_arg( 'wppb_comment_turnstile_error', '1', $redirect_to ) . '#respond' );
+                    exit;
+                }
+
+                return new WP_Error( 'wppb_turnstile_error', wppb_get_turnstile_default_wp_comments_error_message(), 200 );
+            }
+        }
+    }
+
+    return $approved;
+}
+add_filter( 'pre_comment_approved', 'wppb_verify_turnstile_default_wp_comments', 10, 2 );
 
 // set default values in case there's already an existing Turnstile field in Manage fields (when upgrading)
 function wppb_turnstile_set_default_values() {

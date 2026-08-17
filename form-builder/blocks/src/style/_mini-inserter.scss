@@ -1,0 +1,177 @@
+// Mini inserter — the popover behind the on-canvas "Add field" buttons.
+//
+// AddFieldButton renders the FULL inserter menu (search + tab strip) rather than
+// Gutenberg's quick inserter, so the hijacked "Existing Fields" tab is reachable
+// straight from the canvas. Core ships popover styling for this shape but sizes it
+// for the full-height sidebar; these rules bound it into a mini library and tighten
+// the cards for the narrower surface.
+//
+// Bare Gutenberg selectors → scoped under `.wppb-fb-block-editor` (see the
+// _editor-chrome.scss header for why). The popover portals into a body-level
+// `.components-popover__fallback-container`, inside the marked <body>, so the scope
+// holds. `:not(.is-quick)` is for core's own quick inserters, which the form builder
+// no longer opens anywhere.
+
+.wppb-fb-block-editor .block-editor-inserter__popover:not(.is-quick) {
+    // Frame it — core leaves the menu variant on a drop shadow alone, which reads
+    // as an unbounded sheet floating over the canvas.
+    > .components-popover__content {
+        border: 1px solid var(--wppb-fb-border-strong);
+        border-radius: var(--wppb-fb-radius-md);
+    }
+
+    // ONE scroll region, sized to the space floating-ui gave the popover. Letting
+    // the outer element scroll takes the tab strip out of view; capping the tab
+    // panel instead produced TWO nested scrollbars when the popover's own clamp was
+    // the smaller. So: stop the outer element scrolling, stretch the panel into it.
+    //
+    // Three load-bearing details. `min-height: 0` on every flex ancestor — a flex
+    // item otherwise refuses to shrink below its content and overflows instead of
+    // scrolling. `!important` — floating-ui's `size` middleware writes `max-height`
+    // AND `overflow: auto` as INLINE styles here; we keep its computed max-height
+    // (that IS the available-space clamp) and only take the scrolling away.
+    // `flex-direction: column` — the inline max-height is a main-axis constraint
+    // only in a column container; in `row` it can't shrink children and the list
+    // gets clipped.
+    > .components-popover__content {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden !important;
+    }
+
+    .block-editor-inserter__menu,
+    .block-editor-inserter__main-area,
+    .block-editor-tabbed-sidebar {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .block-editor-tabbed-sidebar__tabpanel {
+        flex: 1;
+        max-height: none;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    // Core pads the block grid for the docked sidebar; trim it so three columns fit.
+    .block-editor-inserter__panel-content {
+        padding-left: var(--wppb-fb-space-md);
+        padding-right: var(--wppb-fb-space-md);
+    }
+
+    // Same trim so the popover has ONE gutter — untouched, core's 16px inset leaves
+    // the search box 12px narrower than the cards beneath it. Longhands only, or the
+    // shorthand would also override the top padding. Applies to every tab's search:
+    // WP 7.0 renders the field inside each tab panel.
+    .block-editor-inserter__search {
+        padding-left: var(--wppb-fb-space-md);
+        padding-right: var(--wppb-fb-space-md);
+    }
+}
+
+// Destinations that can't take an existing field — anywhere inside a Repeater,
+// whose sub-fields live in `get_option( $repeater_meta_name )` — keep the mini
+// inserter but lose the WHOLE tab strip: with "Existing Fields" out and "Examples"
+// already hidden, a one-tab strip is pure chrome. ExistingFieldsPanel's hijack sync
+// sets the class from the published destination (covering "Add sub-field" and the
+// in-between "+"), and mounts no card list there.
+.wppb-fb-block-editor .block-editor-inserter__popover.wppb-fb-no-existing-fields {
+    // The row wrapping the tablist and its close button — hiding the wrapper takes
+    // the row's 48px and any border with it.
+    .block-editor-tabbed-sidebar__tablist-and-close-button {
+        display: none;
+    }
+
+    // Belt and braces if that wrapper class ever changes: a reachable tab whose
+    // panel we deliberately don't mount would open blank.
+    [role="tab"][id$="-media"] {
+        display: none;
+    }
+}
+
+// Invisible anchor for the intercepted "+" affordances (CanvasPointInserter.js).
+// `pointer-events: none` keeps the canvas underneath clickable (the popover portals
+// to the body, so it does NOT inherit it). The inline left/top are a starting point
+// only — the component keeps rewriting them so the anchor travels with the canvas,
+// which is what lets Popover's per-frame autoUpdate re-position AND re-size it.
+.wppb-fb-point-inserter {
+    pointer-events: none;
+    position: fixed;
+    z-index: 100000;
+
+    .wppb-fb-point-inserter__toggle {
+        display: block;
+        height: 100%;
+        opacity: 0;
+        width: 100%;
+    }
+}
+
+// Root canvas appender (RootCanvasAppender.js): we render our own "Add field" node
+// at the end of the root list, so core's bare "+" appender has to go or both show.
+// ROOT ONLY — a nested `.block-list-appender` (Repeater / FFC) hosts OUR button as
+// core's `CustomAppender`, so the `.is-root-container >` chain is load-bearing.
+.wppb-fb-block-editor .block-editor-block-list__layout.is-root-container > .block-list-appender {
+    display: none;
+}
+
+// Our own host node, whose lifetime doesn't depend on the block selection.
+.wppb-fb-block-editor .block-editor-block-list__layout.is-root-container > .wppb-fb-root-appender {
+    display: block;
+    width: 100%;
+}
+
+// Denser existing-field cards inside the mini inserter. The sidebar card is ~107px
+// tall, so barely three fit. This surface is for finding and inserting — inspecting
+// is the Field Settings sidebar's job — so drop the metadata rows and tighten up.
+.wppb-fb-existing-fields.is-mini {
+    .wppb-fb-existing-fields__list {
+        padding-left: var(--wppb-fb-space-md);
+        padding-right: var(--wppb-fb-space-md);
+    }
+
+    .wppb-fb-existing-fields__card-main {
+        padding: var(--wppb-fb-space-md);
+    }
+
+    // Hidden, not removed from the markup, so one component renders both surfaces.
+    .wppb-fb-existing-fields__row {
+        display: none;
+    }
+
+    // With the rows gone the card is a single title line, so the sidebar's
+    // out-of-flow actions (see _existing-fields.scss) have nothing to clear. Put
+    // them back in the title row — but going back into flow reintroduces the
+    // height-jump the absolute positioning prevented (the ~24px button is taller
+    // than the ~18px title line), so `min-height` below reserves it up front.
+    .wppb-fb-existing-fields__header {
+        margin-bottom: 0;
+    }
+
+    // Scoped through `__card-main`, which only TOP-LEVEL cards have: a sub-field
+    // card carries no actions, so reserving button height would make every nested
+    // row 6px taller for nothing.
+    .wppb-fb-existing-fields__card-main .wppb-fb-existing-fields__header {
+        min-height: 24px;   // Button size="small"
+    }
+
+    .wppb-fb-existing-fields__actions {
+        align-items: center;
+        margin-left: auto;  // pin right; the title row is a flex container
+        position: static;   // back in flow — `top`/`right` from the base rule go inert
+
+        // Both existed to let the out-of-flow actions occlude a long title cleanly.
+        // In flow they'd just shorten the title's box.
+        background: none;
+        padding-left: 0;
+    }
+
+    // Filter + search stay, minus the sidebar's wide inset.
+    .wppb-fb-existing-fields__filter {
+        padding-left: var(--wppb-fb-space-md);
+        padding-right: var(--wppb-fb-space-md);
+    }
+}

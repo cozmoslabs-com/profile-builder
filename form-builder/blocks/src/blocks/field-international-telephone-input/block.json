@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-international-telephone-input",
+    "title": "International Telephone Input",
+    "wppbFieldType": "International Telephone Input",
+    "category": "profile-builder-standard",
+    "icon": "phone",
+    "description": "International phone number input field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Phone Field"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "default-value": {
+            "type": "string",
+            "default": ""
+        },
+        "initial-country": {
+            "type": "string",
+            "default": "auto"
+        },
+        "preferred-countries": {
+            "type": "string",
+            "default": ""
+        },
+        "excluded-countries": {
+            "type": "string",
+            "default": ""
+        },
+        "national-mode": {
+            "type": "string",
+            "default": ""
+        },
+        "hide-flags": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

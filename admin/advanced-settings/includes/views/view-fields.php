@@ -270,3 +270,19 @@
     </div>
 
 </form>
+
+<div class="cozmoslabs-settings-container wppb-toolbox-fields-extra-links">
+    <div class="cozmoslabs-form-subsection-wrapper cozmoslabs-settings">
+        <h3 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Manage Form Fields', 'profile-builder' ); ?></h3>
+        <div class="cozmoslabs-form-field-wrapper">
+            <p class="cozmoslabs-description">
+                <?php esc_html_e( 'Field management is now built into the form editor via the Existing Fields panel. The legacy Form Fields page remains available for reviewing the global field list and for debugging.', 'profile-builder' ); ?>
+            </p>
+            <p>
+                <a class="button button-secondary" href="<?php echo esc_url( admin_url( 'admin.php?page=manage-fields' ) ); ?>">
+                    <?php esc_html_e( 'Open Form Fields', 'profile-builder' ); ?>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

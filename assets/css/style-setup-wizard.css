@@ -44,12 +44,22 @@
 
 .wppb-setup-steps li {
     list-style-type: none;
-    width: 25%;
+    flex: 1;
+    max-width: 200px;
     font-size: 14px;
+    line-height: 20px;
     position: relative;
     text-align: center;
     color: #757575;
     counter-increment: tab;
+}
+
+.wppb-setup-steps li a {
+    color: inherit;
+    text-decoration: none;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .wppb-setup-steps li a:hover {
@@ -134,59 +144,68 @@
     color: #939393 !important;
 }
 
-/* User Pages Tab */
-.wppb-setup-form-user-pages {
+/* Setup field rows (User Pages + User Flow) */
+.wppb-setup-form-fields {
     padding-left: 16px;
     padding-right: 16px;
 }
 
-.wppb-setup-form-user-pages .wppb-setup-form-button {
+.wppb-setup-form-fields .wppb-setup-form-button {
     margin-left: -48px;
     margin-right: -48px;
 }
 
-.wppb-setup-user-pages-field {
+.wppb-setup-field {
     display: flex;
     margin-bottom: 24px;
 }
 
-.wppb-setup-user-pages-field h4 {
+.wppb-setup-field h4 {
     margin-top: 0;
     margin-bottom: 4px !important;
     text-transform: uppercase;
 }
 
-.wppb-setup-user-pages-field__icon {
+.wppb-setup-field h4 label,
+.wppb-setup-field h4 span {
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.wppb-setup-field__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     background: #E8F2FF;
-    border-radius: 2px;
-    width: 24px;
-    height: 24px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
     margin-right: 12px;
+    flex-shrink: 0;
 }
 
-.wppb-setup-form-user-pages .cozmoslabs-toggle-switch,
-.wppb-setup-user-pages-field .button-secondary {
+.wppb-setup-form-fields .cozmoslabs-toggle-switch,
+.wppb-setup-field .button-secondary {
     margin-left: auto !important;
 }
 
-.wppb-setup-form-user-pages .cozmoslabs-toggle-switch .cozmoslabs-toggle-container {
+.wppb-setup-form-fields .cozmoslabs-toggle-switch .cozmoslabs-toggle-container {
     margin-right: 0;
 }
 
-.wppb-setup-user-pages-field__title {
+.wppb-setup-field__title {
     margin-right: 16px;
 }
 
-.wppb-setup-user-pages-field__title p {
+.wppb-setup-field__title p {
     margin-top: 0;
     margin-bottom: 0;
     color: #757575;
 }
 
-/* Design & User Experience Tab */
+/* User Flow Tab */
 .wppb-setup-form .wppb-setup-form-styles {
     margin: 50px auto;
 }
@@ -199,38 +218,14 @@
     padding-bottom: 0;
 }
 
-.wppb-setup-form-styles__upsell {
-    color: #3c434a;
-    text-align: center;
-    background: #fdf9d1;
-    padding: 6px;
-}
-
-.wppb-setup-general-settings__heading {
+.wppb-setup-fields__heading {
     display: block;
+    margin-top: 32px;
     margin-bottom: 16px;
 }
 
-.wppb-setup-general-settings {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.wppb-setup-general-settings__item {
-    display: flex;
-}
-
-.wppb-setup-general-settings__item label {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-    color: rgba( 30, 30, 30, 0.8 );
-}
-
-.wppb-setup-general-settings__item .cozmoslabs-toggle-switch .cozmoslabs-toggle-container {
-    margin-right: 22px;
+.wppb-setup-fields__heading:first-of-type {
+    margin-top: 0;
 }
 
 /* Addons Tab */

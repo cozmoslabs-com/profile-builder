@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.16.6
+Stable tag: 4.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,8 +216,11 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
-= 3.16.6 =
-* Fix: Security issue regarding arbitrary attachment ownership takeover via registration with Email Confirmation. Thanks to Ananda Dhakal and the Patchstack team
-* Fix: Invisible reCaptcha issue with rejecting valid registrations
+= 4.0.0 =
+* New: Reworked the form builder interface to a more modern one that uses blocks. All existing fields and forms are migrated to the new structure. Go to Profile Builder -> Forms to get started
+* New: The Form Fields page is now called Forms. On this page you can see the Default Registration and Edit Profile forms and open the new form builder
+* Feature: reCaptcha and Turnstile can now be enabled on default WordPress comment forms
+* Fix: Accessibility improvements for alerts and radio/checkbox fields
+* Fix: Harden checks around referral urls to catch non-string requests
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

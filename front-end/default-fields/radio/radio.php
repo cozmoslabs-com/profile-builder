@@ -28,11 +28,13 @@ function wppb_radio_handler( $output, $form_location, $field, $user_id, $field_c
 			if ( array_key_exists( $field['id'], $field_check_errors ) )
 				$error_mark = '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.wppb_required_field_error($field["field-title"]).'"/>';
 
+			$question_id = 'wppb-question-' . $field['id'];
+
 			$output = '
-				<label for="'.$field['meta-name'].'">'.$item_title.$error_mark.'</label>';
+				<label id="'. esc_attr( $question_id ) .'">'.$item_title.$error_mark.'</label>';
 					$output .= '<ul class="wppb-radios">';
 					foreach( $radio_values as $key => $value){
-						$output .= '<li><input value="'.esc_attr( trim( $value ) ).'" class="custom_field_radio '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" id="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" name="'.$field['meta-name'].'" type="radio" '. $extra_attr .' ';
+						$output .= '<li><input value="'.esc_attr( trim( $value ) ).'" class="custom_field_radio '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" id="'.Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $value ) ).'_'.$field['id'].'" name="'.$field['meta-name'].'" type="radio" aria-describedby="'. esc_attr( $question_id ) .'" '. $extra_attr .' ';
 						
 						if ( $input_value === trim( $value ) )
 							$output .= ' checked';

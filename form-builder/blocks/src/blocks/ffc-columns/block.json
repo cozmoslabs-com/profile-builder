@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/ffc-columns",
+    "wppbAddonBlock": true,
+    "title": "Columns",
+    "category": "profile-builder-structural",
+    "description": "Form Fields in Columns: wraps two or more adjacent field blocks into a horizontal row. Drag field blocks into the wrapper to add them to the column group.",
+    "icon": "columns",
+    "keywords": [ "columns", "row", "ffc", "horizontal", "flex" ],
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "multiple": true,
+        "inserter": true
+    },
+    "textdomain": "profile-builder",
+    "attributes": {}
+}

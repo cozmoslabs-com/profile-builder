@@ -372,6 +372,15 @@ body[class*="post-type-wppb-"] .cozmoslabs-banner {
     margin-top: 0 !important;
 }
 
+/* Forms Editor mode subsection: cancel parent horizontal padding; restore description margins. */
+.cozmoslabs-form-subsection-wrapper.wppb-forms-editor-mode-section {
+    max-width: none !important;
+}
+
+.wppb-forms-editor-mode-section > p.cozmoslabs-description {
+    margin-top: 16px !important;
+}
+
 .cozmoslabs-form-field-wrapper label.cozmoslabs-form-field-label {
     flex-basis: 220px;
     font-weight: 600;
@@ -3403,4 +3412,202 @@ body.profile-builder_page_admin-email-customizer .cozmoslabs-settings-container 
 
 body[class*="post-type-wppb-"] .page-title-action {
     display: none;
+}
+
+
+/* Form Builder forms list (wppb-forms-list-screen). */
+body.wppb-forms-list-screen .cozmoslabs-banner {
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 15px 20px;
+}
+
+/* Tabs under the banner. */
+body.wppb-forms-list-screen .wppb-forms-header-tabs {
+    position: relative;
+    margin: 0 0 0 -20px;
+    height: 48px;
+    padding: 0 12px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+body.wppb-forms-list-screen .wppb-forms-header-tabs a.nav-tab {
+    position: relative;
+    line-height: 48px;
+    margin: 0;
+    border: none;
+    color: #757575;
+}
+
+body.wppb-forms-list-screen .wppb-forms-header-tabs a.nav-tab:hover,
+body.wppb-forms-list-screen .wppb-forms-header-tabs a.nav-tab.nav-tab-active {
+    color: #1E1E1E;
+}
+
+/* Active tab underline. */
+body.wppb-forms-list-screen .wppb-forms-header-tabs a.nav-tab.nav-tab-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #3858E9;
+}
+
+/* Show Add New on RF/EPF list screens (free); UL stays Pro-gated elsewhere. */
+body.wppb-forms-list-screen .page-title-action {
+    display: inline-block;
+}
+
+/* Locked Add New stand-in (free tier). */
+body.wppb-forms-list-screen .page-title-action.wppb-fb-add-new-locked,
+body.wppb-forms-list-screen .page-title-action.wppb-fb-add-new-locked:hover,
+body.wppb-forms-list-screen .page-title-action.wppb-fb-add-new-locked:focus,
+body.wppb-forms-list-screen .page-title-action.wppb-fb-add-new-locked:active {
+    background: #F6F7F7;
+    border-color: #DCDCDE;
+    color: #A7AAAD;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+/* Locked Add New upgrade pointer (wp-pointer). */
+.wppb-fb-add-new-locked-pointer .wp-pointer-content {
+    width: 300px;
+    padding: 16px 18px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(30, 30, 30, 0.12);
+    background: #FFFFFF;
+}
+
+.wppb-fb-add-new-locked-pointer .wp-pointer-content p {
+    margin: 0;
+    padding: 0;
+}
+
+.wppb-fb-upsell-pointer__title {
+    margin: 0 0 6px !important;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1E1E1E;
+}
+
+.wppb-fb-upsell-pointer__text {
+    margin: 0 0 14px !important;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #50575E;
+}
+
+.wppb-fb-upsell-pointer__cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    border-radius: 2px;
+    background: #0F15B0;
+    color: #FFFFFF !important;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.wppb-fb-upsell-pointer__cta a:hover,
+.wppb-fb-upsell-pointer__cta a:focus {
+    background: #0e1294;
+    color: #FFFFFF !important;
+}
+
+/* Arrow fill matches the card (core defaults to WP blue). */
+.wppb-fb-add-new-locked-pointer.wp-pointer-top .wp-pointer-arrow,
+.wppb-fb-add-new-locked-pointer.wp-pointer-undefined .wp-pointer-arrow {
+    border-bottom-color: #E0E0E0;
+}
+
+.wppb-fb-add-new-locked-pointer.wp-pointer-top .wp-pointer-arrow-inner,
+.wppb-fb-add-new-locked-pointer.wp-pointer-undefined .wp-pointer-arrow-inner {
+    border-bottom-color: #FFFFFF;
+}
+
+/* List table as a rounded card. */
+body.wppb-forms-list-screen .wp-list-table {
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+body.wppb-forms-list-screen .wp-list-table thead th,
+body.wppb-forms-list-screen .wp-list-table thead td {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+body.wppb-forms-list-screen .wp-list-table tfoot th,
+body.wppb-forms-list-screen .wp-list-table tfoot td {
+    border-top: 1px solid #E0E0E0;
+}
+
+body.wppb-forms-list-screen .wp-list-table thead th,
+body.wppb-forms-list-screen .wp-list-table tfoot th {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+body.wppb-forms-list-screen .wp-list-table thead th a,
+body.wppb-forms-list-screen .wp-list-table tfoot th a {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* "Published" status in the Date column (wrapped by
+   wppb_fb_forms_date_column_status). */
+body.wppb-forms-list-screen .wppb-forms-status-published {
+    color: #008A20;
+}
+
+/* Shortcode chip — width set inline by setShortcodeInputWidth(); do not set width here. */
+body.wppb-forms-list-screen .wp-list-table input.wppb-shortcode_copy {
+    height: auto;
+    min-height: 0;
+    padding: 4px 10px;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #50575E;
+    background: #F6F7F7;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    box-shadow: none;
+    opacity: 1;
+    cursor: pointer;
+}
+
+body.wppb-forms-list-screen .wp-list-table input.wppb-shortcode_copy:hover,
+body.wppb-forms-list-screen .wp-list-table input.wppb-shortcode_copy:focus {
+    border-color: #CCCCCC;
+    box-shadow: none !important;
+}
+
+/* Match measure-span font to the chip so setShortcodeInputWidth() doesn't clip. */
+body.wppb-forms-list-screen .wppb-shortcode-temp {
+    display: inline-block;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: normal;
+    white-space: nowrap;
+    padding-right: 8px;
 }

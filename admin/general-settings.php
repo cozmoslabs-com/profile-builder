@@ -167,22 +167,17 @@ function wppb_general_settings_content() {
 
                 <div class="cozmoslabs-settings">
 
+                    <?php if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/form-designs/form-designs.php' ) ) : ?>
                     <div class="cozmoslabs-form-subsection-wrapper" id="wppb-form_desings">
                         <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Design & User Experience', 'profile-builder' ); ?></h4>
                         <p class="cozmoslabs-description" style="margin-bottom: 5px;"><?php esc_html_e( 'Choose a style that better suits your website.', 'profile-builder' ); ?></p>
                         <p class="cozmoslabs-description"><?php esc_html_e( 'The default style is there to let you customize the CSS and in general will receive the look and feel from your own theme’s styling.', 'profile-builder' ); ?></p>
 
                         <div class="cozmoslabs-form-field-wrapper">
-                            <?php
-                            if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR.'/features/form-designs/form-designs.php' ) ) {
-                                 echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                            }
-                            elseif ( PROFILE_BUILDER == 'Profile Builder Free' ) {
-                                echo wppb_display_form_designs_preview(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                            }
-                            ?>
+                            <?php echo wppb_render_forms_design_selector(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                         </div>
                     </div>
+                    <?php endif; ?>
 
                     <div class="cozmoslabs-form-subsection-wrapper">
                         <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Optimize The login and Registration flow for your members', 'profile-builder' ); ?></h4>
@@ -364,10 +359,9 @@ function wppb_general_settings_content() {
                         </div>
                     </div>
 
+                    <?php if ( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
                     <div class="cozmoslabs-form-subsection-wrapper">
                         <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Two-Factor Authentication', 'profile-builder' ); ?></h4>
-
-                        <?php if( defined( 'WPPB_PAID_PLUGIN_DIR' ) && file_exists( WPPB_PAID_PLUGIN_DIR . '/features/two-factor-authentication/class-two-factor-authentication.php' ) ) : ?>
 
                             <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
                                 <?php
@@ -767,29 +761,8 @@ function wppb_general_settings_content() {
 
 
 
-                        <?php else : ?>
-
-                            <div class="cozmoslabs-form-field-wrapper cozmoslabs-toggle-switch">
-
-                                <label class="cozmoslabs-form-field-label" for="wppb-2fa-enable"><?php esc_html_e('Two-Factor Authentication', 'profile-builder'); ?></label>
-
-                                <div class="cozmoslabs-toggle-container">
-                                    <input type="checkbox" name="wppb_two_factor_authentication_free" id="wppb-2fa-enable" value="yes">
-                                    <label class="cozmoslabs-toggle-track" for="wppb-2fa-enable"></label>
-                                </div>
-
-                                <div class="cozmoslabs-toggle-description">
-                                    <label for="wppb-2fa-enable" class="cozmoslabs-description"><?php esc_html_e( 'Enable the Google Authenticator functionality.', 'profile-builder' ); ?></label>
-                                </div>
-
-                                <p class="cozmoslabs-description cozmoslabs-description-upsell" id="wppb-2fa-upgrade-notice" style="display: none;">
-                                    <?php printf( esc_html__( 'Increase the security of your user accounts with 2 Factor Authentication by upgrading to %1$sBasic or Pro%2$s versions.', 'profile-builder' ), '<a href="https://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=settings-2fa&utm_campaign=PBFree#pricing" target="_blank">', '</a>' );?>
-                                </p>
-
-                            </div>
-
-                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
 
                     <div class="cozmoslabs-form-subsection-wrapper">
                         <h4 class="cozmoslabs-subsection-title"><?php esc_html_e( 'Other features', 'profile-builder' ); ?></h4>

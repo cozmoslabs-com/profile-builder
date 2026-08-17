@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-recaptcha",
+    "title": "reCAPTCHA",
+    "wppbFieldType": "reCAPTCHA",
+    "category": "profile-builder-advanced",
+    "icon": "shield",
+    "description": "Google reCAPTCHA field.",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "reCAPTCHA"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "public-key": {
+            "type": "string",
+            "default": ""
+        },
+        "private-key": {
+            "type": "string",
+            "default": ""
+        },
+        "recaptcha-type": {
+            "type": "string",
+            "default": "v2"
+        },
+        "score-threshold": {
+            "type": "string",
+            "default": "0.5"
+        },
+        "captcha-pb-forms": {
+            "type": "string",
+            "default": "pb_register"
+        },
+        "captcha-wp-forms": {
+            "type": "string",
+            "default": "default_wp_register"
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "profile-builder/field-gdpr-communication-preferences",
+    "title": "GDPR Communication Preferences",
+    "wppbFieldType": "GDPR Communication Preferences",
+    "wppbAddonFieldType": true,
+    "category": "profile-builder-other",
+    "icon": "shield",
+    "description": "Lets users choose which communication channels they consent to (Email, Telephone, SMS, Post).",
+    "attributes": {
+        "id": {
+            "type": "number",
+            "default": 0
+        },
+        "field-title": {
+            "type": "string",
+            "default": "Communication Preferences"
+        },
+        "meta-name": {
+            "type": "string",
+            "default": "gdpr_communication_preferences"
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "required": {
+            "type": "string",
+            "default": "No"
+        },
+        "gdpr-communication-preferences": {
+            "type": "string",
+            "default": "email,phone,sms,post"
+        },
+        "gdpr-communication-preferences-sort-order": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": true
+    },
+    "textdomain": "profile-builder"
+}

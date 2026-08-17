@@ -406,7 +406,7 @@ function wppb_front_end_password_recovery( $atts ){
                 if( $warning === '' ) {
                     $warning = __('The email address entered wasn\'t found in the database!', 'profile-builder').'<br/>'.__('Please check that you entered the correct email address.', 'profile-builder');
                     $warning = apply_filters('wppb_recover_password_sent_message2', $warning);
-                    $output .= '<p class="wppb-warning">'.$warning.'</p>';
+                    $output .= '<p class="wppb-warning" role="alert">'.$warning.'</p>';
                 } else {
                     $output .= $warning;
                 }
@@ -576,13 +576,13 @@ function wppb_front_end_password_recovery( $atts ){
 
 /* function for displaying success messages on the recover password page */
 function wppb_password_recovery_success( $message, $filter ){
-    return apply_filters( $filter, '<p class="wppb-success">'.$message.'</p>', $message );
+    return apply_filters( $filter, '<p class="wppb-success" role="alert">'.$message.'</p>', $message );
 }
 
 /* function for displaying warning messages on the recover password page */
 function wppb_password_recovery_warning( $message, $filter ){
     if( $message !== '' ) {
-        return apply_filters( $filter, '<p class="wppb-warning">'.$message.'</p>', $message );
+        return apply_filters( $filter, '<p class="wppb-warning" role="alert">'.$message.'</p>', $message );
     } else {
         return apply_filters( $filter, '', $message );
     }
@@ -590,7 +590,7 @@ function wppb_password_recovery_warning( $message, $filter ){
 
 /* function for displaying error messages on the recover password page */
 function wppb_password_recovery_error( $message, $filter ){
-    return apply_filters( $filter, '<p class="wppb-error">'.$message.'</p>', $message );
+    return apply_filters( $filter, '<p class="wppb-error" role="alert">'.$message.'</p>', $message );
 }
 
 
