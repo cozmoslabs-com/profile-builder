@@ -13,9 +13,27 @@ function wppb_toolbox_format_date_handler( $atts ){
 		return;
 
 	if ($a['format'] === null)
-		return $a['date'];
+		return esc_html( $a['date'] );
+
+	$format = wppb_toolbox_sanitize_date_format( $a['format'] );
+
+	if ( $format === '' )
+		return esc_html( $a['date'] );
 
 	$date = strtotime($a['date']);
 
-	return date($a['format'], $date);
+	return esc_html( date( $format, $date ) );
+}
+
+/**
+ * Keep letters, digits, and date separators; drop markup and other symbols.
+ *
+ * @param string $format User-supplied date format.
+ * @return string
+ */
+function wppb_toolbox_sanitize_date_format( $format ) {
+	if ( ! is_string( $format ) )
+		return '';
+
+	return preg_replace( '/[^\p{L}0-9 \-\/.,:\\\\()]/u', '', $format );
 }

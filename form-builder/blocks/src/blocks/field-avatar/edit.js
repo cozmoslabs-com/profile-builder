@@ -17,7 +17,7 @@ export default function Edit( props ) {
                 label={ __( 'Avatar Size', 'profile-builder' ) }
                 value={ attributes[ 'avatar-size' ] }
                 onChange={ ( val ) => setAttributes( { 'avatar-size': val } ) }
-                help={ __( 'A value between 20 and 200 (default 100).', 'profile-builder' ) }
+                help={ __( 'A value between 20 and 800 (default 100).', 'profile-builder' ) }
             />
             <TextControl
                 label={ __( 'Allowed Image Extensions', 'profile-builder' ) }

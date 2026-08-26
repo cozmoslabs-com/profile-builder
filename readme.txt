@@ -3,9 +3,9 @@ Contributors: cozmoslabs, sareiodata, adispiac, madalin.ungureanu, iova.mihai, b
 Donate link: https://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, registration, profile, user registration form
 Requires at least: 3.1
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,6 +216,16 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
+= 4.0.1 =
+* Fix: Security issue regarding unauthenticated access to the media library. Thanks to the WPScan team
+* Fix: Security issue regarding unauthenticated stored cross-site scripting through the Unconfirmed Email Addresses list. Thanks to the Wordfence team
+* Fix: Security issue regarding authenticated (Contributor+) stored cross-site scripting via the format-date shortcode. Thanks to Muni Nitish Kumar Yaddala, WPScan and the Wordfence team
+* Fix: Security issue regarding PHP object injection during Import and Export. Thanks to Vivien LEBAS and the WPScan team
+* Fix: Admin Approval user deletion now routes through WordPress's content reassignment screen
+* Fix: "Failed to initialize plugin: tablepress_tinymce" error when opening the new Form Editor with TablePress active
+* Fix: Attempt to read property "post_type" on null warnings on some third-party admin screens
+* Misc: Raised the Avatar field maximum size from 200px to 800px
+
 = 4.0.0 =
 * New: Reworked the form builder interface to a more modern one that uses blocks. All existing fields and forms are migrated to the new structure. Go to Profile Builder -> Forms to get started
 * New: The Form Fields page is now called Forms. On this page you can see the Default Registration and Edit Profile forms and open the new form builder

@@ -60,14 +60,14 @@ class WPPB_ImpEx_Import {
 						foreach( $imported_post["postmeta"] as $key => $value ) {
 							// Replace, don't append — get_post_meta(..., true) would otherwise return a stale first row.
 							delete_post_meta( $imported_post_id, $key );
-							foreach( $value as $serialized_value ) {
-								add_post_meta( $imported_post_id, $key, maybe_unserialize( $serialized_value ) );
+							foreach( $value as $raw_value ) {
+								add_post_meta( $imported_post_id, $key, $this->restore_meta_value( $raw_value ) );
 							}
 						}
 
 						if ( ! empty( $imported_post["postmeta"]["_pbform_is_default"] ) ) {
 							foreach( (array) $imported_post["postmeta"]["_pbform_is_default"] as $wppb_default_flag ) {
-								if ( maybe_unserialize( $wppb_default_flag ) === '1' ) {
+								if ( $this->restore_meta_value( $wppb_default_flag ) === '1' ) {
 									$imported_default_ids[ $imported_post_type ] = $imported_post_id;
 									break;
 								}
@@ -88,6 +88,44 @@ class WPPB_ImpEx_Import {
 			$this->import_messages[$this->j]['type'] = 'error';
 			$this->j++;
 		}
+	}
+
+	/**
+	 * Decode exported post meta without loading PHP classes.
+	 *
+	 * Export writes get_post_custom() strings, which are often PHP-serialized arrays.
+	 *
+	 * @param mixed $value Raw meta value from decoded JSON.
+	 * @return mixed Scalar or array for add_post_meta.
+	 */
+	private function restore_meta_value( $value ) {
+		if ( ! is_string( $value ) || ! is_serialized( $value ) ) {
+			return $value;
+		}
+
+		$restored = @unserialize( trim( $value ), array( 'allowed_classes' => false ) );
+
+		return $this->drop_incomplete_objects( $restored );
+	}
+
+	/**
+	 * Replace objects PHP refused to load with an empty string.
+	 *
+	 * @param mixed $value Unserialized value.
+	 * @return mixed
+	 */
+	private function drop_incomplete_objects( $value ) {
+		if ( $value instanceof \__PHP_Incomplete_Class ) {
+			return '';
+		}
+
+		if ( is_array( $value ) ) {
+			foreach ( $value as $key => $item ) {
+				$value[ $key ] = $this->drop_incomplete_objects( $item );
+			}
+		}
+
+		return $value;
 	}
 
 	/**

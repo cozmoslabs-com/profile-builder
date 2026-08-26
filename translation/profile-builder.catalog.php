@@ -363,7 +363,7 @@
 <?php __("Allowed Upload Extensions", "profile-builder"); ?>
 <?php __("Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)", "profile-builder"); ?>
 <?php __("Avatar Size", "profile-builder"); ?>
-<?php __("Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", "profile-builder"); ?>
+<?php __("Enter a value (between 20 and 800) for the size of the 'Avatar'<br/>If not specified, defaults to 100", "profile-builder"); ?>
 <?php __("Maximum File Size (MB)", "profile-builder"); ?>
 <?php __("Specify the maximum file size allowed for upload (in MB)<br/>If not specified, defaults to the server maximum upload size", "profile-builder"); ?>
 <?php __("Date-format", "profile-builder"); ?>
@@ -875,7 +875,7 @@
 <?php __("Please choose a different field type as this one already exists in your form (must be unique)\n", "profile-builder"); ?>
 <?php __("You cannot have both a reCAPTCHA and a Turnstile field! Please remove the other existing field first.\n", "profile-builder"); ?>
 <?php __("The entered avatar size is not numerical\n", "profile-builder"); ?>
-<?php __("The entered avatar size is not between 20 and 200\n", "profile-builder"); ?>
+<?php __("The entered avatar size is not between 20 and 800\n", "profile-builder"); ?>
 <?php __("The entered maximum file size is not a valid positive number\n", "profile-builder"); ?>
 <?php __("You must enter a value for the row number\n", "profile-builder"); ?>
 <?php __("The entered row number is not numerical\n", "profile-builder"); ?>

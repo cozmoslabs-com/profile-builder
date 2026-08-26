@@ -9,8 +9,9 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
 
         $field['meta-name'] = Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] );
 
-        /* media upload add here, this should be added just once even if called multiple times */
-        wp_enqueue_media();
+        if ( ! wppb_use_simple_upload_field( $field ) ) {
+            wp_enqueue_media();
+        }
         /* propper way to dequeue. add to functions file in theme or custom plugin
          function wppb_dequeue_script() {
             wp_script_is( 'wppb-upload-script', 'enqueued' ); //true
@@ -116,10 +117,10 @@ add_filter( 'wppb_admin_output_form_field_avatar', 'wppb_avatar_handler', 10, 6 
 function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location ){
 	if( $field['field'] == 'Avatar' ){
         $field['meta-name'] = Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] );
-        if ( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] == 'yes' && ( !isset( $field[ 'woocommerce-checkout-field' ] ) || $field[ 'woocommerce-checkout-field' ] !== 'Yes' ) ) {
+        if ( wppb_use_simple_upload_field( $field ) ) {
             //Save data in the case the simple upload field is used
             $field_name = 'simple_upload_' . wppb_handle_meta_name( $field[ 'meta-name' ] );
-            if( isset( $_FILES[ $field_name ] ) || ( isset( $request_data[ 'pay_gate' ] ) && in_array( $request_data['pay_gate'], array( 'stripe_connect', 'paypal_connect' ) ) ) ){
+            if ( wppb_simple_upload_was_submitted( $field, $request_data ) ) {
                 if ( !( isset( $field[ 'conditional-logic-enabled' ] ) && $field[ 'conditional-logic-enabled' ] == 'yes' && !isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ) ){
                     if ( isset( $_FILES[ $field_name ][ 'size' ] ) && $_FILES[ $field_name ][ 'size' ] == 0 ){
                         if ( isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ){
@@ -151,7 +152,7 @@ function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_
     // Save the uploaded file
     // It will have no author until the user's email is confirmed
     if( $field['field'] == 'Avatar' ) {
-        if( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] === 'yes' && ( !isset( $field[ 'woocommerce-checkout-field' ] ) || $field[ 'woocommerce-checkout-field' ] !== 'Yes' ) ) {
+        if ( wppb_use_simple_upload_field( $field ) ) {
             $field['meta-name'] = Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] );
             $field_name = 'simple_upload_' . wppb_handle_meta_name( $field['meta-name'] );
 
@@ -162,11 +163,11 @@ function wppb_avatar_add_upload_for_user_signup( $field_value, $field, $request_
                 wppb_valid_simple_upload($field, $_FILES[$field_name])) { /* phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */ /* no need here */
                 return wppb_default_fields_save_simple_upload_file($field_name);
             }
-        } else {
-            $attachment_id = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
-            if ( isset( $attachment_id ) && wppb_verify_attachment_id( $attachment_id ) ) {
-                return absint( trim( $attachment_id ) );
-            }
+        }
+
+        $attachment_id = isset( $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] ) ? $request_data[ wppb_handle_meta_name( $field['meta-name'] ) ] : null;
+        if ( isset( $attachment_id ) && wppb_verify_attachment_id( $attachment_id ) ) {
+            return absint( trim( $attachment_id ) );
         }
     }
 
@@ -205,7 +206,7 @@ function wppb_check_avatar_value( $message, $field, $request_data, $form_locatio
 	if( $field['field'] == 'Avatar' ){
         if( $field['required'] == 'Yes' ){
             $field['meta-name'] = Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'] );
-            if ( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] == 'yes' && ( !isset( $field[ 'woocommerce-checkout-field' ] ) || $field[ 'woocommerce-checkout-field' ] !== 'Yes' ) ) {
+            if ( wppb_use_simple_upload_field( $field ) ) {
                 //Check the required field in case simple upload is used
                 $field_name = 'simple_upload_' . wppb_handle_meta_name( $field[ 'meta-name' ] );
                 if ( (!isset( $_FILES[ $field_name ] ) || ( isset( $_FILES[ $field_name ] ) && isset( $_FILES[ $field_name ][ 'size' ] ) && $_FILES[ $field_name ][ 'size' ] == 0 ) || !wppb_valid_simple_upload( $field, $_FILES[ $field_name ] ) ) && isset( $request_data[ $field[ 'meta-name' ] ] ) && empty( $request_data[ $field[ 'meta-name' ] ] ) ){ /* phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized */ /* no need here for wppb_valid_simple_upload() */

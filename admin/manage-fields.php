@@ -270,7 +270,7 @@ function wppb_populate_manage_fields(){
         array( 'type' => 'text', 'slug' => 'allowed-image-extensions', 'title' => __( 'Allowed Image Extensions', 'profile-builder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)', 'profile-builder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'simple-upload', 'title' => __( 'Use Simple Upload', 'profile-builder' ), 'options' => array( '%'.__('Yes','profile-builder').'%'.'yes' ), 'description' => __( 'Use a simple upload field instead of the WordPress upload', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'allowed-upload-extensions', 'title' => __( 'Allowed Upload Extensions', 'profile-builder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)', 'profile-builder' ) ),
-        array( 'type' => 'text', 'slug' => 'avatar-size', 'title' => __( 'Avatar Size', 'profile-builder' ), 'default' => 100, 'description' => __( "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'avatar-size', 'title' => __( 'Avatar Size', 'profile-builder' ), 'default' => 100, 'description' => __( "Enter a value (between 20 and 800) for the size of the 'Avatar'<br/>If not specified, defaults to 100", 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'max-file-size', 'title' => __( 'Maximum File Size (MB)', 'profile-builder' ), 'description' => __( 'Specify the maximum file size allowed for upload (in MB)<br/>If not specified, defaults to the server maximum upload size', 'profile-builder' ) ),
         array( 'type' => 'text', 'slug' => 'date-format', 'title' => __( 'Date-format', 'profile-builder' ), 'default' => 'mm/dd/yy', 'description' => __( 'Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd, mm-dd-yy, yy-mm-dd, D, dd M yy, D, d M y, DD, dd-M-y, D, d M yy, mm/yy, mm/dd, dd/mm, @<br/>If not specified, defaults to mm/dd/yy<br/>ATTENTION: if you plan to use this field for sorting, please make sure to use year first, then month, and day last.', 'profile-builder' ) ),
         array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profile-builder' ), 'description' => __( 'Enter a detailed description of the terms of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profile-builder' ) ),
@@ -1256,8 +1256,8 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		// check for avatar size
 		if ( $posted_values['field'] == 'Avatar' ){
 			if ( is_numeric( $posted_values['avatar-size'] ) ){
-				if ( ( $posted_values['avatar-size'] < 20 ) || ( $posted_values['avatar-size'] > 200 ) )
-					$message .= __( "The entered avatar size is not between 20 and 200\n", 'profile-builder' );
+				if ( ( $posted_values['avatar-size'] < 20 ) || ( $posted_values['avatar-size'] > 800 ) )
+					$message .= __( "The entered avatar size is not between 20 and 800\n", 'profile-builder' );
 
 			}else
 				$message .= __( "The entered avatar size is not numerical\n", 'profile-builder' );

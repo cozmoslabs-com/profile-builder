@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
         validate_simple_upload();
     });
 
-    if( typeof wp.media != "undefined" ){
+    if( typeof wp !== "undefined" && typeof wp.media !== "undefined" ){
         // Uploading files
         var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
 
@@ -110,47 +110,49 @@ jQuery(document).ready(function(){
         jQuery('a.add_media').on('click', function() {
             wp.media.model.settings.post.id = wp_media_post_id;
         });
-
-        jQuery(document).on('keypress', '.wppb-remove-upload', function(e){
-            if(e.which == 13) {
-                jQuery(this).trigger('click');
-            }
-        });
-
-        jQuery(document).on('click', '.wppb-remove-upload', function(e){
-            if( confirm( 'Are you sure ?' ) ){
-                /* update hidden input */
-                simple_upload_button = jQuery(this).closest('li, td, p.form-row, div.form-row').find('input[type="file"]');
-                if (simple_upload_button.attr('name')) {
-                    upload_input_id = simple_upload_button.attr('name').split('_').slice(2).join('_');
-                    upload_input_id = upload_input_id.split('-').join('_');
-                    upload_input = jQuery("#" + upload_input_id);
-                }
-                else{
-                    upload_input = jQuery(this).closest('li, td, p.form-row, div.form-row').find('input[type="hidden"]');
-                }
-                removedAttachement = jQuery(this).parent().parent('.upload-field-details').data('attachment_id');
-                uploadAttachemnts = upload_input.val();
-                uploadAttachemntsArray = uploadAttachemnts.split(',');
-                newuploadAttachments = [];
-                for (var i = 0; i < uploadAttachemntsArray.length; i++) {
-                    if (uploadAttachemntsArray[i] != removedAttachement)
-                        newuploadAttachments.push(uploadAttachemntsArray[i]);
-                }
-                newuploadAttachments = newuploadAttachments.join(',');
-                upload_input.val(newuploadAttachments);
-
-                /* remove the attachment details */
-                jQuery(this).parent().parent('.upload-field-details').next('a').show();
-                simple_upload_button.show();
-                simple_upload_button.val('');
-                jQuery(this).parent().parent('.upload-field-details').remove();
-
-                jQuery(document).trigger( 'wppb_removed_uploaded_file' )
-
-            }
-        });
     }
+
+    // Bind independently of wp.media: users without upload_files get the simple
+    // file input and never load the media gallery scripts.
+    jQuery(document).on('keypress', '.wppb-remove-upload', function(e){
+        if(e.which == 13) {
+            jQuery(this).trigger('click');
+        }
+    });
+
+    jQuery(document).on('click', '.wppb-remove-upload', function(e){
+        if( confirm( 'Are you sure ?' ) ){
+            /* update hidden input */
+            simple_upload_button = jQuery(this).closest('li, td, p.form-row, div.form-row').find('input[type="file"]');
+            if (simple_upload_button.attr('name')) {
+                upload_input_id = simple_upload_button.attr('name').split('_').slice(2).join('_');
+                upload_input_id = upload_input_id.split('-').join('_');
+                upload_input = jQuery("#" + upload_input_id);
+            }
+            else{
+                upload_input = jQuery(this).closest('li, td, p.form-row, div.form-row').find('input[type="hidden"]');
+            }
+            removedAttachement = jQuery(this).parent().parent('.upload-field-details').data('attachment_id');
+            uploadAttachemnts = upload_input.val();
+            uploadAttachemntsArray = uploadAttachemnts.split(',');
+            newuploadAttachments = [];
+            for (var i = 0; i < uploadAttachemntsArray.length; i++) {
+                if (uploadAttachemntsArray[i] != removedAttachement)
+                    newuploadAttachments.push(uploadAttachemntsArray[i]);
+            }
+            newuploadAttachments = newuploadAttachments.join(',');
+            upload_input.val(newuploadAttachments);
+
+            /* remove the attachment details */
+            jQuery(this).parent().parent('.upload-field-details').next('a').show();
+            simple_upload_button.show();
+            simple_upload_button.val('');
+            jQuery(this).parent().parent('.upload-field-details').remove();
+
+            jQuery(document).trigger( 'wppb_removed_uploaded_file' )
+
+        }
+    });
 });
 
 function validate_simple_upload(){

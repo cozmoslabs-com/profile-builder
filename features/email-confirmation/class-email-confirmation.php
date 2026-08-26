@@ -76,7 +76,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
     function column_default($item, $column_name){
         switch($column_name){
             case 'email':
-                return $item[$column_name];
+                return esc_html( $item[$column_name] );
             case 'registered':
                 return date_i18n( "Y-m-d G:i:s", wppb_add_gmt_offset( strtotime( $item[$column_name] ) ) );
             case 'user-meta':
@@ -104,6 +104,20 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
     }
     
         
+    /**
+     * Unconfirmed-user row action. Args live on data attributes so the email is never interpolated into JavaScript.
+     */
+    function wppb_ec_action_link( $url, $todo, $email, $confirm_message, $label ) {
+        return sprintf(
+            '<a href="#" class="wppb-ec-action" data-url="%1$s" data-todo="%2$s" data-email="%3$s" data-message="%4$s">%5$s</a>',
+            esc_url( $url ),
+            esc_attr( $todo ),
+            esc_attr( $email ),
+            esc_attr( $confirm_message ),
+            esc_html( $label )
+        );
+    }
+
     /** ************************************************************************
      * Recommended. This is a custom column method and is responsible for what
      * is rendered in any column with a name/slug of 'username'. Every time the class
@@ -120,21 +134,22 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td>
      **************************************************************************/
-    function column_username($item){
+    function column_username( $item ) {
 		
 		$GRavatar = get_avatar( $item['email'], 32, '' );
-		
-        //Build row actions
+        $current_url = wppb_curpageurl();
+        $email       = $item['ID'];
+
         $actions = array(
-            'delete'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'delete this user from the _signups table?', 'profile-builder' ) ) . '\' )">' . __( 'Delete', 'profile-builder' ) . '</a>', wppb_curpageurl(), 'delete', $item['ID'] ),
-            'confirm'   => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'confirm this email yourself?', 'profile-builder' ) ) . '\' )">' . __( 'Confirm Email', 'profile-builder' ) . '</a>', wppb_curpageurl(), 'confirm', $item['ID'] ),
-            'resend'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'resend the activation link?', 'profile-builder' ) ) . '\' )">' . __( 'Resend Activation Email', 'profile-builder' ) . '</a>', wppb_curpageurl(), 'resend', $item['ID'] )
+            'delete'  => $this->wppb_ec_action_link( $current_url, 'delete', $email, __( 'delete this user from the _signups table?', 'profile-builder' ), __( 'Delete', 'profile-builder' ) ),
+            'confirm' => $this->wppb_ec_action_link( $current_url, 'confirm', $email, __( 'confirm this email yourself?', 'profile-builder' ), __( 'Confirm Email', 'profile-builder' ) ),
+            'resend'  => $this->wppb_ec_action_link( $current_url, 'resend', $email, __( 'resend the activation link?', 'profile-builder' ), __( 'Resend Activation Email', 'profile-builder' ) ),
         );
         
         //Return the user row
         return sprintf('%1$s <strong>%2$s</strong> %3$s',
             /*$1%s*/ $GRavatar,
-            /*$2%s*/ $item['username'],
+            /*$2%s*/ esc_html( $item['username'] ),
             /*$3%s*/ $this->row_actions($actions)
         );
     }
@@ -151,8 +166,8 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
     function column_cb($item){
         return sprintf(
             '<input type="checkbox" name="%1$s[]" value="%2$s" />',
-            /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label
-            /*$2%s*/ $item['ID']                //The value of the checkbox should be the record's id
+            /*$1%s*/ esc_attr( $this->_args['singular'] ),
+            /*$2%s*/ esc_attr( $item['ID'] )
         );
     }
     

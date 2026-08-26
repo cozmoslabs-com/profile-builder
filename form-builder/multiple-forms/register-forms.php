@@ -75,11 +75,13 @@ function wppb_register_add_form_change_class_based_on_redirect_field($wck_update
 function wppb_remove_rf_view_link( $actions ){
 	global $post;
 
-	if ( $post->post_type == 'wppb-rf-cpt' ){
-		unset( $actions['view'] );
+	if ( ! empty( $post ) ) {
+		if ( $post->post_type == 'wppb-rf-cpt' ){
+			unset( $actions['view'] );
 
-		if ( wppb_get_post_number ( $post->post_type, 'singular_action' ) )
-			unset( $actions['trash'] );
+			if ( wppb_get_post_number ( $post->post_type, 'singular_action' ) )
+				unset( $actions['trash'] );
+		}
 	}
 
 	return $actions;

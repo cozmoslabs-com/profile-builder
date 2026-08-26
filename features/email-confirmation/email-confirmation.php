@@ -143,6 +143,17 @@ function wppb_add_pending_users_header_script(){
 				});
 			}
 		}
+
+		jQuery(document).on('click', 'a.wppb-ec-action', function(e) {
+			e.preventDefault();
+			var link = jQuery(this);
+			confirmECAction(
+				link.attr('data-url'),
+				link.attr('data-todo'),
+				link.attr('data-email'),
+				link.attr('data-message')
+			);
+		});
 	</script>
 <?php
 }

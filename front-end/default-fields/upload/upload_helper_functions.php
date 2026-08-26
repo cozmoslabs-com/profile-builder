@@ -2,64 +2,32 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/* Set up upload field for frontend */
-/* overwrite the two functions for when an upload is made from the frontend so they don't check for a logged in user */
-if( strpos( wp_get_referer(), 'wp-admin' ) === false && isset( $_REQUEST['action'] ) && 'upload-attachment' == $_REQUEST['action'] ){
-
-    if( isset( $_REQUEST['wppb_upload'] ) && 'true' == $_REQUEST['wppb_upload'] &&
-        isset( $_REQUEST['meta_name'] ) && wppb_check_that_field_is_defined( sanitize_text_field( $_REQUEST['meta_name'] ), array( 'Avatar', 'Upload' ) ) ){
-
-        if( !function_exists( 'check_ajax_referer' ) ){
-            function check_ajax_referer( ) {
-                return true;
-            }
-        }
-
-        if( !function_exists( 'auth_redirect' ) ){
-            function auth_redirect() {
-                return true;
-            }
-        }
-
+/** Simple file input when the field is set to it, or the user cannot upload_files. */
+function wppb_use_simple_upload_field( $field ) {
+    if ( ! empty( $field['simple-upload'] ) && $field['simple-upload'] === 'yes' ) {
+        return true;
     }
 
+    return ! current_user_can( 'upload_files' );
 }
 
-/* Front-end Avatar/Upload async-upload bypass when the real user lacks upload caps.
- * Guests use WP_User(0) (author-less until registration). Logged-in users keep their ID
- * and only gain temporary caps so the attachment is owned by them (see wppb_verify_attachment_id). */
-add_action( 'current_screen', 'wppb_create_fake_user_when_uploading_and_not_logged_in' );
-if( !function_exists( 'wppb_create_fake_user_when_uploading_and_not_logged_in' ) ) {
-    function wppb_create_fake_user_when_uploading_and_not_logged_in() {
-        // don't do anything if this request is coming from the back-end
-        if( !( strpos( wp_get_referer(), 'wp-admin' ) === false ) )
-            return;
+/**
+ * Whether this request includes a simple-upload for the field.
+ * Checkout and some payment forms post the hidden attachment ID without $_FILES.
+ */
+function wppb_simple_upload_was_submitted( $field, $request_data ) {
+    $meta     = wppb_handle_meta_name( $field['meta-name'] );
+    $file_key = 'simple_upload_' . $meta;
 
-        if ( isset($_REQUEST['action']) && 'upload-attachment' == $_REQUEST['action'] &&
-             isset($_REQUEST['wppb_upload']) && 'true' == $_REQUEST['wppb_upload'] &&
-             isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['_wpnonce'] ), 'media-form' ) &&
-             isset( $_REQUEST['meta_name'] ) && wppb_check_that_field_is_defined( sanitize_text_field( $_REQUEST['meta_name'] ), array( 'Avatar', 'Upload' ) ) ) {
-
-            if ( !is_user_logged_in() || !current_user_can( 'upload_files' ) || !current_user_can( 'edit_posts' ) ) {
-                global $current_user;
-
-                $upload_caps = array(
-                    'upload_files'      => true,
-                    'edit_posts'        => true,
-                    'edit_others_posts' => true,
-                    'edit_pages'        => true,
-                    'edit_others_pages' => true,
-                );
-
-                if ( is_user_logged_in() ) {
-                    $current_user->allcaps = array_merge( (array) $current_user->allcaps, $upload_caps );
-                } else {
-                    $current_user          = new WP_User( 0, 'frontend_uploader' );
-                    $current_user->allcaps = $upload_caps;
-                }
-            }
-        }
+    if ( isset( $_FILES[ $file_key ] ) ) {
+        return true;
     }
+
+    if ( isset( $request_data['pay_gate'] ) && in_array( $request_data['pay_gate'], array( 'stripe_connect', 'paypal_connect' ), true ) ) {
+        return true;
+    }
+
+    return array_key_exists( $meta, $request_data );
 }
 
 /* for a request of a upload from the frontend and no user is logged in don't query for attachments */
@@ -192,21 +160,18 @@ function wppb_valid_simple_upload( $field, $upload ){
                 } else {
                     $allowed = true;
                 }
-                $allowed_by_wordpress = false;
-                foreach ( $allowed_mime_types as $key => $val ){
-                    if ( $val == $upload[ 'type' ] ){
-                        $possible_extensions = explode( '|', $key );
-                        $allowed_by_wordpress = true;
-                    }
+                if ( empty( $upload['tmp_name'] ) || empty( $upload['name'] ) ) {
+                    return false;
                 }
-                if ( isset( $possible_extensions ) && $allowed_by_wordpress == true ){
+
+                $checked        = wp_check_filetype_and_ext( $upload['tmp_name'], $upload['name'] );
+                $detected_type  = ! empty( $checked['type'] ) ? $checked['type'] : '';
+                $detected_ext   = ! empty( $checked['ext'] ) ? strtolower( $checked['ext'] ) : '';
+                $allowed_by_wordpress = ( $detected_type !== '' && in_array( $detected_type, $allowed_mime_types, true ) );
+
+                if ( $allowed_by_wordpress && $detected_ext !== '' ) {
                     if ( !isset( $allowed ) ){
-                        $allowed = false;
-                        foreach ( $allowed_upload_extensions as $extension ){
-                            if ( in_array( $extension, $possible_extensions ) ){
-                                $allowed = true;
-                            }
-                        }
+                        $allowed = in_array( $detected_ext, $allowed_upload_extensions, true );
                     }
                     if ( $upload[ 'size' ] > $limit ){
                         $allowed = false;
@@ -271,7 +236,7 @@ function wppb_belongs_to_repeater_with_conditional_logic( $field ){
                 else{
                     $repeater_count = count( $repeater_group );
                     for ( $i = 0; $i < $repeater_count; $i++ ){
-                        if ( $repeater_group[ $i ][ 'field' ] == 'Upload' && isset( $repeater_group[ $i ][ 'simple-upload' ] ) && $repeater_group[ $i ][ 'simple-upload' ] == 'yes' && isset( $_REQUEST[ $form_field[ 'meta-name' ] . '_extra_groups_count' ] ) ){
+                        if ( $repeater_group[ $i ][ 'field' ] == 'Upload' && wppb_use_simple_upload_field( $repeater_group[ $i ] ) && isset( $_REQUEST[ $form_field[ 'meta-name' ] . '_extra_groups_count' ] ) ){
                             $groups = absint( $_REQUEST[ $form_field[ 'meta-name' ] . '_extra_groups_count' ] );
                             for ( $j = 0; $j <= $groups; $j++ ){
                                 $name = $repeater_group[ $i ][ 'meta-name' ];
@@ -335,7 +300,7 @@ function wppb_default_fields_make_upload_button( $field, $input_value, $extra_at
         $hide_upload_button = '';
     }
 
-    if ( isset( $field[ 'simple-upload' ] ) && $field[ 'simple-upload' ] == 'yes' ){
+    if ( wppb_use_simple_upload_field( $field ) ){
         //If selected accordingly in form fields, generate a simple upload button
         $upload_button .= '<input type="file" id="upload_' . esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug($field['meta-name'], $field)) . '_button" class="wppb_simple_upload" data-field_type="'. esc_attr( $field['field'] ) .'" name="simple_upload_'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $field['meta-name'], $field ) ) .'"';
         $upload_button .=  $hide_upload_button . '>';
@@ -553,10 +518,7 @@ function wppb_resolve_simple_upload_ajax_field( $post_name, $field_type ) {
         if ( ! in_array( $field['field'], $field_types, true ) ) {
             continue;
         }
-        if ( ! isset( $field['simple-upload'] ) || $field['simple-upload'] !== 'yes' ) {
-            continue;
-        }
-        if ( isset( $field['woocommerce-checkout-field'] ) && $field['woocommerce-checkout-field'] === 'Yes' ) {
+        if ( ! wppb_use_simple_upload_field( $field ) ) {
             continue;
         }
 
@@ -604,10 +566,7 @@ function wppb_resolve_simple_upload_ajax_field_in_repeater( $post_name, $field_t
             if ( empty( $inner_field['field'] ) || ! in_array( $inner_field['field'], $field_types, true ) ) {
                 continue;
             }
-            if ( ! isset( $inner_field['simple-upload'] ) || $inner_field['simple-upload'] !== 'yes' ) {
-                continue;
-            }
-            if ( isset( $inner_field['woocommerce-checkout-field'] ) && $inner_field['woocommerce-checkout-field'] === 'Yes' ) {
+            if ( ! wppb_use_simple_upload_field( $inner_field ) ) {
                 continue;
             }
 
