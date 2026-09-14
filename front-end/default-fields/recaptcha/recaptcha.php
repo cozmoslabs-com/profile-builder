@@ -526,13 +526,14 @@ function wppb_validate_captcha_response( $publickey, $privatekey, $score_thresho
 
     }
 
-    // Save valid results when they are being triggered from an ajax request
-    if( wp_doing_ajax() && isset( $_POST['action'] ) && $_POST['action'] == 'pms_validate_checkout' ){
+    // Save valid results when they are being triggered from an ajax request that only pre-validates the
+    // credentials, so the same single use token is still accepted on the form submission that follows it
+    if( wppb_is_captcha_prevalidation_request() ){
 
-        $saved = get_option( 'wppb_recaptcha_validations', array() );
+        $saved = wppb_prune_captcha_prevalidations( get_option( 'wppb_recaptcha_validations', array() ) );
 
         if( $already_validated === true )
-            $saved[ $recaptcha_response_field ] = true;
+            $saved[ $recaptcha_response_field ] = time();
 
         update_option( 'wppb_recaptcha_validations', $saved, false );
 
@@ -792,35 +793,35 @@ function wppb_recaptcha_login_wp_error_message($user){
 
         $field = wppb_get_recaptcha_field();
         if ( !empty($field) ){
-            global $wppb_recaptcha_response;
-
-            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
-
-            $recaptcha_error_message = __('reCaptcha could not be verified. Please try again.','profile-builder');
-
-            if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
-                $recaptcha_error_message = __('Please enter a (valid) reCAPTCHA value','profile-builder');
-            }
-
-            //reCAPTCHA error for displaying on the PB login form
+            /* Work out whether reCAPTCHA is enabled for the form that was actually submitted before verifying
+            anything. The token is single use, so verifying it on a form where our widget was never displayed
+            spends a token that belongs to whatever else protects that form, and that plugin's own check
+            then fails as a duplicate. */
             if ( isset($_POST['wppb_login']) && ($_POST['wppb_login'] == true) ) {
-
-                // it's a PB login form, check if we have a reCAPTCHA on it and display error if not valid
-                if ((isset($field['captcha-pb-forms'])) && (strpos($field['captcha-pb-forms'], 'pb_login') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) && ($wppb_recaptcha_response == false)) {
-                    $user = new WP_Error('wppb_recaptcha_error', $recaptcha_error_message);
-                    remove_filter( 'authenticate', 'wp_authenticate_username_password',  20, 3 );
-                    remove_filter( 'authenticate', 'wp_authenticate_email_password',     20, 3 );
-                }
-
+                // it's a PB login form, check if we have a reCAPTCHA on it
+                $recaptcha_enabled = ( isset($field['captcha-pb-forms']) && ( strpos($field['captcha-pb-forms'], 'pb_login') !== false || ( $field['recaptcha-type'] == 'v3' && wppb_maybe_enable_recaptcha_v3_on_form( $field ) ) ) );
             }
             else {
-                //reCAPTCHA error for displaying on the default WP login form
-                if (isset($field['captcha-wp-forms']) && (strpos($field['captcha-wp-forms'], 'default_wp_login') !== false) && ($wppb_recaptcha_response == false)) {
+                // default WP login form
+                $recaptcha_enabled = ( isset($field['captcha-wp-forms']) && (strpos($field['captcha-wp-forms'], 'default_wp_login') !== false) );
+            }
+
+            if ( $recaptcha_enabled ) {
+                global $wppb_recaptcha_response;
+
+                if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
+
+                $recaptcha_error_message = __('reCaptcha could not be verified. Please try again.','profile-builder');
+
+                if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+                    $recaptcha_error_message = __('Please enter a (valid) reCAPTCHA value','profile-builder');
+                }
+
+                if ( $wppb_recaptcha_response == false ) {
                     $user = new WP_Error('wppb_recaptcha_error', $recaptcha_error_message);
                     remove_filter( 'authenticate', 'wp_authenticate_username_password',  20, 3 );
                     remove_filter( 'authenticate', 'wp_authenticate_email_password',     20, 3 );
                 }
-
             }
         }
     }
@@ -883,20 +884,23 @@ function wppb_verify_recaptcha_default_wp_recover_password(){
 
     $field = wppb_get_recaptcha_field();
     if ( !empty($field) ){
-        global $wppb_recaptcha_response;
-        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
+        /* Only verify where the captcha is configured for the form being submitted. The token is single use,
+        so verifying it on a form our widget was never displayed on spends a token that another plugin
+        protecting that form still needs, and its own check then fails as a duplicate. */
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_recover_password' ) !== false ) ) {
+            global $wppb_recaptcha_response;
+            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
-        $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
+            $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
 
-        if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
-            $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
-        }
+            if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+                $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
+            }
 
-    // Fail closed, but only where reCAPTCHA is configured for this form. Gate on captcha-wp-forms (as the
-    // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
-    // without blocking default WP password recovery on sites that only use reCAPTCHA on PB forms.
-        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_recover_password' ) !== false ) && ( $wppb_recaptcha_response == false ) ) {
-            wp_die( esc_html( $recaptcha_error_message ) . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
+            // Fail closed: a missing token is treated as a failed verification.
+            if ( $wppb_recaptcha_response == false ) {
+                wp_die( esc_html( $recaptcha_error_message ) . '<br />' . esc_html__( "Click the BACK button on your browser, and try again.", 'profile-builder' ) ) ;
+            }
         }
     }
 }
@@ -939,20 +943,23 @@ function wppb_verify_recaptcha_default_wp_register( $errors ){
 
     $field = wppb_get_recaptcha_field();
     if ( !empty($field) ){
-        global $wppb_recaptcha_response;
-        if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
+        /* Only verify where the captcha is configured for the form being submitted. The token is single use,
+        so verifying it on a form our widget was never displayed on spends a token that another plugin
+        protecting that form still needs, and its own check then fails as a duplicate. */
+        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_register' ) !== false ) ) {
+            global $wppb_recaptcha_response;
+            if (!isset($wppb_recaptcha_response)) $wppb_recaptcha_response = wppb_validate_captcha_response( trim( $field['public-key'] ), trim( $field['private-key'] ), isset( $field['score-threshold'] ) ? trim( $field['score-threshold'] ) : 0.5 );
 
-        $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
+            $recaptcha_error_message = esc_html__('reCaptcha could not be verified. Please try again.','profile-builder');
 
-        if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
-            $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
-        }
+            if( isset( $field['recaptcha-type'] ) && $field['recaptcha-type'] === 'v2' ) {
+                $recaptcha_error_message = esc_html__('Please enter a (valid) reCAPTCHA value','profile-builder');
+            }
 
-        // Fail closed, but only where reCAPTCHA is configured for this form. Gate on captcha-wp-forms (as the
-        // login path does) instead of isset() of the token, so a missing token is treated as a failed verification
-        // without blocking default WP registration on sites that only use reCAPTCHA on PB forms.
-        if ( isset( $field['captcha-wp-forms'] ) && ( strpos( $field['captcha-wp-forms'], 'default_wp_register' ) !== false ) && ( $wppb_recaptcha_response == false ) ) {
-            $errors->add( 'wppb_recaptcha_error', $recaptcha_error_message );
+            // Fail closed: a missing token is treated as a failed verification.
+            if ( $wppb_recaptcha_response == false ) {
+                $errors->add( 'wppb_recaptcha_error', $recaptcha_error_message );
+            }
         }
     }
 

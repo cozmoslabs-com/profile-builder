@@ -131,7 +131,7 @@ function wppb_create_recover_password_form( $user, $post_data, $is_ajax_form = f
 	$recover_input = '<ul>
 			<li class="wppb-form-field wppb-username-email'. apply_filters( 'wppb_recover_field_extra_css_class', '', 'username_email') .'">
 				<label for="username_email">'. esc_html( $username_email_label ) .'</label>
-				<input class="text-input" name="username_email" type="text" id="username_email" value="'.esc_attr( trim( $username_email ) ).'" '. apply_filters( 'wppb_recover_password_extra_attr', '', esc_html( $username_email_label ), 'username_email' ) .' />
+				<input class="text-input" name="username_email" type="text" id="username_email" value="'.esc_attr( trim( $username_email ) ).'" required '. apply_filters( 'wppb_recover_password_extra_attr', '', esc_html( $username_email_label ), 'username_email' ) .' />
 			</li><!-- .username_email --></ul>';
 	echo apply_filters( 'wppb_recover_password_generate_password_input', $recover_input, trim( $username_email ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
@@ -305,8 +305,15 @@ function wppb_front_end_password_recovery( $atts ){
 
         //check to see if it's an e-mail (and if this is valid/present in the database) or is a username
 
-        // if we do not have an email in the posted date we try to get the email for that user
-        if( !is_email( $username_email ) ){
+        if( $username_email === '' ){
+            if( !empty( $wppb_generalSettings['loginWith'] ) && $wppb_generalSettings['loginWith'] == 'email' )
+                $warning = __( 'Please enter your email address.', 'profile-builder' );
+            else
+                $warning = __( 'Please enter your username or email address.', 'profile-builder' );
+            $warning = apply_filters( 'wppb_recover_password_sent_message_empty', $warning );
+            $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
+        } elseif ( !is_email( $username_email ) ){
+            // if we do not have an email in the posted date we try to get the email for that user
             // When filter is enabled and login is set to email only, do not allow username for password reset
             if ( apply_filters( 'wppb_recover_password_require_email_when_login_with_email', false ) && !empty( $wppb_generalSettings['loginWith'] ) && $wppb_generalSettings['loginWith'] == 'email' ) {
                 $warning = __( 'Please enter your email address to request a password reset.', 'profile-builder' );

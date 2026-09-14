@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-26 08:19+0000\n"
+"POT-Creation-Date: 2026-09-14 10:27+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -436,7 +436,7 @@ msgstr ""
 msgid "Introducing the new Profile Builder Form Builder."
 msgstr ""
 
-#: admin/admin-functions.php:737, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1139, front-end/default-fields/recaptcha/recaptcha.php:1063, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
+#: admin/admin-functions.php:737, admin/register-version.php:316, admin/register-version.php:301, admin/register-version.php:283, admin/review.php:111, features/functions.php:159, add-ons-advanced/file-restriction/index.php:156, add-ons-advanced/social-connect/index.php:1139, front-end/default-fields/recaptcha/recaptcha.php:1070, front-end/extra-fields/international-telephone-input/international-telephone-input.php:60
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -444,7 +444,7 @@ msgstr ""
 msgid "Before You Go"
 msgstr ""
 
-#: admin/admin-functions.php:884, admin/admin-functions.php:1055, features/functions.php:1879
+#: admin/admin-functions.php:884, admin/admin-functions.php:1055, features/functions.php:1923
 msgid "Profile Builder"
 msgstr ""
 
@@ -1172,7 +1172,7 @@ msgstr ""
 msgid "Confirm Two-Factor Authentication Enforcement"
 msgstr ""
 
-#: admin/general-settings.php:500, features/functions.php:1198, add-ons/user-listing/userlisting.php:3513, features/roles-editor/roles-editor.php:201, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:605
+#: admin/general-settings.php:500, features/functions.php:1242, add-ons/user-listing/userlisting.php:3513, features/roles-editor/roles-editor.php:201, add-ons-advanced/campaign-monitor/admin/cmonitor-page.php:482, add-ons-advanced/mailchimp-integration/admin/mailchimp-page.php:188, assets/lib/wck-api/wordpress-creation-kit.php:443, admin/advanced-settings/includes/views/view-forms.php:639
 msgid "Cancel"
 msgstr ""
 
@@ -1296,11 +1296,11 @@ msgstr ""
 msgid "You can find the default file here: %1$s"
 msgstr ""
 
-#: admin/general-settings.php:836, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:564, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
+#: admin/general-settings.php:836, admin/private-website.php:182, features/content-restriction/content-restriction.php:211, assets/lib/class-mustache-templates/class-mustache-templates.php:288, admin/advanced-settings/includes/views/view-admin.php:130, admin/advanced-settings/includes/views/view-fields.php:264, admin/advanced-settings/includes/views/view-forms.php:598, admin/advanced-settings/includes/views/view-shortcodes.php:99, admin/advanced-settings/includes/views/view-userlisting.php:85
 msgid "Update Settings"
 msgstr ""
 
-#: admin/general-settings.php:839, admin/private-website.php:184, features/functions.php:1191, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:566, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
+#: admin/general-settings.php:839, admin/private-website.php:184, features/functions.php:1235, add-ons-advanced/woocommerce/woosync-page.php:154, features/content-restriction/content-restriction.php:213, assets/lib/class-mustache-templates/class-mustache-templates.php:429, assets/lib/wck-api/wordpress-creation-kit.php:442, admin/advanced-settings/includes/views/view-admin.php:132, admin/advanced-settings/includes/views/view-fields.php:266, admin/advanced-settings/includes/views/view-forms.php:600, admin/advanced-settings/includes/views/view-shortcodes.php:101, admin/advanced-settings/includes/views/view-userlisting.php:87
 msgid "Save Changes"
 msgstr ""
 
@@ -3646,11 +3646,11 @@ msgstr ""
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
 msgstr ""
 
-#: admin/manage-fields.php:1513, features/functions.php:1212, features/functions.php:1219, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:190, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:895, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
+#: admin/manage-fields.php:1513, features/functions.php:1256, features/functions.php:1263, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:190, add-ons-free/labels-edit/labels-edit.php:428, features/admin-approval/class-admin-approval.php:114, features/roles-editor/roles-editor.php:895, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:585
 msgid "Edit"
 msgstr ""
 
-#: admin/manage-fields.php:1513, features/functions.php:1205, features/functions.php:1219, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:190, features/admin-approval/class-admin-approval.php:122, features/admin-approval/class-admin-approval.php:120, features/admin-approval/class-admin-approval.php:240, features/email-confirmation/class-email-confirmation.php:144, features/email-confirmation/class-email-confirmation.php:241, features/roles-editor/roles-editor.php:200, features/roles-editor/roles-editor.php:933, features/roles-editor/roles-editor.php:922, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
+#: admin/manage-fields.php:1513, features/functions.php:1249, features/functions.php:1263, add-ons/custom-redirects/custom_redirects_admin.php:242, add-ons/custom-redirects/custom_redirects_admin.php:256, add-ons/custom-redirects/custom_redirects_admin.php:270, add-ons/custom-redirects/custom_redirects_admin.php:284, add-ons/custom-redirects/custom_redirects_admin.php:296, add-ons-advanced/field-visibility/index.php:190, features/admin-approval/class-admin-approval.php:122, features/admin-approval/class-admin-approval.php:120, features/admin-approval/class-admin-approval.php:240, features/email-confirmation/class-email-confirmation.php:144, features/email-confirmation/class-email-confirmation.php:241, features/roles-editor/roles-editor.php:200, features/roles-editor/roles-editor.php:933, features/roles-editor/roles-editor.php:922, features/roles-editor/roles-editor.php:913, assets/lib/wck-api/wordpress-creation-kit.php:484, assets/lib/wck-api/wordpress-creation-kit.php:586, front-end/default-fields/gdpr-delete/gdpr-delete.php:20
 msgid "Delete"
 msgstr ""
 
@@ -4124,7 +4124,7 @@ msgstr ""
 msgid "Minimum length of %d characters."
 msgstr ""
 
-#: features/functions.php:932, front-end/recover.php:462, front-end/default-fields/password/password.php:96
+#: features/functions.php:932, front-end/recover.php:469, front-end/default-fields/password/password.php:96
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
@@ -4140,47 +4140,47 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-#: features/functions.php:1147, front-end/default-fields/recaptcha/recaptcha.php:799, front-end/default-fields/recaptcha/recaptcha.php:889, front-end/default-fields/recaptcha/recaptcha.php:945
+#: features/functions.php:1191, front-end/default-fields/recaptcha/recaptcha.php:814, front-end/default-fields/recaptcha/recaptcha.php:894, front-end/default-fields/recaptcha/recaptcha.php:953
 msgid "reCaptcha could not be verified. Please try again."
 msgstr ""
 
-#: features/functions.php:1145, front-end/default-fields/recaptcha/recaptcha.php:802, front-end/default-fields/recaptcha/recaptcha.php:892, front-end/default-fields/recaptcha/recaptcha.php:948
+#: features/functions.php:1189, front-end/default-fields/recaptcha/recaptcha.php:817, front-end/default-fields/recaptcha/recaptcha.php:897, front-end/default-fields/recaptcha/recaptcha.php:956
 msgid "Please enter a (valid) reCAPTCHA value"
 msgstr ""
 
-#: features/functions.php:1155
+#: features/functions.php:1199
 msgid "Incorrect phone number"
 msgstr ""
 
-#: features/functions.php:1219, assets/lib/wck-api/wordpress-creation-kit.php:484
+#: features/functions.php:1263, assets/lib/wck-api/wordpress-creation-kit.php:484
 msgid "Content"
 msgstr ""
 
-#: features/functions.php:1409
+#: features/functions.php:1453
 msgid "<br><br>Also, you will be able to visit your site at "
 msgstr ""
 
-#: features/functions.php:1422
+#: features/functions.php:1466
 msgid "<br><br>You can visit your site at "
 msgstr ""
 
-#: features/functions.php:1592, add-ons-advanced/social-connect/index.php:451
+#: features/functions.php:1636, add-ons-advanced/social-connect/index.php:451
 msgid "here"
 msgstr ""
 
-#: features/functions.php:1593
+#: features/functions.php:1637
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: features/functions.php:1792
+#: features/functions.php:1836
 msgid "No feed available,please visit our <a href=\"%s\">homepage</a>!"
 msgstr ""
 
-#: features/functions.php:1842
+#: features/functions.php:1886
 msgid "You are not currently logged in."
 msgstr ""
 
-#: features/functions.php:1897, features/email-confirmation/class-email-confirmation.php:99, features/email-confirmation/class-email-confirmation.php:194
+#: features/functions.php:1941, features/email-confirmation/class-email-confirmation.php:99, features/email-confirmation/class-email-confirmation.php:194
 msgid "User Meta"
 msgstr ""
 
@@ -4389,11 +4389,11 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: front-end/recover.php:122
+#: front-end/recover.php:122, front-end/recover.php:312
 msgid "Please enter your username or email address."
 msgstr ""
 
-#: front-end/recover.php:118
+#: front-end/recover.php:118, front-end/recover.php:310
 msgid "Please enter your email address."
 msgstr ""
 
@@ -4429,83 +4429,83 @@ msgstr ""
 msgid "You are already logged in. You can change your password on the edit profile form."
 msgstr ""
 
-#: front-end/recover.php:524
+#: front-end/recover.php:531
 msgid "The password must not be empty!"
 msgstr ""
 
-#: front-end/recover.php:430
+#: front-end/recover.php:437
 msgid "The key cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:440
+#: front-end/recover.php:447
 msgid "Login cannot be empty!"
 msgstr ""
 
-#: front-end/recover.php:447, front-end/recover.php:551
+#: front-end/recover.php:454, front-end/recover.php:558
 msgid "Invalid key!"
 msgstr ""
 
-#: front-end/recover.php:452
+#: front-end/recover.php:459
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: front-end/recover.php:458, front-end/default-fields/password/password.php:92
+#: front-end/recover.php:465, front-end/default-fields/password/password.php:92
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: front-end/recover.php:475
+#: front-end/recover.php:482
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: front-end/recover.php:343, front-end/recover.php:363
+#: front-end/recover.php:350, front-end/recover.php:370
 msgid "If your information matches an account, a confirmation link will be sent to your email address."
 msgstr ""
 
-#: front-end/recover.php:335
+#: front-end/recover.php:342
 msgid "The email/username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:335
+#: front-end/recover.php:342
 msgid "Please check that you entered the correct email/username."
 msgstr ""
 
-#: front-end/recover.php:332
+#: front-end/recover.php:339
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:332
+#: front-end/recover.php:339
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: front-end/recover.php:328
+#: front-end/recover.php:335
 msgid "The email entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:328
+#: front-end/recover.php:335
 msgid "Please check that you entered the correct email."
 msgstr ""
 
-#: front-end/recover.php:312
+#: front-end/recover.php:319
 msgid "Please enter your email address to request a password reset."
 msgstr ""
 
-#: front-end/recover.php:407
+#: front-end/recover.php:414
 msgid "The email address entered wasn't found in the database!"
 msgstr ""
 
-#: front-end/recover.php:407
+#: front-end/recover.php:414
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: front-end/recover.php:361
+#: front-end/recover.php:368
 msgid "Check your email for the confirmation link."
 msgstr ""
 
-#: front-end/recover.php:383, front-end/recover.php:551, features/two-factor-authentication/class-two-factor-authentication.php:811
+#: front-end/recover.php:390, front-end/recover.php:558, features/two-factor-authentication/class-two-factor-authentication.php:811
 msgid "ERROR:"
 msgstr ""
 
-#: front-end/recover.php:383
+#: front-end/recover.php:390
 msgid "There was an error while trying to send the activation link!"
 msgstr ""
 
@@ -5557,7 +5557,7 @@ msgstr ""
 msgid "%1$sNote:%2$s The settings on the page will be replaced with your active User-Listing Theme's Default settings, according to your choice from the options above."
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3501, admin/advanced-settings/includes/views/view-forms.php:579
+#: add-ons/user-listing/userlisting.php:3501, admin/advanced-settings/includes/views/view-forms.php:613
 msgid "Select which settings you want to reset:"
 msgstr ""
 
@@ -5569,7 +5569,7 @@ msgstr ""
 msgid "All Theme Data"
 msgstr ""
 
-#: add-ons/user-listing/userlisting.php:3520, admin/advanced-settings/includes/views/view-forms.php:607
+#: add-ons/user-listing/userlisting.php:3520, admin/advanced-settings/includes/views/view-forms.php:641
 msgid "Confirm"
 msgstr ""
 
@@ -7330,15 +7330,15 @@ msgstr ""
 msgid "Select Template"
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:266
+#: features/content-restriction/content-restriction-filtering.php:424, features/content-restriction/content-restriction-filtering.php:500
 msgid "&hellip;"
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:348
+#: features/content-restriction/content-restriction-filtering.php:584
 msgid "You must be logged in to view the comments."
 msgstr ""
 
-#: features/content-restriction/content-restriction-filtering.php:346
+#: features/content-restriction/content-restriction-filtering.php:582
 msgid "Comments are restricted for your user role."
 msgstr ""
 
@@ -8962,31 +8962,31 @@ msgstr ""
 msgid "If you are unsure about making these changes or if the issue persists, please contact the support team of your hosting provider for assistance."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:503
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:516
 msgid "Restrict Uploaded Files"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:511
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:524
 msgid "Restrict uploaded files to logged-in users."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:514
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:527
 msgid "Enabling this option, the uploaded files will be restricted to logged-in users only."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:519
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:532
 msgid "Restricted Upload Fields"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:537
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:550
 msgid "Selecting any Upload Fields, restrictions will apply to files uploaded through those fields only."
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:542
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:555
 msgid "Restrict Files to User Roles"
 msgstr ""
 
-#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:565
+#: add-ons-advanced/file-restriction/includes/file-restriction-admin.php:578
 msgid "Selecting any User Roles will restrict the uploaded files to those roles only."
 msgstr ""
 
@@ -9238,7 +9238,7 @@ msgstr ""
 msgid "Save the communication preferences order"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:95, front-end/default-fields/checkbox/checkbox.php:55, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:50, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:91, front-end/extra-fields/upload/upload.php:91, front-end/extra-fields/wysiwyg/wysiwyg.php:62
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:95, front-end/default-fields/checkbox/checkbox.php:55, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:50, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:93, front-end/extra-fields/upload/upload.php:91, front-end/extra-fields/wysiwyg/wysiwyg.php:62
 msgid "required"
 msgstr ""
 
@@ -9414,15 +9414,15 @@ msgstr ""
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:566
+#: front-end/default-fields/recaptcha/recaptcha.php:567
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:899, front-end/default-fields/turnstile/turnstile.php:576
+#: front-end/default-fields/recaptcha/recaptcha.php:902, front-end/default-fields/turnstile/turnstile.php:579
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: front-end/default-fields/recaptcha/recaptcha.php:1062
+#: front-end/default-fields/recaptcha/recaptcha.php:1069
 msgid "reCAPTCHA v3 is not compatible with Paid Member Subscriptions versions that are older than <strong>2.12.7</strong>. <br>Please update Paid Member Subscriptions to a newer version to avoid any issues."
 msgstr ""
 
@@ -9434,11 +9434,11 @@ msgstr ""
 msgid "For security reasons, you must pass the remote ip to Turnstile!"
 msgstr ""
 
-#: front-end/default-fields/turnstile/turnstile.php:281
+#: front-end/default-fields/turnstile/turnstile.php:282
 msgid "To use Cloudflare Turnstile you must get a Site Key and Secret Key from:"
 msgstr ""
 
-#: front-end/default-fields/turnstile/turnstile.php:308, front-end/default-fields/turnstile/turnstile.php:389, front-end/default-fields/turnstile/turnstile.php:489, front-end/default-fields/turnstile/turnstile.php:570, front-end/default-fields/turnstile/turnstile.php:617, front-end/default-fields/turnstile/turnstile.php:656
+#: front-end/default-fields/turnstile/turnstile.php:309, front-end/default-fields/turnstile/turnstile.php:390, front-end/default-fields/turnstile/turnstile.php:504, front-end/default-fields/turnstile/turnstile.php:575, front-end/default-fields/turnstile/turnstile.php:625, front-end/default-fields/turnstile/turnstile.php:663
 msgid "Cloudflare Turnstile could not be verified. Please try again."
 msgstr ""
 
@@ -9590,6 +9590,13 @@ msgstr ""
 msgid "Required phone number format: "
 msgstr ""
 
+#. translators: %d is the maximum number of options that can be selected
+#: front-end/extra-fields/select2/select2-multiple.php:241
+msgid "You can select at most %d option for this field"
+msgid_plural "You can select at most %d options for this field"
+msgstr[0] ""
+msgstr[1] ""
+
 #: admin/advanced-settings/includes/fields/unique-display-name.php:20
 msgid "This display name is already in use. Please choose another one."
 msgstr ""
@@ -9618,7 +9625,7 @@ msgstr ""
 msgid "Replace labels with placeholders"
 msgstr ""
 
-#: admin/advanced-settings/includes/forms/placeholder-labels.php:274
+#: admin/advanced-settings/includes/forms/placeholder-labels.php:304
 msgid "Select an option"
 msgstr ""
 
@@ -9930,31 +9937,31 @@ msgstr ""
 msgid "Enable this option to change the colors of the forms."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:103, admin/advanced-settings/includes/views/view-forms.php:582
+#: admin/advanced-settings/includes/views/view-forms.php:103, admin/advanced-settings/includes/views/view-forms.php:616
 msgid "Primary Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:108, admin/advanced-settings/includes/views/view-forms.php:583
+#: admin/advanced-settings/includes/views/view-forms.php:108, admin/advanced-settings/includes/views/view-forms.php:617
 msgid "Secondary Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:113, admin/advanced-settings/includes/views/view-forms.php:584
+#: admin/advanced-settings/includes/views/view-forms.php:113, admin/advanced-settings/includes/views/view-forms.php:618
 msgid "Button Text Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:118, admin/advanced-settings/includes/views/view-forms.php:585
+#: admin/advanced-settings/includes/views/view-forms.php:118, admin/advanced-settings/includes/views/view-forms.php:619
 msgid "Label Size"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:123, admin/advanced-settings/includes/views/view-forms.php:586
+#: admin/advanced-settings/includes/views/view-forms.php:123, admin/advanced-settings/includes/views/view-forms.php:620
 msgid "Label Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:128, admin/advanced-settings/includes/views/view-forms.php:587
+#: admin/advanced-settings/includes/views/view-forms.php:128, admin/advanced-settings/includes/views/view-forms.php:621
 msgid "Notification Text Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:133, admin/advanced-settings/includes/views/view-forms.php:592
+#: admin/advanced-settings/includes/views/view-forms.php:133, admin/advanced-settings/includes/views/view-forms.php:626
 msgid "Notification Background Color"
 msgstr ""
 
@@ -10218,79 +10225,96 @@ msgstr ""
 msgid "For large conditional forms. Enable option for improved page performance."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:526
+#: admin/advanced-settings/includes/views/view-forms.php:530
 msgid "Registration Forms"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:527
+#: admin/advanced-settings/includes/views/view-forms.php:531
 msgid "Edit Profile Forms"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:531
+#: admin/advanced-settings/includes/views/view-forms.php:535
 msgid "Forms Editor"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:534
+#: admin/advanced-settings/includes/views/view-forms.php:538
 msgid "Choose which editor handles each form type. The modern editor is the Gutenberg-based form-builder; the classic editor restores the legacy Multiple Registration / Edit Profile Forms interface."
 msgstr ""
 
+#: admin/advanced-settings/includes/views/view-forms.php:544
+msgid "The Classic Editor plugin is active."
+msgstr ""
+
 #: admin/advanced-settings/includes/views/view-forms.php:545
+msgid "It prevents the block editor from loading, so all Profile Builder forms currently use the Classic Form Design regardless of the setting below. Your saved choice is kept and applies again as soon as the block editor is available."
+msgstr ""
+
+#. translators: %s: link to the Settings > Writing screen.
+#: admin/advanced-settings/includes/views/view-forms.php:551
+msgid "To use the modern form editor, deactivate the Classic Editor plugin, or in %s set \"Default editor for all users\" to \"Block editor\" and \"Allow users to switch editors\" to \"No\"."
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:552
+msgid "Settings → Writing"
+msgstr ""
+
+#: admin/advanced-settings/includes/views/view-forms.php:579
 msgid "Modern"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:549
+#: admin/advanced-settings/includes/views/view-forms.php:583
 msgid "Classic"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:556
+#: admin/advanced-settings/includes/views/view-forms.php:590
 msgid "Switching to Classic auto-enables the matching Multiple Forms module so its admin interface loads. Forms created in either editor read and write the same data, so you can switch back at any time."
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:588
+#: admin/advanced-settings/includes/views/view-forms.php:622
 msgid "Notification Background Color - Success"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:589
+#: admin/advanced-settings/includes/views/view-forms.php:623
 msgid "Notification Background Color - Error"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:590
+#: admin/advanced-settings/includes/views/view-forms.php:624
 msgid "Notification Background Color - Warning"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:591
+#: admin/advanced-settings/includes/views/view-forms.php:625
 msgid "Notification Background Color - Note"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:593
+#: admin/advanced-settings/includes/views/view-forms.php:627
 msgid "Notification Border Color - Success"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:594
+#: admin/advanced-settings/includes/views/view-forms.php:628
 msgid "Notification Border Color - Error"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:595
+#: admin/advanced-settings/includes/views/view-forms.php:629
 msgid "Notification Border Color - Warning"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:596
+#: admin/advanced-settings/includes/views/view-forms.php:630
 msgid "Notification Border Color - Note"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:597
+#: admin/advanced-settings/includes/views/view-forms.php:631
 msgid "Progress Bar Fill Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:598
+#: admin/advanced-settings/includes/views/view-forms.php:632
 msgid "Progress Bar Background Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:599
+#: admin/advanced-settings/includes/views/view-forms.php:633
 msgid "Progress Bar Text Color"
 msgstr ""
 
-#: admin/advanced-settings/includes/views/view-forms.php:601
+#: admin/advanced-settings/includes/views/view-forms.php:635
 msgid "Reset All Color Settings"
 msgstr ""
 

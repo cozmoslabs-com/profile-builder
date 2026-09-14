@@ -187,7 +187,7 @@ function wppb_pbpl_activate( $form ) {
     $pbpl_pb_moduleSettings = get_option( 'wppb_module_settings', 'not_found' );
 
     if( ( $pbpl_pb_moduleSettings != 'not_found' && isset( $pbpl_pb_moduleSettings['wppb_multipleRegistrationForms'] ) && $pbpl_pb_moduleSettings['wppb_multipleRegistrationForms'] == 'show' ) || ( $pbpl_pb_moduleSettings != 'not_found' && isset( $pbpl_pb_moduleSettings['wppb_multipleEditProfileForms'] ) && $pbpl_pb_moduleSettings['wppb_multipleEditProfileForms'] == 'show' ) ) {
-        if( ! empty( $form['ID'] ) ) {
+        if( wppb_pbpl_form_uses_per_form_option( $form ) ) {
             $pbpl_saved_value = get_post_meta( $form['ID'], 'pbpl-active', true );
 
             if( $pbpl_saved_value != 'yes' ) {
@@ -203,6 +203,36 @@ function wppb_pbpl_activate( $form ) {
     }
 }
 add_action( 'wppb_form_args_before_output', 'wppb_pbpl_activate' );
+
+
+/*
+ * Function that decides whether a form is governed by the per-form "Enable Placeholders" option
+ *
+ * - a bare shortcode resolves to the default form, which nobody ever opted in on
+ * - the modern form builder hides the meta box, so the option cannot be set there
+ * - when it does not apply, the global Placeholder Labels setting decides
+ *
+ * @param array		$form		Contain the form args
+ *
+ * @return bool
+ */
+function wppb_pbpl_form_uses_per_form_option( $form ) {
+    if( empty( $form['ID'] ) )
+        return false;
+
+    if( empty( $form['form_name'] ) || $form['form_name'] === 'unspecified' )
+        return false;
+
+    if( ! function_exists( 'wppb_fb_is_active_for' ) )
+        return true;
+
+    $post_type = get_post_type( $form['ID'] );
+
+    if( ! in_array( $post_type, array( 'wppb-rf-cpt', 'wppb-epf-cpt' ), true ) )
+        return false;
+
+    return ! wppb_fb_is_active_for( $post_type );
+}
 
 
 /*

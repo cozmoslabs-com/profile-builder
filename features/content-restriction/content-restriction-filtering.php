@@ -241,6 +241,240 @@ function wppb_content_restriction_message_wpautop( $message = '' ) {
 add_filter( 'wppb_content_restriction_message_logged_in', 'wppb_content_restriction_message_wpautop', 30, 1 );
 add_filter( 'wppb_content_restriction_message_logged_out', 'wppb_content_restriction_message_wpautop', 30, 1 );
 
+function wppb_content_restriction_get_post_preview_allowed_html() {
+    $allowed_post_html = wp_kses_allowed_html( 'post' );
+    $allowed_tags      = array(
+        'a',
+        'abbr',
+        'acronym',
+        'b',
+        'blockquote',
+        'br',
+        'cite',
+        'code',
+        'dd',
+        'del',
+        'details',
+        'div',
+        'dl',
+        'dt',
+        'em',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'hr',
+        'i',
+        'ins',
+        'kbd',
+        'li',
+        'mark',
+        'ol',
+        'p',
+        'pre',
+        'q',
+        's',
+        'samp',
+        'small',
+        'span',
+        'strike',
+        'strong',
+        'sub',
+        'summary',
+        'sup',
+        'table',
+        'tbody',
+        'td',
+        'tfoot',
+        'th',
+        'thead',
+        'tr',
+        'u',
+        'ul',
+        'var',
+    );
+    $allowed_html      = array();
+
+    foreach( $allowed_tags as $tag ) {
+        if( isset( $allowed_post_html[ $tag ] ) ) {
+            $allowed_html[ $tag ] = $allowed_post_html[ $tag ];
+        }
+    }
+
+    return apply_filters( 'wppb_content_restriction_post_preview_allowed_html', $allowed_html );
+}
+
+function wppb_content_restriction_sanitize_post_preview_html( $html ) {
+    $html = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $html );
+
+    return wp_kses( $html, wppb_content_restriction_get_post_preview_allowed_html() );
+}
+
+function wppb_content_restriction_get_text_count_units( $text, $offsets = false ) {
+    if( str_starts_with( wp_get_word_count_type(), 'characters' ) && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) ) {
+        $pattern = ( wp_get_word_count_type() === 'characters_excluding_spaces' ) ? '/[^\n\r\t ]/u' : '/./u';
+    } else {
+        $pattern = '/[^\n\r\t ]+/u';
+    }
+
+    preg_match_all( $pattern, $text, $units, ( $offsets ? PREG_OFFSET_CAPTURE : 0 ) );
+
+    return $units[0];
+}
+
+function wppb_content_restriction_count_dom_node_words( $node ) {
+    $count = 0;
+
+    if( ! $node->hasChildNodes() ) {
+        return $count;
+    }
+
+    foreach( $node->childNodes as $child ) {
+        if( $child->nodeType === XML_TEXT_NODE || $child->nodeType === XML_CDATA_SECTION_NODE ) {
+            $count += count( wppb_content_restriction_get_text_count_units( $child->nodeValue ) );
+        } else {
+            $count += wppb_content_restriction_count_dom_node_words( $child );
+        }
+    }
+
+    return $count;
+}
+
+function wppb_content_restriction_trim_text_node_words( $text, &$remaining_words, $more, &$trimmed, &$last_text_node ) {
+    $words = wppb_content_restriction_get_text_count_units( $text, true );
+
+    if( empty( $words ) ) {
+        return $text;
+    }
+
+    if( $remaining_words <= 0 ) {
+        if( ! empty( $last_text_node ) ) {
+            $last_text_node->nodeValue = rtrim( $last_text_node->nodeValue ) . $more;
+        }
+
+        $trimmed = true;
+
+        return '';
+    }
+
+    $word_count = count( $words );
+
+    if( $word_count < $remaining_words ) {
+        $remaining_words -= $word_count;
+
+        return $text;
+    }
+
+    $last_text_node = null;
+
+    if( $word_count === $remaining_words ) {
+        $remaining_words = 0;
+
+        return $text;
+    }
+
+    $last_word       = $words[ $remaining_words - 1 ];
+    $cut_position    = $last_word[1] + strlen( $last_word[0] );
+    $remaining_words = 0;
+    $trimmed         = true;
+
+    return rtrim( substr( $text, 0, $cut_position ) ) . $more;
+}
+
+function wppb_content_restriction_trim_dom_node_words( $node, &$remaining_words, $more, &$trimmed, &$last_text_node ) {
+    if( ! $node->hasChildNodes() ) {
+        return;
+    }
+
+    $children = array();
+    foreach( $node->childNodes as $child ) {
+        $children[] = $child;
+    }
+
+    foreach( $children as $child ) {
+        if( $trimmed ) {
+            $node->removeChild( $child );
+            continue;
+        }
+
+        if( $child->nodeType === XML_TEXT_NODE || $child->nodeType === XML_CDATA_SECTION_NODE ) {
+            $child->nodeValue = wppb_content_restriction_trim_text_node_words( $child->nodeValue, $remaining_words, $more, $trimmed, $last_text_node );
+
+            if( ! $trimmed && ! empty( wppb_content_restriction_get_text_count_units( $child->nodeValue ) ) ) {
+                $last_text_node = $child;
+            }
+
+            if( $trimmed && $child->nodeValue === '' ) {
+                $node->removeChild( $child );
+            }
+        } else {
+            wppb_content_restriction_trim_dom_node_words( $child, $remaining_words, $more, $trimmed, $last_text_node );
+
+            if( $trimmed && ! $child->hasChildNodes() ) {
+                $node->removeChild( $child );
+            }
+        }
+    }
+}
+
+function wppb_content_restriction_trim_html_words( $html, $num_words, $more = null ) {
+    if( $more === null ) {
+        $more = __( '&hellip;', 'profile-builder' );
+    }
+
+    $num_words = (int) $num_words;
+
+    if( $num_words <= 0 || $html === '' ) {
+        return '';
+    }
+
+    $html = wppb_content_restriction_sanitize_post_preview_html( $html );
+
+    if( ! class_exists( 'DOMDocument' ) ) {
+        return wpautop( wp_trim_words( $html, $num_words, $more ) );
+    }
+
+    $dom_flags = 0;
+    if( defined( 'LIBXML_HTML_NOIMPLIED' ) ) {
+        $dom_flags |= LIBXML_HTML_NOIMPLIED;
+    }
+    if( defined( 'LIBXML_HTML_NODEFDTD' ) ) {
+        $dom_flags |= LIBXML_HTML_NODEFDTD;
+    }
+
+    $document = new DOMDocument();
+    $previous_errors = libxml_use_internal_errors( true );
+    $document->loadHTML( '<?xml encoding="UTF-8"><div id="wppb-content-restriction-preview-wrapper">' . $html . '</div>', $dom_flags );
+    libxml_clear_errors();
+    libxml_use_internal_errors( $previous_errors );
+
+    $wrapper = $document->getElementById( 'wppb-content-restriction-preview-wrapper' );
+
+    if( empty( $wrapper ) ) {
+        return wpautop( wp_trim_words( $html, $num_words, $more ) );
+    }
+
+    $remaining_words = $num_words;
+    $trimmed         = false;
+    $last_text_node  = null;
+    $more_text       = html_entity_decode( $more, ENT_QUOTES | ENT_HTML5, get_option( 'blog_charset' ) );
+
+    if( wppb_content_restriction_count_dom_node_words( $wrapper ) <= $num_words ) {
+        return $html;
+    }
+
+    wppb_content_restriction_trim_dom_node_words( $wrapper, $remaining_words, $more_text, $trimmed, $last_text_node );
+
+    $preview = '';
+    foreach( $wrapper->childNodes as $child ) {
+        $preview .= $document->saveHTML( $child );
+    }
+
+    return $preview;
+}
+
 /* Adds a preview of the restricted post before the default restriction messages */
 function wppb_content_restriction_add_post_preview( $message, $content, $post, $user_ID ) {
 
@@ -262,9 +496,11 @@ function wppb_content_restriction_add_post_preview( $message, $content, $post, $
             // Do shortcodes on the content
             $post_content = do_shortcode( $post_content );
 
-            // Trim the preview
-            $preview = wp_trim_words( $post_content, $length, apply_filters( 'wppb_content_restriction_post_preview_more', __( '&hellip;', 'profile-builder' ) ) );
+            // Trim the preview while preserving the post's HTML structure.
+            $preview = wppb_content_restriction_trim_html_words( $post_content, $length, apply_filters( 'wppb_content_restriction_post_preview_more', __( '&hellip;', 'profile-builder' ) ) );
         }
+
+        return $preview . $message;
     }
 
     // More tag

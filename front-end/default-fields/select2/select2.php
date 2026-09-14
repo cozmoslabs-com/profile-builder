@@ -53,8 +53,8 @@ function wppb_select2_display_handler($output, $form_location, $field, $user_id,
                 $error_mark = '<img src="' . WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="' . wppb_required_field_error($field["field-title"]) . '"/>';
 
             $output = '
-				<label for="' . esc_attr($field['meta-name']) . '">' . $item_title . $error_mark . '</label>
-				<select name="' . esc_attr($field['meta-name']) . '" id="' . esc_attr($field['meta-name']) . '" class="custom_field_select2" ' . $extra_attr . ' data-wppb-select2-arguments=\'' . json_encode($arguments) . '\'>';
+				<label for="' . esc_attr(wppb_handle_meta_name($field['meta-name'])) . '">' . $item_title . $error_mark . '</label>
+				<select name="' . esc_attr($field['meta-name']) . '" id="' . esc_attr(wppb_handle_meta_name($field['meta-name'])) . '" class="custom_field_select2" ' . $extra_attr . ' data-wppb-select2-arguments=\'' . json_encode($arguments) . '\'>';
 
             $extra_select_option = apply_filters('wppb_extra_select_option', '', $field, $item_title);
             if (!empty($extra_select_option)) {
@@ -80,9 +80,9 @@ function wppb_select2_display_handler($output, $form_location, $field, $user_id,
             $output = '
 				<table class="form-table">
 					<tr>
-						<th><label for="' . esc_attr($field['meta-name']) . '">' . $item_title . '</label></th>
+						<th><label for="' . esc_attr(wppb_handle_meta_name($field['meta-name'])) . '">' . $item_title . '</label></th>
 						<td>
-							<select name="' . esc_attr($field['meta-name']) . '" class="custom_field_select2 wppb-select2" id="' . esc_attr($field['meta-name']) . '" ' . $extra_attr . ' data-wppb-select2-arguments=\'' . json_encode($arguments) . '\'>';
+							<select name="' . esc_attr($field['meta-name']) . '" class="custom_field_select2 wppb-select2" id="' . esc_attr(wppb_handle_meta_name($field['meta-name'])) . '" ' . $extra_attr . ' data-wppb-select2-arguments=\'' . json_encode($arguments) . '\'>';
 
             foreach ($select2_values as $key => $value) {
                 $output .= '<option value="' . esc_attr(trim($value)) . '" class="custom_field_select2_option" ';

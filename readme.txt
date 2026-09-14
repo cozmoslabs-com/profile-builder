@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,6 +216,15 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
+= 4.0.2 =
+* Fix: Issue with some free fields which were not available in the new form fields editor
+* Fix: Added fallback to the old Form Fields editor when Gutenberg is blocked by the Classic Editor plugin
+* Fix: reCaptcha failing after Wordfence 2FA
+* Fix: Placeholder Labels not activating proeprly
+* Fix: Rework restricted post preview functionality
+* Misc: Small Colorpicker field display correction
+* Misc: Don't show success message when the password reset form is submitted with an empty field
+
 = 4.0.1 =
 * Fix: Security issue regarding unauthenticated access to the media library. Thanks to the WPScan team
 * Fix: Security issue regarding unauthenticated stored cross-site scripting through the Unconfirmed Email Addresses list. Thanks to the Wordfence team

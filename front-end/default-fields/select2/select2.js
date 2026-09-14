@@ -17,7 +17,9 @@ function wppb_select2_initialize() {
 
         select2Arguments = wp.hooks.applyFilters( 'wppb_select2_initialize_arguments', select2Arguments, selectElement );
 
-        if ( !( 'placeholder' in select2Arguments ) || select2Arguments.placeholder === '' ) {
+        // On a multiple select the placeholder lands in the inline search box, which is only as
+        // wide as the free space left by the selected options, so the field title gets truncated.
+        if ( !selectElement.prop( 'multiple' ) && ( !( 'placeholder' in select2Arguments ) || select2Arguments.placeholder === '' ) ) {
             select2Arguments.placeholder = jQuery('label[for="' + selectElement.attr('id') + '"]').text();
         }
 

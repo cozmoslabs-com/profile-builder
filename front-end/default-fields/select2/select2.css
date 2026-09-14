@@ -11,6 +11,39 @@
     padding: 5px 10px;
 }
 
+/* Select 2 (Multiple) Field
+   The library keeps the selected options on a single clipped line. They have to wrap
+   and the closed control has to grow with them instead of cutting them off. */
+
+.wppb-select2-multiple .select2-container .select2-selection--multiple {
+    height: auto;
+    overflow: visible;
+}
+
+.wppb-select2-multiple .select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+.wppb-select2-multiple .select2-container .select2-selection--multiple .select2-selection__choice {
+    float: none;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* The library caps the results list at 200px, which shows about four options and gives
+   no hint that the rest are scrollable. */
+.select2-container .select2-results > .select2-results__options {
+    max-height: 340px;
+}
+
 @media screen and (max-width: 500px){
     .wppb-select2 span.select2-container,
     .wppb-select2-multiple span.select2-container {

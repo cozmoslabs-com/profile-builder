@@ -518,10 +518,14 @@
             // so the existing Save Changes button below persists it too --
             // a separate form here collided with the floating publish bar.
             if ( function_exists( 'wppb_fb_forms_editor_mode' ) ) :
-                $wppb_fb_current_modes = array(
-                    'wppb-rf-cpt'  => wppb_fb_forms_editor_mode( 'wppb-rf-cpt' ),
-                    'wppb-epf-cpt' => wppb_fb_forms_editor_mode( 'wppb-epf-cpt' ),
+                // Radios reflect the STORED preference so it stays visible (and
+                // round-trips) while the Classic Editor plugin forces the
+                // fallback. The gates elsewhere read the effective mode.
+                $wppb_fb_stored_modes = array(
+                    'wppb-rf-cpt'  => wppb_fb_stored_forms_editor_mode( 'wppb-rf-cpt' ),
+                    'wppb-epf-cpt' => wppb_fb_stored_forms_editor_mode( 'wppb-epf-cpt' ),
                 );
+                $wppb_fb_forced_classic = wppb_fb_classic_editor_plugin_forces_classic();
                 $wppb_fb_rows = array(
                     'wppb-rf-cpt'  => __( 'Registration Forms', 'profile-builder' ),
                     'wppb-epf-cpt' => __( 'Edit Profile Forms', 'profile-builder' ),
@@ -534,14 +538,44 @@
                         <?php esc_html_e( 'Choose which editor handles each form type. The modern editor is the Gutenberg-based form-builder; the classic editor restores the legacy Multiple Registration / Edit Profile Forms interface.', 'profile-builder' ); ?>
                     </p>
 
+                    <?php if ( $wppb_fb_forced_classic ) : ?>
+                        <div class="wppb-forms-editor-mode-forced notice notice-warning inline" style="margin: 0 0 15px;">
+                            <p>
+                                <strong><?php esc_html_e( 'The Classic Editor plugin is active.', 'profile-builder' ); ?></strong>
+                                <?php esc_html_e( 'It prevents the block editor from loading, so all Profile Builder forms currently use the Classic Form Design regardless of the setting below. Your saved choice is kept and applies again as soon as the block editor is available.', 'profile-builder' ); ?>
+                            </p>
+                            <p>
+                                <?php
+                                printf(
+                                    /* translators: %s: link to the Settings > Writing screen. */
+                                    esc_html__( 'To use the modern form editor, deactivate the Classic Editor plugin, or in %s set "Default editor for all users" to "Block editor" and "Allow users to switch editors" to "No".', 'profile-builder' ),
+                                    '<a href="' . esc_url( admin_url( 'options-writing.php' ) ) . '">' . esc_html__( 'Settings → Writing', 'profile-builder' ) . '</a>'
+                                );
+                                ?>
+                            </p>
+                        </div>
+                    <?php endif; ?>
+
                     <?php foreach ( $wppb_fb_rows as $wppb_fb_pt => $wppb_fb_label ) :
-                        $wppb_fb_mode = $wppb_fb_current_modes[ $wppb_fb_pt ];
+                        $wppb_fb_mode = $wppb_fb_stored_modes[ $wppb_fb_pt ];
                     ?>
                         <div class="cozmoslabs-form-field-wrapper">
                             <label class="cozmoslabs-form-field-label"><?php echo esc_html( $wppb_fb_label ); ?></label>
                             <fieldset>
+                                <?php if ( $wppb_fb_forced_classic ) : ?>
+                                    <?php
+                                    /*
+                                     * A disabled radio submits nothing, and the sanitize callback
+                                     * defaults a missing key to 'modern' -- which would wipe an
+                                     * explicit Classic preference. This hidden field carries the
+                                     * stored value; it sits BEFORE the radios, so an enabled radio
+                                     * the user does pick still overrides it (same POST key).
+                                     */
+                                    ?>
+                                    <input type="hidden" name="wppb_forms_editor_mode[<?php echo esc_attr( $wppb_fb_pt ); ?>]" value="<?php echo esc_attr( $wppb_fb_mode ); ?>">
+                                <?php endif; ?>
                                 <label style="margin-right: 16px;">
-                                    <input type="radio" name="wppb_forms_editor_mode[<?php echo esc_attr( $wppb_fb_pt ); ?>]" value="modern" <?php checked( $wppb_fb_mode, 'modern' ); ?>>
+                                    <input type="radio" name="wppb_forms_editor_mode[<?php echo esc_attr( $wppb_fb_pt ); ?>]" value="modern" <?php checked( $wppb_fb_mode, 'modern' ); ?> <?php disabled( $wppb_fb_forced_classic, true ); ?>>
                                     <?php esc_html_e( 'Modern', 'profile-builder' ); ?>
                                 </label>
                                 <label>

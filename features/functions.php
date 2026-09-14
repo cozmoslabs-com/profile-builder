@@ -1136,6 +1136,50 @@ function wppb_get_field_by_id_or_meta( $id_or_meta ){
 }
 
 
+/**
+ * Returns the AJAX actions that check the login/checkout credentials before the real form submission is sent.
+ *
+ * Those requests run the whole authentication stack, so our CAPTCHA check runs too and the token gets spent
+ * with the CAPTCHA provider, but they never log the user in - the browser still submits the form afterwards
+ * with the very same token. CAPTCHA tokens are single use, so verifying one a second time comes back as a
+ * duplicate and the login fails. For these actions we remember the successful verification and reuse it once,
+ * when the actual form submission arrives.
+ */
+function wppb_get_captcha_prevalidation_actions() {
+    return apply_filters( 'wppb_captcha_prevalidation_actions', array(
+        'pms_validate_checkout',     // Paid Member Subscriptions checkout validation
+        'wordfence_ls_authenticate', // Wordfence Login Security login pre-flight, used to decide if it needs to ask for a 2FA code
+    ) );
+}
+
+/* Whether the current request is one of the CAPTCHA pre-validation AJAX calls above */
+function wppb_is_captcha_prevalidation_request() {
+    if ( ! wp_doing_ajax() || empty( $_POST['action'] ) || ! is_string( $_POST['action'] ) ) /* phpcs:ignore WordPress.Security.NonceVerification.Missing */
+        return false;
+
+    return in_array( sanitize_text_field( $_POST['action'] ), wppb_get_captcha_prevalidation_actions(), true ); /* phpcs:ignore WordPress.Security.NonceVerification.Missing */
+}
+
+/**
+ * Drops pre-validated CAPTCHA tokens that were never claimed by a form submission.
+ *
+ * A pre-validation that is not followed by a submission (wrong password, abandoned login, bots) leaves its
+ * entry behind, so without this the option would keep growing on sites where every login is pre-validated.
+ */
+function wppb_prune_captcha_prevalidations( $saved ) {
+    if ( ! is_array( $saved ) )
+        return array();
+
+    $lifetime = apply_filters( 'wppb_captcha_prevalidation_lifetime', 15 * MINUTE_IN_SECONDS );
+
+    foreach ( $saved as $token => $validated_at ) {
+        if ( ! is_int( $validated_at ) || ( time() - $validated_at ) > $lifetime )
+            unset( $saved[ $token ] );
+    }
+
+    return $saved;
+}
+
 /* Function for displaying reCAPTCHA error on Login and Recover Password forms */
 function wppb_recaptcha_field_error($field_title='') {
 

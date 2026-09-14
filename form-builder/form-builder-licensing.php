@@ -1,6 +1,8 @@
 <?php
 /**
- * Free vs paid form-builder gating (multiple forms + Pro-only field types).
+ * Free vs paid form-builder gating. Two SEPARATE entitlements, matching classic:
+ * multiple forms are Pro-and-up (wppb_fb_is_paid_version), the extra field types are
+ * Basic-and-up (wppb_fb_extra_fields_available).
  * Entitlement uses PROFILE_BUILDER (active plugin), not serial status — an expired
  * licence keeps unlocked features, matching other paid surfaces.
  */
@@ -8,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * PROFILE_BUILDER values that unlock paid form-builder features (Pro and up).
+ * PROFILE_BUILDER values that unlock PRO-AND-UP form-builder features (Multiple Forms).
  *
  * @return string[]
  */
@@ -28,6 +30,24 @@ function wppb_fb_paid_versions() {
  */
 function wppb_fb_is_paid_version() {
     return defined( 'PROFILE_BUILDER' ) && in_array( PROFILE_BUILDER, wppb_fb_paid_versions(), true );
+}
+
+/**
+ * Whether this install may use the extra field types. (Basic-and-up)
+ *
+ * @param string|null $version PROFILE_BUILDER value to test. Defaults to the active one;
+ *                             passing it explicitly is how the tier mapping is testable
+ *                             on an install whose own constant is already defined.
+ * @return bool
+ */
+function wppb_fb_extra_fields_available( $version = null ) {
+    if ( $version === null && defined( 'PROFILE_BUILDER' ) ) {
+        $version = PROFILE_BUILDER;
+    }
+
+    $available = ( $version !== null && $version !== 'Profile Builder Free' );
+
+    return (bool) apply_filters( 'wppb_fb_extra_fields_available', $available, $version );
 }
 
 /**
@@ -54,7 +74,7 @@ function wppb_fb_form_cpt_capability_overrides() {
 }
 
 /**
- * Pro-only field type labels hidden from the inserter on free (mirror manage-fields.php).
+ * Extra field type labels hidden from the inserter on FREE (mirror manage-fields.php).
  * Blocks stay registered so existing instances remain editable after a downgrade.
  *
  * @return string[] PB field-type labels.
@@ -96,12 +116,12 @@ function wppb_fb_free_locked_field_types() {
 }
 
 /**
- * Pro-only field block names to hide from the inserter on free. Empty when paid.
+ * Extra field block names to hide from the inserter on free. Empty on Basic and up.
  *
  * @return string[]
  */
 function wppb_fb_free_locked_field_blocks() {
-    if ( wppb_fb_is_paid_version() ) {
+    if ( wppb_fb_extra_fields_available() ) {
         return array();
     }
 

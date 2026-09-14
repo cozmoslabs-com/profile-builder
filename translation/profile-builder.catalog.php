@@ -2362,6 +2362,8 @@
 <?php __('Value must be greater than or equal to %1$s', 'profile-builder' ); ?>
 <?php __('Value must be less than or equal to %1$s', 'profile-builder' ); ?>
 <?php __("Required phone number format: ", "profile-builder"); ?>
+<?php __("You can select at most %d option for this field", "profile-builder"); ?>
+<?php __("You can select at most %d options for this field", "profile-builder"); ?>
 <?php __("This display name is already in use. Please choose another one.", "profile-builder"); ?>
 <?php __("Email address change request for %s", "profile-builder"); ?>
 <?php __('Someone requested to change the email address for your account.<br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To update your account email address to the one requested (%1$s), visit the following link: %2$s', 'profile-builder' ); ?>
@@ -2523,6 +2525,10 @@
 <?php __("Edit Profile Forms", "profile-builder"); ?>
 <?php __("Forms Editor", "profile-builder"); ?>
 <?php __("Choose which editor handles each form type. The modern editor is the Gutenberg-based form-builder; the classic editor restores the legacy Multiple Registration / Edit Profile Forms interface.", "profile-builder"); ?>
+<?php __("The Classic Editor plugin is active.", "profile-builder"); ?>
+<?php __("It prevents the block editor from loading, so all Profile Builder forms currently use the Classic Form Design regardless of the setting below. Your saved choice is kept and applies again as soon as the block editor is available.", "profile-builder"); ?>
+<?php __("To use the modern form editor, deactivate the Classic Editor plugin, or in %s set \"Default editor for all users\" to \"Block editor\" and \"Allow users to switch editors\" to \"No\".", "profile-builder"); ?>
+<?php __("Settings → Writing", "profile-builder"); ?>
 <?php __("Modern", "profile-builder"); ?>
 <?php __("Classic", "profile-builder"); ?>
 <?php __("Switching to Classic auto-enables the matching Multiple Forms module so its admin interface loads. Forms created in either editor read and write the same data, so you can switch back at any time.", "profile-builder"); ?>
