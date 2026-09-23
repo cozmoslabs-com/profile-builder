@@ -281,14 +281,14 @@ function wppb_default_fields_make_upload_button( $field, $input_value, $extra_at
                 $file_name = get_the_title($value);
                 $file_type = get_post_mime_type($value);
                 $attachment_url = wp_get_attachment_url($value);
-                $upload_button .= '<div id="' . esc_attr($upload_input_id) . '_info_container" class="upload-field-details" data-attachment_id="' . $value . '">';
+                $upload_button .= '<div id="' . esc_attr($upload_input_id) . '_info_container" class="upload-field-details" data-attachment_id="' . esc_attr( $value ) . '">';
                 $upload_button .= '<div class="file-thumb">';
-                $upload_button .= "<a href='{$attachment_url}' target='_blank' class='wppb-attachment-link'>" . $thumbnail . "</a>";
+                $upload_button .= "<a href='" . esc_url( $attachment_url ) . "' target='_blank' class='wppb-attachment-link'>" . $thumbnail . "</a>";
                 $upload_button .= '</div>';
                 $upload_button .= '<p><span class="file-name">';
-                $upload_button .= $file_name;
+                $upload_button .= esc_html( $file_name );
                 $upload_button .= '</span><span class="file-type">';
-                $upload_button .= $file_type;
+                $upload_button .= esc_html( $file_type );
                 $upload_button .= '</span>';
                 $upload_button .= '<span class="wppb-remove-upload" tabindex="0">' . apply_filters( 'wppb_upload_button_remove_label', __( 'Remove', 'profile-builder' ) ) . '</span>';
                 $upload_button .= '</p></div>';
@@ -406,6 +406,63 @@ function wppb_default_fields_save_simple_upload_file( $field_name ) {
     } else {
         return '';
     }
+}
+
+/**
+ * Converts a legacy file URL stored in user meta (versions that predate attachment IDs)
+ * into an attachment owned by the user and stores the new ID in its place.
+ *
+ * The URL must resolve to an existing file inside the uploads directory with an allowed
+ * mime type; anything else is discarded. Only call this with a value read from user meta,
+ * never with request data, so that rendering a field cannot persist attacker-controlled input.
+ *
+ * @param string $file_url Legacy file URL read from user meta.
+ * @param array  $field    Field definition array (must contain 'meta-name').
+ * @param int    $user_id  User the attachment and meta belong to.
+ *
+ * @return int|string Attachment ID, or '' when the URL could not be converted.
+ */
+function wppb_legacy_file_url_to_attachment( $file_url, $field, $user_id ) {
+    $wp_upload_dir = wp_upload_dir();
+    $base_dir      = realpath( $wp_upload_dir['basedir'] );
+    $file_path     = str_replace( $wp_upload_dir['baseurl'], $wp_upload_dir['basedir'], $file_url );
+    $file_path     = is_file( $file_path ) ? realpath( $file_path ) : false;
+
+    if ( ! $base_dir || ! $file_path ) {
+        return '';
+    }
+
+    $base_dir  = trailingslashit( wp_normalize_path( $base_dir ) );
+    $file_path = wp_normalize_path( $file_path );
+
+    if ( strpos( $file_path, $base_dir ) !== 0 ) {
+        return '';
+    }
+
+    $file_type = wp_check_filetype( basename( $file_path ), null );
+    if ( empty( $file_type['type'] ) ) {
+        return '';
+    }
+
+    $attachment_id = wp_insert_attachment( array(
+        'guid'           => trailingslashit( $wp_upload_dir['baseurl'] ) . substr( $file_path, strlen( $base_dir ) ),
+        'post_mime_type' => $file_type['type'],
+        'post_title'     => sanitize_text_field( preg_replace( '/\.[^.]+$/', '', basename( $file_path ) ) ),
+        'post_content'   => '',
+        'post_status'    => 'inherit',
+        'post_author'    => $user_id,
+    ), $file_path );
+
+    if ( empty( $attachment_id ) || is_wp_error( $attachment_id ) ) {
+        return '';
+    }
+
+    // Make sure that this file is included, as wp_generate_attachment_metadata() depends on it.
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    wp_update_attachment_metadata( $attachment_id, wp_generate_attachment_metadata( $attachment_id, $file_path ) );
+    update_user_meta( $user_id, $field['meta-name'], $attachment_id );
+
+    return $attachment_id;
 }
 
 // Deferred to plugins_loaded so older Profile Builder Pro versions (which declare

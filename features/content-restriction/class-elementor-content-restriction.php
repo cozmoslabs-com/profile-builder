@@ -227,15 +227,20 @@ class WPPB_Elementor {
 	public function is_hidden( $element ) {
 		$settings = $element->get_settings();
 
-		if( is_user_logged_in() && $settings['wppb_restriction_loggedout_users'] === 'yes' ) {
+        // Our controls are not present on every element that goes through these filters, so don't assume the settings exist
+        $restrict_loggedin_users  = isset( $settings['wppb_restriction_loggedin_users'] ) ? $settings['wppb_restriction_loggedin_users'] : '';
+        $restrict_loggedout_users = isset( $settings['wppb_restriction_loggedout_users'] ) ? $settings['wppb_restriction_loggedout_users'] : '';
+        $restrict_user_roles      = isset( $settings['wppb_restriction_user_roles'] ) ? array_filter( (array)$settings['wppb_restriction_user_roles'] ) : array();
+
+		if( is_user_logged_in() && $restrict_loggedout_users === 'yes' ) {
             return true;
         }
 
-		if( !empty( $settings['wppb_restriction_user_roles'] ) && is_user_logged_in() ) {
+		if( !empty( $restrict_user_roles ) && is_user_logged_in() ) {
 
             $user_data = get_userdata( get_current_user_id() );
 
-            foreach( $settings['wppb_restriction_user_roles'] as $restriction_role ) {
+            foreach( $restrict_user_roles as $restriction_role ) {
                 foreach( $user_data->roles as $user_role ) {
                     if( $user_role == $restriction_role ) {
                         return false;
@@ -245,7 +250,7 @@ class WPPB_Elementor {
 
             return true;
 		} else if ( !is_user_logged_in() && (
-					( $settings['wppb_restriction_loggedin_users'] == 'yes' ) || ( !empty( $settings['wppb_restriction_user_roles'] ) )
+					( $restrict_loggedin_users == 'yes' ) || ( !empty( $restrict_user_roles ) )
 				) ) {
 
 			return true;
@@ -258,15 +263,17 @@ class WPPB_Elementor {
 	private function get_custom_message( $element ) {
 		$settings = $element->get_settings();
 
-		if( $settings['wppb_restriction_default_messages'] != 'yes' )
+		if( !isset( $settings['wppb_restriction_default_messages'] ) || $settings['wppb_restriction_default_messages'] != 'yes' )
 			return false;
 
-		if( $settings['wppb_restriction_custom_messages'] == 'yes' ) {
+		if( isset( $settings['wppb_restriction_custom_messages'] ) && $settings['wppb_restriction_custom_messages'] == 'yes' ) {
 
-			if( $settings['wppb_restriction_custom_messages_type'] == 'text' )
-				return $settings['wppb_restriction_fallback_text'];
-			elseif( $settings['wppb_restriction_custom_messages_type'] == 'template' ) {
-				return $this->render_template( $settings['wppb_restriction_fallback_template'] );
+			$custom_message_type = isset( $settings['wppb_restriction_custom_messages_type'] ) ? $settings['wppb_restriction_custom_messages_type'] : '';
+
+			if( $custom_message_type == 'text' )
+				return isset( $settings['wppb_restriction_fallback_text'] ) ? $settings['wppb_restriction_fallback_text'] : '';
+			elseif( $custom_message_type == 'template' ) {
+				return isset( $settings['wppb_restriction_fallback_template'] ) ? $this->render_template( $settings['wppb_restriction_fallback_template'] ) : '';
 			}
 		} else {
 			if( is_user_logged_in() )

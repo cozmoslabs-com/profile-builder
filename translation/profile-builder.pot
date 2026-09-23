@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-14 10:27+0000\n"
+"POT-Creation-Date: 2026-09-23 06:55+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -9238,7 +9238,7 @@ msgstr ""
 msgid "Save the communication preferences order"
 msgstr ""
 
-#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:95, front-end/default-fields/checkbox/checkbox.php:55, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:50, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:93, front-end/extra-fields/upload/upload.php:91, front-end/extra-fields/wysiwyg/wysiwyg.php:62
+#: add-ons-free/gdpr-communication-preferences/front-end/gdpr-communication-preferences.php:56, front-end/default-fields/avatar/avatar.php:74, front-end/default-fields/checkbox/checkbox.php:55, front-end/default-fields/input/input.php:37, front-end/default-fields/radio/radio.php:50, front-end/default-fields/select/select.php:55, front-end/default-fields/select2/select2.php:79, front-end/default-fields/textarea/textarea.php:36, front-end/extra-fields/colorpicker/colorpicker.php:49, front-end/extra-fields/datepicker/datepicker.php:44, front-end/extra-fields/input-email/input-email.php:34, front-end/extra-fields/input-hidden/input-hidden.php:38, front-end/extra-fields/input-url/input-url.php:34, front-end/extra-fields/international-telephone-input/international-telephone-input.php:131, front-end/extra-fields/language/language.php:37, front-end/extra-fields/map/map.php:60, front-end/extra-fields/number/number.php:34, front-end/extra-fields/phone/phone.php:43, front-end/extra-fields/select-cpt/select-cpt.php:63, front-end/extra-fields/select-multiple/select-multiple.php:51, front-end/extra-fields/select-taxonomy/select-taxonomy.php:65, front-end/extra-fields/select-timezone/select-timezone.php:53, front-end/extra-fields/select2/select2-multiple.php:93, front-end/extra-fields/upload/upload.php:70, front-end/extra-fields/wysiwyg/wysiwyg.php:62
 msgid "required"
 msgstr ""
 
@@ -9322,7 +9322,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: front-end/default-fields/avatar/avatar.php:194, front-end/default-fields/upload/upload_helper_functions.php:99, front-end/default-fields/upload/upload_helper_functions.php:110, front-end/default-fields/upload/upload_helper_functions.php:350, front-end/extra-fields/upload/upload.php:204
+#: front-end/default-fields/avatar/avatar.php:173, front-end/default-fields/upload/upload_helper_functions.php:99, front-end/default-fields/upload/upload_helper_functions.php:110, front-end/default-fields/upload/upload_helper_functions.php:350, front-end/extra-fields/upload/upload.php:183
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 

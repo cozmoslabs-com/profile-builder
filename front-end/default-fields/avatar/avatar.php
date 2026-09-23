@@ -37,43 +37,22 @@ function wppb_avatar_handler( $output, $form_location, $field, $user_id, $field_
 		$item_description = wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field['description'], true );
 
         if( $form_location != 'register' ) {
-            if( empty( $request_data[wppb_handle_meta_name( $field['meta-name'] )] ) )
-                $input_value = ( (wppb_user_meta_exists($user_id, $field['meta-name']) != null) ? get_user_meta($user_id, $field['meta-name'], true) : '');
-            else
+            $from_request = ! empty( $request_data[wppb_handle_meta_name( $field['meta-name'] )] );
+
+            if( $from_request )
                 $input_value = $request_data[wppb_handle_meta_name( $field['meta-name'] )];
+            else
+                $input_value = ( (wppb_user_meta_exists($user_id, $field['meta-name']) != null) ? get_user_meta($user_id, $field['meta-name'], true) : '');
 
             if ( is_array( $input_value ) ) {
                 $first_value = reset( $input_value );
                 $input_value = is_scalar( $first_value ) ? $first_value : '';
             }
 
-            if( !empty( $input_value ) && is_string( $input_value ) && !is_numeric( $input_value ) && apply_filters( 'wppb_avatar_field_transform_file_to_attachment', true, $field ) ){
-                /* we have a file url and we need to change it into an attachment */
-                // Check the type of file. We'll use this as the 'post_mime_type'.
-                $wp_upload_dir = wp_upload_dir();
-                $file_path = str_replace( $wp_upload_dir['baseurl'], $wp_upload_dir["basedir"], $input_value );
-                //on windows os we might have \ instead of / so change them
-                $file_path = str_replace( "\\", "/", $file_path );
-                $file_type = wp_check_filetype( basename( $input_value ), null );
-                $attachment = array(
-                    'guid' => $input_value,
-                    'post_mime_type' => $file_type['type'],
-                    'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $input_value ) ),
-                    'post_content'   => '',
-                    'post_status'    => 'inherit'
-                );
-
-                // Insert the attachment.
-                $input_value = wp_insert_attachment( $attachment, $input_value, 0 );
-                if( !empty( $input_value ) ) {
-                    // Make sure that this file is included, as wp_generate_attachment_metadata() depends on it.
-                    require_once(ABSPATH . 'wp-admin/includes/image.php');
-                    // Generate the metadata for the attachment, and update the database record.
-                    $attach_data = wp_generate_attachment_metadata($input_value, $file_path);
-                    wp_update_attachment_metadata($input_value, $attach_data);
-                    /* save the new attachment instead of the url */
-                    update_user_meta( $user_id, $field['meta-name'], $input_value );
-                }
+            /* user meta from old versions holds a file url; convert it into an attachment once.
+               Request data is never converted, so rendering the field cannot persist request input. */
+            if( ! $from_request && !empty( $input_value ) && is_string( $input_value ) && !is_numeric( $input_value ) && apply_filters( 'wppb_avatar_field_transform_file_to_attachment', true, $field ) ){
+                $input_value = wppb_legacy_file_url_to_attachment( $input_value, $field, $user_id );
             }
         }
         else
@@ -124,7 +103,7 @@ function wppb_save_avatar_value( $field, $user_id, $request_data, $form_location
                 if ( !( isset( $field[ 'conditional-logic-enabled' ] ) && $field[ 'conditional-logic-enabled' ] == 'yes' && !isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ) ){
                     if ( isset( $_FILES[ $field_name ][ 'size' ] ) && $_FILES[ $field_name ][ 'size' ] == 0 ){
                         if ( isset( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) ){
-                            update_user_meta( $user_id, $field[ 'meta-name' ], sanitize_text_field( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ] ) );
+                            wppb_save_attachment_id( $request_data[ wppb_handle_meta_name( $field[ 'meta-name' ] ) ], $field, $user_id );
                         }
                     }
                     else{

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.0.2
+Stable tag: 4.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,6 +216,12 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
+= 4.0.3 =
+* Fix: Security issue regarding authenticated (Subscriber+) stored cross-site scripting via Avatar and Upload fields. Thanks to the Wordfence team
+* Fix: Further security hardening for Avatar and Upload fields when using simple upload. Thanks to Jonah Burgess, Tarcísio Luchesi and the Wordfence and Patchstack teams
+* Enhancement: Disabled browser HTML5 validation on Edit Profile and Recover Password forms so Profile Builder can show all validation errors on a single submit matching how Registration works
+* Fix: PHP warnings for undefined array keys when Elementor elements without Profile Builder restriction settings pass through content restriction
+
 = 4.0.2 =
 * Fix: Issue with some free fields which were not available in the new form fields editor
 * Fix: Added fallback to the old Form Fields editor when Gutenberg is blocked by the Classic Editor plugin

@@ -49,7 +49,7 @@ function wppb_retrieve_activation_key( $requested_user_login ){
  */
 function wppb_create_recover_password_form( $user, $post_data, $is_ajax_form = false ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" novalidate id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
 		<ul>
 	<?php
 
@@ -110,7 +110,7 @@ function wppb_create_recover_password_form( $user, $post_data, $is_ajax_form = f
  */
  function wppb_create_generate_password_form( $post_data, $is_ajax_form = false ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" novalidate id="wppb-recover-password" class="wppb-user-forms<?php echo ($is_ajax_form ? ' wppb-ajax-form' : ''); ?>" action="<?php echo esc_url( wppb_curpageurl() ); ?>">
 	<?php
 	$wppb_generalSettings = get_option( 'wppb_general_settings' );
 
