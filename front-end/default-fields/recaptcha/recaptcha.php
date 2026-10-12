@@ -687,10 +687,11 @@ function wppb_recaptcha_recover_password_displayed_message1( $message ) {
         if ( isset($field['captcha-pb-forms']) && ( strpos( $field['captcha-pb-forms'],'pb_recover_password' ) !== false ) && ( $wppb_recaptcha_response == false )) {
 
             // This message is also altered by the plugin-compatibilities.php file, in regards to Captcha plugin ( function wppb_captcha_recover_password_displayed_message1 )
-            if (($message == '<p class="wppb-warning">wppb_recaptcha_error</p>') || ($message == '<p class="wppb-warning">wppb_captcha_error</p>'))
-                $message = '<p class="wppb-warning">' . wppb_recaptcha_field_error($field["field-title"]) . '</p>';
+            // compare only the text, the warning markup can carry extra attributes (e.g. role="alert")
+            if ( in_array( trim( wp_strip_all_tags( $message ) ), array( 'wppb_recaptcha_error', 'wppb_captcha_error' ), true ) )
+                $message = '<p class="wppb-warning" role="alert">' . wppb_recaptcha_field_error($field["field-title"]) . '</p>';
             else
-                $message = $message . '<p class="wppb-warning">' . wppb_recaptcha_field_error($field["field-title"]) . '</p>';
+                $message = $message . '<p class="wppb-warning" role="alert">' . wppb_recaptcha_field_error($field["field-title"]) . '</p>';
 
             }
         }

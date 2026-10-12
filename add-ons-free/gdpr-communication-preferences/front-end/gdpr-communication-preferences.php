@@ -20,7 +20,7 @@ function wppb_gdprcp_handler( $output, $form_location, $field, $user_id, $field_
                 $input_value = array_map('trim', explode(',', stripslashes($stored_value)));
             }
             else{
-                $input_value = array_map('trim', explode(',', $field['default-options']));
+                $input_value = ( !empty( $field['default-options'] ) ? array_map( 'trim', explode( ',', $field['default-options'] ) ) : array() );
             }
         }
         else

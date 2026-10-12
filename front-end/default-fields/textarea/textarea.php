@@ -28,7 +28,7 @@ function wppb_textarea_handler( $output, $form_location, $field, $user_id, $fiel
 
 			$output = '
 				<label for="'.$field['meta-name'].'">'.$item_title.$error_mark.'</label>
-				<textarea rows="'.$field['row-count'].'" name="'.$field['meta-name'].'" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="custom_field_textarea '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" id="'.$field['meta-name'].'" wrap="virtual" '. $extra_attr .'>'. esc_textarea( wp_unslash( $input_value ) ) .'</textarea>';
+				<textarea rows="'.$field['row-count'].'" name="'.$field['meta-name'].'" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="custom_field_textarea '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" id="'.$field['meta-name'].'" wrap="virtual" '. $extra_attr .'>'. esc_html( wp_unslash( $input_value ) ) .'</textarea>';
             if( !empty( $item_description ) )
                 $output .= '<span class="wppb-description-delimiter">'.$item_description.'</span>';
 
@@ -39,7 +39,7 @@ function wppb_textarea_handler( $output, $form_location, $field, $user_id, $fiel
 					<tr>
 						<th><label for="'.$field['meta-name'].'">'.$item_title.'</label></th>
 						<td>
-							<textarea rows="'.$field['row-count'].'" name="'.$field['meta-name'].'" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="custom_field_textarea" id="'.$field['meta-name'].'" wrap="virtual" '. $extra_attr .'>'. esc_textarea( $input_value ) .'</textarea>
+							<textarea rows="'.$field['row-count'].'" name="'.$field['meta-name'].'" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="custom_field_textarea" id="'.$field['meta-name'].'" wrap="virtual" '. $extra_attr .'>'. esc_html( $input_value ) .'</textarea>
 							<span class="description">'.$item_description.'</span>
 						</td>
 					</tr>

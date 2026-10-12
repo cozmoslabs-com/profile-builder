@@ -72,7 +72,10 @@ function wppb_pbpl_extra_attribute( $extra_attribute, $field, $form_location ) {
     );
 
     if( ! empty ( $field ) && in_array( $field['field'], $extra_attr_only_for ) ) {
-        $extra_attribute .= 'placeholder = "' . esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) ) . ( ( $field['required'] == 'Yes' ) ? '*' : '' ) . '"';
+        // Edit Profile doesn't require a new password, so the labels of these fields drop the asterisk there too
+        $required = $field['required'] == 'Yes' && ! ( $form_location == 'edit_profile' && in_array( $field['field'], array( 'Default - Password', 'Default - Repeat Password' ) ) );
+
+        $extra_attribute .= 'placeholder = "' . esc_attr( wppb_icl_t( 'plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation', $field['field-title'], true ) ) . ( $required ? '*' : '' ) . '"';
     }
 
     return $extra_attribute;

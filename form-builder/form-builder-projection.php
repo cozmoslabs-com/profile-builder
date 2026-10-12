@@ -149,6 +149,27 @@ function wppb_fb_flag_editor_content_save( $prepared_post, $request ) {
     return $prepared_post;
 }
 
+/**
+ * Country code validations for the International Telephone Input block (same rules as Manage Fields).
+ * The field file is not loaded on REST requests, so include it on demand.
+ */
+add_filter( 'rest_pre_insert_wppb-rf-cpt',  'wppb_fb_validate_intl_tel_input_blocks', 10, 2 );
+add_filter( 'rest_pre_insert_wppb-epf-cpt', 'wppb_fb_validate_intl_tel_input_blocks', 10, 2 );
+function wppb_fb_validate_intl_tel_input_blocks( $prepared_post, $request ) {
+    if ( ! function_exists( 'wppb_international_tel_input_validate_form_builder_save' ) && defined( 'WPPB_PAID_PLUGIN_DIR' ) ) {
+        $file = WPPB_PAID_PLUGIN_DIR . '/front-end/extra-fields/international-telephone-input/international-telephone-input.php';
+        if ( file_exists( $file ) ) {
+            include_once $file;
+        }
+    }
+
+    if ( ! function_exists( 'wppb_international_tel_input_validate_form_builder_save' ) ) {
+        return $prepared_post;
+    }
+
+    return wppb_international_tel_input_validate_form_builder_save( $prepared_post, $request );
+}
+
 /** Whether this request carried editor content (REST filter or classic POST). */
 function wppb_fb_save_carries_editor_content() {
     return ! empty( $GLOBALS['wppb_fb_editor_content_save'] ) || isset( $_POST['content'] );

@@ -167,8 +167,9 @@ function wppb_check_user_role_value( $message, $field, $request_data, $form_loca
             }
         }
 
-        if( isset( $field['user-roles'] ) && isset( $request_data['custom_field_user_role'] ) ) {
-            $available_user_roles = explode(', ', $field['user-roles'] );
+        if( isset( $request_data['custom_field_user_role'] ) ) {
+            // a field without a saved roles list allows no roles
+            $available_user_roles = explode(', ', isset( $field['user-roles'] ) ? $field['user-roles'] : '' );
 
             if( $roles_editor_active && is_array( $request_data['custom_field_user_role'] ) ) {
                 foreach( $request_data['custom_field_user_role'] as $key => $value ) {

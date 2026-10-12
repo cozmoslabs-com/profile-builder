@@ -233,10 +233,25 @@ function wppb_fb_hydrate_repeater_subfields( array &$entry, array $registry ) {
     $group = get_option( $entry['metaName'], 'not_set' );
     if ( ! is_array( $group ) ) return;
 
+    $sub_entries = array();
     foreach ( $group as $sub_row ) {
         $sub_entry = wppb_fb_existing_fields_row_to_entry( $sub_row, $registry, true );
-        if ( $sub_entry !== null ) $entry['innerBlocks'][] = $sub_entry;
+        if ( $sub_entry !== null ) $sub_entries[] = $sub_entry;
     }
+    $entry['innerBlocks'] = array_merge( $entry['innerBlocks'], wppb_fb_dedup_entries_by_id( $sub_entries ) );
+}
+
+/**
+ * Collapse entries sharing an id into one card (the panel keys cards by id, so
+ * duplicate-id rows made React leak a stale card on every reorder). The last
+ * row wins, matching the save projection's id index; first position is kept.
+ */
+function wppb_fb_dedup_entries_by_id( array $entries ) {
+    $by_id = array();
+    foreach ( $entries as $entry ) {
+        $by_id[ $entry['id'] ] = $entry;
+    }
+    return array_values( $by_id );
 }
 
 /**
@@ -258,5 +273,5 @@ function wppb_fb_existing_fields_bridge() {
 
         $fields[] = $entry;
     }
-    return $fields;
+    return wppb_fb_dedup_entries_by_id( $fields );
 }

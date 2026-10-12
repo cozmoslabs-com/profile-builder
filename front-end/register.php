@@ -229,6 +229,20 @@ function wppb_maybe_remove_register_shortcode( $content ){
 	return $content;
 }
 
+/* the register block and Elementor widget render outside the shortcode check above, so they apply the same rule to the post they live in */
+function wppb_register_form_author_can_publish( $post_id ){
+	$post = get_post( $post_id );
+
+	if( empty( $post ) || empty( $post->post_author ) )
+		return true;
+
+	return user_can( $post->post_author, 'edit_others_posts' );
+}
+
+function wppb_register_form_author_not_allowed_message(){
+	return '<p class="alert wppb-error" role="alert">' . esc_html__( 'Only an administrator can create pages with a registration form.', 'profile-builder' ) . '</p>';
+}
+
 /* custom redirect after registration on wp default register form */
 function wppb_default_registration_redirect( $user_id ) {
 

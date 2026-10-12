@@ -154,6 +154,14 @@ function wppb_add_pending_users_header_script(){
 				link.attr('data-message')
 			);
 		});
+
+		// Render the pending-signup meta as text, never as HTML: .text() inserts a
+		// text node, so a stored payload cannot execute in the admin's browser.
+		jQuery(document).on('click', 'a.wppb-ec-show-meta', function(e) {
+			e.preventDefault();
+			var pre = jQuery('<pre></pre>').text( jQuery(this).attr('data-user-meta') );
+			jQuery('<div></div>').append(pre).dialog({ title: '<?php echo esc_js( __( 'User Meta', 'profile-builder' ) ); ?>', width: 500 });
+		});
 	</script>
 <?php
 }
@@ -258,8 +266,15 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 	if( !empty( $meta['description'] ) )
 		update_user_meta( $user_id, 'description', $meta['description'] );
 
-	if( !empty( $meta['role'] ) )
+	if( !empty( $meta['role'] ) ){
+		$role = get_role( $meta['role'] );
+
+		// signups stored by older versions can carry a role the registrant picked through a legacy "role" field
+		if( ! $role || ! empty( $role->capabilities['manage_options'] ) || ! empty( $role->capabilities['remove_users'] ) )
+			$meta['role'] = get_option( 'default_role' );
+
 		$user->set_role( $meta['role'] ); //update the users role (s)he registered for
+	}
 
     if( !empty( $meta['first_name'] ) && !empty( $meta['last_name'] ) )
         wp_update_user(array('ID' => $user_id, 'display_name' => $meta['first_name'].' '.$meta['last_name'] ));

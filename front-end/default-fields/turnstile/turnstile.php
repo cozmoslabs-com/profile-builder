@@ -389,10 +389,11 @@ function wppb_turnstile_recover_password_displayed_message1( $message ) {
 
             $turnstile_error_message = __('Cloudflare Turnstile could not be verified. Please try again.', 'profile-builder');
 
-            if (($message == '<p class="wppb-warning">wppb_turnstile_error</p>') || ($message == '<p class="wppb-warning">wppb_captcha_error</p>'))
-                $message = '<p class="wppb-warning">' . $turnstile_error_message . '</p>';
+            // compare only the text, the warning markup can carry extra attributes (e.g. role="alert")
+            if ( in_array( trim( wp_strip_all_tags( $message ) ), array( 'wppb_turnstile_error', 'wppb_captcha_error' ), true ) )
+                $message = '<p class="wppb-warning" role="alert">' . $turnstile_error_message . '</p>';
             else
-                $message = $message . '<p class="wppb-warning">' . $turnstile_error_message . '</p>';
+                $message = $message . '<p class="wppb-warning" role="alert">' . $turnstile_error_message . '</p>';
 
             }
         }

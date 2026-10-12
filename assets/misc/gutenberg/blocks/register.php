@@ -364,6 +364,8 @@ add_action(
                         id="rect4-3-5-5-29-4"
                         style="fill:#a0a5aa;stroke-width:1.73182523" />
                 </svg>';
+        } elseif ( doing_filter( 'the_content' ) && ! wppb_register_form_author_can_publish( get_the_ID() ) ) {
+            echo wppb_register_form_author_not_allowed_message(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         } else {
             $form_name = '';
             if ( array_key_exists( 'form_name', $attributes ) ) {

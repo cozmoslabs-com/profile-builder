@@ -74,7 +74,8 @@ class PB_Mustache_Generate_Template{
 	 * @return $content the proccessed template ready for output.
 	 */
     function process_template(){
-        $m = new Mustache_Engine;
+        /* values may come from the database already entity-encoded (e.g. WordPress stores names with _wp_specialchars), so {{ }} must not encode them twice */
+        $m = new Mustache_Engine( array( 'escape' => 'esc_html' ) );
         try {
             if( !empty( $this->mustache_vars_array ) ){
                 foreach( $this->mustache_vars_array  as $key => $value ){

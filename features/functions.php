@@ -579,10 +579,10 @@ function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt 
 				if( is_array( $img_attr ) ){
 					if( $img_attr[3] === false ){
 						$img_attr = wp_get_attachment_image_src( $customUserAvatar, 'thumbnail' );
-						$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+						$avatar = sprintf( '<img alt="%s" src="%s" class="avatar avatar-%d photo avatar-default" height="%d" width="%d" />', esc_attr( $alt ), esc_url( $img_attr[0] ), (int) $size, (int) $size, (int) $size );
 					}
 					else
-						$avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$img_attr[2]}' width='{$img_attr[1]}' />";
+						$avatar = sprintf( '<img alt="%s" src="%s" class="avatar avatar-%d photo avatar-default" height="%d" width="%d" />', esc_attr( $alt ), esc_url( $img_attr[0] ), (int) $size, (int) $img_attr[2], (int) $img_attr[1] );
 				}
 			}
 			else {
@@ -590,7 +590,7 @@ function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt 
 				$customUserAvatarRelativePath = get_user_meta($my_user_id, 'resized_avatar_' . $avatar_field['id'] . '_relative_path', true);
 
 				if ((($customUserAvatar != '') || ($customUserAvatar != null)) && file_exists($customUserAvatarRelativePath)) {
-					$avatar = "<img alt='{$alt}' src='{$customUserAvatar}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+					$avatar = sprintf( '<img alt="%s" src="%s" class="avatar avatar-%d photo avatar-default" height="%d" width="%d" />', esc_attr( $alt ), esc_url( $customUserAvatar ), (int) $size, (int) $size, (int) $size );
 				}
 			}
 		}

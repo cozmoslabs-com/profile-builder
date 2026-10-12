@@ -294,6 +294,10 @@ abstract class PB_Elementor_Widget extends \Elementor\Widget_Base {
             case 'rf':
                 include_once(WPPB_PLUGIN_DIR . '/front-end/register.php');
                 include_once(WPPB_PLUGIN_DIR . '/front-end/class-formbuilder.php');
+                $document = \Elementor\Plugin::$instance->documents->get_current();
+                if ( $document && ! wppb_register_form_author_can_publish( $document->get_main_id() ) ) {
+                    return wppb_register_form_author_not_allowed_message();
+                }
                 $form_name = '';
                 if (array_key_exists('pb_form_name', $settings)) {
                     $form_name = substr($settings['pb_form_name'], 1);

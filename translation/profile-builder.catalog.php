@@ -1119,6 +1119,7 @@
 <?php __("This username is already activated!", "profile-builder"); ?>
 <?php __("Could not create user!", "profile-builder"); ?>
 <?php __("Only an administrator can create pages with the register shortcode.", "profile-builder"); ?>
+<?php __("Only an administrator can create pages with a registration form.", "profile-builder"); ?>
 <?php __("After Login", "profile-builder"); ?>
 <?php __("After Logout", "profile-builder"); ?>
 <?php __("After Registration", "profile-builder"); ?>
@@ -1295,6 +1296,7 @@
 <?php __("No options available", "profile-builder"); ?>
 <?php __("Remove All Filters", "profile-builder"); ?>
 <?php __("Search", "profile-builder"); ?>
+<?php __("Profile picture of %s", "profile-builder"); ?>
 <?php __("Shortcode", "profile-builder"); ?>
 <?php __("(no title)", "profile-builder"); ?>
 <?php __("Use this shortcode on the page you want the form to be displayed:", "profile-builder"); ?>
@@ -2346,15 +2348,15 @@
 <?php __("Number is too long.", "profile-builder"); ?>
 <?php __("The country code is invalid. Please check the international prefix.", "profile-builder"); ?>
 <?php __("Invalid number.", "profile-builder"); ?>
-<?php __("Please enter the number without country prefix in National Mode.", "profile-builder"); ?>
-<?php __("Please include the country prefix (for example %s...) for International Mode.", "profile-builder"); ?>
 <?php __("Invalid phone number.", "profile-builder"); ?>
+<?php __("Phone numbers from this country are not accepted.", "profile-builder"); ?>
 <?php __("Call me", "profile-builder"); ?>
 <?php __("Initial Country must be \"auto\" or one ISO 3166-1 alpha-2 code (e.g. ro, jp, us).", "profile-builder"); ?>
 <?php __("Preferred Countries contains invalid code(s): %s", "profile-builder"); ?>
 <?php __("Excluded Countries contains invalid code(s): %s", "profile-builder"); ?>
 <?php __("Initial Country cannot be one of the Excluded Countries.", "profile-builder"); ?>
 <?php __("Preferred Countries cannot contain countries also set in Excluded Countries: %s", "profile-builder"); ?>
+<?php __("Phone Field", "profile-builder"); ?>
 <?php __("Please add the Google Maps API key for this field.", "profile-builder"); ?>
 <?php __("Something went wrong. Please try again.", "profile-builder"); ?>
 <?php __("Please enter numbers only", "profile-builder"); ?>

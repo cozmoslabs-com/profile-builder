@@ -24,11 +24,13 @@ function wppb_password_handler( $output, $form_location, $field, $user_id, $fiel
 	        $subfields_output = '';
 
 	        if ( wppb_password_should_ask_for_current_password( $field, $form_location, $user_id ) ) {
+		        $current_password_extra_attr = apply_filters( 'wppb_extra_attribute', '', array_merge( $field, array( 'field-title' => __( 'Current Password', 'profile-builder' ), 'required' => 'No' ) ), $form_location );
+
 		        $subfields_output .= '
 					<div class="wppb-password-subfield wppb-current-password-subfield' . ( $current_password_error ? ' wppb-current-password-subfield-error' : '' ) . '">
 						<label for="wppb_current_passw">' . __( 'Current Password', 'profile-builder' ) . '</label>
 			            <span class="wppb-password-field-container">
-						    <input class="text-input '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="wppb_current_passw" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70, $field ) .'" type="password" id="wppb_current_passw" value="" autocomplete="current-password" '. $extra_attr .'/>
+						    <input class="text-input '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="wppb_current_passw" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70, $field ) .'" type="password" id="wppb_current_passw" value="" autocomplete="current-password" '. $current_password_extra_attr .'/>
 						    '. wppb_password_visibility_toggle_html() .' <!-- add the HTML for the visibility toggle -->
 						</span>
 					</div>';

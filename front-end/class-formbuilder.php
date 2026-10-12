@@ -733,11 +733,12 @@ class Profile_Builder_Form_Creator{
         if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
             $new_user_signup = true;
 
+            $role = isset( $userdata['role'] ) ? $userdata['role'] : $this->args['role'];
+
             $userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
 
-			if( ! isset( $userdata['role'] ) ) {
-				$userdata['role'] = $this->args['role'];
-			}
+            // a custom field with the meta-name "role" must not choose the role the user is activated with
+            $userdata['role'] = $role;
 
             $userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
 

@@ -2185,6 +2185,9 @@ div.wppb-serial-notification .button-primary {
 
 #basic-info-extra-fields-list .wppb-fields-image {
     max-width: 80%;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    box-sizing: border-box;
 }
 
 #basic-info-recommended-plugins .cozmoslabs-basic-info-recommended {

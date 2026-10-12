@@ -120,11 +120,12 @@ function wppb_fb_rest_allocate_field_id( WP_REST_Request $request ) {
 function wppb_fb_rest_upsert_row_core( array $collection, $id, array $attrs, $field_hint, $not_found_code, callable $build_context ) {
     $id = (int) $id;
 
+    // Last match wins on duplicate ids, same row the save projection and the
+    // Existing Fields bridge resolve to.
     $row_index = null;
     foreach ( $collection as $idx => $row ) {
         if ( isset( $row['id'] ) && (int) $row['id'] === $id ) {
             $row_index = $idx;
-            break;
         }
     }
 
@@ -314,7 +315,12 @@ function wppb_fb_rest_delete_existing_field( WP_REST_Request $request ) {
     do_action( 'wck_before_remove_meta', 'wppb_manage_fields', 0, $row_index );
     ob_end_clean();
 
-    unset( $manage[ $row_index ] );
+    // Drop every row with this id so a duplicate can't resurface as a card.
+    foreach ( $manage as $idx => $row ) {
+        if ( isset( $row['id'] ) && (int) $row['id'] === $id ) {
+            unset( $manage[ $idx ] );
+        }
+    }
     $manage = array_values( $manage );
     update_option( 'wppb_manage_fields', $manage );
 

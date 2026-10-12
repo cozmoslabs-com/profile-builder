@@ -44,7 +44,7 @@ function wppb_display_name_handler( $output, $form_location, $field, $user_id, $
         $output .= '<select class="default_field_display-name '. apply_filters( 'wppb_fields_extra_css_class', '', $field ) .'" name="display_name" id="display-name">';
 
             foreach( $public_display as $display_name_option ) {
-                $output .= '<option ' . selected( $user_data->display_name, $display_name_option, false ) . '>' . $display_name_option . '</option>';
+                $output .= '<option ' . selected( $user_data->display_name, $display_name_option, false ) . '>' . esc_html( $display_name_option ) . '</option>';
             }
 
         $output .= '</select>';

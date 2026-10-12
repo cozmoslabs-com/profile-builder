@@ -347,10 +347,17 @@ function wppb_front_end_password_recovery( $atts ){
                         $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
 
                     } else {
-                        $warning = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
-                        $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
-                        $output .= wppb_password_recovery_success( $warning, 'wppb_recover_password_displayed_message1' );
-                        $password_email_sent = true;
+                        // a failed captcha must look the same as for an existing username: only the captcha error, with the form still shown
+                        $captcha_warning = wppb_password_recovery_warning( '', 'wppb_recover_password_displayed_message1' );
+
+                        if ( $captcha_warning !== '' ) {
+                            $output .= $captcha_warning;
+                        } else {
+                            $warning = __( 'If your information matches an account, a confirmation link will be sent to your email address.', 'profile-builder' );
+                            $warning = apply_filters( 'wppb_recover_password_sent_message4', $warning );
+                            $output .= wppb_password_recovery_success( $warning, 'wppb_recover_password_displayed_message1' );
+                            $password_email_sent = true;
+                        }
                     }
                 }
             }
@@ -358,8 +365,9 @@ function wppb_front_end_password_recovery( $atts ){
 
         // we should have an email by this point
         if ( is_email( $username_email ) ){
-            if ( email_exists( $username_email ) ){
-                $warning = wppb_check_for_unapproved_user($username_email, 'user_email');
+            // unless the old messages are requested, answer the same way whether or not the email belongs to an account (prevents user enumeration)
+            if ( email_exists( $username_email ) || !apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ){
+                $warning = email_exists( $username_email ) ? wppb_check_for_unapproved_user($username_email, 'user_email') : '';
                 if ( $warning != '' ){
                     $output .= wppb_password_recovery_warning( $warning, 'wppb_recover_password_displayed_message1' );
                 } else {
@@ -372,14 +380,16 @@ function wppb_front_end_password_recovery( $atts ){
 
                     $success = apply_filters( 'wppb_recover_password_sent_message1', $success, $username_email );
 
-                    if ( $success != 'wppb_recaptcha_error' && $success != 'wppb_turnstile_error' && $success != 'wppb_captcha_error' ) {
+                    $captcha_error = in_array( $success, array( 'wppb_recaptcha_error', 'wppb_turnstile_error', 'wppb_captcha_error' ), true );
+
+                    if ( !$captcha_error ) {
                         $output .= wppb_password_recovery_success( $success, 'wppb_recover_password_displayed_message2' );
                     } else {
                         $output .= wppb_password_recovery_warning( $success, 'wppb_recover_password_displayed_message1' );
                     }
 
-                    //verify e-mail validity
-                    $query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_email= %s", sanitize_email( $username_email ) ) );
+                    //verify e-mail validity; no email is sent when the captcha failed, so don't report a sending error on top of the captcha one
+                    $query = $captcha_error ? array() : $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_email= %s", sanitize_email( $username_email ) ) );
                     if( !empty( $query[0] ) ){
                         $user = $query[0];
 
@@ -393,19 +403,16 @@ function wppb_front_end_password_recovery( $atts ){
                         } else {
                             $password_email_sent = true;
                         }
+                    }
 
-                        if( !apply_filters( 'wppb_recover_password_use_old_error_messages', false ) ) {
-                            // We want to set this to true regardless of the email result, so we can hide the form (to prevent user enumeration).
-                            // But ONLY if the captcha was solved successfully.
-                            if ( $success != 'wppb_recaptcha_error' && $success != 'wppb_turnstile_error' && $success != 'wppb_captcha_error' ) {
-                                $password_email_sent = true;
-                            }
-                        }
-                        
+                    // We want to set this to true regardless of the email result or whether the account exists, so we can hide the form (to prevent user enumeration).
+                    // But ONLY if the captcha was solved successfully.
+                    if( !apply_filters( 'wppb_recover_password_use_old_error_messages', false ) && !$captcha_error ) {
+                        $password_email_sent = true;
                     }
 
                 }
-            } elseif ( !email_exists( $username_email ) ){
+            } else {
                 // check reCAPTCHA
                 $warning = wppb_password_recovery_warning( '', 'wppb_recover_password_displayed_message1' );
 

@@ -5,7 +5,7 @@ Tags: user registration, user profile, registration, profile, user registration 
 Requires at least: 3.1
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.0.3
+Stable tag: 4.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -216,36 +216,15 @@ Privacy Policy: https://www.cozmoslabs.com/privacy-policy/
 17. Edit or Add New User Role
 
 == Changelog ==
-= 4.0.3 =
-* Fix: Security issue regarding authenticated (Subscriber+) stored cross-site scripting via Avatar and Upload fields. Thanks to the Wordfence team
-* Fix: Further security hardening for Avatar and Upload fields when using simple upload. Thanks to Jonah Burgess, Tarcísio Luchesi and the Wordfence and Patchstack teams
-* Enhancement: Disabled browser HTML5 validation on Edit Profile and Recover Password forms so Profile Builder can show all validation errors on a single submit matching how Registration works
-* Fix: PHP warnings for undefined array keys when Elementor elements without Profile Builder restriction settings pass through content restriction
-
-= 4.0.2 =
-* Fix: Issue with some free fields which were not available in the new form fields editor
-* Fix: Added fallback to the old Form Fields editor when Gutenberg is blocked by the Classic Editor plugin
-* Fix: reCaptcha failing after Wordfence 2FA
-* Fix: Placeholder Labels not activating proeprly
-* Fix: Rework restricted post preview functionality
-* Misc: Small Colorpicker field display correction
-* Misc: Don't show success message when the password reset form is submitted with an empty field
-
-= 4.0.1 =
-* Fix: Security issue regarding unauthenticated access to the media library. Thanks to the WPScan team
-* Fix: Security issue regarding unauthenticated stored cross-site scripting through the Unconfirmed Email Addresses list. Thanks to the Wordfence team
-* Fix: Security issue regarding authenticated (Contributor+) stored cross-site scripting via the format-date shortcode. Thanks to Muni Nitish Kumar Yaddala, WPScan and the Wordfence team
-* Fix: Security issue regarding PHP object injection during Import and Export. Thanks to Vivien LEBAS and the WPScan team
-* Fix: Admin Approval user deletion now routes through WordPress's content reassignment screen
-* Fix: "Failed to initialize plugin: tablepress_tinymce" error when opening the new Form Editor with TablePress active
-* Fix: Attempt to read property "post_type" on null warnings on some third-party admin screens
-* Misc: Raised the Avatar field maximum size from 200px to 800px
-
-= 4.0.0 =
-* New: Reworked the form builder interface to a more modern one that uses blocks. All existing fields and forms are migrated to the new structure. Go to Profile Builder -> Forms to get started
-* New: The Form Fields page is now called Forms. On this page you can see the Default Registration and Edit Profile forms and open the new form builder
-* Feature: reCaptcha and Turnstile can now be enabled on default WordPress comment forms
-* Fix: Accessibility improvements for alerts and radio/checkbox fields
-* Fix: Harden checks around referral urls to catch non-string requests
+= 4.0.4 =
+* Fix: Security issue regarding stored cross-site scripting through signup details on the Unconfirmed Emails list. Thanks to whale120 and the Wordfence team
+* Fix: Security issue where a Select (User Role) field saved with no roles list accepted a posted role. Thanks to Supakiad S. and the Wordfence team
+* Fix: Security issue where a legacy field with the meta name "role" could choose the role assigned when Email Confirmation activates the account. Thanks to Supakiad S. and the Wordfence team
+* Fix: Security issue regarding the avatar image built from the display name. Thanks to UKO and the Wordfence team for the report
+* Fix: The Register block and Elementor registration widget now hide the form on posts written by Authors or Contributors, matching the register shortcode. Thanks to pb>sec (Paul Brenndörfer) and the Wordfence team
+* Fix: A field could show up more than once in the form editor Existing Fields tab after it was moved
+* Fix: Textarea and Biographical Info fields showed &amp; instead of &
+* Misc: With Placeholder Labels on, the Edit Profile current password input showed "Password*" instead of "Current Password". Password and Repeat Password no longer show a required asterisk there
+* Misc: PHP 8.4 notice from the GDPR Communication Preferences field when it has no default options
 
 [Click Here](https://www.cozmoslabs.com/docs/profile-builder/free-changelog/?utm_source=wp.org&utm_medium=pb-description-page&utm_campaign=PBFree) to view the full changelog.

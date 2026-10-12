@@ -176,10 +176,11 @@
                 if( empty($error_message) )
                     return $message;
 
-                if ( ($message == '<p class="wppb-warning">wppb_captcha_error</p>') || ($message == '<p class="wppb-warning">wppb_recaptcha_error</p>') )
-                    $message = '<p class="wppb-warning">' . $error_message . '</p>';
+                // compare only the text, the warning markup can carry extra attributes (e.g. role="alert")
+                if ( in_array( trim( wp_strip_all_tags( $message ) ), array( 'wppb_captcha_error', 'wppb_recaptcha_error' ), true ) )
+                    $message = '<p class="wppb-warning" role="alert">' . $error_message . '</p>';
                 else
-                    $message = $message . '<p class="wppb-warning">' . $error_message . '</p>';
+                    $message = $message . '<p class="wppb-warning" role="alert">' . $error_message . '</p>';
 
             }
 

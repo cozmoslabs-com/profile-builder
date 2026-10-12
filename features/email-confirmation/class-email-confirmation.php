@@ -82,7 +82,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
             case 'user-meta':
                 global $wpdb;
                 $sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $item['email'] ), ARRAY_A );
-                $user_meta = $sql_result['meta'];
+                $user_meta = isset( $sql_result['meta'] ) ? $sql_result['meta'] : '';
                 $user_meta_lines = array();
                 if ( ! empty( $user_meta ) ) {
                     foreach ( maybe_unserialize( $user_meta ) as $key => $value ) {
@@ -92,12 +92,15 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                         if ( is_array( $value ) ) {
                             $value = implode( ',', $value );
                         }
-                        $user_meta_lines[] = esc_html( (string) $key ) . ':' . esc_html( (string) $value );
+                        $user_meta_lines[] = (string) $key . ':' . (string) $value;
                     }
                 }
-                $user_meta_html = '<div><pre>' . implode( "\n", $user_meta_lines ) . '</pre></div>';
-                $dialog_js       = 'jQuery(\'' . esc_js( $user_meta_html ) . '\').dialog({title:\'' . esc_js( __( 'User Meta', 'profile-builder' ) ) . '\', width: 500 }); return false;';
-                return '<a href="#" data-email="' . esc_attr( $item['email'] ) . '" onclick="' . esc_attr( $dialog_js ) . '">' . esc_html__( 'show', 'profile-builder' ) . '</a>';
+                // The meta is carried as plain text on a data attribute and injected as a
+                // text node by the wppb-ec-show-meta handler (see email-confirmation.php),
+                // so it is never re-parsed as HTML. Building it into a jQuery(htmlString)
+                // dialog here would let a stored numeric character reference decode back
+                // into live markup in the admin's browser.
+                return '<a href="#" class="wppb-ec-show-meta" data-user-meta="' . esc_attr( implode( "\n", $user_meta_lines ) ) . '">' . esc_html__( 'show', 'profile-builder' ) . '</a>';
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
